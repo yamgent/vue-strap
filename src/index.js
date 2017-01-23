@@ -23,28 +23,19 @@ const VueStrap = {
   affix,
   alert,
   aside,
-  buttonGroup,
   carousel,
   checkbox,
-  datepicker,
   dropdown,
-  formGroup,
   input,
   modal,
   navbar,
-  option,
   panel,
   popover,
-  progressbar,
-  radio,
   select,
-  slider,
-  spinner,
   tab,
   tabGroup,
   tabset,
-  tooltip,
-  typeahead
+  tooltip
 }
 
 module.exports = VueStrap

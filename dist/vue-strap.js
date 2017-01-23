@@ -136,28 +136,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	  affix: _Affix2.default,
 	  alert: _Alert2.default,
 	  aside: _Aside2.default,
-	  buttonGroup: buttonGroup,
 	  carousel: _Carousel2.default,
 	  checkbox: _Checkbox2.default,
-	  datepicker: datepicker,
 	  dropdown: _Dropdown2.default,
-	  formGroup: formGroup,
 	  input: _Input2.default,
 	  modal: _Modal2.default,
 	  navbar: _Navbar2.default,
-	  option: option,
 	  panel: _Panel2.default,
 	  popover: _Popover2.default,
-	  progressbar: progressbar,
-	  radio: radio,
 	  select: _Select2.default,
-	  slider: slider,
-	  spinner: spinner,
 	  tab: _Tab2.default,
 	  tabGroup: _TabGroup2.default,
 	  tabset: _Tabset2.default,
-	  tooltip: _Tooltip2.default,
-	  typeahead: typeahead
+	  tooltip: _Tooltip2.default
 	};
 	
 	module.exports = VueStrap;
