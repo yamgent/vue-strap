@@ -1,6 +1,7 @@
 <template>
-  <div class="panel {{panelType}}">
-    <div :class="['panel-heading',{'accordion-toggle':inAccordion}]" @click.prevent="inAccordion&&toggle()">
+  <div :class="['panel', panelType, {'expandable-panel': isExpandablePanel}]">
+    <div :class="['panel-heading',{'accordion-toggle':canCollapse}]"
+         @click.prevent="canCollapse && toggle()">
       <slot name="header">
         <h4 class="panel-title">{{ header }}</h4>
       </slot>
@@ -30,6 +31,11 @@ export default {
       coerce: coerce.boolean,
       default: null
     },
+    expandable: {
+      type: Boolean,
+      coerce: coerce.boolean,
+      default: null
+    },
     type: {
       type: String,
       default : null
@@ -38,6 +44,12 @@ export default {
   computed: {
     inAccordion () {
       return this.$parent && this.$parent._isAccordion
+    },
+    isExpandablePanel () {
+      return this.expandable;
+    },
+    canCollapse () {
+      return this.inAccordion || this.expandable
     },
     panelType () {
       return 'panel-' + (this.type || (this.$parent && this.$parent.type) || 'default')
@@ -65,7 +77,7 @@ export default {
   },
   created () {
     if (this.isOpen === null) {
-      this.isOpen = !this.inAccordion
+      this.isOpen = !this.canCollapse
     }
   }
 }
@@ -80,5 +92,11 @@ export default {
 }
 .collapse-enter, .collapse-leave {
   max-height: 0!important;
+}
+.expandable-panel {
+  margin-bottom: 0;
+}
+.expandable-panel + .expandable-panel {
+  margin-top: 5px;
 }
 </style>
