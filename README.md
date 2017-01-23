@@ -1,4 +1,6 @@
 # vue-strap
+This is a forked project from VueStrap. We changed it for used in MarkBind.
+
 Bootstrap components built with Vue.js.
 
 This repository contains a set of native Vue.js components based on Bootstrap's markup and CSS. As a result no dependency on jQuery or Bootstrap's JavaScript is required. The only required dependencies are:
