@@ -28,7 +28,12 @@ module.exports = {
     presets: ['es2015'],
     plugins: ['transform-runtime']
   },
-  devtool: 'source-map'
+  devtool: 'source-map',
+  plugins: [
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery'
+    })
+  ]
 };
 
 
@@ -44,6 +49,9 @@ if (process.env.NODE_ENV === 'production') {
       compress: {
         warnings: false
       }
+    }),
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery'
     })
   ];
 }

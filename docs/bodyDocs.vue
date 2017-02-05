@@ -20,9 +20,11 @@
         <alert-docs></alert-docs>
         <aside-docs></aside-docs>
         <carousel-docs></carousel-docs>
+        <dynamic-panel-docs></dynamic-panel-docs>
         <modal-docs></modal-docs>
         <navbar-docs></navbar-docs>
         <popover-docs></popover-docs>
+        <retriever-docs></retriever-docs>
         <tabs-docs></tabs-docs>
         <tooltip-docs></tooltip-docs>
       </div>
@@ -56,11 +58,13 @@ import alertDocs from './example/alertDocs.vue'
 import asideDocs from './example/asideDocs.vue'
 import buttonGroupDocs  from './example/buttonGroupDocs.vue'
 import carouselDocs from './example/carouselDocs.vue'
+import dynamicPanelDocs from './example/dynamicPanelDocs.vue'
 import container from './example/container.vue'
 import inputDocs from './example/inputDocs.vue'
 import modalDocs from './example/modalDocs.vue'
 import navbarDocs from './example/navbarDocs.vue'
 import popoverDocs from './example/popoverDocs.vue'
+import retrieverDocs from './example/retrieverDocs.vue'
 import selectDocs from './example/selectDocs.vue'
 import tabsDocs from './example/tabsDocs.vue'
 import tooltipDocs from './example/tooltipDocs.vue'
@@ -76,9 +80,11 @@ export default {
     buttonGroupDocs,
     carouselDocs,
     container,
+    dynamicPanelDocs,
     modalDocs,
     navbarDocs,
     popoverDocs,
+    retrieverDocs,
     selectDocs,
     tabsDocs,
     tooltipDocs

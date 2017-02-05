@@ -58,7 +58,7 @@ export default {
   methods: {
     toggle () {
       this.isOpen = !this.isOpen
-      this.$dispatch('isOpenEvent', this)
+      this.$dispatch('isOpenEvent', this, this.isOpen)
     }
   },
   transitions: {

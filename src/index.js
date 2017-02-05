@@ -6,11 +6,13 @@ import aside from './Aside.vue'
 import carousel from './Carousel.vue'
 import checkbox from './Checkbox.vue'
 import dropdown from './Dropdown.vue'
+import dynamicPanel from './DynamicPanel.vue'
 import input from './Input.vue'
 import modal from './Modal.vue'
 import navbar from './Navbar.vue'
 import panel from './Panel.vue'
 import popover from './Popover.vue'
+import retriever from './Retriever.vue'
 import select from './Select.vue'
 import tab from './Tab.vue'
 import tabGroup from './TabGroup.vue'
@@ -26,11 +28,13 @@ const VueStrap = {
   carousel,
   checkbox,
   dropdown,
+  dynamicPanel,
   input,
   modal,
   navbar,
   panel,
   popover,
+  retriever,
   select,
   tab,
   tabGroup,
