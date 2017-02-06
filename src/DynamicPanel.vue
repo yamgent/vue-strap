@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <panel :header="header" v-bind:is-open="isOpen" :expandable="expandable" :type="type">
+    <panel :header="header" v-bind:is-open="isOpen" :type="type" expandable>
       <retriever v-ref:retriever :src="src" delay></retriever>
     </panel>
   </div>
@@ -20,11 +20,6 @@ export default {
       type: String
     },
     isOpen: {
-      type: Boolean,
-      coerce: coerce.boolean,
-      default: null
-    },
-    expandable: {
       type: Boolean,
       coerce: coerce.boolean,
       default: null
