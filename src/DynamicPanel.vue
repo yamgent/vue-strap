@@ -1,19 +1,22 @@
 <template>
   <div class="wrapper">
     <panel :header="header" v-bind:is-open="isOpen" :type="type" expandable>
-      <retriever v-ref:retriever :src="src" delay></retriever>
+      <retriever v-ref:retriever :src="src" :fragment="fragment" delay></retriever>
     </panel>
   </div>
 </template>
 
 <script>
-import {coerce} from './utils/utils.js'
+import {coerce, getFragmentByHash} from './utils/utils.js'
 import retriever from './Retriever.vue'
 import panel from './Panel.vue'
 
 export default {
   props: {
     src: {
+      type: String
+    },
+    fragment: {
       type: String
     },
     header: {
@@ -32,6 +35,13 @@ export default {
   components: {
     panel,
     retriever
+  },
+  created() {
+    var hash = getFragmentByHash(this.src)
+    if (hash) {
+      this.fragment = hash
+      this.src = this.src.split('#')[0]
+    }
   },
   ready() {
     if (this.isOpen) {

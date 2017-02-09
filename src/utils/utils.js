@@ -108,6 +108,15 @@ export function delayer (fn, varTimer, ifNaN = 100) {
   }
 }
 
+export function getFragmentByHash(url) {
+  var type = url.split('#');
+  var hash = '';
+  if(type.length > 1) {
+    hash = type[1];
+  }
+  return hash;
+}
+
 // Fix a vue instance Lifecycle to vue 1/2 (just the basic elements, is not a real parser, so this work only if your code is compatible with both)
 export function VueFixer (vue) {
   var vue2 = !window.Vue || !window.Vue.partial
