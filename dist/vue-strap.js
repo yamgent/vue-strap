@@ -1775,6 +1775,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.getScrollBarWidth = getScrollBarWidth;
 	exports.translations = translations;
 	exports.delayer = delayer;
+	exports.getFragmentByHash = getFragmentByHash;
 	exports.VueFixer = VueFixer;
 	// coerce convert som types of data into another type
 	var coerce = exports.coerce = {
@@ -1926,6 +1927,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	      fn.apply(_this, args);
 	    }, toInt(varTimer) || toInt(this[varTimer]) || ifNaN);
 	  };
+	}
+	
+	function getFragmentByHash(url) {
+	  var type = url.split('#');
+	  var hash = '';
+	  if (type.length > 1) {
+	    hash = type[1];
+	  }
+	  return hash;
 	}
 	
 	// Fix a vue instance Lifecycle to vue 1/2 (just the basic elements, is not a real parser, so this work only if your code is compatible with both)
@@ -3665,15 +3675,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    src: {
 	      type: String
 	    },
+	    fragment: {
+	      type: String
+	    },
 	    header: {
 	      type: String
 	    },
 	    isOpen: {
-	      type: Boolean,
-	      coerce: _utils.coerce.boolean,
-	      default: null
-	    },
-	    expandable: {
 	      type: Boolean,
 	      coerce: _utils.coerce.boolean,
 	      default: null
@@ -3686,6 +3694,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	  components: {
 	    panel: _Panel2.default,
 	    retriever: _Retriever2.default
+	  },
+	  created: function created() {
+	    var hash = (0, _utils.getFragmentByHash)(this.src);
+	    if (hash) {
+	      this.fragment = hash;
+	      this.src = this.src.split('#')[0];
+	    }
 	  },
 	  ready: function ready() {
 	    var _this = this;
@@ -3704,8 +3719,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </script>
 	// <template>
 	//   <div class="wrapper">
-	//     <panel :header="header" v-bind:is-open="isOpen" :expandable="expandable" :type="type">
-	//       <retriever v-ref:retriever :src="src" delay></retriever>
+	//     <panel :header="header" v-bind:is-open="isOpen" :type="type" expandable>
+	//       <retriever v-ref:retriever :src="src" :fragment="fragment" delay></retriever>
 	//     </panel>
 	//   </div>
 	// </template>
@@ -3753,6 +3768,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    src: {
 	      type: String
 	    },
+	    fragment: {
+	      type: String // fragment identified (the '#' in URI)
+	    },
 	    delay: {
 	      type: Boolean,
 	      coerce: _utils.coerce.boolean,
@@ -3771,7 +3789,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return;
 	      }
 	      jQuery.get(this.src).done(function (response) {
-	        var element = jQuery(_this.$el).html(response);
+	        var result = response;
+	        if (_this.fragment) {
+	          var tempDom = jQuery('<temp>').append(jQuery.parseHTML(result));
+	          var appContainer = jQuery('#' + _this.fragment, tempDom);
+	          result = appContainer.html();
+	        }
+	        var element = jQuery(_this.$el).html(result);
 	        _this.$dispatch('retriever:fetched', element.get(0));
 	        _this._hasFetched = true;
 	      }).fail(function (error) {
@@ -3780,6 +3804,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  ready: function ready() {
+	    var hash = (0, _utils.getFragmentByHash)(this.src);
+	    if (hash) {
+	      this.fragment = hash;
+	      this.src = this.src.split('#')[0];
+	    }
 	    if (!this.src) {
 	      this.$el.innerHTML = '';
 	    } else if (!this.delay) {
@@ -14217,7 +14246,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 128 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"wrapper\">\n    <panel :header=\"header\" v-bind:is-open=\"isOpen\" :expandable=\"expandable\" :type=\"type\">\n      <retriever v-ref:retriever :src=\"src\" delay></retriever>\n    </panel>\n  </div>";
+	module.exports = "<div class=\"wrapper\">\n    <panel :header=\"header\" v-bind:is-open=\"isOpen\" :type=\"type\" expandable>\n      <retriever v-ref:retriever :src=\"src\" :fragment=\"fragment\" delay></retriever>\n    </panel>\n  </div>";
 
 /***/ },
 /* 129 */
