@@ -3,7 +3,7 @@
     <div :class="['panel-heading',{'accordion-toggle':canCollapse}]"
          @click.prevent="canCollapse && toggle()">
       <slot name="header">
-        <h4 class="panel-title">{{ header }}</h4>
+        <h4 class="panel-title">{{{ header }}}</h4>
       </slot>
     </div>
     <div class="panel-collapse"
