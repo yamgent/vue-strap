@@ -5,7 +5,7 @@
       <slot name="header">
         <div class="panel-title">{{{ header }}}</div>
       </slot>
-      <panel-switch v-show="canCollapse" v-bind:is-open="isOpen" @click.stop="expand()"></panel-switch>
+      <panel-switch v-show="canCollapse && !noSwitch" v-bind:is-open="isOpen" @click.stop="expand()"></panel-switch>
     </div>
     <div class="panel-collapse"
       v-el:panel
@@ -49,6 +49,11 @@ export default {
       type: Number,
       coerce: coerce.number,
       default: 0
+    },
+    noSwitch: {
+      type: Boolean,
+      coerce: coerce.boolean,
+      default: false
     }
   },
   computed: {

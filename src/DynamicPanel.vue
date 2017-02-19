@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <panel :header="header" v-bind:is-open="isOpen" :type="type" expandable>
+    <panel :header="header" v-bind:is-open="isOpen" :type="type" expandable no-switch>
       <retriever v-ref:retriever :src="src" :fragment="fragment" delay></retriever>
     </panel>
   </div>
