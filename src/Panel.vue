@@ -3,8 +3,9 @@
     <div :class="['panel-heading',{'accordion-toggle':canCollapse}]"
          @click.prevent="canCollapse && toggle()">
       <slot name="header">
-        <h4 class="panel-title">{{{ header }}}</h4>
+        <div class="panel-title">{{{ header }}}</div>
       </slot>
+      <panel-switch v-show="canCollapse" v-bind:is-open="isOpen" @click.stop="expand()"></panel-switch>
     </div>
     <div class="panel-collapse"
       v-el:panel
@@ -20,8 +21,12 @@
 
 <script>
 import {coerce} from './utils/utils.js'
+import panelSwitch from './PanelSwitch.vue'
 
 export default {
+  components: {
+    panelSwitch
+  },
   props: {
     header: {
       type: String
@@ -39,6 +44,11 @@ export default {
     type: {
       type: String,
       default : null
+    },
+    ctrlLvl: {
+      type: Number,
+      coerce: coerce.number,
+      default: 0
     }
   },
   computed: {
@@ -59,6 +69,33 @@ export default {
     toggle () {
       this.isOpen = !this.isOpen
       this.$dispatch('isOpenEvent', this, this.isOpen)
+    },
+    expand() {
+      if (this.isOpen) {
+        // Ask children to collapse
+        this.$broadcast('panel:collapse', this.ctrlLvl)
+      } else {
+        // Expand children
+        this.$broadcast('panel:expand', this.ctrlLvl)
+      }
+      this.isOpen = !this.isOpen
+    },
+    expandCollapseHandler (isExpand, level) {
+      if (level > 0) {
+        this.canCollapse && (this.isOpen = isExpand)
+        this.$broadcast('panel:' + (isExpand ? 'expand' : 'collapse'), level - 1)
+      } else if (level === -1) {
+        this.canCollapse && (this.isOpen = isExpand)
+        this.$broadcast('panel:' + (isExpand ? 'expand' : 'collapse'), -1)
+      }
+    }
+  },
+  events: {
+    'panel:expand': function (level) {
+      this.expandCollapseHandler(true, level)
+    },
+    'panel:collapse': function (level) {
+      this.expandCollapseHandler(false, level)
     }
   },
   transitions: {
@@ -84,6 +121,10 @@ export default {
 </script>
 
 <style>
+.panel-title {
+  font-size: 1em;
+  display: inline-block;
+}
 .accordion-toggle {
   cursor: pointer;
 }
