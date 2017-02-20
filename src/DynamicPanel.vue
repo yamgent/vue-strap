@@ -53,6 +53,14 @@ export default {
         this.$refs.retriever.fetch()
       }
     })
-  }
+  },
+  events: {
+    'panel:expand': function (level) {
+      // Consume and do nothing
+    },
+    'panel:collapse': function (level) {
+      // Consume and do nothing
+    }
+  },
 }
 </script>
