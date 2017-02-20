@@ -2,10 +2,14 @@
   <div :class="['panel', panelType, {'expandable-panel': isExpandablePanel}]">
     <div :class="['panel-heading',{'accordion-toggle':canCollapse}]"
          @click.prevent="canCollapse && toggle()">
-      <slot name="header">
-        <div class="panel-title">{{{ header }}}</div>
-      </slot>
-      <panel-switch v-show="canCollapse && !noSwitch" v-bind:is-open="isOpen" @click.stop="expand()"></panel-switch>
+      <div class="header-wrapper">
+        <slot name="header">
+          <div class="panel-title">{{{ header }}}</div>
+        </slot>
+      </div>
+      <div class="button-wrapper">
+        <panel-switch v-show="canCollapse && !noSwitch" v-bind:is-open="isOpen" @click.stop="expand()"></panel-switch>
+      </div>
     </div>
     <div class="panel-collapse"
       v-el:panel
@@ -126,9 +130,21 @@ export default {
 </script>
 
 <style>
+.panel-heading {
+  width: 100%;
+}
 .panel-title {
   font-size: 1em;
   display: inline-block;
+}
+.header-wrapper {
+  display: inline-block;
+  width: 80%;
+}
+.button-wrapper {
+  float: right;
+  display: inline-block;
+  width: 20%;
 }
 .accordion-toggle {
   cursor: pointer;
