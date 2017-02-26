@@ -14,7 +14,6 @@
     <div class="panel-collapse"
       v-el:panel
       v-show="isOpen"
-      transition="collapse"
     >
       <div class="panel-body">
         <slot></slot>
@@ -71,7 +70,7 @@ export default {
       return this.inAccordion || this.expandable
     },
     panelType () {
-      return 'panel-' + (this.type || (this.$parent && this.$parent.type) || 'default')
+      return 'panel panel-' + (this.type || (this.$parent && this.$parent.type) || 'default')
     }
   },
   methods: {
@@ -107,20 +106,6 @@ export default {
       this.expandCollapseHandler(false, level)
     }
   },
-  transitions: {
-    collapse: {
-      afterEnter (el) {
-        el.style.maxHeight = ''
-        el.style.overflow = ''
-      },
-      beforeLeave (el) {
-        el.style.maxHeight = el.offsetHeight + 'px'
-        el.style.overflow = 'hidden'
-        // Recalculate DOM before the class gets added.
-        return el.offsetHeight
-      }
-    }
-  },
   created () {
     if (this.isOpen === null) {
       this.isOpen = !this.canCollapse
@@ -148,12 +133,6 @@ export default {
 }
 .accordion-toggle {
   cursor: pointer;
-}
-.collapse-transition {
-  transition: max-height .5s ease;
-}
-.collapse-enter, .collapse-leave {
-  max-height: 0!important;
 }
 .expandable-panel {
   margin-bottom: 0;
