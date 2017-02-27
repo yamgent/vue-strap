@@ -24,6 +24,7 @@
         <modal-docs></modal-docs>
         <morph-docs></morph-docs>
         <navbar-docs></navbar-docs>
+        <question-docs></question-docs>
         <popover-docs></popover-docs>
         <retriever-docs></retriever-docs>
         <tabs-docs></tabs-docs>
@@ -65,6 +66,7 @@ import inputDocs from './example/inputDocs.vue'
 import modalDocs from './example/modalDocs.vue'
 import morphDocs from './example/morphDocs.vue'
 import navbarDocs from './example/navbarDocs.vue'
+import questionDocs from './example/questionDocs.vue'
 import popoverDocs from './example/popoverDocs.vue'
 import retrieverDocs from './example/retrieverDocs.vue'
 import selectDocs from './example/selectDocs.vue'
@@ -86,6 +88,7 @@ export default {
     modalDocs,
     morphDocs,
     navbarDocs,
+    questionDocs,
     popoverDocs,
     retrieverDocs,
     selectDocs,
