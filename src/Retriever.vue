@@ -27,6 +27,9 @@ export default {
   },
   methods: {
     fetch() {
+      if (!this.src) {
+        return;
+      }
       if (this._hasFetched) {
         return;
       }
@@ -38,24 +41,33 @@ export default {
             var appContainer = jQuery('#' + this.fragment, tempDom);
             result = appContainer.html();
           }
+          this._hasFetched = true
+          // result is empty / undefined
+          if (result == void(0) && this.fragment) {
+            this.$el.innerHTML = `<strong>Error</strong>: Failed to retrieve page fragment: ${this.src}#${this.fragment}`
+            return
+          }
           var element = jQuery(this.$el).html(result)
           this.$dispatch('retriever:fetched', element.get(0))
-          this._hasFetched = true
         })
         .fail((error) => {
           console.error(error.responseText)
+          this.$el.innerHTML = `<strong>Error</strong>: Failed to retrieve content from source: <em>${this.src}</em>`
         });
     }
   },
   ready() {
-    var hash = getFragmentByHash(this.src)
-    if (hash) {
-      this.fragment = hash
-      this.src = this.src.split('#')[0];
-    }
     if (!this.src) {
       this.$el.innerHTML = ''
-    } else if (!this.delay) {
+    } else {
+      var hash = getFragmentByHash(this.src)
+      if (hash) {
+        this.fragment = hash
+        this.src = this.src.split('#')[0];
+      }
+    }
+
+    if (!this.delay) {
       this.fetch();
     }
   }
