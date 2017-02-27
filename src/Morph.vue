@@ -11,7 +11,12 @@
         <div class="morph-details"
              v-el:details
              v-show="isOpen">
-            <Panel :header="title">
+            <dynamic-panel :header="title" :src="src" :is-open="isOpen" v-if="isDynamic">
+                <button type="button" class="close-button btn btn-default" slot="button" @click.stop="close()">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </button>
+            </dynamic-panel>
+            <Panel :header="title" v-else>
                 <button type="button" class="close-button btn btn-default" slot="button" @click.stop="close()">
                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                 </button>
@@ -24,10 +29,12 @@
 <script>
   import {coerce} from './utils/utils.js'
   import panel from './Panel.vue'
+  import dynamicPanel from './DynamicPanel.vue'
 
   export default {
     components: {
-      panel
+      panel,
+      dynamicPanel
     },
     props: {
       title: {
@@ -38,8 +45,15 @@
         coerce: coerce.boolean,
         default: false
       },
+      src: {
+        type: String
+      }
     },
-    computed: {},
+    computed: {
+      isDynamic() {
+        return !!this.src;
+      }
+    },
     methods: {
       expand() {
         this.isOpen = true;
@@ -61,6 +75,10 @@
     .morph-expanded {
         display: block;
         margin-top: 10px;
+    }
+
+    .morph-details > .expandable-panel {
+        margin-bottom: 20px!important;
     }
 
     .close-button {
