@@ -11,6 +11,7 @@ import input from './Input.vue'
 import modal from './Modal.vue'
 import morph from './Morph.vue'
 import navbar from './Navbar.vue'
+import question from './Question.vue'
 import panel from './Panel.vue'
 import popover from './Popover.vue'
 import retriever from './Retriever.vue'
@@ -34,6 +35,7 @@ const VueStrap = {
   modal,
   morph,
   navbar,
+  question,
   panel,
   popover,
   retriever,
