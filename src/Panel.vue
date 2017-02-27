@@ -78,7 +78,6 @@ export default {
   methods: {
     toggle () {
       this.isOpen = !this.isOpen
-      this.$dispatch('isOpenEvent', this, this.isOpen)
     },
     expand() {
       if (this.isOpen) {
@@ -98,6 +97,11 @@ export default {
         this.canCollapse && (this.isOpen = isExpand)
         this.$broadcast('panel:' + (isExpand ? 'expand' : 'collapse'), -1)
       }
+    }
+  },
+  watch: {
+    'isOpen': function (val, oldVal) {
+      this.$dispatch('isOpenEvent', this, val)
     }
   },
   events: {
@@ -137,7 +141,7 @@ export default {
   cursor: pointer;
 }
 .expandable-panel {
-  margin-bottom: 0;
+  margin-bottom: 0!important;
 }
 .expandable-panel + .expandable-panel {
   margin-top: 5px;

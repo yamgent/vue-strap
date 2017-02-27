@@ -21,13 +21,15 @@ export default {
   },
   created () {
     this._isAccordion = true
-    this.$on('isOpenEvent', (child) => {
-      if (this.oneAtAtime) {
-        this.$children.forEach((item) => {
-          if (child !== item) {
-            item.isOpen = false
-          }
-        })
+    this.$on('isOpenEvent', (child, isOpen) => {
+      if (isOpen) {
+        if (this.oneAtAtime) {
+          this.$children.forEach((item) => {
+            if (child !== item) {
+              item.isOpen = false
+            }
+          })
+        }
       }
     })
   }
