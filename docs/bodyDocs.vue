@@ -22,6 +22,7 @@
         <carousel-docs></carousel-docs>
         <dynamic-panel-docs></dynamic-panel-docs>
         <modal-docs></modal-docs>
+        <morph-docs></morph-docs>
         <navbar-docs></navbar-docs>
         <popover-docs></popover-docs>
         <retriever-docs></retriever-docs>
@@ -62,6 +63,7 @@ import dynamicPanelDocs from './example/dynamicPanelDocs.vue'
 import container from './example/container.vue'
 import inputDocs from './example/inputDocs.vue'
 import modalDocs from './example/modalDocs.vue'
+import morphDocs from './example/morphDocs.vue'
 import navbarDocs from './example/navbarDocs.vue'
 import popoverDocs from './example/popoverDocs.vue'
 import retrieverDocs from './example/retrieverDocs.vue'
@@ -82,6 +84,7 @@ export default {
     container,
     dynamicPanelDocs,
     modalDocs,
+    morphDocs,
     navbarDocs,
     popoverDocs,
     retrieverDocs,

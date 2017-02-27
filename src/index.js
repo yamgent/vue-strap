@@ -9,6 +9,7 @@ import dropdown from './Dropdown.vue'
 import dynamicPanel from './DynamicPanel.vue'
 import input from './Input.vue'
 import modal from './Modal.vue'
+import morph from './Morph.vue'
 import navbar from './Navbar.vue'
 import panel from './Panel.vue'
 import popover from './Popover.vue'
@@ -31,6 +32,7 @@ const VueStrap = {
   dynamicPanel,
   input,
   modal,
+  morph,
   navbar,
   panel,
   popover,

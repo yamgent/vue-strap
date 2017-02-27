@@ -8,7 +8,9 @@
         </slot>
       </div>
       <div class="button-wrapper">
-        <panel-switch v-show="canCollapse && !noSwitch" v-bind:is-open="isOpen" @click.stop="expand()"></panel-switch>
+        <slot name="button">
+          <panel-switch v-show="canCollapse && !noSwitch" v-bind:is-open="isOpen" @click.stop="expand()"></panel-switch>
+        </slot>
       </div>
     </div>
     <div class="panel-collapse"
