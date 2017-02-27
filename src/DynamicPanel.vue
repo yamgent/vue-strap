@@ -1,9 +1,8 @@
 <template>
-  <div class="wrapper">
-    <panel :header="header" v-bind:is-open="isOpen" :type="type" expandable no-switch>
-      <retriever v-ref:retriever :src="src" :fragment="fragment" delay></retriever>
-    </panel>
-  </div>
+  <panel :header="header" :is-open="isOpen" :type="type" expandable no-switch>
+    <slot name="button" slot="button"></slot>
+    <retriever v-ref:retriever :src="src" :fragment="fragment" delay></retriever>
+  </panel>
 </template>
 
 <script>
@@ -37,10 +36,12 @@ export default {
     retriever
   },
   created() {
-    var hash = getFragmentByHash(this.src)
-    if (hash) {
-      this.fragment = hash
-      this.src = this.src.split('#')[0]
+    if (this.src) {
+      var hash = getFragmentByHash(this.src)
+      if (hash) {
+        this.fragment = hash
+        this.src = this.src.split('#')[0]
+      }
     }
   },
   ready() {
