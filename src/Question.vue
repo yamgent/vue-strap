@@ -1,7 +1,12 @@
 <template>
     <div class="question-wrapper">
         <div class="body-wrapper">
-            <slot name="body"></slot>
+            <!-- Default slot is question body -->
+            <slot></slot>
+            <div v-if="hasInput" class="textarea-container">
+                <div><strong>You can write your answer in the box below.</strong></div>
+                <textarea class="form-control question-input" rows="3"></textarea>
+            </div>
         </div>
         <accordion>
             <panel header="Hint" expandable>
@@ -25,9 +30,22 @@
       panel,
       morph,
       accordion
+    },
+    props: {
+      hasInput: {
+        type: Boolean,
+        coerce: coerce.boolean,
+        default: false
+      }
     }
   }
 </script>
 
 <style>
+    .textarea-container {
+        margin: 8px 0;
+    }
+    .textarea-container > textarea {
+        margin: 4px 0;
+    }
 </style>

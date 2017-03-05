@@ -5,9 +5,7 @@
         </p>
         <div class="bs-example">
             <Question>
-                <div slot="body">
-                    Body
-                </div>
+                Body
                 <div slot="hint">
                     Hint
                 </div>
@@ -23,9 +21,7 @@
         <div class="bs-example">
             <morph title="Review question">
                 <Question>
-                    <div slot="body">
-                        Body
-                    </div>
+                    Body
                     <div slot="hint">
                         Hint
                     </div>
@@ -36,13 +32,25 @@
             </morph>
             <morph title="Remote question" src="/docs/question.html"></morph>
         </div>
+        <p>
+            Use <code>has-input</code> attribute to add an input box for user to enter their answer.
+        </p>
+        <div class="bs-example">
+            <Question has-input>
+                Body
+                <div slot="hint">
+                    Hint
+                </div>
+                <div slot="answer">
+                    Answer
+                </div>
+            </Question>
+        </div>
 
         <doc-code language="markup">
             Use alone
             <Question>
-                <div slot="body">
-                    Body
-                </div>
+                Body
                 <div slot="hint">
                     Hint
                 </div>
@@ -54,9 +62,7 @@
             Use inline with morph
             <morph title="Review question">
                 <Question>
-                    <div slot="body">
-                        Body
-                    </div>
+                    Body
                     <div slot="hint">
                         Hint
                     </div>
