@@ -20,7 +20,9 @@ import tab from './Tab.vue'
 import tabGroup from './TabGroup.vue'
 import tabset from './Tabset.vue'
 import tooltip from './Tooltip.vue'
-import closeable from './directives/Closable'
+import closeable from './directives/Closeable'
+import pic from './Pic.vue'
+import tipBox from './TipBox.vue'
 
 const VueStrap = {
   $,
@@ -44,8 +46,10 @@ const VueStrap = {
   tab,
   tabGroup,
   tabset,
+  tipBox,
   tooltip,
-  closeable
+  closeable,
+  pic
 }
 
 module.exports = VueStrap

@@ -5,13 +5,11 @@ require('./js/showLanguage')
 
 import $ from 'src/utils/NodeList.js'
 import bodyDocs from './bodyDocs.vue'
-import Closable from 'src/directives/Closable.js';
-import Float from 'src/directives/Float.js';
+import Closeable from 'src/directives/Closeable.js';
 
 Vue.config.devtools = true
 Vue.config.debug = true
-Vue.directive('closeable', Closable);
-Vue.directive('float', Float);
+Vue.directive('closeable', Closeable)
 new Vue({
   el: 'body',
   components: {

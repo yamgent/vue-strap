@@ -21,6 +21,7 @@
         <aside-docs></aside-docs>
         <carousel-docs></carousel-docs>
         <dynamic-panel-docs></dynamic-panel-docs>
+        <image-docs></image-docs>
         <modal-docs></modal-docs>
         <morph-docs></morph-docs>
         <navbar-docs></navbar-docs>
@@ -28,6 +29,7 @@
         <popover-docs></popover-docs>
         <retriever-docs></retriever-docs>
         <tabs-docs></tabs-docs>
+        <tip-box-docs></tip-box-docs>
         <tooltip-docs></tooltip-docs>
       </div>
       <div class="col-md-3">
@@ -72,6 +74,8 @@ import retrieverDocs from './example/retrieverDocs.vue'
 import selectDocs from './example/selectDocs.vue'
 import tabsDocs from './example/tabsDocs.vue'
 import tooltipDocs from './example/tooltipDocs.vue'
+import imageDocs from './example/imageDocs.vue'
+import tipBoxDocs from './example/tipBoxDocs.vue'
 
 export default {
   components: {
@@ -93,7 +97,9 @@ export default {
     retrieverDocs,
     selectDocs,
     tabsDocs,
-    tooltipDocs
+    tooltipDocs,
+    imageDocs,
+    tipBoxDocs
   },
   computed: {
     local () { return location.hostname === 'localhost' }

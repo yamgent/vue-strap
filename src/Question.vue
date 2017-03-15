@@ -10,7 +10,9 @@
         </div>
         <accordion>
             <panel header="Hint" expandable>
-                <slot name="hint"></slot>
+                <slot name="hint">
+                    No hint is available for this question.
+                </slot>
             </panel>
             <panel header="Answer" expandable>
                 <slot name="answer"></slot>
