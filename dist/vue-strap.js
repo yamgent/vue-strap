@@ -14172,7 +14172,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, ".panel-heading {\n  width: 100%;\n}\n.panel-title {\n  font-size: 1em;\n  display: inline-block;\n}\n.header-wrapper {\n  display: inline-block;\n  width: 80%;\n}\n.button-wrapper {\n  float: right;\n  display: inline-block;\n  width: 20%;\n}\n.accordion-toggle {\n  cursor: pointer;\n}\n.expandable-panel {\n  margin-bottom: 0!important;\n}\n.expandable-panel + .expandable-panel {\n  margin-top: 5px;\n}", ""]);
+	exports.push([module.id, ".panel-heading {\n  width: 100%;\n}\n.panel-title {\n  font-size: 1em;\n}\n.header-wrapper {\n  display: inline-block;\n  width: 80%;\n}\n.button-wrapper {\n  float: right;\n  display: inline-block;\n  width: 20%;\n}\n.accordion-toggle {\n  cursor: pointer;\n}\n.expandable-panel {\n  margin-bottom: 0!important;\n}\n.expandable-panel + .expandable-panel {\n  margin-top: 5px;\n}\n\n.panel-seamless {\n  padding: 0;\n}\n\n.caret.caret-collapse {\n  border-left: 4px dashed;\n  border-top: 4px solid transparent;\n  border-bottom: 4px solid transparent;\n  border-right: none;\n}\n\n.panel.panel-seamless {\n  box-shadow: none;\n  border: none;\n}\n\n.panel-seamless .panel-heading {\n  padding: 0;\n}\n.panel-seamless .panel-body {\n  padding: 10px 0;\n}", ""]);
 	
 	// exports
 
@@ -14200,13 +14200,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	//     <div :class="['panel-heading',{'accordion-toggle':canCollapse}]"
 	//          @click.prevent="canCollapse && toggle()">
 	//       <div class="header-wrapper">
+	//         <span :class="['caret', {'caret-collapse': !isOpen}]" v-show="showCaret"></span>
 	//         <slot name="header">
-	//           <div class="panel-title">{{{ header }}}</div>
+	//           <span class="panel-title">{{{ header }}}</span>
 	//         </slot>
 	//       </div>
 	//       <div class="button-wrapper">
 	//         <slot name="button">
-	//           <panel-switch v-show="canCollapse && !noSwitch" v-bind:is-open="isOpen" @click.stop="expand()"></panel-switch>
+	//           <panel-switch v-show="canCollapse && !noSwitch && !showCaret" v-bind:is-open="isOpen" @click.stop="expand()"></panel-switch>
 	//         </slot>
 	//       </div>
 	//     </div>
@@ -14265,6 +14266,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    canCollapse: function canCollapse() {
 	      return this.inAccordion || this.expandable;
 	    },
+	    showCaret: function showCaret() {
+	      return this.type == 'seamless';
+	    },
 	    panelType: function panelType() {
 	      return 'panel panel-' + (this.type || this.$parent && this.$parent.type || 'default');
 	    }
@@ -14320,7 +14324,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	// }
 	// .panel-title {
 	//   font-size: 1em;
-	//   display: inline-block;
 	// }
 	// .header-wrapper {
 	//   display: inline-block;
@@ -14339,6 +14342,29 @@ return /******/ (function(modules) { // webpackBootstrap
 	// }
 	// .expandable-panel + .expandable-panel {
 	//   margin-top: 5px;
+	// }
+	
+	// .panel-seamless {
+	//   padding: 0;
+	// }
+	
+	// .caret.caret-collapse {
+	//   border-left: 4px dashed;
+	//   border-top: 4px solid transparent;
+	//   border-bottom: 4px solid transparent;
+	//   border-right: none;
+	// }
+	
+	// .panel.panel-seamless {
+	//   box-shadow: none;
+	//   border: none;
+	// }
+	
+	// .panel-seamless .panel-heading {
+	//   padding: 0;
+	// }
+	// .panel-seamless .panel-body {
+	//   padding: 10px 0;
 	// }
 	// </style>
 
@@ -14467,7 +14493,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 137 */
 /***/ function(module, exports) {
 
-	module.exports = "<div :class=\"['panel', panelType, {'expandable-panel': isExpandablePanel}]\">\n    <div :class=\"['panel-heading',{'accordion-toggle':canCollapse}]\"\n         @click.prevent=\"canCollapse && toggle()\">\n      <div class=\"header-wrapper\">\n        <slot name=\"header\">\n          <div class=\"panel-title\">{{{ header }}}</div>\n        </slot>\n      </div>\n      <div class=\"button-wrapper\">\n        <slot name=\"button\">\n          <panel-switch v-show=\"canCollapse && !noSwitch\" v-bind:is-open=\"isOpen\" @click.stop=\"expand()\"></panel-switch>\n        </slot>\n      </div>\n    </div>\n    <div class=\"panel-collapse\"\n      v-el:panel\n      v-show=\"isOpen\"\n    >\n      <div class=\"panel-body\">\n        <slot></slot>\n      </div>\n    </div>\n  </div>";
+	module.exports = "<div :class=\"['panel', panelType, {'expandable-panel': isExpandablePanel}]\">\n    <div :class=\"['panel-heading',{'accordion-toggle':canCollapse}]\"\n         @click.prevent=\"canCollapse && toggle()\">\n      <div class=\"header-wrapper\">\n        <span :class=\"['caret', {'caret-collapse': !isOpen}]\" v-show=\"showCaret\"></span>\n        <slot name=\"header\">\n          <span class=\"panel-title\">{{{ header }}}</span>\n        </slot>\n      </div>\n      <div class=\"button-wrapper\">\n        <slot name=\"button\">\n          <panel-switch v-show=\"canCollapse && !noSwitch && !showCaret\" v-bind:is-open=\"isOpen\" @click.stop=\"expand()\"></panel-switch>\n        </slot>\n      </div>\n    </div>\n    <div class=\"panel-collapse\"\n      v-el:panel\n      v-show=\"isOpen\"\n    >\n      <div class=\"panel-body\">\n        <slot></slot>\n      </div>\n    </div>\n  </div>";
 
 /***/ },
 /* 138 */

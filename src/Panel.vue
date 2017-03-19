@@ -3,13 +3,14 @@
     <div :class="['panel-heading',{'accordion-toggle':canCollapse}]"
          @click.prevent="canCollapse && toggle()">
       <div class="header-wrapper">
+        <span :class="['caret', {'caret-collapse': !isOpen}]" v-show="showCaret"></span>
         <slot name="header">
-          <div class="panel-title">{{{ header }}}</div>
+          <span class="panel-title">{{{ header }}}</span>
         </slot>
       </div>
       <div class="button-wrapper">
         <slot name="button">
-          <panel-switch v-show="canCollapse && !noSwitch" v-bind:is-open="isOpen" @click.stop="expand()"></panel-switch>
+          <panel-switch v-show="canCollapse && !noSwitch && !showCaret" v-bind:is-open="isOpen" @click.stop="expand()"></panel-switch>
         </slot>
       </div>
     </div>
@@ -71,6 +72,9 @@ export default {
     canCollapse () {
       return this.inAccordion || this.expandable
     },
+    showCaret () {
+      return this.type == 'seamless';
+    },
     panelType () {
       return 'panel panel-' + (this.type || (this.$parent && this.$parent.type) || 'default')
     }
@@ -126,7 +130,6 @@ export default {
 }
 .panel-title {
   font-size: 1em;
-  display: inline-block;
 }
 .header-wrapper {
   display: inline-block;
@@ -145,5 +148,28 @@ export default {
 }
 .expandable-panel + .expandable-panel {
   margin-top: 5px;
+}
+
+.panel-seamless {
+  padding: 0;
+}
+
+.caret.caret-collapse {
+  border-left: 4px dashed;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-right: none;
+}
+
+.panel.panel-seamless {
+  box-shadow: none;
+  border: none;
+}
+
+.panel-seamless .panel-heading {
+  padding: 0;
+}
+.panel-seamless .panel-body {
+  padding: 10px 0;
 }
 </style>

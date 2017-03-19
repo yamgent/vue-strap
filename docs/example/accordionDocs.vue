@@ -6,7 +6,7 @@
       <p><v-select :options="types" clear-button :value.sync="first" placeholder="First element type"></v-select></p>
       <accordion :one-at-atime="checked" :type="selected">
         <panel is-open :type="first=='panel'?null:first">
-          <strong slot="header"><u>Panel #1</u></strong>
+          <strong slot="header"><u>[20 minutes] Part 1 - Software engineering rocks! : Introduction to Software Engineering</u></strong>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -38,7 +38,27 @@
           cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </panel>
+        <panel header="[20 minutes] Part 1 - Software engineering rocks! : Introduction to Software Engineering">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </panel>
       </accordion>
+
+      Panel with Expand Switch
+
+      <panel header="Parent" expandable ctrl-lvl="-1">
+        <panel header="Child1" expandable>
+          <panel header="Child2">
+            <panel header="Child3" expandable>
+              Parent 1
+            </panel>
+          </panel>
+        </panel>
+      </panel>
     </div>
     <doc-code language="markup">
       <accordion :one-at-atime="checked" type="info">
@@ -57,6 +77,24 @@
         </panel>
       </accordion>
     </doc-code>
+
+    <div class="bs-example">
+      Seamless panel type
+
+      <panel header="Seamless - Click to expand" expandable type="seamless">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius
+        eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur
+        ullam voluptates!
+      </panel>
+    </div>
+    <doc-code language="markup">
+      <panel header="Click to expand" expandable type="seamless">
+        ...
+      </panel>
+
+    </doc-code>
+
+
     <doc-table>
       <div>
         <p>type</p>
