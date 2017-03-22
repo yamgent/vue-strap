@@ -94,6 +94,20 @@
 
     </doc-code>
 
+    <div class="bs-example">
+      Use markdown in the header (only inline level markdown are supported)
+
+      <panel header="**haha** :rocket: ![](https://vuejs.org/images/logo.png =25x25)" expandable type="seamless">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequatur consequuntur culpa enim, explicabo impedit iure maxime omnis quas recusandae sint suscipit? Accusamus cumque facere laboriosam magnam magni numquam reprehenderit.
+      </panel>
+    </div>
+    <doc-code language="markup">
+      <panel header="**haha** :rocket: ![](https://vuejs.org/images/logo.png =25x25)" expandable type="seamless">
+        ...
+      </panel>
+
+    </doc-code>
+
 
     <doc-table>
       <div>

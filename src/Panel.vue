@@ -5,7 +5,7 @@
       <div class="header-wrapper">
         <span :class="['caret', {'caret-collapse': !isOpen}]" v-show="showCaret"></span>
         <slot name="header">
-          <span class="panel-title">{{{ header }}}</span>
+          <span class="panel-title">{{{ headerContent }}}</span>
         </slot>
       </div>
       <div class="button-wrapper">
@@ -27,6 +27,7 @@
 
 <script>
 import {coerce} from './utils/utils.js'
+import md from './utils/markdown.js'
 import panelSwitch from './PanelSwitch.vue'
 
 export default {
@@ -77,6 +78,9 @@ export default {
     },
     panelType () {
       return 'panel panel-' + (this.type || (this.$parent && this.$parent.type) || 'default')
+    },
+    headerContent () {
+      return md.renderInline(this.header);
     }
   },
   methods: {

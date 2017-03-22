@@ -16,14 +16,20 @@
                     Content of Q3
                 </div>
             </morph>
-            <morph title="Q4">
+            <morph title="**Q4** :cat:">
                 <div>
                     Content of Q4
                 </div>
             </morph>
         </div>
-        <!--<doc-code language="markup">-->
-        <!--</doc-code>-->
+        <doc-code language="markup">
+            Markdown is supported for title.
+            <morph title="**Q4** :cat:">
+                <div>
+                    Content of Q4
+                </div>
+            </morph>
+        </doc-code>
         <doc-table>
 
         </doc-table>

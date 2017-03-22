@@ -4,7 +4,7 @@
              @click.prevent="expand()"
              v-show="!isOpen">
             <slot name="display">
-                <button class="morph-display-button btn btn-default">{{{title}}}</button>
+                <button class="morph-display-button btn btn-default">{{{titleContent}}}</button>
             </slot>
         </div>
 
@@ -28,6 +28,7 @@
 
 <script>
   import {coerce} from './utils/utils.js'
+  import md from './utils/markdown.js'
   import panel from './Panel.vue'
   import dynamicPanel from './DynamicPanel.vue'
 
@@ -52,6 +53,9 @@
     computed: {
       isDynamic() {
         return !!this.src;
+      },
+      titleContent () {
+        return md.renderInline(this.title)
       }
     },
     methods: {
