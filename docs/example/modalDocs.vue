@@ -3,50 +3,42 @@
     <div class="bs-example">
       <button class="btn btn-default" v-show-modal="modal1">Show modal</button>
       <modal title="==Modal title==" name="modal1">
-        <div slot="modal-body" class="modal-body">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
           cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </modal>
       <button class="btn btn-success" @click="fadeModal = true">Fade modal</button>
       <modal title="Fade Modal" :show.sync="fadeModal" effect="fade" width="800">
-        <div slot="modal-body" class="modal-body">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
           cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
       </modal>
       <button class="btn btn-primary" @click="zoomModal = true">Zoom modal</button>
       <modal title="Zoom Modal" :show.sync="zoomModal" effect="zoom" width="400">
-        <div slot="modal-body" class="modal-body">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
           cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
       </modal>
       <button class="btn btn-default" @click="showCustomModal = true">Show custom modal</button>
       <modal :show.sync="showCustomModal" effect="fade" width="50%">
         <div slot="modal-header" class="modal-header">
           <h4 class="modal-title"><i>Custom</i> <code>Modal</code> <b>Title</b></h4>
         </div>
-        <div slot="modal-body" class="modal-body">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
           cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </div>
         <div slot="modal-footer" class="modal-footer">
           <button type="button" class="btn btn-default" @click='showCustomModal = false'>Exit</button>
           <button type="button" class="btn btn-success" @click='showCustomModal = false'>Custom Save</button>
@@ -54,7 +46,6 @@
       </modal>
       <button class="btn btn-warning" @click="largeModal = true">Large modal</button>
       <modal title="Large Modal" :show.sync="largeModal" large>
-        <div slot="modal-body" class="modal-body">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -73,16 +64,13 @@
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
           cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
       </modal>
       <button class="btn btn-danger" @click="smallModal = true">Small modal</button>
       <modal title="Small Modal" :show.sync="smallModal" small>
-        <div slot="modal-body" class="modal-body">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat.
-        </div>
       </modal>
     </div>
     <doc-code language="markup">
@@ -90,15 +78,15 @@
         <div slot="modal-header" class="modal-header">
           <h4 class="modal-title">Modal title</h4>
         </div>
-        <div slot="modal-body" class="modal-body">...</div>
+        ...
       </modal>
 
       <modal title="Fade Modal" :show.sync="..." effect="fade" width="800">
-        <div slot="modal-body" class="modal-body">...</div>
+        ...
       </modal>
 
       <modal title="Zoom Modal" :show.sync="..." effect="zoom" width="400">
-        <div slot="modal-body" class="modal-body">...</div>
+        ...
       </modal>
 
       <modal :show.sync="showCustomModal" effect="fade" width="400">
@@ -107,17 +95,19 @@
             <i>Custom</i> <code>Modal</code> <b>Title</b>
           </h4>
         </div>
-        <div slot="modal-body" class="modal-body">...</div>
+
+        ...
+
         <div slot="modal-footer" class="modal-footer">
           <button type="button" class="btn btn-default" @click='showCustomModal = false'>Exit</button>
           <button type="button" class="btn btn-success" @click='showCustomModal = false'>Custom Save</button>
         </div>
       </modal>
       <modal title="Large Modal" large :show.sync="...">
-        <div slot="modal-body" class="modal-body">...</div>
+        ...
       </modal>
       <modal title="Small Modal" small :show.sync="...">
-        <div slot="modal-body" class="modal-body">...</div>
+        ...
       </modal>
   </doc-code>
   <doc-table>

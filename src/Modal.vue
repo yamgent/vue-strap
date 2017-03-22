@@ -18,9 +18,9 @@
             </h4>
           </div>
         </slot>
-        <slot name="modal-body">
-          <div class="modal-body"></div>
-        </slot>
+          <div class="modal-body">
+              <slot></slot>
+          </div>
         <slot name="modal-footer">
           <div class="modal-footer" v-if="showOkButton">
             <button type="button" class="btn btn-primary" v-if="showOkButton" @click="close">{{ okText }}</button>
