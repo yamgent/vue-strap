@@ -4,8 +4,7 @@
     'modal':true,
     'fade':effect === 'fade',
     'zoom':effect === 'zoom'
-    }"
-    >
+    }">
     <div v-bind:class="{'modal-dialog':true,'modal-lg':large,'modal-sm':small}" role="document"
       v-bind:style="{width: optionalWidth}">
       <div class="modal-content">
@@ -14,7 +13,7 @@
             <button type="button" class="close" @click="close"><span>&times;</span></button>
             <h4 class="modal-title">
               <slot name="title">
-                {{title}}
+                {{{titleRendered}}}
               </slot>
             </h4>
           </div>
@@ -23,9 +22,8 @@
           <div class="modal-body"></div>
         </slot>
         <slot name="modal-footer">
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" @click="close">{{ cancelText }}</button>
-            <button type="button" class="btn btn-primary" @click="callback">{{ okText }}</button>
+          <div class="modal-footer" v-if="showOkButton">
+            <button type="button" class="btn btn-primary" v-if="showOkButton" @click="close">{{ okText }}</button>
           </div>
         </slot>
       </div>
@@ -36,16 +34,13 @@
 <script>
 import {coerce, getScrollBarWidth} from './utils/utils.js'
 import $ from './utils/NodeList.js'
+import md from './utils/markdown.js'
 
 export default {
   props: {
     okText: {
       type: String,
-      default: 'Save changes'
-    },
-    cancelText: {
-      type: String,
-      default: 'Close'
+      default: ''
     },
     title: {
       type: String,
@@ -60,13 +55,9 @@ export default {
     width: {
       default: null
     },
-    callback: {
-      type: Function,
-      default () {}
-    },
     effect: {
       type: String,
-      default: null
+      default: 'zoom'
     },
     backdrop: {
       type: Boolean,
@@ -82,9 +73,15 @@ export default {
       type: Boolean,
       coerce: coerce.boolean,
       default: false
+    },
+    name: {
+      type: String
     }
   },
   computed: {
+    titleRendered () {
+      return md.renderInline(this.title);
+    },
     optionalWidth () {
       if (this.width === null) {
         return null
@@ -92,6 +89,9 @@ export default {
         return this.width + 'px'
       }
       return this.width
+    },
+    showOkButton () {
+      return this.okText.length !== 0;
     }
   },
   watch: {
@@ -119,6 +119,13 @@ export default {
           $(el).off('click transitionend')
           el.style.display = 'none'
         })
+      }
+    }
+  },
+  events: {
+    'modal:show': function (name) {
+      if (name === this.name) {
+        this.show = true
       }
     }
   },

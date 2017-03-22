@@ -1,4 +1,3 @@
-import $ from './utils/NodeList.js'
 import accordion from './Accordion.vue'
 import affix from './Affix.vue'
 import alert from './Alert.vue'
@@ -21,11 +20,11 @@ import tabGroup from './TabGroup.vue'
 import tabset from './Tabset.vue'
 import tooltip from './Tooltip.vue'
 import closeable from './directives/Closeable'
+import showModal from './directives/ShowModal'
 import pic from './Pic.vue'
 import tipBox from './TipBox.vue'
 
-const VueStrap = {
-  $,
+const components = {
   accordion,
   affix,
   alert,
@@ -48,8 +47,43 @@ const VueStrap = {
   tabset,
   tipBox,
   tooltip,
-  closeable,
   pic
 }
+
+const directives = {
+  closeable,
+  showModal
+}
+
+function install (Vue) {
+  if (install.installed) return
+  install.installed = true
+
+  Object.keys(directives).forEach((key) => {
+    Vue.directive(key, directives[key])
+  })
+  Object.keys(components).forEach((key) => {
+    Vue.component(key, components[key])
+  })
+}
+
+function installEvents (vm) {
+  vm.$on('modal:shouldShow', function (name) {
+    this.$broadcast('modal:show', name)
+  })
+  vm.$on('retriever:fetched', function (el) {
+    vm.$compile(el);
+  })
+}
+
+const VueStrap = {
+  install,
+  installEvents,
+  components: {}
+}
+
+Object.keys(components).forEach((key) => {
+  VueStrap.components[key] = components[key]
+})
 
 module.exports = VueStrap

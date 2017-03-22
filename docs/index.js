@@ -5,12 +5,21 @@ require('./js/showLanguage')
 
 import $ from 'src/utils/NodeList.js'
 import bodyDocs from './bodyDocs.vue'
-import Closeable from 'src/directives/Closeable.js';
+import VueStrap from 'src/index.js';
 
 Vue.config.devtools = true
 Vue.config.debug = true
-Vue.directive('closeable', Closeable)
-new Vue({
+Vue.use(VueStrap);
+// Vue.directive('closeable', Closeable)
+// Vue.directive('showModal', {
+//   bind () {
+//     jQuery(this.el).click(() => {
+//       console.log(this.expression)
+//       this.vm.$dispatch('modal:shouldShow', this.expression)
+//     });
+//   }
+// });
+var vm = new Vue({
   el: 'body',
   components: {
     bodyDocs,
@@ -32,3 +41,5 @@ new Vue({
     })
   }
 })
+
+VueStrap.installEvents(vm)

@@ -1,11 +1,8 @@
 <template>
   <doc-section id="modal" name="Modal">
     <div class="bs-example">
-      <button class="btn btn-default" @click="showModal = true">Show modal</button>
-      <modal title="Modal title" :show.sync="showModal">
-        <div slot="modal-header" class="modal-header">
-          <h4 class="modal-title">Modal <b>Title</b></h4>
-        </div>
+      <button class="btn btn-default" v-show-modal="modal1">Show modal</button>
+      <modal title="==Modal title==" name="modal1">
         <div slot="modal-body" class="modal-body">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -137,22 +134,10 @@
       <p>Text for OK button</p>
     </div>
     <div>
-      <p>cancel-text</p>
-      <p><code>String</code></p>
-      <p>Close</p>
-      <p>Text for cancel button</p>
-    </div>
-    <div>
       <p>width</p>
       <p><code>Number, String or null</code></p>
       <p><code>null</code></p>
       <p>Pass a Number in pixels or a String with relational sizes ( e.g. '80%' or '5em' ). If null, the modal will be responsive per bootstrap's default.</p>
-    </div>
-    <div>
-      <p>callback</p>
-      <p><code>Function</code></p>
-      <p></p>
-      <p>A callback Function when you click the modal primary button.</p>
     </div>
     <div>
       <p>large</p>
