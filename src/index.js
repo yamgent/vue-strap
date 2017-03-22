@@ -44,7 +44,7 @@ const components = {
   select,
   tab,
   tabGroup,
-  tabset,
+  tabs: tabset,
   tipBox,
   tooltip,
   pic
