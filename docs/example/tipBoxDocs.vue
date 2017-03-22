@@ -45,7 +45,7 @@
   import docSection from './docSection.vue'
   import docTable from './docTable.vue'
   import docCode from './docCode.vue'
-  import tipBox from 'src/tipBox.vue'
+  import tipBox from 'src/TipBox.vue'
 
   export default {
     components: {
