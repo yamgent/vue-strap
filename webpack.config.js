@@ -8,6 +8,9 @@ module.exports = {
     publicPath: 'build/',
     filename: 'build-docs.js'
   },
+  node: {
+    fs: "empty"
+  },
   resolve: {
     root: path.resolve('./')
   },
@@ -22,6 +25,11 @@ module.exports = {
       { test: /\.css$/, loader: "style-loader!css-loader?root=./docs/" },
       {test: /\.scss$/, loader: "style!css!sass"},
       {test: /\.less$/, loader: "style-loader!css-loader!less-loader"},
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
+      },
+      { test: require.resolve("jquery"), loader: "expose-loader?jQuery" }
     ]
   },
   babel: {
