@@ -22,17 +22,45 @@
       <popover effect="scale" title="Title" :content="text" placement="bottom" trigger="focus">
         <bs-input type="text" placeholder="Focus"></bs-input>
       </popover>
+      <h4>Markdown</h4>
+      <p>
+        <popover effect="scale" title="**Emoji title** :rocket:" content="++emoji++ content :cat:">
+          <button class="btn btn-default">Hover</button>
+        </popover>
+      </p>
+      <h4>Content using slot</h4>
+      <popover effect="scale" title="**Emoji title** :rocket:">
+        <div slot="content">
+          This is a long content...
+        </div>
+
+        <button class="btn btn-default">Hover</button>
+      </popover>
     </div>
     <doc-code language="markup">
       <popover effect="fade" placement="bottom" title="Title" content="content">
         <button class="btn btn-default">Popover on bottom</button>
+      </popover>
+
+      Markdown
+      <popover effect="scale" title="**Emoji title** :rocket:" content="++emoji++ content :cat:">
+        <button class="btn btn-default">Hover</button>
+      </popover>
+
+      For larger content, use slot="content"
+      <popover effect="scale" title="**Emoji title** :rocket:">
+        <div slot="content">
+          This is a long content...
+        </div>
+
+        <button class="btn btn-default">Hover</button>
       </popover>
     </doc-code>
     <doc-table>
       <div>
         <p>trigger</p>
         <p><code>String</code>, one of <code>click</code> <code>focus</code> <code>hover</code> <code>contextmenu</code></p>
-        <p><code>click</code></p>
+        <p><code>hover</code></p>
         <p>How the popover is triggered.</p>
       </div>
       <div>
@@ -43,13 +71,13 @@
       </div>
       <div>
         <p>title</p>
-        <p><code>String</code></p>
+        <p><code>String</code>, or be markdown inline text</p>
         <p></p>
         <p></p>
       </div>
       <div>
         <p>content</p>
-        <p><code>String</code></p>
+        <p><code>String</code>, or be markdown inline text</p>
         <p></p>
         <p></p>
       </div>
@@ -65,7 +93,7 @@
         <code>left</code>
         <code>right</code>
         <code>bottom</code></p>
-        <p></p>
+        <p>top</p>
         <p>How to position the popover.</p>
       </div>
     </doc-table>

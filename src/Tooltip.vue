@@ -32,11 +32,6 @@ export default {
       type: String,
       default: 'top'
     }
-  },
-  computed: {
-    contentRendered () {
-      return md.renderInline(this.content)
-    }
   }
 }
 </script>

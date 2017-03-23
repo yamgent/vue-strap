@@ -1,5 +1,6 @@
 import {coerce} from './utils.js'
 import $ from './NodeList.js'
+import md from './markdown.js'
 
 export default {
   props: {
@@ -35,10 +36,20 @@ export default {
       show: false
     }
   },
+  computed: {
+    contentRendered () {
+      return md.renderInline(this.content)
+    },
+    titleRendered () {
+      return md.renderInline(this.title)
+    }
+  },
   methods: {
     toggle (e) {
       if (e && this.trigger === 'contextmenu') e.preventDefault()
-      if (!(this.show = !this.show)) { return }
+      if (!(this.show = !this.show)) {
+        return
+      }
       setTimeout(() => {
         const popover = this.$els.popover
         const trigger = this.$els.trigger.children[0]
@@ -73,10 +84,12 @@ export default {
 
     if (this.trigger === 'focus' && !~trigger.tabIndex) {
       trigger = $('a,input,select,textarea,button', trigger)
-      if (!trigger.length) { trigger = null }
+      if (!trigger.length) {
+        trigger = null
+      }
     }
     if (trigger) {
-      let events = { contextmenu: 'contextmenu', hover: 'mouseleave mouseenter', focus: 'blur focus' }
+      let events = {contextmenu: 'contextmenu', hover: 'mouseleave mouseenter', focus: 'blur focus'}
       $(trigger).on(events[this.trigger] || 'click', this.toggle)
       this._trigger = trigger
     }

@@ -8,10 +8,10 @@
   >
     <div class="arrow"></div>
     <h3 class="popover-title" v-if="title">
-      <slot name="title">{{title}}</slot>
+      <slot name="title">{{{titleRendered}}}</slot>
     </h3>
     <div class="popover-content">
-      <slot name="content">{{{content}}}</slot>
+      <slot name="content">{{{contentRendered}}}</slot>
     </div>
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
   props: {
     trigger: {
       type: String,
-      default: 'click'
+      default: 'hover'
     }
   }
 }
