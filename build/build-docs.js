@@ -21052,8 +21052,28 @@
 	
 	var _popoverMixins2 = _interopRequireDefault(_popoverMixins);
 	
+	var _markdown = __webpack_require__(155);
+	
+	var _markdown2 = _interopRequireDefault(_markdown);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	// <template>
+	//   <span v-el:trigger>
+	//     <slot></slot>
+	//   </span>
+	//   <div v-el:popover v-if="show" style="display:block;"
+	//     :class="['tooltip',placement]"
+	//     :transition="effect"
+	//   >
+	//     <div class="tooltip-arrow"></div>
+	//     <div class="tooltip-inner">
+	//       <slot name="content">{{{contentRendered}}}</slot>
+	//    </div>
+	//   </div>
+	// </template>
+	
+	// <script>
 	exports.default = {
 	  mixins: [_popoverMixins2.default],
 	  props: {
@@ -21064,6 +21084,10 @@
 	    effect: {
 	      type: String,
 	      default: 'scale'
+	    },
+	    placement: {
+	      type: String,
+	      default: 'top'
 	    }
 	  }
 	};
@@ -21099,22 +21123,6 @@
 	//   }
 	// }
 	// </style>
-	// <template>
-	//   <span v-el:trigger>
-	//     <slot></slot>
-	//   </span>
-	//   <div v-el:popover v-if="show" style="display:block;"
-	//     :class="['tooltip',placement]"
-	//     :transition="effect"
-	//   >
-	//     <div class="tooltip-arrow"></div>
-	//     <div class="tooltip-inner">
-	//       <slot name="content">{{{content}}}</slot>
-	//    </div>
-	//   </div>
-	// </template>
-	
-	// <script>
 
 /***/ },
 /* 291 */
@@ -21131,6 +21139,10 @@
 	var _NodeList = __webpack_require__(55);
 	
 	var _NodeList2 = _interopRequireDefault(_NodeList);
+	
+	var _markdown = __webpack_require__(155);
+	
+	var _markdown2 = _interopRequireDefault(_markdown);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -21169,6 +21181,14 @@
 	    };
 	  },
 	
+	  computed: {
+	    contentRendered: function contentRendered() {
+	      return _markdown2.default.renderInline(this.content);
+	    },
+	    titleRendered: function titleRendered() {
+	      return _markdown2.default.renderInline(this.title);
+	    }
+	  },
 	  methods: {
 	    toggle: function toggle(e) {
 	      var _this = this;
@@ -21230,7 +21250,7 @@
 /* 292 */
 /***/ function(module, exports) {
 
-	module.exports = "<span v-el:trigger>\n    <slot></slot>\n  </span>\n  <div v-el:popover v-if=\"show\" style=\"display:block;\"\n    :class=\"['tooltip',placement]\"\n    :transition=\"effect\"\n  >\n    <div class=\"tooltip-arrow\"></div>\n    <div class=\"tooltip-inner\">\n      <slot name=\"content\">{{{content}}}</slot>\n   </div>\n  </div>";
+	module.exports = "<span v-el:trigger>\n    <slot></slot>\n  </span>\n  <div v-el:popover v-if=\"show\" style=\"display:block;\"\n    :class=\"['tooltip',placement]\"\n    :transition=\"effect\"\n  >\n    <div class=\"tooltip-arrow\"></div>\n    <div class=\"tooltip-inner\">\n      <slot name=\"content\">{{{contentRendered}}}</slot>\n   </div>\n  </div>";
 
 /***/ },
 /* 293 */
@@ -34577,7 +34597,7 @@
 	//   <li v-if="isLi" v-el:dropdown :class="classes">
 	//     <slot name="button">
 	//       <a class="dropdown-toggle" role="button" :class="{disabled: disabled}" @keyup.esc="show = false">
-	//         {{ text }}
+	//         {{{ text }}}
 	//         <span class="caret"></span>
 	//       </a>
 	//     </slot>
@@ -34708,7 +34728,7 @@
 /* 358 */
 /***/ function(module, exports) {
 
-	module.exports = "<li v-if=\"isLi\" v-el:dropdown=\"\" :class=\"classes\" _v-515fe83c=\"\">\n    <slot name=\"button\" _v-515fe83c=\"\">\n      <a class=\"dropdown-toggle\" role=\"button\" :class=\"{disabled: disabled}\" @keyup.esc=\"show = false\" _v-515fe83c=\"\">\n        {{ text }}\n        <span class=\"caret\" _v-515fe83c=\"\"></span>\n      </a>\n    </slot>\n    <slot name=\"dropdown-menu\" _v-515fe83c=\"\">\n      <ul v-else=\"\" class=\"dropdown-menu\" _v-515fe83c=\"\">\n        <slot _v-515fe83c=\"\"></slot>\n      </ul>\n    </slot>\n  </li>\n  <div v-else=\"\" v-el:dropdown=\"\" :class=\"classes\" _v-515fe83c=\"\">\n    <slot name=\"before\" _v-515fe83c=\"\"></slot>\n    <slot name=\"button\" _v-515fe83c=\"\">\n      <button type=\"button\" class=\"btn btn-{{type}} dropdown-toggle\" @keyup.esc=\"show = false\" :disabled=\"disabled\" _v-515fe83c=\"\">\n        {{ text }}\n        <span class=\"caret\" _v-515fe83c=\"\"></span>\n      </button>\n    </slot>\n    <slot name=\"dropdown-menu\" _v-515fe83c=\"\">\n      <ul class=\"dropdown-menu\" _v-515fe83c=\"\">\n        <slot _v-515fe83c=\"\"></slot>\n      </ul>\n    </slot>\n  </div>";
+	module.exports = "<li v-if=\"isLi\" v-el:dropdown=\"\" :class=\"classes\" _v-515fe83c=\"\">\n    <slot name=\"button\" _v-515fe83c=\"\">\n      <a class=\"dropdown-toggle\" role=\"button\" :class=\"{disabled: disabled}\" @keyup.esc=\"show = false\" _v-515fe83c=\"\">\n        {{{ text }}}\n        <span class=\"caret\" _v-515fe83c=\"\"></span>\n      </a>\n    </slot>\n    <slot name=\"dropdown-menu\" _v-515fe83c=\"\">\n      <ul v-else=\"\" class=\"dropdown-menu\" _v-515fe83c=\"\">\n        <slot _v-515fe83c=\"\"></slot>\n      </ul>\n    </slot>\n  </li>\n  <div v-else=\"\" v-el:dropdown=\"\" :class=\"classes\" _v-515fe83c=\"\">\n    <slot name=\"before\" _v-515fe83c=\"\"></slot>\n    <slot name=\"button\" _v-515fe83c=\"\">\n      <button type=\"button\" class=\"btn btn-{{type}} dropdown-toggle\" @keyup.esc=\"show = false\" :disabled=\"disabled\" _v-515fe83c=\"\">\n        {{ text }}\n        <span class=\"caret\" _v-515fe83c=\"\"></span>\n      </button>\n    </slot>\n    <slot name=\"dropdown-menu\" _v-515fe83c=\"\">\n      <ul class=\"dropdown-menu\" _v-515fe83c=\"\">\n        <slot _v-515fe83c=\"\"></slot>\n      </ul>\n    </slot>\n  </div>";
 
 /***/ },
 /* 359 */
@@ -36266,17 +36286,45 @@
 	//       <popover effect="scale" title="Title" :content="text" placement="bottom" trigger="focus">
 	//         <bs-input type="text" placeholder="Focus"></bs-input>
 	//       </popover>
+	//       <h4>Markdown</h4>
+	//       <p>
+	//         <popover effect="scale" title="**Emoji title** :rocket:" content="++emoji++ content :cat:">
+	//           <button class="btn btn-default">Hover</button>
+	//         </popover>
+	//       </p>
+	//       <h4>Content using slot</h4>
+	//       <popover effect="scale" title="**Emoji title** :rocket:">
+	//         <div slot="content">
+	//           This is a long content...
+	//         </div>
+	
+	//         <button class="btn btn-default">Hover</button>
+	//       </popover>
 	//     </div>
 	//     <doc-code language="markup">
 	//       <popover effect="fade" placement="bottom" title="Title" content="content">
 	//         <button class="btn btn-default">Popover on bottom</button>
+	//       </popover>
+	
+	//       Markdown
+	//       <popover effect="scale" title="**Emoji title** :rocket:" content="++emoji++ content :cat:">
+	//         <button class="btn btn-default">Hover</button>
+	//       </popover>
+	
+	//       For larger content, use slot="content"
+	//       <popover effect="scale" title="**Emoji title** :rocket:">
+	//         <div slot="content">
+	//           This is a long content...
+	//         </div>
+	
+	//         <button class="btn btn-default">Hover</button>
 	//       </popover>
 	//     </doc-code>
 	//     <doc-table>
 	//       <div>
 	//         <p>trigger</p>
 	//         <p><code>String</code>, one of <code>click</code> <code>focus</code> <code>hover</code> <code>contextmenu</code></p>
-	//         <p><code>click</code></p>
+	//         <p><code>hover</code></p>
 	//         <p>How the popover is triggered.</p>
 	//       </div>
 	//       <div>
@@ -36287,13 +36335,13 @@
 	//       </div>
 	//       <div>
 	//         <p>title</p>
-	//         <p><code>String</code></p>
+	//         <p><code>String</code>, or be markdown inline text</p>
 	//         <p></p>
 	//         <p></p>
 	//       </div>
 	//       <div>
 	//         <p>content</p>
-	//         <p><code>String</code></p>
+	//         <p><code>String</code>, or be markdown inline text</p>
 	//         <p></p>
 	//         <p></p>
 	//       </div>
@@ -36309,7 +36357,7 @@
 	//         <code>left</code>
 	//         <code>right</code>
 	//         <code>bottom</code></p>
-	//         <p></p>
+	//         <p>top</p>
 	//         <p>How to position the popover.</p>
 	//       </div>
 	//     </doc-table>
@@ -36404,7 +36452,7 @@
 	  props: {
 	    trigger: {
 	      type: String,
-	      default: 'click'
+	      default: 'hover'
 	    }
 	  }
 	};
@@ -36454,10 +36502,10 @@
 	//   >
 	//     <div class="arrow"></div>
 	//     <h3 class="popover-title" v-if="title">
-	//       <slot name="title">{{title}}</slot>
+	//       <slot name="title">{{{titleRendered}}}</slot>
 	//     </h3>
 	//     <div class="popover-content">
-	//       <slot name="content">{{{content}}}</slot>
+	//       <slot name="content">{{{contentRendered}}}</slot>
 	//     </div>
 	//   </div>
 	// </template>
@@ -36468,13 +36516,13 @@
 /* 400 */
 /***/ function(module, exports) {
 
-	module.exports = "<span v-el:trigger>\n    <slot></slot>\n  </span>\n  <div v-el:popover v-if=\"show\"\n    :class=\"['popover',placement]\"\n    :transition=\"effect\"\n  >\n    <div class=\"arrow\"></div>\n    <h3 class=\"popover-title\" v-if=\"title\">\n      <slot name=\"title\">{{title}}</slot>\n    </h3>\n    <div class=\"popover-content\">\n      <slot name=\"content\">{{{content}}}</slot>\n    </div>\n  </div>";
+	module.exports = "<span v-el:trigger>\n    <slot></slot>\n  </span>\n  <div v-el:popover v-if=\"show\"\n    :class=\"['popover',placement]\"\n    :transition=\"effect\"\n  >\n    <div class=\"arrow\"></div>\n    <h3 class=\"popover-title\" v-if=\"title\">\n      <slot name=\"title\">{{{titleRendered}}}</slot>\n    </h3>\n    <div class=\"popover-content\">\n      <slot name=\"content\">{{{contentRendered}}}</slot>\n    </div>\n  </div>";
 
 /***/ },
 /* 401 */
 /***/ function(module, exports) {
 
-	module.exports = "<doc-section id=\"popover\" name=\"Popover\">\n    <div class=\"bs-example\">\n      <popover v-for=\"place in placements\" effect=\"fade\" :content=\"text\" :placement=\"place\">\n        <button class=\"btn btn-default\">Popover on {{place}}</button>\n      </popover>\n      <hr>\n      <h4>Title</h4>\n      <popover v-for=\"place in placements\" effect=\"fade\" header title=\"Title\" :content=\"text\" :placement=\"place\">\n        <button class=\"btn btn-default\">Popover on {{place}}</button>\n      </popover>\n      <hr>\n      <h4>Trigger</h4>\n      <p>\n        <popover effect=\"scale\" title=\"Title\" :content=\"content\" placement=\"top\" trigger=\"hover\">\n          <button class=\"btn btn-default\">Mouseenter</button>\n        </popover>\n        <popover effect=\"scale\" title=\"Title\" :content=\"text\" placement=\"top\" trigger=\"contextmenu\">\n          <button class=\"btn btn-default\">Contextmenu (right click)</button>\n        </popover>\n      </p>\n      <popover effect=\"scale\" title=\"Title\" :content=\"text\" placement=\"bottom\" trigger=\"focus\">\n        <bs-input type=\"text\" placeholder=\"Focus\"></bs-input>\n      </popover>\n    </div>\n    <doc-code language=\"markup\">\n      <popover effect=\"fade\" placement=\"bottom\" title=\"Title\" content=\"content\">\n        <button class=\"btn btn-default\">Popover on bottom</button>\n      </popover>\n    </doc-code>\n    <doc-table>\n      <div>\n        <p>trigger</p>\n        <p><code>String</code>, one of <code>click</code> <code>focus</code> <code>hover</code> <code>contextmenu</code></p>\n        <p><code>click</code></p>\n        <p>How the popover is triggered.</p>\n      </div>\n      <div>\n        <p>effect</p>\n        <p><code>String</code>, one of <code>scale</code> <code>fade</code></p>\n        <p><code>fade</code></p>\n        <p></p>\n      </div>\n      <div>\n        <p>title</p>\n        <p><code>String</code></p>\n        <p></p>\n        <p></p>\n      </div>\n      <div>\n        <p>content</p>\n        <p><code>String</code></p>\n        <p></p>\n        <p></p>\n      </div>\n      <div>\n        <p>header</p>\n        <p><code>Boolean</code></p>\n        <p><code>true</code></p>\n        <p>Whether to show the header.</p>\n      </div>\n      <div>\n        <p>placement</p>\n        <p><code>String</code>, one of <code>top</code>\n        <code>left</code>\n        <code>right</code>\n        <code>bottom</code></p>\n        <p></p>\n        <p>How to position the popover.</p>\n      </div>\n    </doc-table>\n  </doc-section>";
+	module.exports = "<doc-section id=\"popover\" name=\"Popover\">\n    <div class=\"bs-example\">\n      <popover v-for=\"place in placements\" effect=\"fade\" :content=\"text\" :placement=\"place\">\n        <button class=\"btn btn-default\">Popover on {{place}}</button>\n      </popover>\n      <hr>\n      <h4>Title</h4>\n      <popover v-for=\"place in placements\" effect=\"fade\" header title=\"Title\" :content=\"text\" :placement=\"place\">\n        <button class=\"btn btn-default\">Popover on {{place}}</button>\n      </popover>\n      <hr>\n      <h4>Trigger</h4>\n      <p>\n        <popover effect=\"scale\" title=\"Title\" :content=\"content\" placement=\"top\" trigger=\"hover\">\n          <button class=\"btn btn-default\">Mouseenter</button>\n        </popover>\n        <popover effect=\"scale\" title=\"Title\" :content=\"text\" placement=\"top\" trigger=\"contextmenu\">\n          <button class=\"btn btn-default\">Contextmenu (right click)</button>\n        </popover>\n      </p>\n      <popover effect=\"scale\" title=\"Title\" :content=\"text\" placement=\"bottom\" trigger=\"focus\">\n        <bs-input type=\"text\" placeholder=\"Focus\"></bs-input>\n      </popover>\n      <h4>Markdown</h4>\n      <p>\n        <popover effect=\"scale\" title=\"**Emoji title** :rocket:\" content=\"++emoji++ content :cat:\">\n          <button class=\"btn btn-default\">Hover</button>\n        </popover>\n      </p>\n      <h4>Content using slot</h4>\n      <popover effect=\"scale\" title=\"**Emoji title** :rocket:\">\n        <div slot=\"content\">\n          This is a long content...\n        </div>\n\n        <button class=\"btn btn-default\">Hover</button>\n      </popover>\n    </div>\n    <doc-code language=\"markup\">\n      <popover effect=\"fade\" placement=\"bottom\" title=\"Title\" content=\"content\">\n        <button class=\"btn btn-default\">Popover on bottom</button>\n      </popover>\n\n      Markdown\n      <popover effect=\"scale\" title=\"**Emoji title** :rocket:\" content=\"++emoji++ content :cat:\">\n        <button class=\"btn btn-default\">Hover</button>\n      </popover>\n\n      For larger content, use slot=\"content\"\n      <popover effect=\"scale\" title=\"**Emoji title** :rocket:\">\n        <div slot=\"content\">\n          This is a long content...\n        </div>\n\n        <button class=\"btn btn-default\">Hover</button>\n      </popover>\n    </doc-code>\n    <doc-table>\n      <div>\n        <p>trigger</p>\n        <p><code>String</code>, one of <code>click</code> <code>focus</code> <code>hover</code> <code>contextmenu</code></p>\n        <p><code>hover</code></p>\n        <p>How the popover is triggered.</p>\n      </div>\n      <div>\n        <p>effect</p>\n        <p><code>String</code>, one of <code>scale</code> <code>fade</code></p>\n        <p><code>fade</code></p>\n        <p></p>\n      </div>\n      <div>\n        <p>title</p>\n        <p><code>String</code>, or be markdown inline text</p>\n        <p></p>\n        <p></p>\n      </div>\n      <div>\n        <p>content</p>\n        <p><code>String</code>, or be markdown inline text</p>\n        <p></p>\n        <p></p>\n      </div>\n      <div>\n        <p>header</p>\n        <p><code>Boolean</code></p>\n        <p><code>true</code></p>\n        <p>Whether to show the header.</p>\n      </div>\n      <div>\n        <p>placement</p>\n        <p><code>String</code>, one of <code>top</code>\n        <code>left</code>\n        <code>right</code>\n        <code>bottom</code></p>\n        <p>top</p>\n        <p>How to position the popover.</p>\n      </div>\n    </doc-table>\n  </doc-section>";
 
 /***/ },
 /* 402 */
@@ -37012,7 +37060,7 @@
 	//   <doc-section id="tabs" name="Tabs">
 	//     <div class="bs-example">
 	//       <tabs>
-	//         <tab header="one">
+	//         <tab header="**one**">
 	//           <p>
 	//             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	//             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -37025,8 +37073,8 @@
 	//         <tab header="two" disabled>
 	//           ...
 	//         </tab>
-	//         <tab-group header="group1">
-	//           <tab header="three">
+	//         <tab-group header="group1 :cat:">
+	//           <tab header="three :rocket:">
 	//            <p>
 	//               Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
 	//            </p>
@@ -37212,10 +37260,10 @@
 	//   <ul class="nav nav-{{navStyle}}" role="tablist">
 	//     <template v-for="t in headers">
 	//       <li v-if="!t._tabgroup" :class="{active:t.active, disabled:t.disabled}" @click.prevent="select(t)">
-	//         <a href="#"><slot name="header">{{{t.header}}}</slot></a>
+	//         <a href="#"><slot name="header">{{{t.headerRendered}}}</slot></a>
 	//       </li>
-	//       <dropdown v-else :text="t.header" :class="{active:t.active}" :disabled="t.disabled">
-	//         <li v-for="tab in t.tabs" :class="{disabled:tab.disabled}"><a href="#" @click.prevent="select(tab)">{{tab.header}}</a></li>
+	//       <dropdown v-else :text="t.headerRendered" :class="{active:t.active}" :disabled="t.disabled">
+	//         <li v-for="tab in t.tabs" :class="{disabled:tab.disabled}"><a href="#" @click.prevent="select(tab)">{{{tab.headerRendered}}}</a></li>
 	//       </dropdown>
 	//     </template>
 	//   </ul>
@@ -37285,7 +37333,7 @@
 /* 419 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- Nav tabs -->\n  <ul class=\"nav nav-{{navStyle}}\" role=\"tablist\" _v-a4c6e684=\"\">\n    <template v-for=\"t in headers\" _v-a4c6e684=\"\">\n      <li v-if=\"!t._tabgroup\" :class=\"{active:t.active, disabled:t.disabled}\" @click.prevent=\"select(t)\" _v-a4c6e684=\"\">\n        <a href=\"#\" _v-a4c6e684=\"\"><slot name=\"header\" _v-a4c6e684=\"\">{{{t.header}}}</slot></a>\n      </li>\n      <dropdown v-else=\"\" :text=\"t.header\" :class=\"{active:t.active}\" :disabled=\"t.disabled\" _v-a4c6e684=\"\">\n        <li v-for=\"tab in t.tabs\" :class=\"{disabled:tab.disabled}\" _v-a4c6e684=\"\"><a href=\"#\" @click.prevent=\"select(tab)\" _v-a4c6e684=\"\">{{tab.header}}</a></li>\n      </dropdown>\n    </template>\n  </ul>\n  <div class=\"tab-content\" v-el:tab-content=\"\" _v-a4c6e684=\"\">\n    <slot _v-a4c6e684=\"\"></slot>\n  </div>";
+	module.exports = "<!-- Nav tabs -->\n  <ul class=\"nav nav-{{navStyle}}\" role=\"tablist\" _v-a4c6e684=\"\">\n    <template v-for=\"t in headers\" _v-a4c6e684=\"\">\n      <li v-if=\"!t._tabgroup\" :class=\"{active:t.active, disabled:t.disabled}\" @click.prevent=\"select(t)\" _v-a4c6e684=\"\">\n        <a href=\"#\" _v-a4c6e684=\"\"><slot name=\"header\" _v-a4c6e684=\"\">{{{t.headerRendered}}}</slot></a>\n      </li>\n      <dropdown v-else=\"\" :text=\"t.headerRendered\" :class=\"{active:t.active}\" :disabled=\"t.disabled\" _v-a4c6e684=\"\">\n        <li v-for=\"tab in t.tabs\" :class=\"{disabled:tab.disabled}\" _v-a4c6e684=\"\"><a href=\"#\" @click.prevent=\"select(tab)\" _v-a4c6e684=\"\">{{{tab.headerRendered}}}</a></li>\n      </dropdown>\n    </template>\n  </ul>\n  <div class=\"tab-content\" v-el:tab-content=\"\" _v-a4c6e684=\"\">\n    <slot _v-a4c6e684=\"\"></slot>\n  </div>";
 
 /***/ },
 /* 420 */
@@ -37364,6 +37412,15 @@
 	
 	var _utils = __webpack_require__(124);
 	
+	var _markdown = __webpack_require__(155);
+	
+	var _markdown2 = _interopRequireDefault(_markdown);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// <template><slot></slot></template>
+	
+	// <script>
 	exports.default = {
 	  props: {
 	    disabled: {
@@ -37385,6 +37442,9 @@
 	  computed: {
 	    active: function active() {
 	      return ~this.tabs.indexOf(this._tabset.show);
+	    },
+	    headerRendered: function headerRendered() {
+	      return _markdown2.default.renderInline(this.header);
 	    }
 	  },
 	  created: function created() {
@@ -37421,9 +37481,6 @@
 	//   margin-bottom: 15px;
 	// }
 	// </style>
-	// <template><slot></slot></template>
-	
-	// <script>
 
 /***/ },
 /* 424 */
@@ -37467,6 +37524,22 @@
 	
 	var _utils = __webpack_require__(124);
 	
+	var _markdown = __webpack_require__(155);
+	
+	var _markdown2 = _interopRequireDefault(_markdown);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// <template>
+	//   <div role="tabpanel" class="tab-pane active" v-show="show"
+	//     :class="{hide:!show}"
+	//     :transition="transition"
+	//   >
+	//     <slot></slot>
+	//   </div>
+	// </template>
+	
+	// <script>
 	exports.default = {
 	  props: {
 	    header: {
@@ -37479,6 +37552,9 @@
 	    }
 	  },
 	  computed: {
+	    headerRendered: function headerRendered() {
+	      return _markdown2.default.renderInline(this.header);
+	    },
 	    active: function active() {
 	      return this._tabset.show === this;
 	    },
@@ -37527,16 +37603,6 @@
 	  }
 	};
 	// </script>
-	// <template>
-	//   <div role="tabpanel" class="tab-pane active" v-show="show"
-	//     :class="{hide:!show}"
-	//     :transition="transition"
-	//   >
-	//     <slot></slot>
-	//   </div>
-	// </template>
-	
-	// <script>
 
 /***/ },
 /* 427 */
@@ -37548,7 +37614,7 @@
 /* 428 */
 /***/ function(module, exports) {
 
-	module.exports = "<doc-section id=\"tabs\" name=\"Tabs\">\n    <div class=\"bs-example\">\n      <tabs>\n        <tab header=\"one\">\n          <p>\n            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n            consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse\n            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat\n            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n          </p>\n        </tab>\n        <tab header=\"two\" disabled>\n          ...\n        </tab>\n        <tab-group header=\"group1\">\n          <tab header=\"three\">\n           <p>\n              Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.\n           </p>\n          </tab>\n          <tab header=\"four\" disabled>\n            ...\n          </tab>\n        </tab-group>\n        <tab-group header=\"group2\" disabled>\n          <tab header=\"five\">\n            ...\n          </tab>\n        </tab-group>\n      </tabs>\n    </div>\n    <doc-code language=\"markup\">\n      <tabs>\n        <tab header=\"one\">\n          ...\n        </tab>\n        <tab header=\"two\" disabled>\n          ...\n        </tab>\n        <tab-group header=\"group1\">\n          <tab header=\"three\">\n            ...\n          </tab>\n          <tab header=\"four\" disabled>\n            ...\n          </tab>\n        </tab-group>\n        <tab-group header=\"group2\">\n          <tab header=\"five\">\n            ...\n          </tab>\n        </tab-group>\n      </tabs>\n    </doc-code>\n    <doc-code language=\"javascript\">\n      components: {\n        tabs: VueStrap.tabset,\n        tabGroup: VueStrap.tabGroup,\n        tab: VueStrap.tab\n      }\n    </doc-code>\n    <doc-table name=\"Tabset (container)\">\n      <div>\n        <p>active</p>\n        <p><code>Number</code></p>\n        <p><code>0</code></p>\n        <p>Active tab index (0 based)</p>\n      </div>\n    </doc-table>\n    <doc-table name=\"TabGroup (dropdown)\">\n      <div>\n        <p>disabled</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Whether tabgroup is clickable.</p>\n      </div>\n      <div>\n        <p>header</p>\n        <p><code>String</code></p>\n        <p><code>null</code></p>\n        <p>Group Title</p>\n      </div>\n    </doc-table>\n    <doc-table name=\"Tab (element)\">\n      <div>\n        <p>header</p>\n        <p><code>String</code></p>\n        <p></p>\n        <p>Tab Title</p>\n      </div>\n      <div>\n        <p>disabled</p>\n        <p><code>Boolean</code></p>\n        <p>false</p>\n        <p>Whether tab is clickable and can be activated.</p>\n      </div>\n    </doc-table>\n  </doc-section>";
+	module.exports = "<doc-section id=\"tabs\" name=\"Tabs\">\n    <div class=\"bs-example\">\n      <tabs>\n        <tab header=\"**one**\">\n          <p>\n            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n            consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse\n            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat\n            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n          </p>\n        </tab>\n        <tab header=\"two\" disabled>\n          ...\n        </tab>\n        <tab-group header=\"group1 :cat:\">\n          <tab header=\"three :rocket:\">\n           <p>\n              Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.\n           </p>\n          </tab>\n          <tab header=\"four\" disabled>\n            ...\n          </tab>\n        </tab-group>\n        <tab-group header=\"group2\" disabled>\n          <tab header=\"five\">\n            ...\n          </tab>\n        </tab-group>\n      </tabs>\n    </div>\n    <doc-code language=\"markup\">\n      <tabs>\n        <tab header=\"one\">\n          ...\n        </tab>\n        <tab header=\"two\" disabled>\n          ...\n        </tab>\n        <tab-group header=\"group1\">\n          <tab header=\"three\">\n            ...\n          </tab>\n          <tab header=\"four\" disabled>\n            ...\n          </tab>\n        </tab-group>\n        <tab-group header=\"group2\">\n          <tab header=\"five\">\n            ...\n          </tab>\n        </tab-group>\n      </tabs>\n    </doc-code>\n    <doc-code language=\"javascript\">\n      components: {\n        tabs: VueStrap.tabset,\n        tabGroup: VueStrap.tabGroup,\n        tab: VueStrap.tab\n      }\n    </doc-code>\n    <doc-table name=\"Tabset (container)\">\n      <div>\n        <p>active</p>\n        <p><code>Number</code></p>\n        <p><code>0</code></p>\n        <p>Active tab index (0 based)</p>\n      </div>\n    </doc-table>\n    <doc-table name=\"TabGroup (dropdown)\">\n      <div>\n        <p>disabled</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Whether tabgroup is clickable.</p>\n      </div>\n      <div>\n        <p>header</p>\n        <p><code>String</code></p>\n        <p><code>null</code></p>\n        <p>Group Title</p>\n      </div>\n    </doc-table>\n    <doc-table name=\"Tab (element)\">\n      <div>\n        <p>header</p>\n        <p><code>String</code></p>\n        <p></p>\n        <p>Tab Title</p>\n      </div>\n      <div>\n        <p>disabled</p>\n        <p><code>Boolean</code></p>\n        <p>false</p>\n        <p>Whether tab is clickable and can be activated.</p>\n      </div>\n    </doc-table>\n  </doc-section>";
 
 /***/ },
 /* 429 */
@@ -37641,17 +37707,25 @@
 	//       <tooltip effect="scale" content="Lorem ipsum dolor sit amet" placement="bottom" trigger="focus">
 	//         <bs-input type="text" placeholder="Focus"></bs-input>
 	//       </tooltip>
+	//       <h4>Markdown</h4>
+	//       <tooltip effect="scale" content="*Hello* **World**">
+	//         <a href="">Hover me</a>
+	//       </tooltip>
 	//     </div>
 	//     <doc-code language="markup">
 	//       <tooltip effect="scale" placement="bottom" content="Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod">
 	//         <button class="btn btn-default">tooltip on bottom</button>
+	//       </tooltip>
+	//       <h4>With markdown</h4>
+	//       <tooltip effect="scale" content="*Hello* **World**">
+	//         <a href="">Hover me</a>
 	//       </tooltip>
 	//     </doc-code>
 	//     <doc-table>
 	//       <div>
 	//         <p>trigger</p>
 	//         <p><code>String</code>, one of <code>click</code> <code>focus</code> <code>hover</code> <code>contextmenu</code></p>
-	//         <p><code>click</code></p>
+	//         <p><code>hover</code></p>
 	//         <p>How the tooltip is triggered.</p>
 	//       </div>
 	//       <div>
@@ -37659,6 +37733,7 @@
 	//         <p><code>String</code>, one of <code>scale</code> <code>fadein</code></p>
 	//         <p><code>scale</code></p>
 	//         <p></p>
+	//       </div>
 	//       <div>
 	//         <p>content</p>
 	//         <p><code>String</code></p>
@@ -37684,7 +37759,7 @@
 /* 431 */
 /***/ function(module, exports) {
 
-	module.exports = "<doc-section id=\"tooltip\" name=\"Tooltip\">\n    <div class=\"bs-example\">\n      <tooltip v-for=\"place in ['top','left','right','bottom']\" header content=\"Lorem ipsum dolor sit amet\" :placement=\"place\">\n        <button class=\"btn btn-default\">Popover on {{place}}</button>\n      </tooltip>\n      <hr>\n      <h4>Trigger</h4>\n      <p>\n        <tooltip effect=\"scale\" content=\"Lorem ipsum dolor sit amet\" placement=\"top\" trigger=\"click\">\n          <button class=\"btn btn-default\">Click</button>\n        </tooltip>\n        <tooltip effect=\"scale\" content=\"Lorem ipsum dolor sit amet\" placement=\"top\" trigger=\"contextmenu\">\n          <button class=\"btn btn-default\">Contextmenu (right click)</button>\n        </tooltip>\n      </p>\n      <tooltip effect=\"scale\" content=\"Lorem ipsum dolor sit amet\" placement=\"bottom\" trigger=\"focus\">\n        <bs-input type=\"text\" placeholder=\"Focus\"></bs-input>\n      </tooltip>\n    </div>\n    <doc-code language=\"markup\">\n      <tooltip effect=\"scale\" placement=\"bottom\" content=\"Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod\">\n        <button class=\"btn btn-default\">tooltip on bottom</button>\n      </tooltip>\n    </doc-code>\n    <doc-table>\n      <div>\n        <p>trigger</p>\n        <p><code>String</code>, one of <code>click</code> <code>focus</code> <code>hover</code> <code>contextmenu</code></p>\n        <p><code>click</code></p>\n        <p>How the tooltip is triggered.</p>\n      </div>\n      <div>\n        <p>effect</p>\n        <p><code>String</code>, one of <code>scale</code> <code>fadein</code></p>\n        <p><code>scale</code></p>\n        <p></p>\n      <div>\n        <p>content</p>\n        <p><code>String</code></p>\n        <p></p>\n        <p></p>\n      </div>\n      <div>\n        <p>placement</p>\n        <p><code>String</code>, one of <code>top</code>\n        <code>left</code>\n        <code>right</code>\n        <code>bottom</code></p>\n        <p></p>\n        <p>How to position the tooltip.</p>\n      </div>\n    </doc-table>\n  </div>\n</template>";
+	module.exports = "<doc-section id=\"tooltip\" name=\"Tooltip\">\n    <div class=\"bs-example\">\n      <tooltip v-for=\"place in ['top','left','right','bottom']\" header content=\"Lorem ipsum dolor sit amet\" :placement=\"place\">\n        <button class=\"btn btn-default\">Popover on {{place}}</button>\n      </tooltip>\n      <hr>\n      <h4>Trigger</h4>\n      <p>\n        <tooltip effect=\"scale\" content=\"Lorem ipsum dolor sit amet\" placement=\"top\" trigger=\"click\">\n          <button class=\"btn btn-default\">Click</button>\n        </tooltip>\n        <tooltip effect=\"scale\" content=\"Lorem ipsum dolor sit amet\" placement=\"top\" trigger=\"contextmenu\">\n          <button class=\"btn btn-default\">Contextmenu (right click)</button>\n        </tooltip>\n      </p>\n      <tooltip effect=\"scale\" content=\"Lorem ipsum dolor sit amet\" placement=\"bottom\" trigger=\"focus\">\n        <bs-input type=\"text\" placeholder=\"Focus\"></bs-input>\n      </tooltip>\n      <h4>Markdown</h4>\n      <tooltip effect=\"scale\" content=\"*Hello* **World**\">\n        <a href=\"\">Hover me</a>\n      </tooltip>\n    </div>\n    <doc-code language=\"markup\">\n      <tooltip effect=\"scale\" placement=\"bottom\" content=\"Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod\">\n        <button class=\"btn btn-default\">tooltip on bottom</button>\n      </tooltip>\n      <h4>With markdown</h4>\n      <tooltip effect=\"scale\" content=\"*Hello* **World**\">\n        <a href=\"\">Hover me</a>\n      </tooltip>\n    </doc-code>\n    <doc-table>\n      <div>\n        <p>trigger</p>\n        <p><code>String</code>, one of <code>click</code> <code>focus</code> <code>hover</code> <code>contextmenu</code></p>\n        <p><code>hover</code></p>\n        <p>How the tooltip is triggered.</p>\n      </div>\n      <div>\n        <p>effect</p>\n        <p><code>String</code>, one of <code>scale</code> <code>fadein</code></p>\n        <p><code>scale</code></p>\n        <p></p>\n      </div>\n      <div>\n        <p>content</p>\n        <p><code>String</code></p>\n        <p></p>\n        <p></p>\n      </div>\n      <div>\n        <p>placement</p>\n        <p><code>String</code>, one of <code>top</code>\n        <code>left</code>\n        <code>right</code>\n        <code>bottom</code></p>\n        <p></p>\n        <p>How to position the tooltip.</p>\n      </div>\n    </doc-table>\n  </div>\n</template>";
 
 /***/ },
 /* 432 */

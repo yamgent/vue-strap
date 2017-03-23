@@ -3588,7 +3588,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//   <li v-if="isLi" v-el:dropdown :class="classes">
 	//     <slot name="button">
 	//       <a class="dropdown-toggle" role="button" :class="{disabled: disabled}" @keyup.esc="show = false">
-	//         {{ text }}
+	//         {{{ text }}}
 	//         <span class="caret"></span>
 	//       </a>
 	//     </slot>
@@ -3719,7 +3719,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 124 */
 /***/ function(module, exports) {
 
-	module.exports = "<li v-if=\"isLi\" v-el:dropdown=\"\" :class=\"classes\" _v-515fe83c=\"\">\n    <slot name=\"button\" _v-515fe83c=\"\">\n      <a class=\"dropdown-toggle\" role=\"button\" :class=\"{disabled: disabled}\" @keyup.esc=\"show = false\" _v-515fe83c=\"\">\n        {{ text }}\n        <span class=\"caret\" _v-515fe83c=\"\"></span>\n      </a>\n    </slot>\n    <slot name=\"dropdown-menu\" _v-515fe83c=\"\">\n      <ul v-else=\"\" class=\"dropdown-menu\" _v-515fe83c=\"\">\n        <slot _v-515fe83c=\"\"></slot>\n      </ul>\n    </slot>\n  </li>\n  <div v-else=\"\" v-el:dropdown=\"\" :class=\"classes\" _v-515fe83c=\"\">\n    <slot name=\"before\" _v-515fe83c=\"\"></slot>\n    <slot name=\"button\" _v-515fe83c=\"\">\n      <button type=\"button\" class=\"btn btn-{{type}} dropdown-toggle\" @keyup.esc=\"show = false\" :disabled=\"disabled\" _v-515fe83c=\"\">\n        {{ text }}\n        <span class=\"caret\" _v-515fe83c=\"\"></span>\n      </button>\n    </slot>\n    <slot name=\"dropdown-menu\" _v-515fe83c=\"\">\n      <ul class=\"dropdown-menu\" _v-515fe83c=\"\">\n        <slot _v-515fe83c=\"\"></slot>\n      </ul>\n    </slot>\n  </div>";
+	module.exports = "<li v-if=\"isLi\" v-el:dropdown=\"\" :class=\"classes\" _v-515fe83c=\"\">\n    <slot name=\"button\" _v-515fe83c=\"\">\n      <a class=\"dropdown-toggle\" role=\"button\" :class=\"{disabled: disabled}\" @keyup.esc=\"show = false\" _v-515fe83c=\"\">\n        {{{ text }}}\n        <span class=\"caret\" _v-515fe83c=\"\"></span>\n      </a>\n    </slot>\n    <slot name=\"dropdown-menu\" _v-515fe83c=\"\">\n      <ul v-else=\"\" class=\"dropdown-menu\" _v-515fe83c=\"\">\n        <slot _v-515fe83c=\"\"></slot>\n      </ul>\n    </slot>\n  </li>\n  <div v-else=\"\" v-el:dropdown=\"\" :class=\"classes\" _v-515fe83c=\"\">\n    <slot name=\"before\" _v-515fe83c=\"\"></slot>\n    <slot name=\"button\" _v-515fe83c=\"\">\n      <button type=\"button\" class=\"btn btn-{{type}} dropdown-toggle\" @keyup.esc=\"show = false\" :disabled=\"disabled\" _v-515fe83c=\"\">\n        {{ text }}\n        <span class=\"caret\" _v-515fe83c=\"\"></span>\n      </button>\n    </slot>\n    <slot name=\"dropdown-menu\" _v-515fe83c=\"\">\n      <ul class=\"dropdown-menu\" _v-515fe83c=\"\">\n        <slot _v-515fe83c=\"\"></slot>\n      </ul>\n    </slot>\n  </div>";
 
 /***/ },
 /* 125 */
@@ -31726,7 +31726,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  props: {
 	    trigger: {
 	      type: String,
-	      default: 'click'
+	      default: 'hover'
 	    }
 	  }
 	};
@@ -31776,10 +31776,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	//   >
 	//     <div class="arrow"></div>
 	//     <h3 class="popover-title" v-if="title">
-	//       <slot name="title">{{title}}</slot>
+	//       <slot name="title">{{{titleRendered}}}</slot>
 	//     </h3>
 	//     <div class="popover-content">
-	//       <slot name="content">{{{content}}}</slot>
+	//       <slot name="content">{{{contentRendered}}}</slot>
 	//     </div>
 	//   </div>
 	// </template>
@@ -31801,6 +31801,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _NodeList = __webpack_require__(66);
 	
 	var _NodeList2 = _interopRequireDefault(_NodeList);
+	
+	var _markdown = __webpack_require__(136);
+	
+	var _markdown2 = _interopRequireDefault(_markdown);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -31839,6 +31843,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	  },
 	
+	  computed: {
+	    contentRendered: function contentRendered() {
+	      return _markdown2.default.renderInline(this.content);
+	    },
+	    titleRendered: function titleRendered() {
+	      return _markdown2.default.renderInline(this.title);
+	    }
+	  },
 	  methods: {
 	    toggle: function toggle(e) {
 	      var _this = this;
@@ -31900,7 +31912,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 276 */
 /***/ function(module, exports) {
 
-	module.exports = "<span v-el:trigger>\n    <slot></slot>\n  </span>\n  <div v-el:popover v-if=\"show\"\n    :class=\"['popover',placement]\"\n    :transition=\"effect\"\n  >\n    <div class=\"arrow\"></div>\n    <h3 class=\"popover-title\" v-if=\"title\">\n      <slot name=\"title\">{{title}}</slot>\n    </h3>\n    <div class=\"popover-content\">\n      <slot name=\"content\">{{{content}}}</slot>\n    </div>\n  </div>";
+	module.exports = "<span v-el:trigger>\n    <slot></slot>\n  </span>\n  <div v-el:popover v-if=\"show\"\n    :class=\"['popover',placement]\"\n    :transition=\"effect\"\n  >\n    <div class=\"arrow\"></div>\n    <h3 class=\"popover-title\" v-if=\"title\">\n      <slot name=\"title\">{{{titleRendered}}}</slot>\n    </h3>\n    <div class=\"popover-content\">\n      <slot name=\"content\">{{{contentRendered}}}</slot>\n    </div>\n  </div>";
 
 /***/ },
 /* 277 */
@@ -32911,6 +32923,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _utils = __webpack_require__(62);
 	
+	var _markdown = __webpack_require__(136);
+	
+	var _markdown2 = _interopRequireDefault(_markdown);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// <template>
+	//   <div role="tabpanel" class="tab-pane active" v-show="show"
+	//     :class="{hide:!show}"
+	//     :transition="transition"
+	//   >
+	//     <slot></slot>
+	//   </div>
+	// </template>
+	
+	// <script>
 	exports.default = {
 	  props: {
 	    header: {
@@ -32923,6 +32951,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  computed: {
+	    headerRendered: function headerRendered() {
+	      return _markdown2.default.renderInline(this.header);
+	    },
 	    active: function active() {
 	      return this._tabset.show === this;
 	    },
@@ -32971,16 +33002,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	};
 	// </script>
-	// <template>
-	//   <div role="tabpanel" class="tab-pane active" v-show="show"
-	//     :class="{hide:!show}"
-	//     :transition="transition"
-	//   >
-	//     <slot></slot>
-	//   </div>
-	// </template>
-	
-	// <script>
 
 /***/ },
 /* 299 */
@@ -33065,6 +33086,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _utils = __webpack_require__(62);
 	
+	var _markdown = __webpack_require__(136);
+	
+	var _markdown2 = _interopRequireDefault(_markdown);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// <template><slot></slot></template>
+	
+	// <script>
 	exports.default = {
 	  props: {
 	    disabled: {
@@ -33086,6 +33116,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  computed: {
 	    active: function active() {
 	      return ~this.tabs.indexOf(this._tabset.show);
+	    },
+	    headerRendered: function headerRendered() {
+	      return _markdown2.default.renderInline(this.header);
 	    }
 	  },
 	  created: function created() {
@@ -33122,9 +33155,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	//   margin-bottom: 15px;
 	// }
 	// </style>
-	// <template><slot></slot></template>
-	
-	// <script>
 
 /***/ },
 /* 304 */
@@ -33220,10 +33250,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	//   <ul class="nav nav-{{navStyle}}" role="tablist">
 	//     <template v-for="t in headers">
 	//       <li v-if="!t._tabgroup" :class="{active:t.active, disabled:t.disabled}" @click.prevent="select(t)">
-	//         <a href="#"><slot name="header">{{{t.header}}}</slot></a>
+	//         <a href="#"><slot name="header">{{{t.headerRendered}}}</slot></a>
 	//       </li>
-	//       <dropdown v-else :text="t.header" :class="{active:t.active}" :disabled="t.disabled">
-	//         <li v-for="tab in t.tabs" :class="{disabled:tab.disabled}"><a href="#" @click.prevent="select(tab)">{{tab.header}}</a></li>
+	//       <dropdown v-else :text="t.headerRendered" :class="{active:t.active}" :disabled="t.disabled">
+	//         <li v-for="tab in t.tabs" :class="{disabled:tab.disabled}"><a href="#" @click.prevent="select(tab)">{{{tab.headerRendered}}}</a></li>
 	//       </dropdown>
 	//     </template>
 	//   </ul>
@@ -33293,7 +33323,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 309 */
 /***/ function(module, exports) {
 
-	module.exports = "<!-- Nav tabs -->\n  <ul class=\"nav nav-{{navStyle}}\" role=\"tablist\" _v-a4c6e684=\"\">\n    <template v-for=\"t in headers\" _v-a4c6e684=\"\">\n      <li v-if=\"!t._tabgroup\" :class=\"{active:t.active, disabled:t.disabled}\" @click.prevent=\"select(t)\" _v-a4c6e684=\"\">\n        <a href=\"#\" _v-a4c6e684=\"\"><slot name=\"header\" _v-a4c6e684=\"\">{{{t.header}}}</slot></a>\n      </li>\n      <dropdown v-else=\"\" :text=\"t.header\" :class=\"{active:t.active}\" :disabled=\"t.disabled\" _v-a4c6e684=\"\">\n        <li v-for=\"tab in t.tabs\" :class=\"{disabled:tab.disabled}\" _v-a4c6e684=\"\"><a href=\"#\" @click.prevent=\"select(tab)\" _v-a4c6e684=\"\">{{tab.header}}</a></li>\n      </dropdown>\n    </template>\n  </ul>\n  <div class=\"tab-content\" v-el:tab-content=\"\" _v-a4c6e684=\"\">\n    <slot _v-a4c6e684=\"\"></slot>\n  </div>";
+	module.exports = "<!-- Nav tabs -->\n  <ul class=\"nav nav-{{navStyle}}\" role=\"tablist\" _v-a4c6e684=\"\">\n    <template v-for=\"t in headers\" _v-a4c6e684=\"\">\n      <li v-if=\"!t._tabgroup\" :class=\"{active:t.active, disabled:t.disabled}\" @click.prevent=\"select(t)\" _v-a4c6e684=\"\">\n        <a href=\"#\" _v-a4c6e684=\"\"><slot name=\"header\" _v-a4c6e684=\"\">{{{t.headerRendered}}}</slot></a>\n      </li>\n      <dropdown v-else=\"\" :text=\"t.headerRendered\" :class=\"{active:t.active}\" :disabled=\"t.disabled\" _v-a4c6e684=\"\">\n        <li v-for=\"tab in t.tabs\" :class=\"{disabled:tab.disabled}\" _v-a4c6e684=\"\"><a href=\"#\" @click.prevent=\"select(tab)\" _v-a4c6e684=\"\">{{{tab.headerRendered}}}</a></li>\n      </dropdown>\n    </template>\n  </ul>\n  <div class=\"tab-content\" v-el:tab-content=\"\" _v-a4c6e684=\"\">\n    <slot _v-a4c6e684=\"\"></slot>\n  </div>";
 
 /***/ },
 /* 310 */
@@ -33374,8 +33404,28 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _popoverMixins2 = _interopRequireDefault(_popoverMixins);
 	
+	var _markdown = __webpack_require__(136);
+	
+	var _markdown2 = _interopRequireDefault(_markdown);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	// <template>
+	//   <span v-el:trigger>
+	//     <slot></slot>
+	//   </span>
+	//   <div v-el:popover v-if="show" style="display:block;"
+	//     :class="['tooltip',placement]"
+	//     :transition="effect"
+	//   >
+	//     <div class="tooltip-arrow"></div>
+	//     <div class="tooltip-inner">
+	//       <slot name="content">{{{contentRendered}}}</slot>
+	//    </div>
+	//   </div>
+	// </template>
+	
+	// <script>
 	exports.default = {
 	  mixins: [_popoverMixins2.default],
 	  props: {
@@ -33386,6 +33436,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    effect: {
 	      type: String,
 	      default: 'scale'
+	    },
+	    placement: {
+	      type: String,
+	      default: 'top'
 	    }
 	  }
 	};
@@ -33421,28 +33475,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	//   }
 	// }
 	// </style>
-	// <template>
-	//   <span v-el:trigger>
-	//     <slot></slot>
-	//   </span>
-	//   <div v-el:popover v-if="show" style="display:block;"
-	//     :class="['tooltip',placement]"
-	//     :transition="effect"
-	//   >
-	//     <div class="tooltip-arrow"></div>
-	//     <div class="tooltip-inner">
-	//       <slot name="content">{{{content}}}</slot>
-	//    </div>
-	//   </div>
-	// </template>
-	
-	// <script>
 
 /***/ },
 /* 314 */
 /***/ function(module, exports) {
 
-	module.exports = "<span v-el:trigger>\n    <slot></slot>\n  </span>\n  <div v-el:popover v-if=\"show\" style=\"display:block;\"\n    :class=\"['tooltip',placement]\"\n    :transition=\"effect\"\n  >\n    <div class=\"tooltip-arrow\"></div>\n    <div class=\"tooltip-inner\">\n      <slot name=\"content\">{{{content}}}</slot>\n   </div>\n  </div>";
+	module.exports = "<span v-el:trigger>\n    <slot></slot>\n  </span>\n  <div v-el:popover v-if=\"show\" style=\"display:block;\"\n    :class=\"['tooltip',placement]\"\n    :transition=\"effect\"\n  >\n    <div class=\"tooltip-arrow\"></div>\n    <div class=\"tooltip-inner\">\n      <slot name=\"content\">{{{contentRendered}}}</slot>\n   </div>\n  </div>";
 
 /***/ },
 /* 315 */
