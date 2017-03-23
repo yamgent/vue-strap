@@ -5,7 +5,7 @@
       <li v-if="!t._tabgroup" :class="{active:t.active, disabled:t.disabled}" @click.prevent="select(t)">
         <a href="#"><slot name="header">{{{t.headerRendered}}}</slot></a>
       </li>
-      <dropdown v-else :text="t.header" :class="{active:t.active}" :disabled="t.disabled">
+      <dropdown v-else :text="t.headerRendered" :class="{active:t.active}" :disabled="t.disabled">
         <li v-for="tab in t.tabs" :class="{disabled:tab.disabled}"><a href="#" @click.prevent="select(tab)">{{{tab.headerRendered}}}</a></li>
       </dropdown>
     </template>

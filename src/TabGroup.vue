@@ -2,6 +2,7 @@
 
 <script>
 import {coerce} from './utils/utils.js'
+import md from './utils/markdown.js'
 
 export default {
   props: {
@@ -23,6 +24,9 @@ export default {
   computed: {
     active () {
       return ~this.tabs.indexOf(this._tabset.show)
+    },
+    headerRendered () {
+      return md.renderInline(this.header)
     }
   },
   created () {

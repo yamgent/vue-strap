@@ -2,7 +2,7 @@
   <li v-if="isLi" v-el:dropdown :class="classes">
     <slot name="button">
       <a class="dropdown-toggle" role="button" :class="{disabled: disabled}" @keyup.esc="show = false">
-        {{ text }}
+        {{{ text }}}
         <span class="caret"></span>
       </a>
     </slot>
