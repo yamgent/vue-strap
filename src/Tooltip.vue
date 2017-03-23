@@ -8,13 +8,14 @@
   >
     <div class="tooltip-arrow"></div>
     <div class="tooltip-inner">
-      <slot name="content">{{{content}}}</slot>
+      <slot name="content">{{{contentRendered}}}</slot>
    </div>
   </div>
 </template>
 
 <script>
 import PopoverMixin from './utils/popoverMixins.js'
+import md from './utils/markdown.js'
 
 export default {
   mixins: [PopoverMixin],
@@ -26,6 +27,15 @@ export default {
     effect: {
       type: String,
       default: 'scale'
+    },
+    placement: {
+      type: String,
+      default: 'top'
+    }
+  },
+  computed: {
+    contentRendered () {
+      return md.renderInline(this.content)
     }
   }
 }

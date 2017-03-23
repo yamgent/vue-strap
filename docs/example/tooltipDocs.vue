@@ -17,17 +17,25 @@
       <tooltip effect="scale" content="Lorem ipsum dolor sit amet" placement="bottom" trigger="focus">
         <bs-input type="text" placeholder="Focus"></bs-input>
       </tooltip>
+      <h4>Markdown</h4>
+      <tooltip effect="scale" content="*Hello* **World**">
+        <a href="">Hover me</a>
+      </tooltip>
     </div>
     <doc-code language="markup">
       <tooltip effect="scale" placement="bottom" content="Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod">
         <button class="btn btn-default">tooltip on bottom</button>
+      </tooltip>
+      <h4>With markdown</h4>
+      <tooltip effect="scale" content="*Hello* **World**">
+        <a href="">Hover me</a>
       </tooltip>
     </doc-code>
     <doc-table>
       <div>
         <p>trigger</p>
         <p><code>String</code>, one of <code>click</code> <code>focus</code> <code>hover</code> <code>contextmenu</code></p>
-        <p><code>click</code></p>
+        <p><code>hover</code></p>
         <p>How the tooltip is triggered.</p>
       </div>
       <div>
@@ -35,6 +43,7 @@
         <p><code>String</code>, one of <code>scale</code> <code>fadein</code></p>
         <p><code>scale</code></p>
         <p></p>
+      </div>
       <div>
         <p>content</p>
         <p><code>String</code></p>
