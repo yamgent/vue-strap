@@ -9,6 +9,7 @@
 
 <script>
 import {coerce} from './utils/utils.js'
+import md from './utils/markdown.js'
 
 export default {
   props: {
@@ -22,6 +23,9 @@ export default {
     }
   },
   computed: {
+    headerRendered () {
+      return md.renderInline(this.header)
+    },
     active () {
       return this._tabset.show === this
     },
