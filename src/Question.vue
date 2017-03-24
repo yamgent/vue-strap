@@ -44,6 +44,9 @@
 </script>
 
 <style>
+    .body-wrapper {
+        padding-bottom: 10px;
+    }
     .textarea-container {
         margin: 8px 0;
     }

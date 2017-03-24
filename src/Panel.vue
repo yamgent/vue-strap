@@ -170,10 +170,10 @@ export default {
   border: none;
 }
 
-.panel-seamless .panel-heading {
+.panel-seamless > .panel-heading {
   padding: 0;
 }
-.panel-seamless .panel-body {
+.panel-seamless > .panel-collapse > .panel-body {
   padding: 10px 0;
 }
 </style>

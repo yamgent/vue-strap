@@ -86,6 +86,21 @@
         eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur
         ullam voluptates!
       </panel>
+
+      <panel header="Seamless - Click to expand" expandable type="seamless">
+        <Question>
+          Body
+
+          <div slot="hint">
+            Hint
+
+          </div>
+          <div slot="answer">
+            Answer
+
+          </div>
+        </Question>
+      </panel>
     </div>
     <doc-code language="markup">
       <panel header="Click to expand" expandable type="seamless">
@@ -155,6 +170,7 @@ import accordion from 'src/Accordion.vue'
 import checkbox from 'src/Checkbox.vue'
 import panel from 'src/Panel.vue'
 import vSelect from 'src/Select.vue'
+import question from 'src/Question.vue'
 
 export default {
   components: {
@@ -164,7 +180,8 @@ export default {
     accordion,
     checkbox,
     panel,
-    vSelect
+    vSelect,
+    question
   },
   data () {
     return {
