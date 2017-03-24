@@ -32,6 +32,14 @@ export default {
       type: String,
       default: 'top'
     }
+  },
+  computed: {
+    isPureText () {
+      return this.$els.trigger.children.length === 0
+    }
+  },
+  attached () {
+    this.isPureText && (this.$els.trigger.style['border-bottom'] = '1px dotted black')
   }
 }
 </script>

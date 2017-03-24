@@ -52,7 +52,7 @@ export default {
       }
       setTimeout(() => {
         const popover = this.$els.popover
-        const trigger = this.$els.trigger.children[0]
+        const trigger = this.$els.trigger.children.length === 0 ? this.$els.trigger : this.$els.trigger.children[0]
         switch (this.placement) {
           case 'top' :
             this.position.left = trigger.offsetLeft - popover.offsetWidth / 2 + trigger.offsetWidth / 2

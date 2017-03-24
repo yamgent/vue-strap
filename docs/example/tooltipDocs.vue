@@ -21,6 +21,10 @@
       <tooltip effect="scale" content="*Hello* **World**">
         <a href="">Hover me</a>
       </tooltip>
+      <h4>Free Text</h4>
+      <tooltip content=" coupling is the degree of interdependence between software modules; a measure of how closely
+  connected two routines or modules are; the strength of the relationships between modules.">coupling</tooltip>
+
     </div>
     <doc-code language="markup">
       <tooltip effect="scale" placement="bottom" content="Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod">

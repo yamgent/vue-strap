@@ -36,6 +36,8 @@
 
         <button class="btn btn-default">Hover</button>
       </popover>
+      <h4>Wrap Text</h4>
+      <popover header="false" content="Nice!">What do you say</popover>
     </div>
     <doc-code language="markup">
       <popover effect="fade" placement="bottom" title="Title" content="content">
