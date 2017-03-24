@@ -14244,7 +14244,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, ".panel-heading {\n  width: 100%;\n}\n.panel-title {\n  font-size: 1em;\n}\n.header-wrapper {\n  display: inline-block;\n  width: 80%;\n}\n.button-wrapper {\n  float: right;\n  display: inline-block;\n  width: 20%;\n}\n.accordion-toggle {\n  cursor: pointer;\n}\n.expandable-panel {\n  margin-bottom: 0!important;\n}\n.expandable-panel + .expandable-panel {\n  margin-top: 5px;\n}\n\n.panel-seamless {\n  padding: 0;\n}\n\n.caret.caret-collapse {\n  border-left: 4px dashed;\n  border-top: 4px solid transparent;\n  border-bottom: 4px solid transparent;\n  border-right: none;\n}\n\n.panel.panel-seamless {\n  box-shadow: none;\n  border: none;\n}\n\n.panel-seamless .panel-heading {\n  padding: 0;\n}\n.panel-seamless .panel-body {\n  padding: 10px 0;\n}", ""]);
+	exports.push([module.id, ".panel-heading {\n  width: 100%;\n}\n.panel-title {\n  font-size: 1em;\n}\n.header-wrapper {\n  display: inline-block;\n  width: 80%;\n}\n.button-wrapper {\n  float: right;\n  display: inline-block;\n  width: 20%;\n}\n.accordion-toggle {\n  cursor: pointer;\n}\n.expandable-panel {\n  margin-bottom: 0!important;\n}\n.expandable-panel + .expandable-panel {\n  margin-top: 5px;\n}\n\n.panel-seamless {\n  padding: 0;\n}\n\n.caret.caret-collapse {\n  border-left: 4px dashed;\n  border-top: 4px solid transparent;\n  border-bottom: 4px solid transparent;\n  border-right: none;\n}\n\n.panel.panel-seamless {\n  box-shadow: none;\n  border: none;\n}\n\n.panel-seamless > .panel-heading {\n  padding: 0;\n}\n.panel-seamless > .panel-collapse > .panel-body {\n  padding: 10px 0;\n}", ""]);
 	
 	// exports
 
@@ -14411,10 +14411,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	//   border: none;
 	// }
 	
-	// .panel-seamless .panel-heading {
+	// .panel-seamless > .panel-heading {
 	//   padding: 0;
 	// }
-	// .panel-seamless .panel-body {
+	// .panel-seamless > .panel-collapse > .panel-body {
 	//   padding: 10px 0;
 	// }
 	// </style>
@@ -31554,7 +31554,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, ".textarea-container {\n        margin: 8px 0;\n    }\n    .textarea-container > textarea {\n        margin: 4px 0;\n    }", ""]);
+	exports.push([module.id, ".body-wrapper {\n        padding-bottom: 10px;\n    }\n    .textarea-container {\n        margin: 8px 0;\n    }\n    .textarea-container > textarea {\n        margin: 4px 0;\n    }", ""]);
 	
 	// exports
 
@@ -31626,6 +31626,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </script>
 	
 	// <style>
+	//     .body-wrapper {
+	//         padding-bottom: 10px;
+	//     }
 	//     .textarea-container {
 	//         margin: 8px 0;
 	//     }
@@ -31728,6 +31731,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	      type: String,
 	      default: 'hover'
 	    }
+	  },
+	  computed: {
+	    isPureText: function isPureText() {
+	      return this.$els.trigger.children.length === 0;
+	    }
+	  },
+	  attached: function attached() {
+	    this.isPureText && (this.$els.trigger.style['border-bottom'] = '1px dotted black');
 	  }
 	};
 	// </script>
@@ -31861,7 +31872,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 	      setTimeout(function () {
 	        var popover = _this.$els.popover;
-	        var trigger = _this.$els.trigger.children[0];
+	        var trigger = _this.$els.trigger.children.length === 0 ? _this.$els.trigger : _this.$els.trigger.children[0];
 	        switch (_this.placement) {
 	          case 'top':
 	            _this.position.left = trigger.offsetLeft - popover.offsetWidth / 2 + trigger.offsetWidth / 2;
@@ -33441,6 +33452,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	      type: String,
 	      default: 'top'
 	    }
+	  },
+	  computed: {
+	    isPureText: function isPureText() {
+	      return this.$els.trigger.children.length === 0;
+	    }
+	  },
+	  attached: function attached() {
+	    this.isPureText && (this.$els.trigger.style['border-bottom'] = '1px dotted black');
 	  }
 	};
 	// </script>
