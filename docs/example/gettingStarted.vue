@@ -21,36 +21,31 @@
     <doc-code language="javascript">
       $ npm install vue-strap
 
-      var alert = require('vue-strap/src/alert');
-      // or
-      var alert = require('vue-strap').alert;
-
-      new Vue({
-        components: {
-          alert: alert
-        }
+      var VueStrap = require('vue-strap')
+      Vue.use(VueStrap)
+      var vm = new Vue({
+        el: 'body'
       })
+
+      VueStrap.installEvents(vm)
     </doc-code>
     <h2>ES6</h2>
     <doc-code language="javascript">
       $ npm install vue-strap
 
-      import alert from 'vue-strap/src/alert'
-      // or
-      import { alert } from 'vue-strap'
-
-      new Vue({
-        components: {
-          alert
-        }``
+      import VueStrap from 'vue-strap'
+      Vue.use(VueStrap)
+      var vm = new Vue({
+        el: 'body'
       })
+      VueStrap.installEvents(vm)
     </doc-code>
 
     <h2>AMD</h2>
     <doc-code language="javascript">
       $ bower install vue-strap
 
-      define(['vue-strap'], function(VueStrap) { var alert = VueStrap.alert; ... });
+      define(['vue-strap'], function(VueStrap) { Vue.use(VueStrap); ... });
     </doc-code>
     <h2>Browser globals</h2>
     <p>
@@ -64,46 +59,13 @@
       <script src="path/to/vue.js"></script>
       <script src="path/to/vue-strap.js"></script>
       <script>
-        new Vue({
-          components: {
-            vSelect: VueStrap.select
-          },
-          data: {
-            options: []
-          }
+        Vue.use(VueStrap)
+        var vm = new Vue({
+          el: 'body'
         })
+        VueStrap.installEvents(vm)
       </script>
     </doc-code>
-    <h2>Translations (optional):</h2>
-    <p>If you want to enable language support, you have to add:</p>
-    <doc-code language="markup">
-      <script src="path/to/vue-strap-lang.js"></script>
-    </doc-code>
-    <h2>CommonJS</h2>
-    <doc-code language="javascript">
-      require('vue-strap/dist/vue-strap-lang.js')
-    </doc-code>
-    <p>If not included what you need, you can add your own, without editing the source code of vue-strap.</p>
-    <hr/>
-    <h2>Mobile detection (optional):</h2>
-    <p>If you need to enable/disable options if is a mobile device you can add:</p>
-    <doc-code language="markup">
-      <script src="path/to/isMobileBrowser.js"></script>
-    </doc-code>
-    <p>Then in javascript you can check it just doing:</p>
-    <doc-code language="javascript">
-      if (navigator.isMobile) {
-        //do something if is mobile
-      }
-      if ('isMobile' in navigator) {
-        //do things only if the plugin was loaded
-
-        if (!navigator.isMobile) {
-          //do something if is not a mobile
-        }
-      }
-    </doc-code>
-    <p>Based on <a href="http://detectmobilebrowsers.com/">Detect Mobile Browsers</a>.</p>
   </div>
 </template>
 <script>
