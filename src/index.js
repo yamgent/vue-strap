@@ -23,6 +23,7 @@ import closeable from './directives/Closeable'
 import showModal from './directives/ShowModal'
 import pic from './Pic.vue'
 import tipBox from './TipBox.vue'
+import trigger from './trigger.vue'
 
 const components = {
   accordion,
@@ -47,7 +48,8 @@ const components = {
   tabs: tabset,
   tipBox,
   tooltip,
-  pic
+  pic,
+  trigger
 }
 
 const directives = {
@@ -73,6 +75,9 @@ function installEvents (vm) {
   })
   vm.$on('retriever:fetched', function (el) {
     vm.$compile(el);
+  })
+  vm.$on('trigger:register', function (el, name) {
+    this.$broadcast('trigger:bind', el, name)
   })
 }
 

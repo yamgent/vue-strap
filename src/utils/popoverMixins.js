@@ -25,6 +25,9 @@ export default {
     placement: {
       type: String,
       default: 'top'
+    },
+    id: {
+      type: String
     }
   },
   data () {
@@ -45,6 +48,16 @@ export default {
     }
   },
   methods: {
+    /**
+     * Reset the trigger element
+     * @param el a Vue instance
+     */
+    setTrigger (el) {
+      let events = {contextmenu: 'contextmenu', hover: 'mouseleave mouseenter', focus: 'blur focus'}
+      this.trigger = el.trigger
+      this._trigger = el.$el
+      jQuery(el.$el).on(events[this.trigger] || 'click', this.toggle)
+    },
     toggle (e) {
       if (e && this.trigger === 'contextmenu') e.preventDefault()
       if (!(this.show = !this.show)) {
@@ -52,7 +65,7 @@ export default {
       }
       setTimeout(() => {
         const popover = this.$els.popover
-        const trigger = this.$els.trigger.children.length === 0 ? this.$els.trigger : this.$els.trigger.children[0]
+        const trigger = this._trigger.children.length === 0 ? this._trigger : this._trigger.children[0]
         switch (this.placement) {
           case 'top' :
             this.position.left = trigger.offsetLeft - popover.offsetWidth / 2 + trigger.offsetWidth / 2

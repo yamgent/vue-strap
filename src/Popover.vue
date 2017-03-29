@@ -27,6 +27,14 @@ export default {
       default: 'hover'
     }
   },
+  events: {
+    'trigger:bind': function (el, id) {
+      if (id === this.id) {
+        el.setTriggerBy(this)
+        this.setTrigger(el) // rebind events
+      }
+    }
+  },
   computed: {
     isPureText () {
       return this.$els.trigger.children.length === 0
@@ -44,6 +52,7 @@ export default {
 .popover.right,
 .popover.bottom {
   display: block;
+  max-width:80%;
 }
 .scale-enter {
   animation:scale-in 0.15s ease-in;

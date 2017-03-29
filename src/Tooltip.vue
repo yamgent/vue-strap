@@ -33,6 +33,14 @@ export default {
       default: 'top'
     }
   },
+  events: {
+    'trigger:bind': function (el, id) {
+      if (id === this.id) {
+        el.setTriggerBy(this)
+        this.setTrigger(el) // rebind events
+      }
+    }
+  },
   computed: {
     isPureText () {
       return this.$els.trigger.children.length === 0

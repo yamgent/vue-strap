@@ -76,6 +76,9 @@ export default {
     },
     name: {
       type: String
+    },
+    id: {
+      type: String
     }
   },
   computed: {
@@ -127,11 +130,19 @@ export default {
       if (name === this.name) {
         this.show = true
       }
+    },
+    'trigger:bind': function (el, id) {
+      if (id === this.id) {
+        el.setTriggerBy(this)
+      }
     }
   },
   methods: {
     close () {
       this.show = false
+    },
+    toggle () {
+      this.show = true
     }
   }
 }

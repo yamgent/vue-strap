@@ -26,11 +26,12 @@
         <morph-docs></morph-docs>
         <navbar-docs></navbar-docs>
         <question-docs></question-docs>
-        <popover-docs></popover-docs>
         <retriever-docs></retriever-docs>
         <tabs-docs></tabs-docs>
         <tip-box-docs></tip-box-docs>
         <tooltip-docs></tooltip-docs>
+        <popover-docs></popover-docs>
+        <trigger-docs></trigger-docs>
       </div>
       <div class="col-md-3">
         <affix-sidebar></affix-sidebar>
@@ -76,6 +77,7 @@ import tabsDocs from './example/tabsDocs.vue'
 import tooltipDocs from './example/tooltipDocs.vue'
 import imageDocs from './example/imageDocs.vue'
 import tipBoxDocs from './example/tipBoxDocs.vue'
+import triggerDocs from './example/triggerDocs.vue'
 
 export default {
   components: {
@@ -99,7 +101,8 @@ export default {
     tabsDocs,
     tooltipDocs,
     imageDocs,
-    tipBoxDocs
+    tipBoxDocs,
+    triggerDocs
   },
   computed: {
     local () { return location.hostname === 'localhost' }
