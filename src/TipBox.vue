@@ -1,5 +1,5 @@
 <template>
-    <div class="container" :class="[boxStyle]">
+    <div class="alert container" :class="[boxStyle]">
         <div class="icon-wrapper">
             <span class="glyphicon" :class="[iconType]" aria-hidden="true"></span>
         </div>
@@ -21,15 +21,15 @@
       boxStyle() {
         switch (this.type) {
           case 'warning':
-            return 'bg-warning'
+            return 'alert-warning'
           case 'info':
-            return 'bg-info'
+            return 'alert-info'
           case 'success':
-            return 'bg-success'
+            return 'alert-success'
           case 'important':
-            return 'bg-danger'
+            return 'alert-danger'
           default:
-            return 'bg-info'
+            return 'alert-info'
         }
       },
 
@@ -38,11 +38,11 @@
           case 'warning':
             return 'glyphicon-warning-sign'
           case 'info':
-            return 'glyphicon-warning-sign'
+            return 'glyphicon-info-sign'
           case 'success':
             return 'glyphicon-ok'
           case 'important':
-            return 'glyphicon-star'
+            return 'glyphicon-exclamation-sign'
           default:
             return 'glyphicon-warning-sign'
         }
@@ -60,14 +60,10 @@
     }
 
     .icon-wrapper {
-        padding: 4px 0;
-        font-size: 64px;
-        color: #333;
         display: flex;
-        align-items: center;
     }
 
     .contents {
-        padding: 8px 12px;
+        padding: 0 6px;
     }
 </style>
