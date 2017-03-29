@@ -1,7 +1,16 @@
 <template>
     <doc-section id="triggerDocs" name="Trigger">
-        Trigger provides more flexibility for triggering contextual information such as popover, tooltip.
-        You could embed an trigger in the text, and define the Tooltip or popover at a separate location, which brings a cleaner authoring flow.
+        <p>
+            <code>Trigger</code> provides more flexibility for triggering contextual overlay such as popover, tooltip, modal.<br/>
+            You could embed an trigger within the text, and define the Tooltip or Popover at a separate location, which brings a cleaner authoring flow. <br>
+            Specify the <code>id</code> attribute on the popover, tooltip or modal component, and use the same id for the <code>for</code> attribute of the trigger
+            to allow trigger to invoke the specific overlay elements. <br>
+        </p>
+        <p>
+            Make sure your <code>id</code> attribute is unique, otherwise unexpected behaviour may occur. <br>
+            Currently only one-to-one mapping between trigger and its overlay component is allowed. Many-to-one mapping (many triggers invoke the same overlay) will
+            be considered in the future. <br>
+        </p>
 
         <h4>Using trigger for Tooltip</h4>
         <div class="bs-example">
