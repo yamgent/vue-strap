@@ -36,7 +36,7 @@
         </doc-code>
         <h4>Using trigger for Modal</h4>
         <div class="bs-example">
-            More about <trigger for="modal:trigger">trigger</trigger>
+            More about <trigger trigger="click" for="modal:trigger">trigger</trigger>
             <modal title="**Modal title** :rocket:" id="modal:trigger">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -47,7 +47,7 @@
             </modal>
         </div>
         <doc-code language="markup">
-            More about <trigger for="modal:trigger">trigger</trigger>
+            More about <trigger for="modal:trigger" trigger="click">trigger</trigger>
             <modal title="**Modal title** :rocket:" id="modal:trigger">
                 ...
             </modal>

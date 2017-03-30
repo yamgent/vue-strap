@@ -1,7 +1,5 @@
 <template>
-    <span v-el:trigger>
-        <slot></slot>
-    </span>
+    <span v-el:trigger><slot></slot></span>
 </template>
 
 <script>
@@ -27,16 +25,15 @@
         }
       })
 
-      this.isPureText && (this.$els.trigger.style['border-bottom'] = '1px dotted black')
+      this.$els.trigger.style['border-bottom'] = (this.trigger === 'click') ? '1px dashed #333' : '1px dotted #333'
+      this.$els.trigger.style['padding-bottom'] = '2px'
+      if (this.trigger === 'click') {
+        this.$els.trigger.style['cursor'] = 'pointer'
+      }
     },
     methods: {
       setTriggerBy (vm) {
         this._triggerBy = vm
-      }
-    },
-    computed: {
-      isPureText () {
-        return this.$els.trigger.children.length === 0
       }
     }
   }

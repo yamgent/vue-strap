@@ -1,12 +1,12 @@
 <template>
   <doc-section id="retriever" name="Retriever">
     <div class="bs-example">
-      <retriever src="/docs/loadContent.html"></retriever>
-      <retriever src="/docs/loadContent.html#fragment"></retriever>
+      <retriever src="docs/loadContent.html"></retriever>
+      <retriever src="docs/loadContent.html#fragment"></retriever>
     </div>
     <doc-code language="markup">
-      <retriever src="/docs/loadContent.html"></retriever>
-      <retriever src="/docs/loadContent.html#fragment"></retriever>
+      <retriever src="docs/loadContent.html"></retriever>
+      <retriever src="docs/loadContent.html#fragment"></retriever>
     </doc-code>
     <doc-table>
 
