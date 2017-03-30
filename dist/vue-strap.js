@@ -30934,7 +30934,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -31058,6 +31058,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    'trigger:bind': function triggerBind(el, id) {
 	      if (id === this.id) {
 	        el.setTriggerBy(this);
+	        // Add event listener for the el
+	        var events = { contextmenu: 'contextmenu', hover: 'mouseleave mouseenter', focus: 'blur focus' };
+	        jQuery(el.$el).on(events[el.trigger] || 'click', this.toggle);
 	      }
 	    }
 	  },
@@ -31133,6 +31136,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </template>
 	
 	// <script>
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(130)))
 
 /***/ },
 /* 254 */
@@ -33961,9 +33965,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	// <template>
-	//     <span v-el:trigger>
-	//         <slot></slot>
-	//     </span>
+	//     <span v-el:trigger><slot></slot></span>
 	// </template>
 	
 	// <script>
@@ -33991,17 +33993,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 	    });
 	
-	    this.isPureText && (this.$els.trigger.style['border-bottom'] = '1px dotted black');
+	    this.$els.trigger.style['border-bottom'] = this.trigger === 'click' ? '1px dashed #333' : '1px dotted #333';
+	    this.$els.trigger.style['padding-bottom'] = '2px';
+	    if (this.trigger === 'click') {
+	      this.$els.trigger.style['cursor'] = 'pointer';
+	    }
 	  },
 	
 	  methods: {
 	    setTriggerBy: function setTriggerBy(vm) {
 	      this._triggerBy = vm;
-	    }
-	  },
-	  computed: {
-	    isPureText: function isPureText() {
-	      return this.$els.trigger.children.length === 0;
 	    }
 	  }
 	};
@@ -34016,7 +34017,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 332 */
 /***/ function(module, exports) {
 
-	module.exports = "<span v-el:trigger>\n        <slot></slot>\n    </span>";
+	module.exports = "<span v-el:trigger><slot></slot></span>";
 
 /***/ }
 /******/ ])

@@ -35392,7 +35392,7 @@
 /* 377 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -35516,6 +35516,9 @@
 	    'trigger:bind': function triggerBind(el, id) {
 	      if (id === this.id) {
 	        el.setTriggerBy(this);
+	        // Add event listener for the el
+	        var events = { contextmenu: 'contextmenu', hover: 'mouseleave mouseenter', focus: 'blur focus' };
+	        jQuery(el.$el).on(events[el.trigger] || 'click', this.toggle);
 	      }
 	    }
 	  },
@@ -35591,6 +35594,7 @@
 	// </template>
 	
 	// <script>
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(296)))
 
 /***/ },
 /* 378 */
@@ -36647,12 +36651,12 @@
 	// <template>
 	//   <doc-section id="retriever" name="Retriever">
 	//     <div class="bs-example">
-	//       <retriever src="/docs/loadContent.html"></retriever>
-	//       <retriever src="/docs/loadContent.html#fragment"></retriever>
+	//       <retriever src="docs/loadContent.html"></retriever>
+	//       <retriever src="docs/loadContent.html#fragment"></retriever>
 	//     </div>
 	//     <doc-code language="markup">
-	//       <retriever src="/docs/loadContent.html"></retriever>
-	//       <retriever src="/docs/loadContent.html#fragment"></retriever>
+	//       <retriever src="docs/loadContent.html"></retriever>
+	//       <retriever src="docs/loadContent.html#fragment"></retriever>
 	//     </doc-code>
 	//     <doc-table>
 	
@@ -36666,7 +36670,7 @@
 /* 406 */
 /***/ function(module, exports) {
 
-	module.exports = "<doc-section id=\"retriever\" name=\"Retriever\">\n    <div class=\"bs-example\">\n      <retriever src=\"/docs/loadContent.html\"></retriever>\n      <retriever src=\"/docs/loadContent.html#fragment\"></retriever>\n    </div>\n    <doc-code language=\"markup\">\n      <retriever src=\"/docs/loadContent.html\"></retriever>\n      <retriever src=\"/docs/loadContent.html#fragment\"></retriever>\n    </doc-code>\n    <doc-table>\n\n    </doc-table>\n  </doc-section>";
+	module.exports = "<doc-section id=\"retriever\" name=\"Retriever\">\n    <div class=\"bs-example\">\n      <retriever src=\"docs/loadContent.html\"></retriever>\n      <retriever src=\"docs/loadContent.html#fragment\"></retriever>\n    </div>\n    <doc-code language=\"markup\">\n      <retriever src=\"docs/loadContent.html\"></retriever>\n      <retriever src=\"docs/loadContent.html#fragment\"></retriever>\n    </doc-code>\n    <doc-table>\n\n    </doc-table>\n  </doc-section>";
 
 /***/ },
 /* 407 */
@@ -38375,7 +38379,7 @@
 	//         </doc-code>
 	//         <h4>Using trigger for Modal</h4>
 	//         <div class="bs-example">
-	//             More about <trigger for="modal:trigger">trigger</trigger>
+	//             More about <trigger trigger="click" for="modal:trigger">trigger</trigger>
 	//             <modal title="**Modal title** :rocket:" id="modal:trigger">
 	//                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	//                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -38386,7 +38390,7 @@
 	//             </modal>
 	//         </div>
 	//         <doc-code language="markup">
-	//             More about <trigger for="modal:trigger">trigger</trigger>
+	//             More about <trigger for="modal:trigger" trigger="click">trigger</trigger>
 	//             <modal title="**Modal title** :rocket:" id="modal:trigger">
 	//                 ...
 	//             </modal>
@@ -38471,9 +38475,7 @@
 	  value: true
 	});
 	// <template>
-	//     <span v-el:trigger>
-	//         <slot></slot>
-	//     </span>
+	//     <span v-el:trigger><slot></slot></span>
 	// </template>
 	
 	// <script>
@@ -38501,17 +38503,16 @@
 	      }
 	    });
 	
-	    this.isPureText && (this.$els.trigger.style['border-bottom'] = '1px dotted black');
+	    this.$els.trigger.style['border-bottom'] = this.trigger === 'click' ? '1px dashed #333' : '1px dotted #333';
+	    this.$els.trigger.style['padding-bottom'] = '2px';
+	    if (this.trigger === 'click') {
+	      this.$els.trigger.style['cursor'] = 'pointer';
+	    }
 	  },
 	
 	  methods: {
 	    setTriggerBy: function setTriggerBy(vm) {
 	      this._triggerBy = vm;
-	    }
-	  },
-	  computed: {
-	    isPureText: function isPureText() {
-	      return this.$els.trigger.children.length === 0;
 	    }
 	  }
 	};
@@ -38526,13 +38527,13 @@
 /* 456 */
 /***/ function(module, exports) {
 
-	module.exports = "<span v-el:trigger>\n        <slot></slot>\n    </span>";
+	module.exports = "<span v-el:trigger><slot></slot></span>";
 
 /***/ },
 /* 457 */
 /***/ function(module, exports) {
 
-	module.exports = "<doc-section id=\"triggerDocs\" name=\"Trigger\">\n        <p>\n            <code>Trigger</code> provides more flexibility for triggering contextual overlay such as popover, tooltip, modal.<br/>\n            You could embed an trigger within the text, and define the Tooltip or Popover at a separate location, which brings a cleaner authoring flow. <br>\n            Specify the <code>id</code> attribute on the popover, tooltip or modal component, and use the same id for the <code>for</code> attribute of the trigger\n            to allow trigger to invoke the specific overlay elements. <br>\n        </p>\n        <p>\n            Make sure your <code>id</code> attribute is unique, otherwise unexpected behaviour may occur. <br>\n            Currently only one-to-one mapping between trigger and its overlay component is allowed. Many-to-one mapping (many triggers invoke the same overlay) will\n            be considered in the future. <br>\n        </p>\n\n        <h4>Using trigger for Tooltip</h4>\n        <div class=\"bs-example\">\n            More about <trigger for=\"tt:trigger\">trigger</trigger>\n            <tooltip id=\"tt:trigger\" content=\"This tooltip triggered by a trigger\"></tooltip>\n        </div>\n        <doc-code language=\"markup\">\n            More about <trigger for=\"tt:trigger\">trigger</trigger>\n            <tooltip id=\"tt:trigger_id\" content=\"This tooltip triggered by a trigger\"></tooltip>\n        </doc-code>\n        <h4>Using trigger for Popover</h4>\n        <div class=\"bs-example\">\n            More about <trigger for=\"pop:trigger\">trigger</trigger>\n            <popover id=\"pop:trigger\" header=\"false\">\n                <div slot=\"content\">\n                    <img src=\"https://vuejs.org/images/logo.png\">\n                </div>\n            </popover>\n        </div>\n        <doc-code language=\"markup\">\n            More about <trigger for=\"pop:trigger_id\">trigger</trigger>\n            <popover id=\"pop:trigger_id\" content=\"This popover is triggered by a trigger\"></popover>\n        </doc-code>\n        <h4>Using trigger for Modal</h4>\n        <div class=\"bs-example\">\n            More about <trigger for=\"modal:trigger\">trigger</trigger>\n            <modal title=\"**Modal title** :rocket:\" id=\"modal:trigger\">\n                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n            </modal>\n        </div>\n        <doc-code language=\"markup\">\n            More about <trigger for=\"modal:trigger\">trigger</trigger>\n            <modal title=\"**Modal title** :rocket:\" id=\"modal:trigger\">\n                ...\n            </modal>\n        </doc-code>\n    </doc-section>";
+	module.exports = "<doc-section id=\"triggerDocs\" name=\"Trigger\">\n        <p>\n            <code>Trigger</code> provides more flexibility for triggering contextual overlay such as popover, tooltip, modal.<br/>\n            You could embed an trigger within the text, and define the Tooltip or Popover at a separate location, which brings a cleaner authoring flow. <br>\n            Specify the <code>id</code> attribute on the popover, tooltip or modal component, and use the same id for the <code>for</code> attribute of the trigger\n            to allow trigger to invoke the specific overlay elements. <br>\n        </p>\n        <p>\n            Make sure your <code>id</code> attribute is unique, otherwise unexpected behaviour may occur. <br>\n            Currently only one-to-one mapping between trigger and its overlay component is allowed. Many-to-one mapping (many triggers invoke the same overlay) will\n            be considered in the future. <br>\n        </p>\n\n        <h4>Using trigger for Tooltip</h4>\n        <div class=\"bs-example\">\n            More about <trigger for=\"tt:trigger\">trigger</trigger>\n            <tooltip id=\"tt:trigger\" content=\"This tooltip triggered by a trigger\"></tooltip>\n        </div>\n        <doc-code language=\"markup\">\n            More about <trigger for=\"tt:trigger\">trigger</trigger>\n            <tooltip id=\"tt:trigger_id\" content=\"This tooltip triggered by a trigger\"></tooltip>\n        </doc-code>\n        <h4>Using trigger for Popover</h4>\n        <div class=\"bs-example\">\n            More about <trigger for=\"pop:trigger\">trigger</trigger>\n            <popover id=\"pop:trigger\" header=\"false\">\n                <div slot=\"content\">\n                    <img src=\"https://vuejs.org/images/logo.png\">\n                </div>\n            </popover>\n        </div>\n        <doc-code language=\"markup\">\n            More about <trigger for=\"pop:trigger_id\">trigger</trigger>\n            <popover id=\"pop:trigger_id\" content=\"This popover is triggered by a trigger\"></popover>\n        </doc-code>\n        <h4>Using trigger for Modal</h4>\n        <div class=\"bs-example\">\n            More about <trigger trigger=\"click\" for=\"modal:trigger\">trigger</trigger>\n            <modal title=\"**Modal title** :rocket:\" id=\"modal:trigger\">\n                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n            </modal>\n        </div>\n        <doc-code language=\"markup\">\n            More about <trigger for=\"modal:trigger\" trigger=\"click\">trigger</trigger>\n            <modal title=\"**Modal title** :rocket:\" id=\"modal:trigger\">\n                ...\n            </modal>\n        </doc-code>\n    </doc-section>";
 
 /***/ },
 /* 458 */
