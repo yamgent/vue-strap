@@ -52,6 +52,20 @@
                 ...
             </modal>
         </doc-code>
+        <doc-table>
+            <div>
+                <p>trigger</p>
+                <p><code>String</code>, one of <code>click</code> <code>focus</code> <code>hover</code> <code>contextmenu</code></p>
+                <p><code>hover</code></p>
+                <p>How trigger triggers its overflow view.</p>
+            </div>
+            <div>
+                <p>for</p>
+                <p><code>String</code>, the id for the overlay view to be shown</p>
+                <p></p>
+                <p></p>
+            </div>
+        </doc-table>
     </doc-section>
 </template>
 
