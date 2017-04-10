@@ -9,11 +9,13 @@
             </div>
         </div>
         <accordion>
-            <panel header="Hint" expandable>
-                <slot name="hint">
-                    No hint is available for this question.
-                </slot>
-            </panel>
+            <div v-show="hasHintSlot">
+                <panel header="Hint" expandable>
+                    <slot name="hint">
+                        No hint is available for this question.
+                    </slot>
+                </panel>
+            </div>
             <panel header="Answer" expandable>
                 <slot name="answer"></slot>
             </panel>
@@ -39,6 +41,15 @@
         coerce: coerce.boolean,
         default: false
       }
+    },
+    data () {
+      return {
+        hasHintSlot: true
+      }
+    },
+    attached() {
+      let hasHintSlot = !!this.$el.querySelector('[slot="hint"]');
+      this.hasHintSlot = hasHintSlot
     }
   }
 </script>

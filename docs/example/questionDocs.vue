@@ -14,6 +14,15 @@
                 </div>
             </Question>
         </div>
+        <p>If no Hint slot is specified, it will not show:</p>
+        <div class="bs-example">
+            <Question>
+                Body
+                <div slot="answer">
+                    Answer
+                </div>
+            </Question>
+        </div>
         <p>
             Question could be used with Morph component to create a inline question group.<br>
             Could be also stored in a remote file and load it when it is to be shown.
@@ -57,6 +66,14 @@
                 <div slot="answer">
                     Answer
                 </div>
+            </Question>
+
+            If no Hint slot is specified, it will not show:
+            <Question>
+                Body
+                <div slot="answer">
+                Answer
+            </div>
             </Question>
 
             Use inline with morph
