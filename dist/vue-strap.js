@@ -92,23 +92,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _DynamicPanel2 = _interopRequireDefault(_DynamicPanel);
 	
-	var _Input = __webpack_require__(245);
+	var _Input = __webpack_require__(248);
 	
 	var _Input2 = _interopRequireDefault(_Input);
 	
-	var _Modal = __webpack_require__(250);
+	var _Modal = __webpack_require__(253);
 	
 	var _Modal2 = _interopRequireDefault(_Modal);
 	
-	var _Morph = __webpack_require__(259);
+	var _Morph = __webpack_require__(262);
 	
 	var _Morph2 = _interopRequireDefault(_Morph);
 	
-	var _Navbar = __webpack_require__(264);
+	var _Navbar = __webpack_require__(267);
 	
 	var _Navbar2 = _interopRequireDefault(_Navbar);
 	
-	var _Question = __webpack_require__(267);
+	var _Question = __webpack_require__(270);
 	
 	var _Question2 = _interopRequireDefault(_Question);
 	
@@ -116,7 +116,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _Panel2 = _interopRequireDefault(_Panel);
 	
-	var _Popover = __webpack_require__(272);
+	var _Popover = __webpack_require__(275);
 	
 	var _Popover2 = _interopRequireDefault(_Popover);
 	
@@ -124,43 +124,43 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _Retriever2 = _interopRequireDefault(_Retriever);
 	
-	var _Select = __webpack_require__(278);
+	var _Select = __webpack_require__(281);
 	
 	var _Select2 = _interopRequireDefault(_Select);
 	
-	var _Tab = __webpack_require__(298);
+	var _Tab = __webpack_require__(301);
 	
 	var _Tab2 = _interopRequireDefault(_Tab);
 	
-	var _TabGroup = __webpack_require__(301);
+	var _TabGroup = __webpack_require__(304);
 	
 	var _TabGroup2 = _interopRequireDefault(_TabGroup);
 	
-	var _Tabset = __webpack_require__(306);
+	var _Tabset = __webpack_require__(309);
 	
 	var _Tabset2 = _interopRequireDefault(_Tabset);
 	
-	var _Tooltip = __webpack_require__(311);
+	var _Tooltip = __webpack_require__(314);
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 	
-	var _Closeable = __webpack_require__(316);
+	var _Closeable = __webpack_require__(319);
 	
 	var _Closeable2 = _interopRequireDefault(_Closeable);
 	
-	var _ShowModal = __webpack_require__(317);
+	var _ShowModal = __webpack_require__(320);
 	
 	var _ShowModal2 = _interopRequireDefault(_ShowModal);
 	
-	var _Pic = __webpack_require__(318);
+	var _Pic = __webpack_require__(321);
 	
 	var _Pic2 = _interopRequireDefault(_Pic);
 	
-	var _TipBox = __webpack_require__(323);
+	var _TipBox = __webpack_require__(326);
 	
 	var _TipBox2 = _interopRequireDefault(_TipBox);
 	
-	var _trigger = __webpack_require__(328);
+	var _trigger = __webpack_require__(331);
 	
 	var _trigger2 = _interopRequireDefault(_trigger);
 	
@@ -3737,7 +3737,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = __webpack_require__(127)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(244)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(247)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -14201,7 +14201,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = __webpack_require__(136)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(243)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(246)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -14274,7 +14274,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _markdown2 = _interopRequireDefault(_markdown);
 	
-	var _PanelSwitch = __webpack_require__(238);
+	var _PanelSwitch = __webpack_require__(241);
 	
 	var _PanelSwitch2 = _interopRequireDefault(_PanelSwitch);
 	
@@ -14470,8 +14470,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	  linkify: true
 	});
 	
-	markdownIt.use(__webpack_require__(206)).use(__webpack_require__(207)).use(__webpack_require__(213)).use(__webpack_require__(214)).use(__webpack_require__(215)).use(__webpack_require__(206)).use(__webpack_require__(216), {
+	markdownIt.use(__webpack_require__(206)).use(__webpack_require__(207)).use(__webpack_require__(208)).use(__webpack_require__(209)).use(__webpack_require__(206)).use(__webpack_require__(210)).use(__webpack_require__(213), {
 	  autofill: false
+	});
+	
+	// fix emoji numbers
+	var emojiData = __webpack_require__(235);
+	// Extend emoji here
+	emojiData['zero'] = emojiData['0'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0030-20e3.png">';
+	emojiData['one'] = emojiData['1'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0031-20e3.png">';
+	emojiData['two'] = emojiData['2'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0032-20e3.png">';
+	emojiData['three'] = emojiData['3'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0033-20e3.png">';
+	emojiData['four'] = emojiData['4'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0034-20e3.png">';
+	emojiData['five'] = emojiData['5'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0035-20e3.png">';
+	emojiData['six'] = emojiData['6'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0036-20e3.png">';
+	emojiData['seven'] = emojiData['7'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0037-20e3.png">';
+	emojiData['eight'] = emojiData['8'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0038-20e3.png">';
+	emojiData['nine'] = emojiData['9'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0039-20e3.png">';
+	markdownIt.use(__webpack_require__(236), {
+	  defs: emojiData
 	});
 	
 	exports.default = markdownIt;
@@ -24977,1625 +24994,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 207 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	
-	var emojies_defs      = __webpack_require__(208);
-	var emojies_shortcuts = __webpack_require__(209);
-	var emoji_html        = __webpack_require__(210);
-	var emoji_replace     = __webpack_require__(211);
-	var normalize_opts    = __webpack_require__(212);
-	
-	
-	module.exports = function emoji_plugin(md, options) {
-	  var defaults = {
-	    defs: emojies_defs,
-	    shortcuts: emojies_shortcuts,
-	    enabled: []
-	  };
-	
-	  var opts = normalize_opts(md.utils.assign({}, defaults, options || {}));
-	
-	  md.renderer.rules.emoji = emoji_html;
-	
-	  md.core.ruler.push('emoji', emoji_replace(md, opts.defs, opts.shortcuts, opts.scanRE, opts.replaceRE));
-	};
-
-
-/***/ },
-/* 208 */
-/***/ function(module, exports) {
-
-	module.exports = {
-		"100": "💯",
-		"1234": "🔢",
-		"grinning": "😀",
-		"grimacing": "😬",
-		"grin": "😁",
-		"joy": "😂",
-		"smiley": "😃",
-		"smile": "😄",
-		"sweat_smile": "😅",
-		"laughing": "😆",
-		"satisfied": "😆",
-		"innocent": "😇",
-		"wink": "😉",
-		"blush": "😊",
-		"slightly_smiling_face": "🙂",
-		"upside_down_face": "🙃",
-		"relaxed": "☺️",
-		"yum": "😋",
-		"relieved": "😌",
-		"heart_eyes": "😍",
-		"kissing_heart": "😘",
-		"kissing": "😗",
-		"kissing_smiling_eyes": "😙",
-		"kissing_closed_eyes": "😚",
-		"stuck_out_tongue_winking_eye": "😜",
-		"stuck_out_tongue_closed_eyes": "😝",
-		"stuck_out_tongue": "😛",
-		"money_mouth_face": "🤑",
-		"nerd_face": "🤓",
-		"sunglasses": "😎",
-		"hugs": "🤗",
-		"smirk": "😏",
-		"no_mouth": "😶",
-		"neutral_face": "😐",
-		"expressionless": "😑",
-		"unamused": "😒",
-		"roll_eyes": "🙄",
-		"thinking": "🤔",
-		"flushed": "😳",
-		"disappointed": "😞",
-		"worried": "😟",
-		"angry": "😠",
-		"rage": "😡",
-		"pout": "😡",
-		"pensive": "😔",
-		"confused": "😕",
-		"slightly_frowning_face": "🙁",
-		"frowning_face": "☹️",
-		"persevere": "😣",
-		"confounded": "😖",
-		"tired_face": "😫",
-		"weary": "😩",
-		"triumph": "😤",
-		"open_mouth": "😮",
-		"scream": "😱",
-		"fearful": "😨",
-		"cold_sweat": "😰",
-		"hushed": "😯",
-		"frowning": "😦",
-		"anguished": "😧",
-		"cry": "😢",
-		"disappointed_relieved": "😥",
-		"sleepy": "😪",
-		"sweat": "😓",
-		"sob": "😭",
-		"dizzy_face": "😵",
-		"astonished": "😲",
-		"zipper_mouth_face": "🤐",
-		"mask": "😷",
-		"face_with_thermometer": "🤒",
-		"face_with_head_bandage": "🤕",
-		"sleeping": "😴",
-		"zzz": "💤",
-		"hankey": "💩",
-		"poop": "💩",
-		"shit": "💩",
-		"smiling_imp": "😈",
-		"imp": "👿",
-		"japanese_ogre": "👹",
-		"japanese_goblin": "👺",
-		"ghost": "👻",
-		"skull": "💀",
-		"skull_and_crossbones": "☠️",
-		"alien": "👽",
-		"space_invader": "👾",
-		"robot": "🤖",
-		"smiley_cat": "😺",
-		"smile_cat": "😸",
-		"joy_cat": "😹",
-		"heart_eyes_cat": "😻",
-		"smirk_cat": "😼",
-		"kissing_cat": "😽",
-		"scream_cat": "🙀",
-		"crying_cat_face": "😿",
-		"pouting_cat": "😾",
-		"raised_hands": "🙌",
-		"clap": "👏",
-		"+1": "👍",
-		"thumbsup": "👍",
-		"-1": "👎",
-		"thumbsdown": "👎",
-		"facepunch": "👊",
-		"punch": "👊",
-		"fist": "✊",
-		"wave": "👋",
-		"point_left": "👈",
-		"point_right": "👉",
-		"point_up_2": "👆",
-		"point_down": "👇",
-		"ok_hand": "👌",
-		"point_up": "☝️",
-		"v": "✌️",
-		"hand": "✋",
-		"raised_hand": "✋",
-		"raised_hand_with_fingers_splayed": "🖐",
-		"open_hands": "👐",
-		"muscle": "💪",
-		"pray": "🙏",
-		"vulcan_salute": "🖖",
-		"metal": "🤘",
-		"middle_finger": "🖕",
-		"fu": "🖕",
-		"writing_hand": "✍️",
-		"nail_care": "💅",
-		"lips": "👄",
-		"tongue": "👅",
-		"ear": "👂",
-		"nose": "👃",
-		"eye": "👁",
-		"eyes": "👀",
-		"speaking_head": "🗣",
-		"bust_in_silhouette": "👤",
-		"busts_in_silhouette": "👥",
-		"baby": "👶",
-		"boy": "👦",
-		"girl": "👧",
-		"man": "👨",
-		"woman": "👩",
-		"blonde_woman": "👱‍♀️",
-		"blonde_man": "👱",
-		"person_with_blond_hair": "👱",
-		"older_man": "👴",
-		"older_woman": "👵",
-		"man_with_gua_pi_mao": "👲",
-		"woman_with_turban": "👳‍♀️",
-		"man_with_turban": "👳",
-		"policewoman": "👮‍♀️",
-		"policeman": "👮",
-		"cop": "👮",
-		"construction_worker_woman": "👷‍♀️",
-		"construction_worker_man": "👷",
-		"construction_worker": "👷",
-		"guardswoman": "💂‍♀️",
-		"guardsman": "💂",
-		"female_detective": "🕵️‍♀️",
-		"male_detective": "🕵️",
-		"detective": "🕵️",
-		"santa": "🎅",
-		"princess": "👸",
-		"bride_with_veil": "👰",
-		"angel": "👼",
-		"bowing_woman": "🙇‍♀️",
-		"bowing_man": "🙇",
-		"bow": "🙇",
-		"tipping_hand_woman": "💁",
-		"information_desk_person": "💁",
-		"tipping_hand_man": "💁‍♂️",
-		"no_good_woman": "🙅",
-		"no_good": "🙅",
-		"ng_woman": "🙅",
-		"no_good_man": "🙅‍♂️",
-		"ng_man": "🙅‍♂️",
-		"ok_woman": "🙆",
-		"ok_man": "🙆‍♂️",
-		"raising_hand_woman": "🙋",
-		"raising_hand": "🙋",
-		"raising_hand_man": "🙋‍♂️",
-		"pouting_woman": "🙎",
-		"person_with_pouting_face": "🙎",
-		"pouting_man": "🙎‍♂️",
-		"frowning_woman": "🙍",
-		"person_frowning": "🙍",
-		"frowning_man": "🙍‍♂️",
-		"haircut_woman": "💇",
-		"haircut": "💇",
-		"haircut_man": "💇‍♂️",
-		"massage_woman": "💆",
-		"massage": "💆",
-		"massage_man": "💆‍♂️",
-		"dancer": "💃",
-		"dancing_women": "👯",
-		"dancers": "👯",
-		"dancing_men": "👯‍♂️",
-		"walking_woman": "🚶‍♀️",
-		"walking_man": "🚶",
-		"walking": "🚶",
-		"running_woman": "🏃‍♀️",
-		"running_man": "🏃",
-		"runner": "🏃",
-		"running": "🏃",
-		"couple": "👫",
-		"two_women_holding_hands": "👭",
-		"two_men_holding_hands": "👬",
-		"couple_with_heart_woman_man": "💑",
-		"couple_with_heart": "💑",
-		"couple_with_heart_woman_woman": "👩‍❤️‍👩",
-		"couple_with_heart_man_man": "👨‍❤️‍👨",
-		"couplekiss_man_woman": "💏",
-		"couplekiss_woman_woman": "👩‍❤️‍💋‍👩",
-		"couplekiss_man_man": "👨‍❤️‍💋‍👨",
-		"family_man_woman_boy": "👪",
-		"family": "👪",
-		"family_man_woman_girl": "👨‍👩‍👧",
-		"family_man_woman_girl_boy": "👨‍👩‍👧‍👦",
-		"family_man_woman_boy_boy": "👨‍👩‍👦‍👦",
-		"family_man_woman_girl_girl": "👨‍👩‍👧‍👧",
-		"family_woman_woman_boy": "👩‍👩‍👦",
-		"family_woman_woman_girl": "👩‍👩‍👧",
-		"family_woman_woman_girl_boy": "👩‍👩‍👧‍👦",
-		"family_woman_woman_boy_boy": "👩‍👩‍👦‍👦",
-		"family_woman_woman_girl_girl": "👩‍👩‍👧‍👧",
-		"family_man_man_boy": "👨‍👨‍👦",
-		"family_man_man_girl": "👨‍👨‍👧",
-		"family_man_man_girl_boy": "👨‍👨‍👧‍👦",
-		"family_man_man_boy_boy": "👨‍👨‍👦‍👦",
-		"family_man_man_girl_girl": "👨‍👨‍👧‍👧",
-		"family_woman_boy": "👩‍👦",
-		"family_woman_girl": "👩‍👧",
-		"family_woman_girl_boy": "👩‍👧‍👦",
-		"family_woman_boy_boy": "👩‍👦‍👦",
-		"family_woman_girl_girl": "👩‍👧‍👧",
-		"family_man_boy": "👨‍👦",
-		"family_man_girl": "👨‍👧",
-		"family_man_girl_boy": "👨‍👧‍👦",
-		"family_man_boy_boy": "👨‍👦‍👦",
-		"family_man_girl_girl": "👨‍👧‍👧",
-		"womans_clothes": "👚",
-		"shirt": "👕",
-		"tshirt": "👕",
-		"jeans": "👖",
-		"necktie": "👔",
-		"dress": "👗",
-		"bikini": "👙",
-		"kimono": "👘",
-		"lipstick": "💄",
-		"kiss": "💋",
-		"footprints": "👣",
-		"high_heel": "👠",
-		"sandal": "👡",
-		"boot": "👢",
-		"mans_shoe": "👞",
-		"shoe": "👞",
-		"athletic_shoe": "👟",
-		"womans_hat": "👒",
-		"tophat": "🎩",
-		"mortar_board": "🎓",
-		"crown": "👑",
-		"rescue_worker_helmet": "⛑",
-		"school_satchel": "🎒",
-		"pouch": "👝",
-		"purse": "👛",
-		"handbag": "👜",
-		"briefcase": "💼",
-		"eyeglasses": "👓",
-		"dark_sunglasses": "🕶",
-		"ring": "💍",
-		"closed_umbrella": "🌂",
-		"dog": "🐶",
-		"cat": "🐱",
-		"mouse": "🐭",
-		"hamster": "🐹",
-		"rabbit": "🐰",
-		"bear": "🐻",
-		"panda_face": "🐼",
-		"koala": "🐨",
-		"tiger": "🐯",
-		"lion": "🦁",
-		"cow": "🐮",
-		"pig": "🐷",
-		"pig_nose": "🐽",
-		"frog": "🐸",
-		"octopus": "🐙",
-		"monkey_face": "🐵",
-		"see_no_evil": "🙈",
-		"hear_no_evil": "🙉",
-		"speak_no_evil": "🙊",
-		"monkey": "🐒",
-		"chicken": "🐔",
-		"penguin": "🐧",
-		"bird": "🐦",
-		"baby_chick": "🐤",
-		"hatching_chick": "🐣",
-		"hatched_chick": "🐥",
-		"wolf": "🐺",
-		"boar": "🐗",
-		"horse": "🐴",
-		"unicorn": "🦄",
-		"bee": "🐝",
-		"honeybee": "🐝",
-		"bug": "🐛",
-		"snail": "🐌",
-		"beetle": "🐞",
-		"ant": "🐜",
-		"spider": "🕷",
-		"scorpion": "🦂",
-		"crab": "🦀",
-		"snake": "🐍",
-		"turtle": "🐢",
-		"tropical_fish": "🐠",
-		"fish": "🐟",
-		"blowfish": "🐡",
-		"dolphin": "🐬",
-		"flipper": "🐬",
-		"whale": "🐳",
-		"whale2": "🐋",
-		"crocodile": "🐊",
-		"leopard": "🐆",
-		"tiger2": "🐅",
-		"water_buffalo": "🐃",
-		"ox": "🐂",
-		"cow2": "🐄",
-		"dromedary_camel": "🐪",
-		"camel": "🐫",
-		"elephant": "🐘",
-		"goat": "🐐",
-		"ram": "🐏",
-		"sheep": "🐑",
-		"racehorse": "🐎",
-		"pig2": "🐖",
-		"rat": "🐀",
-		"mouse2": "🐁",
-		"rooster": "🐓",
-		"turkey": "🦃",
-		"dove": "🕊",
-		"dog2": "🐕",
-		"poodle": "🐩",
-		"cat2": "🐈",
-		"rabbit2": "🐇",
-		"chipmunk": "🐿",
-		"feet": "🐾",
-		"paw_prints": "🐾",
-		"dragon": "🐉",
-		"dragon_face": "🐲",
-		"cactus": "🌵",
-		"christmas_tree": "🎄",
-		"evergreen_tree": "🌲",
-		"deciduous_tree": "🌳",
-		"palm_tree": "🌴",
-		"seedling": "🌱",
-		"herb": "🌿",
-		"shamrock": "☘",
-		"four_leaf_clover": "🍀",
-		"bamboo": "🎍",
-		"tanabata_tree": "🎋",
-		"leaves": "🍃",
-		"fallen_leaf": "🍂",
-		"maple_leaf": "🍁",
-		"ear_of_rice": "🌾",
-		"hibiscus": "🌺",
-		"sunflower": "🌻",
-		"rose": "🌹",
-		"tulip": "🌷",
-		"blossom": "🌼",
-		"cherry_blossom": "🌸",
-		"bouquet": "💐",
-		"mushroom": "🍄",
-		"chestnut": "🌰",
-		"jack_o_lantern": "🎃",
-		"shell": "🐚",
-		"spider_web": "🕸",
-		"earth_americas": "🌎",
-		"earth_africa": "🌍",
-		"earth_asia": "🌏",
-		"full_moon": "🌕",
-		"waning_gibbous_moon": "🌖",
-		"last_quarter_moon": "🌗",
-		"waning_crescent_moon": "🌘",
-		"new_moon": "🌑",
-		"waxing_crescent_moon": "🌒",
-		"first_quarter_moon": "🌓",
-		"moon": "🌔",
-		"waxing_gibbous_moon": "🌔",
-		"new_moon_with_face": "🌚",
-		"full_moon_with_face": "🌝",
-		"first_quarter_moon_with_face": "🌛",
-		"last_quarter_moon_with_face": "🌜",
-		"sun_with_face": "🌞",
-		"crescent_moon": "🌙",
-		"star": "⭐️",
-		"star2": "🌟",
-		"dizzy": "💫",
-		"sparkles": "✨",
-		"comet": "☄️",
-		"sunny": "☀️",
-		"sun_behind_small_cloud": "🌤",
-		"partly_sunny": "⛅️",
-		"sun_behind_large_cloud": "🌥",
-		"sun_behind_rain_cloud": "🌦",
-		"cloud": "☁️",
-		"cloud_with_rain": "🌧",
-		"cloud_with_lightning_and_rain": "⛈",
-		"cloud_with_lightning": "🌩",
-		"zap": "⚡️",
-		"fire": "🔥",
-		"boom": "💥",
-		"collision": "💥",
-		"snowflake": "❄️",
-		"cloud_with_snow": "🌨",
-		"snowman_with_snow": "☃️",
-		"snowman": "⛄️",
-		"wind_face": "🌬",
-		"dash": "💨",
-		"tornado": "🌪",
-		"fog": "🌫",
-		"open_umbrella": "☂️",
-		"umbrella": "☔️",
-		"droplet": "💧",
-		"sweat_drops": "💦",
-		"ocean": "🌊",
-		"green_apple": "🍏",
-		"apple": "🍎",
-		"pear": "🍐",
-		"tangerine": "🍊",
-		"orange": "🍊",
-		"mandarin": "🍊",
-		"lemon": "🍋",
-		"banana": "🍌",
-		"watermelon": "🍉",
-		"grapes": "🍇",
-		"strawberry": "🍓",
-		"melon": "🍈",
-		"cherries": "🍒",
-		"peach": "🍑",
-		"pineapple": "🍍",
-		"tomato": "🍅",
-		"eggplant": "🍆",
-		"hot_pepper": "🌶",
-		"corn": "🌽",
-		"sweet_potato": "🍠",
-		"honey_pot": "🍯",
-		"bread": "🍞",
-		"cheese": "🧀",
-		"poultry_leg": "🍗",
-		"meat_on_bone": "🍖",
-		"fried_shrimp": "🍤",
-		"egg": "🍳",
-		"hamburger": "🍔",
-		"fries": "🍟",
-		"hotdog": "🌭",
-		"pizza": "🍕",
-		"spaghetti": "🍝",
-		"taco": "🌮",
-		"burrito": "🌯",
-		"ramen": "🍜",
-		"stew": "🍲",
-		"fish_cake": "🍥",
-		"sushi": "🍣",
-		"bento": "🍱",
-		"curry": "🍛",
-		"rice_ball": "🍙",
-		"rice": "🍚",
-		"rice_cracker": "🍘",
-		"oden": "🍢",
-		"dango": "🍡",
-		"shaved_ice": "🍧",
-		"ice_cream": "🍨",
-		"icecream": "🍦",
-		"cake": "🍰",
-		"birthday": "🎂",
-		"custard": "🍮",
-		"candy": "🍬",
-		"lollipop": "🍭",
-		"chocolate_bar": "🍫",
-		"popcorn": "🍿",
-		"doughnut": "🍩",
-		"cookie": "🍪",
-		"beer": "🍺",
-		"beers": "🍻",
-		"wine_glass": "🍷",
-		"cocktail": "🍸",
-		"tropical_drink": "🍹",
-		"champagne": "🍾",
-		"sake": "🍶",
-		"tea": "🍵",
-		"coffee": "☕️",
-		"baby_bottle": "🍼",
-		"fork_and_knife": "🍴",
-		"plate_with_cutlery": "🍽",
-		"soccer": "⚽️",
-		"basketball": "🏀",
-		"football": "🏈",
-		"baseball": "⚾️",
-		"tennis": "🎾",
-		"volleyball": "🏐",
-		"rugby_football": "🏉",
-		"8ball": "🎱",
-		"ping_pong": "🏓",
-		"badminton": "🏸",
-		"ice_hockey": "🏒",
-		"field_hockey": "🏑",
-		"cricket": "🏏",
-		"bow_and_arrow": "🏹",
-		"golf": "⛳️",
-		"fishing_pole_and_fish": "🎣",
-		"ice_skate": "⛸",
-		"ski": "🎿",
-		"skier": "⛷",
-		"snowboarder": "🏂",
-		"weight_lifting_woman": "🏋️‍♀️",
-		"weight_lifting_man": "🏋️",
-		"basketball_woman": "⛹️‍♀️",
-		"basketball_man": "⛹️",
-		"golfing_woman": "🏌️‍♀️",
-		"golfing_man": "🏌️",
-		"surfing_woman": "🏄‍♀️",
-		"surfing_man": "🏄",
-		"surfer": "🏄",
-		"swimming_woman": "🏊‍♀️",
-		"swimming_man": "🏊",
-		"swimmer": "🏊",
-		"rowing_woman": "🚣‍♀️",
-		"rowing_man": "🚣",
-		"rowboat": "🚣",
-		"horse_racing": "🏇",
-		"biking_woman": "🚴‍♀️",
-		"biking_man": "🚴",
-		"bicyclist": "🚴",
-		"mountain_biking_woman": "🚵‍♀️",
-		"mountain_biking_man": "🚵",
-		"mountain_bicyclist": "🚵",
-		"bath": "🛀",
-		"business_suit_levitating": "🕴",
-		"reminder_ribbon": "🎗",
-		"running_shirt_with_sash": "🎽",
-		"medal_sports": "🏅",
-		"medal_military": "🎖",
-		"trophy": "🏆",
-		"rosette": "🏵",
-		"dart": "🎯",
-		"ticket": "🎫",
-		"tickets": "🎟",
-		"performing_arts": "🎭",
-		"art": "🎨",
-		"circus_tent": "🎪",
-		"clapper": "🎬",
-		"microphone": "🎤",
-		"headphones": "🎧",
-		"musical_score": "🎼",
-		"musical_keyboard": "🎹",
-		"saxophone": "🎷",
-		"trumpet": "🎺",
-		"guitar": "🎸",
-		"violin": "🎻",
-		"video_game": "🎮",
-		"slot_machine": "🎰",
-		"game_die": "🎲",
-		"bowling": "🎳",
-		"car": "🚗",
-		"red_car": "🚗",
-		"taxi": "🚕",
-		"blue_car": "🚙",
-		"bus": "🚌",
-		"trolleybus": "🚎",
-		"racing_car": "🏎",
-		"police_car": "🚓",
-		"ambulance": "🚑",
-		"fire_engine": "🚒",
-		"minibus": "🚐",
-		"truck": "🚚",
-		"articulated_lorry": "🚛",
-		"tractor": "🚜",
-		"motorcycle": "🏍",
-		"bike": "🚲",
-		"rotating_light": "🚨",
-		"oncoming_police_car": "🚔",
-		"oncoming_bus": "🚍",
-		"oncoming_automobile": "🚘",
-		"oncoming_taxi": "🚖",
-		"aerial_tramway": "🚡",
-		"mountain_cableway": "🚠",
-		"suspension_railway": "🚟",
-		"railway_car": "🚃",
-		"train": "🚋",
-		"monorail": "🚝",
-		"bullettrain_side": "🚄",
-		"bullettrain_front": "🚅",
-		"light_rail": "🚈",
-		"mountain_railway": "🚞",
-		"steam_locomotive": "🚂",
-		"train2": "🚆",
-		"metro": "🚇",
-		"tram": "🚊",
-		"station": "🚉",
-		"helicopter": "🚁",
-		"small_airplane": "🛩",
-		"airplane": "✈️",
-		"flight_departure": "🛫",
-		"flight_arrival": "🛬",
-		"boat": "⛵️",
-		"sailboat": "⛵️",
-		"motor_boat": "🛥",
-		"speedboat": "🚤",
-		"ferry": "⛴",
-		"passenger_ship": "🛳",
-		"rocket": "🚀",
-		"artificial_satellite": "🛰",
-		"seat": "💺",
-		"anchor": "⚓️",
-		"construction": "🚧",
-		"fuelpump": "⛽️",
-		"busstop": "🚏",
-		"vertical_traffic_light": "🚦",
-		"traffic_light": "🚥",
-		"world_map": "🗺",
-		"ship": "🚢",
-		"ferris_wheel": "🎡",
-		"roller_coaster": "🎢",
-		"carousel_horse": "🎠",
-		"building_construction": "🏗",
-		"foggy": "🌁",
-		"tokyo_tower": "🗼",
-		"factory": "🏭",
-		"fountain": "⛲️",
-		"rice_scene": "🎑",
-		"mountain": "⛰",
-		"mountain_snow": "🏔",
-		"mount_fuji": "🗻",
-		"volcano": "🌋",
-		"japan": "🗾",
-		"camping": "🏕",
-		"tent": "⛺️",
-		"national_park": "🏞",
-		"motorway": "🛣",
-		"railway_track": "🛤",
-		"sunrise": "🌅",
-		"sunrise_over_mountains": "🌄",
-		"desert": "🏜",
-		"beach_umbrella": "🏖",
-		"desert_island": "🏝",
-		"city_sunrise": "🌇",
-		"city_sunset": "🌆",
-		"cityscape": "🏙",
-		"night_with_stars": "🌃",
-		"bridge_at_night": "🌉",
-		"milky_way": "🌌",
-		"stars": "🌠",
-		"sparkler": "🎇",
-		"fireworks": "🎆",
-		"rainbow": "🌈",
-		"houses": "🏘",
-		"european_castle": "🏰",
-		"japanese_castle": "🏯",
-		"stadium": "🏟",
-		"statue_of_liberty": "🗽",
-		"house": "🏠",
-		"house_with_garden": "🏡",
-		"derelict_house": "🏚",
-		"office": "🏢",
-		"department_store": "🏬",
-		"post_office": "🏣",
-		"european_post_office": "🏤",
-		"hospital": "🏥",
-		"bank": "🏦",
-		"hotel": "🏨",
-		"convenience_store": "🏪",
-		"school": "🏫",
-		"love_hotel": "🏩",
-		"wedding": "💒",
-		"classical_building": "🏛",
-		"church": "⛪️",
-		"mosque": "🕌",
-		"synagogue": "🕍",
-		"kaaba": "🕋",
-		"shinto_shrine": "⛩",
-		"watch": "⌚️",
-		"iphone": "📱",
-		"calling": "📲",
-		"computer": "💻",
-		"keyboard": "⌨️",
-		"desktop_computer": "🖥",
-		"printer": "🖨",
-		"computer_mouse": "🖱",
-		"trackball": "🖲",
-		"joystick": "🕹",
-		"clamp": "🗜",
-		"minidisc": "💽",
-		"floppy_disk": "💾",
-		"cd": "💿",
-		"dvd": "📀",
-		"vhs": "📼",
-		"camera": "📷",
-		"camera_flash": "📸",
-		"video_camera": "📹",
-		"movie_camera": "🎥",
-		"film_projector": "📽",
-		"film_strip": "🎞",
-		"telephone_receiver": "📞",
-		"phone": "☎️",
-		"telephone": "☎️",
-		"pager": "📟",
-		"fax": "📠",
-		"tv": "📺",
-		"radio": "📻",
-		"studio_microphone": "🎙",
-		"level_slider": "🎚",
-		"control_knobs": "🎛",
-		"stopwatch": "⏱",
-		"timer_clock": "⏲",
-		"alarm_clock": "⏰",
-		"mantelpiece_clock": "🕰",
-		"hourglass_flowing_sand": "⏳",
-		"hourglass": "⌛️",
-		"satellite": "📡",
-		"battery": "🔋",
-		"electric_plug": "🔌",
-		"bulb": "💡",
-		"flashlight": "🔦",
-		"candle": "🕯",
-		"wastebasket": "🗑",
-		"oil_drum": "🛢",
-		"money_with_wings": "💸",
-		"dollar": "💵",
-		"yen": "💴",
-		"euro": "💶",
-		"pound": "💷",
-		"moneybag": "💰",
-		"credit_card": "💳",
-		"gem": "💎",
-		"balance_scale": "⚖",
-		"wrench": "🔧",
-		"hammer": "🔨",
-		"hammer_and_pick": "⚒",
-		"hammer_and_wrench": "🛠",
-		"pick": "⛏",
-		"nut_and_bolt": "🔩",
-		"gear": "⚙",
-		"chains": "⛓",
-		"gun": "🔫",
-		"bomb": "💣",
-		"hocho": "🔪",
-		"knife": "🔪",
-		"dagger": "🗡",
-		"crossed_swords": "⚔",
-		"shield": "🛡",
-		"smoking": "🚬",
-		"coffin": "⚰",
-		"funeral_urn": "⚱",
-		"amphora": "🏺",
-		"crystal_ball": "🔮",
-		"prayer_beads": "📿",
-		"barber": "💈",
-		"alembic": "⚗",
-		"telescope": "🔭",
-		"microscope": "🔬",
-		"hole": "🕳",
-		"pill": "💊",
-		"syringe": "💉",
-		"thermometer": "🌡",
-		"toilet": "🚽",
-		"shower": "🚿",
-		"bathtub": "🛁",
-		"bellhop_bell": "🛎",
-		"key": "🔑",
-		"old_key": "🗝",
-		"door": "🚪",
-		"couch_and_lamp": "🛋",
-		"sleeping_bed": "🛌",
-		"bed": "🛏",
-		"framed_picture": "🖼",
-		"parasol_on_ground": "⛱",
-		"moyai": "🗿",
-		"shopping": "🛍",
-		"gift": "🎁",
-		"balloon": "🎈",
-		"flags": "🎏",
-		"ribbon": "🎀",
-		"confetti_ball": "🎊",
-		"tada": "🎉",
-		"wind_chime": "🎐",
-		"izakaya_lantern": "🏮",
-		"lantern": "🏮",
-		"dolls": "🎎",
-		"email": "✉️",
-		"envelope": "✉️",
-		"envelope_with_arrow": "📩",
-		"incoming_envelope": "📨",
-		"e-mail": "📧",
-		"love_letter": "💌",
-		"inbox_tray": "📥",
-		"outbox_tray": "📤",
-		"package": "📦",
-		"label": "🏷",
-		"bookmark": "🔖",
-		"mailbox_closed": "📪",
-		"mailbox": "📫",
-		"mailbox_with_mail": "📬",
-		"mailbox_with_no_mail": "📭",
-		"postbox": "📮",
-		"postal_horn": "📯",
-		"scroll": "📜",
-		"page_with_curl": "📃",
-		"page_facing_up": "📄",
-		"bookmark_tabs": "📑",
-		"bar_chart": "📊",
-		"chart_with_upwards_trend": "📈",
-		"chart_with_downwards_trend": "📉",
-		"spiral_notepad": "🗒",
-		"spiral_calendar": "🗓",
-		"calendar": "📆",
-		"date": "📅",
-		"card_index": "📇",
-		"card_file_box": "🗃",
-		"ballot_box": "🗳",
-		"file_cabinet": "🗄",
-		"clipboard": "📋",
-		"file_folder": "📁",
-		"open_file_folder": "📂",
-		"card_index_dividers": "🗂",
-		"newspaper_roll": "🗞",
-		"newspaper": "📰",
-		"notebook": "📓",
-		"notebook_with_decorative_cover": "📔",
-		"ledger": "📒",
-		"closed_book": "📕",
-		"green_book": "📗",
-		"blue_book": "📘",
-		"orange_book": "📙",
-		"books": "📚",
-		"book": "📖",
-		"open_book": "📖",
-		"link": "🔗",
-		"paperclip": "📎",
-		"paperclips": "🖇",
-		"triangular_ruler": "📐",
-		"straight_ruler": "📏",
-		"scissors": "✂️",
-		"pushpin": "📌",
-		"round_pushpin": "📍",
-		"triangular_flag_on_post": "🚩",
-		"crossed_flags": "🎌",
-		"white_flag": "🏳️",
-		"black_flag": "🏴",
-		"checkered_flag": "🏁",
-		"rainbow_flag": "🏳️‍🌈",
-		"paintbrush": "🖌",
-		"crayon": "🖍",
-		"pen": "🖊",
-		"fountain_pen": "🖋",
-		"black_nib": "✒️",
-		"memo": "📝",
-		"pencil": "📝",
-		"pencil2": "✏️",
-		"lock_with_ink_pen": "🔏",
-		"closed_lock_with_key": "🔐",
-		"lock": "🔒",
-		"unlock": "🔓",
-		"mag": "🔍",
-		"mag_right": "🔎",
-		"heart": "❤️",
-		"yellow_heart": "💛",
-		"green_heart": "💚",
-		"blue_heart": "💙",
-		"purple_heart": "💜",
-		"broken_heart": "💔",
-		"heavy_heart_exclamation": "❣️",
-		"two_hearts": "💕",
-		"revolving_hearts": "💞",
-		"heartbeat": "💓",
-		"heartpulse": "💗",
-		"sparkling_heart": "💖",
-		"cupid": "💘",
-		"gift_heart": "💝",
-		"heart_decoration": "💟",
-		"peace_symbol": "☮️",
-		"latin_cross": "✝️",
-		"star_and_crescent": "☪️",
-		"om": "🕉",
-		"wheel_of_dharma": "☸️",
-		"star_of_david": "✡️",
-		"six_pointed_star": "🔯",
-		"menorah": "🕎",
-		"yin_yang": "☯️",
-		"orthodox_cross": "☦️",
-		"place_of_worship": "🛐",
-		"ophiuchus": "⛎",
-		"aries": "♈️",
-		"taurus": "♉️",
-		"gemini": "♊️",
-		"cancer": "♋️",
-		"leo": "♌️",
-		"virgo": "♍️",
-		"libra": "♎️",
-		"scorpius": "♏️",
-		"sagittarius": "♐️",
-		"capricorn": "♑️",
-		"aquarius": "♒️",
-		"pisces": "♓️",
-		"id": "🆔",
-		"atom_symbol": "⚛",
-		"radioactive": "☢️",
-		"biohazard": "☣️",
-		"mobile_phone_off": "📴",
-		"vibration_mode": "📳",
-		"eight_pointed_black_star": "✴️",
-		"vs": "🆚",
-		"accept": "🉑",
-		"white_flower": "💮",
-		"ideograph_advantage": "🉐",
-		"secret": "㊙️",
-		"congratulations": "㊗️",
-		"u6e80": "🈵",
-		"a": "🅰️",
-		"b": "🅱️",
-		"ab": "🆎",
-		"cl": "🆑",
-		"o2": "🅾️",
-		"sos": "🆘",
-		"no_entry": "⛔️",
-		"name_badge": "📛",
-		"no_entry_sign": "🚫",
-		"x": "❌",
-		"o": "⭕️",
-		"anger": "💢",
-		"hotsprings": "♨️",
-		"no_pedestrians": "🚷",
-		"do_not_litter": "🚯",
-		"no_bicycles": "🚳",
-		"non-potable_water": "🚱",
-		"underage": "🔞",
-		"no_mobile_phones": "📵",
-		"exclamation": "❗️",
-		"heavy_exclamation_mark": "❗️",
-		"grey_exclamation": "❕",
-		"question": "❓",
-		"grey_question": "❔",
-		"bangbang": "‼️",
-		"interrobang": "⁉️",
-		"low_brightness": "🔅",
-		"high_brightness": "🔆",
-		"trident": "🔱",
-		"fleur_de_lis": "⚜",
-		"part_alternation_mark": "〽️",
-		"warning": "⚠️",
-		"children_crossing": "🚸",
-		"beginner": "🔰",
-		"recycle": "♻️",
-		"chart": "💹",
-		"sparkle": "❇️",
-		"eight_spoked_asterisk": "✳️",
-		"negative_squared_cross_mark": "❎",
-		"white_check_mark": "✅",
-		"globe_with_meridians": "🌐",
-		"m": "Ⓜ️",
-		"diamond_shape_with_a_dot_inside": "💠",
-		"cyclone": "🌀",
-		"loop": "➿",
-		"atm": "🏧",
-		"sa": "🈂️",
-		"passport_control": "🛂",
-		"customs": "🛃",
-		"baggage_claim": "🛄",
-		"left_luggage": "🛅",
-		"wheelchair": "♿️",
-		"no_smoking": "🚭",
-		"wc": "🚾",
-		"parking": "🅿️",
-		"potable_water": "🚰",
-		"mens": "🚹",
-		"womens": "🚺",
-		"baby_symbol": "🚼",
-		"restroom": "🚻",
-		"put_litter_in_its_place": "🚮",
-		"cinema": "🎦",
-		"signal_strength": "📶",
-		"koko": "🈁",
-		"abc": "🔤",
-		"abcd": "🔡",
-		"capital_abcd": "🔠",
-		"symbols": "🔣",
-		"information_source": "ℹ️",
-		"ng": "🆖",
-		"ok": "🆗",
-		"up": "🆙",
-		"cool": "🆒",
-		"new": "🆕",
-		"free": "🆓",
-		"zero": "0️⃣",
-		"one": "1️⃣",
-		"two": "2️⃣",
-		"three": "3️⃣",
-		"four": "4️⃣",
-		"five": "5️⃣",
-		"six": "6️⃣",
-		"seven": "7️⃣",
-		"eight": "8️⃣",
-		"nine": "9️⃣",
-		"keycap_ten": "🔟",
-		"hash": "#️⃣",
-		"asterisk": "*️⃣",
-		"arrow_forward": "▶️",
-		"pause_button": "⏸",
-		"play_or_pause_button": "⏯",
-		"stop_button": "⏹",
-		"record_button": "⏺",
-		"next_track_button": "⏭",
-		"previous_track_button": "⏮",
-		"fast_forward": "⏩",
-		"rewind": "⏪",
-		"arrow_double_up": "⏫",
-		"arrow_double_down": "⏬",
-		"arrow_backward": "◀️",
-		"arrow_up_small": "🔼",
-		"arrow_down_small": "🔽",
-		"arrow_right": "➡️",
-		"arrow_left": "⬅️",
-		"arrow_up": "⬆️",
-		"arrow_down": "⬇️",
-		"arrow_upper_right": "↗️",
-		"arrow_lower_right": "↘️",
-		"arrow_lower_left": "↙️",
-		"arrow_upper_left": "↖️",
-		"arrow_up_down": "↕️",
-		"left_right_arrow": "↔️",
-		"arrow_right_hook": "↪️",
-		"leftwards_arrow_with_hook": "↩️",
-		"arrow_heading_up": "⤴️",
-		"arrow_heading_down": "⤵️",
-		"twisted_rightwards_arrows": "🔀",
-		"repeat": "🔁",
-		"repeat_one": "🔂",
-		"arrows_counterclockwise": "🔄",
-		"arrows_clockwise": "🔃",
-		"musical_note": "🎵",
-		"notes": "🎶",
-		"wavy_dash": "〰️",
-		"curly_loop": "➰",
-		"heavy_check_mark": "✔️",
-		"heavy_plus_sign": "➕",
-		"heavy_minus_sign": "➖",
-		"heavy_division_sign": "➗",
-		"heavy_multiplication_x": "✖️",
-		"heavy_dollar_sign": "💲",
-		"currency_exchange": "💱",
-		"tm": "™️",
-		"copyright": "©️",
-		"registered": "®️",
-		"end": "🔚",
-		"back": "🔙",
-		"on": "🔛",
-		"top": "🔝",
-		"soon": "🔜",
-		"ballot_box_with_check": "☑️",
-		"radio_button": "🔘",
-		"white_circle": "⚪️",
-		"black_circle": "⚫️",
-		"red_circle": "🔴",
-		"large_blue_circle": "🔵",
-		"small_red_triangle": "🔺",
-		"small_red_triangle_down": "🔻",
-		"small_orange_diamond": "🔸",
-		"small_blue_diamond": "🔹",
-		"large_orange_diamond": "🔶",
-		"large_blue_diamond": "🔷",
-		"white_square_button": "🔳",
-		"black_square_button": "🔲",
-		"black_small_square": "▪️",
-		"white_small_square": "▫️",
-		"black_medium_small_square": "◾️",
-		"white_medium_small_square": "◽️",
-		"black_medium_square": "◼️",
-		"white_medium_square": "◻️",
-		"black_large_square": "⬛️",
-		"white_large_square": "⬜️",
-		"mute": "🔇",
-		"speaker": "🔈",
-		"sound": "🔉",
-		"loud_sound": "🔊",
-		"no_bell": "🔕",
-		"bell": "🔔",
-		"mega": "📣",
-		"loudspeaker": "📢",
-		"eye_speech_bubble": "👁‍🗨",
-		"speech_balloon": "💬",
-		"thought_balloon": "💭",
-		"right_anger_bubble": "🗯",
-		"black_joker": "🃏",
-		"mahjong": "🀄️",
-		"flower_playing_cards": "🎴",
-		"spades": "♠️",
-		"clubs": "♣️",
-		"hearts": "♥️",
-		"diamonds": "♦️",
-		"clock1": "🕐",
-		"clock2": "🕑",
-		"clock3": "🕒",
-		"clock4": "🕓",
-		"clock5": "🕔",
-		"clock6": "🕕",
-		"clock7": "🕖",
-		"clock8": "🕗",
-		"clock9": "🕘",
-		"clock10": "🕙",
-		"clock11": "🕚",
-		"clock12": "🕛",
-		"clock130": "🕜",
-		"clock230": "🕝",
-		"clock330": "🕞",
-		"clock430": "🕟",
-		"clock530": "🕠",
-		"clock630": "🕡",
-		"clock730": "🕢",
-		"clock830": "🕣",
-		"clock930": "🕤",
-		"clock1030": "🕥",
-		"clock1130": "🕦",
-		"clock1230": "🕧",
-		"afghanistan": "🇦🇫",
-		"aland_islands": "🇦🇽",
-		"albania": "🇦🇱",
-		"algeria": "🇩🇿",
-		"american_samoa": "🇦🇸",
-		"andorra": "🇦🇩",
-		"angola": "🇦🇴",
-		"anguilla": "🇦🇮",
-		"antarctica": "🇦🇶",
-		"antigua_barbuda": "🇦🇬",
-		"argentina": "🇦🇷",
-		"armenia": "🇦🇲",
-		"aruba": "🇦🇼",
-		"australia": "🇦🇺",
-		"austria": "🇦🇹",
-		"azerbaijan": "🇦🇿",
-		"bahamas": "🇧🇸",
-		"bahrain": "🇧🇭",
-		"bangladesh": "🇧🇩",
-		"barbados": "🇧🇧",
-		"belarus": "🇧🇾",
-		"belgium": "🇧🇪",
-		"belize": "🇧🇿",
-		"benin": "🇧🇯",
-		"bermuda": "🇧🇲",
-		"bhutan": "🇧🇹",
-		"bolivia": "🇧🇴",
-		"caribbean_netherlands": "🇧🇶",
-		"bosnia_herzegovina": "🇧🇦",
-		"botswana": "🇧🇼",
-		"brazil": "🇧🇷",
-		"british_indian_ocean_territory": "🇮🇴",
-		"british_virgin_islands": "🇻🇬",
-		"brunei": "🇧🇳",
-		"bulgaria": "🇧🇬",
-		"burkina_faso": "🇧🇫",
-		"burundi": "🇧🇮",
-		"cape_verde": "🇨🇻",
-		"cambodia": "🇰🇭",
-		"cameroon": "🇨🇲",
-		"canada": "🇨🇦",
-		"canary_islands": "🇮🇨",
-		"cayman_islands": "🇰🇾",
-		"central_african_republic": "🇨🇫",
-		"chad": "🇹🇩",
-		"chile": "🇨🇱",
-		"cn": "🇨🇳",
-		"christmas_island": "🇨🇽",
-		"cocos_islands": "🇨🇨",
-		"colombia": "🇨🇴",
-		"comoros": "🇰🇲",
-		"congo_brazzaville": "🇨🇬",
-		"congo_kinshasa": "🇨🇩",
-		"cook_islands": "🇨🇰",
-		"costa_rica": "🇨🇷",
-		"croatia": "🇭🇷",
-		"cuba": "🇨🇺",
-		"curacao": "🇨🇼",
-		"cyprus": "🇨🇾",
-		"czech_republic": "🇨🇿",
-		"denmark": "🇩🇰",
-		"djibouti": "🇩🇯",
-		"dominica": "🇩🇲",
-		"dominican_republic": "🇩🇴",
-		"ecuador": "🇪🇨",
-		"egypt": "🇪🇬",
-		"el_salvador": "🇸🇻",
-		"equatorial_guinea": "🇬🇶",
-		"eritrea": "🇪🇷",
-		"estonia": "🇪🇪",
-		"ethiopia": "🇪🇹",
-		"eu": "🇪🇺",
-		"european_union": "🇪🇺",
-		"falkland_islands": "🇫🇰",
-		"faroe_islands": "🇫🇴",
-		"fiji": "🇫🇯",
-		"finland": "🇫🇮",
-		"fr": "🇫🇷",
-		"french_guiana": "🇬🇫",
-		"french_polynesia": "🇵🇫",
-		"french_southern_territories": "🇹🇫",
-		"gabon": "🇬🇦",
-		"gambia": "🇬🇲",
-		"georgia": "🇬🇪",
-		"de": "🇩🇪",
-		"ghana": "🇬🇭",
-		"gibraltar": "🇬🇮",
-		"greece": "🇬🇷",
-		"greenland": "🇬🇱",
-		"grenada": "🇬🇩",
-		"guadeloupe": "🇬🇵",
-		"guam": "🇬🇺",
-		"guatemala": "🇬🇹",
-		"guernsey": "🇬🇬",
-		"guinea": "🇬🇳",
-		"guinea_bissau": "🇬🇼",
-		"guyana": "🇬🇾",
-		"haiti": "🇭🇹",
-		"honduras": "🇭🇳",
-		"hong_kong": "🇭🇰",
-		"hungary": "🇭🇺",
-		"iceland": "🇮🇸",
-		"india": "🇮🇳",
-		"indonesia": "🇮🇩",
-		"iran": "🇮🇷",
-		"iraq": "🇮🇶",
-		"ireland": "🇮🇪",
-		"isle_of_man": "🇮🇲",
-		"israel": "🇮🇱",
-		"it": "🇮🇹",
-		"cote_divoire": "🇨🇮",
-		"jamaica": "🇯🇲",
-		"jp": "🇯🇵",
-		"jersey": "🇯🇪",
-		"jordan": "🇯🇴",
-		"kazakhstan": "🇰🇿",
-		"kenya": "🇰🇪",
-		"kiribati": "🇰🇮",
-		"kosovo": "🇽🇰",
-		"kuwait": "🇰🇼",
-		"kyrgyzstan": "🇰🇬",
-		"laos": "🇱🇦",
-		"latvia": "🇱🇻",
-		"lebanon": "🇱🇧",
-		"lesotho": "🇱🇸",
-		"liberia": "🇱🇷",
-		"libya": "🇱🇾",
-		"liechtenstein": "🇱🇮",
-		"lithuania": "🇱🇹",
-		"luxembourg": "🇱🇺",
-		"macau": "🇲🇴",
-		"macedonia": "🇲🇰",
-		"madagascar": "🇲🇬",
-		"malawi": "🇲🇼",
-		"malaysia": "🇲🇾",
-		"maldives": "🇲🇻",
-		"mali": "🇲🇱",
-		"malta": "🇲🇹",
-		"marshall_islands": "🇲🇭",
-		"martinique": "🇲🇶",
-		"mauritania": "🇲🇷",
-		"mauritius": "🇲🇺",
-		"mayotte": "🇾🇹",
-		"mexico": "🇲🇽",
-		"micronesia": "🇫🇲",
-		"moldova": "🇲🇩",
-		"monaco": "🇲🇨",
-		"mongolia": "🇲🇳",
-		"montenegro": "🇲🇪",
-		"montserrat": "🇲🇸",
-		"morocco": "🇲🇦",
-		"mozambique": "🇲🇿",
-		"myanmar": "🇲🇲",
-		"namibia": "🇳🇦",
-		"nauru": "🇳🇷",
-		"nepal": "🇳🇵",
-		"netherlands": "🇳🇱",
-		"new_caledonia": "🇳🇨",
-		"new_zealand": "🇳🇿",
-		"nicaragua": "🇳🇮",
-		"niger": "🇳🇪",
-		"nigeria": "🇳🇬",
-		"niue": "🇳🇺",
-		"norfolk_island": "🇳🇫",
-		"northern_mariana_islands": "🇲🇵",
-		"north_korea": "🇰🇵",
-		"norway": "🇳🇴",
-		"oman": "🇴🇲",
-		"pakistan": "🇵🇰",
-		"palau": "🇵🇼",
-		"palestinian_territories": "🇵🇸",
-		"panama": "🇵🇦",
-		"papua_new_guinea": "🇵🇬",
-		"paraguay": "🇵🇾",
-		"peru": "🇵🇪",
-		"philippines": "🇵🇭",
-		"pitcairn_islands": "🇵🇳",
-		"poland": "🇵🇱",
-		"portugal": "🇵🇹",
-		"puerto_rico": "🇵🇷",
-		"qatar": "🇶🇦",
-		"reunion": "🇷🇪",
-		"romania": "🇷🇴",
-		"ru": "🇷🇺",
-		"rwanda": "🇷🇼",
-		"st_barthelemy": "🇧🇱",
-		"st_helena": "🇸🇭",
-		"st_kitts_nevis": "🇰🇳",
-		"st_lucia": "🇱🇨",
-		"st_pierre_miquelon": "🇵🇲",
-		"st_vincent_grenadines": "🇻🇨",
-		"samoa": "🇼🇸",
-		"san_marino": "🇸🇲",
-		"sao_tome_principe": "🇸🇹",
-		"saudi_arabia": "🇸🇦",
-		"senegal": "🇸🇳",
-		"serbia": "🇷🇸",
-		"seychelles": "🇸🇨",
-		"sierra_leone": "🇸🇱",
-		"singapore": "🇸🇬",
-		"sint_maarten": "🇸🇽",
-		"slovakia": "🇸🇰",
-		"slovenia": "🇸🇮",
-		"solomon_islands": "🇸🇧",
-		"somalia": "🇸🇴",
-		"south_africa": "🇿🇦",
-		"south_georgia_south_sandwich_islands": "🇬🇸",
-		"kr": "🇰🇷",
-		"south_sudan": "🇸🇸",
-		"es": "🇪🇸",
-		"sri_lanka": "🇱🇰",
-		"sudan": "🇸🇩",
-		"suriname": "🇸🇷",
-		"swaziland": "🇸🇿",
-		"sweden": "🇸🇪",
-		"switzerland": "🇨🇭",
-		"syria": "🇸🇾",
-		"taiwan": "🇹🇼",
-		"tajikistan": "🇹🇯",
-		"tanzania": "🇹🇿",
-		"thailand": "🇹🇭",
-		"timor_leste": "🇹🇱",
-		"togo": "🇹🇬",
-		"tokelau": "🇹🇰",
-		"tonga": "🇹🇴",
-		"trinidad_tobago": "🇹🇹",
-		"tunisia": "🇹🇳",
-		"tr": "🇹🇷",
-		"turkmenistan": "🇹🇲",
-		"turks_caicos_islands": "🇹🇨",
-		"tuvalu": "🇹🇻",
-		"uganda": "🇺🇬",
-		"ukraine": "🇺🇦",
-		"united_arab_emirates": "🇦🇪",
-		"gb": "🇬🇧",
-		"uk": "🇬🇧",
-		"us": "🇺🇸",
-		"us_virgin_islands": "🇻🇮",
-		"uruguay": "🇺🇾",
-		"uzbekistan": "🇺🇿",
-		"vanuatu": "🇻🇺",
-		"vatican_city": "🇻🇦",
-		"venezuela": "🇻🇪",
-		"vietnam": "🇻🇳",
-		"wallis_futuna": "🇼🇫",
-		"western_sahara": "🇪🇭",
-		"yemen": "🇾🇪",
-		"zambia": "🇿🇲",
-		"zimbabwe": "🇿🇼"
-	};
-
-/***/ },
-/* 209 */
-/***/ function(module, exports) {
-
-	// Emoticons -> Emoji mapping.
-	//
-	// (!) Some patterns skipped, to avoid collisions
-	// without increase matcher complicity. Than can change in future.
-	//
-	// Places to look for more emoticons info:
-	//
-	// - http://en.wikipedia.org/wiki/List_of_emoticons#Western
-	// - https://github.com/wooorm/emoticon/blob/master/Support.md
-	// - http://factoryjoe.com/projects/emoticons/
-	//
-	'use strict';
-	
-	module.exports = {
-	  angry:            [ '>:(', '>:-(' ],
-	  blush:            [ ':")', ':-")' ],
-	  broken_heart:     [ '</3', '<\\3' ],
-	  // :\ and :-\ not used because of conflict with markdown escaping
-	  confused:         [ ':/', ':-/' ], // twemoji shows question
-	  cry:              [ ":'(", ":'-(", ':,(', ':,-(' ],
-	  frowning:         [ ':(', ':-(' ],
-	  heart:            [ '<3' ],
-	  imp:              [ ']:(', ']:-(' ],
-	  innocent:         [ 'o:)', 'O:)', 'o:-)', 'O:-)', '0:)', '0:-)' ],
-	  joy:              [ ":')", ":'-)", ':,)', ':,-)', ":'D", ":'-D", ':,D', ':,-D' ],
-	  kissing:          [ ':*', ':-*' ],
-	  laughing:         [ 'x-)', 'X-)' ],
-	  neutral_face:     [ ':|', ':-|' ],
-	  open_mouth:       [ ':o', ':-o', ':O', ':-O' ],
-	  rage:             [ ':@', ':-@' ],
-	  smile:            [ ':D', ':-D' ],
-	  smiley:           [ ':)', ':-)' ],
-	  smiling_imp:      [ ']:)', ']:-)' ],
-	  sob:              [ ":,'(", ":,'-(", ';(', ';-(' ],
-	  stuck_out_tongue: [ ':P', ':-P' ],
-	  sunglasses:       [ '8-)', 'B-)' ],
-	  sweat:            [ ',:(', ',:-(' ],
-	  sweat_smile:      [ ',:)', ',:-)' ],
-	  unamused:         [ ':s', ':-S', ':z', ':-Z', ':$', ':-$' ],
-	  wink:             [ ';)', ';-)' ]
-	};
-
-
-/***/ },
-/* 210 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	module.exports = function emoji_html(tokens, idx /*, options, env */) {
-	  return tokens[idx].content;
-	};
-
-
-/***/ },
-/* 211 */
-/***/ function(module, exports) {
-
-	// Emojies & shortcuts replacement logic.
-	//
-	// Note: In theory, it could be faster to parse :smile: in inline chain and
-	// leave only shortcuts here. But, who care...
-	//
-	
-	'use strict';
-	
-	
-	module.exports = function create_rule(md, emojies, shortcuts, scanRE, replaceRE) {
-	  var arrayReplaceAt = md.utils.arrayReplaceAt,
-	      ucm = md.utils.lib.ucmicro,
-	      ZPCc = new RegExp([ ucm.Z.source, ucm.P.source, ucm.Cc.source ].join('|'));
-	
-	  function splitTextToken(text, level, Token) {
-	    var token, last_pos = 0, nodes = [];
-	
-	    text.replace(replaceRE, function (match, offset, src) {
-	      var emoji_name;
-	      // Validate emoji name
-	      if (shortcuts.hasOwnProperty(match)) {
-	        // replace shortcut with full name
-	        emoji_name = shortcuts[match];
-	
-	        // Don't allow letters before any shortcut (as in no ":/" in http://)
-	        if (offset > 0 && !ZPCc.test(src[offset - 1])) {
-	          return;
-	        }
-	
-	        // Don't allow letters after any shortcut
-	        if (offset + match.length < src.length && !ZPCc.test(src[offset + match.length])) {
-	          return;
-	        }
-	      } else {
-	        emoji_name = match.slice(1, -1);
-	      }
-	
-	      // Add new tokens to pending list
-	      if (offset > last_pos) {
-	        token         = new Token('text', '', 0);
-	        token.content = text.slice(last_pos, offset);
-	        nodes.push(token);
-	      }
-	
-	      token         = new Token('emoji', '', 0);
-	      token.markup  = emoji_name;
-	      token.content = emojies[emoji_name];
-	      nodes.push(token);
-	
-	      last_pos = offset + match.length;
-	    });
-	
-	    if (last_pos < text.length) {
-	      token         = new Token('text', '', 0);
-	      token.content = text.slice(last_pos);
-	      nodes.push(token);
-	    }
-	
-	    return nodes;
-	  }
-	
-	  return function emoji_replace(state) {
-	    var i, j, l, tokens, token,
-	        blockTokens = state.tokens,
-	        autolinkLevel = 0;
-	
-	    for (j = 0, l = blockTokens.length; j < l; j++) {
-	      if (blockTokens[j].type !== 'inline') { continue; }
-	      tokens = blockTokens[j].children;
-	
-	      // We scan from the end, to keep position when new tags added.
-	      // Use reversed logic in links start/end match
-	      for (i = tokens.length - 1; i >= 0; i--) {
-	        token = tokens[i];
-	
-	        if (token.type === 'link_open' || token.type === 'link_close') {
-	          if (token.info === 'auto') { autolinkLevel -= token.nesting; }
-	        }
-	
-	        if (token.type === 'text' && scanRE.test(token.content) && autolinkLevel === 0) {
-	          // replace current node
-	          blockTokens[j].children = tokens = arrayReplaceAt(
-	            tokens, i, splitTextToken(token.content, token.level, state.Token)
-	          );
-	        }
-	      }
-	    }
-	  };
-	};
-
-
-/***/ },
-/* 212 */
-/***/ function(module, exports) {
-
-	// Convert input options to more useable format
-	// and compile search regexp
-	
-	'use strict';
-	
-	
-	function quoteRE(str) {
-	  return str.replace(/[.?*+^$[\]\\(){}|-]/g, '\\$&');
-	}
-	
-	
-	module.exports = function normalize_opts(options) {
-	  var emojies = options.defs,
-	      shortcuts;
-	
-	  // Filter emojies by whitelist, if needed
-	  if (options.enabled.length) {
-	    emojies = Object.keys(emojies).reduce(function (acc, key) {
-	      if (options.enabled.indexOf(key) >= 0) {
-	        acc[key] = emojies[key];
-	      }
-	      return acc;
-	    }, {});
-	  }
-	
-	  // Flatten shortcuts to simple object: { alias: emoji_name }
-	  shortcuts = Object.keys(options.shortcuts).reduce(function (acc, key) {
-	    // Skip aliases for filtered emojies, to reduce regexp
-	    if (!emojies[key]) { return acc; }
-	
-	    if (Array.isArray(options.shortcuts[key])) {
-	      options.shortcuts[key].forEach(function (alias) {
-	        acc[alias] = key;
-	      });
-	      return acc;
-	    }
-	
-	    acc[options.shortcuts[key]] = key;
-	    return acc;
-	  }, {});
-	
-	  // Compile regexp
-	  var names = Object.keys(emojies)
-	                .map(function (name) { return ':' + name + ':'; })
-	                .concat(Object.keys(shortcuts))
-	                .sort()
-	                .reverse()
-	                .map(function (name) { return quoteRE(name); })
-	                .join('|');
-	  var scanRE = RegExp(names);
-	  var replaceRE = RegExp(names, 'g');
-	
-	  return {
-	    defs: emojies,
-	    shortcuts: shortcuts,
-	    scanRE: scanRE,
-	    replaceRE: replaceRE
-	  };
-	};
-
-
-/***/ },
-/* 213 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -26721,7 +25119,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 214 */
+/* 208 */
 /***/ function(module, exports) {
 
 	// Process ~subscript~
@@ -26793,7 +25191,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 215 */
+/* 209 */
 /***/ function(module, exports) {
 
 	// Process ^superscript^
@@ -26864,7 +25262,181 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 216 */
+/* 210 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	__webpack_require__(211);
+	module.exports = function dimmed_plugin(md) {
+	  // Insert each marker as a separate text token, and add it to delimiter list
+	  function tokenize(state, silent) {
+	    var i,
+	        scanned,
+	        token,
+	        len,
+	        ch,
+	        start = state.pos,
+	        marker = state.src.charCodeAt(start);
+	
+	    if (silent) {
+	      return false;
+	    }
+	
+	    if (marker !== 0x25 /* % */) {
+	        return false;
+	      }
+	
+	    scanned = state.scanDelims(state.pos, true);
+	    len = scanned.length;
+	    ch = String.fromCharCode(marker);
+	
+	    if (len < 2) {
+	      return false;
+	    }
+	
+	    if (len % 2) {
+	      token = state.push('text', '', 0);
+	      token.content = ch;
+	      len--;
+	    }
+	
+	    for (i = 0; i < len; i += 2) {
+	      token = state.push('text', '', 0);
+	      token.content = ch + ch;
+	
+	      state.delimiters.push({
+	        marker: marker,
+	        jump: i,
+	        token: state.tokens.length - 1,
+	        level: state.level,
+	        end: -1,
+	        open: scanned.can_open,
+	        close: scanned.can_close
+	      });
+	    }
+	
+	    state.pos += scanned.length;
+	
+	    return true;
+	  }
+	
+	  // Walk through delimiter list and replace text tokens with tags
+	  //
+	  function postProcess(state) {
+	    var i,
+	        j,
+	        startDelim,
+	        endDelim,
+	        token,
+	        loneMarkers = [],
+	        delimiters = state.delimiters,
+	        max = state.delimiters.length;
+	
+	    for (i = 0; i < max; i++) {
+	      startDelim = delimiters[i];
+	
+	      if (startDelim.marker !== 0x25 /* % */) {
+	          continue;
+	        }
+	
+	      if (startDelim.end === -1) {
+	        continue;
+	      }
+	
+	      endDelim = delimiters[startDelim.end];
+	
+	      token = state.tokens[startDelim.token];
+	      token.type = 'dimmed_open';
+	      token.tag = 'span';
+	      token.attrs = [['class', 'dimmed']];
+	      token.nesting = 1;
+	      token.markup = '%%';
+	      token.content = '';
+	
+	      token = state.tokens[endDelim.token];
+	      token.type = 'dimmed_close';
+	      token.tag = 'span';
+	      token.nesting = -1;
+	      token.markup = '%%';
+	      token.content = '';
+	
+	      if (state.tokens[endDelim.token - 1].type === 'text' && state.tokens[endDelim.token - 1].content === '%') {
+	
+	        loneMarkers.push(endDelim.token - 1);
+	      }
+	    }
+	
+	    // If a marker sequence has an odd number of characters, it's splitted
+	    // like this: `~~~~~` -> `~` + `~~` + `~~`, leaving one marker at the
+	    // start of the sequence.
+	    //
+	    // So, we have to move all those markers after subsequent s_close tags.
+	    //
+	    while (loneMarkers.length) {
+	      i = loneMarkers.pop();
+	      j = i + 1;
+	
+	      while (j < state.tokens.length && state.tokens[j].type === 'dimmed_close') {
+	        j++;
+	      }
+	
+	      j--;
+	
+	      if (i !== j) {
+	        token = state.tokens[j];
+	        state.tokens[j] = state.tokens[i];
+	        state.tokens[i] = token;
+	      }
+	    }
+	  }
+	
+	  md.inline.ruler.before('emphasis', 'dimmed', tokenize);
+	  md.inline.ruler2.before('emphasis', 'dimmed', postProcess);
+	};
+
+/***/ },
+/* 211 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(212);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(103)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?root=./docs!./dimmed.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?root=./docs!./dimmed.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 212 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(102)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".dimmed {\n    color: #777;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// Process ![test]( x =100x200)
@@ -26872,9 +25444,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	'use strict';
 	
-	var sizeOf = __webpack_require__(217);
+	var sizeOf = __webpack_require__(214);
 	
-	var parseImageSize = __webpack_require__(237);
+	var parseImageSize = __webpack_require__(234);
 	
 	function image_with_size(md, options) {
 	  return function(state, silent) {
@@ -27085,20 +25657,20 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 217 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(Buffer) {'use strict';
 	
-	var fs   = __webpack_require__(222);
-	var path = __webpack_require__(223);
+	var fs   = __webpack_require__(219);
+	var path = __webpack_require__(220);
 	
-	var detector = __webpack_require__(225);
+	var detector = __webpack_require__(222);
 	var handlers = {};
-	var types = __webpack_require__(226);
+	var types = __webpack_require__(223);
 	
 	types.forEach(function(type) {
-	  handlers[type] = __webpack_require__(227)("./" + type);
+	  handlers[type] = __webpack_require__(224)("./" + type);
 	});
 	
 	var MaxBufferSize = 128 * 1024;
@@ -27180,10 +25752,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	};
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(218).Buffer))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(215).Buffer))
 
 /***/ },
-/* 218 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/*!
@@ -27196,9 +25768,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	'use strict'
 	
-	var base64 = __webpack_require__(219)
-	var ieee754 = __webpack_require__(220)
-	var isArray = __webpack_require__(221)
+	var base64 = __webpack_require__(216)
+	var ieee754 = __webpack_require__(217)
+	var isArray = __webpack_require__(218)
 	
 	exports.Buffer = Buffer
 	exports.SlowBuffer = SlowBuffer
@@ -28979,7 +27551,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 219 */
+/* 216 */
 /***/ function(module, exports) {
 
 	'use strict'
@@ -29099,7 +27671,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 220 */
+/* 217 */
 /***/ function(module, exports) {
 
 	exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -29189,7 +27761,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 221 */
+/* 218 */
 /***/ function(module, exports) {
 
 	var toString = {}.toString;
@@ -29200,13 +27772,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 222 */
+/* 219 */
 /***/ function(module, exports) {
 
 
 
 /***/ },
-/* 223 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -29434,10 +28006,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	;
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(224)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(221)))
 
 /***/ },
-/* 224 */
+/* 221 */
 /***/ function(module, exports) {
 
 	// shim for using process in browser
@@ -29623,16 +28195,16 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 225 */
+/* 222 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var typeMap = {};
-	var types = __webpack_require__(226);
+	var types = __webpack_require__(223);
 	
 	types.forEach(function(type) {
-	  typeMap[type] = __webpack_require__(227)("./" + type).detect;
+	  typeMap[type] = __webpack_require__(224)("./" + type).detect;
 	});
 	
 	module.exports = function(buffer, filepath) {
@@ -29650,7 +28222,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 226 */
+/* 223 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29665,26 +28237,26 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 227 */
+/* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./bmp": 228,
-		"./bmp.js": 228,
-		"./gif": 229,
-		"./gif.js": 229,
-		"./jpg": 230,
-		"./jpg.js": 230,
-		"./png": 231,
-		"./png.js": 231,
-		"./psd": 232,
-		"./psd.js": 232,
-		"./svg": 233,
-		"./svg.js": 233,
-		"./tiff": 234,
-		"./tiff.js": 234,
-		"./webp": 236,
-		"./webp.js": 236
+		"./bmp": 225,
+		"./bmp.js": 225,
+		"./gif": 226,
+		"./gif.js": 226,
+		"./jpg": 227,
+		"./jpg.js": 227,
+		"./png": 228,
+		"./png.js": 228,
+		"./psd": 229,
+		"./psd.js": 229,
+		"./svg": 230,
+		"./svg.js": 230,
+		"./tiff": 231,
+		"./tiff.js": 231,
+		"./webp": 233,
+		"./webp.js": 233
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -29697,11 +28269,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 227;
+	webpackContext.id = 224;
 
 
 /***/ },
-/* 228 */
+/* 225 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29724,7 +28296,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 229 */
+/* 226 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29748,7 +28320,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 230 */
+/* 227 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29850,7 +28422,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 231 */
+/* 228 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29879,7 +28451,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 232 */
+/* 229 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29902,7 +28474,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 233 */
+/* 230 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -29977,7 +28549,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 234 */
+/* 231 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(Buffer) {'use strict';
@@ -29985,8 +28557,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	// based on http://www.compix.com/fileformattif.htm
 	// TO-DO: support big-endian as well
 	
-	var fs = __webpack_require__(222);
-	var readUInt = __webpack_require__(235);
+	var fs = __webpack_require__(219);
+	var readUInt = __webpack_require__(232);
 	
 	function isTIFF (buffer) {
 	  var hex4 = buffer.toString('hex', 0, 4);
@@ -30099,10 +28671,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	  'calculate': calculate
 	};
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(218).Buffer))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(215).Buffer))
 
 /***/ },
-/* 235 */
+/* 232 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -30116,7 +28688,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 236 */
+/* 233 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -30173,7 +28745,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 237 */
+/* 234 */
 /***/ function(module, exports) {
 
 	// Parse image size
@@ -30251,14 +28823,1633 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 238 */
+/* 235 */
+/***/ function(module, exports) {
+
+	module.exports = {
+		"100": "💯",
+		"1234": "🔢",
+		"grinning": "😀",
+		"grimacing": "😬",
+		"grin": "😁",
+		"joy": "😂",
+		"smiley": "😃",
+		"smile": "😄",
+		"sweat_smile": "😅",
+		"laughing": "😆",
+		"satisfied": "😆",
+		"innocent": "😇",
+		"wink": "😉",
+		"blush": "😊",
+		"slightly_smiling_face": "🙂",
+		"upside_down_face": "🙃",
+		"relaxed": "☺️",
+		"yum": "😋",
+		"relieved": "😌",
+		"heart_eyes": "😍",
+		"kissing_heart": "😘",
+		"kissing": "😗",
+		"kissing_smiling_eyes": "😙",
+		"kissing_closed_eyes": "😚",
+		"stuck_out_tongue_winking_eye": "😜",
+		"stuck_out_tongue_closed_eyes": "😝",
+		"stuck_out_tongue": "😛",
+		"money_mouth_face": "🤑",
+		"nerd_face": "🤓",
+		"sunglasses": "😎",
+		"hugs": "🤗",
+		"smirk": "😏",
+		"no_mouth": "😶",
+		"neutral_face": "😐",
+		"expressionless": "😑",
+		"unamused": "😒",
+		"roll_eyes": "🙄",
+		"thinking": "🤔",
+		"flushed": "😳",
+		"disappointed": "😞",
+		"worried": "😟",
+		"angry": "😠",
+		"rage": "😡",
+		"pout": "😡",
+		"pensive": "😔",
+		"confused": "😕",
+		"slightly_frowning_face": "🙁",
+		"frowning_face": "☹️",
+		"persevere": "😣",
+		"confounded": "😖",
+		"tired_face": "😫",
+		"weary": "😩",
+		"triumph": "😤",
+		"open_mouth": "😮",
+		"scream": "😱",
+		"fearful": "😨",
+		"cold_sweat": "😰",
+		"hushed": "😯",
+		"frowning": "😦",
+		"anguished": "😧",
+		"cry": "😢",
+		"disappointed_relieved": "😥",
+		"sleepy": "😪",
+		"sweat": "😓",
+		"sob": "😭",
+		"dizzy_face": "😵",
+		"astonished": "😲",
+		"zipper_mouth_face": "🤐",
+		"mask": "😷",
+		"face_with_thermometer": "🤒",
+		"face_with_head_bandage": "🤕",
+		"sleeping": "😴",
+		"zzz": "💤",
+		"hankey": "💩",
+		"poop": "💩",
+		"shit": "💩",
+		"smiling_imp": "😈",
+		"imp": "👿",
+		"japanese_ogre": "👹",
+		"japanese_goblin": "👺",
+		"ghost": "👻",
+		"skull": "💀",
+		"skull_and_crossbones": "☠️",
+		"alien": "👽",
+		"space_invader": "👾",
+		"robot": "🤖",
+		"smiley_cat": "😺",
+		"smile_cat": "😸",
+		"joy_cat": "😹",
+		"heart_eyes_cat": "😻",
+		"smirk_cat": "😼",
+		"kissing_cat": "😽",
+		"scream_cat": "🙀",
+		"crying_cat_face": "😿",
+		"pouting_cat": "😾",
+		"raised_hands": "🙌",
+		"clap": "👏",
+		"+1": "👍",
+		"thumbsup": "👍",
+		"-1": "👎",
+		"thumbsdown": "👎",
+		"facepunch": "👊",
+		"punch": "👊",
+		"fist": "✊",
+		"wave": "👋",
+		"point_left": "👈",
+		"point_right": "👉",
+		"point_up_2": "👆",
+		"point_down": "👇",
+		"ok_hand": "👌",
+		"point_up": "☝️",
+		"v": "✌️",
+		"hand": "✋",
+		"raised_hand": "✋",
+		"raised_hand_with_fingers_splayed": "🖐",
+		"open_hands": "👐",
+		"muscle": "💪",
+		"pray": "🙏",
+		"vulcan_salute": "🖖",
+		"metal": "🤘",
+		"middle_finger": "🖕",
+		"fu": "🖕",
+		"writing_hand": "✍️",
+		"nail_care": "💅",
+		"lips": "👄",
+		"tongue": "👅",
+		"ear": "👂",
+		"nose": "👃",
+		"eye": "👁",
+		"eyes": "👀",
+		"speaking_head": "🗣",
+		"bust_in_silhouette": "👤",
+		"busts_in_silhouette": "👥",
+		"baby": "👶",
+		"boy": "👦",
+		"girl": "👧",
+		"man": "👨",
+		"woman": "👩",
+		"blonde_woman": "👱‍♀️",
+		"blonde_man": "👱",
+		"person_with_blond_hair": "👱",
+		"older_man": "👴",
+		"older_woman": "👵",
+		"man_with_gua_pi_mao": "👲",
+		"woman_with_turban": "👳‍♀️",
+		"man_with_turban": "👳",
+		"policewoman": "👮‍♀️",
+		"policeman": "👮",
+		"cop": "👮",
+		"construction_worker_woman": "👷‍♀️",
+		"construction_worker_man": "👷",
+		"construction_worker": "👷",
+		"guardswoman": "💂‍♀️",
+		"guardsman": "💂",
+		"female_detective": "🕵️‍♀️",
+		"male_detective": "🕵️",
+		"detective": "🕵️",
+		"santa": "🎅",
+		"princess": "👸",
+		"bride_with_veil": "👰",
+		"angel": "👼",
+		"bowing_woman": "🙇‍♀️",
+		"bowing_man": "🙇",
+		"bow": "🙇",
+		"tipping_hand_woman": "💁",
+		"information_desk_person": "💁",
+		"tipping_hand_man": "💁‍♂️",
+		"no_good_woman": "🙅",
+		"no_good": "🙅",
+		"ng_woman": "🙅",
+		"no_good_man": "🙅‍♂️",
+		"ng_man": "🙅‍♂️",
+		"ok_woman": "🙆",
+		"ok_man": "🙆‍♂️",
+		"raising_hand_woman": "🙋",
+		"raising_hand": "🙋",
+		"raising_hand_man": "🙋‍♂️",
+		"pouting_woman": "🙎",
+		"person_with_pouting_face": "🙎",
+		"pouting_man": "🙎‍♂️",
+		"frowning_woman": "🙍",
+		"person_frowning": "🙍",
+		"frowning_man": "🙍‍♂️",
+		"haircut_woman": "💇",
+		"haircut": "💇",
+		"haircut_man": "💇‍♂️",
+		"massage_woman": "💆",
+		"massage": "💆",
+		"massage_man": "💆‍♂️",
+		"dancer": "💃",
+		"dancing_women": "👯",
+		"dancers": "👯",
+		"dancing_men": "👯‍♂️",
+		"walking_woman": "🚶‍♀️",
+		"walking_man": "🚶",
+		"walking": "🚶",
+		"running_woman": "🏃‍♀️",
+		"running_man": "🏃",
+		"runner": "🏃",
+		"running": "🏃",
+		"couple": "👫",
+		"two_women_holding_hands": "👭",
+		"two_men_holding_hands": "👬",
+		"couple_with_heart_woman_man": "💑",
+		"couple_with_heart": "💑",
+		"couple_with_heart_woman_woman": "👩‍❤️‍👩",
+		"couple_with_heart_man_man": "👨‍❤️‍👨",
+		"couplekiss_man_woman": "💏",
+		"couplekiss_woman_woman": "👩‍❤️‍💋‍👩",
+		"couplekiss_man_man": "👨‍❤️‍💋‍👨",
+		"family_man_woman_boy": "👪",
+		"family": "👪",
+		"family_man_woman_girl": "👨‍👩‍👧",
+		"family_man_woman_girl_boy": "👨‍👩‍👧‍👦",
+		"family_man_woman_boy_boy": "👨‍👩‍👦‍👦",
+		"family_man_woman_girl_girl": "👨‍👩‍👧‍👧",
+		"family_woman_woman_boy": "👩‍👩‍👦",
+		"family_woman_woman_girl": "👩‍👩‍👧",
+		"family_woman_woman_girl_boy": "👩‍👩‍👧‍👦",
+		"family_woman_woman_boy_boy": "👩‍👩‍👦‍👦",
+		"family_woman_woman_girl_girl": "👩‍👩‍👧‍👧",
+		"family_man_man_boy": "👨‍👨‍👦",
+		"family_man_man_girl": "👨‍👨‍👧",
+		"family_man_man_girl_boy": "👨‍👨‍👧‍👦",
+		"family_man_man_boy_boy": "👨‍👨‍👦‍👦",
+		"family_man_man_girl_girl": "👨‍👨‍👧‍👧",
+		"family_woman_boy": "👩‍👦",
+		"family_woman_girl": "👩‍👧",
+		"family_woman_girl_boy": "👩‍👧‍👦",
+		"family_woman_boy_boy": "👩‍👦‍👦",
+		"family_woman_girl_girl": "👩‍👧‍👧",
+		"family_man_boy": "👨‍👦",
+		"family_man_girl": "👨‍👧",
+		"family_man_girl_boy": "👨‍👧‍👦",
+		"family_man_boy_boy": "👨‍👦‍👦",
+		"family_man_girl_girl": "👨‍👧‍👧",
+		"womans_clothes": "👚",
+		"shirt": "👕",
+		"tshirt": "👕",
+		"jeans": "👖",
+		"necktie": "👔",
+		"dress": "👗",
+		"bikini": "👙",
+		"kimono": "👘",
+		"lipstick": "💄",
+		"kiss": "💋",
+		"footprints": "👣",
+		"high_heel": "👠",
+		"sandal": "👡",
+		"boot": "👢",
+		"mans_shoe": "👞",
+		"shoe": "👞",
+		"athletic_shoe": "👟",
+		"womans_hat": "👒",
+		"tophat": "🎩",
+		"mortar_board": "🎓",
+		"crown": "👑",
+		"rescue_worker_helmet": "⛑",
+		"school_satchel": "🎒",
+		"pouch": "👝",
+		"purse": "👛",
+		"handbag": "👜",
+		"briefcase": "💼",
+		"eyeglasses": "👓",
+		"dark_sunglasses": "🕶",
+		"ring": "💍",
+		"closed_umbrella": "🌂",
+		"dog": "🐶",
+		"cat": "🐱",
+		"mouse": "🐭",
+		"hamster": "🐹",
+		"rabbit": "🐰",
+		"bear": "🐻",
+		"panda_face": "🐼",
+		"koala": "🐨",
+		"tiger": "🐯",
+		"lion": "🦁",
+		"cow": "🐮",
+		"pig": "🐷",
+		"pig_nose": "🐽",
+		"frog": "🐸",
+		"octopus": "🐙",
+		"monkey_face": "🐵",
+		"see_no_evil": "🙈",
+		"hear_no_evil": "🙉",
+		"speak_no_evil": "🙊",
+		"monkey": "🐒",
+		"chicken": "🐔",
+		"penguin": "🐧",
+		"bird": "🐦",
+		"baby_chick": "🐤",
+		"hatching_chick": "🐣",
+		"hatched_chick": "🐥",
+		"wolf": "🐺",
+		"boar": "🐗",
+		"horse": "🐴",
+		"unicorn": "🦄",
+		"bee": "🐝",
+		"honeybee": "🐝",
+		"bug": "🐛",
+		"snail": "🐌",
+		"beetle": "🐞",
+		"ant": "🐜",
+		"spider": "🕷",
+		"scorpion": "🦂",
+		"crab": "🦀",
+		"snake": "🐍",
+		"turtle": "🐢",
+		"tropical_fish": "🐠",
+		"fish": "🐟",
+		"blowfish": "🐡",
+		"dolphin": "🐬",
+		"flipper": "🐬",
+		"whale": "🐳",
+		"whale2": "🐋",
+		"crocodile": "🐊",
+		"leopard": "🐆",
+		"tiger2": "🐅",
+		"water_buffalo": "🐃",
+		"ox": "🐂",
+		"cow2": "🐄",
+		"dromedary_camel": "🐪",
+		"camel": "🐫",
+		"elephant": "🐘",
+		"goat": "🐐",
+		"ram": "🐏",
+		"sheep": "🐑",
+		"racehorse": "🐎",
+		"pig2": "🐖",
+		"rat": "🐀",
+		"mouse2": "🐁",
+		"rooster": "🐓",
+		"turkey": "🦃",
+		"dove": "🕊",
+		"dog2": "🐕",
+		"poodle": "🐩",
+		"cat2": "🐈",
+		"rabbit2": "🐇",
+		"chipmunk": "🐿",
+		"feet": "🐾",
+		"paw_prints": "🐾",
+		"dragon": "🐉",
+		"dragon_face": "🐲",
+		"cactus": "🌵",
+		"christmas_tree": "🎄",
+		"evergreen_tree": "🌲",
+		"deciduous_tree": "🌳",
+		"palm_tree": "🌴",
+		"seedling": "🌱",
+		"herb": "🌿",
+		"shamrock": "☘",
+		"four_leaf_clover": "🍀",
+		"bamboo": "🎍",
+		"tanabata_tree": "🎋",
+		"leaves": "🍃",
+		"fallen_leaf": "🍂",
+		"maple_leaf": "🍁",
+		"ear_of_rice": "🌾",
+		"hibiscus": "🌺",
+		"sunflower": "🌻",
+		"rose": "🌹",
+		"tulip": "🌷",
+		"blossom": "🌼",
+		"cherry_blossom": "🌸",
+		"bouquet": "💐",
+		"mushroom": "🍄",
+		"chestnut": "🌰",
+		"jack_o_lantern": "🎃",
+		"shell": "🐚",
+		"spider_web": "🕸",
+		"earth_americas": "🌎",
+		"earth_africa": "🌍",
+		"earth_asia": "🌏",
+		"full_moon": "🌕",
+		"waning_gibbous_moon": "🌖",
+		"last_quarter_moon": "🌗",
+		"waning_crescent_moon": "🌘",
+		"new_moon": "🌑",
+		"waxing_crescent_moon": "🌒",
+		"first_quarter_moon": "🌓",
+		"moon": "🌔",
+		"waxing_gibbous_moon": "🌔",
+		"new_moon_with_face": "🌚",
+		"full_moon_with_face": "🌝",
+		"first_quarter_moon_with_face": "🌛",
+		"last_quarter_moon_with_face": "🌜",
+		"sun_with_face": "🌞",
+		"crescent_moon": "🌙",
+		"star": "⭐️",
+		"star2": "🌟",
+		"dizzy": "💫",
+		"sparkles": "✨",
+		"comet": "☄️",
+		"sunny": "☀️",
+		"sun_behind_small_cloud": "🌤",
+		"partly_sunny": "⛅️",
+		"sun_behind_large_cloud": "🌥",
+		"sun_behind_rain_cloud": "🌦",
+		"cloud": "☁️",
+		"cloud_with_rain": "🌧",
+		"cloud_with_lightning_and_rain": "⛈",
+		"cloud_with_lightning": "🌩",
+		"zap": "⚡️",
+		"fire": "🔥",
+		"boom": "💥",
+		"collision": "💥",
+		"snowflake": "❄️",
+		"cloud_with_snow": "🌨",
+		"snowman_with_snow": "☃️",
+		"snowman": "⛄️",
+		"wind_face": "🌬",
+		"dash": "💨",
+		"tornado": "🌪",
+		"fog": "🌫",
+		"open_umbrella": "☂️",
+		"umbrella": "☔️",
+		"droplet": "💧",
+		"sweat_drops": "💦",
+		"ocean": "🌊",
+		"green_apple": "🍏",
+		"apple": "🍎",
+		"pear": "🍐",
+		"tangerine": "🍊",
+		"orange": "🍊",
+		"mandarin": "🍊",
+		"lemon": "🍋",
+		"banana": "🍌",
+		"watermelon": "🍉",
+		"grapes": "🍇",
+		"strawberry": "🍓",
+		"melon": "🍈",
+		"cherries": "🍒",
+		"peach": "🍑",
+		"pineapple": "🍍",
+		"tomato": "🍅",
+		"eggplant": "🍆",
+		"hot_pepper": "🌶",
+		"corn": "🌽",
+		"sweet_potato": "🍠",
+		"honey_pot": "🍯",
+		"bread": "🍞",
+		"cheese": "🧀",
+		"poultry_leg": "🍗",
+		"meat_on_bone": "🍖",
+		"fried_shrimp": "🍤",
+		"egg": "🍳",
+		"hamburger": "🍔",
+		"fries": "🍟",
+		"hotdog": "🌭",
+		"pizza": "🍕",
+		"spaghetti": "🍝",
+		"taco": "🌮",
+		"burrito": "🌯",
+		"ramen": "🍜",
+		"stew": "🍲",
+		"fish_cake": "🍥",
+		"sushi": "🍣",
+		"bento": "🍱",
+		"curry": "🍛",
+		"rice_ball": "🍙",
+		"rice": "🍚",
+		"rice_cracker": "🍘",
+		"oden": "🍢",
+		"dango": "🍡",
+		"shaved_ice": "🍧",
+		"ice_cream": "🍨",
+		"icecream": "🍦",
+		"cake": "🍰",
+		"birthday": "🎂",
+		"custard": "🍮",
+		"candy": "🍬",
+		"lollipop": "🍭",
+		"chocolate_bar": "🍫",
+		"popcorn": "🍿",
+		"doughnut": "🍩",
+		"cookie": "🍪",
+		"beer": "🍺",
+		"beers": "🍻",
+		"wine_glass": "🍷",
+		"cocktail": "🍸",
+		"tropical_drink": "🍹",
+		"champagne": "🍾",
+		"sake": "🍶",
+		"tea": "🍵",
+		"coffee": "☕️",
+		"baby_bottle": "🍼",
+		"fork_and_knife": "🍴",
+		"plate_with_cutlery": "🍽",
+		"soccer": "⚽️",
+		"basketball": "🏀",
+		"football": "🏈",
+		"baseball": "⚾️",
+		"tennis": "🎾",
+		"volleyball": "🏐",
+		"rugby_football": "🏉",
+		"8ball": "🎱",
+		"ping_pong": "🏓",
+		"badminton": "🏸",
+		"ice_hockey": "🏒",
+		"field_hockey": "🏑",
+		"cricket": "🏏",
+		"bow_and_arrow": "🏹",
+		"golf": "⛳️",
+		"fishing_pole_and_fish": "🎣",
+		"ice_skate": "⛸",
+		"ski": "🎿",
+		"skier": "⛷",
+		"snowboarder": "🏂",
+		"weight_lifting_woman": "🏋️‍♀️",
+		"weight_lifting_man": "🏋️",
+		"basketball_woman": "⛹️‍♀️",
+		"basketball_man": "⛹️",
+		"golfing_woman": "🏌️‍♀️",
+		"golfing_man": "🏌️",
+		"surfing_woman": "🏄‍♀️",
+		"surfing_man": "🏄",
+		"surfer": "🏄",
+		"swimming_woman": "🏊‍♀️",
+		"swimming_man": "🏊",
+		"swimmer": "🏊",
+		"rowing_woman": "🚣‍♀️",
+		"rowing_man": "🚣",
+		"rowboat": "🚣",
+		"horse_racing": "🏇",
+		"biking_woman": "🚴‍♀️",
+		"biking_man": "🚴",
+		"bicyclist": "🚴",
+		"mountain_biking_woman": "🚵‍♀️",
+		"mountain_biking_man": "🚵",
+		"mountain_bicyclist": "🚵",
+		"bath": "🛀",
+		"business_suit_levitating": "🕴",
+		"reminder_ribbon": "🎗",
+		"running_shirt_with_sash": "🎽",
+		"medal_sports": "🏅",
+		"medal_military": "🎖",
+		"trophy": "🏆",
+		"rosette": "🏵",
+		"dart": "🎯",
+		"ticket": "🎫",
+		"tickets": "🎟",
+		"performing_arts": "🎭",
+		"art": "🎨",
+		"circus_tent": "🎪",
+		"clapper": "🎬",
+		"microphone": "🎤",
+		"headphones": "🎧",
+		"musical_score": "🎼",
+		"musical_keyboard": "🎹",
+		"saxophone": "🎷",
+		"trumpet": "🎺",
+		"guitar": "🎸",
+		"violin": "🎻",
+		"video_game": "🎮",
+		"slot_machine": "🎰",
+		"game_die": "🎲",
+		"bowling": "🎳",
+		"car": "🚗",
+		"red_car": "🚗",
+		"taxi": "🚕",
+		"blue_car": "🚙",
+		"bus": "🚌",
+		"trolleybus": "🚎",
+		"racing_car": "🏎",
+		"police_car": "🚓",
+		"ambulance": "🚑",
+		"fire_engine": "🚒",
+		"minibus": "🚐",
+		"truck": "🚚",
+		"articulated_lorry": "🚛",
+		"tractor": "🚜",
+		"motorcycle": "🏍",
+		"bike": "🚲",
+		"rotating_light": "🚨",
+		"oncoming_police_car": "🚔",
+		"oncoming_bus": "🚍",
+		"oncoming_automobile": "🚘",
+		"oncoming_taxi": "🚖",
+		"aerial_tramway": "🚡",
+		"mountain_cableway": "🚠",
+		"suspension_railway": "🚟",
+		"railway_car": "🚃",
+		"train": "🚋",
+		"monorail": "🚝",
+		"bullettrain_side": "🚄",
+		"bullettrain_front": "🚅",
+		"light_rail": "🚈",
+		"mountain_railway": "🚞",
+		"steam_locomotive": "🚂",
+		"train2": "🚆",
+		"metro": "🚇",
+		"tram": "🚊",
+		"station": "🚉",
+		"helicopter": "🚁",
+		"small_airplane": "🛩",
+		"airplane": "✈️",
+		"flight_departure": "🛫",
+		"flight_arrival": "🛬",
+		"boat": "⛵️",
+		"sailboat": "⛵️",
+		"motor_boat": "🛥",
+		"speedboat": "🚤",
+		"ferry": "⛴",
+		"passenger_ship": "🛳",
+		"rocket": "🚀",
+		"artificial_satellite": "🛰",
+		"seat": "💺",
+		"anchor": "⚓️",
+		"construction": "🚧",
+		"fuelpump": "⛽️",
+		"busstop": "🚏",
+		"vertical_traffic_light": "🚦",
+		"traffic_light": "🚥",
+		"world_map": "🗺",
+		"ship": "🚢",
+		"ferris_wheel": "🎡",
+		"roller_coaster": "🎢",
+		"carousel_horse": "🎠",
+		"building_construction": "🏗",
+		"foggy": "🌁",
+		"tokyo_tower": "🗼",
+		"factory": "🏭",
+		"fountain": "⛲️",
+		"rice_scene": "🎑",
+		"mountain": "⛰",
+		"mountain_snow": "🏔",
+		"mount_fuji": "🗻",
+		"volcano": "🌋",
+		"japan": "🗾",
+		"camping": "🏕",
+		"tent": "⛺️",
+		"national_park": "🏞",
+		"motorway": "🛣",
+		"railway_track": "🛤",
+		"sunrise": "🌅",
+		"sunrise_over_mountains": "🌄",
+		"desert": "🏜",
+		"beach_umbrella": "🏖",
+		"desert_island": "🏝",
+		"city_sunrise": "🌇",
+		"city_sunset": "🌆",
+		"cityscape": "🏙",
+		"night_with_stars": "🌃",
+		"bridge_at_night": "🌉",
+		"milky_way": "🌌",
+		"stars": "🌠",
+		"sparkler": "🎇",
+		"fireworks": "🎆",
+		"rainbow": "🌈",
+		"houses": "🏘",
+		"european_castle": "🏰",
+		"japanese_castle": "🏯",
+		"stadium": "🏟",
+		"statue_of_liberty": "🗽",
+		"house": "🏠",
+		"house_with_garden": "🏡",
+		"derelict_house": "🏚",
+		"office": "🏢",
+		"department_store": "🏬",
+		"post_office": "🏣",
+		"european_post_office": "🏤",
+		"hospital": "🏥",
+		"bank": "🏦",
+		"hotel": "🏨",
+		"convenience_store": "🏪",
+		"school": "🏫",
+		"love_hotel": "🏩",
+		"wedding": "💒",
+		"classical_building": "🏛",
+		"church": "⛪️",
+		"mosque": "🕌",
+		"synagogue": "🕍",
+		"kaaba": "🕋",
+		"shinto_shrine": "⛩",
+		"watch": "⌚️",
+		"iphone": "📱",
+		"calling": "📲",
+		"computer": "💻",
+		"keyboard": "⌨️",
+		"desktop_computer": "🖥",
+		"printer": "🖨",
+		"computer_mouse": "🖱",
+		"trackball": "🖲",
+		"joystick": "🕹",
+		"clamp": "🗜",
+		"minidisc": "💽",
+		"floppy_disk": "💾",
+		"cd": "💿",
+		"dvd": "📀",
+		"vhs": "📼",
+		"camera": "📷",
+		"camera_flash": "📸",
+		"video_camera": "📹",
+		"movie_camera": "🎥",
+		"film_projector": "📽",
+		"film_strip": "🎞",
+		"telephone_receiver": "📞",
+		"phone": "☎️",
+		"telephone": "☎️",
+		"pager": "📟",
+		"fax": "📠",
+		"tv": "📺",
+		"radio": "📻",
+		"studio_microphone": "🎙",
+		"level_slider": "🎚",
+		"control_knobs": "🎛",
+		"stopwatch": "⏱",
+		"timer_clock": "⏲",
+		"alarm_clock": "⏰",
+		"mantelpiece_clock": "🕰",
+		"hourglass_flowing_sand": "⏳",
+		"hourglass": "⌛️",
+		"satellite": "📡",
+		"battery": "🔋",
+		"electric_plug": "🔌",
+		"bulb": "💡",
+		"flashlight": "🔦",
+		"candle": "🕯",
+		"wastebasket": "🗑",
+		"oil_drum": "🛢",
+		"money_with_wings": "💸",
+		"dollar": "💵",
+		"yen": "💴",
+		"euro": "💶",
+		"pound": "💷",
+		"moneybag": "💰",
+		"credit_card": "💳",
+		"gem": "💎",
+		"balance_scale": "⚖",
+		"wrench": "🔧",
+		"hammer": "🔨",
+		"hammer_and_pick": "⚒",
+		"hammer_and_wrench": "🛠",
+		"pick": "⛏",
+		"nut_and_bolt": "🔩",
+		"gear": "⚙",
+		"chains": "⛓",
+		"gun": "🔫",
+		"bomb": "💣",
+		"hocho": "🔪",
+		"knife": "🔪",
+		"dagger": "🗡",
+		"crossed_swords": "⚔",
+		"shield": "🛡",
+		"smoking": "🚬",
+		"coffin": "⚰",
+		"funeral_urn": "⚱",
+		"amphora": "🏺",
+		"crystal_ball": "🔮",
+		"prayer_beads": "📿",
+		"barber": "💈",
+		"alembic": "⚗",
+		"telescope": "🔭",
+		"microscope": "🔬",
+		"hole": "🕳",
+		"pill": "💊",
+		"syringe": "💉",
+		"thermometer": "🌡",
+		"toilet": "🚽",
+		"shower": "🚿",
+		"bathtub": "🛁",
+		"bellhop_bell": "🛎",
+		"key": "🔑",
+		"old_key": "🗝",
+		"door": "🚪",
+		"couch_and_lamp": "🛋",
+		"sleeping_bed": "🛌",
+		"bed": "🛏",
+		"framed_picture": "🖼",
+		"parasol_on_ground": "⛱",
+		"moyai": "🗿",
+		"shopping": "🛍",
+		"gift": "🎁",
+		"balloon": "🎈",
+		"flags": "🎏",
+		"ribbon": "🎀",
+		"confetti_ball": "🎊",
+		"tada": "🎉",
+		"wind_chime": "🎐",
+		"izakaya_lantern": "🏮",
+		"lantern": "🏮",
+		"dolls": "🎎",
+		"email": "✉️",
+		"envelope": "✉️",
+		"envelope_with_arrow": "📩",
+		"incoming_envelope": "📨",
+		"e-mail": "📧",
+		"love_letter": "💌",
+		"inbox_tray": "📥",
+		"outbox_tray": "📤",
+		"package": "📦",
+		"label": "🏷",
+		"bookmark": "🔖",
+		"mailbox_closed": "📪",
+		"mailbox": "📫",
+		"mailbox_with_mail": "📬",
+		"mailbox_with_no_mail": "📭",
+		"postbox": "📮",
+		"postal_horn": "📯",
+		"scroll": "📜",
+		"page_with_curl": "📃",
+		"page_facing_up": "📄",
+		"bookmark_tabs": "📑",
+		"bar_chart": "📊",
+		"chart_with_upwards_trend": "📈",
+		"chart_with_downwards_trend": "📉",
+		"spiral_notepad": "🗒",
+		"spiral_calendar": "🗓",
+		"calendar": "📆",
+		"date": "📅",
+		"card_index": "📇",
+		"card_file_box": "🗃",
+		"ballot_box": "🗳",
+		"file_cabinet": "🗄",
+		"clipboard": "📋",
+		"file_folder": "📁",
+		"open_file_folder": "📂",
+		"card_index_dividers": "🗂",
+		"newspaper_roll": "🗞",
+		"newspaper": "📰",
+		"notebook": "📓",
+		"notebook_with_decorative_cover": "📔",
+		"ledger": "📒",
+		"closed_book": "📕",
+		"green_book": "📗",
+		"blue_book": "📘",
+		"orange_book": "📙",
+		"books": "📚",
+		"book": "📖",
+		"open_book": "📖",
+		"link": "🔗",
+		"paperclip": "📎",
+		"paperclips": "🖇",
+		"triangular_ruler": "📐",
+		"straight_ruler": "📏",
+		"scissors": "✂️",
+		"pushpin": "📌",
+		"round_pushpin": "📍",
+		"triangular_flag_on_post": "🚩",
+		"crossed_flags": "🎌",
+		"white_flag": "🏳️",
+		"black_flag": "🏴",
+		"checkered_flag": "🏁",
+		"rainbow_flag": "🏳️‍🌈",
+		"paintbrush": "🖌",
+		"crayon": "🖍",
+		"pen": "🖊",
+		"fountain_pen": "🖋",
+		"black_nib": "✒️",
+		"memo": "📝",
+		"pencil": "📝",
+		"pencil2": "✏️",
+		"lock_with_ink_pen": "🔏",
+		"closed_lock_with_key": "🔐",
+		"lock": "🔒",
+		"unlock": "🔓",
+		"mag": "🔍",
+		"mag_right": "🔎",
+		"heart": "❤️",
+		"yellow_heart": "💛",
+		"green_heart": "💚",
+		"blue_heart": "💙",
+		"purple_heart": "💜",
+		"broken_heart": "💔",
+		"heavy_heart_exclamation": "❣️",
+		"two_hearts": "💕",
+		"revolving_hearts": "💞",
+		"heartbeat": "💓",
+		"heartpulse": "💗",
+		"sparkling_heart": "💖",
+		"cupid": "💘",
+		"gift_heart": "💝",
+		"heart_decoration": "💟",
+		"peace_symbol": "☮️",
+		"latin_cross": "✝️",
+		"star_and_crescent": "☪️",
+		"om": "🕉",
+		"wheel_of_dharma": "☸️",
+		"star_of_david": "✡️",
+		"six_pointed_star": "🔯",
+		"menorah": "🕎",
+		"yin_yang": "☯️",
+		"orthodox_cross": "☦️",
+		"place_of_worship": "🛐",
+		"ophiuchus": "⛎",
+		"aries": "♈️",
+		"taurus": "♉️",
+		"gemini": "♊️",
+		"cancer": "♋️",
+		"leo": "♌️",
+		"virgo": "♍️",
+		"libra": "♎️",
+		"scorpius": "♏️",
+		"sagittarius": "♐️",
+		"capricorn": "♑️",
+		"aquarius": "♒️",
+		"pisces": "♓️",
+		"id": "🆔",
+		"atom_symbol": "⚛",
+		"radioactive": "☢️",
+		"biohazard": "☣️",
+		"mobile_phone_off": "📴",
+		"vibration_mode": "📳",
+		"eight_pointed_black_star": "✴️",
+		"vs": "🆚",
+		"accept": "🉑",
+		"white_flower": "💮",
+		"ideograph_advantage": "🉐",
+		"secret": "㊙️",
+		"congratulations": "㊗️",
+		"u6e80": "🈵",
+		"a": "🅰️",
+		"b": "🅱️",
+		"ab": "🆎",
+		"cl": "🆑",
+		"o2": "🅾️",
+		"sos": "🆘",
+		"no_entry": "⛔️",
+		"name_badge": "📛",
+		"no_entry_sign": "🚫",
+		"x": "❌",
+		"o": "⭕️",
+		"anger": "💢",
+		"hotsprings": "♨️",
+		"no_pedestrians": "🚷",
+		"do_not_litter": "🚯",
+		"no_bicycles": "🚳",
+		"non-potable_water": "🚱",
+		"underage": "🔞",
+		"no_mobile_phones": "📵",
+		"exclamation": "❗️",
+		"heavy_exclamation_mark": "❗️",
+		"grey_exclamation": "❕",
+		"question": "❓",
+		"grey_question": "❔",
+		"bangbang": "‼️",
+		"interrobang": "⁉️",
+		"low_brightness": "🔅",
+		"high_brightness": "🔆",
+		"trident": "🔱",
+		"fleur_de_lis": "⚜",
+		"part_alternation_mark": "〽️",
+		"warning": "⚠️",
+		"children_crossing": "🚸",
+		"beginner": "🔰",
+		"recycle": "♻️",
+		"chart": "💹",
+		"sparkle": "❇️",
+		"eight_spoked_asterisk": "✳️",
+		"negative_squared_cross_mark": "❎",
+		"white_check_mark": "✅",
+		"globe_with_meridians": "🌐",
+		"m": "Ⓜ️",
+		"diamond_shape_with_a_dot_inside": "💠",
+		"cyclone": "🌀",
+		"loop": "➿",
+		"atm": "🏧",
+		"sa": "🈂️",
+		"passport_control": "🛂",
+		"customs": "🛃",
+		"baggage_claim": "🛄",
+		"left_luggage": "🛅",
+		"wheelchair": "♿️",
+		"no_smoking": "🚭",
+		"wc": "🚾",
+		"parking": "🅿️",
+		"potable_water": "🚰",
+		"mens": "🚹",
+		"womens": "🚺",
+		"baby_symbol": "🚼",
+		"restroom": "🚻",
+		"put_litter_in_its_place": "🚮",
+		"cinema": "🎦",
+		"signal_strength": "📶",
+		"koko": "🈁",
+		"abc": "🔤",
+		"abcd": "🔡",
+		"capital_abcd": "🔠",
+		"symbols": "🔣",
+		"information_source": "ℹ️",
+		"ng": "🆖",
+		"ok": "🆗",
+		"up": "🆙",
+		"cool": "🆒",
+		"new": "🆕",
+		"free": "🆓",
+		"zero": "0️⃣",
+		"one": "1️⃣",
+		"two": "2️⃣",
+		"three": "3️⃣",
+		"four": "4️⃣",
+		"five": "5️⃣",
+		"six": "6️⃣",
+		"seven": "7️⃣",
+		"eight": "8️⃣",
+		"nine": "9️⃣",
+		"keycap_ten": "🔟",
+		"hash": "#️⃣",
+		"asterisk": "*️⃣",
+		"arrow_forward": "▶️",
+		"pause_button": "⏸",
+		"play_or_pause_button": "⏯",
+		"stop_button": "⏹",
+		"record_button": "⏺",
+		"next_track_button": "⏭",
+		"previous_track_button": "⏮",
+		"fast_forward": "⏩",
+		"rewind": "⏪",
+		"arrow_double_up": "⏫",
+		"arrow_double_down": "⏬",
+		"arrow_backward": "◀️",
+		"arrow_up_small": "🔼",
+		"arrow_down_small": "🔽",
+		"arrow_right": "➡️",
+		"arrow_left": "⬅️",
+		"arrow_up": "⬆️",
+		"arrow_down": "⬇️",
+		"arrow_upper_right": "↗️",
+		"arrow_lower_right": "↘️",
+		"arrow_lower_left": "↙️",
+		"arrow_upper_left": "↖️",
+		"arrow_up_down": "↕️",
+		"left_right_arrow": "↔️",
+		"arrow_right_hook": "↪️",
+		"leftwards_arrow_with_hook": "↩️",
+		"arrow_heading_up": "⤴️",
+		"arrow_heading_down": "⤵️",
+		"twisted_rightwards_arrows": "🔀",
+		"repeat": "🔁",
+		"repeat_one": "🔂",
+		"arrows_counterclockwise": "🔄",
+		"arrows_clockwise": "🔃",
+		"musical_note": "🎵",
+		"notes": "🎶",
+		"wavy_dash": "〰️",
+		"curly_loop": "➰",
+		"heavy_check_mark": "✔️",
+		"heavy_plus_sign": "➕",
+		"heavy_minus_sign": "➖",
+		"heavy_division_sign": "➗",
+		"heavy_multiplication_x": "✖️",
+		"heavy_dollar_sign": "💲",
+		"currency_exchange": "💱",
+		"tm": "™️",
+		"copyright": "©️",
+		"registered": "®️",
+		"end": "🔚",
+		"back": "🔙",
+		"on": "🔛",
+		"top": "🔝",
+		"soon": "🔜",
+		"ballot_box_with_check": "☑️",
+		"radio_button": "🔘",
+		"white_circle": "⚪️",
+		"black_circle": "⚫️",
+		"red_circle": "🔴",
+		"large_blue_circle": "🔵",
+		"small_red_triangle": "🔺",
+		"small_red_triangle_down": "🔻",
+		"small_orange_diamond": "🔸",
+		"small_blue_diamond": "🔹",
+		"large_orange_diamond": "🔶",
+		"large_blue_diamond": "🔷",
+		"white_square_button": "🔳",
+		"black_square_button": "🔲",
+		"black_small_square": "▪️",
+		"white_small_square": "▫️",
+		"black_medium_small_square": "◾️",
+		"white_medium_small_square": "◽️",
+		"black_medium_square": "◼️",
+		"white_medium_square": "◻️",
+		"black_large_square": "⬛️",
+		"white_large_square": "⬜️",
+		"mute": "🔇",
+		"speaker": "🔈",
+		"sound": "🔉",
+		"loud_sound": "🔊",
+		"no_bell": "🔕",
+		"bell": "🔔",
+		"mega": "📣",
+		"loudspeaker": "📢",
+		"eye_speech_bubble": "👁‍🗨",
+		"speech_balloon": "💬",
+		"thought_balloon": "💭",
+		"right_anger_bubble": "🗯",
+		"black_joker": "🃏",
+		"mahjong": "🀄️",
+		"flower_playing_cards": "🎴",
+		"spades": "♠️",
+		"clubs": "♣️",
+		"hearts": "♥️",
+		"diamonds": "♦️",
+		"clock1": "🕐",
+		"clock2": "🕑",
+		"clock3": "🕒",
+		"clock4": "🕓",
+		"clock5": "🕔",
+		"clock6": "🕕",
+		"clock7": "🕖",
+		"clock8": "🕗",
+		"clock9": "🕘",
+		"clock10": "🕙",
+		"clock11": "🕚",
+		"clock12": "🕛",
+		"clock130": "🕜",
+		"clock230": "🕝",
+		"clock330": "🕞",
+		"clock430": "🕟",
+		"clock530": "🕠",
+		"clock630": "🕡",
+		"clock730": "🕢",
+		"clock830": "🕣",
+		"clock930": "🕤",
+		"clock1030": "🕥",
+		"clock1130": "🕦",
+		"clock1230": "🕧",
+		"afghanistan": "🇦🇫",
+		"aland_islands": "🇦🇽",
+		"albania": "🇦🇱",
+		"algeria": "🇩🇿",
+		"american_samoa": "🇦🇸",
+		"andorra": "🇦🇩",
+		"angola": "🇦🇴",
+		"anguilla": "🇦🇮",
+		"antarctica": "🇦🇶",
+		"antigua_barbuda": "🇦🇬",
+		"argentina": "🇦🇷",
+		"armenia": "🇦🇲",
+		"aruba": "🇦🇼",
+		"australia": "🇦🇺",
+		"austria": "🇦🇹",
+		"azerbaijan": "🇦🇿",
+		"bahamas": "🇧🇸",
+		"bahrain": "🇧🇭",
+		"bangladesh": "🇧🇩",
+		"barbados": "🇧🇧",
+		"belarus": "🇧🇾",
+		"belgium": "🇧🇪",
+		"belize": "🇧🇿",
+		"benin": "🇧🇯",
+		"bermuda": "🇧🇲",
+		"bhutan": "🇧🇹",
+		"bolivia": "🇧🇴",
+		"caribbean_netherlands": "🇧🇶",
+		"bosnia_herzegovina": "🇧🇦",
+		"botswana": "🇧🇼",
+		"brazil": "🇧🇷",
+		"british_indian_ocean_territory": "🇮🇴",
+		"british_virgin_islands": "🇻🇬",
+		"brunei": "🇧🇳",
+		"bulgaria": "🇧🇬",
+		"burkina_faso": "🇧🇫",
+		"burundi": "🇧🇮",
+		"cape_verde": "🇨🇻",
+		"cambodia": "🇰🇭",
+		"cameroon": "🇨🇲",
+		"canada": "🇨🇦",
+		"canary_islands": "🇮🇨",
+		"cayman_islands": "🇰🇾",
+		"central_african_republic": "🇨🇫",
+		"chad": "🇹🇩",
+		"chile": "🇨🇱",
+		"cn": "🇨🇳",
+		"christmas_island": "🇨🇽",
+		"cocos_islands": "🇨🇨",
+		"colombia": "🇨🇴",
+		"comoros": "🇰🇲",
+		"congo_brazzaville": "🇨🇬",
+		"congo_kinshasa": "🇨🇩",
+		"cook_islands": "🇨🇰",
+		"costa_rica": "🇨🇷",
+		"croatia": "🇭🇷",
+		"cuba": "🇨🇺",
+		"curacao": "🇨🇼",
+		"cyprus": "🇨🇾",
+		"czech_republic": "🇨🇿",
+		"denmark": "🇩🇰",
+		"djibouti": "🇩🇯",
+		"dominica": "🇩🇲",
+		"dominican_republic": "🇩🇴",
+		"ecuador": "🇪🇨",
+		"egypt": "🇪🇬",
+		"el_salvador": "🇸🇻",
+		"equatorial_guinea": "🇬🇶",
+		"eritrea": "🇪🇷",
+		"estonia": "🇪🇪",
+		"ethiopia": "🇪🇹",
+		"eu": "🇪🇺",
+		"european_union": "🇪🇺",
+		"falkland_islands": "🇫🇰",
+		"faroe_islands": "🇫🇴",
+		"fiji": "🇫🇯",
+		"finland": "🇫🇮",
+		"fr": "🇫🇷",
+		"french_guiana": "🇬🇫",
+		"french_polynesia": "🇵🇫",
+		"french_southern_territories": "🇹🇫",
+		"gabon": "🇬🇦",
+		"gambia": "🇬🇲",
+		"georgia": "🇬🇪",
+		"de": "🇩🇪",
+		"ghana": "🇬🇭",
+		"gibraltar": "🇬🇮",
+		"greece": "🇬🇷",
+		"greenland": "🇬🇱",
+		"grenada": "🇬🇩",
+		"guadeloupe": "🇬🇵",
+		"guam": "🇬🇺",
+		"guatemala": "🇬🇹",
+		"guernsey": "🇬🇬",
+		"guinea": "🇬🇳",
+		"guinea_bissau": "🇬🇼",
+		"guyana": "🇬🇾",
+		"haiti": "🇭🇹",
+		"honduras": "🇭🇳",
+		"hong_kong": "🇭🇰",
+		"hungary": "🇭🇺",
+		"iceland": "🇮🇸",
+		"india": "🇮🇳",
+		"indonesia": "🇮🇩",
+		"iran": "🇮🇷",
+		"iraq": "🇮🇶",
+		"ireland": "🇮🇪",
+		"isle_of_man": "🇮🇲",
+		"israel": "🇮🇱",
+		"it": "🇮🇹",
+		"cote_divoire": "🇨🇮",
+		"jamaica": "🇯🇲",
+		"jp": "🇯🇵",
+		"jersey": "🇯🇪",
+		"jordan": "🇯🇴",
+		"kazakhstan": "🇰🇿",
+		"kenya": "🇰🇪",
+		"kiribati": "🇰🇮",
+		"kosovo": "🇽🇰",
+		"kuwait": "🇰🇼",
+		"kyrgyzstan": "🇰🇬",
+		"laos": "🇱🇦",
+		"latvia": "🇱🇻",
+		"lebanon": "🇱🇧",
+		"lesotho": "🇱🇸",
+		"liberia": "🇱🇷",
+		"libya": "🇱🇾",
+		"liechtenstein": "🇱🇮",
+		"lithuania": "🇱🇹",
+		"luxembourg": "🇱🇺",
+		"macau": "🇲🇴",
+		"macedonia": "🇲🇰",
+		"madagascar": "🇲🇬",
+		"malawi": "🇲🇼",
+		"malaysia": "🇲🇾",
+		"maldives": "🇲🇻",
+		"mali": "🇲🇱",
+		"malta": "🇲🇹",
+		"marshall_islands": "🇲🇭",
+		"martinique": "🇲🇶",
+		"mauritania": "🇲🇷",
+		"mauritius": "🇲🇺",
+		"mayotte": "🇾🇹",
+		"mexico": "🇲🇽",
+		"micronesia": "🇫🇲",
+		"moldova": "🇲🇩",
+		"monaco": "🇲🇨",
+		"mongolia": "🇲🇳",
+		"montenegro": "🇲🇪",
+		"montserrat": "🇲🇸",
+		"morocco": "🇲🇦",
+		"mozambique": "🇲🇿",
+		"myanmar": "🇲🇲",
+		"namibia": "🇳🇦",
+		"nauru": "🇳🇷",
+		"nepal": "🇳🇵",
+		"netherlands": "🇳🇱",
+		"new_caledonia": "🇳🇨",
+		"new_zealand": "🇳🇿",
+		"nicaragua": "🇳🇮",
+		"niger": "🇳🇪",
+		"nigeria": "🇳🇬",
+		"niue": "🇳🇺",
+		"norfolk_island": "🇳🇫",
+		"northern_mariana_islands": "🇲🇵",
+		"north_korea": "🇰🇵",
+		"norway": "🇳🇴",
+		"oman": "🇴🇲",
+		"pakistan": "🇵🇰",
+		"palau": "🇵🇼",
+		"palestinian_territories": "🇵🇸",
+		"panama": "🇵🇦",
+		"papua_new_guinea": "🇵🇬",
+		"paraguay": "🇵🇾",
+		"peru": "🇵🇪",
+		"philippines": "🇵🇭",
+		"pitcairn_islands": "🇵🇳",
+		"poland": "🇵🇱",
+		"portugal": "🇵🇹",
+		"puerto_rico": "🇵🇷",
+		"qatar": "🇶🇦",
+		"reunion": "🇷🇪",
+		"romania": "🇷🇴",
+		"ru": "🇷🇺",
+		"rwanda": "🇷🇼",
+		"st_barthelemy": "🇧🇱",
+		"st_helena": "🇸🇭",
+		"st_kitts_nevis": "🇰🇳",
+		"st_lucia": "🇱🇨",
+		"st_pierre_miquelon": "🇵🇲",
+		"st_vincent_grenadines": "🇻🇨",
+		"samoa": "🇼🇸",
+		"san_marino": "🇸🇲",
+		"sao_tome_principe": "🇸🇹",
+		"saudi_arabia": "🇸🇦",
+		"senegal": "🇸🇳",
+		"serbia": "🇷🇸",
+		"seychelles": "🇸🇨",
+		"sierra_leone": "🇸🇱",
+		"singapore": "🇸🇬",
+		"sint_maarten": "🇸🇽",
+		"slovakia": "🇸🇰",
+		"slovenia": "🇸🇮",
+		"solomon_islands": "🇸🇧",
+		"somalia": "🇸🇴",
+		"south_africa": "🇿🇦",
+		"south_georgia_south_sandwich_islands": "🇬🇸",
+		"kr": "🇰🇷",
+		"south_sudan": "🇸🇸",
+		"es": "🇪🇸",
+		"sri_lanka": "🇱🇰",
+		"sudan": "🇸🇩",
+		"suriname": "🇸🇷",
+		"swaziland": "🇸🇿",
+		"sweden": "🇸🇪",
+		"switzerland": "🇨🇭",
+		"syria": "🇸🇾",
+		"taiwan": "🇹🇼",
+		"tajikistan": "🇹🇯",
+		"tanzania": "🇹🇿",
+		"thailand": "🇹🇭",
+		"timor_leste": "🇹🇱",
+		"togo": "🇹🇬",
+		"tokelau": "🇹🇰",
+		"tonga": "🇹🇴",
+		"trinidad_tobago": "🇹🇹",
+		"tunisia": "🇹🇳",
+		"tr": "🇹🇷",
+		"turkmenistan": "🇹🇲",
+		"turks_caicos_islands": "🇹🇨",
+		"tuvalu": "🇹🇻",
+		"uganda": "🇺🇬",
+		"ukraine": "🇺🇦",
+		"united_arab_emirates": "🇦🇪",
+		"gb": "🇬🇧",
+		"uk": "🇬🇧",
+		"us": "🇺🇸",
+		"us_virgin_islands": "🇻🇮",
+		"uruguay": "🇺🇾",
+		"uzbekistan": "🇺🇿",
+		"vanuatu": "🇻🇺",
+		"vatican_city": "🇻🇦",
+		"venezuela": "🇻🇪",
+		"vietnam": "🇻🇳",
+		"wallis_futuna": "🇼🇫",
+		"western_sahara": "🇪🇭",
+		"yemen": "🇾🇪",
+		"zambia": "🇿🇲",
+		"zimbabwe": "🇿🇼"
+	};
+
+/***/ },
+/* 236 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(239)
-	module.exports = __webpack_require__(241)
+	'use strict';
+	
+	
+	var emojies_defs      = __webpack_require__(235);
+	var emojies_shortcuts = __webpack_require__(237);
+	var emoji_html        = __webpack_require__(238);
+	var emoji_replace     = __webpack_require__(239);
+	var normalize_opts    = __webpack_require__(240);
+	
+	
+	module.exports = function emoji_plugin(md, options) {
+	  var defaults = {
+	    defs: emojies_defs,
+	    shortcuts: emojies_shortcuts,
+	    enabled: []
+	  };
+	
+	  var opts = normalize_opts(md.utils.assign({}, defaults, options || {}));
+	
+	  md.renderer.rules.emoji = emoji_html;
+	
+	  md.core.ruler.push('emoji', emoji_replace(md, opts.defs, opts.shortcuts, opts.scanRE, opts.replaceRE));
+	};
+
+
+/***/ },
+/* 237 */
+/***/ function(module, exports) {
+
+	// Emoticons -> Emoji mapping.
+	//
+	// (!) Some patterns skipped, to avoid collisions
+	// without increase matcher complicity. Than can change in future.
+	//
+	// Places to look for more emoticons info:
+	//
+	// - http://en.wikipedia.org/wiki/List_of_emoticons#Western
+	// - https://github.com/wooorm/emoticon/blob/master/Support.md
+	// - http://factoryjoe.com/projects/emoticons/
+	//
+	'use strict';
+	
+	module.exports = {
+	  angry:            [ '>:(', '>:-(' ],
+	  blush:            [ ':")', ':-")' ],
+	  broken_heart:     [ '</3', '<\\3' ],
+	  // :\ and :-\ not used because of conflict with markdown escaping
+	  confused:         [ ':/', ':-/' ], // twemoji shows question
+	  cry:              [ ":'(", ":'-(", ':,(', ':,-(' ],
+	  frowning:         [ ':(', ':-(' ],
+	  heart:            [ '<3' ],
+	  imp:              [ ']:(', ']:-(' ],
+	  innocent:         [ 'o:)', 'O:)', 'o:-)', 'O:-)', '0:)', '0:-)' ],
+	  joy:              [ ":')", ":'-)", ':,)', ':,-)', ":'D", ":'-D", ':,D', ':,-D' ],
+	  kissing:          [ ':*', ':-*' ],
+	  laughing:         [ 'x-)', 'X-)' ],
+	  neutral_face:     [ ':|', ':-|' ],
+	  open_mouth:       [ ':o', ':-o', ':O', ':-O' ],
+	  rage:             [ ':@', ':-@' ],
+	  smile:            [ ':D', ':-D' ],
+	  smiley:           [ ':)', ':-)' ],
+	  smiling_imp:      [ ']:)', ']:-)' ],
+	  sob:              [ ":,'(", ":,'-(", ';(', ';-(' ],
+	  stuck_out_tongue: [ ':P', ':-P' ],
+	  sunglasses:       [ '8-)', 'B-)' ],
+	  sweat:            [ ',:(', ',:-(' ],
+	  sweat_smile:      [ ',:)', ',:-)' ],
+	  unamused:         [ ':s', ':-S', ':z', ':-Z', ':$', ':-$' ],
+	  wink:             [ ';)', ';-)' ]
+	};
+
+
+/***/ },
+/* 238 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	module.exports = function emoji_html(tokens, idx /*, options, env */) {
+	  return tokens[idx].content;
+	};
+
+
+/***/ },
+/* 239 */
+/***/ function(module, exports) {
+
+	// Emojies & shortcuts replacement logic.
+	//
+	// Note: In theory, it could be faster to parse :smile: in inline chain and
+	// leave only shortcuts here. But, who care...
+	//
+	
+	'use strict';
+	
+	
+	module.exports = function create_rule(md, emojies, shortcuts, scanRE, replaceRE) {
+	  var arrayReplaceAt = md.utils.arrayReplaceAt,
+	      ucm = md.utils.lib.ucmicro,
+	      ZPCc = new RegExp([ ucm.Z.source, ucm.P.source, ucm.Cc.source ].join('|'));
+	
+	  function splitTextToken(text, level, Token) {
+	    var token, last_pos = 0, nodes = [];
+	
+	    text.replace(replaceRE, function (match, offset, src) {
+	      var emoji_name;
+	      // Validate emoji name
+	      if (shortcuts.hasOwnProperty(match)) {
+	        // replace shortcut with full name
+	        emoji_name = shortcuts[match];
+	
+	        // Don't allow letters before any shortcut (as in no ":/" in http://)
+	        if (offset > 0 && !ZPCc.test(src[offset - 1])) {
+	          return;
+	        }
+	
+	        // Don't allow letters after any shortcut
+	        if (offset + match.length < src.length && !ZPCc.test(src[offset + match.length])) {
+	          return;
+	        }
+	      } else {
+	        emoji_name = match.slice(1, -1);
+	      }
+	
+	      // Add new tokens to pending list
+	      if (offset > last_pos) {
+	        token         = new Token('text', '', 0);
+	        token.content = text.slice(last_pos, offset);
+	        nodes.push(token);
+	      }
+	
+	      token         = new Token('emoji', '', 0);
+	      token.markup  = emoji_name;
+	      token.content = emojies[emoji_name];
+	      nodes.push(token);
+	
+	      last_pos = offset + match.length;
+	    });
+	
+	    if (last_pos < text.length) {
+	      token         = new Token('text', '', 0);
+	      token.content = text.slice(last_pos);
+	      nodes.push(token);
+	    }
+	
+	    return nodes;
+	  }
+	
+	  return function emoji_replace(state) {
+	    var i, j, l, tokens, token,
+	        blockTokens = state.tokens,
+	        autolinkLevel = 0;
+	
+	    for (j = 0, l = blockTokens.length; j < l; j++) {
+	      if (blockTokens[j].type !== 'inline') { continue; }
+	      tokens = blockTokens[j].children;
+	
+	      // We scan from the end, to keep position when new tags added.
+	      // Use reversed logic in links start/end match
+	      for (i = tokens.length - 1; i >= 0; i--) {
+	        token = tokens[i];
+	
+	        if (token.type === 'link_open' || token.type === 'link_close') {
+	          if (token.info === 'auto') { autolinkLevel -= token.nesting; }
+	        }
+	
+	        if (token.type === 'text' && scanRE.test(token.content) && autolinkLevel === 0) {
+	          // replace current node
+	          blockTokens[j].children = tokens = arrayReplaceAt(
+	            tokens, i, splitTextToken(token.content, token.level, state.Token)
+	          );
+	        }
+	      }
+	    }
+	  };
+	};
+
+
+/***/ },
+/* 240 */
+/***/ function(module, exports) {
+
+	// Convert input options to more useable format
+	// and compile search regexp
+	
+	'use strict';
+	
+	
+	function quoteRE(str) {
+	  return str.replace(/[.?*+^$[\]\\(){}|-]/g, '\\$&');
+	}
+	
+	
+	module.exports = function normalize_opts(options) {
+	  var emojies = options.defs,
+	      shortcuts;
+	
+	  // Filter emojies by whitelist, if needed
+	  if (options.enabled.length) {
+	    emojies = Object.keys(emojies).reduce(function (acc, key) {
+	      if (options.enabled.indexOf(key) >= 0) {
+	        acc[key] = emojies[key];
+	      }
+	      return acc;
+	    }, {});
+	  }
+	
+	  // Flatten shortcuts to simple object: { alias: emoji_name }
+	  shortcuts = Object.keys(options.shortcuts).reduce(function (acc, key) {
+	    // Skip aliases for filtered emojies, to reduce regexp
+	    if (!emojies[key]) { return acc; }
+	
+	    if (Array.isArray(options.shortcuts[key])) {
+	      options.shortcuts[key].forEach(function (alias) {
+	        acc[alias] = key;
+	      });
+	      return acc;
+	    }
+	
+	    acc[options.shortcuts[key]] = key;
+	    return acc;
+	  }, {});
+	
+	  // Compile regexp
+	  var names = Object.keys(emojies)
+	                .map(function (name) { return ':' + name + ':'; })
+	                .concat(Object.keys(shortcuts))
+	                .sort()
+	                .reverse()
+	                .map(function (name) { return quoteRE(name); })
+	                .join('|');
+	  var scanRE = RegExp(names);
+	  var replaceRE = RegExp(names, 'g');
+	
+	  return {
+	    defs: emojies,
+	    shortcuts: shortcuts,
+	    scanRE: scanRE,
+	    replaceRE: replaceRE
+	  };
+	};
+
+
+/***/ },
+/* 241 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(242)
+	module.exports = __webpack_require__(244)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(242)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(245)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -30276,13 +30467,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 239 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(240);
+	var content = __webpack_require__(243);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(103)(content, {});
@@ -30302,7 +30493,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 240 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(102)();
@@ -30316,7 +30507,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 241 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30366,32 +30557,32 @@ return /******/ (function(modules) { // webpackBootstrap
 	// <script>
 
 /***/ },
-/* 242 */
+/* 245 */
 /***/ function(module, exports) {
 
 	module.exports = "<button type=\"button\" class=\"collapse-button btn btn-default\">\n        <span :class=\"['glyphicon', {'glyphicon-menu-down': !isOpen, 'glyphicon-menu-up': isOpen}]\"\n              aria-hidden=\"true\"></span>\n    </button>";
 
 /***/ },
-/* 243 */
+/* 246 */
 /***/ function(module, exports) {
 
 	module.exports = "<div :class=\"['panel', panelType, {'expandable-panel': isExpandablePanel}]\">\n    <div :class=\"['panel-heading',{'accordion-toggle':canCollapse}]\"\n         @click.prevent=\"canCollapse && toggle()\">\n      <div class=\"header-wrapper\">\n        <span :class=\"['caret', {'caret-collapse': !isOpen}]\" v-show=\"showCaret\"></span>\n        <slot name=\"header\">\n          <span class=\"panel-title\">{{{ headerContent }}}</span>\n        </slot>\n      </div>\n      <div class=\"button-wrapper\">\n        <slot name=\"button\">\n          <panel-switch v-show=\"canCollapse && !noSwitch && !showCaret\" v-bind:is-open=\"isOpen\" @click.stop=\"expand()\"></panel-switch>\n        </slot>\n      </div>\n    </div>\n    <div class=\"panel-collapse\"\n      v-el:panel\n      v-show=\"isOpen\"\n    >\n      <div class=\"panel-body\">\n        <slot></slot>\n      </div>\n    </div>\n  </div>";
 
 /***/ },
-/* 244 */
+/* 247 */
 /***/ function(module, exports) {
 
 	module.exports = "<panel :header=\"header\" :is-open=\"isOpen\" :type=\"type\" expandable no-switch>\n    <slot name=\"button\" slot=\"button\"></slot>\n    <retriever v-ref:retriever :src=\"src\" :fragment=\"fragment\" delay></retriever>\n  </panel>";
 
 /***/ },
-/* 245 */
+/* 248 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(246)
-	module.exports = __webpack_require__(248)
+	__webpack_require__(249)
+	module.exports = __webpack_require__(251)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(249)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(252)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -30409,13 +30600,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 246 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(247);
+	var content = __webpack_require__(250);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(103)(content, {});
@@ -30435,7 +30626,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 247 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(102)();
@@ -30449,7 +30640,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 248 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30860,20 +31051,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </style>
 
 /***/ },
-/* 249 */
+/* 252 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"form-group\" :class=\"{validate:canValidate,'has-feedback':icon,'has-error':canValidate&amp;&amp;valid===false,'has-success':canValidate&amp;&amp;valid}\" _v-01cfdb6e=\"\">\n    <slot name=\"label\" _v-01cfdb6e=\"\"><label v-if=\"label\" class=\"control-label\" @click=\"focus\" _v-01cfdb6e=\"\">{{label}}</label></slot>\n    <div v-if=\"slots.before||slots.after\" class=\"input-group\" _v-01cfdb6e=\"\">\n      <slot name=\"before\" _v-01cfdb6e=\"\"></slot>\n      <textarea v-if=\"type=='textarea'\" class=\"form-control\" v-el:input=\"\" v-model=\"value\" :cols=\"cols\" :rows=\"rows\" :name=\"name\" :title=\"attr(title)\" :readonly=\"readonly\" :required=\"required\" :disabled=\"disabled\" :maxlength=\"maxlength\" :placeholder=\"placeholder\" @blur=\"onblur\" @focus=\"onfocus\" _v-01cfdb6e=\"\"></textarea>\n      <input v-else=\"\" class=\"form-control\" v-el:input=\"\" v-model=\"value\" :name=\"name\" :max=\"attr(max)\" :min=\"attr(min)\" :step=\"step\" :type=\"type\" :title=\"attr(title)\" :readonly=\"readonly\" :required=\"required\" :disabled=\"disabled\" :maxlength=\"maxlength\" :placeholder=\"placeholder\" @keyup.enter=\"enterSubmit&amp;&amp;submit()\" @blur=\"onblur\" @focus=\"onfocus\" _v-01cfdb6e=\"\">\n      <div v-if=\"showClear &amp;&amp; value\" :class=\"{icon:icon}\" _v-01cfdb6e=\"\">\n        <span class=\"close\" @click=\"value = ''\" _v-01cfdb6e=\"\">×</span>\n      </div>\n      <div v-if=\"icon\" class=\"icon\" _v-01cfdb6e=\"\">\n        <span v-if=\"icon&amp;&amp;valid!==null\" :class=\"['form-control-feedback glyphicon','glyphicon-'+(valid?'ok':'remove')]\" aria-hidden=\"true\" _v-01cfdb6e=\"\"></span>\n      </div>\n      <slot name=\"after\" _v-01cfdb6e=\"\"></slot>\n    </div>\n    <template v-else=\"\" _v-01cfdb6e=\"\">\n      <textarea v-if=\"type=='textarea'\" class=\"form-control\" v-el:input=\"\" v-model=\"value\" :cols=\"cols\" :rows=\"rows\" :name=\"name\" :title=\"attr(title)\" :readonly=\"readonly\" :required=\"required\" :disabled=\"disabled\" :maxlength=\"maxlength\" :placeholder=\"placeholder\" @blur=\"onblur\" @focus=\"onfocus\" _v-01cfdb6e=\"\"></textarea>\n      <input v-else=\"\" class=\"form-control\" v-el:input=\"\" v-model=\"value\" :name=\"name\" :max=\"attr(max)\" :min=\"attr(min)\" :step=\"step\" :type=\"type\" :title=\"attr(title)\" :readonly=\"readonly\" :required=\"required\" :disabled=\"disabled\" :maxlength=\"maxlength\" :placeholder=\"placeholder\" @keyup.enter=\"enterSubmit&amp;&amp;submit()\" @blur=\"onblur\" @focus=\"onfocus\" _v-01cfdb6e=\"\">\n      <span v-if=\"showClear &amp;&amp; value\" class=\"close\" @click=\"value = ''\" _v-01cfdb6e=\"\">×</span>\n      <span v-if=\"icon&amp;&amp;valid!==null\" :class=\"['form-control-feedback glyphicon','glyphicon-'+(valid?'ok':'remove')]\" aria-hidden=\"true\" _v-01cfdb6e=\"\"></span>\n    </template>\n    <div v-if=\"showHelp\" class=\"help-block\" @click=\"focus\" _v-01cfdb6e=\"\">{{help}}</div>\n    <div v-if=\"showError\" class=\"help-block with-errors\" @click=\"focus\" _v-01cfdb6e=\"\">{{errorText}}</div>\n  </div>";
 
 /***/ },
-/* 250 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(251)
-	module.exports = __webpack_require__(253)
+	__webpack_require__(254)
+	module.exports = __webpack_require__(256)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(258)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(261)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -30891,13 +31082,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 251 */
+/* 254 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(252);
+	var content = __webpack_require__(255);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(103)(content, {});
@@ -30917,7 +31108,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 252 */
+/* 255 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(102)();
@@ -30931,7 +31122,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 253 */
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -30940,7 +31131,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _isInteger = __webpack_require__(254);
+	var _isInteger = __webpack_require__(257);
 	
 	var _isInteger2 = _interopRequireDefault(_isInteger);
 	
@@ -31139,29 +31330,29 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(130)))
 
 /***/ },
-/* 254 */
+/* 257 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(255), __esModule: true };
+	module.exports = { "default": __webpack_require__(258), __esModule: true };
 
 /***/ },
-/* 255 */
+/* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(256);
+	__webpack_require__(259);
 	module.exports = __webpack_require__(48).Number.isInteger;
 
 /***/ },
-/* 256 */
+/* 259 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.1.2.3 Number.isInteger(number)
 	var $export = __webpack_require__(47);
 	
-	$export($export.S, 'Number', {isInteger: __webpack_require__(257)});
+	$export($export.S, 'Number', {isInteger: __webpack_require__(260)});
 
 /***/ },
-/* 257 */
+/* 260 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.1.2.3 Number.isInteger(number)
@@ -31172,20 +31363,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 258 */
+/* 261 */
 /***/ function(module, exports) {
 
 	module.exports = "<div role=\"dialog\"\n    v-bind:class=\"{\n    'modal':true,\n    'fade':effect === 'fade',\n    'zoom':effect === 'zoom'\n    }\">\n    <div v-bind:class=\"{'modal-dialog':true,'modal-lg':large,'modal-sm':small}\" role=\"document\"\n      v-bind:style=\"{width: optionalWidth}\">\n      <div class=\"modal-content\">\n        <slot name=\"modal-header\">\n          <div class=\"modal-header\">\n            <button type=\"button\" class=\"close\" @click=\"close\"><span>&times;</span></button>\n            <h4 class=\"modal-title\">\n              <slot name=\"title\">\n                {{{titleRendered}}}\n              </slot>\n            </h4>\n          </div>\n        </slot>\n          <div class=\"modal-body\">\n              <slot></slot>\n          </div>\n        <slot name=\"modal-footer\">\n          <div class=\"modal-footer\" v-if=\"showOkButton\">\n            <button type=\"button\" class=\"btn btn-primary\" v-if=\"showOkButton\" @click=\"close\">{{ okText }}</button>\n          </div>\n        </slot>\n      </div>\n    </div>\n  </div>";
 
 /***/ },
-/* 259 */
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(260)
-	module.exports = __webpack_require__(262)
+	__webpack_require__(263)
+	module.exports = __webpack_require__(265)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(263)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(266)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -31203,13 +31394,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 260 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(261);
+	var content = __webpack_require__(264);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(103)(content, {});
@@ -31229,7 +31420,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 261 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(102)();
@@ -31243,7 +31434,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 262 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31357,19 +31548,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </style>
 
 /***/ },
-/* 263 */
+/* 266 */
 /***/ function(module, exports) {
 
 	module.exports = "<div :class=\"['morph', {'morph-expanded': isOpen}]\">\n        <div class=\"morph-display-wrapper\"\n             @click.prevent=\"expand()\"\n             v-show=\"!isOpen\">\n            <slot name=\"display\">\n                <button class=\"morph-display-button btn btn-default\">{{{titleContent}}}</button>\n            </slot>\n        </div>\n\n        <div class=\"morph-details\"\n             v-el:details\n             v-show=\"isOpen\">\n            <dynamic-panel :header=\"title\" :src=\"src\" :is-open=\"isOpen\" v-if=\"isDynamic\">\n                <button type=\"button\" class=\"close-button btn btn-default\" slot=\"button\" @click.stop=\"close()\">\n                    <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                </button>\n            </dynamic-panel>\n            <Panel :header=\"title\" v-else>\n                <button type=\"button\" class=\"close-button btn btn-default\" slot=\"button\" @click.stop=\"close()\">\n                    <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                </button>\n                <slot></slot>\n            </Panel>\n        </div>\n    </div>";
 
 /***/ },
-/* 264 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(265)
+	module.exports = __webpack_require__(268)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(266)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(269)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -31387,7 +31578,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 265 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31513,20 +31704,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	// <script>
 
 /***/ },
-/* 266 */
+/* 269 */
 /***/ function(module, exports) {
 
 	module.exports = "<nav v-el:navbar :class=\"['navbar',{\n    'navbar-inverse':(type == 'inverse'),\n    'navbar-default':(type == 'default'),\n    'navbar-fixed-top':(placement === 'top'),\n    'navbar-fixed-bottom':(placement === 'bottom'),\n    'navbar-static-top':(placement === 'static')\n  }]\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <button v-if=\"!slots.collapse\" type=\"button\" class=\"navbar-toggle collapsed\"  aria-expanded=\"false\" @click=\"toggleCollapse\">\n          <span class=\"sr-only\">Toggle navigation</span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n        </button>\n        <slot name=\"collapse\"></slot>\n        <slot name=\"brand\"></slot>\n      </div>\n      <div :class=\"['navbar-collapse',{collapse:collapsed}]\">\n        <ul class=\"nav navbar-nav\">\n          <slot></slot>\n        </ul>\n        <ul v-if=\"slots.right\" class=\"nav navbar-nav navbar-right\">\n          <slot name=\"right\"></slot>\n        </ul>\n      </div>\n    </div>\n  </nav>";
 
 /***/ },
-/* 267 */
+/* 270 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(268)
-	module.exports = __webpack_require__(270)
+	__webpack_require__(271)
+	module.exports = __webpack_require__(273)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(271)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(274)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -31544,13 +31735,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 268 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(269);
+	var content = __webpack_require__(272);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(103)(content, {});
@@ -31570,7 +31761,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 269 */
+/* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(102)();
@@ -31584,7 +31775,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 270 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31595,7 +31786,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _utils = __webpack_require__(63);
 	
-	var _Morph = __webpack_require__(259);
+	var _Morph = __webpack_require__(262);
 	
 	var _Morph2 = _interopRequireDefault(_Morph);
 	
@@ -31662,20 +31853,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </style>
 
 /***/ },
-/* 271 */
+/* 274 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"question-wrapper\">\n        <div class=\"body-wrapper\">\n            <!-- Default slot is question body -->\n            <slot></slot>\n            <div v-if=\"hasInput\" class=\"textarea-container\">\n                <div><strong>You can write your answer in the box below.</strong></div>\n                <textarea class=\"form-control question-input\" rows=\"3\"></textarea>\n            </div>\n        </div>\n        <accordion>\n            <panel header=\"Hint\" expandable>\n                <slot name=\"hint\">\n                    No hint is available for this question.\n                </slot>\n            </panel>\n            <panel header=\"Answer\" expandable>\n                <slot name=\"answer\"></slot>\n            </panel>\n        </accordion>\n    </div>";
 
 /***/ },
-/* 272 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(273)
-	module.exports = __webpack_require__(275)
+	__webpack_require__(276)
+	module.exports = __webpack_require__(278)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(277)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(280)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -31693,13 +31884,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 273 */
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(274);
+	var content = __webpack_require__(277);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(103)(content, {});
@@ -31719,7 +31910,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 274 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(102)();
@@ -31733,7 +31924,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 275 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31742,7 +31933,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _popoverMixins = __webpack_require__(276);
+	var _popoverMixins = __webpack_require__(279);
 	
 	var _popoverMixins2 = _interopRequireDefault(_popoverMixins);
 	
@@ -31831,7 +32022,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// <script>
 
 /***/ },
-/* 276 */
+/* 279 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -31967,20 +32158,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(130)))
 
 /***/ },
-/* 277 */
+/* 280 */
 /***/ function(module, exports) {
 
 	module.exports = "<span v-el:trigger>\n    <slot></slot>\n  </span>\n  <div v-el:popover v-if=\"show\"\n    :class=\"['popover',placement]\"\n    :transition=\"effect\"\n  >\n    <div class=\"arrow\"></div>\n    <h3 class=\"popover-title\" v-if=\"title\">\n      <slot name=\"title\">{{{titleRendered}}}</slot>\n    </h3>\n    <div class=\"popover-content\">\n      <slot name=\"content\">{{{contentRendered}}}</slot>\n    </div>\n  </div>";
 
 /***/ },
-/* 278 */
+/* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(279)
-	module.exports = __webpack_require__(281)
+	__webpack_require__(282)
+	module.exports = __webpack_require__(284)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(297)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(300)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -31998,13 +32189,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 279 */
+/* 282 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(280);
+	var content = __webpack_require__(283);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(103)(content, {});
@@ -32024,7 +32215,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 280 */
+/* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(102)();
@@ -32038,7 +32229,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 281 */
+/* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32047,7 +32238,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _typeof2 = __webpack_require__(282);
+	var _typeof2 = __webpack_require__(285);
 	
 	var _typeof3 = _interopRequireDefault(_typeof2);
 	
@@ -32490,7 +32681,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </style>
 
 /***/ },
-/* 282 */
+/* 285 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -32501,7 +32692,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _iterator2 = _interopRequireDefault(_iterator);
 	
-	var _symbol = __webpack_require__(283);
+	var _symbol = __webpack_require__(286);
 	
 	var _symbol2 = _interopRequireDefault(_symbol);
 	
@@ -32516,23 +32707,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 283 */
+/* 286 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(284), __esModule: true };
+	module.exports = { "default": __webpack_require__(287), __esModule: true };
 
 /***/ },
-/* 284 */
+/* 287 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(285);
-	__webpack_require__(294);
-	__webpack_require__(295);
-	__webpack_require__(296);
+	__webpack_require__(288);
+	__webpack_require__(297);
+	__webpack_require__(298);
+	__webpack_require__(299);
 	module.exports = __webpack_require__(48).Symbol;
 
 /***/ },
-/* 285 */
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32542,24 +32733,24 @@ return /******/ (function(modules) { // webpackBootstrap
 	  , DESCRIPTORS    = __webpack_require__(56)
 	  , $export        = __webpack_require__(47)
 	  , redefine       = __webpack_require__(77)
-	  , META           = __webpack_require__(286).KEY
+	  , META           = __webpack_require__(289).KEY
 	  , $fails         = __webpack_require__(57)
 	  , shared         = __webpack_require__(42)
 	  , setToStringTag = __webpack_require__(83)
 	  , uid            = __webpack_require__(44)
 	  , wks            = __webpack_require__(84)
 	  , wksExt         = __webpack_require__(90)
-	  , wksDefine      = __webpack_require__(287)
-	  , keyOf          = __webpack_require__(288)
-	  , enumKeys       = __webpack_require__(289)
-	  , isArray        = __webpack_require__(292)
+	  , wksDefine      = __webpack_require__(290)
+	  , keyOf          = __webpack_require__(291)
+	  , enumKeys       = __webpack_require__(292)
+	  , isArray        = __webpack_require__(295)
 	  , anObject       = __webpack_require__(53)
 	  , toIObject      = __webpack_require__(34)
 	  , toPrimitive    = __webpack_require__(59)
 	  , createDesc     = __webpack_require__(60)
 	  , _create        = __webpack_require__(80)
 	  , gOPNExt        = __webpack_require__(94)
-	  , $GOPD          = __webpack_require__(293)
+	  , $GOPD          = __webpack_require__(296)
 	  , $DP            = __webpack_require__(52)
 	  , $keys          = __webpack_require__(31)
 	  , gOPD           = $GOPD.f
@@ -32685,8 +32876,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  $GOPD.f = $getOwnPropertyDescriptor;
 	  $DP.f   = $defineProperty;
 	  __webpack_require__(95).f = gOPNExt.f = $getOwnPropertyNames;
-	  __webpack_require__(291).f  = $propertyIsEnumerable;
-	  __webpack_require__(290).f = $getOwnPropertySymbols;
+	  __webpack_require__(294).f  = $propertyIsEnumerable;
+	  __webpack_require__(293).f = $getOwnPropertySymbols;
 	
 	  if(DESCRIPTORS && !__webpack_require__(76)){
 	    redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
@@ -32772,7 +32963,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	setToStringTag(global.JSON, 'JSON', true);
 
 /***/ },
-/* 286 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var META     = __webpack_require__(44)('meta')
@@ -32830,7 +33021,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 287 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var global         = __webpack_require__(43)
@@ -32844,7 +33035,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 288 */
+/* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var getKeys   = __webpack_require__(31)
@@ -32859,13 +33050,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 289 */
+/* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// all enumerable object keys, includes symbols
 	var getKeys = __webpack_require__(31)
-	  , gOPS    = __webpack_require__(290)
-	  , pIE     = __webpack_require__(291);
+	  , gOPS    = __webpack_require__(293)
+	  , pIE     = __webpack_require__(294);
 	module.exports = function(it){
 	  var result     = getKeys(it)
 	    , getSymbols = gOPS.f;
@@ -32879,19 +33070,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 290 */
+/* 293 */
 /***/ function(module, exports) {
 
 	exports.f = Object.getOwnPropertySymbols;
 
 /***/ },
-/* 291 */
+/* 294 */
 /***/ function(module, exports) {
 
 	exports.f = {}.propertyIsEnumerable;
 
 /***/ },
-/* 292 */
+/* 295 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.2.2 IsArray(argument)
@@ -32901,10 +33092,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 293 */
+/* 296 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var pIE            = __webpack_require__(291)
+	var pIE            = __webpack_require__(294)
 	  , createDesc     = __webpack_require__(60)
 	  , toIObject      = __webpack_require__(34)
 	  , toPrimitive    = __webpack_require__(59)
@@ -32922,37 +33113,37 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
-/* 294 */
-/***/ function(module, exports) {
-
-
-
-/***/ },
-/* 295 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(287)('asyncIterator');
-
-/***/ },
-/* 296 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(287)('observable');
-
-/***/ },
 /* 297 */
 /***/ function(module, exports) {
 
-	module.exports = "<div v-el:select=\"\" :class=\"classes\" _v-312fa98d=\"\">\n    <button type=\"button\" class=\"form-control dropdown-toggle\" :disabled=\"disabled || !hasParent\" :readonly=\"readonly\" @click=\"toggle()\" @keyup.esc=\"show = false\" _v-312fa98d=\"\">\n      <span class=\"btn-content\" v-html=\"loading ? text.loading : showPlaceholder || selected\" _v-312fa98d=\"\"></span>\n      <span v-if=\"clearButton&amp;&amp;values.length\" class=\"close\" @click=\"clear()\" _v-312fa98d=\"\">×</span>\n    </button>\n    <select v-el:sel=\"\" v-model=\"value\" v-show=\"show\" name=\"{{name}}\" class=\"secret\" :multiple=\"multiple\" :required=\"required\" :readonly=\"readonly\" :disabled=\"disabled\" _v-312fa98d=\"\">\n      <option v-if=\"required\" value=\"\" _v-312fa98d=\"\"></option>\n      <option v-for=\"option in options\" :value=\"option[optionsValue]||option\" _v-312fa98d=\"\">{{ option[optionsLabel]||option }}</option>\n    </select>\n    <ul class=\"dropdown-menu\" _v-312fa98d=\"\">\n      <template v-if=\"options.length\" _v-312fa98d=\"\">\n        <li v-if=\"canSearch\" class=\"bs-searchbox\" _v-312fa98d=\"\">\n          <input type=\"text\" placeholder=\"{{searchText||text.search}}\" class=\"form-control\" autocomplete=\"off\" v-el:search=\"\" v-model=\"searchValue\" @keyup.esc=\"show = false\" _v-312fa98d=\"\">\n          <span v-show=\"searchValue\" class=\"close\" @click=\"clearSearch\" _v-312fa98d=\"\">×</span>\n        </li>\n        <li v-if=\"required&amp;&amp;!clearButton\" _v-312fa98d=\"\"><a @mousedown.prevent=\"clear() &amp;&amp; blur()\" _v-312fa98d=\"\">{{ placeholder || text.notSelected }}</a></li>\n        <li v-for=\"option in options | filterBy searchValue\" :id=\"option[optionsValue]||option\" _v-312fa98d=\"\">\n          <a @mousedown.prevent=\"select(option[optionsValue],option)\" _v-312fa98d=\"\">\n            <span v-html=\"option[optionsLabel]||option\" _v-312fa98d=\"\"></span>\n            <span class=\"glyphicon glyphicon-ok check-mark\" v-show=\"isSelected(option[optionsValue])\" _v-312fa98d=\"\"></span>\n          </a>\n        </li>\n      </template>\n      <slot _v-312fa98d=\"\"></slot>\n      <div v-if=\"showNotify &amp;&amp; !closeOnSelect\" class=\"notify in\" transition=\"fadein\" _v-312fa98d=\"\">{{limitText}}</div>\n    </ul>\n    <div v-if=\"showNotify &amp;&amp; closeOnSelect\" class=\"notify out\" transition=\"fadein\" _v-312fa98d=\"\"><div _v-312fa98d=\"\">{{limitText}}</div></div>\n  </div>";
+
 
 /***/ },
 /* 298 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(299)
+	__webpack_require__(290)('asyncIterator');
+
+/***/ },
+/* 299 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(290)('observable');
+
+/***/ },
+/* 300 */
+/***/ function(module, exports) {
+
+	module.exports = "<div v-el:select=\"\" :class=\"classes\" _v-312fa98d=\"\">\n    <button type=\"button\" class=\"form-control dropdown-toggle\" :disabled=\"disabled || !hasParent\" :readonly=\"readonly\" @click=\"toggle()\" @keyup.esc=\"show = false\" _v-312fa98d=\"\">\n      <span class=\"btn-content\" v-html=\"loading ? text.loading : showPlaceholder || selected\" _v-312fa98d=\"\"></span>\n      <span v-if=\"clearButton&amp;&amp;values.length\" class=\"close\" @click=\"clear()\" _v-312fa98d=\"\">×</span>\n    </button>\n    <select v-el:sel=\"\" v-model=\"value\" v-show=\"show\" name=\"{{name}}\" class=\"secret\" :multiple=\"multiple\" :required=\"required\" :readonly=\"readonly\" :disabled=\"disabled\" _v-312fa98d=\"\">\n      <option v-if=\"required\" value=\"\" _v-312fa98d=\"\"></option>\n      <option v-for=\"option in options\" :value=\"option[optionsValue]||option\" _v-312fa98d=\"\">{{ option[optionsLabel]||option }}</option>\n    </select>\n    <ul class=\"dropdown-menu\" _v-312fa98d=\"\">\n      <template v-if=\"options.length\" _v-312fa98d=\"\">\n        <li v-if=\"canSearch\" class=\"bs-searchbox\" _v-312fa98d=\"\">\n          <input type=\"text\" placeholder=\"{{searchText||text.search}}\" class=\"form-control\" autocomplete=\"off\" v-el:search=\"\" v-model=\"searchValue\" @keyup.esc=\"show = false\" _v-312fa98d=\"\">\n          <span v-show=\"searchValue\" class=\"close\" @click=\"clearSearch\" _v-312fa98d=\"\">×</span>\n        </li>\n        <li v-if=\"required&amp;&amp;!clearButton\" _v-312fa98d=\"\"><a @mousedown.prevent=\"clear() &amp;&amp; blur()\" _v-312fa98d=\"\">{{ placeholder || text.notSelected }}</a></li>\n        <li v-for=\"option in options | filterBy searchValue\" :id=\"option[optionsValue]||option\" _v-312fa98d=\"\">\n          <a @mousedown.prevent=\"select(option[optionsValue],option)\" _v-312fa98d=\"\">\n            <span v-html=\"option[optionsLabel]||option\" _v-312fa98d=\"\"></span>\n            <span class=\"glyphicon glyphicon-ok check-mark\" v-show=\"isSelected(option[optionsValue])\" _v-312fa98d=\"\"></span>\n          </a>\n        </li>\n      </template>\n      <slot _v-312fa98d=\"\"></slot>\n      <div v-if=\"showNotify &amp;&amp; !closeOnSelect\" class=\"notify in\" transition=\"fadein\" _v-312fa98d=\"\">{{limitText}}</div>\n    </ul>\n    <div v-if=\"showNotify &amp;&amp; closeOnSelect\" class=\"notify out\" transition=\"fadein\" _v-312fa98d=\"\"><div _v-312fa98d=\"\">{{limitText}}</div></div>\n  </div>";
+
+/***/ },
+/* 301 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(302)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(300)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(303)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -32970,7 +33161,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 299 */
+/* 302 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33062,20 +33253,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </script>
 
 /***/ },
-/* 300 */
+/* 303 */
 /***/ function(module, exports) {
 
 	module.exports = "<div role=\"tabpanel\" class=\"tab-pane active\" v-show=\"show\"\n    :class=\"{hide:!show}\"\n    :transition=\"transition\"\n  >\n    <slot></slot>\n  </div>";
 
 /***/ },
-/* 301 */
+/* 304 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(302)
-	module.exports = __webpack_require__(304)
+	__webpack_require__(305)
+	module.exports = __webpack_require__(307)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(305)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(308)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -33093,13 +33284,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 302 */
+/* 305 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(303);
+	var content = __webpack_require__(306);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(103)(content, {});
@@ -33119,7 +33310,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 303 */
+/* 306 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(102)();
@@ -33133,7 +33324,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 304 */
+/* 307 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33215,20 +33406,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </style>
 
 /***/ },
-/* 305 */
+/* 308 */
 /***/ function(module, exports) {
 
 	module.exports = "<slot _v-18e6218a=\"\"></slot>";
 
 /***/ },
-/* 306 */
+/* 309 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(307)
-	module.exports = __webpack_require__(309)
+	__webpack_require__(310)
+	module.exports = __webpack_require__(312)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(310)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(313)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -33246,13 +33437,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 307 */
+/* 310 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(308);
+	var content = __webpack_require__(311);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(103)(content, {});
@@ -33272,7 +33463,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 308 */
+/* 311 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(102)();
@@ -33286,7 +33477,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 309 */
+/* 312 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33378,20 +33569,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </style>
 
 /***/ },
-/* 310 */
+/* 313 */
 /***/ function(module, exports) {
 
 	module.exports = "<!-- Nav tabs -->\n  <ul class=\"nav nav-{{navStyle}}\" role=\"tablist\" _v-a4c6e684=\"\">\n    <template v-for=\"t in headers\" _v-a4c6e684=\"\">\n      <li v-if=\"!t._tabgroup\" :class=\"{active:t.active, disabled:t.disabled}\" @click.prevent=\"select(t)\" _v-a4c6e684=\"\">\n        <a href=\"#\" _v-a4c6e684=\"\"><slot name=\"header\" _v-a4c6e684=\"\">{{{t.headerRendered}}}</slot></a>\n      </li>\n      <dropdown v-else=\"\" :text=\"t.headerRendered\" :class=\"{active:t.active}\" :disabled=\"t.disabled\" _v-a4c6e684=\"\">\n        <li v-for=\"tab in t.tabs\" :class=\"{disabled:tab.disabled}\" _v-a4c6e684=\"\"><a href=\"#\" @click.prevent=\"select(tab)\" _v-a4c6e684=\"\">{{{tab.headerRendered}}}</a></li>\n      </dropdown>\n    </template>\n  </ul>\n  <div class=\"tab-content\" v-el:tab-content=\"\" _v-a4c6e684=\"\">\n    <slot _v-a4c6e684=\"\"></slot>\n  </div>";
 
 /***/ },
-/* 311 */
+/* 314 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(312)
-	module.exports = __webpack_require__(314)
+	__webpack_require__(315)
+	module.exports = __webpack_require__(317)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(315)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(318)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -33409,13 +33600,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 312 */
+/* 315 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(313);
+	var content = __webpack_require__(316);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(103)(content, {});
@@ -33435,7 +33626,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 313 */
+/* 316 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(102)();
@@ -33449,7 +33640,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 314 */
+/* 317 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33458,7 +33649,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _popoverMixins = __webpack_require__(276);
+	var _popoverMixins = __webpack_require__(279);
 	
 	var _popoverMixins2 = _interopRequireDefault(_popoverMixins);
 	
@@ -33551,13 +33742,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </style>
 
 /***/ },
-/* 315 */
+/* 318 */
 /***/ function(module, exports) {
 
 	module.exports = "<span v-el:trigger>\n    <slot></slot>\n  </span>\n  <div v-el:popover v-if=\"show\" style=\"display:block;\"\n    :class=\"['tooltip',placement]\"\n    :transition=\"effect\"\n  >\n    <div class=\"tooltip-arrow\"></div>\n    <div class=\"tooltip-inner\">\n      <slot name=\"content\">{{{contentRendered}}}</slot>\n   </div>\n  </div>";
 
 /***/ },
-/* 316 */
+/* 319 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -33571,10 +33762,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var message = this.el.getAttribute('alt') || 'Expand Content';
 	    this.wrapper = jQuery(this.el).parent();
 	    this.wrapper.attr('class', this.el.className + ' closeable-wrapper');
-	    this.wrapper.append('<span class="closeable-button label label-default" style="display: none; position: absolute; top: 0; left: 0; cursor: pointer;background: #d9534f;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></span>');
-	    this.wrapper.append('<a class="closeable-show hidden-print" style="display: none; cursor: pointer;text-decoration: underline">' + message + '</a>');
-	    this.closeButton = this.wrapper.find('.closeable-button');
-	    this.showButton = this.wrapper.find('.closeable-show');
+	    var $closeButton = jQuery('<span class="closeable-button label label-default" style="display: none; position: absolute; top: 0; left: 0; cursor: pointer;background: #d9534f;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></span>');
+	    this.wrapper.append($closeButton);
+	    var $showLabel = jQuery('<a class="closeable-show hidden-print" style="display: none; cursor: pointer;text-decoration: underline">' + message + '</a>');
+	    this.wrapper.append($showLabel);
+	    this.closeButton = $closeButton;
+	    this.showButton = $showLabel;
 	    this.closeButton.click(this.onClose.bind(this));
 	    this.showButton.click(this.onShow.bind(this));
 	    this.wrapper.on('mouseover', this.onMouseOver.bind(this));
@@ -33607,7 +33800,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(130)))
 
 /***/ },
-/* 317 */
+/* 320 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -33627,14 +33820,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(130)))
 
 /***/ },
-/* 318 */
+/* 321 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(319)
-	module.exports = __webpack_require__(321)
+	__webpack_require__(322)
+	module.exports = __webpack_require__(324)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(322)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(325)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -33652,13 +33845,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 319 */
+/* 322 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(320);
+	var content = __webpack_require__(323);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(103)(content, {});
@@ -33678,7 +33871,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 320 */
+/* 323 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(102)();
@@ -33686,13 +33879,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, ".image-wrapper {\n        display: inline-block;\n        text-align: center;\n    }", ""]);
+	exports.push([module.id, ".image-wrapper {\n        display: inline-block;\n        text-align: center;\n        padding: 4px;\n    }", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 321 */
+/* 324 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -33732,24 +33925,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	//     .image-wrapper {
 	//         display: inline-block;
 	//         text-align: center;
+	//         padding: 4px;
 	//     }
 	// </style>
 
 /***/ },
-/* 322 */
+/* 325 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"image-wrapper\">\n        <img :src=\"src\" :alt=\"alt\" :width=\"width\" :height=\"height\">\n        <div class=\"image-caption\">\n            <slot></slot>\n        </div>\n    </div>";
 
 /***/ },
-/* 323 */
+/* 326 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(324)
-	module.exports = __webpack_require__(326)
+	__webpack_require__(327)
+	module.exports = __webpack_require__(329)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(327)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(330)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -33767,13 +33961,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 324 */
+/* 327 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(325);
+	var content = __webpack_require__(328);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(103)(content, {});
@@ -33793,7 +33987,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 325 */
+/* 328 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(102)();
@@ -33807,7 +34001,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 326 */
+/* 329 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -33885,20 +34079,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	// </style>
 
 /***/ },
-/* 327 */
+/* 330 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"alert container\" :class=\"[boxStyle]\" _v-2170147e=\"\">\n        <div class=\"icon-wrapper\" _v-2170147e=\"\">\n            <span class=\"glyphicon\" :class=\"[iconType]\" aria-hidden=\"true\" _v-2170147e=\"\"></span>\n        </div>\n        <div class=\"contents\" _v-2170147e=\"\">\n            <slot _v-2170147e=\"\"></slot>\n        </div>\n    </div>";
 
 /***/ },
-/* 328 */
+/* 331 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(329)
-	module.exports = __webpack_require__(331)
+	__webpack_require__(332)
+	module.exports = __webpack_require__(334)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(332)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(335)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -33916,13 +34110,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 329 */
+/* 332 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(330);
+	var content = __webpack_require__(333);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(103)(content, {});
@@ -33942,7 +34136,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 330 */
+/* 333 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(102)();
@@ -33956,7 +34150,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 331 */
+/* 334 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -34014,7 +34208,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(130)))
 
 /***/ },
-/* 332 */
+/* 335 */
 /***/ function(module, exports) {
 
 	module.exports = "<span v-el:trigger><slot></slot></span>";
