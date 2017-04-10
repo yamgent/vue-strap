@@ -31811,11 +31811,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	//             </div>
 	//         </div>
 	//         <accordion>
-	//             <panel header="Hint" expandable>
-	//                 <slot name="hint">
-	//                     No hint is available for this question.
-	//                 </slot>
-	//             </panel>
+	//             <div v-show="hasHintSlot">
+	//                 <panel header="Hint" expandable>
+	//                     <slot name="hint">
+	//                         No hint is available for this question.
+	//                     </slot>
+	//                 </panel>
+	//             </div>
 	//             <panel header="Answer" expandable>
 	//                 <slot name="answer"></slot>
 	//             </panel>
@@ -31836,6 +31838,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	      coerce: _utils.coerce.boolean,
 	      default: false
 	    }
+	  },
+	  data: function data() {
+	    return {
+	      hasHintSlot: true
+	    };
+	  },
+	  attached: function attached() {
+	    var hasHintSlot = !!this.$el.querySelector('[slot="hint"]');
+	    this.hasHintSlot = hasHintSlot;
 	  }
 	};
 	// </script>
@@ -31856,7 +31867,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 274 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"question-wrapper\">\n        <div class=\"body-wrapper\">\n            <!-- Default slot is question body -->\n            <slot></slot>\n            <div v-if=\"hasInput\" class=\"textarea-container\">\n                <div><strong>You can write your answer in the box below.</strong></div>\n                <textarea class=\"form-control question-input\" rows=\"3\"></textarea>\n            </div>\n        </div>\n        <accordion>\n            <panel header=\"Hint\" expandable>\n                <slot name=\"hint\">\n                    No hint is available for this question.\n                </slot>\n            </panel>\n            <panel header=\"Answer\" expandable>\n                <slot name=\"answer\"></slot>\n            </panel>\n        </accordion>\n    </div>";
+	module.exports = "<div class=\"question-wrapper\">\n        <div class=\"body-wrapper\">\n            <!-- Default slot is question body -->\n            <slot></slot>\n            <div v-if=\"hasInput\" class=\"textarea-container\">\n                <div><strong>You can write your answer in the box below.</strong></div>\n                <textarea class=\"form-control question-input\" rows=\"3\"></textarea>\n            </div>\n        </div>\n        <accordion>\n            <div v-show=\"hasHintSlot\">\n                <panel header=\"Hint\" expandable>\n                    <slot name=\"hint\">\n                        No hint is available for this question.\n                    </slot>\n                </panel>\n            </div>\n            <panel header=\"Answer\" expandable>\n                <slot name=\"answer\"></slot>\n            </panel>\n        </accordion>\n    </div>";
 
 /***/ },
 /* 275 */
