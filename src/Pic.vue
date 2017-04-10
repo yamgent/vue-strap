@@ -30,5 +30,6 @@
     .image-wrapper {
         display: inline-block;
         text-align: center;
+        padding: 4px;
     }
 </style>
