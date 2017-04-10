@@ -1,5 +1,5 @@
 <template>
-  <doc-section id="accordion" name="Accordion">
+  <doc-section id="accordion" name="Accordion And Panel">
     <div class="bs-example">
       <checkbox :checked.sync="checked" type="primary">Open only one at a time.</checkbox>
       <p><v-select :options="types" clear-button :value.sync="selected" placeholder="Global type"></v-select></p>
