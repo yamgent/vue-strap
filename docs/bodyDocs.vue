@@ -17,9 +17,7 @@
         <getting-started></getting-started>
         <accordion-docs></accordion-docs>
         <affix-docs></affix-docs>
-        <alert-docs></alert-docs>
         <aside-docs></aside-docs>
-        <carousel-docs></carousel-docs>
         <dynamic-panel-docs></dynamic-panel-docs>
         <image-docs></image-docs>
         <modal-docs></modal-docs>
@@ -59,13 +57,10 @@ import affixSidebar from './affixSidebar.vue'
 import gettingStarted from './example/gettingStarted.vue'
 import accordionDocs from './example/accordionDocs.vue'
 import affixDocs from './example/affixDocs.vue'
-import alertDocs from './example/alertDocs.vue'
 import asideDocs from './example/asideDocs.vue'
 import buttonGroupDocs  from './example/buttonGroupDocs.vue'
-import carouselDocs from './example/carouselDocs.vue'
 import dynamicPanelDocs from './example/dynamicPanelDocs.vue'
 import container from './example/container.vue'
-import inputDocs from './example/inputDocs.vue'
 import modalDocs from './example/modalDocs.vue'
 import morphDocs from './example/morphDocs.vue'
 import navbarDocs from './example/navbarDocs.vue'
@@ -85,10 +80,8 @@ export default {
     gettingStarted,
     accordionDocs,
     affixDocs,
-    alertDocs,
     asideDocs,
     buttonGroupDocs,
-    carouselDocs,
     container,
     dynamicPanelDocs,
     modalDocs,

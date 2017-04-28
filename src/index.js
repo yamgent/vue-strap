@@ -28,13 +28,10 @@ import trigger from './trigger.vue'
 const components = {
   accordion,
   affix,
-  alert,
   aside,
-  carousel,
   checkbox,
   dropdown,
   dynamicPanel,
-  input,
   modal,
   morph,
   navbar,
