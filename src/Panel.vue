@@ -77,7 +77,7 @@ export default {
       return this.type == 'seamless';
     },
     panelType () {
-      return 'panel panel-' + (this.type || (this.$parent && this.$parent.type) || 'default')
+      return 'panel panel-' + (this.type || (this.inAccordion && this.$parent.type) || 'default')
     },
     headerContent () {
       return md.renderInline(this.header);
