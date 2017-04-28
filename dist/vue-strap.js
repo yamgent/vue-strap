@@ -169,13 +169,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	var components = {
 	  accordion: _Accordion2.default,
 	  affix: _Affix2.default,
-	  alert: _Alert2.default,
 	  aside: _Aside2.default,
-	  carousel: _Carousel2.default,
 	  checkbox: _Checkbox2.default,
 	  dropdown: _Dropdown2.default,
 	  dynamicPanel: _DynamicPanel2.default,
-	  input: _Input2.default,
 	  modal: _Modal2.default,
 	  morph: _Morph2.default,
 	  navbar: _Navbar2.default,
@@ -14327,7 +14324,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return this.type == 'seamless';
 	    },
 	    panelType: function panelType() {
-	      return 'panel panel-' + (this.type || this.$parent && this.$parent.type || 'default');
+	      return 'panel panel-' + (this.type || this.inAccordion && this.$parent.type || 'default');
 	    },
 	    headerContent: function headerContent() {
 	      return _markdown2.default.renderInline(this.header);
@@ -33773,7 +33770,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var message = this.el.getAttribute('alt') || 'Expand Content';
 	    this.wrapper = jQuery(this.el).parent();
 	    this.wrapper.attr('class', this.el.className + ' closeable-wrapper');
-	    var $closeButton = jQuery('<span class="closeable-button label label-default" style="display: none; position: absolute; top: 0; left: 0; cursor: pointer;background: #d9534f;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></span>');
+	    var $closeButton = jQuery('<span class="closeable-button label label-default hidden-print" style="display: none; position: absolute; top: 0; left: 0; cursor: pointer;background: #d9534f;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></span>');
 	    this.wrapper.append($closeButton);
 	    var $showLabel = jQuery('<a class="closeable-show hidden-print" style="display: none; cursor: pointer;text-decoration: underline">' + message + '</a>');
 	    this.wrapper.append($showLabel);
