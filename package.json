@@ -77,7 +77,7 @@
     "build": "webpack --progress --hide-modules --config  webpack.build.min.js && webpack --progress --hide-modules --config  webpack.build.js",
     "builddocs": "webpack --progress --hide-modules && set NODE_ENV=production webpack --progress --hide-modules",
     "docs": "webpack-dev-server --inline --hot --quiet",
-    "gpages": "gh-pages -d build",
+    "gpages": "gh-pages -d .",
     "postversion": "git push && git push --tags",
     "version": "npm run build && git add -A dist"
   },
