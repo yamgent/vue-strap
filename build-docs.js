@@ -54,16 +54,16 @@
 	
 	var _bodyDocs2 = _interopRequireDefault(_bodyDocs);
 	
-	var _index = __webpack_require__(459);
+	var _index = __webpack_require__(462);
 	
 	var _index2 = _interopRequireDefault(_index);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	__webpack_require__(465);
-	__webpack_require__(467);
-	__webpack_require__(469);
+	__webpack_require__(468);
 	__webpack_require__(470);
+	__webpack_require__(472);
+	__webpack_require__(473);
 	
 	Vue.config.devtools = true;
 	Vue.config.debug = true;
@@ -1674,7 +1674,7 @@
 	module.exports = __webpack_require__(121)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(458)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(461)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -1713,83 +1713,83 @@
 	
 	var _accordionDocs2 = _interopRequireDefault(_accordionDocs);
 	
-	var _affixDocs = __webpack_require__(303);
+	var _affixDocs = __webpack_require__(306);
 	
 	var _affixDocs2 = _interopRequireDefault(_affixDocs);
 	
-	var _alertDocs = __webpack_require__(314);
+	var _alertDocs = __webpack_require__(317);
 	
 	var _alertDocs2 = _interopRequireDefault(_alertDocs);
 	
-	var _asideDocs = __webpack_require__(324);
+	var _asideDocs = __webpack_require__(327);
 	
 	var _asideDocs2 = _interopRequireDefault(_asideDocs);
 	
-	var _buttonGroupDocs = __webpack_require__(332);
+	var _buttonGroupDocs = __webpack_require__(335);
 	
 	var _buttonGroupDocs2 = _interopRequireDefault(_buttonGroupDocs);
 	
-	var _carouselDocs = __webpack_require__(343);
+	var _carouselDocs = __webpack_require__(346);
 	
 	var _carouselDocs2 = _interopRequireDefault(_carouselDocs);
 	
-	var _dynamicPanelDocs = __webpack_require__(354);
+	var _dynamicPanelDocs = __webpack_require__(357);
 	
 	var _dynamicPanelDocs2 = _interopRequireDefault(_dynamicPanelDocs);
 	
-	var _container = __webpack_require__(357);
+	var _container = __webpack_require__(360);
 	
 	var _container2 = _interopRequireDefault(_container);
 	
-	var _inputDocs = __webpack_require__(359);
+	var _inputDocs = __webpack_require__(362);
 	
 	var _inputDocs2 = _interopRequireDefault(_inputDocs);
 	
-	var _modalDocs = __webpack_require__(372);
+	var _modalDocs = __webpack_require__(375);
 	
 	var _modalDocs2 = _interopRequireDefault(_modalDocs);
 	
-	var _morphDocs = __webpack_require__(384);
+	var _morphDocs = __webpack_require__(387);
 	
 	var _morphDocs2 = _interopRequireDefault(_morphDocs);
 	
-	var _navbarDocs = __webpack_require__(387);
+	var _navbarDocs = __webpack_require__(390);
 	
 	var _navbarDocs2 = _interopRequireDefault(_navbarDocs);
 	
-	var _questionDocs = __webpack_require__(393);
+	var _questionDocs = __webpack_require__(396);
 	
 	var _questionDocs2 = _interopRequireDefault(_questionDocs);
 	
-	var _popoverDocs = __webpack_require__(396);
+	var _popoverDocs = __webpack_require__(399);
 	
 	var _popoverDocs2 = _interopRequireDefault(_popoverDocs);
 	
-	var _retrieverDocs = __webpack_require__(404);
+	var _retrieverDocs = __webpack_require__(407);
 	
 	var _retrieverDocs2 = _interopRequireDefault(_retrieverDocs);
 	
-	var _selectDocs = __webpack_require__(407);
+	var _selectDocs = __webpack_require__(410);
 	
 	var _selectDocs2 = _interopRequireDefault(_selectDocs);
 	
-	var _tabsDocs = __webpack_require__(415);
+	var _tabsDocs = __webpack_require__(418);
 	
 	var _tabsDocs2 = _interopRequireDefault(_tabsDocs);
 	
-	var _tooltipDocs = __webpack_require__(431);
+	var _tooltipDocs = __webpack_require__(434);
 	
 	var _tooltipDocs2 = _interopRequireDefault(_tooltipDocs);
 	
-	var _imageDocs = __webpack_require__(434);
+	var _imageDocs = __webpack_require__(437);
 	
 	var _imageDocs2 = _interopRequireDefault(_imageDocs);
 	
-	var _tipBoxDocs = __webpack_require__(442);
+	var _tipBoxDocs = __webpack_require__(445);
 	
 	var _tipBoxDocs2 = _interopRequireDefault(_tipBoxDocs);
 	
-	var _triggerDocs = __webpack_require__(450);
+	var _triggerDocs = __webpack_require__(453);
 	
 	var _triggerDocs2 = _interopRequireDefault(_triggerDocs);
 	
@@ -2557,7 +2557,7 @@
 	module.exports = __webpack_require__(136)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(302)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(305)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -2608,18 +2608,18 @@
 	
 	var _Panel2 = _interopRequireDefault(_Panel);
 	
-	var _Select = __webpack_require__(264);
+	var _Select = __webpack_require__(267);
 	
 	var _Select2 = _interopRequireDefault(_Select);
 	
-	var _Question = __webpack_require__(284);
+	var _Question = __webpack_require__(287);
 	
 	var _Question2 = _interopRequireDefault(_Question);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template>
-	//   <doc-section id="accordion" name="Accordion">
+	//   <doc-section id="accordion" name="Accordion And Panel">
 	//     <div class="bs-example">
 	//       <checkbox :checked.sync="checked" type="primary">Open only one at a time.</checkbox>
 	//       <p><v-select :options="types" clear-button :value.sync="selected" placeholder="Global type"></v-select></p>
@@ -2667,6 +2667,22 @@
 	//           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 	//         </panel>
 	//       </accordion>
+	
+	//       <div v-closeable>
+	//         <panel header="%%haha!%%">
+	//           <img src="https://vuejs.org/images/logo.png" alt="">
+	
+	
+	//           hahah
+	
+	//           <div v-closeable>
+	
+	//             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam architecto at dignissimos distinctio ea explicabo fugiat, ipsa itaque odit, rem sint totam, voluptas. Incidunt officiis quas veniam vitae voluptatum.
+	//             <img src="https://vuejs.org/images/logo.png" alt="">
+	//         </div>
+	
+	//         </panel>
+	//       </div>
 	
 	//       Panel with Expand Switch
 	
@@ -3653,7 +3669,7 @@
 	module.exports = __webpack_require__(156)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(263)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(266)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -3726,7 +3742,7 @@
 	
 	var _markdown2 = _interopRequireDefault(_markdown);
 	
-	var _PanelSwitch = __webpack_require__(258);
+	var _PanelSwitch = __webpack_require__(261);
 	
 	var _PanelSwitch2 = _interopRequireDefault(_PanelSwitch);
 	
@@ -3922,8 +3938,25 @@
 	  linkify: true
 	});
 	
-	markdownIt.use(__webpack_require__(226)).use(__webpack_require__(227)).use(__webpack_require__(233)).use(__webpack_require__(234)).use(__webpack_require__(235)).use(__webpack_require__(226)).use(__webpack_require__(236), {
+	markdownIt.use(__webpack_require__(226)).use(__webpack_require__(227)).use(__webpack_require__(228)).use(__webpack_require__(229)).use(__webpack_require__(226)).use(__webpack_require__(230)).use(__webpack_require__(233), {
 	  autofill: false
+	});
+	
+	// fix emoji numbers
+	var emojiData = __webpack_require__(255);
+	// Extend emoji here
+	emojiData['zero'] = emojiData['0'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0030-20e3.png">';
+	emojiData['one'] = emojiData['1'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0031-20e3.png">';
+	emojiData['two'] = emojiData['2'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0032-20e3.png">';
+	emojiData['three'] = emojiData['3'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0033-20e3.png">';
+	emojiData['four'] = emojiData['4'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0034-20e3.png">';
+	emojiData['five'] = emojiData['5'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0035-20e3.png">';
+	emojiData['six'] = emojiData['6'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0036-20e3.png">';
+	emojiData['seven'] = emojiData['7'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0037-20e3.png">';
+	emojiData['eight'] = emojiData['8'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0038-20e3.png">';
+	emojiData['nine'] = emojiData['9'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0039-20e3.png">';
+	markdownIt.use(__webpack_require__(256), {
+	  defs: emojiData
 	});
 	
 	exports.default = markdownIt;
@@ -14429,1625 +14462,6 @@
 
 /***/ },
 /* 227 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	
-	var emojies_defs      = __webpack_require__(228);
-	var emojies_shortcuts = __webpack_require__(229);
-	var emoji_html        = __webpack_require__(230);
-	var emoji_replace     = __webpack_require__(231);
-	var normalize_opts    = __webpack_require__(232);
-	
-	
-	module.exports = function emoji_plugin(md, options) {
-	  var defaults = {
-	    defs: emojies_defs,
-	    shortcuts: emojies_shortcuts,
-	    enabled: []
-	  };
-	
-	  var opts = normalize_opts(md.utils.assign({}, defaults, options || {}));
-	
-	  md.renderer.rules.emoji = emoji_html;
-	
-	  md.core.ruler.push('emoji', emoji_replace(md, opts.defs, opts.shortcuts, opts.scanRE, opts.replaceRE));
-	};
-
-
-/***/ },
-/* 228 */
-/***/ function(module, exports) {
-
-	module.exports = {
-		"100": "💯",
-		"1234": "🔢",
-		"grinning": "😀",
-		"grimacing": "😬",
-		"grin": "😁",
-		"joy": "😂",
-		"smiley": "😃",
-		"smile": "😄",
-		"sweat_smile": "😅",
-		"laughing": "😆",
-		"satisfied": "😆",
-		"innocent": "😇",
-		"wink": "😉",
-		"blush": "😊",
-		"slightly_smiling_face": "🙂",
-		"upside_down_face": "🙃",
-		"relaxed": "☺️",
-		"yum": "😋",
-		"relieved": "😌",
-		"heart_eyes": "😍",
-		"kissing_heart": "😘",
-		"kissing": "😗",
-		"kissing_smiling_eyes": "😙",
-		"kissing_closed_eyes": "😚",
-		"stuck_out_tongue_winking_eye": "😜",
-		"stuck_out_tongue_closed_eyes": "😝",
-		"stuck_out_tongue": "😛",
-		"money_mouth_face": "🤑",
-		"nerd_face": "🤓",
-		"sunglasses": "😎",
-		"hugs": "🤗",
-		"smirk": "😏",
-		"no_mouth": "😶",
-		"neutral_face": "😐",
-		"expressionless": "😑",
-		"unamused": "😒",
-		"roll_eyes": "🙄",
-		"thinking": "🤔",
-		"flushed": "😳",
-		"disappointed": "😞",
-		"worried": "😟",
-		"angry": "😠",
-		"rage": "😡",
-		"pout": "😡",
-		"pensive": "😔",
-		"confused": "😕",
-		"slightly_frowning_face": "🙁",
-		"frowning_face": "☹️",
-		"persevere": "😣",
-		"confounded": "😖",
-		"tired_face": "😫",
-		"weary": "😩",
-		"triumph": "😤",
-		"open_mouth": "😮",
-		"scream": "😱",
-		"fearful": "😨",
-		"cold_sweat": "😰",
-		"hushed": "😯",
-		"frowning": "😦",
-		"anguished": "😧",
-		"cry": "😢",
-		"disappointed_relieved": "😥",
-		"sleepy": "😪",
-		"sweat": "😓",
-		"sob": "😭",
-		"dizzy_face": "😵",
-		"astonished": "😲",
-		"zipper_mouth_face": "🤐",
-		"mask": "😷",
-		"face_with_thermometer": "🤒",
-		"face_with_head_bandage": "🤕",
-		"sleeping": "😴",
-		"zzz": "💤",
-		"hankey": "💩",
-		"poop": "💩",
-		"shit": "💩",
-		"smiling_imp": "😈",
-		"imp": "👿",
-		"japanese_ogre": "👹",
-		"japanese_goblin": "👺",
-		"ghost": "👻",
-		"skull": "💀",
-		"skull_and_crossbones": "☠️",
-		"alien": "👽",
-		"space_invader": "👾",
-		"robot": "🤖",
-		"smiley_cat": "😺",
-		"smile_cat": "😸",
-		"joy_cat": "😹",
-		"heart_eyes_cat": "😻",
-		"smirk_cat": "😼",
-		"kissing_cat": "😽",
-		"scream_cat": "🙀",
-		"crying_cat_face": "😿",
-		"pouting_cat": "😾",
-		"raised_hands": "🙌",
-		"clap": "👏",
-		"+1": "👍",
-		"thumbsup": "👍",
-		"-1": "👎",
-		"thumbsdown": "👎",
-		"facepunch": "👊",
-		"punch": "👊",
-		"fist": "✊",
-		"wave": "👋",
-		"point_left": "👈",
-		"point_right": "👉",
-		"point_up_2": "👆",
-		"point_down": "👇",
-		"ok_hand": "👌",
-		"point_up": "☝️",
-		"v": "✌️",
-		"hand": "✋",
-		"raised_hand": "✋",
-		"raised_hand_with_fingers_splayed": "🖐",
-		"open_hands": "👐",
-		"muscle": "💪",
-		"pray": "🙏",
-		"vulcan_salute": "🖖",
-		"metal": "🤘",
-		"middle_finger": "🖕",
-		"fu": "🖕",
-		"writing_hand": "✍️",
-		"nail_care": "💅",
-		"lips": "👄",
-		"tongue": "👅",
-		"ear": "👂",
-		"nose": "👃",
-		"eye": "👁",
-		"eyes": "👀",
-		"speaking_head": "🗣",
-		"bust_in_silhouette": "👤",
-		"busts_in_silhouette": "👥",
-		"baby": "👶",
-		"boy": "👦",
-		"girl": "👧",
-		"man": "👨",
-		"woman": "👩",
-		"blonde_woman": "👱‍♀️",
-		"blonde_man": "👱",
-		"person_with_blond_hair": "👱",
-		"older_man": "👴",
-		"older_woman": "👵",
-		"man_with_gua_pi_mao": "👲",
-		"woman_with_turban": "👳‍♀️",
-		"man_with_turban": "👳",
-		"policewoman": "👮‍♀️",
-		"policeman": "👮",
-		"cop": "👮",
-		"construction_worker_woman": "👷‍♀️",
-		"construction_worker_man": "👷",
-		"construction_worker": "👷",
-		"guardswoman": "💂‍♀️",
-		"guardsman": "💂",
-		"female_detective": "🕵️‍♀️",
-		"male_detective": "🕵️",
-		"detective": "🕵️",
-		"santa": "🎅",
-		"princess": "👸",
-		"bride_with_veil": "👰",
-		"angel": "👼",
-		"bowing_woman": "🙇‍♀️",
-		"bowing_man": "🙇",
-		"bow": "🙇",
-		"tipping_hand_woman": "💁",
-		"information_desk_person": "💁",
-		"tipping_hand_man": "💁‍♂️",
-		"no_good_woman": "🙅",
-		"no_good": "🙅",
-		"ng_woman": "🙅",
-		"no_good_man": "🙅‍♂️",
-		"ng_man": "🙅‍♂️",
-		"ok_woman": "🙆",
-		"ok_man": "🙆‍♂️",
-		"raising_hand_woman": "🙋",
-		"raising_hand": "🙋",
-		"raising_hand_man": "🙋‍♂️",
-		"pouting_woman": "🙎",
-		"person_with_pouting_face": "🙎",
-		"pouting_man": "🙎‍♂️",
-		"frowning_woman": "🙍",
-		"person_frowning": "🙍",
-		"frowning_man": "🙍‍♂️",
-		"haircut_woman": "💇",
-		"haircut": "💇",
-		"haircut_man": "💇‍♂️",
-		"massage_woman": "💆",
-		"massage": "💆",
-		"massage_man": "💆‍♂️",
-		"dancer": "💃",
-		"dancing_women": "👯",
-		"dancers": "👯",
-		"dancing_men": "👯‍♂️",
-		"walking_woman": "🚶‍♀️",
-		"walking_man": "🚶",
-		"walking": "🚶",
-		"running_woman": "🏃‍♀️",
-		"running_man": "🏃",
-		"runner": "🏃",
-		"running": "🏃",
-		"couple": "👫",
-		"two_women_holding_hands": "👭",
-		"two_men_holding_hands": "👬",
-		"couple_with_heart_woman_man": "💑",
-		"couple_with_heart": "💑",
-		"couple_with_heart_woman_woman": "👩‍❤️‍👩",
-		"couple_with_heart_man_man": "👨‍❤️‍👨",
-		"couplekiss_man_woman": "💏",
-		"couplekiss_woman_woman": "👩‍❤️‍💋‍👩",
-		"couplekiss_man_man": "👨‍❤️‍💋‍👨",
-		"family_man_woman_boy": "👪",
-		"family": "👪",
-		"family_man_woman_girl": "👨‍👩‍👧",
-		"family_man_woman_girl_boy": "👨‍👩‍👧‍👦",
-		"family_man_woman_boy_boy": "👨‍👩‍👦‍👦",
-		"family_man_woman_girl_girl": "👨‍👩‍👧‍👧",
-		"family_woman_woman_boy": "👩‍👩‍👦",
-		"family_woman_woman_girl": "👩‍👩‍👧",
-		"family_woman_woman_girl_boy": "👩‍👩‍👧‍👦",
-		"family_woman_woman_boy_boy": "👩‍👩‍👦‍👦",
-		"family_woman_woman_girl_girl": "👩‍👩‍👧‍👧",
-		"family_man_man_boy": "👨‍👨‍👦",
-		"family_man_man_girl": "👨‍👨‍👧",
-		"family_man_man_girl_boy": "👨‍👨‍👧‍👦",
-		"family_man_man_boy_boy": "👨‍👨‍👦‍👦",
-		"family_man_man_girl_girl": "👨‍👨‍👧‍👧",
-		"family_woman_boy": "👩‍👦",
-		"family_woman_girl": "👩‍👧",
-		"family_woman_girl_boy": "👩‍👧‍👦",
-		"family_woman_boy_boy": "👩‍👦‍👦",
-		"family_woman_girl_girl": "👩‍👧‍👧",
-		"family_man_boy": "👨‍👦",
-		"family_man_girl": "👨‍👧",
-		"family_man_girl_boy": "👨‍👧‍👦",
-		"family_man_boy_boy": "👨‍👦‍👦",
-		"family_man_girl_girl": "👨‍👧‍👧",
-		"womans_clothes": "👚",
-		"shirt": "👕",
-		"tshirt": "👕",
-		"jeans": "👖",
-		"necktie": "👔",
-		"dress": "👗",
-		"bikini": "👙",
-		"kimono": "👘",
-		"lipstick": "💄",
-		"kiss": "💋",
-		"footprints": "👣",
-		"high_heel": "👠",
-		"sandal": "👡",
-		"boot": "👢",
-		"mans_shoe": "👞",
-		"shoe": "👞",
-		"athletic_shoe": "👟",
-		"womans_hat": "👒",
-		"tophat": "🎩",
-		"mortar_board": "🎓",
-		"crown": "👑",
-		"rescue_worker_helmet": "⛑",
-		"school_satchel": "🎒",
-		"pouch": "👝",
-		"purse": "👛",
-		"handbag": "👜",
-		"briefcase": "💼",
-		"eyeglasses": "👓",
-		"dark_sunglasses": "🕶",
-		"ring": "💍",
-		"closed_umbrella": "🌂",
-		"dog": "🐶",
-		"cat": "🐱",
-		"mouse": "🐭",
-		"hamster": "🐹",
-		"rabbit": "🐰",
-		"bear": "🐻",
-		"panda_face": "🐼",
-		"koala": "🐨",
-		"tiger": "🐯",
-		"lion": "🦁",
-		"cow": "🐮",
-		"pig": "🐷",
-		"pig_nose": "🐽",
-		"frog": "🐸",
-		"octopus": "🐙",
-		"monkey_face": "🐵",
-		"see_no_evil": "🙈",
-		"hear_no_evil": "🙉",
-		"speak_no_evil": "🙊",
-		"monkey": "🐒",
-		"chicken": "🐔",
-		"penguin": "🐧",
-		"bird": "🐦",
-		"baby_chick": "🐤",
-		"hatching_chick": "🐣",
-		"hatched_chick": "🐥",
-		"wolf": "🐺",
-		"boar": "🐗",
-		"horse": "🐴",
-		"unicorn": "🦄",
-		"bee": "🐝",
-		"honeybee": "🐝",
-		"bug": "🐛",
-		"snail": "🐌",
-		"beetle": "🐞",
-		"ant": "🐜",
-		"spider": "🕷",
-		"scorpion": "🦂",
-		"crab": "🦀",
-		"snake": "🐍",
-		"turtle": "🐢",
-		"tropical_fish": "🐠",
-		"fish": "🐟",
-		"blowfish": "🐡",
-		"dolphin": "🐬",
-		"flipper": "🐬",
-		"whale": "🐳",
-		"whale2": "🐋",
-		"crocodile": "🐊",
-		"leopard": "🐆",
-		"tiger2": "🐅",
-		"water_buffalo": "🐃",
-		"ox": "🐂",
-		"cow2": "🐄",
-		"dromedary_camel": "🐪",
-		"camel": "🐫",
-		"elephant": "🐘",
-		"goat": "🐐",
-		"ram": "🐏",
-		"sheep": "🐑",
-		"racehorse": "🐎",
-		"pig2": "🐖",
-		"rat": "🐀",
-		"mouse2": "🐁",
-		"rooster": "🐓",
-		"turkey": "🦃",
-		"dove": "🕊",
-		"dog2": "🐕",
-		"poodle": "🐩",
-		"cat2": "🐈",
-		"rabbit2": "🐇",
-		"chipmunk": "🐿",
-		"feet": "🐾",
-		"paw_prints": "🐾",
-		"dragon": "🐉",
-		"dragon_face": "🐲",
-		"cactus": "🌵",
-		"christmas_tree": "🎄",
-		"evergreen_tree": "🌲",
-		"deciduous_tree": "🌳",
-		"palm_tree": "🌴",
-		"seedling": "🌱",
-		"herb": "🌿",
-		"shamrock": "☘",
-		"four_leaf_clover": "🍀",
-		"bamboo": "🎍",
-		"tanabata_tree": "🎋",
-		"leaves": "🍃",
-		"fallen_leaf": "🍂",
-		"maple_leaf": "🍁",
-		"ear_of_rice": "🌾",
-		"hibiscus": "🌺",
-		"sunflower": "🌻",
-		"rose": "🌹",
-		"tulip": "🌷",
-		"blossom": "🌼",
-		"cherry_blossom": "🌸",
-		"bouquet": "💐",
-		"mushroom": "🍄",
-		"chestnut": "🌰",
-		"jack_o_lantern": "🎃",
-		"shell": "🐚",
-		"spider_web": "🕸",
-		"earth_americas": "🌎",
-		"earth_africa": "🌍",
-		"earth_asia": "🌏",
-		"full_moon": "🌕",
-		"waning_gibbous_moon": "🌖",
-		"last_quarter_moon": "🌗",
-		"waning_crescent_moon": "🌘",
-		"new_moon": "🌑",
-		"waxing_crescent_moon": "🌒",
-		"first_quarter_moon": "🌓",
-		"moon": "🌔",
-		"waxing_gibbous_moon": "🌔",
-		"new_moon_with_face": "🌚",
-		"full_moon_with_face": "🌝",
-		"first_quarter_moon_with_face": "🌛",
-		"last_quarter_moon_with_face": "🌜",
-		"sun_with_face": "🌞",
-		"crescent_moon": "🌙",
-		"star": "⭐️",
-		"star2": "🌟",
-		"dizzy": "💫",
-		"sparkles": "✨",
-		"comet": "☄️",
-		"sunny": "☀️",
-		"sun_behind_small_cloud": "🌤",
-		"partly_sunny": "⛅️",
-		"sun_behind_large_cloud": "🌥",
-		"sun_behind_rain_cloud": "🌦",
-		"cloud": "☁️",
-		"cloud_with_rain": "🌧",
-		"cloud_with_lightning_and_rain": "⛈",
-		"cloud_with_lightning": "🌩",
-		"zap": "⚡️",
-		"fire": "🔥",
-		"boom": "💥",
-		"collision": "💥",
-		"snowflake": "❄️",
-		"cloud_with_snow": "🌨",
-		"snowman_with_snow": "☃️",
-		"snowman": "⛄️",
-		"wind_face": "🌬",
-		"dash": "💨",
-		"tornado": "🌪",
-		"fog": "🌫",
-		"open_umbrella": "☂️",
-		"umbrella": "☔️",
-		"droplet": "💧",
-		"sweat_drops": "💦",
-		"ocean": "🌊",
-		"green_apple": "🍏",
-		"apple": "🍎",
-		"pear": "🍐",
-		"tangerine": "🍊",
-		"orange": "🍊",
-		"mandarin": "🍊",
-		"lemon": "🍋",
-		"banana": "🍌",
-		"watermelon": "🍉",
-		"grapes": "🍇",
-		"strawberry": "🍓",
-		"melon": "🍈",
-		"cherries": "🍒",
-		"peach": "🍑",
-		"pineapple": "🍍",
-		"tomato": "🍅",
-		"eggplant": "🍆",
-		"hot_pepper": "🌶",
-		"corn": "🌽",
-		"sweet_potato": "🍠",
-		"honey_pot": "🍯",
-		"bread": "🍞",
-		"cheese": "🧀",
-		"poultry_leg": "🍗",
-		"meat_on_bone": "🍖",
-		"fried_shrimp": "🍤",
-		"egg": "🍳",
-		"hamburger": "🍔",
-		"fries": "🍟",
-		"hotdog": "🌭",
-		"pizza": "🍕",
-		"spaghetti": "🍝",
-		"taco": "🌮",
-		"burrito": "🌯",
-		"ramen": "🍜",
-		"stew": "🍲",
-		"fish_cake": "🍥",
-		"sushi": "🍣",
-		"bento": "🍱",
-		"curry": "🍛",
-		"rice_ball": "🍙",
-		"rice": "🍚",
-		"rice_cracker": "🍘",
-		"oden": "🍢",
-		"dango": "🍡",
-		"shaved_ice": "🍧",
-		"ice_cream": "🍨",
-		"icecream": "🍦",
-		"cake": "🍰",
-		"birthday": "🎂",
-		"custard": "🍮",
-		"candy": "🍬",
-		"lollipop": "🍭",
-		"chocolate_bar": "🍫",
-		"popcorn": "🍿",
-		"doughnut": "🍩",
-		"cookie": "🍪",
-		"beer": "🍺",
-		"beers": "🍻",
-		"wine_glass": "🍷",
-		"cocktail": "🍸",
-		"tropical_drink": "🍹",
-		"champagne": "🍾",
-		"sake": "🍶",
-		"tea": "🍵",
-		"coffee": "☕️",
-		"baby_bottle": "🍼",
-		"fork_and_knife": "🍴",
-		"plate_with_cutlery": "🍽",
-		"soccer": "⚽️",
-		"basketball": "🏀",
-		"football": "🏈",
-		"baseball": "⚾️",
-		"tennis": "🎾",
-		"volleyball": "🏐",
-		"rugby_football": "🏉",
-		"8ball": "🎱",
-		"ping_pong": "🏓",
-		"badminton": "🏸",
-		"ice_hockey": "🏒",
-		"field_hockey": "🏑",
-		"cricket": "🏏",
-		"bow_and_arrow": "🏹",
-		"golf": "⛳️",
-		"fishing_pole_and_fish": "🎣",
-		"ice_skate": "⛸",
-		"ski": "🎿",
-		"skier": "⛷",
-		"snowboarder": "🏂",
-		"weight_lifting_woman": "🏋️‍♀️",
-		"weight_lifting_man": "🏋️",
-		"basketball_woman": "⛹️‍♀️",
-		"basketball_man": "⛹️",
-		"golfing_woman": "🏌️‍♀️",
-		"golfing_man": "🏌️",
-		"surfing_woman": "🏄‍♀️",
-		"surfing_man": "🏄",
-		"surfer": "🏄",
-		"swimming_woman": "🏊‍♀️",
-		"swimming_man": "🏊",
-		"swimmer": "🏊",
-		"rowing_woman": "🚣‍♀️",
-		"rowing_man": "🚣",
-		"rowboat": "🚣",
-		"horse_racing": "🏇",
-		"biking_woman": "🚴‍♀️",
-		"biking_man": "🚴",
-		"bicyclist": "🚴",
-		"mountain_biking_woman": "🚵‍♀️",
-		"mountain_biking_man": "🚵",
-		"mountain_bicyclist": "🚵",
-		"bath": "🛀",
-		"business_suit_levitating": "🕴",
-		"reminder_ribbon": "🎗",
-		"running_shirt_with_sash": "🎽",
-		"medal_sports": "🏅",
-		"medal_military": "🎖",
-		"trophy": "🏆",
-		"rosette": "🏵",
-		"dart": "🎯",
-		"ticket": "🎫",
-		"tickets": "🎟",
-		"performing_arts": "🎭",
-		"art": "🎨",
-		"circus_tent": "🎪",
-		"clapper": "🎬",
-		"microphone": "🎤",
-		"headphones": "🎧",
-		"musical_score": "🎼",
-		"musical_keyboard": "🎹",
-		"saxophone": "🎷",
-		"trumpet": "🎺",
-		"guitar": "🎸",
-		"violin": "🎻",
-		"video_game": "🎮",
-		"slot_machine": "🎰",
-		"game_die": "🎲",
-		"bowling": "🎳",
-		"car": "🚗",
-		"red_car": "🚗",
-		"taxi": "🚕",
-		"blue_car": "🚙",
-		"bus": "🚌",
-		"trolleybus": "🚎",
-		"racing_car": "🏎",
-		"police_car": "🚓",
-		"ambulance": "🚑",
-		"fire_engine": "🚒",
-		"minibus": "🚐",
-		"truck": "🚚",
-		"articulated_lorry": "🚛",
-		"tractor": "🚜",
-		"motorcycle": "🏍",
-		"bike": "🚲",
-		"rotating_light": "🚨",
-		"oncoming_police_car": "🚔",
-		"oncoming_bus": "🚍",
-		"oncoming_automobile": "🚘",
-		"oncoming_taxi": "🚖",
-		"aerial_tramway": "🚡",
-		"mountain_cableway": "🚠",
-		"suspension_railway": "🚟",
-		"railway_car": "🚃",
-		"train": "🚋",
-		"monorail": "🚝",
-		"bullettrain_side": "🚄",
-		"bullettrain_front": "🚅",
-		"light_rail": "🚈",
-		"mountain_railway": "🚞",
-		"steam_locomotive": "🚂",
-		"train2": "🚆",
-		"metro": "🚇",
-		"tram": "🚊",
-		"station": "🚉",
-		"helicopter": "🚁",
-		"small_airplane": "🛩",
-		"airplane": "✈️",
-		"flight_departure": "🛫",
-		"flight_arrival": "🛬",
-		"boat": "⛵️",
-		"sailboat": "⛵️",
-		"motor_boat": "🛥",
-		"speedboat": "🚤",
-		"ferry": "⛴",
-		"passenger_ship": "🛳",
-		"rocket": "🚀",
-		"artificial_satellite": "🛰",
-		"seat": "💺",
-		"anchor": "⚓️",
-		"construction": "🚧",
-		"fuelpump": "⛽️",
-		"busstop": "🚏",
-		"vertical_traffic_light": "🚦",
-		"traffic_light": "🚥",
-		"world_map": "🗺",
-		"ship": "🚢",
-		"ferris_wheel": "🎡",
-		"roller_coaster": "🎢",
-		"carousel_horse": "🎠",
-		"building_construction": "🏗",
-		"foggy": "🌁",
-		"tokyo_tower": "🗼",
-		"factory": "🏭",
-		"fountain": "⛲️",
-		"rice_scene": "🎑",
-		"mountain": "⛰",
-		"mountain_snow": "🏔",
-		"mount_fuji": "🗻",
-		"volcano": "🌋",
-		"japan": "🗾",
-		"camping": "🏕",
-		"tent": "⛺️",
-		"national_park": "🏞",
-		"motorway": "🛣",
-		"railway_track": "🛤",
-		"sunrise": "🌅",
-		"sunrise_over_mountains": "🌄",
-		"desert": "🏜",
-		"beach_umbrella": "🏖",
-		"desert_island": "🏝",
-		"city_sunrise": "🌇",
-		"city_sunset": "🌆",
-		"cityscape": "🏙",
-		"night_with_stars": "🌃",
-		"bridge_at_night": "🌉",
-		"milky_way": "🌌",
-		"stars": "🌠",
-		"sparkler": "🎇",
-		"fireworks": "🎆",
-		"rainbow": "🌈",
-		"houses": "🏘",
-		"european_castle": "🏰",
-		"japanese_castle": "🏯",
-		"stadium": "🏟",
-		"statue_of_liberty": "🗽",
-		"house": "🏠",
-		"house_with_garden": "🏡",
-		"derelict_house": "🏚",
-		"office": "🏢",
-		"department_store": "🏬",
-		"post_office": "🏣",
-		"european_post_office": "🏤",
-		"hospital": "🏥",
-		"bank": "🏦",
-		"hotel": "🏨",
-		"convenience_store": "🏪",
-		"school": "🏫",
-		"love_hotel": "🏩",
-		"wedding": "💒",
-		"classical_building": "🏛",
-		"church": "⛪️",
-		"mosque": "🕌",
-		"synagogue": "🕍",
-		"kaaba": "🕋",
-		"shinto_shrine": "⛩",
-		"watch": "⌚️",
-		"iphone": "📱",
-		"calling": "📲",
-		"computer": "💻",
-		"keyboard": "⌨️",
-		"desktop_computer": "🖥",
-		"printer": "🖨",
-		"computer_mouse": "🖱",
-		"trackball": "🖲",
-		"joystick": "🕹",
-		"clamp": "🗜",
-		"minidisc": "💽",
-		"floppy_disk": "💾",
-		"cd": "💿",
-		"dvd": "📀",
-		"vhs": "📼",
-		"camera": "📷",
-		"camera_flash": "📸",
-		"video_camera": "📹",
-		"movie_camera": "🎥",
-		"film_projector": "📽",
-		"film_strip": "🎞",
-		"telephone_receiver": "📞",
-		"phone": "☎️",
-		"telephone": "☎️",
-		"pager": "📟",
-		"fax": "📠",
-		"tv": "📺",
-		"radio": "📻",
-		"studio_microphone": "🎙",
-		"level_slider": "🎚",
-		"control_knobs": "🎛",
-		"stopwatch": "⏱",
-		"timer_clock": "⏲",
-		"alarm_clock": "⏰",
-		"mantelpiece_clock": "🕰",
-		"hourglass_flowing_sand": "⏳",
-		"hourglass": "⌛️",
-		"satellite": "📡",
-		"battery": "🔋",
-		"electric_plug": "🔌",
-		"bulb": "💡",
-		"flashlight": "🔦",
-		"candle": "🕯",
-		"wastebasket": "🗑",
-		"oil_drum": "🛢",
-		"money_with_wings": "💸",
-		"dollar": "💵",
-		"yen": "💴",
-		"euro": "💶",
-		"pound": "💷",
-		"moneybag": "💰",
-		"credit_card": "💳",
-		"gem": "💎",
-		"balance_scale": "⚖",
-		"wrench": "🔧",
-		"hammer": "🔨",
-		"hammer_and_pick": "⚒",
-		"hammer_and_wrench": "🛠",
-		"pick": "⛏",
-		"nut_and_bolt": "🔩",
-		"gear": "⚙",
-		"chains": "⛓",
-		"gun": "🔫",
-		"bomb": "💣",
-		"hocho": "🔪",
-		"knife": "🔪",
-		"dagger": "🗡",
-		"crossed_swords": "⚔",
-		"shield": "🛡",
-		"smoking": "🚬",
-		"coffin": "⚰",
-		"funeral_urn": "⚱",
-		"amphora": "🏺",
-		"crystal_ball": "🔮",
-		"prayer_beads": "📿",
-		"barber": "💈",
-		"alembic": "⚗",
-		"telescope": "🔭",
-		"microscope": "🔬",
-		"hole": "🕳",
-		"pill": "💊",
-		"syringe": "💉",
-		"thermometer": "🌡",
-		"toilet": "🚽",
-		"shower": "🚿",
-		"bathtub": "🛁",
-		"bellhop_bell": "🛎",
-		"key": "🔑",
-		"old_key": "🗝",
-		"door": "🚪",
-		"couch_and_lamp": "🛋",
-		"sleeping_bed": "🛌",
-		"bed": "🛏",
-		"framed_picture": "🖼",
-		"parasol_on_ground": "⛱",
-		"moyai": "🗿",
-		"shopping": "🛍",
-		"gift": "🎁",
-		"balloon": "🎈",
-		"flags": "🎏",
-		"ribbon": "🎀",
-		"confetti_ball": "🎊",
-		"tada": "🎉",
-		"wind_chime": "🎐",
-		"izakaya_lantern": "🏮",
-		"lantern": "🏮",
-		"dolls": "🎎",
-		"email": "✉️",
-		"envelope": "✉️",
-		"envelope_with_arrow": "📩",
-		"incoming_envelope": "📨",
-		"e-mail": "📧",
-		"love_letter": "💌",
-		"inbox_tray": "📥",
-		"outbox_tray": "📤",
-		"package": "📦",
-		"label": "🏷",
-		"bookmark": "🔖",
-		"mailbox_closed": "📪",
-		"mailbox": "📫",
-		"mailbox_with_mail": "📬",
-		"mailbox_with_no_mail": "📭",
-		"postbox": "📮",
-		"postal_horn": "📯",
-		"scroll": "📜",
-		"page_with_curl": "📃",
-		"page_facing_up": "📄",
-		"bookmark_tabs": "📑",
-		"bar_chart": "📊",
-		"chart_with_upwards_trend": "📈",
-		"chart_with_downwards_trend": "📉",
-		"spiral_notepad": "🗒",
-		"spiral_calendar": "🗓",
-		"calendar": "📆",
-		"date": "📅",
-		"card_index": "📇",
-		"card_file_box": "🗃",
-		"ballot_box": "🗳",
-		"file_cabinet": "🗄",
-		"clipboard": "📋",
-		"file_folder": "📁",
-		"open_file_folder": "📂",
-		"card_index_dividers": "🗂",
-		"newspaper_roll": "🗞",
-		"newspaper": "📰",
-		"notebook": "📓",
-		"notebook_with_decorative_cover": "📔",
-		"ledger": "📒",
-		"closed_book": "📕",
-		"green_book": "📗",
-		"blue_book": "📘",
-		"orange_book": "📙",
-		"books": "📚",
-		"book": "📖",
-		"open_book": "📖",
-		"link": "🔗",
-		"paperclip": "📎",
-		"paperclips": "🖇",
-		"triangular_ruler": "📐",
-		"straight_ruler": "📏",
-		"scissors": "✂️",
-		"pushpin": "📌",
-		"round_pushpin": "📍",
-		"triangular_flag_on_post": "🚩",
-		"crossed_flags": "🎌",
-		"white_flag": "🏳️",
-		"black_flag": "🏴",
-		"checkered_flag": "🏁",
-		"rainbow_flag": "🏳️‍🌈",
-		"paintbrush": "🖌",
-		"crayon": "🖍",
-		"pen": "🖊",
-		"fountain_pen": "🖋",
-		"black_nib": "✒️",
-		"memo": "📝",
-		"pencil": "📝",
-		"pencil2": "✏️",
-		"lock_with_ink_pen": "🔏",
-		"closed_lock_with_key": "🔐",
-		"lock": "🔒",
-		"unlock": "🔓",
-		"mag": "🔍",
-		"mag_right": "🔎",
-		"heart": "❤️",
-		"yellow_heart": "💛",
-		"green_heart": "💚",
-		"blue_heart": "💙",
-		"purple_heart": "💜",
-		"broken_heart": "💔",
-		"heavy_heart_exclamation": "❣️",
-		"two_hearts": "💕",
-		"revolving_hearts": "💞",
-		"heartbeat": "💓",
-		"heartpulse": "💗",
-		"sparkling_heart": "💖",
-		"cupid": "💘",
-		"gift_heart": "💝",
-		"heart_decoration": "💟",
-		"peace_symbol": "☮️",
-		"latin_cross": "✝️",
-		"star_and_crescent": "☪️",
-		"om": "🕉",
-		"wheel_of_dharma": "☸️",
-		"star_of_david": "✡️",
-		"six_pointed_star": "🔯",
-		"menorah": "🕎",
-		"yin_yang": "☯️",
-		"orthodox_cross": "☦️",
-		"place_of_worship": "🛐",
-		"ophiuchus": "⛎",
-		"aries": "♈️",
-		"taurus": "♉️",
-		"gemini": "♊️",
-		"cancer": "♋️",
-		"leo": "♌️",
-		"virgo": "♍️",
-		"libra": "♎️",
-		"scorpius": "♏️",
-		"sagittarius": "♐️",
-		"capricorn": "♑️",
-		"aquarius": "♒️",
-		"pisces": "♓️",
-		"id": "🆔",
-		"atom_symbol": "⚛",
-		"radioactive": "☢️",
-		"biohazard": "☣️",
-		"mobile_phone_off": "📴",
-		"vibration_mode": "📳",
-		"eight_pointed_black_star": "✴️",
-		"vs": "🆚",
-		"accept": "🉑",
-		"white_flower": "💮",
-		"ideograph_advantage": "🉐",
-		"secret": "㊙️",
-		"congratulations": "㊗️",
-		"u6e80": "🈵",
-		"a": "🅰️",
-		"b": "🅱️",
-		"ab": "🆎",
-		"cl": "🆑",
-		"o2": "🅾️",
-		"sos": "🆘",
-		"no_entry": "⛔️",
-		"name_badge": "📛",
-		"no_entry_sign": "🚫",
-		"x": "❌",
-		"o": "⭕️",
-		"anger": "💢",
-		"hotsprings": "♨️",
-		"no_pedestrians": "🚷",
-		"do_not_litter": "🚯",
-		"no_bicycles": "🚳",
-		"non-potable_water": "🚱",
-		"underage": "🔞",
-		"no_mobile_phones": "📵",
-		"exclamation": "❗️",
-		"heavy_exclamation_mark": "❗️",
-		"grey_exclamation": "❕",
-		"question": "❓",
-		"grey_question": "❔",
-		"bangbang": "‼️",
-		"interrobang": "⁉️",
-		"low_brightness": "🔅",
-		"high_brightness": "🔆",
-		"trident": "🔱",
-		"fleur_de_lis": "⚜",
-		"part_alternation_mark": "〽️",
-		"warning": "⚠️",
-		"children_crossing": "🚸",
-		"beginner": "🔰",
-		"recycle": "♻️",
-		"chart": "💹",
-		"sparkle": "❇️",
-		"eight_spoked_asterisk": "✳️",
-		"negative_squared_cross_mark": "❎",
-		"white_check_mark": "✅",
-		"globe_with_meridians": "🌐",
-		"m": "Ⓜ️",
-		"diamond_shape_with_a_dot_inside": "💠",
-		"cyclone": "🌀",
-		"loop": "➿",
-		"atm": "🏧",
-		"sa": "🈂️",
-		"passport_control": "🛂",
-		"customs": "🛃",
-		"baggage_claim": "🛄",
-		"left_luggage": "🛅",
-		"wheelchair": "♿️",
-		"no_smoking": "🚭",
-		"wc": "🚾",
-		"parking": "🅿️",
-		"potable_water": "🚰",
-		"mens": "🚹",
-		"womens": "🚺",
-		"baby_symbol": "🚼",
-		"restroom": "🚻",
-		"put_litter_in_its_place": "🚮",
-		"cinema": "🎦",
-		"signal_strength": "📶",
-		"koko": "🈁",
-		"abc": "🔤",
-		"abcd": "🔡",
-		"capital_abcd": "🔠",
-		"symbols": "🔣",
-		"information_source": "ℹ️",
-		"ng": "🆖",
-		"ok": "🆗",
-		"up": "🆙",
-		"cool": "🆒",
-		"new": "🆕",
-		"free": "🆓",
-		"zero": "0️⃣",
-		"one": "1️⃣",
-		"two": "2️⃣",
-		"three": "3️⃣",
-		"four": "4️⃣",
-		"five": "5️⃣",
-		"six": "6️⃣",
-		"seven": "7️⃣",
-		"eight": "8️⃣",
-		"nine": "9️⃣",
-		"keycap_ten": "🔟",
-		"hash": "#️⃣",
-		"asterisk": "*️⃣",
-		"arrow_forward": "▶️",
-		"pause_button": "⏸",
-		"play_or_pause_button": "⏯",
-		"stop_button": "⏹",
-		"record_button": "⏺",
-		"next_track_button": "⏭",
-		"previous_track_button": "⏮",
-		"fast_forward": "⏩",
-		"rewind": "⏪",
-		"arrow_double_up": "⏫",
-		"arrow_double_down": "⏬",
-		"arrow_backward": "◀️",
-		"arrow_up_small": "🔼",
-		"arrow_down_small": "🔽",
-		"arrow_right": "➡️",
-		"arrow_left": "⬅️",
-		"arrow_up": "⬆️",
-		"arrow_down": "⬇️",
-		"arrow_upper_right": "↗️",
-		"arrow_lower_right": "↘️",
-		"arrow_lower_left": "↙️",
-		"arrow_upper_left": "↖️",
-		"arrow_up_down": "↕️",
-		"left_right_arrow": "↔️",
-		"arrow_right_hook": "↪️",
-		"leftwards_arrow_with_hook": "↩️",
-		"arrow_heading_up": "⤴️",
-		"arrow_heading_down": "⤵️",
-		"twisted_rightwards_arrows": "🔀",
-		"repeat": "🔁",
-		"repeat_one": "🔂",
-		"arrows_counterclockwise": "🔄",
-		"arrows_clockwise": "🔃",
-		"musical_note": "🎵",
-		"notes": "🎶",
-		"wavy_dash": "〰️",
-		"curly_loop": "➰",
-		"heavy_check_mark": "✔️",
-		"heavy_plus_sign": "➕",
-		"heavy_minus_sign": "➖",
-		"heavy_division_sign": "➗",
-		"heavy_multiplication_x": "✖️",
-		"heavy_dollar_sign": "💲",
-		"currency_exchange": "💱",
-		"tm": "™️",
-		"copyright": "©️",
-		"registered": "®️",
-		"end": "🔚",
-		"back": "🔙",
-		"on": "🔛",
-		"top": "🔝",
-		"soon": "🔜",
-		"ballot_box_with_check": "☑️",
-		"radio_button": "🔘",
-		"white_circle": "⚪️",
-		"black_circle": "⚫️",
-		"red_circle": "🔴",
-		"large_blue_circle": "🔵",
-		"small_red_triangle": "🔺",
-		"small_red_triangle_down": "🔻",
-		"small_orange_diamond": "🔸",
-		"small_blue_diamond": "🔹",
-		"large_orange_diamond": "🔶",
-		"large_blue_diamond": "🔷",
-		"white_square_button": "🔳",
-		"black_square_button": "🔲",
-		"black_small_square": "▪️",
-		"white_small_square": "▫️",
-		"black_medium_small_square": "◾️",
-		"white_medium_small_square": "◽️",
-		"black_medium_square": "◼️",
-		"white_medium_square": "◻️",
-		"black_large_square": "⬛️",
-		"white_large_square": "⬜️",
-		"mute": "🔇",
-		"speaker": "🔈",
-		"sound": "🔉",
-		"loud_sound": "🔊",
-		"no_bell": "🔕",
-		"bell": "🔔",
-		"mega": "📣",
-		"loudspeaker": "📢",
-		"eye_speech_bubble": "👁‍🗨",
-		"speech_balloon": "💬",
-		"thought_balloon": "💭",
-		"right_anger_bubble": "🗯",
-		"black_joker": "🃏",
-		"mahjong": "🀄️",
-		"flower_playing_cards": "🎴",
-		"spades": "♠️",
-		"clubs": "♣️",
-		"hearts": "♥️",
-		"diamonds": "♦️",
-		"clock1": "🕐",
-		"clock2": "🕑",
-		"clock3": "🕒",
-		"clock4": "🕓",
-		"clock5": "🕔",
-		"clock6": "🕕",
-		"clock7": "🕖",
-		"clock8": "🕗",
-		"clock9": "🕘",
-		"clock10": "🕙",
-		"clock11": "🕚",
-		"clock12": "🕛",
-		"clock130": "🕜",
-		"clock230": "🕝",
-		"clock330": "🕞",
-		"clock430": "🕟",
-		"clock530": "🕠",
-		"clock630": "🕡",
-		"clock730": "🕢",
-		"clock830": "🕣",
-		"clock930": "🕤",
-		"clock1030": "🕥",
-		"clock1130": "🕦",
-		"clock1230": "🕧",
-		"afghanistan": "🇦🇫",
-		"aland_islands": "🇦🇽",
-		"albania": "🇦🇱",
-		"algeria": "🇩🇿",
-		"american_samoa": "🇦🇸",
-		"andorra": "🇦🇩",
-		"angola": "🇦🇴",
-		"anguilla": "🇦🇮",
-		"antarctica": "🇦🇶",
-		"antigua_barbuda": "🇦🇬",
-		"argentina": "🇦🇷",
-		"armenia": "🇦🇲",
-		"aruba": "🇦🇼",
-		"australia": "🇦🇺",
-		"austria": "🇦🇹",
-		"azerbaijan": "🇦🇿",
-		"bahamas": "🇧🇸",
-		"bahrain": "🇧🇭",
-		"bangladesh": "🇧🇩",
-		"barbados": "🇧🇧",
-		"belarus": "🇧🇾",
-		"belgium": "🇧🇪",
-		"belize": "🇧🇿",
-		"benin": "🇧🇯",
-		"bermuda": "🇧🇲",
-		"bhutan": "🇧🇹",
-		"bolivia": "🇧🇴",
-		"caribbean_netherlands": "🇧🇶",
-		"bosnia_herzegovina": "🇧🇦",
-		"botswana": "🇧🇼",
-		"brazil": "🇧🇷",
-		"british_indian_ocean_territory": "🇮🇴",
-		"british_virgin_islands": "🇻🇬",
-		"brunei": "🇧🇳",
-		"bulgaria": "🇧🇬",
-		"burkina_faso": "🇧🇫",
-		"burundi": "🇧🇮",
-		"cape_verde": "🇨🇻",
-		"cambodia": "🇰🇭",
-		"cameroon": "🇨🇲",
-		"canada": "🇨🇦",
-		"canary_islands": "🇮🇨",
-		"cayman_islands": "🇰🇾",
-		"central_african_republic": "🇨🇫",
-		"chad": "🇹🇩",
-		"chile": "🇨🇱",
-		"cn": "🇨🇳",
-		"christmas_island": "🇨🇽",
-		"cocos_islands": "🇨🇨",
-		"colombia": "🇨🇴",
-		"comoros": "🇰🇲",
-		"congo_brazzaville": "🇨🇬",
-		"congo_kinshasa": "🇨🇩",
-		"cook_islands": "🇨🇰",
-		"costa_rica": "🇨🇷",
-		"croatia": "🇭🇷",
-		"cuba": "🇨🇺",
-		"curacao": "🇨🇼",
-		"cyprus": "🇨🇾",
-		"czech_republic": "🇨🇿",
-		"denmark": "🇩🇰",
-		"djibouti": "🇩🇯",
-		"dominica": "🇩🇲",
-		"dominican_republic": "🇩🇴",
-		"ecuador": "🇪🇨",
-		"egypt": "🇪🇬",
-		"el_salvador": "🇸🇻",
-		"equatorial_guinea": "🇬🇶",
-		"eritrea": "🇪🇷",
-		"estonia": "🇪🇪",
-		"ethiopia": "🇪🇹",
-		"eu": "🇪🇺",
-		"european_union": "🇪🇺",
-		"falkland_islands": "🇫🇰",
-		"faroe_islands": "🇫🇴",
-		"fiji": "🇫🇯",
-		"finland": "🇫🇮",
-		"fr": "🇫🇷",
-		"french_guiana": "🇬🇫",
-		"french_polynesia": "🇵🇫",
-		"french_southern_territories": "🇹🇫",
-		"gabon": "🇬🇦",
-		"gambia": "🇬🇲",
-		"georgia": "🇬🇪",
-		"de": "🇩🇪",
-		"ghana": "🇬🇭",
-		"gibraltar": "🇬🇮",
-		"greece": "🇬🇷",
-		"greenland": "🇬🇱",
-		"grenada": "🇬🇩",
-		"guadeloupe": "🇬🇵",
-		"guam": "🇬🇺",
-		"guatemala": "🇬🇹",
-		"guernsey": "🇬🇬",
-		"guinea": "🇬🇳",
-		"guinea_bissau": "🇬🇼",
-		"guyana": "🇬🇾",
-		"haiti": "🇭🇹",
-		"honduras": "🇭🇳",
-		"hong_kong": "🇭🇰",
-		"hungary": "🇭🇺",
-		"iceland": "🇮🇸",
-		"india": "🇮🇳",
-		"indonesia": "🇮🇩",
-		"iran": "🇮🇷",
-		"iraq": "🇮🇶",
-		"ireland": "🇮🇪",
-		"isle_of_man": "🇮🇲",
-		"israel": "🇮🇱",
-		"it": "🇮🇹",
-		"cote_divoire": "🇨🇮",
-		"jamaica": "🇯🇲",
-		"jp": "🇯🇵",
-		"jersey": "🇯🇪",
-		"jordan": "🇯🇴",
-		"kazakhstan": "🇰🇿",
-		"kenya": "🇰🇪",
-		"kiribati": "🇰🇮",
-		"kosovo": "🇽🇰",
-		"kuwait": "🇰🇼",
-		"kyrgyzstan": "🇰🇬",
-		"laos": "🇱🇦",
-		"latvia": "🇱🇻",
-		"lebanon": "🇱🇧",
-		"lesotho": "🇱🇸",
-		"liberia": "🇱🇷",
-		"libya": "🇱🇾",
-		"liechtenstein": "🇱🇮",
-		"lithuania": "🇱🇹",
-		"luxembourg": "🇱🇺",
-		"macau": "🇲🇴",
-		"macedonia": "🇲🇰",
-		"madagascar": "🇲🇬",
-		"malawi": "🇲🇼",
-		"malaysia": "🇲🇾",
-		"maldives": "🇲🇻",
-		"mali": "🇲🇱",
-		"malta": "🇲🇹",
-		"marshall_islands": "🇲🇭",
-		"martinique": "🇲🇶",
-		"mauritania": "🇲🇷",
-		"mauritius": "🇲🇺",
-		"mayotte": "🇾🇹",
-		"mexico": "🇲🇽",
-		"micronesia": "🇫🇲",
-		"moldova": "🇲🇩",
-		"monaco": "🇲🇨",
-		"mongolia": "🇲🇳",
-		"montenegro": "🇲🇪",
-		"montserrat": "🇲🇸",
-		"morocco": "🇲🇦",
-		"mozambique": "🇲🇿",
-		"myanmar": "🇲🇲",
-		"namibia": "🇳🇦",
-		"nauru": "🇳🇷",
-		"nepal": "🇳🇵",
-		"netherlands": "🇳🇱",
-		"new_caledonia": "🇳🇨",
-		"new_zealand": "🇳🇿",
-		"nicaragua": "🇳🇮",
-		"niger": "🇳🇪",
-		"nigeria": "🇳🇬",
-		"niue": "🇳🇺",
-		"norfolk_island": "🇳🇫",
-		"northern_mariana_islands": "🇲🇵",
-		"north_korea": "🇰🇵",
-		"norway": "🇳🇴",
-		"oman": "🇴🇲",
-		"pakistan": "🇵🇰",
-		"palau": "🇵🇼",
-		"palestinian_territories": "🇵🇸",
-		"panama": "🇵🇦",
-		"papua_new_guinea": "🇵🇬",
-		"paraguay": "🇵🇾",
-		"peru": "🇵🇪",
-		"philippines": "🇵🇭",
-		"pitcairn_islands": "🇵🇳",
-		"poland": "🇵🇱",
-		"portugal": "🇵🇹",
-		"puerto_rico": "🇵🇷",
-		"qatar": "🇶🇦",
-		"reunion": "🇷🇪",
-		"romania": "🇷🇴",
-		"ru": "🇷🇺",
-		"rwanda": "🇷🇼",
-		"st_barthelemy": "🇧🇱",
-		"st_helena": "🇸🇭",
-		"st_kitts_nevis": "🇰🇳",
-		"st_lucia": "🇱🇨",
-		"st_pierre_miquelon": "🇵🇲",
-		"st_vincent_grenadines": "🇻🇨",
-		"samoa": "🇼🇸",
-		"san_marino": "🇸🇲",
-		"sao_tome_principe": "🇸🇹",
-		"saudi_arabia": "🇸🇦",
-		"senegal": "🇸🇳",
-		"serbia": "🇷🇸",
-		"seychelles": "🇸🇨",
-		"sierra_leone": "🇸🇱",
-		"singapore": "🇸🇬",
-		"sint_maarten": "🇸🇽",
-		"slovakia": "🇸🇰",
-		"slovenia": "🇸🇮",
-		"solomon_islands": "🇸🇧",
-		"somalia": "🇸🇴",
-		"south_africa": "🇿🇦",
-		"south_georgia_south_sandwich_islands": "🇬🇸",
-		"kr": "🇰🇷",
-		"south_sudan": "🇸🇸",
-		"es": "🇪🇸",
-		"sri_lanka": "🇱🇰",
-		"sudan": "🇸🇩",
-		"suriname": "🇸🇷",
-		"swaziland": "🇸🇿",
-		"sweden": "🇸🇪",
-		"switzerland": "🇨🇭",
-		"syria": "🇸🇾",
-		"taiwan": "🇹🇼",
-		"tajikistan": "🇹🇯",
-		"tanzania": "🇹🇿",
-		"thailand": "🇹🇭",
-		"timor_leste": "🇹🇱",
-		"togo": "🇹🇬",
-		"tokelau": "🇹🇰",
-		"tonga": "🇹🇴",
-		"trinidad_tobago": "🇹🇹",
-		"tunisia": "🇹🇳",
-		"tr": "🇹🇷",
-		"turkmenistan": "🇹🇲",
-		"turks_caicos_islands": "🇹🇨",
-		"tuvalu": "🇹🇻",
-		"uganda": "🇺🇬",
-		"ukraine": "🇺🇦",
-		"united_arab_emirates": "🇦🇪",
-		"gb": "🇬🇧",
-		"uk": "🇬🇧",
-		"us": "🇺🇸",
-		"us_virgin_islands": "🇻🇮",
-		"uruguay": "🇺🇾",
-		"uzbekistan": "🇺🇿",
-		"vanuatu": "🇻🇺",
-		"vatican_city": "🇻🇦",
-		"venezuela": "🇻🇪",
-		"vietnam": "🇻🇳",
-		"wallis_futuna": "🇼🇫",
-		"western_sahara": "🇪🇭",
-		"yemen": "🇾🇪",
-		"zambia": "🇿🇲",
-		"zimbabwe": "🇿🇼"
-	};
-
-/***/ },
-/* 229 */
-/***/ function(module, exports) {
-
-	// Emoticons -> Emoji mapping.
-	//
-	// (!) Some patterns skipped, to avoid collisions
-	// without increase matcher complicity. Than can change in future.
-	//
-	// Places to look for more emoticons info:
-	//
-	// - http://en.wikipedia.org/wiki/List_of_emoticons#Western
-	// - https://github.com/wooorm/emoticon/blob/master/Support.md
-	// - http://factoryjoe.com/projects/emoticons/
-	//
-	'use strict';
-	
-	module.exports = {
-	  angry:            [ '>:(', '>:-(' ],
-	  blush:            [ ':")', ':-")' ],
-	  broken_heart:     [ '</3', '<\\3' ],
-	  // :\ and :-\ not used because of conflict with markdown escaping
-	  confused:         [ ':/', ':-/' ], // twemoji shows question
-	  cry:              [ ":'(", ":'-(", ':,(', ':,-(' ],
-	  frowning:         [ ':(', ':-(' ],
-	  heart:            [ '<3' ],
-	  imp:              [ ']:(', ']:-(' ],
-	  innocent:         [ 'o:)', 'O:)', 'o:-)', 'O:-)', '0:)', '0:-)' ],
-	  joy:              [ ":')", ":'-)", ':,)', ':,-)', ":'D", ":'-D", ':,D', ':,-D' ],
-	  kissing:          [ ':*', ':-*' ],
-	  laughing:         [ 'x-)', 'X-)' ],
-	  neutral_face:     [ ':|', ':-|' ],
-	  open_mouth:       [ ':o', ':-o', ':O', ':-O' ],
-	  rage:             [ ':@', ':-@' ],
-	  smile:            [ ':D', ':-D' ],
-	  smiley:           [ ':)', ':-)' ],
-	  smiling_imp:      [ ']:)', ']:-)' ],
-	  sob:              [ ":,'(", ":,'-(", ';(', ';-(' ],
-	  stuck_out_tongue: [ ':P', ':-P' ],
-	  sunglasses:       [ '8-)', 'B-)' ],
-	  sweat:            [ ',:(', ',:-(' ],
-	  sweat_smile:      [ ',:)', ',:-)' ],
-	  unamused:         [ ':s', ':-S', ':z', ':-Z', ':$', ':-$' ],
-	  wink:             [ ';)', ';-)' ]
-	};
-
-
-/***/ },
-/* 230 */
-/***/ function(module, exports) {
-
-	'use strict';
-	
-	module.exports = function emoji_html(tokens, idx /*, options, env */) {
-	  return tokens[idx].content;
-	};
-
-
-/***/ },
-/* 231 */
-/***/ function(module, exports) {
-
-	// Emojies & shortcuts replacement logic.
-	//
-	// Note: In theory, it could be faster to parse :smile: in inline chain and
-	// leave only shortcuts here. But, who care...
-	//
-	
-	'use strict';
-	
-	
-	module.exports = function create_rule(md, emojies, shortcuts, scanRE, replaceRE) {
-	  var arrayReplaceAt = md.utils.arrayReplaceAt,
-	      ucm = md.utils.lib.ucmicro,
-	      ZPCc = new RegExp([ ucm.Z.source, ucm.P.source, ucm.Cc.source ].join('|'));
-	
-	  function splitTextToken(text, level, Token) {
-	    var token, last_pos = 0, nodes = [];
-	
-	    text.replace(replaceRE, function (match, offset, src) {
-	      var emoji_name;
-	      // Validate emoji name
-	      if (shortcuts.hasOwnProperty(match)) {
-	        // replace shortcut with full name
-	        emoji_name = shortcuts[match];
-	
-	        // Don't allow letters before any shortcut (as in no ":/" in http://)
-	        if (offset > 0 && !ZPCc.test(src[offset - 1])) {
-	          return;
-	        }
-	
-	        // Don't allow letters after any shortcut
-	        if (offset + match.length < src.length && !ZPCc.test(src[offset + match.length])) {
-	          return;
-	        }
-	      } else {
-	        emoji_name = match.slice(1, -1);
-	      }
-	
-	      // Add new tokens to pending list
-	      if (offset > last_pos) {
-	        token         = new Token('text', '', 0);
-	        token.content = text.slice(last_pos, offset);
-	        nodes.push(token);
-	      }
-	
-	      token         = new Token('emoji', '', 0);
-	      token.markup  = emoji_name;
-	      token.content = emojies[emoji_name];
-	      nodes.push(token);
-	
-	      last_pos = offset + match.length;
-	    });
-	
-	    if (last_pos < text.length) {
-	      token         = new Token('text', '', 0);
-	      token.content = text.slice(last_pos);
-	      nodes.push(token);
-	    }
-	
-	    return nodes;
-	  }
-	
-	  return function emoji_replace(state) {
-	    var i, j, l, tokens, token,
-	        blockTokens = state.tokens,
-	        autolinkLevel = 0;
-	
-	    for (j = 0, l = blockTokens.length; j < l; j++) {
-	      if (blockTokens[j].type !== 'inline') { continue; }
-	      tokens = blockTokens[j].children;
-	
-	      // We scan from the end, to keep position when new tags added.
-	      // Use reversed logic in links start/end match
-	      for (i = tokens.length - 1; i >= 0; i--) {
-	        token = tokens[i];
-	
-	        if (token.type === 'link_open' || token.type === 'link_close') {
-	          if (token.info === 'auto') { autolinkLevel -= token.nesting; }
-	        }
-	
-	        if (token.type === 'text' && scanRE.test(token.content) && autolinkLevel === 0) {
-	          // replace current node
-	          blockTokens[j].children = tokens = arrayReplaceAt(
-	            tokens, i, splitTextToken(token.content, token.level, state.Token)
-	          );
-	        }
-	      }
-	    }
-	  };
-	};
-
-
-/***/ },
-/* 232 */
-/***/ function(module, exports) {
-
-	// Convert input options to more useable format
-	// and compile search regexp
-	
-	'use strict';
-	
-	
-	function quoteRE(str) {
-	  return str.replace(/[.?*+^$[\]\\(){}|-]/g, '\\$&');
-	}
-	
-	
-	module.exports = function normalize_opts(options) {
-	  var emojies = options.defs,
-	      shortcuts;
-	
-	  // Filter emojies by whitelist, if needed
-	  if (options.enabled.length) {
-	    emojies = Object.keys(emojies).reduce(function (acc, key) {
-	      if (options.enabled.indexOf(key) >= 0) {
-	        acc[key] = emojies[key];
-	      }
-	      return acc;
-	    }, {});
-	  }
-	
-	  // Flatten shortcuts to simple object: { alias: emoji_name }
-	  shortcuts = Object.keys(options.shortcuts).reduce(function (acc, key) {
-	    // Skip aliases for filtered emojies, to reduce regexp
-	    if (!emojies[key]) { return acc; }
-	
-	    if (Array.isArray(options.shortcuts[key])) {
-	      options.shortcuts[key].forEach(function (alias) {
-	        acc[alias] = key;
-	      });
-	      return acc;
-	    }
-	
-	    acc[options.shortcuts[key]] = key;
-	    return acc;
-	  }, {});
-	
-	  // Compile regexp
-	  var names = Object.keys(emojies)
-	                .map(function (name) { return ':' + name + ':'; })
-	                .concat(Object.keys(shortcuts))
-	                .sort()
-	                .reverse()
-	                .map(function (name) { return quoteRE(name); })
-	                .join('|');
-	  var scanRE = RegExp(names);
-	  var replaceRE = RegExp(names, 'g');
-	
-	  return {
-	    defs: emojies,
-	    shortcuts: shortcuts,
-	    scanRE: scanRE,
-	    replaceRE: replaceRE
-	  };
-	};
-
-
-/***/ },
-/* 233 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -16173,7 +14587,7 @@
 
 
 /***/ },
-/* 234 */
+/* 228 */
 /***/ function(module, exports) {
 
 	// Process ~subscript~
@@ -16245,7 +14659,7 @@
 
 
 /***/ },
-/* 235 */
+/* 229 */
 /***/ function(module, exports) {
 
 	// Process ^superscript^
@@ -16316,7 +14730,181 @@
 
 
 /***/ },
-/* 236 */
+/* 230 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	__webpack_require__(231);
+	module.exports = function dimmed_plugin(md) {
+	  // Insert each marker as a separate text token, and add it to delimiter list
+	  function tokenize(state, silent) {
+	    var i,
+	        scanned,
+	        token,
+	        len,
+	        ch,
+	        start = state.pos,
+	        marker = state.src.charCodeAt(start);
+	
+	    if (silent) {
+	      return false;
+	    }
+	
+	    if (marker !== 0x25 /* % */) {
+	        return false;
+	      }
+	
+	    scanned = state.scanDelims(state.pos, true);
+	    len = scanned.length;
+	    ch = String.fromCharCode(marker);
+	
+	    if (len < 2) {
+	      return false;
+	    }
+	
+	    if (len % 2) {
+	      token = state.push('text', '', 0);
+	      token.content = ch;
+	      len--;
+	    }
+	
+	    for (i = 0; i < len; i += 2) {
+	      token = state.push('text', '', 0);
+	      token.content = ch + ch;
+	
+	      state.delimiters.push({
+	        marker: marker,
+	        jump: i,
+	        token: state.tokens.length - 1,
+	        level: state.level,
+	        end: -1,
+	        open: scanned.can_open,
+	        close: scanned.can_close
+	      });
+	    }
+	
+	    state.pos += scanned.length;
+	
+	    return true;
+	  }
+	
+	  // Walk through delimiter list and replace text tokens with tags
+	  //
+	  function postProcess(state) {
+	    var i,
+	        j,
+	        startDelim,
+	        endDelim,
+	        token,
+	        loneMarkers = [],
+	        delimiters = state.delimiters,
+	        max = state.delimiters.length;
+	
+	    for (i = 0; i < max; i++) {
+	      startDelim = delimiters[i];
+	
+	      if (startDelim.marker !== 0x25 /* % */) {
+	          continue;
+	        }
+	
+	      if (startDelim.end === -1) {
+	        continue;
+	      }
+	
+	      endDelim = delimiters[startDelim.end];
+	
+	      token = state.tokens[startDelim.token];
+	      token.type = 'dimmed_open';
+	      token.tag = 'span';
+	      token.attrs = [['class', 'dimmed']];
+	      token.nesting = 1;
+	      token.markup = '%%';
+	      token.content = '';
+	
+	      token = state.tokens[endDelim.token];
+	      token.type = 'dimmed_close';
+	      token.tag = 'span';
+	      token.nesting = -1;
+	      token.markup = '%%';
+	      token.content = '';
+	
+	      if (state.tokens[endDelim.token - 1].type === 'text' && state.tokens[endDelim.token - 1].content === '%') {
+	
+	        loneMarkers.push(endDelim.token - 1);
+	      }
+	    }
+	
+	    // If a marker sequence has an odd number of characters, it's splitted
+	    // like this: `~~~~~` -> `~` + `~~` + `~~`, leaving one marker at the
+	    // start of the sequence.
+	    //
+	    // So, we have to move all those markers after subsequent s_close tags.
+	    //
+	    while (loneMarkers.length) {
+	      i = loneMarkers.pop();
+	      j = i + 1;
+	
+	      while (j < state.tokens.length && state.tokens[j].type === 'dimmed_close') {
+	        j++;
+	      }
+	
+	      j--;
+	
+	      if (i !== j) {
+	        token = state.tokens[j];
+	        state.tokens[j] = state.tokens[i];
+	        state.tokens[i] = token;
+	      }
+	    }
+	  }
+	
+	  md.inline.ruler.before('emphasis', 'dimmed', tokenize);
+	  md.inline.ruler2.before('emphasis', 'dimmed', postProcess);
+	};
+
+/***/ },
+/* 231 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(232);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(150)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?root=./docs!./dimmed.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?root=./docs!./dimmed.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 232 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(149)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".dimmed {\n    color: #777;\n}\n", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 233 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// Process ![test]( x =100x200)
@@ -16324,9 +14912,9 @@
 	
 	'use strict';
 	
-	var sizeOf = __webpack_require__(237);
+	var sizeOf = __webpack_require__(234);
 	
-	var parseImageSize = __webpack_require__(257);
+	var parseImageSize = __webpack_require__(254);
 	
 	function image_with_size(md, options) {
 	  return function(state, silent) {
@@ -16537,20 +15125,20 @@
 
 
 /***/ },
-/* 237 */
+/* 234 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(Buffer) {'use strict';
 	
-	var fs   = __webpack_require__(242);
-	var path = __webpack_require__(243);
+	var fs   = __webpack_require__(239);
+	var path = __webpack_require__(240);
 	
-	var detector = __webpack_require__(245);
+	var detector = __webpack_require__(242);
 	var handlers = {};
-	var types = __webpack_require__(246);
+	var types = __webpack_require__(243);
 	
 	types.forEach(function(type) {
-	  handlers[type] = __webpack_require__(247)("./" + type);
+	  handlers[type] = __webpack_require__(244)("./" + type);
 	});
 	
 	var MaxBufferSize = 128 * 1024;
@@ -16632,10 +15220,10 @@
 	  }
 	};
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(238).Buffer))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(235).Buffer))
 
 /***/ },
-/* 238 */
+/* 235 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/*!
@@ -16648,9 +15236,9 @@
 	
 	'use strict'
 	
-	var base64 = __webpack_require__(239)
-	var ieee754 = __webpack_require__(240)
-	var isArray = __webpack_require__(241)
+	var base64 = __webpack_require__(236)
+	var ieee754 = __webpack_require__(237)
+	var isArray = __webpack_require__(238)
 	
 	exports.Buffer = Buffer
 	exports.SlowBuffer = SlowBuffer
@@ -18431,7 +17019,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 239 */
+/* 236 */
 /***/ function(module, exports) {
 
 	'use strict'
@@ -18551,7 +17139,7 @@
 
 
 /***/ },
-/* 240 */
+/* 237 */
 /***/ function(module, exports) {
 
 	exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -18641,7 +17229,7 @@
 
 
 /***/ },
-/* 241 */
+/* 238 */
 /***/ function(module, exports) {
 
 	var toString = {}.toString;
@@ -18652,13 +17240,13 @@
 
 
 /***/ },
-/* 242 */
+/* 239 */
 /***/ function(module, exports) {
 
 
 
 /***/ },
-/* 243 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -18886,10 +17474,10 @@
 	    }
 	;
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(244)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(241)))
 
 /***/ },
-/* 244 */
+/* 241 */
 /***/ function(module, exports) {
 
 	// shim for using process in browser
@@ -19075,16 +17663,16 @@
 
 
 /***/ },
-/* 245 */
+/* 242 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	var typeMap = {};
-	var types = __webpack_require__(246);
+	var types = __webpack_require__(243);
 	
 	types.forEach(function(type) {
-	  typeMap[type] = __webpack_require__(247)("./" + type).detect;
+	  typeMap[type] = __webpack_require__(244)("./" + type).detect;
 	});
 	
 	module.exports = function(buffer, filepath) {
@@ -19102,7 +17690,7 @@
 
 
 /***/ },
-/* 246 */
+/* 243 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -19117,26 +17705,26 @@
 
 
 /***/ },
-/* 247 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var map = {
-		"./bmp": 248,
-		"./bmp.js": 248,
-		"./gif": 249,
-		"./gif.js": 249,
-		"./jpg": 250,
-		"./jpg.js": 250,
-		"./png": 251,
-		"./png.js": 251,
-		"./psd": 252,
-		"./psd.js": 252,
-		"./svg": 253,
-		"./svg.js": 253,
-		"./tiff": 254,
-		"./tiff.js": 254,
-		"./webp": 256,
-		"./webp.js": 256
+		"./bmp": 245,
+		"./bmp.js": 245,
+		"./gif": 246,
+		"./gif.js": 246,
+		"./jpg": 247,
+		"./jpg.js": 247,
+		"./png": 248,
+		"./png.js": 248,
+		"./psd": 249,
+		"./psd.js": 249,
+		"./svg": 250,
+		"./svg.js": 250,
+		"./tiff": 251,
+		"./tiff.js": 251,
+		"./webp": 253,
+		"./webp.js": 253
 	};
 	function webpackContext(req) {
 		return __webpack_require__(webpackContextResolve(req));
@@ -19149,11 +17737,11 @@
 	};
 	webpackContext.resolve = webpackContextResolve;
 	module.exports = webpackContext;
-	webpackContext.id = 247;
+	webpackContext.id = 244;
 
 
 /***/ },
-/* 248 */
+/* 245 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -19176,7 +17764,7 @@
 
 
 /***/ },
-/* 249 */
+/* 246 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -19200,7 +17788,7 @@
 	};
 
 /***/ },
-/* 250 */
+/* 247 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -19302,7 +17890,7 @@
 
 
 /***/ },
-/* 251 */
+/* 248 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -19331,7 +17919,7 @@
 
 
 /***/ },
-/* 252 */
+/* 249 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -19354,7 +17942,7 @@
 
 
 /***/ },
-/* 253 */
+/* 250 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -19429,7 +18017,7 @@
 
 
 /***/ },
-/* 254 */
+/* 251 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(Buffer) {'use strict';
@@ -19437,8 +18025,8 @@
 	// based on http://www.compix.com/fileformattif.htm
 	// TO-DO: support big-endian as well
 	
-	var fs = __webpack_require__(242);
-	var readUInt = __webpack_require__(255);
+	var fs = __webpack_require__(239);
+	var readUInt = __webpack_require__(252);
 	
 	function isTIFF (buffer) {
 	  var hex4 = buffer.toString('hex', 0, 4);
@@ -19551,10 +18139,10 @@
 	  'calculate': calculate
 	};
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(238).Buffer))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(235).Buffer))
 
 /***/ },
-/* 255 */
+/* 252 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -19568,7 +18156,7 @@
 
 
 /***/ },
-/* 256 */
+/* 253 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -19625,7 +18213,7 @@
 
 
 /***/ },
-/* 257 */
+/* 254 */
 /***/ function(module, exports) {
 
 	// Parse image size
@@ -19703,14 +18291,1633 @@
 
 
 /***/ },
-/* 258 */
+/* 255 */
+/***/ function(module, exports) {
+
+	module.exports = {
+		"100": "💯",
+		"1234": "🔢",
+		"grinning": "😀",
+		"grimacing": "😬",
+		"grin": "😁",
+		"joy": "😂",
+		"smiley": "😃",
+		"smile": "😄",
+		"sweat_smile": "😅",
+		"laughing": "😆",
+		"satisfied": "😆",
+		"innocent": "😇",
+		"wink": "😉",
+		"blush": "😊",
+		"slightly_smiling_face": "🙂",
+		"upside_down_face": "🙃",
+		"relaxed": "☺️",
+		"yum": "😋",
+		"relieved": "😌",
+		"heart_eyes": "😍",
+		"kissing_heart": "😘",
+		"kissing": "😗",
+		"kissing_smiling_eyes": "😙",
+		"kissing_closed_eyes": "😚",
+		"stuck_out_tongue_winking_eye": "😜",
+		"stuck_out_tongue_closed_eyes": "😝",
+		"stuck_out_tongue": "😛",
+		"money_mouth_face": "🤑",
+		"nerd_face": "🤓",
+		"sunglasses": "😎",
+		"hugs": "🤗",
+		"smirk": "😏",
+		"no_mouth": "😶",
+		"neutral_face": "😐",
+		"expressionless": "😑",
+		"unamused": "😒",
+		"roll_eyes": "🙄",
+		"thinking": "🤔",
+		"flushed": "😳",
+		"disappointed": "😞",
+		"worried": "😟",
+		"angry": "😠",
+		"rage": "😡",
+		"pout": "😡",
+		"pensive": "😔",
+		"confused": "😕",
+		"slightly_frowning_face": "🙁",
+		"frowning_face": "☹️",
+		"persevere": "😣",
+		"confounded": "😖",
+		"tired_face": "😫",
+		"weary": "😩",
+		"triumph": "😤",
+		"open_mouth": "😮",
+		"scream": "😱",
+		"fearful": "😨",
+		"cold_sweat": "😰",
+		"hushed": "😯",
+		"frowning": "😦",
+		"anguished": "😧",
+		"cry": "😢",
+		"disappointed_relieved": "😥",
+		"sleepy": "😪",
+		"sweat": "😓",
+		"sob": "😭",
+		"dizzy_face": "😵",
+		"astonished": "😲",
+		"zipper_mouth_face": "🤐",
+		"mask": "😷",
+		"face_with_thermometer": "🤒",
+		"face_with_head_bandage": "🤕",
+		"sleeping": "😴",
+		"zzz": "💤",
+		"hankey": "💩",
+		"poop": "💩",
+		"shit": "💩",
+		"smiling_imp": "😈",
+		"imp": "👿",
+		"japanese_ogre": "👹",
+		"japanese_goblin": "👺",
+		"ghost": "👻",
+		"skull": "💀",
+		"skull_and_crossbones": "☠️",
+		"alien": "👽",
+		"space_invader": "👾",
+		"robot": "🤖",
+		"smiley_cat": "😺",
+		"smile_cat": "😸",
+		"joy_cat": "😹",
+		"heart_eyes_cat": "😻",
+		"smirk_cat": "😼",
+		"kissing_cat": "😽",
+		"scream_cat": "🙀",
+		"crying_cat_face": "😿",
+		"pouting_cat": "😾",
+		"raised_hands": "🙌",
+		"clap": "👏",
+		"+1": "👍",
+		"thumbsup": "👍",
+		"-1": "👎",
+		"thumbsdown": "👎",
+		"facepunch": "👊",
+		"punch": "👊",
+		"fist": "✊",
+		"wave": "👋",
+		"point_left": "👈",
+		"point_right": "👉",
+		"point_up_2": "👆",
+		"point_down": "👇",
+		"ok_hand": "👌",
+		"point_up": "☝️",
+		"v": "✌️",
+		"hand": "✋",
+		"raised_hand": "✋",
+		"raised_hand_with_fingers_splayed": "🖐",
+		"open_hands": "👐",
+		"muscle": "💪",
+		"pray": "🙏",
+		"vulcan_salute": "🖖",
+		"metal": "🤘",
+		"middle_finger": "🖕",
+		"fu": "🖕",
+		"writing_hand": "✍️",
+		"nail_care": "💅",
+		"lips": "👄",
+		"tongue": "👅",
+		"ear": "👂",
+		"nose": "👃",
+		"eye": "👁",
+		"eyes": "👀",
+		"speaking_head": "🗣",
+		"bust_in_silhouette": "👤",
+		"busts_in_silhouette": "👥",
+		"baby": "👶",
+		"boy": "👦",
+		"girl": "👧",
+		"man": "👨",
+		"woman": "👩",
+		"blonde_woman": "👱‍♀️",
+		"blonde_man": "👱",
+		"person_with_blond_hair": "👱",
+		"older_man": "👴",
+		"older_woman": "👵",
+		"man_with_gua_pi_mao": "👲",
+		"woman_with_turban": "👳‍♀️",
+		"man_with_turban": "👳",
+		"policewoman": "👮‍♀️",
+		"policeman": "👮",
+		"cop": "👮",
+		"construction_worker_woman": "👷‍♀️",
+		"construction_worker_man": "👷",
+		"construction_worker": "👷",
+		"guardswoman": "💂‍♀️",
+		"guardsman": "💂",
+		"female_detective": "🕵️‍♀️",
+		"male_detective": "🕵️",
+		"detective": "🕵️",
+		"santa": "🎅",
+		"princess": "👸",
+		"bride_with_veil": "👰",
+		"angel": "👼",
+		"bowing_woman": "🙇‍♀️",
+		"bowing_man": "🙇",
+		"bow": "🙇",
+		"tipping_hand_woman": "💁",
+		"information_desk_person": "💁",
+		"tipping_hand_man": "💁‍♂️",
+		"no_good_woman": "🙅",
+		"no_good": "🙅",
+		"ng_woman": "🙅",
+		"no_good_man": "🙅‍♂️",
+		"ng_man": "🙅‍♂️",
+		"ok_woman": "🙆",
+		"ok_man": "🙆‍♂️",
+		"raising_hand_woman": "🙋",
+		"raising_hand": "🙋",
+		"raising_hand_man": "🙋‍♂️",
+		"pouting_woman": "🙎",
+		"person_with_pouting_face": "🙎",
+		"pouting_man": "🙎‍♂️",
+		"frowning_woman": "🙍",
+		"person_frowning": "🙍",
+		"frowning_man": "🙍‍♂️",
+		"haircut_woman": "💇",
+		"haircut": "💇",
+		"haircut_man": "💇‍♂️",
+		"massage_woman": "💆",
+		"massage": "💆",
+		"massage_man": "💆‍♂️",
+		"dancer": "💃",
+		"dancing_women": "👯",
+		"dancers": "👯",
+		"dancing_men": "👯‍♂️",
+		"walking_woman": "🚶‍♀️",
+		"walking_man": "🚶",
+		"walking": "🚶",
+		"running_woman": "🏃‍♀️",
+		"running_man": "🏃",
+		"runner": "🏃",
+		"running": "🏃",
+		"couple": "👫",
+		"two_women_holding_hands": "👭",
+		"two_men_holding_hands": "👬",
+		"couple_with_heart_woman_man": "💑",
+		"couple_with_heart": "💑",
+		"couple_with_heart_woman_woman": "👩‍❤️‍👩",
+		"couple_with_heart_man_man": "👨‍❤️‍👨",
+		"couplekiss_man_woman": "💏",
+		"couplekiss_woman_woman": "👩‍❤️‍💋‍👩",
+		"couplekiss_man_man": "👨‍❤️‍💋‍👨",
+		"family_man_woman_boy": "👪",
+		"family": "👪",
+		"family_man_woman_girl": "👨‍👩‍👧",
+		"family_man_woman_girl_boy": "👨‍👩‍👧‍👦",
+		"family_man_woman_boy_boy": "👨‍👩‍👦‍👦",
+		"family_man_woman_girl_girl": "👨‍👩‍👧‍👧",
+		"family_woman_woman_boy": "👩‍👩‍👦",
+		"family_woman_woman_girl": "👩‍👩‍👧",
+		"family_woman_woman_girl_boy": "👩‍👩‍👧‍👦",
+		"family_woman_woman_boy_boy": "👩‍👩‍👦‍👦",
+		"family_woman_woman_girl_girl": "👩‍👩‍👧‍👧",
+		"family_man_man_boy": "👨‍👨‍👦",
+		"family_man_man_girl": "👨‍👨‍👧",
+		"family_man_man_girl_boy": "👨‍👨‍👧‍👦",
+		"family_man_man_boy_boy": "👨‍👨‍👦‍👦",
+		"family_man_man_girl_girl": "👨‍👨‍👧‍👧",
+		"family_woman_boy": "👩‍👦",
+		"family_woman_girl": "👩‍👧",
+		"family_woman_girl_boy": "👩‍👧‍👦",
+		"family_woman_boy_boy": "👩‍👦‍👦",
+		"family_woman_girl_girl": "👩‍👧‍👧",
+		"family_man_boy": "👨‍👦",
+		"family_man_girl": "👨‍👧",
+		"family_man_girl_boy": "👨‍👧‍👦",
+		"family_man_boy_boy": "👨‍👦‍👦",
+		"family_man_girl_girl": "👨‍👧‍👧",
+		"womans_clothes": "👚",
+		"shirt": "👕",
+		"tshirt": "👕",
+		"jeans": "👖",
+		"necktie": "👔",
+		"dress": "👗",
+		"bikini": "👙",
+		"kimono": "👘",
+		"lipstick": "💄",
+		"kiss": "💋",
+		"footprints": "👣",
+		"high_heel": "👠",
+		"sandal": "👡",
+		"boot": "👢",
+		"mans_shoe": "👞",
+		"shoe": "👞",
+		"athletic_shoe": "👟",
+		"womans_hat": "👒",
+		"tophat": "🎩",
+		"mortar_board": "🎓",
+		"crown": "👑",
+		"rescue_worker_helmet": "⛑",
+		"school_satchel": "🎒",
+		"pouch": "👝",
+		"purse": "👛",
+		"handbag": "👜",
+		"briefcase": "💼",
+		"eyeglasses": "👓",
+		"dark_sunglasses": "🕶",
+		"ring": "💍",
+		"closed_umbrella": "🌂",
+		"dog": "🐶",
+		"cat": "🐱",
+		"mouse": "🐭",
+		"hamster": "🐹",
+		"rabbit": "🐰",
+		"bear": "🐻",
+		"panda_face": "🐼",
+		"koala": "🐨",
+		"tiger": "🐯",
+		"lion": "🦁",
+		"cow": "🐮",
+		"pig": "🐷",
+		"pig_nose": "🐽",
+		"frog": "🐸",
+		"octopus": "🐙",
+		"monkey_face": "🐵",
+		"see_no_evil": "🙈",
+		"hear_no_evil": "🙉",
+		"speak_no_evil": "🙊",
+		"monkey": "🐒",
+		"chicken": "🐔",
+		"penguin": "🐧",
+		"bird": "🐦",
+		"baby_chick": "🐤",
+		"hatching_chick": "🐣",
+		"hatched_chick": "🐥",
+		"wolf": "🐺",
+		"boar": "🐗",
+		"horse": "🐴",
+		"unicorn": "🦄",
+		"bee": "🐝",
+		"honeybee": "🐝",
+		"bug": "🐛",
+		"snail": "🐌",
+		"beetle": "🐞",
+		"ant": "🐜",
+		"spider": "🕷",
+		"scorpion": "🦂",
+		"crab": "🦀",
+		"snake": "🐍",
+		"turtle": "🐢",
+		"tropical_fish": "🐠",
+		"fish": "🐟",
+		"blowfish": "🐡",
+		"dolphin": "🐬",
+		"flipper": "🐬",
+		"whale": "🐳",
+		"whale2": "🐋",
+		"crocodile": "🐊",
+		"leopard": "🐆",
+		"tiger2": "🐅",
+		"water_buffalo": "🐃",
+		"ox": "🐂",
+		"cow2": "🐄",
+		"dromedary_camel": "🐪",
+		"camel": "🐫",
+		"elephant": "🐘",
+		"goat": "🐐",
+		"ram": "🐏",
+		"sheep": "🐑",
+		"racehorse": "🐎",
+		"pig2": "🐖",
+		"rat": "🐀",
+		"mouse2": "🐁",
+		"rooster": "🐓",
+		"turkey": "🦃",
+		"dove": "🕊",
+		"dog2": "🐕",
+		"poodle": "🐩",
+		"cat2": "🐈",
+		"rabbit2": "🐇",
+		"chipmunk": "🐿",
+		"feet": "🐾",
+		"paw_prints": "🐾",
+		"dragon": "🐉",
+		"dragon_face": "🐲",
+		"cactus": "🌵",
+		"christmas_tree": "🎄",
+		"evergreen_tree": "🌲",
+		"deciduous_tree": "🌳",
+		"palm_tree": "🌴",
+		"seedling": "🌱",
+		"herb": "🌿",
+		"shamrock": "☘",
+		"four_leaf_clover": "🍀",
+		"bamboo": "🎍",
+		"tanabata_tree": "🎋",
+		"leaves": "🍃",
+		"fallen_leaf": "🍂",
+		"maple_leaf": "🍁",
+		"ear_of_rice": "🌾",
+		"hibiscus": "🌺",
+		"sunflower": "🌻",
+		"rose": "🌹",
+		"tulip": "🌷",
+		"blossom": "🌼",
+		"cherry_blossom": "🌸",
+		"bouquet": "💐",
+		"mushroom": "🍄",
+		"chestnut": "🌰",
+		"jack_o_lantern": "🎃",
+		"shell": "🐚",
+		"spider_web": "🕸",
+		"earth_americas": "🌎",
+		"earth_africa": "🌍",
+		"earth_asia": "🌏",
+		"full_moon": "🌕",
+		"waning_gibbous_moon": "🌖",
+		"last_quarter_moon": "🌗",
+		"waning_crescent_moon": "🌘",
+		"new_moon": "🌑",
+		"waxing_crescent_moon": "🌒",
+		"first_quarter_moon": "🌓",
+		"moon": "🌔",
+		"waxing_gibbous_moon": "🌔",
+		"new_moon_with_face": "🌚",
+		"full_moon_with_face": "🌝",
+		"first_quarter_moon_with_face": "🌛",
+		"last_quarter_moon_with_face": "🌜",
+		"sun_with_face": "🌞",
+		"crescent_moon": "🌙",
+		"star": "⭐️",
+		"star2": "🌟",
+		"dizzy": "💫",
+		"sparkles": "✨",
+		"comet": "☄️",
+		"sunny": "☀️",
+		"sun_behind_small_cloud": "🌤",
+		"partly_sunny": "⛅️",
+		"sun_behind_large_cloud": "🌥",
+		"sun_behind_rain_cloud": "🌦",
+		"cloud": "☁️",
+		"cloud_with_rain": "🌧",
+		"cloud_with_lightning_and_rain": "⛈",
+		"cloud_with_lightning": "🌩",
+		"zap": "⚡️",
+		"fire": "🔥",
+		"boom": "💥",
+		"collision": "💥",
+		"snowflake": "❄️",
+		"cloud_with_snow": "🌨",
+		"snowman_with_snow": "☃️",
+		"snowman": "⛄️",
+		"wind_face": "🌬",
+		"dash": "💨",
+		"tornado": "🌪",
+		"fog": "🌫",
+		"open_umbrella": "☂️",
+		"umbrella": "☔️",
+		"droplet": "💧",
+		"sweat_drops": "💦",
+		"ocean": "🌊",
+		"green_apple": "🍏",
+		"apple": "🍎",
+		"pear": "🍐",
+		"tangerine": "🍊",
+		"orange": "🍊",
+		"mandarin": "🍊",
+		"lemon": "🍋",
+		"banana": "🍌",
+		"watermelon": "🍉",
+		"grapes": "🍇",
+		"strawberry": "🍓",
+		"melon": "🍈",
+		"cherries": "🍒",
+		"peach": "🍑",
+		"pineapple": "🍍",
+		"tomato": "🍅",
+		"eggplant": "🍆",
+		"hot_pepper": "🌶",
+		"corn": "🌽",
+		"sweet_potato": "🍠",
+		"honey_pot": "🍯",
+		"bread": "🍞",
+		"cheese": "🧀",
+		"poultry_leg": "🍗",
+		"meat_on_bone": "🍖",
+		"fried_shrimp": "🍤",
+		"egg": "🍳",
+		"hamburger": "🍔",
+		"fries": "🍟",
+		"hotdog": "🌭",
+		"pizza": "🍕",
+		"spaghetti": "🍝",
+		"taco": "🌮",
+		"burrito": "🌯",
+		"ramen": "🍜",
+		"stew": "🍲",
+		"fish_cake": "🍥",
+		"sushi": "🍣",
+		"bento": "🍱",
+		"curry": "🍛",
+		"rice_ball": "🍙",
+		"rice": "🍚",
+		"rice_cracker": "🍘",
+		"oden": "🍢",
+		"dango": "🍡",
+		"shaved_ice": "🍧",
+		"ice_cream": "🍨",
+		"icecream": "🍦",
+		"cake": "🍰",
+		"birthday": "🎂",
+		"custard": "🍮",
+		"candy": "🍬",
+		"lollipop": "🍭",
+		"chocolate_bar": "🍫",
+		"popcorn": "🍿",
+		"doughnut": "🍩",
+		"cookie": "🍪",
+		"beer": "🍺",
+		"beers": "🍻",
+		"wine_glass": "🍷",
+		"cocktail": "🍸",
+		"tropical_drink": "🍹",
+		"champagne": "🍾",
+		"sake": "🍶",
+		"tea": "🍵",
+		"coffee": "☕️",
+		"baby_bottle": "🍼",
+		"fork_and_knife": "🍴",
+		"plate_with_cutlery": "🍽",
+		"soccer": "⚽️",
+		"basketball": "🏀",
+		"football": "🏈",
+		"baseball": "⚾️",
+		"tennis": "🎾",
+		"volleyball": "🏐",
+		"rugby_football": "🏉",
+		"8ball": "🎱",
+		"ping_pong": "🏓",
+		"badminton": "🏸",
+		"ice_hockey": "🏒",
+		"field_hockey": "🏑",
+		"cricket": "🏏",
+		"bow_and_arrow": "🏹",
+		"golf": "⛳️",
+		"fishing_pole_and_fish": "🎣",
+		"ice_skate": "⛸",
+		"ski": "🎿",
+		"skier": "⛷",
+		"snowboarder": "🏂",
+		"weight_lifting_woman": "🏋️‍♀️",
+		"weight_lifting_man": "🏋️",
+		"basketball_woman": "⛹️‍♀️",
+		"basketball_man": "⛹️",
+		"golfing_woman": "🏌️‍♀️",
+		"golfing_man": "🏌️",
+		"surfing_woman": "🏄‍♀️",
+		"surfing_man": "🏄",
+		"surfer": "🏄",
+		"swimming_woman": "🏊‍♀️",
+		"swimming_man": "🏊",
+		"swimmer": "🏊",
+		"rowing_woman": "🚣‍♀️",
+		"rowing_man": "🚣",
+		"rowboat": "🚣",
+		"horse_racing": "🏇",
+		"biking_woman": "🚴‍♀️",
+		"biking_man": "🚴",
+		"bicyclist": "🚴",
+		"mountain_biking_woman": "🚵‍♀️",
+		"mountain_biking_man": "🚵",
+		"mountain_bicyclist": "🚵",
+		"bath": "🛀",
+		"business_suit_levitating": "🕴",
+		"reminder_ribbon": "🎗",
+		"running_shirt_with_sash": "🎽",
+		"medal_sports": "🏅",
+		"medal_military": "🎖",
+		"trophy": "🏆",
+		"rosette": "🏵",
+		"dart": "🎯",
+		"ticket": "🎫",
+		"tickets": "🎟",
+		"performing_arts": "🎭",
+		"art": "🎨",
+		"circus_tent": "🎪",
+		"clapper": "🎬",
+		"microphone": "🎤",
+		"headphones": "🎧",
+		"musical_score": "🎼",
+		"musical_keyboard": "🎹",
+		"saxophone": "🎷",
+		"trumpet": "🎺",
+		"guitar": "🎸",
+		"violin": "🎻",
+		"video_game": "🎮",
+		"slot_machine": "🎰",
+		"game_die": "🎲",
+		"bowling": "🎳",
+		"car": "🚗",
+		"red_car": "🚗",
+		"taxi": "🚕",
+		"blue_car": "🚙",
+		"bus": "🚌",
+		"trolleybus": "🚎",
+		"racing_car": "🏎",
+		"police_car": "🚓",
+		"ambulance": "🚑",
+		"fire_engine": "🚒",
+		"minibus": "🚐",
+		"truck": "🚚",
+		"articulated_lorry": "🚛",
+		"tractor": "🚜",
+		"motorcycle": "🏍",
+		"bike": "🚲",
+		"rotating_light": "🚨",
+		"oncoming_police_car": "🚔",
+		"oncoming_bus": "🚍",
+		"oncoming_automobile": "🚘",
+		"oncoming_taxi": "🚖",
+		"aerial_tramway": "🚡",
+		"mountain_cableway": "🚠",
+		"suspension_railway": "🚟",
+		"railway_car": "🚃",
+		"train": "🚋",
+		"monorail": "🚝",
+		"bullettrain_side": "🚄",
+		"bullettrain_front": "🚅",
+		"light_rail": "🚈",
+		"mountain_railway": "🚞",
+		"steam_locomotive": "🚂",
+		"train2": "🚆",
+		"metro": "🚇",
+		"tram": "🚊",
+		"station": "🚉",
+		"helicopter": "🚁",
+		"small_airplane": "🛩",
+		"airplane": "✈️",
+		"flight_departure": "🛫",
+		"flight_arrival": "🛬",
+		"boat": "⛵️",
+		"sailboat": "⛵️",
+		"motor_boat": "🛥",
+		"speedboat": "🚤",
+		"ferry": "⛴",
+		"passenger_ship": "🛳",
+		"rocket": "🚀",
+		"artificial_satellite": "🛰",
+		"seat": "💺",
+		"anchor": "⚓️",
+		"construction": "🚧",
+		"fuelpump": "⛽️",
+		"busstop": "🚏",
+		"vertical_traffic_light": "🚦",
+		"traffic_light": "🚥",
+		"world_map": "🗺",
+		"ship": "🚢",
+		"ferris_wheel": "🎡",
+		"roller_coaster": "🎢",
+		"carousel_horse": "🎠",
+		"building_construction": "🏗",
+		"foggy": "🌁",
+		"tokyo_tower": "🗼",
+		"factory": "🏭",
+		"fountain": "⛲️",
+		"rice_scene": "🎑",
+		"mountain": "⛰",
+		"mountain_snow": "🏔",
+		"mount_fuji": "🗻",
+		"volcano": "🌋",
+		"japan": "🗾",
+		"camping": "🏕",
+		"tent": "⛺️",
+		"national_park": "🏞",
+		"motorway": "🛣",
+		"railway_track": "🛤",
+		"sunrise": "🌅",
+		"sunrise_over_mountains": "🌄",
+		"desert": "🏜",
+		"beach_umbrella": "🏖",
+		"desert_island": "🏝",
+		"city_sunrise": "🌇",
+		"city_sunset": "🌆",
+		"cityscape": "🏙",
+		"night_with_stars": "🌃",
+		"bridge_at_night": "🌉",
+		"milky_way": "🌌",
+		"stars": "🌠",
+		"sparkler": "🎇",
+		"fireworks": "🎆",
+		"rainbow": "🌈",
+		"houses": "🏘",
+		"european_castle": "🏰",
+		"japanese_castle": "🏯",
+		"stadium": "🏟",
+		"statue_of_liberty": "🗽",
+		"house": "🏠",
+		"house_with_garden": "🏡",
+		"derelict_house": "🏚",
+		"office": "🏢",
+		"department_store": "🏬",
+		"post_office": "🏣",
+		"european_post_office": "🏤",
+		"hospital": "🏥",
+		"bank": "🏦",
+		"hotel": "🏨",
+		"convenience_store": "🏪",
+		"school": "🏫",
+		"love_hotel": "🏩",
+		"wedding": "💒",
+		"classical_building": "🏛",
+		"church": "⛪️",
+		"mosque": "🕌",
+		"synagogue": "🕍",
+		"kaaba": "🕋",
+		"shinto_shrine": "⛩",
+		"watch": "⌚️",
+		"iphone": "📱",
+		"calling": "📲",
+		"computer": "💻",
+		"keyboard": "⌨️",
+		"desktop_computer": "🖥",
+		"printer": "🖨",
+		"computer_mouse": "🖱",
+		"trackball": "🖲",
+		"joystick": "🕹",
+		"clamp": "🗜",
+		"minidisc": "💽",
+		"floppy_disk": "💾",
+		"cd": "💿",
+		"dvd": "📀",
+		"vhs": "📼",
+		"camera": "📷",
+		"camera_flash": "📸",
+		"video_camera": "📹",
+		"movie_camera": "🎥",
+		"film_projector": "📽",
+		"film_strip": "🎞",
+		"telephone_receiver": "📞",
+		"phone": "☎️",
+		"telephone": "☎️",
+		"pager": "📟",
+		"fax": "📠",
+		"tv": "📺",
+		"radio": "📻",
+		"studio_microphone": "🎙",
+		"level_slider": "🎚",
+		"control_knobs": "🎛",
+		"stopwatch": "⏱",
+		"timer_clock": "⏲",
+		"alarm_clock": "⏰",
+		"mantelpiece_clock": "🕰",
+		"hourglass_flowing_sand": "⏳",
+		"hourglass": "⌛️",
+		"satellite": "📡",
+		"battery": "🔋",
+		"electric_plug": "🔌",
+		"bulb": "💡",
+		"flashlight": "🔦",
+		"candle": "🕯",
+		"wastebasket": "🗑",
+		"oil_drum": "🛢",
+		"money_with_wings": "💸",
+		"dollar": "💵",
+		"yen": "💴",
+		"euro": "💶",
+		"pound": "💷",
+		"moneybag": "💰",
+		"credit_card": "💳",
+		"gem": "💎",
+		"balance_scale": "⚖",
+		"wrench": "🔧",
+		"hammer": "🔨",
+		"hammer_and_pick": "⚒",
+		"hammer_and_wrench": "🛠",
+		"pick": "⛏",
+		"nut_and_bolt": "🔩",
+		"gear": "⚙",
+		"chains": "⛓",
+		"gun": "🔫",
+		"bomb": "💣",
+		"hocho": "🔪",
+		"knife": "🔪",
+		"dagger": "🗡",
+		"crossed_swords": "⚔",
+		"shield": "🛡",
+		"smoking": "🚬",
+		"coffin": "⚰",
+		"funeral_urn": "⚱",
+		"amphora": "🏺",
+		"crystal_ball": "🔮",
+		"prayer_beads": "📿",
+		"barber": "💈",
+		"alembic": "⚗",
+		"telescope": "🔭",
+		"microscope": "🔬",
+		"hole": "🕳",
+		"pill": "💊",
+		"syringe": "💉",
+		"thermometer": "🌡",
+		"toilet": "🚽",
+		"shower": "🚿",
+		"bathtub": "🛁",
+		"bellhop_bell": "🛎",
+		"key": "🔑",
+		"old_key": "🗝",
+		"door": "🚪",
+		"couch_and_lamp": "🛋",
+		"sleeping_bed": "🛌",
+		"bed": "🛏",
+		"framed_picture": "🖼",
+		"parasol_on_ground": "⛱",
+		"moyai": "🗿",
+		"shopping": "🛍",
+		"gift": "🎁",
+		"balloon": "🎈",
+		"flags": "🎏",
+		"ribbon": "🎀",
+		"confetti_ball": "🎊",
+		"tada": "🎉",
+		"wind_chime": "🎐",
+		"izakaya_lantern": "🏮",
+		"lantern": "🏮",
+		"dolls": "🎎",
+		"email": "✉️",
+		"envelope": "✉️",
+		"envelope_with_arrow": "📩",
+		"incoming_envelope": "📨",
+		"e-mail": "📧",
+		"love_letter": "💌",
+		"inbox_tray": "📥",
+		"outbox_tray": "📤",
+		"package": "📦",
+		"label": "🏷",
+		"bookmark": "🔖",
+		"mailbox_closed": "📪",
+		"mailbox": "📫",
+		"mailbox_with_mail": "📬",
+		"mailbox_with_no_mail": "📭",
+		"postbox": "📮",
+		"postal_horn": "📯",
+		"scroll": "📜",
+		"page_with_curl": "📃",
+		"page_facing_up": "📄",
+		"bookmark_tabs": "📑",
+		"bar_chart": "📊",
+		"chart_with_upwards_trend": "📈",
+		"chart_with_downwards_trend": "📉",
+		"spiral_notepad": "🗒",
+		"spiral_calendar": "🗓",
+		"calendar": "📆",
+		"date": "📅",
+		"card_index": "📇",
+		"card_file_box": "🗃",
+		"ballot_box": "🗳",
+		"file_cabinet": "🗄",
+		"clipboard": "📋",
+		"file_folder": "📁",
+		"open_file_folder": "📂",
+		"card_index_dividers": "🗂",
+		"newspaper_roll": "🗞",
+		"newspaper": "📰",
+		"notebook": "📓",
+		"notebook_with_decorative_cover": "📔",
+		"ledger": "📒",
+		"closed_book": "📕",
+		"green_book": "📗",
+		"blue_book": "📘",
+		"orange_book": "📙",
+		"books": "📚",
+		"book": "📖",
+		"open_book": "📖",
+		"link": "🔗",
+		"paperclip": "📎",
+		"paperclips": "🖇",
+		"triangular_ruler": "📐",
+		"straight_ruler": "📏",
+		"scissors": "✂️",
+		"pushpin": "📌",
+		"round_pushpin": "📍",
+		"triangular_flag_on_post": "🚩",
+		"crossed_flags": "🎌",
+		"white_flag": "🏳️",
+		"black_flag": "🏴",
+		"checkered_flag": "🏁",
+		"rainbow_flag": "🏳️‍🌈",
+		"paintbrush": "🖌",
+		"crayon": "🖍",
+		"pen": "🖊",
+		"fountain_pen": "🖋",
+		"black_nib": "✒️",
+		"memo": "📝",
+		"pencil": "📝",
+		"pencil2": "✏️",
+		"lock_with_ink_pen": "🔏",
+		"closed_lock_with_key": "🔐",
+		"lock": "🔒",
+		"unlock": "🔓",
+		"mag": "🔍",
+		"mag_right": "🔎",
+		"heart": "❤️",
+		"yellow_heart": "💛",
+		"green_heart": "💚",
+		"blue_heart": "💙",
+		"purple_heart": "💜",
+		"broken_heart": "💔",
+		"heavy_heart_exclamation": "❣️",
+		"two_hearts": "💕",
+		"revolving_hearts": "💞",
+		"heartbeat": "💓",
+		"heartpulse": "💗",
+		"sparkling_heart": "💖",
+		"cupid": "💘",
+		"gift_heart": "💝",
+		"heart_decoration": "💟",
+		"peace_symbol": "☮️",
+		"latin_cross": "✝️",
+		"star_and_crescent": "☪️",
+		"om": "🕉",
+		"wheel_of_dharma": "☸️",
+		"star_of_david": "✡️",
+		"six_pointed_star": "🔯",
+		"menorah": "🕎",
+		"yin_yang": "☯️",
+		"orthodox_cross": "☦️",
+		"place_of_worship": "🛐",
+		"ophiuchus": "⛎",
+		"aries": "♈️",
+		"taurus": "♉️",
+		"gemini": "♊️",
+		"cancer": "♋️",
+		"leo": "♌️",
+		"virgo": "♍️",
+		"libra": "♎️",
+		"scorpius": "♏️",
+		"sagittarius": "♐️",
+		"capricorn": "♑️",
+		"aquarius": "♒️",
+		"pisces": "♓️",
+		"id": "🆔",
+		"atom_symbol": "⚛",
+		"radioactive": "☢️",
+		"biohazard": "☣️",
+		"mobile_phone_off": "📴",
+		"vibration_mode": "📳",
+		"eight_pointed_black_star": "✴️",
+		"vs": "🆚",
+		"accept": "🉑",
+		"white_flower": "💮",
+		"ideograph_advantage": "🉐",
+		"secret": "㊙️",
+		"congratulations": "㊗️",
+		"u6e80": "🈵",
+		"a": "🅰️",
+		"b": "🅱️",
+		"ab": "🆎",
+		"cl": "🆑",
+		"o2": "🅾️",
+		"sos": "🆘",
+		"no_entry": "⛔️",
+		"name_badge": "📛",
+		"no_entry_sign": "🚫",
+		"x": "❌",
+		"o": "⭕️",
+		"anger": "💢",
+		"hotsprings": "♨️",
+		"no_pedestrians": "🚷",
+		"do_not_litter": "🚯",
+		"no_bicycles": "🚳",
+		"non-potable_water": "🚱",
+		"underage": "🔞",
+		"no_mobile_phones": "📵",
+		"exclamation": "❗️",
+		"heavy_exclamation_mark": "❗️",
+		"grey_exclamation": "❕",
+		"question": "❓",
+		"grey_question": "❔",
+		"bangbang": "‼️",
+		"interrobang": "⁉️",
+		"low_brightness": "🔅",
+		"high_brightness": "🔆",
+		"trident": "🔱",
+		"fleur_de_lis": "⚜",
+		"part_alternation_mark": "〽️",
+		"warning": "⚠️",
+		"children_crossing": "🚸",
+		"beginner": "🔰",
+		"recycle": "♻️",
+		"chart": "💹",
+		"sparkle": "❇️",
+		"eight_spoked_asterisk": "✳️",
+		"negative_squared_cross_mark": "❎",
+		"white_check_mark": "✅",
+		"globe_with_meridians": "🌐",
+		"m": "Ⓜ️",
+		"diamond_shape_with_a_dot_inside": "💠",
+		"cyclone": "🌀",
+		"loop": "➿",
+		"atm": "🏧",
+		"sa": "🈂️",
+		"passport_control": "🛂",
+		"customs": "🛃",
+		"baggage_claim": "🛄",
+		"left_luggage": "🛅",
+		"wheelchair": "♿️",
+		"no_smoking": "🚭",
+		"wc": "🚾",
+		"parking": "🅿️",
+		"potable_water": "🚰",
+		"mens": "🚹",
+		"womens": "🚺",
+		"baby_symbol": "🚼",
+		"restroom": "🚻",
+		"put_litter_in_its_place": "🚮",
+		"cinema": "🎦",
+		"signal_strength": "📶",
+		"koko": "🈁",
+		"abc": "🔤",
+		"abcd": "🔡",
+		"capital_abcd": "🔠",
+		"symbols": "🔣",
+		"information_source": "ℹ️",
+		"ng": "🆖",
+		"ok": "🆗",
+		"up": "🆙",
+		"cool": "🆒",
+		"new": "🆕",
+		"free": "🆓",
+		"zero": "0️⃣",
+		"one": "1️⃣",
+		"two": "2️⃣",
+		"three": "3️⃣",
+		"four": "4️⃣",
+		"five": "5️⃣",
+		"six": "6️⃣",
+		"seven": "7️⃣",
+		"eight": "8️⃣",
+		"nine": "9️⃣",
+		"keycap_ten": "🔟",
+		"hash": "#️⃣",
+		"asterisk": "*️⃣",
+		"arrow_forward": "▶️",
+		"pause_button": "⏸",
+		"play_or_pause_button": "⏯",
+		"stop_button": "⏹",
+		"record_button": "⏺",
+		"next_track_button": "⏭",
+		"previous_track_button": "⏮",
+		"fast_forward": "⏩",
+		"rewind": "⏪",
+		"arrow_double_up": "⏫",
+		"arrow_double_down": "⏬",
+		"arrow_backward": "◀️",
+		"arrow_up_small": "🔼",
+		"arrow_down_small": "🔽",
+		"arrow_right": "➡️",
+		"arrow_left": "⬅️",
+		"arrow_up": "⬆️",
+		"arrow_down": "⬇️",
+		"arrow_upper_right": "↗️",
+		"arrow_lower_right": "↘️",
+		"arrow_lower_left": "↙️",
+		"arrow_upper_left": "↖️",
+		"arrow_up_down": "↕️",
+		"left_right_arrow": "↔️",
+		"arrow_right_hook": "↪️",
+		"leftwards_arrow_with_hook": "↩️",
+		"arrow_heading_up": "⤴️",
+		"arrow_heading_down": "⤵️",
+		"twisted_rightwards_arrows": "🔀",
+		"repeat": "🔁",
+		"repeat_one": "🔂",
+		"arrows_counterclockwise": "🔄",
+		"arrows_clockwise": "🔃",
+		"musical_note": "🎵",
+		"notes": "🎶",
+		"wavy_dash": "〰️",
+		"curly_loop": "➰",
+		"heavy_check_mark": "✔️",
+		"heavy_plus_sign": "➕",
+		"heavy_minus_sign": "➖",
+		"heavy_division_sign": "➗",
+		"heavy_multiplication_x": "✖️",
+		"heavy_dollar_sign": "💲",
+		"currency_exchange": "💱",
+		"tm": "™️",
+		"copyright": "©️",
+		"registered": "®️",
+		"end": "🔚",
+		"back": "🔙",
+		"on": "🔛",
+		"top": "🔝",
+		"soon": "🔜",
+		"ballot_box_with_check": "☑️",
+		"radio_button": "🔘",
+		"white_circle": "⚪️",
+		"black_circle": "⚫️",
+		"red_circle": "🔴",
+		"large_blue_circle": "🔵",
+		"small_red_triangle": "🔺",
+		"small_red_triangle_down": "🔻",
+		"small_orange_diamond": "🔸",
+		"small_blue_diamond": "🔹",
+		"large_orange_diamond": "🔶",
+		"large_blue_diamond": "🔷",
+		"white_square_button": "🔳",
+		"black_square_button": "🔲",
+		"black_small_square": "▪️",
+		"white_small_square": "▫️",
+		"black_medium_small_square": "◾️",
+		"white_medium_small_square": "◽️",
+		"black_medium_square": "◼️",
+		"white_medium_square": "◻️",
+		"black_large_square": "⬛️",
+		"white_large_square": "⬜️",
+		"mute": "🔇",
+		"speaker": "🔈",
+		"sound": "🔉",
+		"loud_sound": "🔊",
+		"no_bell": "🔕",
+		"bell": "🔔",
+		"mega": "📣",
+		"loudspeaker": "📢",
+		"eye_speech_bubble": "👁‍🗨",
+		"speech_balloon": "💬",
+		"thought_balloon": "💭",
+		"right_anger_bubble": "🗯",
+		"black_joker": "🃏",
+		"mahjong": "🀄️",
+		"flower_playing_cards": "🎴",
+		"spades": "♠️",
+		"clubs": "♣️",
+		"hearts": "♥️",
+		"diamonds": "♦️",
+		"clock1": "🕐",
+		"clock2": "🕑",
+		"clock3": "🕒",
+		"clock4": "🕓",
+		"clock5": "🕔",
+		"clock6": "🕕",
+		"clock7": "🕖",
+		"clock8": "🕗",
+		"clock9": "🕘",
+		"clock10": "🕙",
+		"clock11": "🕚",
+		"clock12": "🕛",
+		"clock130": "🕜",
+		"clock230": "🕝",
+		"clock330": "🕞",
+		"clock430": "🕟",
+		"clock530": "🕠",
+		"clock630": "🕡",
+		"clock730": "🕢",
+		"clock830": "🕣",
+		"clock930": "🕤",
+		"clock1030": "🕥",
+		"clock1130": "🕦",
+		"clock1230": "🕧",
+		"afghanistan": "🇦🇫",
+		"aland_islands": "🇦🇽",
+		"albania": "🇦🇱",
+		"algeria": "🇩🇿",
+		"american_samoa": "🇦🇸",
+		"andorra": "🇦🇩",
+		"angola": "🇦🇴",
+		"anguilla": "🇦🇮",
+		"antarctica": "🇦🇶",
+		"antigua_barbuda": "🇦🇬",
+		"argentina": "🇦🇷",
+		"armenia": "🇦🇲",
+		"aruba": "🇦🇼",
+		"australia": "🇦🇺",
+		"austria": "🇦🇹",
+		"azerbaijan": "🇦🇿",
+		"bahamas": "🇧🇸",
+		"bahrain": "🇧🇭",
+		"bangladesh": "🇧🇩",
+		"barbados": "🇧🇧",
+		"belarus": "🇧🇾",
+		"belgium": "🇧🇪",
+		"belize": "🇧🇿",
+		"benin": "🇧🇯",
+		"bermuda": "🇧🇲",
+		"bhutan": "🇧🇹",
+		"bolivia": "🇧🇴",
+		"caribbean_netherlands": "🇧🇶",
+		"bosnia_herzegovina": "🇧🇦",
+		"botswana": "🇧🇼",
+		"brazil": "🇧🇷",
+		"british_indian_ocean_territory": "🇮🇴",
+		"british_virgin_islands": "🇻🇬",
+		"brunei": "🇧🇳",
+		"bulgaria": "🇧🇬",
+		"burkina_faso": "🇧🇫",
+		"burundi": "🇧🇮",
+		"cape_verde": "🇨🇻",
+		"cambodia": "🇰🇭",
+		"cameroon": "🇨🇲",
+		"canada": "🇨🇦",
+		"canary_islands": "🇮🇨",
+		"cayman_islands": "🇰🇾",
+		"central_african_republic": "🇨🇫",
+		"chad": "🇹🇩",
+		"chile": "🇨🇱",
+		"cn": "🇨🇳",
+		"christmas_island": "🇨🇽",
+		"cocos_islands": "🇨🇨",
+		"colombia": "🇨🇴",
+		"comoros": "🇰🇲",
+		"congo_brazzaville": "🇨🇬",
+		"congo_kinshasa": "🇨🇩",
+		"cook_islands": "🇨🇰",
+		"costa_rica": "🇨🇷",
+		"croatia": "🇭🇷",
+		"cuba": "🇨🇺",
+		"curacao": "🇨🇼",
+		"cyprus": "🇨🇾",
+		"czech_republic": "🇨🇿",
+		"denmark": "🇩🇰",
+		"djibouti": "🇩🇯",
+		"dominica": "🇩🇲",
+		"dominican_republic": "🇩🇴",
+		"ecuador": "🇪🇨",
+		"egypt": "🇪🇬",
+		"el_salvador": "🇸🇻",
+		"equatorial_guinea": "🇬🇶",
+		"eritrea": "🇪🇷",
+		"estonia": "🇪🇪",
+		"ethiopia": "🇪🇹",
+		"eu": "🇪🇺",
+		"european_union": "🇪🇺",
+		"falkland_islands": "🇫🇰",
+		"faroe_islands": "🇫🇴",
+		"fiji": "🇫🇯",
+		"finland": "🇫🇮",
+		"fr": "🇫🇷",
+		"french_guiana": "🇬🇫",
+		"french_polynesia": "🇵🇫",
+		"french_southern_territories": "🇹🇫",
+		"gabon": "🇬🇦",
+		"gambia": "🇬🇲",
+		"georgia": "🇬🇪",
+		"de": "🇩🇪",
+		"ghana": "🇬🇭",
+		"gibraltar": "🇬🇮",
+		"greece": "🇬🇷",
+		"greenland": "🇬🇱",
+		"grenada": "🇬🇩",
+		"guadeloupe": "🇬🇵",
+		"guam": "🇬🇺",
+		"guatemala": "🇬🇹",
+		"guernsey": "🇬🇬",
+		"guinea": "🇬🇳",
+		"guinea_bissau": "🇬🇼",
+		"guyana": "🇬🇾",
+		"haiti": "🇭🇹",
+		"honduras": "🇭🇳",
+		"hong_kong": "🇭🇰",
+		"hungary": "🇭🇺",
+		"iceland": "🇮🇸",
+		"india": "🇮🇳",
+		"indonesia": "🇮🇩",
+		"iran": "🇮🇷",
+		"iraq": "🇮🇶",
+		"ireland": "🇮🇪",
+		"isle_of_man": "🇮🇲",
+		"israel": "🇮🇱",
+		"it": "🇮🇹",
+		"cote_divoire": "🇨🇮",
+		"jamaica": "🇯🇲",
+		"jp": "🇯🇵",
+		"jersey": "🇯🇪",
+		"jordan": "🇯🇴",
+		"kazakhstan": "🇰🇿",
+		"kenya": "🇰🇪",
+		"kiribati": "🇰🇮",
+		"kosovo": "🇽🇰",
+		"kuwait": "🇰🇼",
+		"kyrgyzstan": "🇰🇬",
+		"laos": "🇱🇦",
+		"latvia": "🇱🇻",
+		"lebanon": "🇱🇧",
+		"lesotho": "🇱🇸",
+		"liberia": "🇱🇷",
+		"libya": "🇱🇾",
+		"liechtenstein": "🇱🇮",
+		"lithuania": "🇱🇹",
+		"luxembourg": "🇱🇺",
+		"macau": "🇲🇴",
+		"macedonia": "🇲🇰",
+		"madagascar": "🇲🇬",
+		"malawi": "🇲🇼",
+		"malaysia": "🇲🇾",
+		"maldives": "🇲🇻",
+		"mali": "🇲🇱",
+		"malta": "🇲🇹",
+		"marshall_islands": "🇲🇭",
+		"martinique": "🇲🇶",
+		"mauritania": "🇲🇷",
+		"mauritius": "🇲🇺",
+		"mayotte": "🇾🇹",
+		"mexico": "🇲🇽",
+		"micronesia": "🇫🇲",
+		"moldova": "🇲🇩",
+		"monaco": "🇲🇨",
+		"mongolia": "🇲🇳",
+		"montenegro": "🇲🇪",
+		"montserrat": "🇲🇸",
+		"morocco": "🇲🇦",
+		"mozambique": "🇲🇿",
+		"myanmar": "🇲🇲",
+		"namibia": "🇳🇦",
+		"nauru": "🇳🇷",
+		"nepal": "🇳🇵",
+		"netherlands": "🇳🇱",
+		"new_caledonia": "🇳🇨",
+		"new_zealand": "🇳🇿",
+		"nicaragua": "🇳🇮",
+		"niger": "🇳🇪",
+		"nigeria": "🇳🇬",
+		"niue": "🇳🇺",
+		"norfolk_island": "🇳🇫",
+		"northern_mariana_islands": "🇲🇵",
+		"north_korea": "🇰🇵",
+		"norway": "🇳🇴",
+		"oman": "🇴🇲",
+		"pakistan": "🇵🇰",
+		"palau": "🇵🇼",
+		"palestinian_territories": "🇵🇸",
+		"panama": "🇵🇦",
+		"papua_new_guinea": "🇵🇬",
+		"paraguay": "🇵🇾",
+		"peru": "🇵🇪",
+		"philippines": "🇵🇭",
+		"pitcairn_islands": "🇵🇳",
+		"poland": "🇵🇱",
+		"portugal": "🇵🇹",
+		"puerto_rico": "🇵🇷",
+		"qatar": "🇶🇦",
+		"reunion": "🇷🇪",
+		"romania": "🇷🇴",
+		"ru": "🇷🇺",
+		"rwanda": "🇷🇼",
+		"st_barthelemy": "🇧🇱",
+		"st_helena": "🇸🇭",
+		"st_kitts_nevis": "🇰🇳",
+		"st_lucia": "🇱🇨",
+		"st_pierre_miquelon": "🇵🇲",
+		"st_vincent_grenadines": "🇻🇨",
+		"samoa": "🇼🇸",
+		"san_marino": "🇸🇲",
+		"sao_tome_principe": "🇸🇹",
+		"saudi_arabia": "🇸🇦",
+		"senegal": "🇸🇳",
+		"serbia": "🇷🇸",
+		"seychelles": "🇸🇨",
+		"sierra_leone": "🇸🇱",
+		"singapore": "🇸🇬",
+		"sint_maarten": "🇸🇽",
+		"slovakia": "🇸🇰",
+		"slovenia": "🇸🇮",
+		"solomon_islands": "🇸🇧",
+		"somalia": "🇸🇴",
+		"south_africa": "🇿🇦",
+		"south_georgia_south_sandwich_islands": "🇬🇸",
+		"kr": "🇰🇷",
+		"south_sudan": "🇸🇸",
+		"es": "🇪🇸",
+		"sri_lanka": "🇱🇰",
+		"sudan": "🇸🇩",
+		"suriname": "🇸🇷",
+		"swaziland": "🇸🇿",
+		"sweden": "🇸🇪",
+		"switzerland": "🇨🇭",
+		"syria": "🇸🇾",
+		"taiwan": "🇹🇼",
+		"tajikistan": "🇹🇯",
+		"tanzania": "🇹🇿",
+		"thailand": "🇹🇭",
+		"timor_leste": "🇹🇱",
+		"togo": "🇹🇬",
+		"tokelau": "🇹🇰",
+		"tonga": "🇹🇴",
+		"trinidad_tobago": "🇹🇹",
+		"tunisia": "🇹🇳",
+		"tr": "🇹🇷",
+		"turkmenistan": "🇹🇲",
+		"turks_caicos_islands": "🇹🇨",
+		"tuvalu": "🇹🇻",
+		"uganda": "🇺🇬",
+		"ukraine": "🇺🇦",
+		"united_arab_emirates": "🇦🇪",
+		"gb": "🇬🇧",
+		"uk": "🇬🇧",
+		"us": "🇺🇸",
+		"us_virgin_islands": "🇻🇮",
+		"uruguay": "🇺🇾",
+		"uzbekistan": "🇺🇿",
+		"vanuatu": "🇻🇺",
+		"vatican_city": "🇻🇦",
+		"venezuela": "🇻🇪",
+		"vietnam": "🇻🇳",
+		"wallis_futuna": "🇼🇫",
+		"western_sahara": "🇪🇭",
+		"yemen": "🇾🇪",
+		"zambia": "🇿🇲",
+		"zimbabwe": "🇿🇼"
+	};
+
+/***/ },
+/* 256 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(259)
-	module.exports = __webpack_require__(261)
+	'use strict';
+	
+	
+	var emojies_defs      = __webpack_require__(255);
+	var emojies_shortcuts = __webpack_require__(257);
+	var emoji_html        = __webpack_require__(258);
+	var emoji_replace     = __webpack_require__(259);
+	var normalize_opts    = __webpack_require__(260);
+	
+	
+	module.exports = function emoji_plugin(md, options) {
+	  var defaults = {
+	    defs: emojies_defs,
+	    shortcuts: emojies_shortcuts,
+	    enabled: []
+	  };
+	
+	  var opts = normalize_opts(md.utils.assign({}, defaults, options || {}));
+	
+	  md.renderer.rules.emoji = emoji_html;
+	
+	  md.core.ruler.push('emoji', emoji_replace(md, opts.defs, opts.shortcuts, opts.scanRE, opts.replaceRE));
+	};
+
+
+/***/ },
+/* 257 */
+/***/ function(module, exports) {
+
+	// Emoticons -> Emoji mapping.
+	//
+	// (!) Some patterns skipped, to avoid collisions
+	// without increase matcher complicity. Than can change in future.
+	//
+	// Places to look for more emoticons info:
+	//
+	// - http://en.wikipedia.org/wiki/List_of_emoticons#Western
+	// - https://github.com/wooorm/emoticon/blob/master/Support.md
+	// - http://factoryjoe.com/projects/emoticons/
+	//
+	'use strict';
+	
+	module.exports = {
+	  angry:            [ '>:(', '>:-(' ],
+	  blush:            [ ':")', ':-")' ],
+	  broken_heart:     [ '</3', '<\\3' ],
+	  // :\ and :-\ not used because of conflict with markdown escaping
+	  confused:         [ ':/', ':-/' ], // twemoji shows question
+	  cry:              [ ":'(", ":'-(", ':,(', ':,-(' ],
+	  frowning:         [ ':(', ':-(' ],
+	  heart:            [ '<3' ],
+	  imp:              [ ']:(', ']:-(' ],
+	  innocent:         [ 'o:)', 'O:)', 'o:-)', 'O:-)', '0:)', '0:-)' ],
+	  joy:              [ ":')", ":'-)", ':,)', ':,-)', ":'D", ":'-D", ':,D', ':,-D' ],
+	  kissing:          [ ':*', ':-*' ],
+	  laughing:         [ 'x-)', 'X-)' ],
+	  neutral_face:     [ ':|', ':-|' ],
+	  open_mouth:       [ ':o', ':-o', ':O', ':-O' ],
+	  rage:             [ ':@', ':-@' ],
+	  smile:            [ ':D', ':-D' ],
+	  smiley:           [ ':)', ':-)' ],
+	  smiling_imp:      [ ']:)', ']:-)' ],
+	  sob:              [ ":,'(", ":,'-(", ';(', ';-(' ],
+	  stuck_out_tongue: [ ':P', ':-P' ],
+	  sunglasses:       [ '8-)', 'B-)' ],
+	  sweat:            [ ',:(', ',:-(' ],
+	  sweat_smile:      [ ',:)', ',:-)' ],
+	  unamused:         [ ':s', ':-S', ':z', ':-Z', ':$', ':-$' ],
+	  wink:             [ ';)', ';-)' ]
+	};
+
+
+/***/ },
+/* 258 */
+/***/ function(module, exports) {
+
+	'use strict';
+	
+	module.exports = function emoji_html(tokens, idx /*, options, env */) {
+	  return tokens[idx].content;
+	};
+
+
+/***/ },
+/* 259 */
+/***/ function(module, exports) {
+
+	// Emojies & shortcuts replacement logic.
+	//
+	// Note: In theory, it could be faster to parse :smile: in inline chain and
+	// leave only shortcuts here. But, who care...
+	//
+	
+	'use strict';
+	
+	
+	module.exports = function create_rule(md, emojies, shortcuts, scanRE, replaceRE) {
+	  var arrayReplaceAt = md.utils.arrayReplaceAt,
+	      ucm = md.utils.lib.ucmicro,
+	      ZPCc = new RegExp([ ucm.Z.source, ucm.P.source, ucm.Cc.source ].join('|'));
+	
+	  function splitTextToken(text, level, Token) {
+	    var token, last_pos = 0, nodes = [];
+	
+	    text.replace(replaceRE, function (match, offset, src) {
+	      var emoji_name;
+	      // Validate emoji name
+	      if (shortcuts.hasOwnProperty(match)) {
+	        // replace shortcut with full name
+	        emoji_name = shortcuts[match];
+	
+	        // Don't allow letters before any shortcut (as in no ":/" in http://)
+	        if (offset > 0 && !ZPCc.test(src[offset - 1])) {
+	          return;
+	        }
+	
+	        // Don't allow letters after any shortcut
+	        if (offset + match.length < src.length && !ZPCc.test(src[offset + match.length])) {
+	          return;
+	        }
+	      } else {
+	        emoji_name = match.slice(1, -1);
+	      }
+	
+	      // Add new tokens to pending list
+	      if (offset > last_pos) {
+	        token         = new Token('text', '', 0);
+	        token.content = text.slice(last_pos, offset);
+	        nodes.push(token);
+	      }
+	
+	      token         = new Token('emoji', '', 0);
+	      token.markup  = emoji_name;
+	      token.content = emojies[emoji_name];
+	      nodes.push(token);
+	
+	      last_pos = offset + match.length;
+	    });
+	
+	    if (last_pos < text.length) {
+	      token         = new Token('text', '', 0);
+	      token.content = text.slice(last_pos);
+	      nodes.push(token);
+	    }
+	
+	    return nodes;
+	  }
+	
+	  return function emoji_replace(state) {
+	    var i, j, l, tokens, token,
+	        blockTokens = state.tokens,
+	        autolinkLevel = 0;
+	
+	    for (j = 0, l = blockTokens.length; j < l; j++) {
+	      if (blockTokens[j].type !== 'inline') { continue; }
+	      tokens = blockTokens[j].children;
+	
+	      // We scan from the end, to keep position when new tags added.
+	      // Use reversed logic in links start/end match
+	      for (i = tokens.length - 1; i >= 0; i--) {
+	        token = tokens[i];
+	
+	        if (token.type === 'link_open' || token.type === 'link_close') {
+	          if (token.info === 'auto') { autolinkLevel -= token.nesting; }
+	        }
+	
+	        if (token.type === 'text' && scanRE.test(token.content) && autolinkLevel === 0) {
+	          // replace current node
+	          blockTokens[j].children = tokens = arrayReplaceAt(
+	            tokens, i, splitTextToken(token.content, token.level, state.Token)
+	          );
+	        }
+	      }
+	    }
+	  };
+	};
+
+
+/***/ },
+/* 260 */
+/***/ function(module, exports) {
+
+	// Convert input options to more useable format
+	// and compile search regexp
+	
+	'use strict';
+	
+	
+	function quoteRE(str) {
+	  return str.replace(/[.?*+^$[\]\\(){}|-]/g, '\\$&');
+	}
+	
+	
+	module.exports = function normalize_opts(options) {
+	  var emojies = options.defs,
+	      shortcuts;
+	
+	  // Filter emojies by whitelist, if needed
+	  if (options.enabled.length) {
+	    emojies = Object.keys(emojies).reduce(function (acc, key) {
+	      if (options.enabled.indexOf(key) >= 0) {
+	        acc[key] = emojies[key];
+	      }
+	      return acc;
+	    }, {});
+	  }
+	
+	  // Flatten shortcuts to simple object: { alias: emoji_name }
+	  shortcuts = Object.keys(options.shortcuts).reduce(function (acc, key) {
+	    // Skip aliases for filtered emojies, to reduce regexp
+	    if (!emojies[key]) { return acc; }
+	
+	    if (Array.isArray(options.shortcuts[key])) {
+	      options.shortcuts[key].forEach(function (alias) {
+	        acc[alias] = key;
+	      });
+	      return acc;
+	    }
+	
+	    acc[options.shortcuts[key]] = key;
+	    return acc;
+	  }, {});
+	
+	  // Compile regexp
+	  var names = Object.keys(emojies)
+	                .map(function (name) { return ':' + name + ':'; })
+	                .concat(Object.keys(shortcuts))
+	                .sort()
+	                .reverse()
+	                .map(function (name) { return quoteRE(name); })
+	                .join('|');
+	  var scanRE = RegExp(names);
+	  var replaceRE = RegExp(names, 'g');
+	
+	  return {
+	    defs: emojies,
+	    shortcuts: shortcuts,
+	    scanRE: scanRE,
+	    replaceRE: replaceRE
+	  };
+	};
+
+
+/***/ },
+/* 261 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(262)
+	module.exports = __webpack_require__(264)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(262)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(265)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -19728,13 +19935,13 @@
 	}
 
 /***/ },
-/* 259 */
+/* 262 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(260);
+	var content = __webpack_require__(263);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(150)(content, {});
@@ -19754,7 +19961,7 @@
 	}
 
 /***/ },
-/* 260 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(149)();
@@ -19768,7 +19975,7 @@
 
 
 /***/ },
-/* 261 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -19818,26 +20025,26 @@
 	// <script>
 
 /***/ },
-/* 262 */
+/* 265 */
 /***/ function(module, exports) {
 
 	module.exports = "<button type=\"button\" class=\"collapse-button btn btn-default\">\n        <span :class=\"['glyphicon', {'glyphicon-menu-down': !isOpen, 'glyphicon-menu-up': isOpen}]\"\n              aria-hidden=\"true\"></span>\n    </button>";
 
 /***/ },
-/* 263 */
+/* 266 */
 /***/ function(module, exports) {
 
 	module.exports = "<div :class=\"['panel', panelType, {'expandable-panel': isExpandablePanel}]\">\n    <div :class=\"['panel-heading',{'accordion-toggle':canCollapse}]\"\n         @click.prevent=\"canCollapse && toggle()\">\n      <div class=\"header-wrapper\">\n        <span :class=\"['caret', {'caret-collapse': !isOpen}]\" v-show=\"showCaret\"></span>\n        <slot name=\"header\">\n          <span class=\"panel-title\">{{{ headerContent }}}</span>\n        </slot>\n      </div>\n      <div class=\"button-wrapper\">\n        <slot name=\"button\">\n          <panel-switch v-show=\"canCollapse && !noSwitch && !showCaret\" v-bind:is-open=\"isOpen\" @click.stop=\"expand()\"></panel-switch>\n        </slot>\n      </div>\n    </div>\n    <div class=\"panel-collapse\"\n      v-el:panel\n      v-show=\"isOpen\"\n    >\n      <div class=\"panel-body\">\n        <slot></slot>\n      </div>\n    </div>\n  </div>";
 
 /***/ },
-/* 264 */
+/* 267 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(265)
-	module.exports = __webpack_require__(267)
+	__webpack_require__(268)
+	module.exports = __webpack_require__(270)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(283)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(286)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -19855,13 +20062,13 @@
 	}
 
 /***/ },
-/* 265 */
+/* 268 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(266);
+	var content = __webpack_require__(269);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(150)(content, {});
@@ -19881,7 +20088,7 @@
 	}
 
 /***/ },
-/* 266 */
+/* 269 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(149)();
@@ -19895,7 +20102,7 @@
 
 
 /***/ },
-/* 267 */
+/* 270 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -19904,7 +20111,7 @@
 	  value: true
 	});
 	
-	var _typeof2 = __webpack_require__(268);
+	var _typeof2 = __webpack_require__(271);
 	
 	var _typeof3 = _interopRequireDefault(_typeof2);
 	
@@ -20347,7 +20554,7 @@
 	// </style>
 
 /***/ },
-/* 268 */
+/* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -20358,7 +20565,7 @@
 	
 	var _iterator2 = _interopRequireDefault(_iterator);
 	
-	var _symbol = __webpack_require__(269);
+	var _symbol = __webpack_require__(272);
 	
 	var _symbol2 = _interopRequireDefault(_symbol);
 	
@@ -20373,23 +20580,23 @@
 	};
 
 /***/ },
-/* 269 */
+/* 272 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(270), __esModule: true };
+	module.exports = { "default": __webpack_require__(273), __esModule: true };
 
 /***/ },
-/* 270 */
+/* 273 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(271);
-	__webpack_require__(280);
-	__webpack_require__(281);
-	__webpack_require__(282);
+	__webpack_require__(274);
+	__webpack_require__(283);
+	__webpack_require__(284);
+	__webpack_require__(285);
 	module.exports = __webpack_require__(63).Symbol;
 
 /***/ },
-/* 271 */
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20399,24 +20606,24 @@
 	  , DESCRIPTORS    = __webpack_require__(71)
 	  , $export        = __webpack_require__(61)
 	  , redefine       = __webpack_require__(84)
-	  , META           = __webpack_require__(272).KEY
+	  , META           = __webpack_require__(275).KEY
 	  , $fails         = __webpack_require__(72)
 	  , shared         = __webpack_require__(99)
 	  , setToStringTag = __webpack_require__(103)
 	  , uid            = __webpack_require__(100)
 	  , wks            = __webpack_require__(104)
 	  , wksExt         = __webpack_require__(111)
-	  , wksDefine      = __webpack_require__(273)
-	  , keyOf          = __webpack_require__(274)
-	  , enumKeys       = __webpack_require__(275)
-	  , isArray        = __webpack_require__(278)
+	  , wksDefine      = __webpack_require__(276)
+	  , keyOf          = __webpack_require__(277)
+	  , enumKeys       = __webpack_require__(278)
+	  , isArray        = __webpack_require__(281)
 	  , anObject       = __webpack_require__(68)
 	  , toIObject      = __webpack_require__(92)
 	  , toPrimitive    = __webpack_require__(74)
 	  , createDesc     = __webpack_require__(75)
 	  , _create        = __webpack_require__(88)
 	  , gOPNExt        = __webpack_require__(116)
-	  , $GOPD          = __webpack_require__(279)
+	  , $GOPD          = __webpack_require__(282)
 	  , $DP            = __webpack_require__(67)
 	  , $keys          = __webpack_require__(90)
 	  , gOPD           = $GOPD.f
@@ -20542,8 +20749,8 @@
 	  $GOPD.f = $getOwnPropertyDescriptor;
 	  $DP.f   = $defineProperty;
 	  __webpack_require__(117).f = gOPNExt.f = $getOwnPropertyNames;
-	  __webpack_require__(277).f  = $propertyIsEnumerable;
-	  __webpack_require__(276).f = $getOwnPropertySymbols;
+	  __webpack_require__(280).f  = $propertyIsEnumerable;
+	  __webpack_require__(279).f = $getOwnPropertySymbols;
 	
 	  if(DESCRIPTORS && !__webpack_require__(83)){
 	    redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
@@ -20629,7 +20836,7 @@
 	setToStringTag(global.JSON, 'JSON', true);
 
 /***/ },
-/* 272 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var META     = __webpack_require__(100)('meta')
@@ -20687,7 +20894,7 @@
 	};
 
 /***/ },
-/* 273 */
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var global         = __webpack_require__(62)
@@ -20701,7 +20908,7 @@
 	};
 
 /***/ },
-/* 274 */
+/* 277 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var getKeys   = __webpack_require__(90)
@@ -20716,13 +20923,13 @@
 	};
 
 /***/ },
-/* 275 */
+/* 278 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// all enumerable object keys, includes symbols
 	var getKeys = __webpack_require__(90)
-	  , gOPS    = __webpack_require__(276)
-	  , pIE     = __webpack_require__(277);
+	  , gOPS    = __webpack_require__(279)
+	  , pIE     = __webpack_require__(280);
 	module.exports = function(it){
 	  var result     = getKeys(it)
 	    , getSymbols = gOPS.f;
@@ -20736,19 +20943,19 @@
 	};
 
 /***/ },
-/* 276 */
+/* 279 */
 /***/ function(module, exports) {
 
 	exports.f = Object.getOwnPropertySymbols;
 
 /***/ },
-/* 277 */
+/* 280 */
 /***/ function(module, exports) {
 
 	exports.f = {}.propertyIsEnumerable;
 
 /***/ },
-/* 278 */
+/* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.2.2 IsArray(argument)
@@ -20758,10 +20965,10 @@
 	};
 
 /***/ },
-/* 279 */
+/* 282 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var pIE            = __webpack_require__(277)
+	var pIE            = __webpack_require__(280)
 	  , createDesc     = __webpack_require__(75)
 	  , toIObject      = __webpack_require__(92)
 	  , toPrimitive    = __webpack_require__(74)
@@ -20779,38 +20986,38 @@
 	};
 
 /***/ },
-/* 280 */
-/***/ function(module, exports) {
-
-
-
-/***/ },
-/* 281 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(273)('asyncIterator');
-
-/***/ },
-/* 282 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(273)('observable');
-
-/***/ },
 /* 283 */
 /***/ function(module, exports) {
 
-	module.exports = "<div v-el:select=\"\" :class=\"classes\" _v-312fa98d=\"\">\n    <button type=\"button\" class=\"form-control dropdown-toggle\" :disabled=\"disabled || !hasParent\" :readonly=\"readonly\" @click=\"toggle()\" @keyup.esc=\"show = false\" _v-312fa98d=\"\">\n      <span class=\"btn-content\" v-html=\"loading ? text.loading : showPlaceholder || selected\" _v-312fa98d=\"\"></span>\n      <span v-if=\"clearButton&amp;&amp;values.length\" class=\"close\" @click=\"clear()\" _v-312fa98d=\"\">×</span>\n    </button>\n    <select v-el:sel=\"\" v-model=\"value\" v-show=\"show\" name=\"{{name}}\" class=\"secret\" :multiple=\"multiple\" :required=\"required\" :readonly=\"readonly\" :disabled=\"disabled\" _v-312fa98d=\"\">\n      <option v-if=\"required\" value=\"\" _v-312fa98d=\"\"></option>\n      <option v-for=\"option in options\" :value=\"option[optionsValue]||option\" _v-312fa98d=\"\">{{ option[optionsLabel]||option }}</option>\n    </select>\n    <ul class=\"dropdown-menu\" _v-312fa98d=\"\">\n      <template v-if=\"options.length\" _v-312fa98d=\"\">\n        <li v-if=\"canSearch\" class=\"bs-searchbox\" _v-312fa98d=\"\">\n          <input type=\"text\" placeholder=\"{{searchText||text.search}}\" class=\"form-control\" autocomplete=\"off\" v-el:search=\"\" v-model=\"searchValue\" @keyup.esc=\"show = false\" _v-312fa98d=\"\">\n          <span v-show=\"searchValue\" class=\"close\" @click=\"clearSearch\" _v-312fa98d=\"\">×</span>\n        </li>\n        <li v-if=\"required&amp;&amp;!clearButton\" _v-312fa98d=\"\"><a @mousedown.prevent=\"clear() &amp;&amp; blur()\" _v-312fa98d=\"\">{{ placeholder || text.notSelected }}</a></li>\n        <li v-for=\"option in options | filterBy searchValue\" :id=\"option[optionsValue]||option\" _v-312fa98d=\"\">\n          <a @mousedown.prevent=\"select(option[optionsValue],option)\" _v-312fa98d=\"\">\n            <span v-html=\"option[optionsLabel]||option\" _v-312fa98d=\"\"></span>\n            <span class=\"glyphicon glyphicon-ok check-mark\" v-show=\"isSelected(option[optionsValue])\" _v-312fa98d=\"\"></span>\n          </a>\n        </li>\n      </template>\n      <slot _v-312fa98d=\"\"></slot>\n      <div v-if=\"showNotify &amp;&amp; !closeOnSelect\" class=\"notify in\" transition=\"fadein\" _v-312fa98d=\"\">{{limitText}}</div>\n    </ul>\n    <div v-if=\"showNotify &amp;&amp; closeOnSelect\" class=\"notify out\" transition=\"fadein\" _v-312fa98d=\"\"><div _v-312fa98d=\"\">{{limitText}}</div></div>\n  </div>";
+
 
 /***/ },
 /* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(285)
-	module.exports = __webpack_require__(287)
+	__webpack_require__(276)('asyncIterator');
+
+/***/ },
+/* 285 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(276)('observable');
+
+/***/ },
+/* 286 */
+/***/ function(module, exports) {
+
+	module.exports = "<div v-el:select=\"\" :class=\"classes\" _v-312fa98d=\"\">\n    <button type=\"button\" class=\"form-control dropdown-toggle\" :disabled=\"disabled || !hasParent\" :readonly=\"readonly\" @click=\"toggle()\" @keyup.esc=\"show = false\" _v-312fa98d=\"\">\n      <span class=\"btn-content\" v-html=\"loading ? text.loading : showPlaceholder || selected\" _v-312fa98d=\"\"></span>\n      <span v-if=\"clearButton&amp;&amp;values.length\" class=\"close\" @click=\"clear()\" _v-312fa98d=\"\">×</span>\n    </button>\n    <select v-el:sel=\"\" v-model=\"value\" v-show=\"show\" name=\"{{name}}\" class=\"secret\" :multiple=\"multiple\" :required=\"required\" :readonly=\"readonly\" :disabled=\"disabled\" _v-312fa98d=\"\">\n      <option v-if=\"required\" value=\"\" _v-312fa98d=\"\"></option>\n      <option v-for=\"option in options\" :value=\"option[optionsValue]||option\" _v-312fa98d=\"\">{{ option[optionsLabel]||option }}</option>\n    </select>\n    <ul class=\"dropdown-menu\" _v-312fa98d=\"\">\n      <template v-if=\"options.length\" _v-312fa98d=\"\">\n        <li v-if=\"canSearch\" class=\"bs-searchbox\" _v-312fa98d=\"\">\n          <input type=\"text\" placeholder=\"{{searchText||text.search}}\" class=\"form-control\" autocomplete=\"off\" v-el:search=\"\" v-model=\"searchValue\" @keyup.esc=\"show = false\" _v-312fa98d=\"\">\n          <span v-show=\"searchValue\" class=\"close\" @click=\"clearSearch\" _v-312fa98d=\"\">×</span>\n        </li>\n        <li v-if=\"required&amp;&amp;!clearButton\" _v-312fa98d=\"\"><a @mousedown.prevent=\"clear() &amp;&amp; blur()\" _v-312fa98d=\"\">{{ placeholder || text.notSelected }}</a></li>\n        <li v-for=\"option in options | filterBy searchValue\" :id=\"option[optionsValue]||option\" _v-312fa98d=\"\">\n          <a @mousedown.prevent=\"select(option[optionsValue],option)\" _v-312fa98d=\"\">\n            <span v-html=\"option[optionsLabel]||option\" _v-312fa98d=\"\"></span>\n            <span class=\"glyphicon glyphicon-ok check-mark\" v-show=\"isSelected(option[optionsValue])\" _v-312fa98d=\"\"></span>\n          </a>\n        </li>\n      </template>\n      <slot _v-312fa98d=\"\"></slot>\n      <div v-if=\"showNotify &amp;&amp; !closeOnSelect\" class=\"notify in\" transition=\"fadein\" _v-312fa98d=\"\">{{limitText}}</div>\n    </ul>\n    <div v-if=\"showNotify &amp;&amp; closeOnSelect\" class=\"notify out\" transition=\"fadein\" _v-312fa98d=\"\"><div _v-312fa98d=\"\">{{limitText}}</div></div>\n  </div>";
+
+/***/ },
+/* 287 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(288)
+	module.exports = __webpack_require__(290)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(301)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(304)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -20828,13 +21035,13 @@
 	}
 
 /***/ },
-/* 285 */
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(286);
+	var content = __webpack_require__(289);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(150)(content, {});
@@ -20854,7 +21061,7 @@
 	}
 
 /***/ },
-/* 286 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(149)();
@@ -20868,7 +21075,7 @@
 
 
 /***/ },
-/* 287 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20879,7 +21086,7 @@
 	
 	var _utils = __webpack_require__(126);
 	
-	var _Morph = __webpack_require__(288);
+	var _Morph = __webpack_require__(291);
 	
 	var _Morph2 = _interopRequireDefault(_Morph);
 	
@@ -20904,11 +21111,13 @@
 	//             </div>
 	//         </div>
 	//         <accordion>
-	//             <panel header="Hint" expandable>
-	//                 <slot name="hint">
-	//                     No hint is available for this question.
-	//                 </slot>
-	//             </panel>
+	//             <div v-show="hasHintSlot">
+	//                 <panel header="Hint" expandable>
+	//                     <slot name="hint">
+	//                         No hint is available for this question.
+	//                     </slot>
+	//                 </panel>
+	//             </div>
 	//             <panel header="Answer" expandable>
 	//                 <slot name="answer"></slot>
 	//             </panel>
@@ -20929,6 +21138,15 @@
 	      coerce: _utils.coerce.boolean,
 	      default: false
 	    }
+	  },
+	  data: function data() {
+	    return {
+	      hasHintSlot: true
+	    };
+	  },
+	  attached: function attached() {
+	    var hasHintSlot = !!this.$el.querySelector('[slot="hint"]');
+	    this.hasHintSlot = hasHintSlot;
 	  }
 	};
 	// </script>
@@ -20946,14 +21164,14 @@
 	// </style>
 
 /***/ },
-/* 288 */
+/* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(289)
-	module.exports = __webpack_require__(291)
+	__webpack_require__(292)
+	module.exports = __webpack_require__(294)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(300)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(303)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -20971,13 +21189,13 @@
 	}
 
 /***/ },
-/* 289 */
+/* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(290);
+	var content = __webpack_require__(293);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(150)(content, {});
@@ -20997,7 +21215,7 @@
 	}
 
 /***/ },
-/* 290 */
+/* 293 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(149)();
@@ -21011,7 +21229,7 @@
 
 
 /***/ },
-/* 291 */
+/* 294 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21030,7 +21248,7 @@
 	
 	var _Panel2 = _interopRequireDefault(_Panel);
 	
-	var _DynamicPanel = __webpack_require__(292);
+	var _DynamicPanel = __webpack_require__(295);
 	
 	var _DynamicPanel2 = _interopRequireDefault(_DynamicPanel);
 	
@@ -21125,13 +21343,13 @@
 	// </style>
 
 /***/ },
-/* 292 */
+/* 295 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(293)
+	module.exports = __webpack_require__(296)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(299)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(302)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -21149,7 +21367,7 @@
 	}
 
 /***/ },
-/* 293 */
+/* 296 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21160,7 +21378,7 @@
 	
 	var _utils = __webpack_require__(126);
 	
-	var _Retriever = __webpack_require__(294);
+	var _Retriever = __webpack_require__(297);
 	
 	var _Retriever2 = _interopRequireDefault(_Retriever);
 	
@@ -21238,13 +21456,13 @@
 	// <script>
 
 /***/ },
-/* 294 */
+/* 297 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(295)
+	module.exports = __webpack_require__(298)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(298)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(301)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -21262,7 +21480,7 @@
 	}
 
 /***/ },
-/* 295 */
+/* 298 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -21346,17 +21564,17 @@
 	// </template>
 	
 	// <script>
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(296)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(299)))
 
 /***/ },
-/* 296 */
+/* 299 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["jQuery"] = __webpack_require__(297);
+	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["jQuery"] = __webpack_require__(300);
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 297 */
+/* 300 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -31582,44 +31800,44 @@
 
 
 /***/ },
-/* 298 */
+/* 301 */
 /***/ function(module, exports) {
 
 	module.exports = "<div>\n    Loading...\n  </div>";
 
 /***/ },
-/* 299 */
+/* 302 */
 /***/ function(module, exports) {
 
 	module.exports = "<panel :header=\"header\" :is-open=\"isOpen\" :type=\"type\" expandable no-switch>\n    <slot name=\"button\" slot=\"button\"></slot>\n    <retriever v-ref:retriever :src=\"src\" :fragment=\"fragment\" delay></retriever>\n  </panel>";
 
 /***/ },
-/* 300 */
+/* 303 */
 /***/ function(module, exports) {
 
 	module.exports = "<div :class=\"['morph', {'morph-expanded': isOpen}]\">\n        <div class=\"morph-display-wrapper\"\n             @click.prevent=\"expand()\"\n             v-show=\"!isOpen\">\n            <slot name=\"display\">\n                <button class=\"morph-display-button btn btn-default\">{{{titleContent}}}</button>\n            </slot>\n        </div>\n\n        <div class=\"morph-details\"\n             v-el:details\n             v-show=\"isOpen\">\n            <dynamic-panel :header=\"title\" :src=\"src\" :is-open=\"isOpen\" v-if=\"isDynamic\">\n                <button type=\"button\" class=\"close-button btn btn-default\" slot=\"button\" @click.stop=\"close()\">\n                    <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                </button>\n            </dynamic-panel>\n            <Panel :header=\"title\" v-else>\n                <button type=\"button\" class=\"close-button btn btn-default\" slot=\"button\" @click.stop=\"close()\">\n                    <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                </button>\n                <slot></slot>\n            </Panel>\n        </div>\n    </div>";
 
 /***/ },
-/* 301 */
+/* 304 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"question-wrapper\">\n        <div class=\"body-wrapper\">\n            <!-- Default slot is question body -->\n            <slot></slot>\n            <div v-if=\"hasInput\" class=\"textarea-container\">\n                <div><strong>You can write your answer in the box below.</strong></div>\n                <textarea class=\"form-control question-input\" rows=\"3\"></textarea>\n            </div>\n        </div>\n        <accordion>\n            <panel header=\"Hint\" expandable>\n                <slot name=\"hint\">\n                    No hint is available for this question.\n                </slot>\n            </panel>\n            <panel header=\"Answer\" expandable>\n                <slot name=\"answer\"></slot>\n            </panel>\n        </accordion>\n    </div>";
+	module.exports = "<div class=\"question-wrapper\">\n        <div class=\"body-wrapper\">\n            <!-- Default slot is question body -->\n            <slot></slot>\n            <div v-if=\"hasInput\" class=\"textarea-container\">\n                <div><strong>You can write your answer in the box below.</strong></div>\n                <textarea class=\"form-control question-input\" rows=\"3\"></textarea>\n            </div>\n        </div>\n        <accordion>\n            <div v-show=\"hasHintSlot\">\n                <panel header=\"Hint\" expandable>\n                    <slot name=\"hint\">\n                        No hint is available for this question.\n                    </slot>\n                </panel>\n            </div>\n            <panel header=\"Answer\" expandable>\n                <slot name=\"answer\"></slot>\n            </panel>\n        </accordion>\n    </div>";
 
 /***/ },
-/* 302 */
+/* 305 */
 /***/ function(module, exports) {
 
-	module.exports = "<doc-section id=\"accordion\" name=\"Accordion\">\n    <div class=\"bs-example\">\n      <checkbox :checked.sync=\"checked\" type=\"primary\">Open only one at a time.</checkbox>\n      <p><v-select :options=\"types\" clear-button :value.sync=\"selected\" placeholder=\"Global type\"></v-select></p>\n      <p><v-select :options=\"types\" clear-button :value.sync=\"first\" placeholder=\"First element type\"></v-select></p>\n      <accordion :one-at-atime=\"checked\" :type=\"selected\">\n        <panel is-open :type=\"first=='panel'?null:first\">\n          <strong slot=\"header\"><u>[20 minutes] Part 1 - Software engineering rocks! : Introduction to Software Engineering</u></strong>\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n        <panel header=\"Panel #2\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n        <panel header=\"Panel #3\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n        <panel header=\"Panel #4\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n        <panel header=\"[20 minutes] Part 1 - Software engineering rocks! : Introduction to Software Engineering\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n      </accordion>\n\n      Panel with Expand Switch\n\n      <panel header=\"Parent\" expandable ctrl-lvl=\"-1\">\n        <panel header=\"Child1\" expandable>\n          <panel header=\"Child2\">\n            <panel header=\"Child3\" expandable>\n              Parent 1\n            </panel>\n          </panel>\n        </panel>\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <accordion :one-at-atime=\"checked\" type=\"info\">\n        <panel is-open type=\"primary\">\n          <strong slot=\"header\"><u>Panel #1</u></strong>\n          ...\n        </panel>\n        <panel header=\"Panel #2\">\n          ...\n        </panel>\n        <panel header=\"Panel #3\">\n          ...\n        </panel>\n        <panel header=\"Panel #4\">\n          ...\n        </panel>\n      </accordion>\n    </doc-code>\n\n    <div class=\"bs-example\">\n      Seamless panel type\n\n      <panel header=\"Seamless - Click to expand\" expandable type=\"seamless\">\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius\n        eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur\n        ullam voluptates!\n      </panel>\n\n      <panel header=\"Seamless - Click to expand\" expandable type=\"seamless\">\n        <Question>\n          Body\n\n          <div slot=\"hint\">\n            Hint\n\n          </div>\n          <div slot=\"answer\">\n            Answer\n\n          </div>\n        </Question>\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"Click to expand\" expandable type=\"seamless\">\n        ...\n      </panel>\n\n    </doc-code>\n\n    <div class=\"bs-example\">\n      Use markdown in the header (only inline level markdown are supported)\n\n      <panel header=\"**haha** :rocket: ![](https://vuejs.org/images/logo.png =25x25)\" expandable type=\"seamless\">\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequatur consequuntur culpa enim, explicabo impedit iure maxime omnis quas recusandae sint suscipit? Accusamus cumque facere laboriosam magnam magni numquam reprehenderit.\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"**haha** :rocket: ![](https://vuejs.org/images/logo.png =25x25)\" expandable type=\"seamless\">\n        ...\n      </panel>\n\n    </doc-code>\n\n\n    <doc-table>\n      <div>\n        <p>type</p>\n        <p><code>String</code></p>\n        <p><code>null</code></p>\n        <p>Define the type of color for the tabs (global).</p>\n      </div>\n      <div>\n        <p>one-at-time</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Control whether expanding an item will cause the other items to close.</p>\n      </div>\n    </doc-table>\n    <doc-table name=\"Panel\">\n      <div>\n        <p>header</p>\n        <p><code>String</code></p>\n        <p></p>\n        <p>The clickable text on the group's header. You need one to be able to click on the header for toggling.</p>\n      </div>\n      <div>\n        <p>is-open</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Whether accordion group is open or closed.</p>\n      </div>\n      <div>\n        <p>type</p>\n        <p><code>String</code></p>\n        <p><code>null</code></p>\n        <p>Define the type of color for the tab (single).</p>\n      </div>\n    </doc-table>\n    <p>If you want to personalice your header with some html you can use the slot instead of header attribute (panel&nbsp;#1 in the example).</p>\n  </doc-section>";
+	module.exports = "<doc-section id=\"accordion\" name=\"Accordion And Panel\">\n    <div class=\"bs-example\">\n      <checkbox :checked.sync=\"checked\" type=\"primary\">Open only one at a time.</checkbox>\n      <p><v-select :options=\"types\" clear-button :value.sync=\"selected\" placeholder=\"Global type\"></v-select></p>\n      <p><v-select :options=\"types\" clear-button :value.sync=\"first\" placeholder=\"First element type\"></v-select></p>\n      <accordion :one-at-atime=\"checked\" :type=\"selected\">\n        <panel is-open :type=\"first=='panel'?null:first\">\n          <strong slot=\"header\"><u>[20 minutes] Part 1 - Software engineering rocks! : Introduction to Software Engineering</u></strong>\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n        <panel header=\"Panel #2\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n        <panel header=\"Panel #3\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n        <panel header=\"Panel #4\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n        <panel header=\"[20 minutes] Part 1 - Software engineering rocks! : Introduction to Software Engineering\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n      </accordion>\n\n      <div v-closeable>\n        <panel header=\"%%haha!%%\">\n          <img src=\"https://vuejs.org/images/logo.png\" alt=\"\">\n\n\n          hahah\n\n          <div v-closeable>\n\n            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam architecto at dignissimos distinctio ea explicabo fugiat, ipsa itaque odit, rem sint totam, voluptas. Incidunt officiis quas veniam vitae voluptatum.\n            <img src=\"https://vuejs.org/images/logo.png\" alt=\"\">\n        </div>\n\n        </panel>\n      </div>\n\n      Panel with Expand Switch\n\n      <panel header=\"Parent\" expandable ctrl-lvl=\"-1\">\n        <panel header=\"Child1\" expandable>\n          <panel header=\"Child2\">\n            <panel header=\"Child3\" expandable>\n              Parent 1\n            </panel>\n          </panel>\n        </panel>\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <accordion :one-at-atime=\"checked\" type=\"info\">\n        <panel is-open type=\"primary\">\n          <strong slot=\"header\"><u>Panel #1</u></strong>\n          ...\n        </panel>\n        <panel header=\"Panel #2\">\n          ...\n        </panel>\n        <panel header=\"Panel #3\">\n          ...\n        </panel>\n        <panel header=\"Panel #4\">\n          ...\n        </panel>\n      </accordion>\n    </doc-code>\n\n    <div class=\"bs-example\">\n      Seamless panel type\n\n      <panel header=\"Seamless - Click to expand\" expandable type=\"seamless\">\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius\n        eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur\n        ullam voluptates!\n      </panel>\n\n      <panel header=\"Seamless - Click to expand\" expandable type=\"seamless\">\n        <Question>\n          Body\n\n          <div slot=\"hint\">\n            Hint\n\n          </div>\n          <div slot=\"answer\">\n            Answer\n\n          </div>\n        </Question>\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"Click to expand\" expandable type=\"seamless\">\n        ...\n      </panel>\n\n    </doc-code>\n\n    <div class=\"bs-example\">\n      Use markdown in the header (only inline level markdown are supported)\n\n      <panel header=\"**haha** :rocket: ![](https://vuejs.org/images/logo.png =25x25)\" expandable type=\"seamless\">\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequatur consequuntur culpa enim, explicabo impedit iure maxime omnis quas recusandae sint suscipit? Accusamus cumque facere laboriosam magnam magni numquam reprehenderit.\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"**haha** :rocket: ![](https://vuejs.org/images/logo.png =25x25)\" expandable type=\"seamless\">\n        ...\n      </panel>\n\n    </doc-code>\n\n\n    <doc-table>\n      <div>\n        <p>type</p>\n        <p><code>String</code></p>\n        <p><code>null</code></p>\n        <p>Define the type of color for the tabs (global).</p>\n      </div>\n      <div>\n        <p>one-at-time</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Control whether expanding an item will cause the other items to close.</p>\n      </div>\n    </doc-table>\n    <doc-table name=\"Panel\">\n      <div>\n        <p>header</p>\n        <p><code>String</code></p>\n        <p></p>\n        <p>The clickable text on the group's header. You need one to be able to click on the header for toggling.</p>\n      </div>\n      <div>\n        <p>is-open</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Whether accordion group is open or closed.</p>\n      </div>\n      <div>\n        <p>type</p>\n        <p><code>String</code></p>\n        <p><code>null</code></p>\n        <p>Define the type of color for the tab (single).</p>\n      </div>\n    </doc-table>\n    <p>If you want to personalice your header with some html you can use the slot instead of header attribute (panel&nbsp;#1 in the example).</p>\n  </doc-section>";
 
 /***/ },
-/* 303 */
+/* 306 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(304)
-	module.exports = __webpack_require__(306)
+	__webpack_require__(307)
+	module.exports = __webpack_require__(309)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(313)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(316)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -31637,13 +31855,13 @@
 	}
 
 /***/ },
-/* 304 */
+/* 307 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(305);
+	var content = __webpack_require__(308);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(150)(content, {});
@@ -31663,7 +31881,7 @@
 	}
 
 /***/ },
-/* 305 */
+/* 308 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(149)();
@@ -31677,7 +31895,7 @@
 
 
 /***/ },
-/* 306 */
+/* 309 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31698,7 +31916,7 @@
 	
 	var _docCode2 = _interopRequireDefault(_docCode);
 	
-	var _Tooltip = __webpack_require__(307);
+	var _Tooltip = __webpack_require__(310);
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 	
@@ -31767,14 +31985,14 @@
 	// </style>
 
 /***/ },
-/* 307 */
+/* 310 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(308)
-	module.exports = __webpack_require__(310)
+	__webpack_require__(311)
+	module.exports = __webpack_require__(313)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(312)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(315)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -31792,13 +32010,13 @@
 	}
 
 /***/ },
-/* 308 */
+/* 311 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(309);
+	var content = __webpack_require__(312);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(150)(content, {});
@@ -31818,7 +32036,7 @@
 	}
 
 /***/ },
-/* 309 */
+/* 312 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(149)();
@@ -31832,7 +32050,7 @@
 
 
 /***/ },
-/* 310 */
+/* 313 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31841,7 +32059,7 @@
 	  value: true
 	});
 	
-	var _popoverMixins = __webpack_require__(311);
+	var _popoverMixins = __webpack_require__(314);
 	
 	var _popoverMixins2 = _interopRequireDefault(_popoverMixins);
 	
@@ -31934,7 +32152,7 @@
 	// </style>
 
 /***/ },
-/* 311 */
+/* 314 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -32067,29 +32285,29 @@
 	    if (this._trigger) (0, _NodeList2.default)(this._trigger).off();
 	  }
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(296)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(299)))
 
 /***/ },
-/* 312 */
+/* 315 */
 /***/ function(module, exports) {
 
 	module.exports = "<span v-el:trigger>\n    <slot></slot>\n  </span>\n  <div v-el:popover v-if=\"show\" style=\"display:block;\"\n    :class=\"['tooltip',placement]\"\n    :transition=\"effect\"\n  >\n    <div class=\"tooltip-arrow\"></div>\n    <div class=\"tooltip-inner\">\n      <slot name=\"content\">{{{contentRendered}}}</slot>\n   </div>\n  </div>";
 
 /***/ },
-/* 313 */
+/* 316 */
 /***/ function(module, exports) {
 
 	module.exports = "<doc-section id=\"affix\" name=\"Affix\">\n    <div class=\"bs-example\">\n      <h3>\n        The sub-navigation on the RIGHT is a live demo of the affix.\n        <spam class=\"visible-xs-block visible-sm-block\">(The live demo is hidden in small screens)</spam>\n        <tooltip trigger=\"hover\" effect=\"fadein\" content=\"I'm a direction, not jerking off!\" placement=\"left\">\n          <span class=\"glyphicon glyphicon-hand-right pull-right animated shake hidden-xs hidden-sm\"></span>\n        </tooltip>\n      </h3>\n    </div>\n    <doc-code language=\"markup\">\n      <affix offset=\"50\">\n        <ul>\n          <li>...</li>\n          <li>...</li>\n          <li>...</li>\n        </ul>\n        <a href=\"#\">...</a>\n      </affix>\n    </doc-code>\n    <doc-table>\n      <div>\n        <p>offset</p>\n        <p><code>Number</code></p>\n        <p><code>0</code></p>\n        <p>Pixels to offset from top of screen when calculating position of scroll.</p>\n      </div>\n    </doc-table>\n  </doc-section>";
 
 /***/ },
-/* 314 */
+/* 317 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(315)
-	module.exports = __webpack_require__(317)
+	__webpack_require__(318)
+	module.exports = __webpack_require__(320)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(323)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(326)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -32107,13 +32325,13 @@
 	}
 
 /***/ },
-/* 315 */
+/* 318 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(316);
+	var content = __webpack_require__(319);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(150)(content, {});
@@ -32133,7 +32351,7 @@
 	}
 
 /***/ },
-/* 316 */
+/* 319 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(149)();
@@ -32147,7 +32365,7 @@
 
 
 /***/ },
-/* 317 */
+/* 320 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32168,7 +32386,7 @@
 	
 	var _docCode2 = _interopRequireDefault(_docCode);
 	
-	var _Alert = __webpack_require__(318);
+	var _Alert = __webpack_require__(321);
 	
 	var _Alert2 = _interopRequireDefault(_Alert);
 	
@@ -32302,14 +32520,14 @@
 	// </style>
 
 /***/ },
-/* 318 */
+/* 321 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(319)
-	module.exports = __webpack_require__(321)
+	__webpack_require__(322)
+	module.exports = __webpack_require__(324)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(322)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(325)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -32327,13 +32545,13 @@
 	}
 
 /***/ },
-/* 319 */
+/* 322 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(320);
+	var content = __webpack_require__(323);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(150)(content, {});
@@ -32353,7 +32571,7 @@
 	}
 
 /***/ },
-/* 320 */
+/* 323 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(149)();
@@ -32367,7 +32585,7 @@
 
 
 /***/ },
-/* 321 */
+/* 324 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32471,25 +32689,25 @@
 	// <script>
 
 /***/ },
-/* 322 */
+/* 325 */
 /***/ function(module, exports) {
 
 	module.exports = "<div\n    v-show=\"show\"\n    v-bind:class=\"{\n      'alert':\t\ttrue,\n      'alert-success':(type == 'success'),\n      'alert-warning':(type == 'warning'),\n      'alert-info':\t(type == 'info'),\n      'alert-danger':\t(type == 'danger'),\n      'top': \t\t\t(placement === 'top'),\n      'top-right': \t(placement === 'top-right')\n    }\"\n    transition=\"fade\"\n    v-bind:style=\"{width:width}\"\n    role=\"alert\">\n    <button v-show=\"dismissable\" type=\"button\" class=\"close\"\n      @click=\"show = false\">\n      <span>&times;</span>\n    </button>\n    <slot></slot>\n  </div>";
 
 /***/ },
-/* 323 */
+/* 326 */
 /***/ function(module, exports) {
 
 	module.exports = "<doc-section id=\"alert\" name=\"Alert\">\n    <div class=\"bs-example\" >\n      <button class=\"btn btn-danger btn-lg\"\n        @click=\"showTop = !showTop\">\n        Click to toggle alert on top\n      </button>\n      <button class=\"btn btn-success btn-lg\"\n        @click=\"showRight = !showRight\">\n        Click to toggle alert on right\n      </button>\n      <hr>\n      <alert type=\"success\">\n        <strong>Well Done!</strong>\n        You successfully read this important alert message.\n      </alert>\n      <alert type=\"info\">\n        <strong>Heads up!</strong> This alert needs your attention, but it's not super important.\n      </alert>\n      <alert type=\"danger\" dismissable>\n        <strong>Oh snap!</strong> Change a few things up and try submitting again.\n      </alert>\n      <alert type=\"warning\" dismissable>\n        <strong>Warning!</strong> Better check yourself, you're not looking too good.\n      </alert>\n      <alert :show.sync=\"showRight\" placement=\"top-right\" duration=\"3000\"\n        type=\"success\" width=\"400px\" dismissable\n      >\n        <span class=\"icon-ok-circled alert-icon-float-left\"></span>\n        <strong>Well Done!</strong>\n        <p>You successfully read this important alert message.</p>\n      </alert>\n      <alert :show.sync=\"showTop\" placement=\"top\" duration=\"3000\"\n        type=\"danger\" width=\"400px\" dismissable\n      >\n        <span class=\"icon-info-circled alert-icon-float-left\"></span>\n        <strong>Heads up!</strong>\n        <p>This alert needs your attention.</p>\n      </alert>\n    </div>\n\n    <doc-code language=\"markup\">\n      <alert type=\"success/info/danger/warning\">\n        ...\n      </alert>\n\n      <alert :show.sync=\"showRight\" placement=\"top-right\" duration=\"3000\" type=\"success\" width=\"400px\" dismissable>\n        <span class=\"icon-ok-circled alert-icon-float-left\"></span>\n        <strong>Well Done!</strong>\n        <p>You successfully read this important alert message.</p>\n      </alert>\n\n      <alert :show.sync=\"showTop\" placement=\"top\" duration=\"3000\" type=\"danger\" width=\"400px\" dismissable>\n        <span class=\"icon-info-circled alert-icon-float-left\"></span>\n        <strong>Heads up!</strong>\n        <p>This alert needs your attention.</p>\n      </alert>\n    </doc-code>\n    <doc-table>\n      <div>\n        <p>show</p>\n        <p><code>Boolean</code></p>\n        <p><code>true</code></p>\n        <p>Whether show the component</p>\n      </div>\n      <div>\n        <p>dismissable</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Whether show close button</p>\n      </div>\n      <div>\n        <p>type</p>\n        <p><code>String</code>, one of\n        <code>success</code>\n        <code>info</code>\n        <code>warning</code>\n        <code>danger</code></p>\n        <p><code>success</code></p>\n        <p>Components styles</p>\n      </div>\n      <div>\n        <p>duration</p>\n        <p><code>Number</code></p>\n        <p><code>0</code></p>\n        <p>Auto close duration. Set <code>0</code> or a negative number will NOT be auto-close.</p>\n      </div>\n      <div>\n        <p>width</p>\n        <p><code>String</code></p>\n        <p></p>\n      </div>\n      <div>\n        <p>placement</p>\n        <p><code>String</code>. one of <code>top</code>, <code>top-right</code></p>\n        <p></p>\n        <p>how to position the component.</p>\n      </div>\n    </doc-table>\n  </div>\n</template>";
 
 /***/ },
-/* 324 */
+/* 327 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(325)
+	module.exports = __webpack_require__(328)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(331)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(334)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -32507,7 +32725,7 @@
 	}
 
 /***/ },
-/* 325 */
+/* 328 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32528,7 +32746,7 @@
 	
 	var _docCode2 = _interopRequireDefault(_docCode);
 	
-	var _Aside = __webpack_require__(326);
+	var _Aside = __webpack_require__(329);
 	
 	var _Aside2 = _interopRequireDefault(_Aside);
 	
@@ -32628,14 +32846,14 @@
 	// </script>
 
 /***/ },
-/* 326 */
+/* 329 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(327)
-	module.exports = __webpack_require__(329)
+	__webpack_require__(330)
+	module.exports = __webpack_require__(332)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(330)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(333)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -32653,13 +32871,13 @@
 	}
 
 /***/ },
-/* 327 */
+/* 330 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(328);
+	var content = __webpack_require__(331);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(150)(content, {});
@@ -32679,7 +32897,7 @@
 	}
 
 /***/ },
-/* 328 */
+/* 331 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(149)();
@@ -32693,7 +32911,7 @@
 
 
 /***/ },
-/* 329 */
+/* 332 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32945,25 +33163,25 @@
 	// </style>
 
 /***/ },
-/* 330 */
+/* 333 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"aside\"\n    v-bind:style=\"{width:width + 'px'}\"\n    v-bind:class=\"{\n    left:placement === 'left',\n    right:placement === 'right'\n    }\"\n    v-show=\"show\"\n    :transition=\"(this.placement === 'left') ? 'slideleft' : 'slideright'\">\n    <div class=\"aside-dialog\">\n      <div class=\"aside-content\">\n        <div class=\"aside-header\">\n          <button type=\"button\" class=\"close\" @click='close'><span>&times;</span></button>\n          <h4 class=\"aside-title\">\n          <slot name=\"header\">\n            {{ header }}\n          </slot>\n          </h4>\n        </div>\n        <div class=\"aside-body\">\n          <slot></slot>\n        </div>\n      </div>\n    </div>\n  </div>";
 
 /***/ },
-/* 331 */
+/* 334 */
 /***/ function(module, exports) {
 
 	module.exports = "<doc-section id=\"aside\" name=\"Aside\">\n    <div class=\"bs-example\">\n      <button class=\"btn btn-danger btn-lg\" @click=\"showLeft = true\">Show Aside on left</button>\n      <button class=\"btn btn-success btn-lg\" @click=\"showRight = true\">Show Aside on right</button>\n\n      <sidebar :show.sync=\"showLeft\" placement=\"left\" header=\"Title\" :width=\"350\">\n        <h4>Text in aside</h4>\n        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n        tempor incididunt ut labore et dolore magna aliqua.</p>\n        <p> Ut enim ad minim veniam,\n        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n        consequat.</p>\n        <doc-code language=\"javascript\">\n          if (talk === cheap){\n            code.style.display = 'block'\n          }\n        </doc-code>\n        <div class=\"aside-footer\">\n          <button type=\"button\" class=\"btn btn-default\" @click=\"showLeft=false\">Close</button>\n        </div>\n      </sidebar>\n      <sidebar :show.sync=\"showRight\" placement=\"right\" header=\"Title\" :width=\"350\">\n        <h4>Text in aside</h4>\n        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n        tempor incididunt ut labore et dolore magna aliqua.</p>\n        <p> Ut enim ad minim veniam,\n        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n        consequat.</p>\n        <doc-code language=\"javascript\">\n          if (talk === cheap){\n            code.style.display = 'block'\n          }\n        </doc-code>\n        <div class=\"aside-footer\">\n          <button type=\"button\" class=\"btn btn-default\" @click=\"showRight=false\">Close</button>\n        </div>\n      </sidebar>\n    </div>\n    <doc-code language=\"markup\">\n      <aside :show.sync=\"showRight\" placement=\"right\" header=\"Title\" width=\"350\">\n        ...\n      </aside>\n      <aside :show.sync=\"showLeft\" placement=\"left\" header=\"Title\" width=\"350\">\n        ...\n      </aside>\n    </doc-code>\n    <doc-table>\n      <div>\n        <p>show</p>\n        <p><code>Boolean</code></p>\n        <p></p>\n        <p>Whether show the component.</p>\n      </div>\n      <div>\n        <p>placement</p>\n        <p><code>String</code>, one of <code>left</code>, <code>right</code></p>\n        <p><code>right</code></p>\n        <p>how to position the component.</p>\n      </div>\n      <div>\n        <p>header</p>\n        <p><code>String</code></p>\n        <p></p>\n        <p>Header text of the aside component.</p>\n      </div>\n      <div>\n        <p>width</p>\n        <p><code>Number</code></p>\n        <p></p>\n        <p></p>\n      </div>\n    </doc-table>\n  </doc-section>";
 
 /***/ },
-/* 332 */
+/* 335 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(333)
+	module.exports = __webpack_require__(336)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(342)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(345)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -32981,7 +33199,7 @@
 	}
 
 /***/ },
-/* 333 */
+/* 336 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33002,7 +33220,7 @@
 	
 	var _docCode2 = _interopRequireDefault(_docCode);
 	
-	var _buttonGroup = __webpack_require__(334);
+	var _buttonGroup = __webpack_require__(337);
 	
 	var _buttonGroup2 = _interopRequireDefault(_buttonGroup);
 	
@@ -33010,7 +33228,7 @@
 	
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 	
-	var _Radio = __webpack_require__(337);
+	var _Radio = __webpack_require__(340);
 	
 	var _Radio2 = _interopRequireDefault(_Radio);
 	
@@ -33129,13 +33347,13 @@
 	// </script>
 
 /***/ },
-/* 334 */
+/* 337 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(335)
+	module.exports = __webpack_require__(338)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(336)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(339)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -33153,7 +33371,7 @@
 	}
 
 /***/ },
-/* 335 */
+/* 338 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33211,20 +33429,20 @@
 	// <script>
 
 /***/ },
-/* 336 */
+/* 339 */
 /***/ function(module, exports) {
 
 	module.exports = "<div :class=\"{'btn-group':buttons,'btn-group-justified':justified,'btn-group-vertical':vertical}\" :data-toggle=\"buttons&&'buttons'\">\n    <slot></slot>\n  </div>";
 
 /***/ },
-/* 337 */
+/* 340 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(338)
-	module.exports = __webpack_require__(340)
+	__webpack_require__(341)
+	module.exports = __webpack_require__(343)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(341)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(344)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -33242,13 +33460,13 @@
 	}
 
 /***/ },
-/* 338 */
+/* 341 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(339);
+	var content = __webpack_require__(342);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(150)(content, {});
@@ -33268,7 +33486,7 @@
 	}
 
 /***/ },
-/* 339 */
+/* 342 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(149)();
@@ -33282,7 +33500,7 @@
 
 
 /***/ },
-/* 340 */
+/* 343 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33461,25 +33679,25 @@
 	// <script>
 
 /***/ },
-/* 341 */
+/* 344 */
 /***/ function(module, exports) {
 
 	module.exports = "<label v-if=\"buttonStyle\" :class=\"['btn btn-'+typeColor,{active:active,disabled:disabled,readonly:readonly}]\" @click.prevent=\"toggle\">\n    <input type=\"radio\" autocomplete=\"off\"\n      v-el:input\n      v-show=\"!readonly\"\n      :checked=\"active\"\n      :value=\"value\"\n      :name=\"name\"\n      :readonly=\"readonly\"\n      :disabled=\"disabled\"\n    />\n    <slot></slot>\n  </label>\n  <div v-else :class=\"['radio',typeColor,{active:active,disabled:disabled,readonly:readonly}]\" @click.prevent=\"toggle\">\n    <label class=\"open\">\n      <input type=\"radio\" autocomplete=\"off\"\n        v-el:input\n        :checked=\"active\"\n        :value=\"value\"\n        :name=\"name\"\n        :readonly=\"readonly\"\n        :disabled=\"disabled\"\n      />\n      <span class=\"icon dropdown-toggle\" :class=\"[active?'btn-'+typeColor:'',{bg:typeColor==='default'}]\"></span>\n      <span v-if=\"active&&typeColor==='default'\" class=\"icon\"></span>\n      <slot></slot>\n    </label>\n  </div>";
 
 /***/ },
-/* 342 */
+/* 345 */
 /***/ function(module, exports) {
 
 	module.exports = "<doc-section id=\"button-group\" name=\"Button Group\">\n    <div class=\"bs-example\">\n      <h4>Checkbox</h4>\n      <button-group :value.sync=\"checkboxValue\">\n        <checkbox value=\"left\">Left</checkbox>\n        <checkbox value=\"middle\">Middle</checkbox>\n        <checkbox value=\"right\">Right</checkbox>\n      </button-group>\n      <p>\n        <pre>Checkbox value: {{checkboxValue | json}}</pre>\n      </p>\n      <hr>\n      <h4>Radio</h4>\n      <p>\n        <button-group :value.sync=\"radioValue\" type=\"primary\">\n          <radio value=\"left\">Left</radio>\n          <radio value=\"middle\">Middle</radio>\n          <radio value=\"right\">Right</radio>\n        </button-group>\n      </p>\n      <p>\n        <button-group :value.sync=\"radioValue\" type=\"success\">\n          <radio value=\"left\">Left</radio>\n          <radio value=\"middle\">Middle</radio>\n          <radio value=\"right\">Right</radio>\n        </button-group>\n      </p>\n      <p>\n        <label>Not buttons:</label>\n        <button-group :value.sync=\"radioValue\" type=\"info\" buttons=\"false\">\n          <radio value=\"left\">Left</radio>\n          <radio value=\"middle\">Middle</radio>\n          <radio value=\"right\">Right</radio>\n        </button-group>\n      </p>\n      <p>\n        <pre>Radio value: {{radioValue}}</pre>\n      </p>\n    </div>\n    <doc-code language=\"markup\">\n      <button-group :value.sync=\"checkboxValue\">\n        <checkbox value=\"left\">Left</checkbox>\n        <checkbox value=\"middle\">Middle</checkbox>\n        <checkbox value=\"right\">Right</checkbox>\n      </button-group>\n\n      <button-group :value.sync=\"radioValue\" type=\"primary\">\n        <radio value=\"left\">Left</radio>\n        <radio value=\"middle\">Middle</radio>\n        <radio value=\"right\">Right</radio>\n      </button-group>\n\n      Not Buttons:\n      <button-group :value.sync=\"radioValue\" type=\"info\" buttons=\"false\">\n        <radio value=\"left\">Left</radio>\n        <radio value=\"middle\">Middle</radio>\n        <radio value=\"right\">Right</radio>\n      </button-group>\n    </doc-code>\n\n    <doc-table>\n      <div>\n        <p>value</p>\n        <p><code>Array</code> or <code>String</code></p>\n        <p></p>\n        <p>If defined, then the defined values will be checked otherwise the elements with a checked attribute\n        will be checked.</p>\n      </div>\n      <div>\n        <p>buttons</p>\n        <p><code>Boolean</code></p>\n        <p><code>true</code></p>\n        <p>\n          <p>Can enable/disable button style.</p>\n          <p>Group normal checks if you want to set the same type color for all.</p>\n        </p>\n      </div>\n      <div>\n        <p>type</p>\n        <p><code>String</code>, one of <code>default</code>\n        <code>primary</code>\n        <code>danger</code>\n        <code>info</code>\n        <code>warning</code>\n        <code>success</code></p>\n        <p><code>default</code></p>\n        <p></p>\n      </div>\n    </doc-table>\n  </doc-section>";
 
 /***/ },
-/* 343 */
+/* 346 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(344)
+	module.exports = __webpack_require__(347)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(353)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(356)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -33497,7 +33715,7 @@
 	}
 
 /***/ },
-/* 344 */
+/* 347 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33518,11 +33736,11 @@
 	
 	var _docCode2 = _interopRequireDefault(_docCode);
 	
-	var _Carousel = __webpack_require__(345);
+	var _Carousel = __webpack_require__(348);
 	
 	var _Carousel2 = _interopRequireDefault(_Carousel);
 	
-	var _Slider = __webpack_require__(350);
+	var _Slider = __webpack_require__(353);
 	
 	var _Slider2 = _interopRequireDefault(_Slider);
 	
@@ -33609,14 +33827,14 @@
 	// <script>
 
 /***/ },
-/* 345 */
+/* 348 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(346)
-	module.exports = __webpack_require__(348)
+	__webpack_require__(349)
+	module.exports = __webpack_require__(351)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(349)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(352)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -33634,13 +33852,13 @@
 	}
 
 /***/ },
-/* 346 */
+/* 349 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(347);
+	var content = __webpack_require__(350);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(150)(content, {});
@@ -33660,7 +33878,7 @@
 	}
 
 /***/ },
-/* 347 */
+/* 350 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(149)();
@@ -33674,7 +33892,7 @@
 
 
 /***/ },
-/* 348 */
+/* 351 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33822,19 +34040,19 @@
 	// </style>
 
 /***/ },
-/* 349 */
+/* 352 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"carousel slide\" data-ride=\"carousel\" _v-60802c9e=\"\">\n  <!-- Indicators -->\n  <ol class=\"carousel-indicators\" v-show=\"indicators\" _v-60802c9e=\"\">\n    <li v-for=\"i in indicator\" @click=\"indicatorClick($index)\" v-bind:class=\"{active:$index === index}\" _v-60802c9e=\"\"><span _v-60802c9e=\"\"></span></li>\n  </ol>\n  <!-- Wrapper for slides -->\n  <div class=\"carousel-inner\" role=\"listbox\" _v-60802c9e=\"\">\n    <slot _v-60802c9e=\"\"></slot>\n  </div>\n  <!-- Controls -->\n  <div v-show=\"controls\" class=\"carousel-controls hidden-xs\" _v-60802c9e=\"\">\n    <a class=\"left carousel-control\" role=\"button\" @click=\"prev\" _v-60802c9e=\"\">\n      <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\" _v-60802c9e=\"\"></span>\n    </a>\n    <a class=\"right carousel-control\" role=\"button\" @click=\"next\" _v-60802c9e=\"\">\n      <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\" _v-60802c9e=\"\"></span>\n    </a>\n  </div>\n</div>";
 
 /***/ },
-/* 350 */
+/* 353 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(351)
+	module.exports = __webpack_require__(354)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(352)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(355)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -33852,7 +34070,7 @@
 	}
 
 /***/ },
-/* 351 */
+/* 354 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -33897,25 +34115,25 @@
 	// </script>
 
 /***/ },
-/* 352 */
+/* 355 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"item\">\n    <slot></slot>\n  </div>";
 
 /***/ },
-/* 353 */
+/* 356 */
 /***/ function(module, exports) {
 
 	module.exports = "<doc-section id=\"carousel\" name=\"Carousel\">\n    <div class=\"bs-example\">\n      <carousel>\n        <slider>\n          <img src=\"https://placehold.it/1200x500?text=one\">\n          <div class=\"carousel-caption\">\n           <h3>Slide #1</h3>\n           <p>sunt in culpa qui officia deserunt mollit a.</p>\n         </div>\n        </slider>\n        <slider>\n          <img src=\"https://placehold.it/1200x500?text=two\">\n          <div class=\"carousel-caption\">\n           <h3>Slide #2</h3>\n           <p>sunt in culpa qui officia deserunt mollit a.</p>\n         </div>\n        </slider>\n        <slider>\n          <img src=\"https://placehold.it/1200x500?text=three\">\n          <div class=\"carousel-caption\">\n           <h3>Slide #3</h3>\n           <p>sunt in culpa qui officia deserunt mollit a.</p>\n         </div>\n        </slider>\n      </carousel>\n    </div>\n    <doc-code language=\"markup\">\n      <carousel>\n        <slider>\n          <img src=\"https://placehold.it/1200x400?text=one\">\n          <div class=\"carousel-caption\">\n            ...\n          </div>\n        </slider>\n        <slider>\n          <img src=\"https://placehold.it/1200x400?text=two\">\n        </slider>\n        <slider>\n          <img src=\"https://placehold.it/1200x400?text=three\">\n        </slider>\n      </carousel>\n    </doc-code>\n    <doc-table>\n      <div>\n        <p>indicators</p>\n        <p><code>Boolean</code></p>\n        <p><code>true</code></p>\n        <p>Whether to show the indicators.</p>\n      </div>\n      <div>\n        <p>controls</p>\n        <p><code>Boolean</code></p>\n        <p><code>true</code></p>\n        <p>Whether to show the direction controls.</p>\n      </div>\n      <div>\n        <p>interval</p>\n        <p><code>Number</code></p>\n        <p><code>5000</code></p>\n        <p>The amount of time to delay between automatically cycling an item. If set to 0 or a negative number,\n          carousel will not automatically cycle.\n        </p>\n      </div>\n    </doc-table>\n  </div>\n</template>";
 
 /***/ },
-/* 354 */
+/* 357 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(355)
+	module.exports = __webpack_require__(358)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(356)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(359)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -33933,7 +34151,7 @@
 	}
 
 /***/ },
-/* 355 */
+/* 358 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -33954,7 +34172,7 @@
 	
 	var _docCode2 = _interopRequireDefault(_docCode);
 	
-	var _DynamicPanel = __webpack_require__(292);
+	var _DynamicPanel = __webpack_require__(295);
 	
 	var _DynamicPanel2 = _interopRequireDefault(_DynamicPanel);
 	
@@ -33997,16 +34215,16 @@
 	// </script>
 
 /***/ },
-/* 356 */
+/* 359 */
 /***/ function(module, exports) {
 
 	module.exports = "<doc-section id=\"dynamicPanel\" name=\"DynamicPanel\">\n    <div class=\"bs-example\">\n      <dynamic-panel src=\"/docs/loadContent.html\" header=\"Load content from 'content.html'\" is-open=\"false\"></dynamic-panel>\n      <dynamic-panel src=\"/docs/loadContent.html\"\n                     fragment=\"fragment\"\n                     header=\"Load fragment content from 'content.html'\"\n                     is-open></dynamic-panel>\n    </div>\n    <doc-code language=\"markup\">\n      <dynamic-panel src=\"/docs/loadContent.html\"\n                     header=\"Load content from 'content.html'\"\n                     is-open></dynamic-panel>\n      <dynamic-panel src=\"/docs/loadContent.html#fragment\"\n                     fragment=\"fragment\"\n                     header=\"Load fragment content from 'content.html'\"\n                     is-open></dynamic-panel>\n    </doc-code>\n    <doc-table>\n\n    </doc-table>\n  </doc-section>";
 
 /***/ },
-/* 357 */
+/* 360 */
 /***/ function(module, exports, __webpack_require__) {
 
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(358)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(361)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -34024,19 +34242,19 @@
 	}
 
 /***/ },
-/* 358 */
+/* 361 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"container bs-docs-container\">\n    <div class=\"row\">\n        <slot></slot>\n    </div>\n  </div>";
 
 /***/ },
-/* 359 */
+/* 362 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(360)
+	module.exports = __webpack_require__(363)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(371)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(374)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -34054,7 +34272,7 @@
 	}
 
 /***/ },
-/* 360 */
+/* 363 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34075,11 +34293,11 @@
 	
 	var _docCode2 = _interopRequireDefault(_docCode);
 	
-	var _Input = __webpack_require__(361);
+	var _Input = __webpack_require__(364);
 	
 	var _Input2 = _interopRequireDefault(_Input);
 	
-	var _buttonGroup = __webpack_require__(334);
+	var _buttonGroup = __webpack_require__(337);
 	
 	var _buttonGroup2 = _interopRequireDefault(_buttonGroup);
 	
@@ -34087,7 +34305,7 @@
 	
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 	
-	var _Dropdown = __webpack_require__(366);
+	var _Dropdown = __webpack_require__(369);
 	
 	var _Dropdown2 = _interopRequireDefault(_Dropdown);
 	
@@ -34383,14 +34601,14 @@
 	// <script>
 
 /***/ },
-/* 361 */
+/* 364 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(362)
-	module.exports = __webpack_require__(364)
+	__webpack_require__(365)
+	module.exports = __webpack_require__(367)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(365)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(368)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -34408,13 +34626,13 @@
 	}
 
 /***/ },
-/* 362 */
+/* 365 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(363);
+	var content = __webpack_require__(366);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(150)(content, {});
@@ -34434,7 +34652,7 @@
 	}
 
 /***/ },
-/* 363 */
+/* 366 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(149)();
@@ -34448,7 +34666,7 @@
 
 
 /***/ },
-/* 364 */
+/* 367 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -34859,20 +35077,20 @@
 	// </style>
 
 /***/ },
-/* 365 */
+/* 368 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"form-group\" :class=\"{validate:canValidate,'has-feedback':icon,'has-error':canValidate&amp;&amp;valid===false,'has-success':canValidate&amp;&amp;valid}\" _v-01cfdb6e=\"\">\n    <slot name=\"label\" _v-01cfdb6e=\"\"><label v-if=\"label\" class=\"control-label\" @click=\"focus\" _v-01cfdb6e=\"\">{{label}}</label></slot>\n    <div v-if=\"slots.before||slots.after\" class=\"input-group\" _v-01cfdb6e=\"\">\n      <slot name=\"before\" _v-01cfdb6e=\"\"></slot>\n      <textarea v-if=\"type=='textarea'\" class=\"form-control\" v-el:input=\"\" v-model=\"value\" :cols=\"cols\" :rows=\"rows\" :name=\"name\" :title=\"attr(title)\" :readonly=\"readonly\" :required=\"required\" :disabled=\"disabled\" :maxlength=\"maxlength\" :placeholder=\"placeholder\" @blur=\"onblur\" @focus=\"onfocus\" _v-01cfdb6e=\"\"></textarea>\n      <input v-else=\"\" class=\"form-control\" v-el:input=\"\" v-model=\"value\" :name=\"name\" :max=\"attr(max)\" :min=\"attr(min)\" :step=\"step\" :type=\"type\" :title=\"attr(title)\" :readonly=\"readonly\" :required=\"required\" :disabled=\"disabled\" :maxlength=\"maxlength\" :placeholder=\"placeholder\" @keyup.enter=\"enterSubmit&amp;&amp;submit()\" @blur=\"onblur\" @focus=\"onfocus\" _v-01cfdb6e=\"\">\n      <div v-if=\"showClear &amp;&amp; value\" :class=\"{icon:icon}\" _v-01cfdb6e=\"\">\n        <span class=\"close\" @click=\"value = ''\" _v-01cfdb6e=\"\">×</span>\n      </div>\n      <div v-if=\"icon\" class=\"icon\" _v-01cfdb6e=\"\">\n        <span v-if=\"icon&amp;&amp;valid!==null\" :class=\"['form-control-feedback glyphicon','glyphicon-'+(valid?'ok':'remove')]\" aria-hidden=\"true\" _v-01cfdb6e=\"\"></span>\n      </div>\n      <slot name=\"after\" _v-01cfdb6e=\"\"></slot>\n    </div>\n    <template v-else=\"\" _v-01cfdb6e=\"\">\n      <textarea v-if=\"type=='textarea'\" class=\"form-control\" v-el:input=\"\" v-model=\"value\" :cols=\"cols\" :rows=\"rows\" :name=\"name\" :title=\"attr(title)\" :readonly=\"readonly\" :required=\"required\" :disabled=\"disabled\" :maxlength=\"maxlength\" :placeholder=\"placeholder\" @blur=\"onblur\" @focus=\"onfocus\" _v-01cfdb6e=\"\"></textarea>\n      <input v-else=\"\" class=\"form-control\" v-el:input=\"\" v-model=\"value\" :name=\"name\" :max=\"attr(max)\" :min=\"attr(min)\" :step=\"step\" :type=\"type\" :title=\"attr(title)\" :readonly=\"readonly\" :required=\"required\" :disabled=\"disabled\" :maxlength=\"maxlength\" :placeholder=\"placeholder\" @keyup.enter=\"enterSubmit&amp;&amp;submit()\" @blur=\"onblur\" @focus=\"onfocus\" _v-01cfdb6e=\"\">\n      <span v-if=\"showClear &amp;&amp; value\" class=\"close\" @click=\"value = ''\" _v-01cfdb6e=\"\">×</span>\n      <span v-if=\"icon&amp;&amp;valid!==null\" :class=\"['form-control-feedback glyphicon','glyphicon-'+(valid?'ok':'remove')]\" aria-hidden=\"true\" _v-01cfdb6e=\"\"></span>\n    </template>\n    <div v-if=\"showHelp\" class=\"help-block\" @click=\"focus\" _v-01cfdb6e=\"\">{{help}}</div>\n    <div v-if=\"showError\" class=\"help-block with-errors\" @click=\"focus\" _v-01cfdb6e=\"\">{{errorText}}</div>\n  </div>";
 
 /***/ },
-/* 366 */
+/* 369 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(367)
-	module.exports = __webpack_require__(369)
+	__webpack_require__(370)
+	module.exports = __webpack_require__(372)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(370)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(373)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -34890,13 +35108,13 @@
 	}
 
 /***/ },
-/* 367 */
+/* 370 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(368);
+	var content = __webpack_require__(371);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(150)(content, {});
@@ -34916,7 +35134,7 @@
 	}
 
 /***/ },
-/* 368 */
+/* 371 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(149)();
@@ -34930,7 +35148,7 @@
 
 
 /***/ },
-/* 369 */
+/* 372 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35079,25 +35297,25 @@
 	// </style>
 
 /***/ },
-/* 370 */
+/* 373 */
 /***/ function(module, exports) {
 
 	module.exports = "<li v-if=\"isLi\" v-el:dropdown=\"\" :class=\"classes\" _v-515fe83c=\"\">\n    <slot name=\"button\" _v-515fe83c=\"\">\n      <a class=\"dropdown-toggle\" role=\"button\" :class=\"{disabled: disabled}\" @keyup.esc=\"show = false\" _v-515fe83c=\"\">\n        {{{ text }}}\n        <span class=\"caret\" _v-515fe83c=\"\"></span>\n      </a>\n    </slot>\n    <slot name=\"dropdown-menu\" _v-515fe83c=\"\">\n      <ul v-else=\"\" class=\"dropdown-menu\" _v-515fe83c=\"\">\n        <slot _v-515fe83c=\"\"></slot>\n      </ul>\n    </slot>\n  </li>\n  <div v-else=\"\" v-el:dropdown=\"\" :class=\"classes\" _v-515fe83c=\"\">\n    <slot name=\"before\" _v-515fe83c=\"\"></slot>\n    <slot name=\"button\" _v-515fe83c=\"\">\n      <button type=\"button\" class=\"btn btn-{{type}} dropdown-toggle\" @keyup.esc=\"show = false\" :disabled=\"disabled\" _v-515fe83c=\"\">\n        {{ text }}\n        <span class=\"caret\" _v-515fe83c=\"\"></span>\n      </button>\n    </slot>\n    <slot name=\"dropdown-menu\" _v-515fe83c=\"\">\n      <ul class=\"dropdown-menu\" _v-515fe83c=\"\">\n        <slot _v-515fe83c=\"\"></slot>\n      </ul>\n    </slot>\n  </div>";
 
 /***/ },
-/* 371 */
+/* 374 */
 /***/ function(module, exports) {
 
 	module.exports = "<doc-section id=\"input\" name=\"Input\">\n    <div class=\"bs-example text-left\">\n      <form action=\".\" method=\"get\" accept-charset=\"utf-8\">\n        <div class=\"row\">\n          <div class=\"col-xs-12 col-sm-6 col-md-6 col-lg-6\">\n            <bs-input name=\"username\"\n              :disabled=\"check.disabled\"\n              :error=\"check.error && 'Insert user name'\"\n              help=\"Only allows lowercase letters and numbers.\"\n              :enter-submit=\"check.enterSubmit\"\n              :icon=\"check.icon\"\n              :label=\"check.label && 'User Name'\"\n              :mask=\"check.mask?mask:null\"\n              :minlength=\"check.minlength?5:0\"\n              pattern=\"^[a-z][a-z0-9]+$\"\n              :placeholder=\"check.placeholder && 'Username can\\'t start with a number.'\"\n              :readonly=\"check.readonly\"\n              :required=\"check.required\"\n              :hide-help=\"check.hideHelp\"\n              :clear-button=\"check.clearButton\"\n              :value.sync=\"input\"\n            ></bs-input>\n          </div>\n          <div class=\"col-xs-12 col-sm-6 col-md-6 col-lg-6\">\n            <bs-input name=\"match\" required type=\"password\" :match=\"input\" :icon=\"check.icon\" :enter-submit=\"check.enterSubmit\" help=\"Match the User Name\">\n              <label slot=\"label\">Match value</label>\n            </bs-input>\n          </div>\n        </div>\n        <div class=\"row\">\n          <button-group type=\"primary\" buttons=\"false\">\n            <div class=\"col-xs-12 col-sm-6 col-md-6 col-lg-6\">\n              <p><checkbox :checked.sync=\"check.label\">Label</checkbox></p>\n              <p><checkbox :checked.sync=\"check.placeholder\">placeholder</checkbox></p>\n              <p><checkbox :checked.sync=\"check.hideHelp\">hide help</checkbox></p>\n              <p><checkbox :checked.sync=\"check.disabled\">disabled</checkbox></p>\n              <p><checkbox :checked.sync=\"check.error\">error</checkbox></p>\n              <p><checkbox :checked.sync=\"check.icon\">icon</checkbox></p>\n            </div>\n            <div class=\"col-xs-12 col-sm-6 col-md-6 col-lg-6\">\n              <p><checkbox :checked.sync=\"check.mask\">mask</checkbox></p>\n              <p><checkbox :checked.sync=\"check.minlength\">minlength=5</checkbox></p>\n              <p><checkbox :checked.sync=\"check.readonly\">readonly</checkbox></p>\n              <p><checkbox :checked.sync=\"check.required\">required</checkbox></p>\n              <p><checkbox :checked.sync=\"check.clearButton\">clear button (unnecessary in Edge browser)</checkbox></p>\n              <p><checkbox :checked.sync=\"check.enterSubmit\">enter submit</checkbox></p>\n            </div>\n          </button-group>\n        </div>\n        <hr/>\n        <bs-input label=\"Input with slots\" type=\"text\" required icon clear-button>\n          <span slot=\"before\" class=\"input-group-addon\"><span class=\"glyphicon glyphicon-user\"></span></span>\n          <span slot=\"after\" class=\"input-group-addon\"><span class=\"glyphicon glyphicon-question-sign\"></span></span>\n        </bs-input>\n        <bs-input name=\"textarea\" label=\"Textarea\" type=\"textarea\" :icon=\"check.icon\" :enter-submit=\"check.enterSubmit\"\n          @focus=\"event = 'focused'\"\n          @blur=\"event = 'blured'\"\n        ></bs-input>\n        <pre> Test event on textarea: {{event}}</pre>\n      </form>\n      <doc-code>\n        <bs-input :value.sync=\"input\"\n          label=\"Username\"\n          help=\"Only allows lowercase letters and numbers.\"\n          error=\"Insert username\"\n          placeholder=\"Username can't start with a number.\"\n          pattern=\"^[a-z][a-z0-9]+$\"\n          :mask=\"mask\"\n          minlength=\"5\"\n          readonly\n          required\n          icon\n        ></bs-input>\n        <bs-input required label=\"Match value\" type=\"password\" :match=\"input\"></bs-input>\n        <bs-input label=\"Textarea\" type=\"textarea\" @focus=\"event = 'focused'\" @blur=\"event = 'blured'\"></bs-input>\n      </doc-code>\n      <doc-code language=\"javascript\">\n        mask: function (value) {\n          // change to lowercase, remove up to the first letter, and then remove all other unsuported characters\n          return value.toLowerCase().replace(/^[^a-z]+/,'').replace(/[^a-z0-9]/g,'');\n        }\n      </doc-code>\n      <h2>Input groups:</h2>\n      <p>More details in <a href=\"http://getbootstrap.com/components/#input-groups\">bootstrap input groups</a>.</p>\n      <bs-input label=\"With dropdown and button\" type=\"text\">\n        <dropdown slot=\"before\" text=\"dropdown\">\n          <li><a href=\"#\">option</a></li>\n        </dropdown>\n        <span slot=\"after\" class=\"input-group-btn\">\n          <button type=\"button\" class=\"btn btn-primary\">Go!</button>\n        </span>\n      </bs-input>\n      <doc-code>\n        <bs-input label=\"With dropdown and button\" type=\"text\">\n          <dropdown slot=\"before\" text=\"dropdown\">\n            <li><a href=\"#\">option</a></li>\n          </dropdown>\n          <span slot=\"after\" class=\"input-group-btn\">\n            <button type=\"button\" class=\"btn btn-primary\">Go!</button>\n          </span>\n        </bs-input>\n      </doc-code>\n      <bs-input label=\"With text and icon\" type=\"number\" placeholder=\"Insert how much cost your house\">\n        <span slot=\"before\" class=\"input-group-addon\"><span class=\"glyphicon glyphicon-home\"></span></span>\n        <span slot=\"after\" class=\"input-group-addon\">$</span>\n      </bs-input>\n      <doc-code>\n        <bs-input label=\"With text and icon\" type=\"number\" placeholder=\"Insert how much cost your house\">\n          <span slot=\"before\" class=\"input-group-addon\"><span class=\"glyphicon glyphicon-home\"></span></span>\n          <span slot=\"after\" class=\"input-group-addon\">$</span>\n        </bs-input>\n      </doc-code>\n    </div>\n    <doc-table>\n      <div>\n        <p>value</p>\n        <p><code>String</code></p>\n        <p><code>''</code></p>\n        <p>Input value. Use <code>:value.sync=\"value\"</code></p>\n      </div>\n      <div>\n        <p>match</p>\n        <p><code>String</code></p>\n        <p><code>''</code></p>\n        <p>Matching value. Both have to be the same value.</p>\n      </div>\n      <div>\n        <p>disabled</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p></p>\n      </div>\n      <div>\n        <p>enterSubmit</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Submit when you press <code>Enter</code>. Not supported on type <code>textarea</code>.</p>\n      </div>\n      <div>\n        <p>error</p>\n        <p><code>String</code></p>\n        <p><code>null</code></p>\n        <p>Error message.</p>\n      </div>\n      <div>\n        <p>help</p>\n        <p><code>String</code></p>\n        <p><code>null</code></p>\n        <p>Help text behind the input</p>\n      </div>\n      <div>\n        <p>hide-help</p>\n        <p><code>Boolean</code></p>\n        <p><code>true</code></p>\n        <p>Only work with help and error.<br/>Hide the help if have to show any error message.</p>\n      </div>\n      <div>\n        <p>icon</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p></p>\n      </div>\n      <div>\n        <p>label</p>\n        <p><code>String</code></p>\n        <p><code>null</code></p>\n        <p>Enable input label (name).</p>\n      </div>\n      <div>\n        <p>lang</p>\n        <p><code>String</code></p>\n        <p>Browser language</p>\n        <p><abbr title=\"ISO 639-1 code\"><a href=\"https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes\">Language</a></abbr>. Default <code>en</code> if the translation doesn't exist.</p>\n      </div>\n      <div>\n        <p>mask</p>\n        <p><code>Function</code></p>\n        <p><code>null</code></p>\n        <p>Mask function that receive and edit the value.</p>\n      </div>\n      <div>\n        <p>mask-delay</p>\n        <p><code>Number</code></p>\n        <p><code>100</code></p>\n        <p>Delay time before apply the mask.</p>\n      </div>\n      <div>\n        <p>maxlength</p>\n        <p><code>Number</code></p>\n        <p><code>null</code></p>\n        <p></p>\n      </div>\n      <div>\n        <p>minlength</p>\n        <p><code>Number</code></p>\n        <p><code>0</code></p>\n        <p></p>\n      </div>\n      <div>\n        <p>name</p>\n        <p><code>String</code></p>\n        <p><code>null</code></p>\n        <p></p>\n      </div>\n      <div>\n        <p>pattern</p>\n        <p><code>String</code>, <code>RegExp</code> or <code>Function</code></p>\n        <p><code>null</code></p>\n        <p>Validation pattern. A full <a href=\"https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions\" target=\"_blank\">regular expression</a> or a function that evaluate the content and return <code>true</code> or <code>false</code>.</p>\n      </div>\n      <div>\n        <p>placeholder</p>\n        <p><code>String</code></p>\n        <p><code>null</code></p>\n        <p></p>\n      </div>\n      <div>\n        <p>required</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p></p>\n      </div>\n      <div>\n        <p>type</p>\n        <p><code>String</code></p>\n        <p><code>text</code></p>\n        <p></p>\n      </div>\n      <div>\n        <p>validation-delay</p>\n        <p><code>Number</code></p>\n        <p><code>250</code></p>\n        <p>Delay time before apply the validation.</p>\n      </div>\n    </doc-table>\n    <doc-table name=\"Supported Native Validator\" :headers=\"['Name','Description']\">\n      <div>\n        <p>type</p>\n        <p>Use native validation with <code>url</code> and <code>email</code>.</p>\n      </div>\n      <div>\n        <p>min&nbsp;/&nbsp;max&nbsp;/&nbsp;step</p>\n        <p>That attributes handle the values supported.\n          Work with the following input types: <code>number</code>, <code>range</code>, <code>date</code>, <code>datetime-local</code>, <code>month</code>, <code>time</code> and <code>week</code>.</p>\n      </div>\n    </doc-table>\n    That validations only work in browsers that support <a href=\"https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/Data_form_validation\" target=\"_blank\">HTML5 form validations (all modern browsers support it).</a>\n  </doc-section>";
 
 /***/ },
-/* 372 */
+/* 375 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(373)
+	module.exports = __webpack_require__(376)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(383)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(386)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -35115,7 +35333,7 @@
 	}
 
 /***/ },
-/* 373 */
+/* 376 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35136,7 +35354,7 @@
 	
 	var _docCode2 = _interopRequireDefault(_docCode);
 	
-	var _Modal = __webpack_require__(374);
+	var _Modal = __webpack_require__(377);
 	
 	var _Modal2 = _interopRequireDefault(_Modal);
 	
@@ -35324,14 +35542,14 @@
 	// </script>
 
 /***/ },
-/* 374 */
+/* 377 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(375)
-	module.exports = __webpack_require__(377)
+	__webpack_require__(378)
+	module.exports = __webpack_require__(380)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(382)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(385)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -35349,13 +35567,13 @@
 	}
 
 /***/ },
-/* 375 */
+/* 378 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(376);
+	var content = __webpack_require__(379);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(150)(content, {});
@@ -35375,7 +35593,7 @@
 	}
 
 /***/ },
-/* 376 */
+/* 379 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(149)();
@@ -35389,7 +35607,7 @@
 
 
 /***/ },
-/* 377 */
+/* 380 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -35398,7 +35616,7 @@
 	  value: true
 	});
 	
-	var _isInteger = __webpack_require__(378);
+	var _isInteger = __webpack_require__(381);
 	
 	var _isInteger2 = _interopRequireDefault(_isInteger);
 	
@@ -35594,32 +35812,32 @@
 	// </template>
 	
 	// <script>
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(296)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(299)))
 
 /***/ },
-/* 378 */
+/* 381 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(379), __esModule: true };
+	module.exports = { "default": __webpack_require__(382), __esModule: true };
 
 /***/ },
-/* 379 */
+/* 382 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(380);
+	__webpack_require__(383);
 	module.exports = __webpack_require__(63).Number.isInteger;
 
 /***/ },
-/* 380 */
+/* 383 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.1.2.3 Number.isInteger(number)
 	var $export = __webpack_require__(61);
 	
-	$export($export.S, 'Number', {isInteger: __webpack_require__(381)});
+	$export($export.S, 'Number', {isInteger: __webpack_require__(384)});
 
 /***/ },
-/* 381 */
+/* 384 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.1.2.3 Number.isInteger(number)
@@ -35630,25 +35848,25 @@
 	};
 
 /***/ },
-/* 382 */
+/* 385 */
 /***/ function(module, exports) {
 
 	module.exports = "<div role=\"dialog\"\n    v-bind:class=\"{\n    'modal':true,\n    'fade':effect === 'fade',\n    'zoom':effect === 'zoom'\n    }\">\n    <div v-bind:class=\"{'modal-dialog':true,'modal-lg':large,'modal-sm':small}\" role=\"document\"\n      v-bind:style=\"{width: optionalWidth}\">\n      <div class=\"modal-content\">\n        <slot name=\"modal-header\">\n          <div class=\"modal-header\">\n            <button type=\"button\" class=\"close\" @click=\"close\"><span>&times;</span></button>\n            <h4 class=\"modal-title\">\n              <slot name=\"title\">\n                {{{titleRendered}}}\n              </slot>\n            </h4>\n          </div>\n        </slot>\n          <div class=\"modal-body\">\n              <slot></slot>\n          </div>\n        <slot name=\"modal-footer\">\n          <div class=\"modal-footer\" v-if=\"showOkButton\">\n            <button type=\"button\" class=\"btn btn-primary\" v-if=\"showOkButton\" @click=\"close\">{{ okText }}</button>\n          </div>\n        </slot>\n      </div>\n    </div>\n  </div>";
 
 /***/ },
-/* 383 */
+/* 386 */
 /***/ function(module, exports) {
 
 	module.exports = "<doc-section id=\"modal\" name=\"Modal\">\n    <div class=\"bs-example\">\n      <button class=\"btn btn-default\" v-show-modal=\"modal1\">Show modal</button>\n      <modal title=\"==Modal title==\" name=\"modal1\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n      </modal>\n      <button class=\"btn btn-success\" @click=\"fadeModal = true\">Fade modal</button>\n      <modal title=\"Fade Modal\" :show.sync=\"fadeModal\" effect=\"fade\" width=\"800\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n      </modal>\n      <button class=\"btn btn-primary\" @click=\"zoomModal = true\">Zoom modal</button>\n      <modal title=\"Zoom Modal\" :show.sync=\"zoomModal\" effect=\"zoom\" width=\"400\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n      </modal>\n      <button class=\"btn btn-default\" @click=\"showCustomModal = true\">Show custom modal</button>\n      <modal :show.sync=\"showCustomModal\" effect=\"fade\" width=\"50%\">\n        <div slot=\"modal-header\" class=\"modal-header\">\n          <h4 class=\"modal-title\"><i>Custom</i> <code>Modal</code> <b>Title</b></h4>\n        </div>\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        <div slot=\"modal-footer\" class=\"modal-footer\">\n          <button type=\"button\" class=\"btn btn-default\" @click='showCustomModal = false'>Exit</button>\n          <button type=\"button\" class=\"btn btn-success\" @click='showCustomModal = false'>Custom Save</button>\n        </div>\n      </modal>\n      <button class=\"btn btn-warning\" @click=\"largeModal = true\">Large modal</button>\n      <modal title=\"Large Modal\" :show.sync=\"largeModal\" large>\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n      </modal>\n      <button class=\"btn btn-danger\" @click=\"smallModal = true\">Small modal</button>\n      <modal title=\"Small Modal\" :show.sync=\"smallModal\" small>\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat.\n      </modal>\n    </div>\n    <doc-code language=\"markup\">\n      <modal :show.sync=\"...\">\n        <div slot=\"modal-header\" class=\"modal-header\">\n          <h4 class=\"modal-title\">Modal title</h4>\n        </div>\n        ...\n      </modal>\n\n      <modal title=\"Fade Modal\" :show.sync=\"...\" effect=\"fade\" width=\"800\">\n        ...\n      </modal>\n\n      <modal title=\"Zoom Modal\" :show.sync=\"...\" effect=\"zoom\" width=\"400\">\n        ...\n      </modal>\n\n      <modal :show.sync=\"showCustomModal\" effect=\"fade\" width=\"400\">\n        <div slot=\"modal-header\" class=\"modal-header\">\n          <h4 class=\"modal-title\">\n            <i>Custom</i> <code>Modal</code> <b>Title</b>\n          </h4>\n        </div>\n\n        ...\n\n        <div slot=\"modal-footer\" class=\"modal-footer\">\n          <button type=\"button\" class=\"btn btn-default\" @click='showCustomModal = false'>Exit</button>\n          <button type=\"button\" class=\"btn btn-success\" @click='showCustomModal = false'>Custom Save</button>\n        </div>\n      </modal>\n      <modal title=\"Large Modal\" large :show.sync=\"...\">\n        ...\n      </modal>\n      <modal title=\"Small Modal\" small :show.sync=\"...\">\n        ...\n      </modal>\n  </doc-code>\n  <doc-table>\n    <div>\n      <p>title</p>\n      <p><code>String</code></p>\n      <p></p>\n      <p>Title of the modal component.</p>\n    </div>\n    <div>\n      <p>ok-text</p>\n      <p><code>String</code></p>\n      <p>Save changes</p>\n      <p>Text for OK button</p>\n    </div>\n    <div>\n      <p>width</p>\n      <p><code>Number, String or null</code></p>\n      <p><code>null</code></p>\n      <p>Pass a Number in pixels or a String with relational sizes ( e.g. '80%' or '5em' ). If null, the modal will be responsive per bootstrap's default.</p>\n    </div>\n    <div>\n      <p>large</p>\n      <p><code>Boolean</code></p>\n      <p><code>false</code></p>\n      <p>Creates a large modal ( see boostrap's documentation for .modal-lg )</p>\n    </div>\n    <div>\n      <p>small</p>\n      <p><code>Boolean</code></p>\n      <p><code>false</code></p>\n      <p>Creates a small modal ( see boostrap's documentation for .modal-sm )</p>\n    </div>\n    <div>\n      <p>backdrop</p>\n      <p><code>Boolean</code></p>\n      <p><code>true</code></p>\n      <p>Enables/disables closing the modal by clicking on the backdrop.</p>\n    </div>\n  </doc-table>\n  <h2>Usage</h2>\n  <p>\n    If you just need a simple modal, you can use the <code>title</code> prop and the default footer. However, if you\n    need to put custom HTML or a custom footer, you can override the header or footer block by using\n    <code>&lt;div slot=\"modal-title\" class=\"modal-title\"&gt;...&lt;/div&gt;</code> and\n    <code>&lt;div slot=\"modal-footer\" class=\"modal-footer\"&gt;...&lt;/div&gt;</code>.\n  </p>\n  </div>\n</template>";
 
 /***/ },
-/* 384 */
+/* 387 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(385)
+	module.exports = __webpack_require__(388)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(386)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(389)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -35666,7 +35884,7 @@
 	}
 
 /***/ },
-/* 385 */
+/* 388 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35687,7 +35905,7 @@
 	
 	var _docCode2 = _interopRequireDefault(_docCode);
 	
-	var _Morph = __webpack_require__(288);
+	var _Morph = __webpack_require__(291);
 	
 	var _Morph2 = _interopRequireDefault(_Morph);
 	
@@ -35744,19 +35962,19 @@
 	// </script>
 
 /***/ },
-/* 386 */
+/* 389 */
 /***/ function(module, exports) {
 
 	module.exports = "<doc-section id=\"morph\" name=\"Morph\">\n        <div class=\"bs-example\">\n            <morph title=\"Q1\">\n                <div>\n                    Content of Q1\n                </div>\n            </morph>\n            <morph title=\"Q2\">\n                <div>\n                    Content of Q2\n                </div>\n            </morph>\n            <morph title=\"Q3\">\n                <div>\n                    Content of Q3\n                </div>\n            </morph>\n            <morph title=\"**Q4** :cat:\">\n                <div>\n                    Content of Q4\n                </div>\n            </morph>\n        </div>\n        <doc-code language=\"markup\">\n            Markdown is supported for title.\n            <morph title=\"**Q4** :cat:\">\n                <div>\n                    Content of Q4\n                </div>\n            </morph>\n        </doc-code>\n        <doc-table>\n\n        </doc-table>\n    </doc-section>";
 
 /***/ },
-/* 387 */
+/* 390 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(388)
+	module.exports = __webpack_require__(391)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(392)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(395)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -35774,7 +35992,7 @@
 	}
 
 /***/ },
-/* 388 */
+/* 391 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35795,19 +36013,19 @@
 	
 	var _docCode2 = _interopRequireDefault(_docCode);
 	
-	var _Dropdown = __webpack_require__(366);
+	var _Dropdown = __webpack_require__(369);
 	
 	var _Dropdown2 = _interopRequireDefault(_Dropdown);
 	
-	var _Navbar = __webpack_require__(389);
+	var _Navbar = __webpack_require__(392);
 	
 	var _Navbar2 = _interopRequireDefault(_Navbar);
 	
-	var _Tooltip = __webpack_require__(307);
+	var _Tooltip = __webpack_require__(310);
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 	
-	var _Select = __webpack_require__(264);
+	var _Select = __webpack_require__(267);
 	
 	var _Select2 = _interopRequireDefault(_Select);
 	
@@ -35903,13 +36121,13 @@
 	// <script>
 
 /***/ },
-/* 389 */
+/* 392 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(390)
+	module.exports = __webpack_require__(393)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(391)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(394)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -35927,7 +36145,7 @@
 	}
 
 /***/ },
-/* 390 */
+/* 393 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36053,25 +36271,25 @@
 	// <script>
 
 /***/ },
-/* 391 */
+/* 394 */
 /***/ function(module, exports) {
 
 	module.exports = "<nav v-el:navbar :class=\"['navbar',{\n    'navbar-inverse':(type == 'inverse'),\n    'navbar-default':(type == 'default'),\n    'navbar-fixed-top':(placement === 'top'),\n    'navbar-fixed-bottom':(placement === 'bottom'),\n    'navbar-static-top':(placement === 'static')\n  }]\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <button v-if=\"!slots.collapse\" type=\"button\" class=\"navbar-toggle collapsed\"  aria-expanded=\"false\" @click=\"toggleCollapse\">\n          <span class=\"sr-only\">Toggle navigation</span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n        </button>\n        <slot name=\"collapse\"></slot>\n        <slot name=\"brand\"></slot>\n      </div>\n      <div :class=\"['navbar-collapse',{collapse:collapsed}]\">\n        <ul class=\"nav navbar-nav\">\n          <slot></slot>\n        </ul>\n        <ul v-if=\"slots.right\" class=\"nav navbar-nav navbar-right\">\n          <slot name=\"right\"></slot>\n        </ul>\n      </div>\n    </div>\n  </nav>";
 
 /***/ },
-/* 392 */
+/* 395 */
 /***/ function(module, exports) {
 
 	module.exports = "<doc-section id=\"navbar\" name=\"Navbar\">\n    <div class=\"bs-example\">\n      <navbar :placement=\"placement\" :type=\"type\">\n        <a href=\"/\" title=\"Home\" slot=\"brand\" class=\"navbar-brand\">VueStrap</a>\n        <dropdown text=\"Component List\" type=\"primary\">\n          <li v-for=\"s in sections\"><a :href=\"'#'+s.id\" v-text=\"s.name\"></a></li>\n        </dropdown>\n        <li>\n          <a href=\"https://github.com/yuche/vue-strap\" target=\"_blank\">\n            Fork this project on Github\n            <svg height=\"16px\" fill=\"#777\" class=\"octicon octicon-mark-github\" viewBox=\"0 0 16 16\" version=\"1.1\" aria-hidden=\"true\"><path d=\"M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z\"></path></svg>\n          </a>\n        </li>\n      </navbar>\n      <div class=\"form-group\">\n        <label>Placement</label>\n        <v-select :value.sync=\"placement\" clear-button :options=\"['top','bottom','static']\"></v-select>\n      </div>\n      <div class=\"form-group\">\n        <label>Type</label>\n        <v-select :value.sync=\"type\" :options=\"['default','inverse']\"></v-select>\n      </div>\n    </div>\n    <doc-code language=\"markup\">\n      <navbar placement=\"top\" type=\"default\">\n        <!-- Brand as slot -->\n        <a slot=\"brand\" href=\"/\" title=\"Home\" class=\"navbar-brand\">VueStrap</a>\n        <!-- You can use dropdown component -->\n        <dropdown text=\"Dropdown\">\n          <li><a href=\"link\">Option</a></li>\n        </dropdown>\n        <!-- Or normal bootstrap style -->\n        <li class=\"dropdown\">\n          <a href=\"#\" class=\"dropdown-toggle\">Dropdown</a>\n          <ul class=\"dropdown-menu\">\n            <li><a href=\"link\">Option</a></li>\n          </ul>\n        </li>\n        <!-- For right positioning use slot -->\n        <li slot=\"right\">\n          <a href=\"https://github.com/yuche/vue-strap\" target=\"_blank\">Fork...</a>\n        </li>\n      </navbar>\n    </doc-code>\n    <doc-table>\n      <div>\n        <p>placement</p>\n        <p><code>String</code>, one of <code>top</code>, <code>bottom</code>, <code>static</code>, or empty for normal.</p>\n        <p><code>''</code></p>\n        <p></p>\n      </div>\n      <div>\n        <p>type</p>\n        <p><code>String</code>, one of <code>inverse</code>, <code>default</code>.</p>\n        <p><code>default</code></p>\n        <p></p>\n      </div>\n    </doc-table>\n  </doc-section>";
 
 /***/ },
-/* 393 */
+/* 396 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(394)
+	module.exports = __webpack_require__(397)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(395)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(398)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -36089,7 +36307,7 @@
 	}
 
 /***/ },
-/* 394 */
+/* 397 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36110,11 +36328,11 @@
 	
 	var _docCode2 = _interopRequireDefault(_docCode);
 	
-	var _Question = __webpack_require__(284);
+	var _Question = __webpack_require__(287);
 	
 	var _Question2 = _interopRequireDefault(_Question);
 	
-	var _Morph = __webpack_require__(288);
+	var _Morph = __webpack_require__(291);
 	
 	var _Morph2 = _interopRequireDefault(_Morph);
 	
@@ -36146,6 +36364,15 @@
 	//                 <div slot="hint">
 	//                     Hint
 	//                 </div>
+	//                 <div slot="answer">
+	//                     Answer
+	//                 </div>
+	//             </Question>
+	//         </div>
+	//         <p>If no Hint slot is specified, it will not show:</p>
+	//         <div class="bs-example">
+	//             <Question>
+	//                 Body
 	//                 <div slot="answer">
 	//                     Answer
 	//                 </div>
@@ -36196,6 +36423,14 @@
 	//                 </div>
 	//             </Question>
 	
+	//             If no Hint slot is specified, it will not show:
+	//             <Question>
+	//                 Body
+	//                 <div slot="answer">
+	//                 Answer
+	//             </div>
+	//             </Question>
+	
 	//             Use inline with morph
 	//             <morph title="Review question">
 	//                 <Question>
@@ -36222,19 +36457,19 @@
 	// <script>
 
 /***/ },
-/* 395 */
+/* 398 */
 /***/ function(module, exports) {
 
-	module.exports = "<doc-section id=\"question\" name=\"Question\">\n        <p>\n            Question shows a structure like below, which consists of a question body, hint and answer.\n        </p>\n        <div class=\"bs-example\">\n            <Question>\n                Body\n                <div slot=\"hint\">\n                    Hint\n                </div>\n                <div slot=\"answer\">\n                    Answer\n                </div>\n            </Question>\n        </div>\n        <p>\n            Question could be used with Morph component to create a inline question group.<br>\n            Could be also stored in a remote file and load it when it is to be shown.\n        </p>\n        <div class=\"bs-example\">\n            <morph title=\"Review question\">\n                <Question>\n                    Body\n                    <div slot=\"hint\">\n                        Hint\n                    </div>\n                    <div slot=\"answer\">\n                        Answer\n                    </div>\n                </Question>\n            </morph>\n            <morph title=\"Remote question\" src=\"/docs/question.html\"></morph>\n        </div>\n        <p>\n            Use <code>has-input</code> attribute to add an input box for user to enter their answer.\n        </p>\n        <div class=\"bs-example\">\n            <Question has-input>\n                Body\n                <div slot=\"hint\">\n                    Hint\n                </div>\n                <div slot=\"answer\">\n                    Answer\n                </div>\n            </Question>\n        </div>\n\n        <doc-code language=\"markup\">\n            Use alone\n            <Question>\n                Body\n                <div slot=\"hint\">\n                    Hint\n                </div>\n                <div slot=\"answer\">\n                    Answer\n                </div>\n            </Question>\n\n            Use inline with morph\n            <morph title=\"Review question\">\n                <Question>\n                    Body\n                    <div slot=\"hint\">\n                        Hint\n                    </div>\n                    <div slot=\"answer\">\n                        Answer\n                    </div>\n                </Question>\n            </morph>\n\n            Use inline with Morph dynamic loading\n            <morph title=\"Review question\" src=\"/docs/question.html\">\n            </morph>\n        </doc-code>\n        <doc-table>\n\n        </doc-table>\n    </doc-section>";
+	module.exports = "<doc-section id=\"question\" name=\"Question\">\n        <p>\n            Question shows a structure like below, which consists of a question body, hint and answer.\n        </p>\n        <div class=\"bs-example\">\n            <Question>\n                Body\n                <div slot=\"hint\">\n                    Hint\n                </div>\n                <div slot=\"answer\">\n                    Answer\n                </div>\n            </Question>\n        </div>\n        <p>If no Hint slot is specified, it will not show:</p>\n        <div class=\"bs-example\">\n            <Question>\n                Body\n                <div slot=\"answer\">\n                    Answer\n                </div>\n            </Question>\n        </div>\n        <p>\n            Question could be used with Morph component to create a inline question group.<br>\n            Could be also stored in a remote file and load it when it is to be shown.\n        </p>\n        <div class=\"bs-example\">\n            <morph title=\"Review question\">\n                <Question>\n                    Body\n                    <div slot=\"hint\">\n                        Hint\n                    </div>\n                    <div slot=\"answer\">\n                        Answer\n                    </div>\n                </Question>\n            </morph>\n            <morph title=\"Remote question\" src=\"/docs/question.html\"></morph>\n        </div>\n        <p>\n            Use <code>has-input</code> attribute to add an input box for user to enter their answer.\n        </p>\n        <div class=\"bs-example\">\n            <Question has-input>\n                Body\n                <div slot=\"hint\">\n                    Hint\n                </div>\n                <div slot=\"answer\">\n                    Answer\n                </div>\n            </Question>\n        </div>\n\n        <doc-code language=\"markup\">\n            Use alone\n            <Question>\n                Body\n                <div slot=\"hint\">\n                    Hint\n                </div>\n                <div slot=\"answer\">\n                    Answer\n                </div>\n            </Question>\n\n            If no Hint slot is specified, it will not show:\n            <Question>\n                Body\n                <div slot=\"answer\">\n                Answer\n            </div>\n            </Question>\n\n            Use inline with morph\n            <morph title=\"Review question\">\n                <Question>\n                    Body\n                    <div slot=\"hint\">\n                        Hint\n                    </div>\n                    <div slot=\"answer\">\n                        Answer\n                    </div>\n                </Question>\n            </morph>\n\n            Use inline with Morph dynamic loading\n            <morph title=\"Review question\" src=\"/docs/question.html\">\n            </morph>\n        </doc-code>\n        <doc-table>\n\n        </doc-table>\n    </doc-section>";
 
 /***/ },
-/* 396 */
+/* 399 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(397)
+	module.exports = __webpack_require__(400)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(403)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(406)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -36252,7 +36487,7 @@
 	}
 
 /***/ },
-/* 397 */
+/* 400 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36273,11 +36508,11 @@
 	
 	var _docCode2 = _interopRequireDefault(_docCode);
 	
-	var _Popover = __webpack_require__(398);
+	var _Popover = __webpack_require__(401);
 	
 	var _Popover2 = _interopRequireDefault(_Popover);
 	
-	var _Input = __webpack_require__(361);
+	var _Input = __webpack_require__(364);
 	
 	var _Input2 = _interopRequireDefault(_Input);
 	
@@ -36407,14 +36642,14 @@
 	// <script>
 
 /***/ },
-/* 398 */
+/* 401 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(399)
-	module.exports = __webpack_require__(401)
+	__webpack_require__(402)
+	module.exports = __webpack_require__(404)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(402)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(405)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -36432,13 +36667,13 @@
 	}
 
 /***/ },
-/* 399 */
+/* 402 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(400);
+	var content = __webpack_require__(403);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(150)(content, {});
@@ -36458,7 +36693,7 @@
 	}
 
 /***/ },
-/* 400 */
+/* 403 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(149)();
@@ -36472,7 +36707,7 @@
 
 
 /***/ },
-/* 401 */
+/* 404 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36481,7 +36716,7 @@
 	  value: true
 	});
 	
-	var _popoverMixins = __webpack_require__(311);
+	var _popoverMixins = __webpack_require__(314);
 	
 	var _popoverMixins2 = _interopRequireDefault(_popoverMixins);
 	
@@ -36570,25 +36805,25 @@
 	// <script>
 
 /***/ },
-/* 402 */
+/* 405 */
 /***/ function(module, exports) {
 
 	module.exports = "<span v-el:trigger>\n    <slot></slot>\n  </span>\n  <div v-el:popover v-if=\"show\"\n    :class=\"['popover',placement]\"\n    :transition=\"effect\"\n  >\n    <div class=\"arrow\"></div>\n    <h3 class=\"popover-title\" v-if=\"title\">\n      <slot name=\"title\">{{{titleRendered}}}</slot>\n    </h3>\n    <div class=\"popover-content\">\n      <slot name=\"content\">{{{contentRendered}}}</slot>\n    </div>\n  </div>";
 
 /***/ },
-/* 403 */
+/* 406 */
 /***/ function(module, exports) {
 
 	module.exports = "<doc-section id=\"popover\" name=\"Popover\">\n    <div class=\"bs-example\">\n      <popover v-for=\"place in placements\" effect=\"fade\" :content=\"text\" :placement=\"place\">\n        <button class=\"btn btn-default\">Popover on {{place}}</button>\n      </popover>\n      <hr>\n      <h4>Title</h4>\n      <popover v-for=\"place in placements\" effect=\"fade\" header title=\"Title\" :content=\"text\" :placement=\"place\">\n        <button class=\"btn btn-default\">Popover on {{place}}</button>\n      </popover>\n      <hr>\n      <h4>Trigger</h4>\n      <p>\n        <popover effect=\"scale\" title=\"Title\" :content=\"content\" placement=\"top\" trigger=\"hover\">\n          <button class=\"btn btn-default\">Mouseenter</button>\n        </popover>\n        <popover effect=\"scale\" title=\"Title\" :content=\"text\" placement=\"top\" trigger=\"contextmenu\">\n          <button class=\"btn btn-default\">Contextmenu (right click)</button>\n        </popover>\n      </p>\n      <popover effect=\"scale\" title=\"Title\" :content=\"text\" placement=\"bottom\" trigger=\"focus\">\n        <bs-input type=\"text\" placeholder=\"Focus\"></bs-input>\n      </popover>\n      <h4>Markdown</h4>\n      <p>\n        <popover effect=\"scale\" title=\"**Emoji title** :rocket:\" content=\"++emoji++ content :cat:\">\n          <button class=\"btn btn-default\">Hover</button>\n        </popover>\n      </p>\n      <h4>Content using slot</h4>\n      <popover effect=\"scale\" title=\"**Emoji title** :rocket:\">\n        <div slot=\"content\">\n          This is a long content...\n        </div>\n\n        <button class=\"btn btn-default\">Hover</button>\n      </popover>\n      <h4>Wrap Text</h4>\n      <popover header=\"false\" content=\"Nice!\">What do you say</popover>\n    </div>\n    <doc-code language=\"markup\">\n      <popover effect=\"fade\" placement=\"bottom\" title=\"Title\" content=\"content\">\n        <button class=\"btn btn-default\">Popover on bottom</button>\n      </popover>\n\n      Markdown\n      <popover effect=\"scale\" title=\"**Emoji title** :rocket:\" content=\"++emoji++ content :cat:\">\n        <button class=\"btn btn-default\">Hover</button>\n      </popover>\n\n      For larger content, use slot=\"content\"\n      <popover effect=\"scale\" title=\"**Emoji title** :rocket:\">\n        <div slot=\"content\">\n          This is a long content...\n        </div>\n\n        <button class=\"btn btn-default\">Hover</button>\n      </popover>\n    </doc-code>\n    <doc-table>\n      <div>\n        <p>trigger</p>\n        <p><code>String</code>, one of <code>click</code> <code>focus</code> <code>hover</code> <code>contextmenu</code></p>\n        <p><code>hover</code></p>\n        <p>How the popover is triggered.</p>\n      </div>\n      <div>\n        <p>effect</p>\n        <p><code>String</code>, one of <code>scale</code> <code>fade</code></p>\n        <p><code>fade</code></p>\n        <p></p>\n      </div>\n      <div>\n        <p>title</p>\n        <p><code>String</code>, or be markdown inline text</p>\n        <p></p>\n        <p></p>\n      </div>\n      <div>\n        <p>content</p>\n        <p><code>String</code>, or be markdown inline text</p>\n        <p></p>\n        <p></p>\n      </div>\n      <div>\n        <p>header</p>\n        <p><code>Boolean</code></p>\n        <p><code>true</code></p>\n        <p>Whether to show the header.</p>\n      </div>\n      <div>\n        <p>placement</p>\n        <p><code>String</code>, one of <code>top</code>\n        <code>left</code>\n        <code>right</code>\n        <code>bottom</code></p>\n        <p>top</p>\n        <p>How to position the popover.</p>\n      </div>\n    </doc-table>\n  </doc-section>";
 
 /***/ },
-/* 404 */
+/* 407 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(405)
+	module.exports = __webpack_require__(408)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(406)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(409)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -36606,7 +36841,7 @@
 	}
 
 /***/ },
-/* 405 */
+/* 408 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36627,7 +36862,7 @@
 	
 	var _docCode2 = _interopRequireDefault(_docCode);
 	
-	var _Retriever = __webpack_require__(294);
+	var _Retriever = __webpack_require__(297);
 	
 	var _Retriever2 = _interopRequireDefault(_Retriever);
 	
@@ -36667,20 +36902,20 @@
 	// <script>
 
 /***/ },
-/* 406 */
+/* 409 */
 /***/ function(module, exports) {
 
 	module.exports = "<doc-section id=\"retriever\" name=\"Retriever\">\n    <div class=\"bs-example\">\n      <retriever src=\"docs/loadContent.html\"></retriever>\n      <retriever src=\"docs/loadContent.html#fragment\"></retriever>\n    </div>\n    <doc-code language=\"markup\">\n      <retriever src=\"docs/loadContent.html\"></retriever>\n      <retriever src=\"docs/loadContent.html#fragment\"></retriever>\n    </doc-code>\n    <doc-table>\n\n    </doc-table>\n  </doc-section>";
 
 /***/ },
-/* 407 */
+/* 410 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(408)
-	module.exports = __webpack_require__(410)
+	__webpack_require__(411)
+	module.exports = __webpack_require__(413)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(414)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(417)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -36698,13 +36933,13 @@
 	}
 
 /***/ },
-/* 408 */
+/* 411 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(409);
+	var content = __webpack_require__(412);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(150)(content, {});
@@ -36724,7 +36959,7 @@
 	}
 
 /***/ },
-/* 409 */
+/* 412 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(149)();
@@ -36738,7 +36973,7 @@
 
 
 /***/ },
-/* 410 */
+/* 413 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -36759,7 +36994,7 @@
 	
 	var _docCode2 = _interopRequireDefault(_docCode);
 	
-	var _buttonGroup = __webpack_require__(334);
+	var _buttonGroup = __webpack_require__(337);
 	
 	var _buttonGroup2 = _interopRequireDefault(_buttonGroup);
 	
@@ -36767,11 +37002,11 @@
 	
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 	
-	var _Select = __webpack_require__(264);
+	var _Select = __webpack_require__(267);
 	
 	var _Select2 = _interopRequireDefault(_Select);
 	
-	var _Option = __webpack_require__(411);
+	var _Option = __webpack_require__(414);
 	
 	var _Option2 = _interopRequireDefault(_Option);
 	
@@ -36985,13 +37220,13 @@
 	// <script>
 
 /***/ },
-/* 411 */
+/* 414 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(412)
+	module.exports = __webpack_require__(415)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(413)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(416)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -37009,7 +37244,7 @@
 	}
 
 /***/ },
-/* 412 */
+/* 415 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -37042,25 +37277,25 @@
 	// </script>
 
 /***/ },
-/* 413 */
+/* 416 */
 /***/ function(module, exports) {
 
 	module.exports = "<li v-el:v v-if=\"loading\"><slot></slot></li>";
 
 /***/ },
-/* 414 */
+/* 417 */
 /***/ function(module, exports) {
 
 	module.exports = "<doc-section id=\"select\" name=\"Select\">\n    <p>Based in a <a target=\"_blank\" href=\"https://silviomoreto.github.io/bootstrap-select/\">bootstrap-select</a> implementation.</p>\n    <div class=\"bs-example\">\n      <div class=\"row\">\n        <div class=\"col-xs-12 col-sm-12 col-md-6 col-lg-6\">\n          <p><pre>Normal select data: {{select.normal}}</pre></p>\n          <form action=\"./#select\" method=\"get\">\n            <v-select :options=\"select.options\" options-value=\"val\" :value.sync=\"select.normal\" name=\"animal\" :search=\"select.search\"\n              :required=\"select.required\" :clear-button=\"select.clearButton\" :disabled=\"select.disabled\"\n            ></v-select>\n            <button type=\"submit\" class=\"btn btn-default\">Submit</button>\n          </form>\n        </div>\n        <div class=\"col-xs-12 col-sm-12 col-md-6 col-lg-6\">\n          <p><pre>Multiple select data : {{select.multiple.join(',')}}</pre></p>\n          <form action=\"./#select\" method=\"get\">\n            <v-select :options=\"select.options\" options-value=\"val\" :value.sync=\"select.multiple\" name=\"animals[]\" :search=\"select.search\"\n              multiple :required=\"select.required\" :clear-button=\"select.clearButton\"\n              :close-on-select=\"select.closeOnSelect\" :limit=\"select.limit?3:1024\" :disabled=\"select.disabled\"\n            ></v-select>\n            <button type=\"submit\" class=\"btn btn-default\">Submit</button>\n          </form>\n        </div>\n      </div>\n      <br/>\n      <button-group type=\"primary\" buttons=\"false\">\n        <div class=\"row\">\n          <div class=\"col-xs-12 col-sm-12 col-md-6 col-lg-6\">\n            <p><checkbox :checked.sync=\"select.disabled\">Disabled</checkbox></p>\n            <p><checkbox :checked.sync=\"select.search\">Search</checkbox></p>\n            <p><checkbox :checked.sync=\"select.clearButton\">Clear Button</checkbox></p>\n          </div>\n          <div class=\"col-xs-12 col-sm-12 col-md-6 col-lg-6\">\n            <p><checkbox :checked.sync=\"select.required\">Required (empty value if noting selected)</checkbox></p>\n            <p>\n              Multiple:\n              <checkbox v-if=\"select.multiple\" :checked.sync=\"select.limit\">Limit (e.g. 3)</checkbox>\n              <checkbox v-if=\"select.multiple\" :checked.sync=\"select.closeOnSelect\">Close on Select</checkbox>\n            </p>\n          </div>\n        </div>\n      </button-group>\n      <doc-code>\n        <form action=\"./#select\" method=\"get\">\n          <v-select :value.sync=\"select.value\" :options=\"select.options\" options-value=\"val\"\n            multiple name=\"animals[]\" limit=\"3\"\n            search justified required disabled\n            clear-button close-on-select\n          ></v-select>\n          <button type=\"submit\" class=\"btn btn-default\">Submit form</button>\n        </form>\n      </doc-code>\n      <doc-code language=\"javascript\">\n        options: [\n          {val: 0, label: 'Cat'},\n          {val: 1, label: 'Cow'},\n          {val: 2, label: 'Dog'},\n          {val: 3, label: 'Elephant'},\n          {val: 4, label: 'Fish'},\n          {val: 5, label: 'Lion'},\n          {val: 6, label: 'Tiger'},\n          {val: 7, label: 'Turtle'}\n        ]\n      </doc-code>\n      <h4>Select with option component:</h4>\n      <p><pre>Selected data : {{single}}</pre></p>\n      <v-select :value.sync=\"single\">\n        <v-option value=\"apple\">Apple</v-option>\n        <v-option value=\"banana\">Banana</v-option>\n        <v-option value=\"cherry\">Cherry</v-option>\n        <v-option value=\"orange\">Orange</v-option>\n        <v-option value=\"grape\">Grape</v-option>\n      </v-select>\n      <doc-code>\n        <v-select>\n          <v-option value=\"apple\">Apple</v-option>\n          <v-option value=\"banana\">Banana</v-option>\n          <v-option value=\"cherry\">Cherry</v-option>\n          <v-option value=\"orange\">Orange</v-option>\n          <v-option value=\"grape\">Grape</v-option>\n        </v-select>\n      </doc-code>\n      <hr/>\n      <h4>Use button-group (component or <a href=\"http://getbootstrap.com/components/#btn-groups-justified\">bootstrap element</a>) if you want to justify.</h4>\n      <button-group justified>\n        <v-select multiple clear-button>\n          <v-option value=\"apple\">Apple</v-option>\n          <v-option value=\"banana\">Banana</v-option>\n          <v-option value=\"cherry\">Cherry</v-option>\n          <v-option value=\"cranberry\">Cranberry</v-option>\n          <v-option value=\"grape\">Grape</v-option>\n          <v-option value=\"orange\">Orange</v-option>\n          <v-option value=\"passionfruit\">Passionfruit</v-option>\n          <v-option value=\"pineapple\">Pineapple</v-option>\n          <v-option value=\"strawberry\">Strawberry</v-option>\n          <v-option value=\"a\">Apple</v-option>\n          <v-option value=\"b\">Banana</v-option>\n          <v-option value=\"c\">Cherry</v-option>\n          <v-option value=\"c\">Cranberry</v-option>\n          <v-option value=\"g\">Grape</v-option>\n          <v-option value=\"o\">Orange</v-option>\n          <v-option value=\"p\">Passionfruit</v-option>\n          <v-option value=\"p\">Pineapple</v-option>\n          <v-option value=\"s\">Strawberry</v-option>\n        </v-select>\n      </button-group>\n      <doc-code>\n        <button-group justified><select>...</select></button-group>\n        // or\n        <div class=\"btn-group btn-group-justified\"><select>...</select></div>\n      </doc-code>\n      <hr/>\n      <h4>Ajax data and parent dependency:</h4>\n      <p>The second element has inheritance. Enable when the first get some value and the ajax return values.</p>\n      <v-select url=\"docs/data.json\" options-label=\"text\" :value.sync=\"ajax.value\" clear-button v-ref:ajax></v-select>\n      <v-select url=\"docs/data.json\" options-label=\"text\" multiple :parent=\"ajax.value\"></v-select>\n      <doc-code>\n        <v-select url=\"docs/data.json\" options-label=\"text\" :value.sync=\"ajax.value\" clear-button></v-select>\n        <v-select url=\"docs/data.json\" options-label=\"text\" multiple :parent=\"ajax.value\"></v-select>\n      </doc-code>\n      <p>Ajax response:</p>\n      <pre v-html=\"$refs.ajax.options|json\"></pre>\n    </div>\n    <doc-table name=\"Other\">\n      <div>\n        <p>min-search</p>\n        <p><code>Number</code></p>\n        <p><code>0</code></p>\n        <p>If defined, the searchbox is disabled if are less than the minimum value you set.</p>\n      </div>\n      <div>\n        <p>lang</p>\n        <p><code>String</code></p>\n        <p>Browser language</p>\n        <p><abbr title=\"ISO 639-1 code\"><a href=\"https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes\">Language</a></abbr>. Default <code>en</code> if the translation doesn't exist.</p>\n      </div>\n      <div>\n        <p>options-label</p>\n        <p><code>String</code></p>\n        <p><code>label</code></p>\n        <p>Define the value in the data used as label.</p>\n      </div>\n      <div>\n        <p>options-value</p>\n        <p><code>String</code></p>\n        <p><code>value</code></p>\n        <p>Define the value in the data used as value.</p>\n      </div>\n      <div>\n        <p>placeholder</p>\n        <p><code>String</code></p>\n        <p>Nothing Selected</p>\n      </div>\n      <div>\n        <p>search-text</p>\n        <p><code>String</code></p>\n      </div>\n    </doc-table>\n    <doc-table type=\"Events\">\n      <div>\n        <p>change</p>\n        <p>(<code>value</code>)</p>\n        <p>Return the selected value(s).</p>\n      </div>\n      <div>\n        <p>selected</p>\n        <p>(<code>labels:String</code>)</p>\n        <p>Return a string with the label(s) of the selected item(s).</p>\n      </div>\n    </doc-table>\n  </doc-section>";
 
 /***/ },
-/* 415 */
+/* 418 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(416)
+	module.exports = __webpack_require__(419)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(430)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(433)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -37078,7 +37313,7 @@
 	}
 
 /***/ },
-/* 416 */
+/* 419 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37099,15 +37334,15 @@
 	
 	var _docCode2 = _interopRequireDefault(_docCode);
 	
-	var _Tabset = __webpack_require__(417);
+	var _Tabset = __webpack_require__(420);
 	
 	var _Tabset2 = _interopRequireDefault(_Tabset);
 	
-	var _TabGroup = __webpack_require__(422);
+	var _TabGroup = __webpack_require__(425);
 	
 	var _TabGroup2 = _interopRequireDefault(_TabGroup);
 	
-	var _Tab = __webpack_require__(427);
+	var _Tab = __webpack_require__(430);
 	
 	var _Tab2 = _interopRequireDefault(_Tab);
 	
@@ -37230,14 +37465,14 @@
 	// </script>
 
 /***/ },
-/* 417 */
+/* 420 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(418)
-	module.exports = __webpack_require__(420)
+	__webpack_require__(421)
+	module.exports = __webpack_require__(423)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(421)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(424)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -37255,13 +37490,13 @@
 	}
 
 /***/ },
-/* 418 */
+/* 421 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(419);
+	var content = __webpack_require__(422);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(150)(content, {});
@@ -37281,7 +37516,7 @@
 	}
 
 /***/ },
-/* 419 */
+/* 422 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(149)();
@@ -37295,7 +37530,7 @@
 
 
 /***/ },
-/* 420 */
+/* 423 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37306,7 +37541,7 @@
 	
 	var _utils = __webpack_require__(126);
 	
-	var _Dropdown = __webpack_require__(366);
+	var _Dropdown = __webpack_require__(369);
 	
 	var _Dropdown2 = _interopRequireDefault(_Dropdown);
 	
@@ -37387,20 +37622,20 @@
 	// </style>
 
 /***/ },
-/* 421 */
+/* 424 */
 /***/ function(module, exports) {
 
 	module.exports = "<!-- Nav tabs -->\n  <ul class=\"nav nav-{{navStyle}}\" role=\"tablist\" _v-a4c6e684=\"\">\n    <template v-for=\"t in headers\" _v-a4c6e684=\"\">\n      <li v-if=\"!t._tabgroup\" :class=\"{active:t.active, disabled:t.disabled}\" @click.prevent=\"select(t)\" _v-a4c6e684=\"\">\n        <a href=\"#\" _v-a4c6e684=\"\"><slot name=\"header\" _v-a4c6e684=\"\">{{{t.headerRendered}}}</slot></a>\n      </li>\n      <dropdown v-else=\"\" :text=\"t.headerRendered\" :class=\"{active:t.active}\" :disabled=\"t.disabled\" _v-a4c6e684=\"\">\n        <li v-for=\"tab in t.tabs\" :class=\"{disabled:tab.disabled}\" _v-a4c6e684=\"\"><a href=\"#\" @click.prevent=\"select(tab)\" _v-a4c6e684=\"\">{{{tab.headerRendered}}}</a></li>\n      </dropdown>\n    </template>\n  </ul>\n  <div class=\"tab-content\" v-el:tab-content=\"\" _v-a4c6e684=\"\">\n    <slot _v-a4c6e684=\"\"></slot>\n  </div>";
 
 /***/ },
-/* 422 */
+/* 425 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(423)
-	module.exports = __webpack_require__(425)
+	__webpack_require__(426)
+	module.exports = __webpack_require__(428)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(426)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(429)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -37418,13 +37653,13 @@
 	}
 
 /***/ },
-/* 423 */
+/* 426 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(424);
+	var content = __webpack_require__(427);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(150)(content, {});
@@ -37444,7 +37679,7 @@
 	}
 
 /***/ },
-/* 424 */
+/* 427 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(149)();
@@ -37458,7 +37693,7 @@
 
 
 /***/ },
-/* 425 */
+/* 428 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37540,19 +37775,19 @@
 	// </style>
 
 /***/ },
-/* 426 */
+/* 429 */
 /***/ function(module, exports) {
 
 	module.exports = "<slot _v-18e6218a=\"\"></slot>";
 
 /***/ },
-/* 427 */
+/* 430 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(428)
+	module.exports = __webpack_require__(431)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(429)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(432)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -37570,7 +37805,7 @@
 	}
 
 /***/ },
-/* 428 */
+/* 431 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37662,25 +37897,25 @@
 	// </script>
 
 /***/ },
-/* 429 */
+/* 432 */
 /***/ function(module, exports) {
 
 	module.exports = "<div role=\"tabpanel\" class=\"tab-pane active\" v-show=\"show\"\n    :class=\"{hide:!show}\"\n    :transition=\"transition\"\n  >\n    <slot></slot>\n  </div>";
 
 /***/ },
-/* 430 */
+/* 433 */
 /***/ function(module, exports) {
 
 	module.exports = "<doc-section id=\"tabs\" name=\"Tabs\">\n    <div class=\"bs-example\">\n      <tabs>\n        <tab header=\"**one**\">\n          <p>\n            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n            consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse\n            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat\n            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n          </p>\n        </tab>\n        <tab header=\"two\" disabled>\n          ...\n        </tab>\n        <tab-group header=\"group1 :cat:\">\n          <tab header=\"three :rocket:\">\n           <p>\n              Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.\n           </p>\n          </tab>\n          <tab header=\"four\" disabled>\n            ...\n          </tab>\n        </tab-group>\n        <tab-group header=\"group2\" disabled>\n          <tab header=\"five\">\n            ...\n          </tab>\n        </tab-group>\n      </tabs>\n    </div>\n    <doc-code language=\"markup\">\n      <tabs>\n        <tab header=\"one\">\n          ...\n        </tab>\n        <tab header=\"two\" disabled>\n          ...\n        </tab>\n        <tab-group header=\"group1\">\n          <tab header=\"three\">\n            ...\n          </tab>\n          <tab header=\"four\" disabled>\n            ...\n          </tab>\n        </tab-group>\n        <tab-group header=\"group2\">\n          <tab header=\"five\">\n            ...\n          </tab>\n        </tab-group>\n      </tabs>\n    </doc-code>\n    <doc-code language=\"javascript\">\n      components: {\n        tabs: VueStrap.tabset,\n        tabGroup: VueStrap.tabGroup,\n        tab: VueStrap.tab\n      }\n    </doc-code>\n    <doc-table name=\"Tabset (container)\">\n      <div>\n        <p>active</p>\n        <p><code>Number</code></p>\n        <p><code>0</code></p>\n        <p>Active tab index (0 based)</p>\n      </div>\n    </doc-table>\n    <doc-table name=\"TabGroup (dropdown)\">\n      <div>\n        <p>disabled</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Whether tabgroup is clickable.</p>\n      </div>\n      <div>\n        <p>header</p>\n        <p><code>String</code></p>\n        <p><code>null</code></p>\n        <p>Group Title</p>\n      </div>\n    </doc-table>\n    <doc-table name=\"Tab (element)\">\n      <div>\n        <p>header</p>\n        <p><code>String</code></p>\n        <p></p>\n        <p>Tab Title</p>\n      </div>\n      <div>\n        <p>disabled</p>\n        <p><code>Boolean</code></p>\n        <p>false</p>\n        <p>Whether tab is clickable and can be activated.</p>\n      </div>\n    </doc-table>\n  </doc-section>";
 
 /***/ },
-/* 431 */
+/* 434 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(432)
+	module.exports = __webpack_require__(435)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(433)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(436)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -37698,7 +37933,7 @@
 	}
 
 /***/ },
-/* 432 */
+/* 435 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37719,11 +37954,11 @@
 	
 	var _docCode2 = _interopRequireDefault(_docCode);
 	
-	var _Input = __webpack_require__(361);
+	var _Input = __webpack_require__(364);
 	
 	var _Input2 = _interopRequireDefault(_Input);
 	
-	var _Tooltip = __webpack_require__(307);
+	var _Tooltip = __webpack_require__(310);
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 	
@@ -37817,19 +38052,19 @@
 	// <script>
 
 /***/ },
-/* 433 */
+/* 436 */
 /***/ function(module, exports) {
 
 	module.exports = "<doc-section id=\"tooltip\" name=\"Tooltip\">\n    <div class=\"bs-example\">\n      <tooltip v-for=\"place in ['top','left','right','bottom']\" header content=\"Lorem ipsum dolor sit amet\" :placement=\"place\">\n        <button class=\"btn btn-default\">Popover on {{place}}</button>\n      </tooltip>\n      <hr>\n      <h4>Trigger</h4>\n      <p>\n        <tooltip effect=\"scale\" content=\"Lorem ipsum dolor sit amet\" placement=\"top\" trigger=\"click\">\n          <button class=\"btn btn-default\">Click</button>\n        </tooltip>\n        <tooltip effect=\"scale\" content=\"Lorem ipsum dolor sit amet\" placement=\"top\" trigger=\"contextmenu\">\n          <button class=\"btn btn-default\">Contextmenu (right click)</button>\n        </tooltip>\n      </p>\n      <tooltip effect=\"scale\" content=\"Lorem ipsum dolor sit amet\" placement=\"bottom\" trigger=\"focus\">\n        <bs-input type=\"text\" placeholder=\"Focus\"></bs-input>\n      </tooltip>\n      <h4>Markdown</h4>\n      <tooltip effect=\"scale\" content=\"*Hello* **World**\">\n        <a href=\"\">Hover me</a>\n      </tooltip>\n      <h4>Free Text</h4>\n      <tooltip content=\" coupling is the degree of interdependence between software modules; a measure of how closely\n  connected two routines or modules are; the strength of the relationships between modules.\">coupling</tooltip>\n\n    </div>\n    <doc-code language=\"markup\">\n      <tooltip effect=\"scale\" placement=\"bottom\" content=\"Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod\">\n        <button class=\"btn btn-default\">tooltip on bottom</button>\n      </tooltip>\n      <h4>With markdown</h4>\n      <tooltip effect=\"scale\" content=\"*Hello* **World**\">\n        <a href=\"\">Hover me</a>\n      </tooltip>\n    </doc-code>\n    <doc-table>\n      <div>\n        <p>trigger</p>\n        <p><code>String</code>, one of <code>click</code> <code>focus</code> <code>hover</code> <code>contextmenu</code></p>\n        <p><code>hover</code></p>\n        <p>How the tooltip is triggered.</p>\n      </div>\n      <div>\n        <p>effect</p>\n        <p><code>String</code>, one of <code>scale</code> <code>fadein</code></p>\n        <p><code>scale</code></p>\n        <p></p>\n      </div>\n      <div>\n        <p>content</p>\n        <p><code>String</code></p>\n        <p></p>\n        <p></p>\n      </div>\n      <div>\n        <p>placement</p>\n        <p><code>String</code>, one of <code>top</code>\n        <code>left</code>\n        <code>right</code>\n        <code>bottom</code></p>\n        <p></p>\n        <p>How to position the tooltip.</p>\n      </div>\n    </doc-table>\n  </div>\n</template>";
 
 /***/ },
-/* 434 */
+/* 437 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(435)
+	module.exports = __webpack_require__(438)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(441)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(444)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -37847,7 +38082,7 @@
 	}
 
 /***/ },
-/* 435 */
+/* 438 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -37868,7 +38103,7 @@
 	
 	var _docCode2 = _interopRequireDefault(_docCode);
 	
-	var _Pic = __webpack_require__(436);
+	var _Pic = __webpack_require__(439);
 	
 	var _Pic2 = _interopRequireDefault(_Pic);
 	
@@ -37902,14 +38137,14 @@
 	// </script>
 
 /***/ },
-/* 436 */
+/* 439 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(437)
-	module.exports = __webpack_require__(439)
+	__webpack_require__(440)
+	module.exports = __webpack_require__(442)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(440)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(443)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -37927,13 +38162,13 @@
 	}
 
 /***/ },
-/* 437 */
+/* 440 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(438);
+	var content = __webpack_require__(441);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(150)(content, {});
@@ -37953,7 +38188,7 @@
 	}
 
 /***/ },
-/* 438 */
+/* 441 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(149)();
@@ -37961,13 +38196,13 @@
 	
 	
 	// module
-	exports.push([module.id, ".image-wrapper {\n        display: inline-block;\n        text-align: center;\n    }", ""]);
+	exports.push([module.id, ".image-wrapper {\n        display: inline-block;\n        text-align: center;\n        padding: 4px;\n    }", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 439 */
+/* 442 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -38007,29 +38242,30 @@
 	//     .image-wrapper {
 	//         display: inline-block;
 	//         text-align: center;
+	//         padding: 4px;
 	//     }
 	// </style>
 
 /***/ },
-/* 440 */
+/* 443 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"image-wrapper\">\n        <img :src=\"src\" :alt=\"alt\" :width=\"width\" :height=\"height\">\n        <div class=\"image-caption\">\n            <slot></slot>\n        </div>\n    </div>";
 
 /***/ },
-/* 441 */
+/* 444 */
 /***/ function(module, exports) {
 
 	module.exports = "<doc-section id=\"imageDocs\" name=\"Image\">\n        <div class=\"bs-example\">\n            <pic src=\"https://vuejs.org/images/logo.png\" alt=\"Logo\">\n                Logo For Vue.js\n            </pic>\n        </div>\n        <doc-code language=\"markup\">\n            <pic src=\"https://vuejs.org/images/logo.png\" alt=\"Logo\">\n                Logo For Vue.js\n            </pic>\n        </doc-code>\n    </doc-section>";
 
 /***/ },
-/* 442 */
+/* 445 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(443)
+	module.exports = __webpack_require__(446)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(449)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(452)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -38047,7 +38283,7 @@
 	}
 
 /***/ },
-/* 443 */
+/* 446 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -38068,7 +38304,7 @@
 	
 	var _docCode2 = _interopRequireDefault(_docCode);
 	
-	var _TipBox = __webpack_require__(444);
+	var _TipBox = __webpack_require__(447);
 	
 	var _TipBox2 = _interopRequireDefault(_TipBox);
 	
@@ -38120,14 +38356,14 @@
 	// </script>
 
 /***/ },
-/* 444 */
+/* 447 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(445)
-	module.exports = __webpack_require__(447)
+	__webpack_require__(448)
+	module.exports = __webpack_require__(450)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(448)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(451)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -38145,13 +38381,13 @@
 	}
 
 /***/ },
-/* 445 */
+/* 448 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(446);
+	var content = __webpack_require__(449);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(150)(content, {});
@@ -38171,7 +38407,7 @@
 	}
 
 /***/ },
-/* 446 */
+/* 449 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(149)();
@@ -38185,7 +38421,7 @@
 
 
 /***/ },
-/* 447 */
+/* 450 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -38263,25 +38499,25 @@
 	// </style>
 
 /***/ },
-/* 448 */
+/* 451 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"alert container\" :class=\"[boxStyle]\" _v-2170147e=\"\">\n        <div class=\"icon-wrapper\" _v-2170147e=\"\">\n            <span class=\"glyphicon\" :class=\"[iconType]\" aria-hidden=\"true\" _v-2170147e=\"\"></span>\n        </div>\n        <div class=\"contents\" _v-2170147e=\"\">\n            <slot _v-2170147e=\"\"></slot>\n        </div>\n    </div>";
 
 /***/ },
-/* 449 */
+/* 452 */
 /***/ function(module, exports) {
 
 	module.exports = "<doc-section id=\"tipBoxDocs\" name=\"TipBox\">\n        <div class=\"bs-example\">\n            <tip-box type=\"info\">\n                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta distinctio eum ex facilis molestias nesciunt perferendis possimus veniam vero! A asperiores doloribus itaque odio omnis quod. Corporis ex id quibusdam.\n            </tip-box>\n            <tip-box type=\"warning\">\n                warning\n            </tip-box>\n            <tip-box type=\"success\">\n                success\n            </tip-box>\n            <tip-box type=\"important\">\n                warning\n            </tip-box>\n        </div>\n        <doc-code language=\"markup\">\n            <tip-box type=\"info\">\n                info (default)\n            </tip-box>\n            <tip-box type=\"warning\">\n                warning\n            </tip-box>\n            <tip-box type=\"success\">\n                success\n            </tip-box>\n            <tip-box type=\"important\">\n                warning\n            </tip-box>\n        </doc-code>\n    </doc-section>";
 
 /***/ },
-/* 450 */
+/* 453 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(451)
+	module.exports = __webpack_require__(454)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(457)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(460)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -38299,7 +38535,7 @@
 	}
 
 /***/ },
-/* 451 */
+/* 454 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -38320,11 +38556,11 @@
 	
 	var _docCode2 = _interopRequireDefault(_docCode);
 	
-	var _trigger = __webpack_require__(452);
+	var _trigger = __webpack_require__(455);
 	
 	var _trigger2 = _interopRequireDefault(_trigger);
 	
-	var _Tooltip = __webpack_require__(307);
+	var _Tooltip = __webpack_require__(310);
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 	
@@ -38357,7 +38593,7 @@
 	
 	//         <h4>Using trigger for Tooltip</h4>
 	//         <div class="bs-example">
-	//             More about <trigger for="tt:trigger">trigger</trigger>
+	//             More about <trigger for="tt:trigger">trigger</trigger> daas
 	//             <tooltip id="tt:trigger" content="This tooltip triggered by a trigger"></tooltip>
 	//         </div>
 	//         <doc-code language="markup">
@@ -38415,14 +38651,14 @@
 	// <script>
 
 /***/ },
-/* 452 */
+/* 455 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(453)
-	module.exports = __webpack_require__(455)
+	__webpack_require__(456)
+	module.exports = __webpack_require__(458)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(456)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(459)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -38440,13 +38676,13 @@
 	}
 
 /***/ },
-/* 453 */
+/* 456 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(454);
+	var content = __webpack_require__(457);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(150)(content, {});
@@ -38466,7 +38702,7 @@
 	}
 
 /***/ },
-/* 454 */
+/* 457 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(149)();
@@ -38480,7 +38716,7 @@
 
 
 /***/ },
-/* 455 */
+/* 458 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -38535,33 +38771,33 @@
 	// <style>
 	
 	// </style>
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(296)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(299)))
 
 /***/ },
-/* 456 */
+/* 459 */
 /***/ function(module, exports) {
 
 	module.exports = "<span v-el:trigger><slot></slot></span>";
 
 /***/ },
-/* 457 */
+/* 460 */
 /***/ function(module, exports) {
 
-	module.exports = "<doc-section id=\"triggerDocs\" name=\"Trigger\">\n        <p>\n            <code>Trigger</code> provides more flexibility for triggering contextual overlay such as popover, tooltip, modal.<br/>\n            You could embed an trigger within the text, and define the Tooltip or Popover at a separate location, which brings a cleaner authoring flow. <br>\n            Specify the <code>id</code> attribute on the popover, tooltip or modal component, and use the same id for the <code>for</code> attribute of the trigger\n            to allow trigger to invoke the specific overlay elements. <br>\n        </p>\n        <p>\n            Make sure your <code>id</code> attribute is unique, otherwise unexpected behaviour may occur. <br>\n            Currently only one-to-one mapping between trigger and its overlay component is allowed. Many-to-one mapping (many triggers invoke the same overlay) will\n            be considered in the future. <br>\n        </p>\n\n        <h4>Using trigger for Tooltip</h4>\n        <div class=\"bs-example\">\n            More about <trigger for=\"tt:trigger\">trigger</trigger>\n            <tooltip id=\"tt:trigger\" content=\"This tooltip triggered by a trigger\"></tooltip>\n        </div>\n        <doc-code language=\"markup\">\n            More about <trigger for=\"tt:trigger\">trigger</trigger>\n            <tooltip id=\"tt:trigger_id\" content=\"This tooltip triggered by a trigger\"></tooltip>\n        </doc-code>\n        <h4>Using trigger for Popover</h4>\n        <div class=\"bs-example\">\n            More about <trigger for=\"pop:trigger\">trigger</trigger>\n            <popover id=\"pop:trigger\" header=\"false\">\n                <div slot=\"content\">\n                    <img src=\"https://vuejs.org/images/logo.png\">\n                </div>\n            </popover>\n        </div>\n        <doc-code language=\"markup\">\n            More about <trigger for=\"pop:trigger_id\">trigger</trigger>\n            <popover id=\"pop:trigger_id\" content=\"This popover is triggered by a trigger\"></popover>\n        </doc-code>\n        <h4>Using trigger for Modal</h4>\n        <div class=\"bs-example\">\n            More about <trigger trigger=\"click\" for=\"modal:trigger\">trigger</trigger>\n            <modal title=\"**Modal title** :rocket:\" id=\"modal:trigger\">\n                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n            </modal>\n        </div>\n        <doc-code language=\"markup\">\n            More about <trigger for=\"modal:trigger\" trigger=\"click\">trigger</trigger>\n            <modal title=\"**Modal title** :rocket:\" id=\"modal:trigger\">\n                ...\n            </modal>\n        </doc-code>\n        <doc-table>\n            <div>\n                <p>trigger</p>\n                <p><code>String</code>, one of <code>click</code> <code>focus</code> <code>hover</code> <code>contextmenu</code></p>\n                <p><code>hover</code></p>\n                <p>How trigger triggers its overflow view.</p>\n            </div>\n            <div>\n                <p>for</p>\n                <p><code>String</code>, the id for the overlay view to be shown</p>\n                <p></p>\n                <p></p>\n            </div>\n        </doc-table>\n    </doc-section>";
+	module.exports = "<doc-section id=\"triggerDocs\" name=\"Trigger\">\n        <p>\n            <code>Trigger</code> provides more flexibility for triggering contextual overlay such as popover, tooltip, modal.<br/>\n            You could embed an trigger within the text, and define the Tooltip or Popover at a separate location, which brings a cleaner authoring flow. <br>\n            Specify the <code>id</code> attribute on the popover, tooltip or modal component, and use the same id for the <code>for</code> attribute of the trigger\n            to allow trigger to invoke the specific overlay elements. <br>\n        </p>\n        <p>\n            Make sure your <code>id</code> attribute is unique, otherwise unexpected behaviour may occur. <br>\n            Currently only one-to-one mapping between trigger and its overlay component is allowed. Many-to-one mapping (many triggers invoke the same overlay) will\n            be considered in the future. <br>\n        </p>\n\n        <h4>Using trigger for Tooltip</h4>\n        <div class=\"bs-example\">\n            More about <trigger for=\"tt:trigger\">trigger</trigger> daas\n            <tooltip id=\"tt:trigger\" content=\"This tooltip triggered by a trigger\"></tooltip>\n        </div>\n        <doc-code language=\"markup\">\n            More about <trigger for=\"tt:trigger\">trigger</trigger>\n            <tooltip id=\"tt:trigger_id\" content=\"This tooltip triggered by a trigger\"></tooltip>\n        </doc-code>\n        <h4>Using trigger for Popover</h4>\n        <div class=\"bs-example\">\n            More about <trigger for=\"pop:trigger\">trigger</trigger>\n            <popover id=\"pop:trigger\" header=\"false\">\n                <div slot=\"content\">\n                    <img src=\"https://vuejs.org/images/logo.png\">\n                </div>\n            </popover>\n        </div>\n        <doc-code language=\"markup\">\n            More about <trigger for=\"pop:trigger_id\">trigger</trigger>\n            <popover id=\"pop:trigger_id\" content=\"This popover is triggered by a trigger\"></popover>\n        </doc-code>\n        <h4>Using trigger for Modal</h4>\n        <div class=\"bs-example\">\n            More about <trigger trigger=\"click\" for=\"modal:trigger\">trigger</trigger>\n            <modal title=\"**Modal title** :rocket:\" id=\"modal:trigger\">\n                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n            </modal>\n        </div>\n        <doc-code language=\"markup\">\n            More about <trigger for=\"modal:trigger\" trigger=\"click\">trigger</trigger>\n            <modal title=\"**Modal title** :rocket:\" id=\"modal:trigger\">\n                ...\n            </modal>\n        </doc-code>\n        <doc-table>\n            <div>\n                <p>trigger</p>\n                <p><code>String</code>, one of <code>click</code> <code>focus</code> <code>hover</code> <code>contextmenu</code></p>\n                <p><code>hover</code></p>\n                <p>How trigger triggers its overflow view.</p>\n            </div>\n            <div>\n                <p>for</p>\n                <p><code>String</code>, the id for the overlay view to be shown</p>\n                <p></p>\n                <p></p>\n            </div>\n        </doc-table>\n    </doc-section>";
 
 /***/ },
-/* 458 */
+/* 461 */
 /***/ function(module, exports) {
 
 	module.exports = "<link v-if=\"local\" rel=\"stylesheet\" type=\"text/css\" href=\"node_modules/bootstrap/dist/css/bootstrap.css\">\n  <link v-else href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==\" crossorigin=\"anonymous\">\n  <div id=\"wrapper\">\n    <div class=\"bs-docs-header\">\n      <div class=\"container\">\n        <h1>VueStrap - MarkBind</h1>\n        <p>Bootstrap components built with <a target=\"_blank\" href=\"http://vuejs.org/\">Vue.js</a>.</p>\n        <p>No jQuery, bootstrap.js, or any 3rd party plugins required.</p>\n        <p>Modified for supported compoennts in MarkBind.</p>\n        <br>\n        <p><a class=\"btn btn-outline-inverse btn-lg\" href=\"https://github.com/MarkBind/vue-strap\">Code on GitHub</a></p>\n      </div>\n    </div>\n    <container>\n      <div v-el:sections class=\"col-md-9\">\n        <getting-started></getting-started>\n        <accordion-docs></accordion-docs>\n        <affix-docs></affix-docs>\n        <alert-docs></alert-docs>\n        <aside-docs></aside-docs>\n        <carousel-docs></carousel-docs>\n        <dynamic-panel-docs></dynamic-panel-docs>\n        <image-docs></image-docs>\n        <modal-docs></modal-docs>\n        <morph-docs></morph-docs>\n        <navbar-docs></navbar-docs>\n        <question-docs></question-docs>\n        <retriever-docs></retriever-docs>\n        <tabs-docs></tabs-docs>\n        <tip-box-docs></tip-box-docs>\n        <tooltip-docs></tooltip-docs>\n        <popover-docs></popover-docs>\n        <trigger-docs></trigger-docs>\n      </div>\n      <div class=\"col-md-3\">\n        <affix-sidebar></affix-sidebar>\n      </div>\n    </container>\n  </div>\n  <footer class=\"bs-docs-footer\">\n    <div class=\"container\">\n      <p>Designed and built by <a href=\"https://github.com/yuche/\">yuche</a>.</p>\n      <p>\n        Using <a href=\"http://twitter.github.com/bootstrap\" target=\"_blank\">Twitter Bootstrap</a>\n        and the <a href=\"css/docs.css\" target=\"_blank\">Bootstrap's docs styles</a> designed and built by <a href=\"http://twitter.com/mdo\" target=\"_blank\">@mdo</a>\n        and <a href=\"http://twitter.com/fat\" target=\"_blank\">@fat</a>.\n      </p>\n      <p>\n        Code licensed under <a href=\"//github.com/mgcrea/angular-strap/blob/master/LICENSE.md\" target=\"_blank\">The MIT License</a>,\n        documentation under <a href=\"http://creativecommons.org/licenses/by/3.0/\">CC BY 3.0</a>.\n      </p>\n    </div>\n  </footer>";
 
 /***/ },
-/* 459 */
+/* 462 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _keys = __webpack_require__(460);
+	var _keys = __webpack_require__(463);
 	
 	var _keys2 = _interopRequireDefault(_keys);
 	
@@ -38573,15 +38809,15 @@
 	
 	var _Affix2 = _interopRequireDefault(_Affix);
 	
-	var _Alert = __webpack_require__(318);
+	var _Alert = __webpack_require__(321);
 	
 	var _Alert2 = _interopRequireDefault(_Alert);
 	
-	var _Aside = __webpack_require__(326);
+	var _Aside = __webpack_require__(329);
 	
 	var _Aside2 = _interopRequireDefault(_Aside);
 	
-	var _Carousel = __webpack_require__(345);
+	var _Carousel = __webpack_require__(348);
 	
 	var _Carousel2 = _interopRequireDefault(_Carousel);
 	
@@ -38589,31 +38825,31 @@
 	
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 	
-	var _Dropdown = __webpack_require__(366);
+	var _Dropdown = __webpack_require__(369);
 	
 	var _Dropdown2 = _interopRequireDefault(_Dropdown);
 	
-	var _DynamicPanel = __webpack_require__(292);
+	var _DynamicPanel = __webpack_require__(295);
 	
 	var _DynamicPanel2 = _interopRequireDefault(_DynamicPanel);
 	
-	var _Input = __webpack_require__(361);
+	var _Input = __webpack_require__(364);
 	
 	var _Input2 = _interopRequireDefault(_Input);
 	
-	var _Modal = __webpack_require__(374);
+	var _Modal = __webpack_require__(377);
 	
 	var _Modal2 = _interopRequireDefault(_Modal);
 	
-	var _Morph = __webpack_require__(288);
+	var _Morph = __webpack_require__(291);
 	
 	var _Morph2 = _interopRequireDefault(_Morph);
 	
-	var _Navbar = __webpack_require__(389);
+	var _Navbar = __webpack_require__(392);
 	
 	var _Navbar2 = _interopRequireDefault(_Navbar);
 	
-	var _Question = __webpack_require__(284);
+	var _Question = __webpack_require__(287);
 	
 	var _Question2 = _interopRequireDefault(_Question);
 	
@@ -38621,51 +38857,51 @@
 	
 	var _Panel2 = _interopRequireDefault(_Panel);
 	
-	var _Popover = __webpack_require__(398);
+	var _Popover = __webpack_require__(401);
 	
 	var _Popover2 = _interopRequireDefault(_Popover);
 	
-	var _Retriever = __webpack_require__(294);
+	var _Retriever = __webpack_require__(297);
 	
 	var _Retriever2 = _interopRequireDefault(_Retriever);
 	
-	var _Select = __webpack_require__(264);
+	var _Select = __webpack_require__(267);
 	
 	var _Select2 = _interopRequireDefault(_Select);
 	
-	var _Tab = __webpack_require__(427);
+	var _Tab = __webpack_require__(430);
 	
 	var _Tab2 = _interopRequireDefault(_Tab);
 	
-	var _TabGroup = __webpack_require__(422);
+	var _TabGroup = __webpack_require__(425);
 	
 	var _TabGroup2 = _interopRequireDefault(_TabGroup);
 	
-	var _Tabset = __webpack_require__(417);
+	var _Tabset = __webpack_require__(420);
 	
 	var _Tabset2 = _interopRequireDefault(_Tabset);
 	
-	var _Tooltip = __webpack_require__(307);
+	var _Tooltip = __webpack_require__(310);
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 	
-	var _Closeable = __webpack_require__(463);
+	var _Closeable = __webpack_require__(466);
 	
 	var _Closeable2 = _interopRequireDefault(_Closeable);
 	
-	var _ShowModal = __webpack_require__(464);
+	var _ShowModal = __webpack_require__(467);
 	
 	var _ShowModal2 = _interopRequireDefault(_ShowModal);
 	
-	var _Pic = __webpack_require__(436);
+	var _Pic = __webpack_require__(439);
 	
 	var _Pic2 = _interopRequireDefault(_Pic);
 	
-	var _TipBox = __webpack_require__(444);
+	var _TipBox = __webpack_require__(447);
 	
 	var _TipBox2 = _interopRequireDefault(_TipBox);
 	
-	var _trigger = __webpack_require__(452);
+	var _trigger = __webpack_require__(455);
 	
 	var _trigger2 = _interopRequireDefault(_trigger);
 	
@@ -38740,20 +38976,20 @@
 	module.exports = VueStrap;
 
 /***/ },
-/* 460 */
+/* 463 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(461), __esModule: true };
+	module.exports = { "default": __webpack_require__(464), __esModule: true };
 
 /***/ },
-/* 461 */
+/* 464 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(462);
+	__webpack_require__(465);
 	module.exports = __webpack_require__(63).Object.keys;
 
 /***/ },
-/* 462 */
+/* 465 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.14 Object.keys(O)
@@ -38767,7 +39003,7 @@
 	});
 
 /***/ },
-/* 463 */
+/* 466 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -38781,10 +39017,12 @@
 	    var message = this.el.getAttribute('alt') || 'Expand Content';
 	    this.wrapper = jQuery(this.el).parent();
 	    this.wrapper.attr('class', this.el.className + ' closeable-wrapper');
-	    this.wrapper.append('<span class="closeable-button label label-default" style="display: none; position: absolute; top: 0; left: 0; cursor: pointer;background: #d9534f;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></span>');
-	    this.wrapper.append('<a class="closeable-show hidden-print" style="display: none; cursor: pointer;text-decoration: underline">' + message + '</a>');
-	    this.closeButton = this.wrapper.find('.closeable-button');
-	    this.showButton = this.wrapper.find('.closeable-show');
+	    var $closeButton = jQuery('<span class="closeable-button label label-default" style="display: none; position: absolute; top: 0; left: 0; cursor: pointer;background: #d9534f;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></span>');
+	    this.wrapper.append($closeButton);
+	    var $showLabel = jQuery('<a class="closeable-show hidden-print" style="display: none; cursor: pointer;text-decoration: underline">' + message + '</a>');
+	    this.wrapper.append($showLabel);
+	    this.closeButton = $closeButton;
+	    this.showButton = $showLabel;
 	    this.closeButton.click(this.onClose.bind(this));
 	    this.showButton.click(this.onShow.bind(this));
 	    this.wrapper.on('mouseover', this.onMouseOver.bind(this));
@@ -38814,10 +39052,10 @@
 	    this.closeButton.hide();
 	  }
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(296)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(299)))
 
 /***/ },
-/* 464 */
+/* 467 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -38834,16 +39072,16 @@
 	    });
 	  }
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(296)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(299)))
 
 /***/ },
-/* 465 */
+/* 468 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(466);
+	var content = __webpack_require__(469);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(150)(content, {});
@@ -38863,7 +39101,7 @@
 	}
 
 /***/ },
-/* 466 */
+/* 469 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(149)();
@@ -38877,13 +39115,13 @@
 
 
 /***/ },
-/* 467 */
+/* 470 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(468);
+	var content = __webpack_require__(471);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(150)(content, {});
@@ -38903,7 +39141,7 @@
 	}
 
 /***/ },
-/* 468 */
+/* 471 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(149)();
@@ -38917,7 +39155,7 @@
 
 
 /***/ },
-/* 469 */
+/* 472 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {
@@ -39719,7 +39957,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 470 */
+/* 473 */
 /***/ function(module, exports) {
 
 	"use strict";
