@@ -26,7 +26,7 @@ export default {
         if (this.oneAtAtime) {
           this.$children.forEach((item) => {
             if (child !== item) {
-              item.isOpen = false
+              item.expanded = false
             }
           })
         }

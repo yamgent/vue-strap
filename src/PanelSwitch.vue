@@ -34,6 +34,7 @@
     .collapse-button {
         font-size: 10px !important;
         float: right;
-        padding: 3px 12px !important;
+        padding: 3px 8px !important;
+        margin-left: 3px;
     }
 </style>
