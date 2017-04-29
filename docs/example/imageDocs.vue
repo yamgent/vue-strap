@@ -1,5 +1,5 @@
 <template>
-    <doc-section id="imageDocs" name="Image">
+    <doc-section id="imageDocs" name="Pic">
         <div class="bs-example">
             <pic src="https://vuejs.org/images/logo.png" alt="Logo">
                 Logo For Vue.js

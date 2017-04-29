@@ -14,7 +14,7 @@
 
         <h4>Using trigger for Tooltip</h4>
         <div class="bs-example">
-            More about <trigger for="tt:trigger">trigger</trigger> daas
+            More about <trigger for="tt:trigger">trigger</trigger>
             <tooltip id="tt:trigger" content="This tooltip triggered by a trigger"></tooltip>
         </div>
         <doc-code language="markup">

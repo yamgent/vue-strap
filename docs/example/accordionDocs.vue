@@ -1,5 +1,99 @@
 <template>
-  <doc-section id="accordion" name="Accordion And Panel">
+  <doc-section id="accordion" name="Accordion and Panel">
+    <h4>Panel is a flexible container that support collapse and expand its content. It is expandable by default</h4>
+    <div class="bs-example">
+      <panel header="Header" alt="Alternative Header">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolores excepturi expedita illum impedit ipsa labore qui veniam. Blanditiis exercitationem id ipsum libero molestiae, necessitatibus unde? Amet fugiat fugit molestias?
+      </panel>
+    </div>
+    <doc-code language="markup">
+      <panel header="Header" alt="Alternative Header">
+        ...
+      </panel>
+    </doc-code>
+    <br>
+    <h4>With <code>minimized</code> attribute, panel is minimized into an inline block element.</h4>
+    <div class="bs-example">
+      <panel header="Header" alt="Alternative Header" minimized>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolores excepturi expedita illum impedit ipsa labore qui veniam. Blanditiis exercitationem id ipsum libero molestiae, necessitatibus unde? Amet fugiat fugit molestias?
+      </panel>
+    </div>
+    <doc-code language="markup">
+      <panel header="Header" alt="Alternative Header" minimized>
+        ...
+      </panel>
+    </doc-code>
+    <br>
+    <h4>With <code>expanded</code> attribute, panel could be expanded by default.</h4>
+    <div class="bs-example">
+      <panel header="Header" alt="Alternative Header" expanded>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolores excepturi expedita illum impedit ipsa labore qui veniam. Blanditiis exercitationem id ipsum libero molestiae, necessitatibus unde? Amet fugiat fugit molestias?
+      </panel>
+    </div>
+    <doc-code language="markup">
+      <panel header="Header" alt="Alternative Header" expanded>
+        ...
+      </panel>
+    </doc-code>
+    <br>
+    <h4>Panel has many types that changes the appearance of the panel.</h4>
+    <div class="bs-example">
+      <h5><code>Primary</code> type</h5>
+      <panel header="Seamless - Click to expand" type="primary">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius
+        eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur
+        ullam voluptates!
+      </panel>
+      <h5><code>Seamless</code> panel type</h5>
+      <panel header="Seamless - Click to expand" type="seamless">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius
+        eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur
+        ullam voluptates!
+      </panel>
+    </div>
+    <doc-code language="markup">
+      <panel header="Click to expand" type="seamless">
+        ...
+      </panel>
+
+    </doc-code>
+    <br>
+    <h4>Show/Hide buttons using <code>no-switch</code> or <code>no-close</code></h4>
+    <div class="bs-example">
+      <panel header="Header" no-switch>
+      </panel>
+      <panel header="Header" no-close>
+      </panel>
+    </div>
+    <doc-code language="markup">
+      <panel header="Header" no-switch>
+      </panel>
+      <panel header="Header" no-close>
+      </panel>
+    </doc-code>
+    <br>
+    <h4>Use markdown in the header (only inline level markdown are supported)</h4>
+    <div class="bs-example">
+      <panel header="**haha** :rocket: ![](https://vuejs.org/images/logo.png =25x25)" expandable type="seamless">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequatur consequuntur culpa enim, explicabo impedit iure maxime omnis quas recusandae sint suscipit? Accusamus cumque facere laboriosam magnam magni numquam reprehenderit.
+      </panel>
+    </div>
+    <doc-code language="markup">
+      <panel header="**haha** :rocket: ![](https://vuejs.org/images/logo.png =25x25)" type="seamless">
+        ...
+      </panel>
+
+    </doc-code>
+    <br>
+    <h4>If <code>src</code> attribute is provided, the panel content is loaded dynamically from src.</h4>
+    <div class="bs-example">
+      <panel header="Dynamic Loading" src="/docs/loadContent.html#fragment" minimized></panel>
+    </div>
+    <doc-code language="markup">
+      <panel header="Dynamic Loading" src="/docs/loadContent.html#fragment" minimized></panel>
+    </doc-code>
+
+    <h4>Accordion could group panels together to provide better control</h4>
     <div class="bs-example">
       <checkbox :checked.sync="checked" type="primary">Open only one at a time.</checkbox>
       <p><v-select :options="types" clear-button :value.sync="selected" placeholder="Global type"></v-select></p>
@@ -48,21 +142,6 @@
         </panel>
       </accordion>
 
-      <div v-closeable>
-        <panel header="%%haha!%%">
-          <img src="https://vuejs.org/images/logo.png" alt="">
-
-          hahah
-
-          <div v-closeable>
-
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam architecto at dignissimos distinctio ea explicabo fugiat, ipsa itaque odit, rem sint totam, voluptas. Incidunt officiis quas veniam vitae voluptatum.
-            <img src="https://vuejs.org/images/logo.png" alt="">
-        </div>
-
-        </panel>
-      </div>
-
       Panel with Expand Switch
 
       <panel header="Parent" expandable ctrl-lvl="-1">
@@ -93,70 +172,6 @@
       </accordion>
     </doc-code>
 
-    <div class="bs-example">
-      Seamless panel type
-
-      <panel header="Seamless - Click to expand" expandable type="seamless">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius
-        eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur
-        ullam voluptates!
-      </panel>
-
-      <panel header="Primary inside seamless" expandable>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius
-        eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur
-        ullam voluptates!
-      </panel>
-
-      <panel header="Seamless - Click to expand" expandable type="seamless">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius
-        eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur
-        ullam voluptates!
-
-        <panel header="Primary inside seamless" expandable>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius
-          eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur
-          ullam voluptates!
-        </panel>
-      </panel>
-
-      <panel header="Seamless - Click to expand" expandable type="seamless">
-        <Question>
-          Body
-
-          <div slot="hint">
-            Hint
-
-          </div>
-          <div slot="answer">
-            Answer
-
-          </div>
-        </Question>
-      </panel>
-    </div>
-    <doc-code language="markup">
-      <panel header="Click to expand" expandable type="seamless">
-        ...
-      </panel>
-
-    </doc-code>
-
-    <div class="bs-example">
-      Use markdown in the header (only inline level markdown are supported)
-
-      <panel header="**haha** :rocket: ![](https://vuejs.org/images/logo.png =25x25)" expandable type="seamless">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequatur consequuntur culpa enim, explicabo impedit iure maxime omnis quas recusandae sint suscipit? Accusamus cumque facere laboriosam magnam magni numquam reprehenderit.
-      </panel>
-    </div>
-    <doc-code language="markup">
-      <panel header="**haha** :rocket: ![](https://vuejs.org/images/logo.png =25x25)" expandable type="seamless">
-        ...
-      </panel>
-
-    </doc-code>
-
-
     <doc-table>
       <div>
         <p>type</p>
@@ -179,16 +194,50 @@
         <p>The clickable text on the group's header. You need one to be able to click on the header for toggling.</p>
       </div>
       <div>
-        <p>is-open</p>
+        <p>expandable</p>
+        <p><code>Boolean</code></p>
+        <p><code>true</code></p>
+        <p>Whether Panel is expandable</p>
+      </div>
+      <div>
+        <p>expanded</p>
         <p><code>Boolean</code></p>
         <p><code>false</code></p>
-        <p>Whether accordion group is open or closed.</p>
+        <p>Whether Panel is expanded or collapsed.</p>
+      </div>
+      <div>
+        <p>minimized</p>
+        <p><code>Boolean</code></p>
+        <p><code>false</code></p>
+        <p>Whether Panel is minimized.</p>
+      </div>
+      <div>
+        <p>no-switch</p>
+        <p><code>Boolean</code></p>
+        <p><code>false</code></p>
+        <p>Whether to show the expand switch</p>
+      </div>
+      <div>
+        <p>no-close</p>
+        <p><code>Boolean</code></p>
+        <p><code>false</code></p>
+        <p>Whether to show the close button</p>
+      </div>
+      <div>
+        <p>url</p>
+        <p><code>String</code></p>
+        <p><code></code></p>
+        <p>The url to the remote page that to be loaded as the content of the panel.</p>
       </div>
       <div>
         <p>type</p>
         <p><code>String</code></p>
         <p><code>null</code></p>
-        <p>Define the type of color for the tab (single).</p>
+        <p>
+          Define the type of color for the tab (single).<br>
+          Support: <code>default</code>, <code>primary</code>, <code>info</code>, <code>success</code>,
+          <code>warning</code>, <code>danger</code>, <code>seamless</code>
+        </p>
       </div>
     </doc-table>
     <p>If you want to personalice your header with some html you can use the slot instead of header attribute (panel&nbsp;#1 in the example).</p>

@@ -10,13 +10,13 @@
         </div>
         <accordion>
             <div v-show="hasHintSlot">
-                <panel header="Hint" expandable>
+                <panel header="Hint" expandable no-close>
                     <slot name="hint">
                         No hint is available for this question.
                     </slot>
                 </panel>
             </div>
-            <panel header="Answer" expandable>
+            <panel header="Answer" expandable no-close>
                 <slot name="answer"></slot>
             </panel>
         </accordion>
