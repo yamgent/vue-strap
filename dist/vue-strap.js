@@ -788,7 +788,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        if (_this.oneAtAtime) {
 	          _this.$children.forEach(function (item) {
 	            if (child !== item) {
-	              item.isOpen = false;
+	              item.expanded = false;
 	            }
 	          });
 	        }
@@ -14250,7 +14250,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, ".panel-heading {\n  width: 100%;\n}\n.panel-title {\n  font-size: 1em;\n}\n.header-wrapper {\n  display: inline-block;\n  width: 80%;\n}\n.button-wrapper {\n  float: right;\n  display: inline-block;\n  width: 20%;\n}\n.accordion-toggle {\n  cursor: pointer;\n}\n.expandable-panel {\n  margin-bottom: 0!important;\n}\n.expandable-panel + .expandable-panel {\n  margin-top: 5px;\n}\n\n.panel-seamless {\n  padding: 0;\n}\n\n.caret.caret-collapse {\n  border-left: 4px dashed;\n  border-top: 4px solid transparent;\n  border-bottom: 4px solid transparent;\n  border-right: none;\n}\n\n.panel.panel-seamless {\n  box-shadow: none;\n  border: none;\n}\n\n.panel-seamless > .panel-heading {\n  padding: 0;\n}\n.panel-seamless > .panel-collapse > .panel-body {\n  padding: 10px 0;\n}", ""]);
+	exports.push([module.id, ".panel-heading {\n        width: 100%;\n    }\n\n    .panel-title {\n        font-size: 1em;\n    }\n\n    .header-wrapper {\n        display: inline-block;\n        width: 80%;\n    }\n\n    .button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 20%;\n    }\n\n    .accordion-toggle {\n        cursor: pointer;\n    }\n\n    .expandable-panel {\n        margin-bottom: 0 !important;\n        margin-top: 5px;\n    }\n\n    .panel-group > .panel-container > .expandable-panel {\n        margin-top: 0!important;\n    }\n\n    .panel-seamless {\n        padding: 0;\n    }\n\n    .caret.caret-collapse {\n        border-left: 4px dashed;\n        border-top: 4px solid transparent;\n        border-bottom: 4px solid transparent;\n        border-right: none;\n    }\n\n    .panel.panel-seamless {\n        box-shadow: none;\n        border: none;\n    }\n\n    .panel-seamless > .panel-heading {\n        padding: 0;\n    }\n\n    .panel-seamless > .panel-collapse > .panel-body {\n        padding: 10px 0;\n    }\n\n    .close-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n    }\n\n    .morph {\n        display: inline-block;\n    }", ""]);
 	
 	// exports
 
@@ -14275,29 +14275,95 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _PanelSwitch2 = _interopRequireDefault(_PanelSwitch);
 	
+	var _Retriever = __webpack_require__(128);
+	
+	var _Retriever2 = _interopRequireDefault(_Retriever);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	// <template>
+	//     <span class="panel-container">
+	//         <div class="morph" v-show="minimized">
+	//             <div class="morph-display-wrapper" v-on:click="open()">
+	//                 <button class="morph-display-button btn btn-default">
+	//                     <slot name="header">
+	//                         <span class="panel-title">{{{altContent}}}</span>
+	//                     </slot>
+	//                 </button>
+	//             </div>
+	//         </div>
+	
+	//         <div :class="['panel', panelType, {'expandable-panel': isExpandablePanel}]" v-else>
+	//             <div :class="['panel-heading',{'accordion-toggle':canCollapse}]"
+	//                  @click.prevent.stop="canCollapse && toggle()"
+	//                  @mouseover="onHeaderHover = true" @mouseleave="onHeaderHover = false">
+	//                 <div class="header-wrapper">
+	//                     <span :class="['caret', {'caret-collapse': !expanded}]" v-show="showCaret"></span>
+	//                     <slot name="header">
+	//                         <span class="panel-title">{{{headerContent}}}</span>
+	//                     </slot>
+	//                 </div>
+	//                 <div class="button-wrapper">
+	//                     <slot name="button">
+	//                         <panel-switch v-show="canCollapse && !noSwitch && !showCaret" v-bind:is-open="expanded"
+	//                                       @click.stop.prevent="expand()"></panel-switch>
+	//                         <button type="button" class="close-button btn btn-default"
+	//                                 v-show="this.type !== 'seamless' ? (!noClose) : onHeaderHover"
+	//                                 @click.stop="close()">
+	//                             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+	//                         </button>
+	//                     </slot>
+	//                 </div>
+	//             </div>
+	//             <div class="panel-collapse"
+	//                  v-el:panel
+	//                  v-show="expanded"
+	//             >
+	//                 <div class="panel-body">
+	//                     <slot></slot>
+	//                     <retriever v-if="isDynamic" v-ref:retriever :src="src" :fragment="fragment" delay></retriever>
+	//                 </div>
+	//             </div>
+	//         </div>
+	//     </span>
+	// </template>
+	
+	// <script>
 	exports.default = {
 	  components: {
-	    panelSwitch: _PanelSwitch2.default
+	    panelSwitch: _PanelSwitch2.default,
+	    retriever: _Retriever2.default
 	  },
 	  props: {
 	    header: {
 	      type: String
+	    },
+	    alt: {
+	      type: String
+	    },
+	    type: {
+	      type: String,
+	      default: null
+	    },
+	    expandable: {
+	      type: Boolean,
+	      coerce: _utils.coerce.boolean,
+	      default: true
 	    },
 	    isOpen: {
 	      type: Boolean,
 	      coerce: _utils.coerce.boolean,
 	      default: null
 	    },
-	    expandable: {
+	    expanded: {
 	      type: Boolean,
 	      coerce: _utils.coerce.boolean,
 	      default: null
 	    },
-	    type: {
-	      type: String,
-	      default: null
+	    minimized: {
+	      type: Boolean,
+	      coerce: _utils.coerce.boolean,
+	      default: false
 	    },
 	    ctrlLvl: {
 	      type: Number,
@@ -14308,8 +14374,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	      type: Boolean,
 	      coerce: _utils.coerce.boolean,
 	      default: false
+	    },
+	    noClose: {
+	      type: Boolean,
+	      coerce: _utils.coerce.boolean,
+	      default: false
+	    },
+	    src: {
+	      type: String
 	    }
 	  },
+	  data: function data() {
+	    return {
+	      onHeaderHover: false
+	    };
+	  },
+	
 	  computed: {
 	    inAccordion: function inAccordion() {
 	      return this.$parent && this.$parent._isAccordion;
@@ -14328,34 +14408,54 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	    headerContent: function headerContent() {
 	      return _markdown2.default.renderInline(this.header);
+	    },
+	    altContent: function altContent() {
+	      return this.alt && _markdown2.default.renderInline(this.alt) || _markdown2.default.renderInline(this.header);
+	    },
+	    isDynamic: function isDynamic() {
+	      return this.src && this.src.length > 0;
+	    },
+	    showCloseButton: function showCloseButton() {
+	      if (this.type !== 'seamless') {
+	        return !this.noClose;
+	      } else {
+	        return onHeaderHover;
+	      }
 	    }
 	  },
 	  methods: {
 	    toggle: function toggle() {
-	      this.isOpen = !this.isOpen;
+	      this.expanded = !this.expanded;
 	    },
 	    expand: function expand() {
-	      if (this.isOpen) {
+	      if (this.expanded) {
 	        // Ask children to collapse
 	        this.$broadcast('panel:collapse', this.ctrlLvl);
 	      } else {
 	        // Expand children
 	        this.$broadcast('panel:expand', this.ctrlLvl);
 	      }
-	      this.isOpen = !this.isOpen;
+	      this.expanded = !this.expanded;
+	    },
+	    close: function close() {
+	      console.log('close');
+	      this.minimized = true;
+	    },
+	    open: function open() {
+	      this.minimized = false;
 	    },
 	    expandCollapseHandler: function expandCollapseHandler(isExpand, level) {
 	      if (level > 0) {
-	        this.canCollapse && (this.isOpen = isExpand);
+	        this.canCollapse && (this.expanded = isExpand);
 	        this.$broadcast('panel:' + (isExpand ? 'expand' : 'collapse'), level - 1);
 	      } else if (level === -1) {
-	        this.canCollapse && (this.isOpen = isExpand);
+	        this.canCollapse && (this.expanded = isExpand);
 	        this.$broadcast('panel:' + (isExpand ? 'expand' : 'collapse'), -1);
 	      }
 	    }
 	  },
 	  watch: {
-	    'isOpen': function isOpen(val, oldVal) {
+	    'expanded': function expanded(val, oldVal) {
 	      this.$dispatch('isOpenEvent', this, val);
 	    }
 	  },
@@ -14368,90 +14468,100 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  created: function created() {
-	    if (this.isOpen === null) {
-	      this.isOpen = !this.canCollapse;
+	    if (this.expanded === null) {
+	      this.expanded = !this.canCollapse;
 	    }
+	    if (this.src) {
+	      var hash = (0, _utils.getFragmentByHash)(this.src);
+	      if (hash) {
+	        this.fragment = hash;
+	        this.src = this.src.split('#')[0];
+	      }
+	    }
+	  },
+	  attached: function attached() {
+	    var _this = this;
+	
+	    if (this.isDynamic && this.expanded) {
+	      this.$refs.retriever.fetch();
+	    }
+	
+	    this.$on('isOpenEvent', function (el, isOpen) {
+	      if (isOpen && _this.isDynamic) {
+	        _this.$refs.retriever.fetch();
+	      }
+	    });
 	  }
 	};
 	// </script>
 	
 	// <style>
-	// .panel-heading {
-	//   width: 100%;
-	// }
-	// .panel-title {
-	//   font-size: 1em;
-	// }
-	// .header-wrapper {
-	//   display: inline-block;
-	//   width: 80%;
-	// }
-	// .button-wrapper {
-	//   float: right;
-	//   display: inline-block;
-	//   width: 20%;
-	// }
-	// .accordion-toggle {
-	//   cursor: pointer;
-	// }
-	// .expandable-panel {
-	//   margin-bottom: 0!important;
-	// }
-	// .expandable-panel + .expandable-panel {
-	//   margin-top: 5px;
-	// }
+	//     .panel-heading {
+	//         width: 100%;
+	//     }
 	
-	// .panel-seamless {
-	//   padding: 0;
-	// }
+	//     .panel-title {
+	//         font-size: 1em;
+	//     }
 	
-	// .caret.caret-collapse {
-	//   border-left: 4px dashed;
-	//   border-top: 4px solid transparent;
-	//   border-bottom: 4px solid transparent;
-	//   border-right: none;
-	// }
+	//     .header-wrapper {
+	//         display: inline-block;
+	//         width: 80%;
+	//     }
 	
-	// .panel.panel-seamless {
-	//   box-shadow: none;
-	//   border: none;
-	// }
+	//     .button-wrapper {
+	//         float: right;
+	//         display: inline-block;
+	//         width: 20%;
+	//     }
 	
-	// .panel-seamless > .panel-heading {
-	//   padding: 0;
-	// }
-	// .panel-seamless > .panel-collapse > .panel-body {
-	//   padding: 10px 0;
-	// }
+	//     .accordion-toggle {
+	//         cursor: pointer;
+	//     }
+	
+	//     .expandable-panel {
+	//         margin-bottom: 0 !important;
+	//         margin-top: 5px;
+	//     }
+	
+	//     .panel-group > .panel-container > .expandable-panel {
+	//         margin-top: 0!important;
+	//     }
+	
+	//     .panel-seamless {
+	//         padding: 0;
+	//     }
+	
+	//     .caret.caret-collapse {
+	//         border-left: 4px dashed;
+	//         border-top: 4px solid transparent;
+	//         border-bottom: 4px solid transparent;
+	//         border-right: none;
+	//     }
+	
+	//     .panel.panel-seamless {
+	//         box-shadow: none;
+	//         border: none;
+	//     }
+	
+	//     .panel-seamless > .panel-heading {
+	//         padding: 0;
+	//     }
+	
+	//     .panel-seamless > .panel-collapse > .panel-body {
+	//         padding: 10px 0;
+	//     }
+	
+	//     .close-button {
+	//         font-size: 10px !important;
+	//         float: right;
+	//         padding: 3px 8px !important;
+	//     }
+	
+	//     .morph {
+	//         display: inline-block;
+	//     }
 	// </style>
-	// <template>
-	//   <div :class="['panel', panelType, {'expandable-panel': isExpandablePanel}]">
-	//     <div :class="['panel-heading',{'accordion-toggle':canCollapse}]"
-	//          @click.prevent="canCollapse && toggle()">
-	//       <div class="header-wrapper">
-	//         <span :class="['caret', {'caret-collapse': !isOpen}]" v-show="showCaret"></span>
-	//         <slot name="header">
-	//           <span class="panel-title">{{{ headerContent }}}</span>
-	//         </slot>
-	//       </div>
-	//       <div class="button-wrapper">
-	//         <slot name="button">
-	//           <panel-switch v-show="canCollapse && !noSwitch && !showCaret" v-bind:is-open="isOpen" @click.stop="expand()"></panel-switch>
-	//         </slot>
-	//       </div>
-	//     </div>
-	//     <div class="panel-collapse"
-	//       v-el:panel
-	//       v-show="isOpen"
-	//     >
-	//       <div class="panel-body">
-	//         <slot></slot>
-	//       </div>
-	//     </div>
-	//   </div>
-	// </template>
-	
-	// <script>
 
 /***/ },
 /* 137 */
@@ -30498,7 +30608,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, ".collapse-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 12px !important;\n    }", ""]);
+	exports.push([module.id, ".collapse-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n        margin-left: 3px;\n    }", ""]);
 	
 	// exports
 
@@ -30541,7 +30651,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	//     .collapse-button {
 	//         font-size: 10px !important;
 	//         float: right;
-	//         padding: 3px 12px !important;
+	//         padding: 3px 8px !important;
+	//         margin-left: 3px;
 	//     }
 	// </style>
 	// <template>
@@ -30563,7 +30674,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 246 */
 /***/ function(module, exports) {
 
-	module.exports = "<div :class=\"['panel', panelType, {'expandable-panel': isExpandablePanel}]\">\n    <div :class=\"['panel-heading',{'accordion-toggle':canCollapse}]\"\n         @click.prevent=\"canCollapse && toggle()\">\n      <div class=\"header-wrapper\">\n        <span :class=\"['caret', {'caret-collapse': !isOpen}]\" v-show=\"showCaret\"></span>\n        <slot name=\"header\">\n          <span class=\"panel-title\">{{{ headerContent }}}</span>\n        </slot>\n      </div>\n      <div class=\"button-wrapper\">\n        <slot name=\"button\">\n          <panel-switch v-show=\"canCollapse && !noSwitch && !showCaret\" v-bind:is-open=\"isOpen\" @click.stop=\"expand()\"></panel-switch>\n        </slot>\n      </div>\n    </div>\n    <div class=\"panel-collapse\"\n      v-el:panel\n      v-show=\"isOpen\"\n    >\n      <div class=\"panel-body\">\n        <slot></slot>\n      </div>\n    </div>\n  </div>";
+	module.exports = "<span class=\"panel-container\">\n        <div class=\"morph\" v-show=\"minimized\">\n            <div class=\"morph-display-wrapper\" v-on:click=\"open()\">\n                <button class=\"morph-display-button btn btn-default\">\n                    <slot name=\"header\">\n                        <span class=\"panel-title\">{{{altContent}}}</span>\n                    </slot>\n                </button>\n            </div>\n        </div>\n\n        <div :class=\"['panel', panelType, {'expandable-panel': isExpandablePanel}]\" v-else>\n            <div :class=\"['panel-heading',{'accordion-toggle':canCollapse}]\"\n                 @click.prevent.stop=\"canCollapse && toggle()\"\n                 @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\n                <div class=\"header-wrapper\">\n                    <span :class=\"['caret', {'caret-collapse': !expanded}]\" v-show=\"showCaret\"></span>\n                    <slot name=\"header\">\n                        <span class=\"panel-title\">{{{headerContent}}}</span>\n                    </slot>\n                </div>\n                <div class=\"button-wrapper\">\n                    <slot name=\"button\">\n                        <panel-switch v-show=\"canCollapse && !noSwitch && !showCaret\" v-bind:is-open=\"expanded\"\n                                      @click.stop.prevent=\"expand()\"></panel-switch>\n                        <button type=\"button\" class=\"close-button btn btn-default\"\n                                v-show=\"this.type !== 'seamless' ? (!noClose) : onHeaderHover\"\n                                @click.stop=\"close()\">\n                            <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                        </button>\n                    </slot>\n                </div>\n            </div>\n            <div class=\"panel-collapse\"\n                 v-el:panel\n                 v-show=\"expanded\"\n            >\n                <div class=\"panel-body\">\n                    <slot></slot>\n                    <retriever v-if=\"isDynamic\" v-ref:retriever :src=\"src\" :fragment=\"fragment\" delay></retriever>\n                </div>\n            </div>\n        </div>\n    </span>";
 
 /***/ },
 /* 247 */
@@ -31809,13 +31920,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	//         </div>
 	//         <accordion>
 	//             <div v-show="hasHintSlot">
-	//                 <panel header="Hint" expandable>
+	//                 <panel header="Hint" expandable no-close>
 	//                     <slot name="hint">
 	//                         No hint is available for this question.
 	//                     </slot>
 	//                 </panel>
 	//             </div>
-	//             <panel header="Answer" expandable>
+	//             <panel header="Answer" expandable no-close>
 	//                 <slot name="answer"></slot>
 	//             </panel>
 	//         </accordion>
@@ -31864,7 +31975,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 274 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"question-wrapper\">\n        <div class=\"body-wrapper\">\n            <!-- Default slot is question body -->\n            <slot></slot>\n            <div v-if=\"hasInput\" class=\"textarea-container\">\n                <div><strong>You can write your answer in the box below.</strong></div>\n                <textarea class=\"form-control question-input\" rows=\"3\"></textarea>\n            </div>\n        </div>\n        <accordion>\n            <div v-show=\"hasHintSlot\">\n                <panel header=\"Hint\" expandable>\n                    <slot name=\"hint\">\n                        No hint is available for this question.\n                    </slot>\n                </panel>\n            </div>\n            <panel header=\"Answer\" expandable>\n                <slot name=\"answer\"></slot>\n            </panel>\n        </accordion>\n    </div>";
+	module.exports = "<div class=\"question-wrapper\">\n        <div class=\"body-wrapper\">\n            <!-- Default slot is question body -->\n            <slot></slot>\n            <div v-if=\"hasInput\" class=\"textarea-container\">\n                <div><strong>You can write your answer in the box below.</strong></div>\n                <textarea class=\"form-control question-input\" rows=\"3\"></textarea>\n            </div>\n        </div>\n        <accordion>\n            <div v-show=\"hasHintSlot\">\n                <panel header=\"Hint\" expandable no-close>\n                    <slot name=\"hint\">\n                        No hint is available for this question.\n                    </slot>\n                </panel>\n            </div>\n            <panel header=\"Answer\" expandable no-close>\n                <slot name=\"answer\"></slot>\n            </panel>\n        </accordion>\n    </div>";
 
 /***/ },
 /* 275 */

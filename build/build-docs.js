@@ -2588,18 +2588,112 @@
 	
 	var _Panel2 = _interopRequireDefault(_Panel);
 	
-	var _Select = __webpack_require__(263);
+	var _Select = __webpack_require__(268);
 	
 	var _Select2 = _interopRequireDefault(_Select);
 	
-	var _Question = __webpack_require__(283);
+	var _Question = __webpack_require__(288);
 	
 	var _Question2 = _interopRequireDefault(_Question);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template>
-	//   <doc-section id="accordion" name="Accordion And Panel">
+	//   <doc-section id="accordion" name="Accordion and Panel">
+	//     <h4>Panel is a flexible container that support collapse and expand its content. It is expandable by default</h4>
+	//     <div class="bs-example">
+	//       <panel header="Header" alt="Alternative Header">
+	//         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolores excepturi expedita illum impedit ipsa labore qui veniam. Blanditiis exercitationem id ipsum libero molestiae, necessitatibus unde? Amet fugiat fugit molestias?
+	//       </panel>
+	//     </div>
+	//     <doc-code language="markup">
+	//       <panel header="Header" alt="Alternative Header">
+	//         ...
+	//       </panel>
+	//     </doc-code>
+	//     <br>
+	//     <h4>With <code>minimized</code> attribute, panel is minimized into an inline block element.</h4>
+	//     <div class="bs-example">
+	//       <panel header="Header" alt="Alternative Header" minimized>
+	//         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolores excepturi expedita illum impedit ipsa labore qui veniam. Blanditiis exercitationem id ipsum libero molestiae, necessitatibus unde? Amet fugiat fugit molestias?
+	//       </panel>
+	//     </div>
+	//     <doc-code language="markup">
+	//       <panel header="Header" alt="Alternative Header" minimized>
+	//         ...
+	//       </panel>
+	//     </doc-code>
+	//     <br>
+	//     <h4>With <code>expanded</code> attribute, panel could be expanded by default.</h4>
+	//     <div class="bs-example">
+	//       <panel header="Header" alt="Alternative Header" expanded>
+	//         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolores excepturi expedita illum impedit ipsa labore qui veniam. Blanditiis exercitationem id ipsum libero molestiae, necessitatibus unde? Amet fugiat fugit molestias?
+	//       </panel>
+	//     </div>
+	//     <doc-code language="markup">
+	//       <panel header="Header" alt="Alternative Header" expanded>
+	//         ...
+	//       </panel>
+	//     </doc-code>
+	//     <br>
+	//     <h4>Panel has many types that changes the appearance of the panel.</h4>
+	//     <div class="bs-example">
+	//       <h5><code>Primary</code> type</h5>
+	//       <panel header="Seamless - Click to expand" type="primary">
+	//         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius
+	//         eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur
+	//         ullam voluptates!
+	//       </panel>
+	//       <h5><code>Seamless</code> panel type</h5>
+	//       <panel header="Seamless - Click to expand" type="seamless">
+	//         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius
+	//         eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur
+	//         ullam voluptates!
+	//       </panel>
+	//     </div>
+	//     <doc-code language="markup">
+	//       <panel header="Click to expand" type="seamless">
+	//         ...
+	//       </panel>
+	
+	//     </doc-code>
+	//     <br>
+	//     <h4>Show/Hide buttons using <code>no-switch</code> or <code>no-close</code></h4>
+	//     <div class="bs-example">
+	//       <panel header="Header" no-switch>
+	//       </panel>
+	//       <panel header="Header" no-close>
+	//       </panel>
+	//     </div>
+	//     <doc-code language="markup">
+	//       <panel header="Header" no-switch>
+	//       </panel>
+	//       <panel header="Header" no-close>
+	//       </panel>
+	//     </doc-code>
+	//     <br>
+	//     <h4>Use markdown in the header (only inline level markdown are supported)</h4>
+	//     <div class="bs-example">
+	//       <panel header="**haha** :rocket: ![](https://vuejs.org/images/logo.png =25x25)" expandable type="seamless">
+	//         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequatur consequuntur culpa enim, explicabo impedit iure maxime omnis quas recusandae sint suscipit? Accusamus cumque facere laboriosam magnam magni numquam reprehenderit.
+	//       </panel>
+	//     </div>
+	//     <doc-code language="markup">
+	//       <panel header="**haha** :rocket: ![](https://vuejs.org/images/logo.png =25x25)" type="seamless">
+	//         ...
+	//       </panel>
+	
+	//     </doc-code>
+	//     <br>
+	//     <h4>If <code>src</code> attribute is provided, the panel content is loaded dynamically from src.</h4>
+	//     <div class="bs-example">
+	//       <panel header="Dynamic Loading" src="/docs/loadContent.html#fragment" minimized></panel>
+	//     </div>
+	//     <doc-code language="markup">
+	//       <panel header="Dynamic Loading" src="/docs/loadContent.html#fragment" minimized></panel>
+	//     </doc-code>
+	
+	//     <h4>Accordion could group panels together to provide better control</h4>
 	//     <div class="bs-example">
 	//       <checkbox :checked.sync="checked" type="primary">Open only one at a time.</checkbox>
 	//       <p><v-select :options="types" clear-button :value.sync="selected" placeholder="Global type"></v-select></p>
@@ -2648,21 +2742,6 @@
 	//         </panel>
 	//       </accordion>
 	
-	//       <div v-closeable>
-	//         <panel header="%%haha!%%">
-	//           <img src="https://vuejs.org/images/logo.png" alt="">
-	
-	//           hahah
-	
-	//           <div v-closeable>
-	
-	//             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam architecto at dignissimos distinctio ea explicabo fugiat, ipsa itaque odit, rem sint totam, voluptas. Incidunt officiis quas veniam vitae voluptatum.
-	//             <img src="https://vuejs.org/images/logo.png" alt="">
-	//         </div>
-	
-	//         </panel>
-	//       </div>
-	
 	//       Panel with Expand Switch
 	
 	//       <panel header="Parent" expandable ctrl-lvl="-1">
@@ -2693,70 +2772,6 @@
 	//       </accordion>
 	//     </doc-code>
 	
-	//     <div class="bs-example">
-	//       Seamless panel type
-	
-	//       <panel header="Seamless - Click to expand" expandable type="seamless">
-	//         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius
-	//         eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur
-	//         ullam voluptates!
-	//       </panel>
-	
-	//       <panel header="Primary inside seamless" expandable>
-	//         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius
-	//         eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur
-	//         ullam voluptates!
-	//       </panel>
-	
-	//       <panel header="Seamless - Click to expand" expandable type="seamless">
-	//         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius
-	//         eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur
-	//         ullam voluptates!
-	
-	//         <panel header="Primary inside seamless" expandable>
-	//           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius
-	//           eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur
-	//           ullam voluptates!
-	//         </panel>
-	//       </panel>
-	
-	//       <panel header="Seamless - Click to expand" expandable type="seamless">
-	//         <Question>
-	//           Body
-	
-	//           <div slot="hint">
-	//             Hint
-	
-	//           </div>
-	//           <div slot="answer">
-	//             Answer
-	
-	//           </div>
-	//         </Question>
-	//       </panel>
-	//     </div>
-	//     <doc-code language="markup">
-	//       <panel header="Click to expand" expandable type="seamless">
-	//         ...
-	//       </panel>
-	
-	//     </doc-code>
-	
-	//     <div class="bs-example">
-	//       Use markdown in the header (only inline level markdown are supported)
-	
-	//       <panel header="**haha** :rocket: ![](https://vuejs.org/images/logo.png =25x25)" expandable type="seamless">
-	//         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequatur consequuntur culpa enim, explicabo impedit iure maxime omnis quas recusandae sint suscipit? Accusamus cumque facere laboriosam magnam magni numquam reprehenderit.
-	//       </panel>
-	//     </div>
-	//     <doc-code language="markup">
-	//       <panel header="**haha** :rocket: ![](https://vuejs.org/images/logo.png =25x25)" expandable type="seamless">
-	//         ...
-	//       </panel>
-	
-	//     </doc-code>
-	
-	
 	//     <doc-table>
 	//       <div>
 	//         <p>type</p>
@@ -2779,16 +2794,50 @@
 	//         <p>The clickable text on the group's header. You need one to be able to click on the header for toggling.</p>
 	//       </div>
 	//       <div>
-	//         <p>is-open</p>
+	//         <p>expandable</p>
+	//         <p><code>Boolean</code></p>
+	//         <p><code>true</code></p>
+	//         <p>Whether Panel is expandable</p>
+	//       </div>
+	//       <div>
+	//         <p>expanded</p>
 	//         <p><code>Boolean</code></p>
 	//         <p><code>false</code></p>
-	//         <p>Whether accordion group is open or closed.</p>
+	//         <p>Whether Panel is expanded or collapsed.</p>
+	//       </div>
+	//       <div>
+	//         <p>minimized</p>
+	//         <p><code>Boolean</code></p>
+	//         <p><code>false</code></p>
+	//         <p>Whether Panel is minimized.</p>
+	//       </div>
+	//       <div>
+	//         <p>no-switch</p>
+	//         <p><code>Boolean</code></p>
+	//         <p><code>false</code></p>
+	//         <p>Whether to show the expand switch</p>
+	//       </div>
+	//       <div>
+	//         <p>no-close</p>
+	//         <p><code>Boolean</code></p>
+	//         <p><code>false</code></p>
+	//         <p>Whether to show the close button</p>
+	//       </div>
+	//       <div>
+	//         <p>url</p>
+	//         <p><code>String</code></p>
+	//         <p><code></code></p>
+	//         <p>The url to the remote page that to be loaded as the content of the panel.</p>
 	//       </div>
 	//       <div>
 	//         <p>type</p>
 	//         <p><code>String</code></p>
 	//         <p><code>null</code></p>
-	//         <p>Define the type of color for the tab (single).</p>
+	//         <p>
+	//           Define the type of color for the tab (single).<br>
+	//           Support: <code>default</code>, <code>primary</code>, <code>info</code>, <code>success</code>,
+	//           <code>warning</code>, <code>danger</code>, <code>seamless</code>
+	//         </p>
 	//       </div>
 	//     </doc-table>
 	//     <p>If you want to personalice your header with some html you can use the slot instead of header attribute (panel&nbsp;#1 in the example).</p>
@@ -3067,7 +3116,7 @@
 	        if (_this.oneAtAtime) {
 	          _this.$children.forEach(function (item) {
 	            if (child !== item) {
-	              item.isOpen = false;
+	              item.expanded = false;
 	            }
 	          });
 	        }
@@ -3666,7 +3715,7 @@
 	module.exports = __webpack_require__(152)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(262)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(267)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -3718,7 +3767,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".panel-heading {\n  width: 100%;\n}\n.panel-title {\n  font-size: 1em;\n}\n.header-wrapper {\n  display: inline-block;\n  width: 80%;\n}\n.button-wrapper {\n  float: right;\n  display: inline-block;\n  width: 20%;\n}\n.accordion-toggle {\n  cursor: pointer;\n}\n.expandable-panel {\n  margin-bottom: 0!important;\n}\n.expandable-panel + .expandable-panel {\n  margin-top: 5px;\n}\n\n.panel-seamless {\n  padding: 0;\n}\n\n.caret.caret-collapse {\n  border-left: 4px dashed;\n  border-top: 4px solid transparent;\n  border-bottom: 4px solid transparent;\n  border-right: none;\n}\n\n.panel.panel-seamless {\n  box-shadow: none;\n  border: none;\n}\n\n.panel-seamless > .panel-heading {\n  padding: 0;\n}\n.panel-seamless > .panel-collapse > .panel-body {\n  padding: 10px 0;\n}", ""]);
+	exports.push([module.id, ".panel-heading {\n        width: 100%;\n    }\n\n    .panel-title {\n        font-size: 1em;\n    }\n\n    .header-wrapper {\n        display: inline-block;\n        width: 80%;\n    }\n\n    .button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 20%;\n    }\n\n    .accordion-toggle {\n        cursor: pointer;\n    }\n\n    .expandable-panel {\n        margin-bottom: 0 !important;\n        margin-top: 5px;\n    }\n\n    .panel-group > .panel-container > .expandable-panel {\n        margin-top: 0!important;\n    }\n\n    .panel-seamless {\n        padding: 0;\n    }\n\n    .caret.caret-collapse {\n        border-left: 4px dashed;\n        border-top: 4px solid transparent;\n        border-bottom: 4px solid transparent;\n        border-right: none;\n    }\n\n    .panel.panel-seamless {\n        box-shadow: none;\n        border: none;\n    }\n\n    .panel-seamless > .panel-heading {\n        padding: 0;\n    }\n\n    .panel-seamless > .panel-collapse > .panel-body {\n        padding: 10px 0;\n    }\n\n    .close-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n    }\n\n    .morph {\n        display: inline-block;\n    }", ""]);
 	
 	// exports
 
@@ -3743,29 +3792,95 @@
 	
 	var _PanelSwitch2 = _interopRequireDefault(_PanelSwitch);
 	
+	var _Retriever = __webpack_require__(262);
+	
+	var _Retriever2 = _interopRequireDefault(_Retriever);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	// <template>
+	//     <span class="panel-container">
+	//         <div class="morph" v-show="minimized">
+	//             <div class="morph-display-wrapper" v-on:click="open()">
+	//                 <button class="morph-display-button btn btn-default">
+	//                     <slot name="header">
+	//                         <span class="panel-title">{{{altContent}}}</span>
+	//                     </slot>
+	//                 </button>
+	//             </div>
+	//         </div>
+	
+	//         <div :class="['panel', panelType, {'expandable-panel': isExpandablePanel}]" v-else>
+	//             <div :class="['panel-heading',{'accordion-toggle':canCollapse}]"
+	//                  @click.prevent.stop="canCollapse && toggle()"
+	//                  @mouseover="onHeaderHover = true" @mouseleave="onHeaderHover = false">
+	//                 <div class="header-wrapper">
+	//                     <span :class="['caret', {'caret-collapse': !expanded}]" v-show="showCaret"></span>
+	//                     <slot name="header">
+	//                         <span class="panel-title">{{{headerContent}}}</span>
+	//                     </slot>
+	//                 </div>
+	//                 <div class="button-wrapper">
+	//                     <slot name="button">
+	//                         <panel-switch v-show="canCollapse && !noSwitch && !showCaret" v-bind:is-open="expanded"
+	//                                       @click.stop.prevent="expand()"></panel-switch>
+	//                         <button type="button" class="close-button btn btn-default"
+	//                                 v-show="this.type !== 'seamless' ? (!noClose) : onHeaderHover"
+	//                                 @click.stop="close()">
+	//                             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+	//                         </button>
+	//                     </slot>
+	//                 </div>
+	//             </div>
+	//             <div class="panel-collapse"
+	//                  v-el:panel
+	//                  v-show="expanded"
+	//             >
+	//                 <div class="panel-body">
+	//                     <slot></slot>
+	//                     <retriever v-if="isDynamic" v-ref:retriever :src="src" :fragment="fragment" delay></retriever>
+	//                 </div>
+	//             </div>
+	//         </div>
+	//     </span>
+	// </template>
+	
+	// <script>
 	exports.default = {
 	  components: {
-	    panelSwitch: _PanelSwitch2.default
+	    panelSwitch: _PanelSwitch2.default,
+	    retriever: _Retriever2.default
 	  },
 	  props: {
 	    header: {
 	      type: String
+	    },
+	    alt: {
+	      type: String
+	    },
+	    type: {
+	      type: String,
+	      default: null
+	    },
+	    expandable: {
+	      type: Boolean,
+	      coerce: _utils.coerce.boolean,
+	      default: true
 	    },
 	    isOpen: {
 	      type: Boolean,
 	      coerce: _utils.coerce.boolean,
 	      default: null
 	    },
-	    expandable: {
+	    expanded: {
 	      type: Boolean,
 	      coerce: _utils.coerce.boolean,
 	      default: null
 	    },
-	    type: {
-	      type: String,
-	      default: null
+	    minimized: {
+	      type: Boolean,
+	      coerce: _utils.coerce.boolean,
+	      default: false
 	    },
 	    ctrlLvl: {
 	      type: Number,
@@ -3776,8 +3891,22 @@
 	      type: Boolean,
 	      coerce: _utils.coerce.boolean,
 	      default: false
+	    },
+	    noClose: {
+	      type: Boolean,
+	      coerce: _utils.coerce.boolean,
+	      default: false
+	    },
+	    src: {
+	      type: String
 	    }
 	  },
+	  data: function data() {
+	    return {
+	      onHeaderHover: false
+	    };
+	  },
+	
 	  computed: {
 	    inAccordion: function inAccordion() {
 	      return this.$parent && this.$parent._isAccordion;
@@ -3796,34 +3925,54 @@
 	    },
 	    headerContent: function headerContent() {
 	      return _markdown2.default.renderInline(this.header);
+	    },
+	    altContent: function altContent() {
+	      return this.alt && _markdown2.default.renderInline(this.alt) || _markdown2.default.renderInline(this.header);
+	    },
+	    isDynamic: function isDynamic() {
+	      return this.src && this.src.length > 0;
+	    },
+	    showCloseButton: function showCloseButton() {
+	      if (this.type !== 'seamless') {
+	        return !this.noClose;
+	      } else {
+	        return onHeaderHover;
+	      }
 	    }
 	  },
 	  methods: {
 	    toggle: function toggle() {
-	      this.isOpen = !this.isOpen;
+	      this.expanded = !this.expanded;
 	    },
 	    expand: function expand() {
-	      if (this.isOpen) {
+	      if (this.expanded) {
 	        // Ask children to collapse
 	        this.$broadcast('panel:collapse', this.ctrlLvl);
 	      } else {
 	        // Expand children
 	        this.$broadcast('panel:expand', this.ctrlLvl);
 	      }
-	      this.isOpen = !this.isOpen;
+	      this.expanded = !this.expanded;
+	    },
+	    close: function close() {
+	      console.log('close');
+	      this.minimized = true;
+	    },
+	    open: function open() {
+	      this.minimized = false;
 	    },
 	    expandCollapseHandler: function expandCollapseHandler(isExpand, level) {
 	      if (level > 0) {
-	        this.canCollapse && (this.isOpen = isExpand);
+	        this.canCollapse && (this.expanded = isExpand);
 	        this.$broadcast('panel:' + (isExpand ? 'expand' : 'collapse'), level - 1);
 	      } else if (level === -1) {
-	        this.canCollapse && (this.isOpen = isExpand);
+	        this.canCollapse && (this.expanded = isExpand);
 	        this.$broadcast('panel:' + (isExpand ? 'expand' : 'collapse'), -1);
 	      }
 	    }
 	  },
 	  watch: {
-	    'isOpen': function isOpen(val, oldVal) {
+	    'expanded': function expanded(val, oldVal) {
 	      this.$dispatch('isOpenEvent', this, val);
 	    }
 	  },
@@ -3836,90 +3985,100 @@
 	    }
 	  },
 	  created: function created() {
-	    if (this.isOpen === null) {
-	      this.isOpen = !this.canCollapse;
+	    if (this.expanded === null) {
+	      this.expanded = !this.canCollapse;
 	    }
+	    if (this.src) {
+	      var hash = (0, _utils.getFragmentByHash)(this.src);
+	      if (hash) {
+	        this.fragment = hash;
+	        this.src = this.src.split('#')[0];
+	      }
+	    }
+	  },
+	  attached: function attached() {
+	    var _this = this;
+	
+	    if (this.isDynamic && this.expanded) {
+	      this.$refs.retriever.fetch();
+	    }
+	
+	    this.$on('isOpenEvent', function (el, isOpen) {
+	      if (isOpen && _this.isDynamic) {
+	        _this.$refs.retriever.fetch();
+	      }
+	    });
 	  }
 	};
 	// </script>
 	
 	// <style>
-	// .panel-heading {
-	//   width: 100%;
-	// }
-	// .panel-title {
-	//   font-size: 1em;
-	// }
-	// .header-wrapper {
-	//   display: inline-block;
-	//   width: 80%;
-	// }
-	// .button-wrapper {
-	//   float: right;
-	//   display: inline-block;
-	//   width: 20%;
-	// }
-	// .accordion-toggle {
-	//   cursor: pointer;
-	// }
-	// .expandable-panel {
-	//   margin-bottom: 0!important;
-	// }
-	// .expandable-panel + .expandable-panel {
-	//   margin-top: 5px;
-	// }
+	//     .panel-heading {
+	//         width: 100%;
+	//     }
 	
-	// .panel-seamless {
-	//   padding: 0;
-	// }
+	//     .panel-title {
+	//         font-size: 1em;
+	//     }
 	
-	// .caret.caret-collapse {
-	//   border-left: 4px dashed;
-	//   border-top: 4px solid transparent;
-	//   border-bottom: 4px solid transparent;
-	//   border-right: none;
-	// }
+	//     .header-wrapper {
+	//         display: inline-block;
+	//         width: 80%;
+	//     }
 	
-	// .panel.panel-seamless {
-	//   box-shadow: none;
-	//   border: none;
-	// }
+	//     .button-wrapper {
+	//         float: right;
+	//         display: inline-block;
+	//         width: 20%;
+	//     }
 	
-	// .panel-seamless > .panel-heading {
-	//   padding: 0;
-	// }
-	// .panel-seamless > .panel-collapse > .panel-body {
-	//   padding: 10px 0;
-	// }
+	//     .accordion-toggle {
+	//         cursor: pointer;
+	//     }
+	
+	//     .expandable-panel {
+	//         margin-bottom: 0 !important;
+	//         margin-top: 5px;
+	//     }
+	
+	//     .panel-group > .panel-container > .expandable-panel {
+	//         margin-top: 0!important;
+	//     }
+	
+	//     .panel-seamless {
+	//         padding: 0;
+	//     }
+	
+	//     .caret.caret-collapse {
+	//         border-left: 4px dashed;
+	//         border-top: 4px solid transparent;
+	//         border-bottom: 4px solid transparent;
+	//         border-right: none;
+	//     }
+	
+	//     .panel.panel-seamless {
+	//         box-shadow: none;
+	//         border: none;
+	//     }
+	
+	//     .panel-seamless > .panel-heading {
+	//         padding: 0;
+	//     }
+	
+	//     .panel-seamless > .panel-collapse > .panel-body {
+	//         padding: 10px 0;
+	//     }
+	
+	//     .close-button {
+	//         font-size: 10px !important;
+	//         float: right;
+	//         padding: 3px 8px !important;
+	//     }
+	
+	//     .morph {
+	//         display: inline-block;
+	//     }
 	// </style>
-	// <template>
-	//   <div :class="['panel', panelType, {'expandable-panel': isExpandablePanel}]">
-	//     <div :class="['panel-heading',{'accordion-toggle':canCollapse}]"
-	//          @click.prevent="canCollapse && toggle()">
-	//       <div class="header-wrapper">
-	//         <span :class="['caret', {'caret-collapse': !isOpen}]" v-show="showCaret"></span>
-	//         <slot name="header">
-	//           <span class="panel-title">{{{ headerContent }}}</span>
-	//         </slot>
-	//       </div>
-	//       <div class="button-wrapper">
-	//         <slot name="button">
-	//           <panel-switch v-show="canCollapse && !noSwitch && !showCaret" v-bind:is-open="isOpen" @click.stop="expand()"></panel-switch>
-	//         </slot>
-	//       </div>
-	//     </div>
-	//     <div class="panel-collapse"
-	//       v-el:panel
-	//       v-show="isOpen"
-	//     >
-	//       <div class="panel-body">
-	//         <slot></slot>
-	//       </div>
-	//     </div>
-	//   </div>
-	// </template>
-	
-	// <script>
 
 /***/ },
 /* 153 */
@@ -19966,7 +20125,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".collapse-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 12px !important;\n    }", ""]);
+	exports.push([module.id, ".collapse-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n        margin-left: 3px;\n    }", ""]);
 	
 	// exports
 
@@ -20009,7 +20168,8 @@
 	//     .collapse-button {
 	//         font-size: 10px !important;
 	//         float: right;
-	//         padding: 3px 12px !important;
+	//         padding: 3px 8px !important;
+	//         margin-left: 3px;
 	//     }
 	// </style>
 	// <template>
@@ -20029,1437 +20189,12 @@
 
 /***/ },
 /* 262 */
-/***/ function(module, exports) {
-
-	module.exports = "<div :class=\"['panel', panelType, {'expandable-panel': isExpandablePanel}]\">\n    <div :class=\"['panel-heading',{'accordion-toggle':canCollapse}]\"\n         @click.prevent=\"canCollapse && toggle()\">\n      <div class=\"header-wrapper\">\n        <span :class=\"['caret', {'caret-collapse': !isOpen}]\" v-show=\"showCaret\"></span>\n        <slot name=\"header\">\n          <span class=\"panel-title\">{{{ headerContent }}}</span>\n        </slot>\n      </div>\n      <div class=\"button-wrapper\">\n        <slot name=\"button\">\n          <panel-switch v-show=\"canCollapse && !noSwitch && !showCaret\" v-bind:is-open=\"isOpen\" @click.stop=\"expand()\"></panel-switch>\n        </slot>\n      </div>\n    </div>\n    <div class=\"panel-collapse\"\n      v-el:panel\n      v-show=\"isOpen\"\n    >\n      <div class=\"panel-body\">\n        <slot></slot>\n      </div>\n    </div>\n  </div>";
-
-/***/ },
-/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(264)
-	module.exports = __webpack_require__(266)
+	module.exports = __webpack_require__(263)
 	
 	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(282)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel!./../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Select.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Select.vue","-!vue-html-loader!./../node_modules/vue-loader/lib/template-rewriter.js?id=_v-312fa98d&file=Select.vue!./../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Select.vue"], function () {
-	var newOptions = require("-!babel!./../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Select.vue")
-	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../node_modules/vue-loader/lib/template-rewriter.js?id=_v-312fa98d&file=Select.vue!./../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Select.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 264 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(265);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(146)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-312fa98d&file=Select.vue&scoped=true!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Select.vue", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-312fa98d&file=Select.vue&scoped=true!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Select.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 265 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(145)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "button.form-control.dropdown-toggle[_v-312fa98d]{\n  height: auto;\n  padding-right: 24px;\n}\nbutton.form-control.dropdown-toggle[_v-312fa98d]:after{\n  content: ' ';\n  position: absolute;\n  right: 13px;\n  top: 50%;\n  margin: -1px 0 0;\n  border-top: 4px dashed;\n  border-top: 4px solid \\9;\n  border-right: 4px solid transparent;\n  border-left: 4px solid transparent;\n}\n.bs-searchbox[_v-312fa98d] {\n  position: relative;\n  margin: 4px 8px;\n}\n.bs-searchbox .close[_v-312fa98d] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 2;\n  display: block;\n  width: 34px;\n  height: 34px;\n  line-height: 34px;\n  text-align: center;\n}\n.bs-searchbox input[_v-312fa98d]:focus,\n.secret:focus + button[_v-312fa98d] {\n  outline: 0;\n  border-color: #66afe9 !important;\n  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);\n}\n.secret[_v-312fa98d] {\n  border: 0;\n  clip: rect(0 0 0 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}\nbutton>.close[_v-312fa98d] { margin-left: 5px;}\n.notify.out[_v-312fa98d] { position: relative; }\n.notify.in[_v-312fa98d],\n.notify>div[_v-312fa98d] {\n  position: absolute;\n  width: 96%;\n  margin: 0 2%;\n  min-height: 26px;\n  padding: 3px 5px;\n  background: #f5f5f5;\n  border: 1px solid #e3e3e3;\n  box-shadow: inset 0 1px 1px rgba(0,0,0,.05);\n  pointer-events: none;\n}\n.notify>div[_v-312fa98d] {\n  top: 5px;\n  z-index: 1;\n}\n.notify.in[_v-312fa98d] {\n  opacity: .9;\n  bottom: 5px;\n}\n.btn-group-justified .dropdown-toggle>span[_v-312fa98d]:not(.close) {\n  width: calc(100% - 18px);\n  display: inline-block;\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  margin-bottom: -4px;\n}\n.btn-group-justified .dropdown-menu[_v-312fa98d] { width: 100%; }", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 266 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _typeof2 = __webpack_require__(267);
-	
-	var _typeof3 = _interopRequireDefault(_typeof2);
-	
-	var _utils = __webpack_require__(122);
-	
-	var _NodeList = __webpack_require__(53);
-	
-	var _NodeList2 = _interopRequireDefault(_NodeList);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// <template>
-	//   <div v-el:select :class="classes">
-	//     <button type="button" class="form-control dropdown-toggle"
-	//       :disabled="disabled || !hasParent"
-	//       :readonly="readonly"
-	//       @click="toggle()"
-	//       @keyup.esc="show = false"
-	//     >
-	//       <span class="btn-content" v-html="loading ? text.loading : showPlaceholder || selected"></span>
-	//       <span v-if="clearButton&&values.length" class="close" @click="clear()">&times;</span>
-	//     </button>
-	//     <select v-el:sel v-model="value" v-show="show" name="{{name}}" class="secret" :multiple="multiple" :required="required" :readonly="readonly" :disabled="disabled">
-	//       <option v-if="required" value=""></option>
-	//       <option v-for="option in options" :value="option[optionsValue]||option">{{ option[optionsLabel]||option }}</option>
-	//     </select>
-	//     <ul class="dropdown-menu">
-	//       <template v-if="options.length">
-	//         <li v-if="canSearch" class="bs-searchbox">
-	//           <input type="text" placeholder="{{searchText||text.search}}" class="form-control" autocomplete="off"
-	//             v-el:search
-	//             v-model="searchValue"
-	//             @keyup.esc="show = false"
-	//           />
-	//           <span v-show="searchValue" class="close" @click="clearSearch">&times;</span>
-	//         </li>
-	//         <li v-if="required&&!clearButton"><a @mousedown.prevent="clear() && blur()">{{ placeholder || text.notSelected }}</a></li>
-	//         <li v-for="option in options | filterBy searchValue" :id="option[optionsValue]||option">
-	//           <a @mousedown.prevent="select(option[optionsValue],option)">
-	//             <span v-html="option[optionsLabel]||option"></span>
-	//             <span class="glyphicon glyphicon-ok check-mark" v-show="isSelected(option[optionsValue])"></span>
-	//           </a>
-	//         </li>
-	//       </template>
-	//       <slot></slot>
-	//       <div v-if="showNotify && !closeOnSelect" class="notify in" transition="fadein">{{limitText}}</div>
-	//     </ul>
-	//     <div v-if="showNotify && closeOnSelect" class="notify out" transition="fadein"><div>{{limitText}}</div></div>
-	//   </div>
-	// </template>
-	
-	// <script>
-	var timeout = {};
-	exports.default = {
-	  props: {
-	    value: {
-	      twoWay: true
-	    },
-	    options: {
-	      type: Array,
-	      default: function _default() {
-	        return [];
-	      }
-	    },
-	    multiple: {
-	      type: Boolean,
-	      coerce: _utils.coerce.boolean,
-	      default: false
-	    },
-	    clearButton: {
-	      type: Boolean,
-	      coerce: _utils.coerce.boolean,
-	      default: false
-	    },
-	    closeOnSelect: { // only works when multiple
-	      type: Boolean,
-	      coerce: _utils.coerce.boolean,
-	      default: false
-	    },
-	    disabled: {
-	      type: Boolean,
-	      coerce: _utils.coerce.boolean,
-	      default: false
-	    },
-	    lang: {
-	      type: String,
-	      default: navigator.language
-	    },
-	    limit: {
-	      type: Number,
-	      coerce: _utils.coerce.number,
-	      default: 1024
-	    },
-	    name: {
-	      type: String,
-	      default: null
-	    },
-	    optionsLabel: {
-	      type: String,
-	      default: 'label'
-	    },
-	    optionsValue: {
-	      type: String,
-	      default: 'value'
-	    },
-	    parent: {
-	      default: true
-	    },
-	    placeholder: {
-	      type: String,
-	      default: null
-	    },
-	    readonly: {
-	      type: Boolean,
-	      coerce: _utils.coerce.boolean,
-	      default: null
-	    },
-	    required: {
-	      type: Boolean,
-	      coerce: _utils.coerce.boolean,
-	      default: null
-	    },
-	    minSearch: {
-	      type: Number,
-	      coerce: _utils.coerce.number,
-	      default: 0
-	    },
-	    search: { // Allow searching (only works when options are provided)
-	      type: Boolean,
-	      coerce: _utils.coerce.boolean,
-	      default: false
-	    },
-	    searchText: {
-	      type: String,
-	      default: null
-	    },
-	    url: {
-	      type: String,
-	      default: null
-	    }
-	  },
-	  data: function data() {
-	    return {
-	      loading: null,
-	      searchValue: null,
-	      show: false,
-	      showNotify: false,
-	      valid: null
-	    };
-	  },
-	
-	  computed: {
-	    selected: function selected() {
-	      var _this = this;
-	
-	      if (this.options.length === 0) {
-	        return '';
-	      }
-	      var foundItems = [];
-	      this.values.forEach(function (item) {
-	        if (~['number', 'string'].indexOf(typeof item === 'undefined' ? 'undefined' : (0, _typeof3.default)(item))) {
-	          var option = null;
-	          if (_this.options.some(function (o) {
-	            if (o instanceof Object ? o[_this.optionsValue] === item : o === item) {
-	              option = o;
-	              return true;
-	            }
-	          })) {
-	            foundItems.push(option[_this.optionsLabel] || option);
-	          }
-	        }
-	      });
-	      return foundItems.join(', ');
-	    },
-	    classes: function classes() {
-	      return [{ open: this.show, disabled: this.disabled }, this.class, this.isLi ? 'dropdown' : this.inInput ? 'input-group-btn' : 'btn-group'];
-	    },
-	    inInput: function inInput() {
-	      return this.$parent._input;
-	    },
-	    isLi: function isLi() {
-	      return this.$parent._navbar || this.$parent.menu || this.$parent._tabset;
-	    },
-	    canSearch: function canSearch() {
-	      return this.minSearch ? this.options.length >= this.minSearch : this.search;
-	    },
-	    limitText: function limitText() {
-	      return this.text.limit.replace('{{limit}}', this.limit);
-	    },
-	    showPlaceholder: function showPlaceholder() {
-	      return this.values.length === 0 || !this.hasParent ? this.placeholder || this.text.notSelected : null;
-	    },
-	    text: function text() {
-	      return (0, _utils.translations)(this.lang);
-	    },
-	    hasParent: function hasParent() {
-	      return this.parent instanceof Array ? this.parent.length : this.parent;
-	    },
-	    values: function values() {
-	      return this.value instanceof Array ? this.value : this.value !== null && this.value !== undefined ? [this.value] : [];
-	    }
-	  },
-	  watch: {
-	    options: function options(_options) {
-	      var _this2 = this;
-	
-	      var changed = false;
-	      if (_options instanceof Array && _options.length) {
-	        _options.map(function (el) {
-	          if (!(el instanceof Object)) {
-	            var obj = {};
-	            obj[_this2.optionsLabel] = el;
-	            obj[_this2.optionsValue] = el;
-	            changed = true;
-	            return obj;
-	          }
-	          return el;
-	        });
-	      }
-	      if (changed) {
-	        this.options = _options;
-	      }
-	    },
-	    show: function show(val) {
-	      if (val) {
-	        this.$els.sel.focus();
-	        this.$els.search && this.$els.search.focus();
-	      }
-	    },
-	    url: function url() {
-	      this.update();
-	    },
-	    value: function value(val) {
-	      var _this3 = this;
-	
-	      this.$emit('change', val);
-	      this.$emit('selected', this.selected);
-	      if (this.value instanceof Array && val.length > this.limit) {
-	        this.showNotify = true;
-	        if (timeout.limit) clearTimeout(timeout.limit);
-	        timeout.limit = setTimeout(function () {
-	          timeout.limit = false;
-	          _this3.showNotify = false;
-	        }, 1500);
-	      }
-	      this.checkValue();
-	      this.valid = this.validate();
-	    },
-	    valid: function valid(val, old) {
-	      if (val === old) {
-	        return;
-	      }
-	      this._parent && this._parent.validate();
-	    }
-	  },
-	  methods: {
-	    blur: function blur() {
-	      this.show = false;
-	    },
-	    clear: function clear() {
-	      if (this.disabled || this.readonly) {
-	        return;
-	      }
-	      this.value = this.value instanceof Array ? [] : null;
-	      this.toggle();
-	    },
-	    clearSearch: function clearSearch() {
-	      this.searchValue = '';
-	      this.$els.search.focus();
-	    },
-	    checkValue: function checkValue() {
-	      if (this.multiple && !(this.value instanceof Array)) {
-	        this.value = this.value === null || this.value === undefined ? [] : [this.value];
-	      }
-	      if (!this.multiple && this.value instanceof Array) {
-	        this.value = this.value.length ? this.value.pop() : null;
-	      }
-	      if (this.limit < 1) {
-	        this.limit = 1;
-	      }
-	      if (this.values.length > this.limit) {
-	        this.value = this.value.slice(0, this.limit);
-	      }
-	    },
-	    isSelected: function isSelected(v) {
-	      return this.values.indexOf(v) > -1;
-	    },
-	    select: function select(v, alt) {
-	      if (this.value instanceof Array) {
-	        if (~this.value.indexOf(v)) {
-	          this.value.$remove(v);
-	        } else {
-	          this.value.push(v);
-	        }
-	        if (this.closeOnSelect) {
-	          this.toggle();
-	        }
-	      } else {
-	        this.value = !~['', null, undefined].indexOf(v) ? v : alt;
-	        this.toggle();
-	      }
-	    },
-	    toggle: function toggle() {
-	      this.show = !this.show;
-	    },
-	    update: function update() {
-	      var _this4 = this;
-	
-	      if (!this.url) return;
-	      this.loading = true;
-	      (0, _utils.getJSON)(this.url).then(function (data) {
-	        var options = [];
-	        data.forEach(function (opc) {
-	          if (opc[_this4.optionsValue] !== undefined && opc[_this4.optionsLabel] !== undefined) options.push(opc);
-	        });
-	        _this4.options = options;
-	        if (!options.length) {
-	          _this4.value = _this4.value instanceof Array ? [] : null;
-	        }
-	      }).always(function () {
-	        _this4.loading = false;
-	        _this4.checkValue();
-	      });
-	    },
-	    validate: function validate() {
-	      return !this.required ? true : this.value instanceof Array ? this.value.length > 0 : this.value !== null;
-	    }
-	  },
-	  created: function created() {
-	    this._select = true;
-	    if (this.value === undefined || !this.parent) {
-	      this.value = null;
-	    }
-	    if (!this.multiple && this.value instanceof Array) {
-	      this.value = this.value.shift();
-	    }
-	    this.checkValue();
-	    if (this.url) this.update();
-	    var parent = this.$parent;
-	    while (parent && !parent._formGroup) {
-	      parent = parent.$parent;
-	    }
-	    if (parent && parent._formGroup) {
-	      parent.children.push(this);
-	      this._parent = parent;
-	    }
-	  },
-	  ready: function ready() {
-	    var _this5 = this;
-	
-	    (0, _NodeList2.default)(this.$els.select).onBlur(function (e) {
-	      _this5.show = false;
-	    });
-	  },
-	  beforeDestroy: function beforeDestroy() {
-	    if (this._parent) this._parent.children.$remove(this);
-	    (0, _NodeList2.default)(this.$els.select).offBlur();
-	  }
-	};
-	// </script>
-	
-	// <style scoped>
-	// button.form-control.dropdown-toggle{
-	//   height: auto;
-	//   padding-right: 24px;
-	// }
-	// button.form-control.dropdown-toggle:after{
-	//   content: ' ';
-	//   position: absolute;
-	//   right: 13px;
-	//   top: 50%;
-	//   margin: -1px 0 0;
-	//   border-top: 4px dashed;
-	//   border-top: 4px solid \9;
-	//   border-right: 4px solid transparent;
-	//   border-left: 4px solid transparent;
-	// }
-	// .bs-searchbox {
-	//   position: relative;
-	//   margin: 4px 8px;
-	// }
-	// .bs-searchbox .close {
-	//   position: absolute;
-	//   top: 0;
-	//   right: 0;
-	//   z-index: 2;
-	//   display: block;
-	//   width: 34px;
-	//   height: 34px;
-	//   line-height: 34px;
-	//   text-align: center;
-	// }
-	// .bs-searchbox input:focus,
-	// .secret:focus + button {
-	//   outline: 0;
-	//   border-color: #66afe9 !important;
-	//   box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
-	// }
-	// .secret {
-	//   border: 0;
-	//   clip: rect(0 0 0 0);
-	//   height: 1px;
-	//   margin: -1px;
-	//   overflow: hidden;
-	//   padding: 0;
-	//   position: absolute;
-	//   width: 1px;
-	// }
-	// button>.close { margin-left: 5px;}
-	// .notify.out { position: relative; }
-	// .notify.in,
-	// .notify>div {
-	//   position: absolute;
-	//   width: 96%;
-	//   margin: 0 2%;
-	//   min-height: 26px;
-	//   padding: 3px 5px;
-	//   background: #f5f5f5;
-	//   border: 1px solid #e3e3e3;
-	//   box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
-	//   pointer-events: none;
-	// }
-	// .notify>div {
-	//   top: 5px;
-	//   z-index: 1;
-	// }
-	// .notify.in {
-	//   opacity: .9;
-	//   bottom: 5px;
-	// }
-	// .btn-group-justified .dropdown-toggle>span:not(.close) {
-	//   width: calc(100% - 18px);
-	//   display: inline-block;
-	//   overflow: hidden;
-	//   white-space: nowrap;
-	//   text-overflow: ellipsis;
-	//   margin-bottom: -4px;
-	// }
-	// .btn-group-justified .dropdown-menu { width: 100%; }
-	// </style>
-
-/***/ },
-/* 267 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	exports.__esModule = true;
-	
-	var _iterator = __webpack_require__(72);
-	
-	var _iterator2 = _interopRequireDefault(_iterator);
-	
-	var _symbol = __webpack_require__(268);
-	
-	var _symbol2 = _interopRequireDefault(_symbol);
-	
-	var _typeof = typeof _symbol2.default === "function" && typeof _iterator2.default === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default && obj !== _symbol2.default.prototype ? "symbol" : typeof obj; };
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = typeof _symbol2.default === "function" && _typeof(_iterator2.default) === "symbol" ? function (obj) {
-	  return typeof obj === "undefined" ? "undefined" : _typeof(obj);
-	} : function (obj) {
-	  return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default && obj !== _symbol2.default.prototype ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof(obj);
-	};
-
-/***/ },
-/* 268 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(269), __esModule: true };
-
-/***/ },
-/* 269 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(270);
-	__webpack_require__(279);
-	__webpack_require__(280);
-	__webpack_require__(281);
-	module.exports = __webpack_require__(59).Symbol;
-
-/***/ },
-/* 270 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	// ECMAScript 6 symbols shim
-	var global         = __webpack_require__(58)
-	  , has            = __webpack_require__(81)
-	  , DESCRIPTORS    = __webpack_require__(67)
-	  , $export        = __webpack_require__(57)
-	  , redefine       = __webpack_require__(80)
-	  , META           = __webpack_require__(271).KEY
-	  , $fails         = __webpack_require__(68)
-	  , shared         = __webpack_require__(95)
-	  , setToStringTag = __webpack_require__(99)
-	  , uid            = __webpack_require__(96)
-	  , wks            = __webpack_require__(100)
-	  , wksExt         = __webpack_require__(107)
-	  , wksDefine      = __webpack_require__(272)
-	  , keyOf          = __webpack_require__(273)
-	  , enumKeys       = __webpack_require__(274)
-	  , isArray        = __webpack_require__(277)
-	  , anObject       = __webpack_require__(64)
-	  , toIObject      = __webpack_require__(88)
-	  , toPrimitive    = __webpack_require__(70)
-	  , createDesc     = __webpack_require__(71)
-	  , _create        = __webpack_require__(84)
-	  , gOPNExt        = __webpack_require__(112)
-	  , $GOPD          = __webpack_require__(278)
-	  , $DP            = __webpack_require__(63)
-	  , $keys          = __webpack_require__(86)
-	  , gOPD           = $GOPD.f
-	  , dP             = $DP.f
-	  , gOPN           = gOPNExt.f
-	  , $Symbol        = global.Symbol
-	  , $JSON          = global.JSON
-	  , _stringify     = $JSON && $JSON.stringify
-	  , PROTOTYPE      = 'prototype'
-	  , HIDDEN         = wks('_hidden')
-	  , TO_PRIMITIVE   = wks('toPrimitive')
-	  , isEnum         = {}.propertyIsEnumerable
-	  , SymbolRegistry = shared('symbol-registry')
-	  , AllSymbols     = shared('symbols')
-	  , OPSymbols      = shared('op-symbols')
-	  , ObjectProto    = Object[PROTOTYPE]
-	  , USE_NATIVE     = typeof $Symbol == 'function'
-	  , QObject        = global.QObject;
-	// Don't use setters in Qt Script, https://github.com/zloirock/core-js/issues/173
-	var setter = !QObject || !QObject[PROTOTYPE] || !QObject[PROTOTYPE].findChild;
-	
-	// fallback for old Android, https://code.google.com/p/v8/issues/detail?id=687
-	var setSymbolDesc = DESCRIPTORS && $fails(function(){
-	  return _create(dP({}, 'a', {
-	    get: function(){ return dP(this, 'a', {value: 7}).a; }
-	  })).a != 7;
-	}) ? function(it, key, D){
-	  var protoDesc = gOPD(ObjectProto, key);
-	  if(protoDesc)delete ObjectProto[key];
-	  dP(it, key, D);
-	  if(protoDesc && it !== ObjectProto)dP(ObjectProto, key, protoDesc);
-	} : dP;
-	
-	var wrap = function(tag){
-	  var sym = AllSymbols[tag] = _create($Symbol[PROTOTYPE]);
-	  sym._k = tag;
-	  return sym;
-	};
-	
-	var isSymbol = USE_NATIVE && typeof $Symbol.iterator == 'symbol' ? function(it){
-	  return typeof it == 'symbol';
-	} : function(it){
-	  return it instanceof $Symbol;
-	};
-	
-	var $defineProperty = function defineProperty(it, key, D){
-	  if(it === ObjectProto)$defineProperty(OPSymbols, key, D);
-	  anObject(it);
-	  key = toPrimitive(key, true);
-	  anObject(D);
-	  if(has(AllSymbols, key)){
-	    if(!D.enumerable){
-	      if(!has(it, HIDDEN))dP(it, HIDDEN, createDesc(1, {}));
-	      it[HIDDEN][key] = true;
-	    } else {
-	      if(has(it, HIDDEN) && it[HIDDEN][key])it[HIDDEN][key] = false;
-	      D = _create(D, {enumerable: createDesc(0, false)});
-	    } return setSymbolDesc(it, key, D);
-	  } return dP(it, key, D);
-	};
-	var $defineProperties = function defineProperties(it, P){
-	  anObject(it);
-	  var keys = enumKeys(P = toIObject(P))
-	    , i    = 0
-	    , l = keys.length
-	    , key;
-	  while(l > i)$defineProperty(it, key = keys[i++], P[key]);
-	  return it;
-	};
-	var $create = function create(it, P){
-	  return P === undefined ? _create(it) : $defineProperties(_create(it), P);
-	};
-	var $propertyIsEnumerable = function propertyIsEnumerable(key){
-	  var E = isEnum.call(this, key = toPrimitive(key, true));
-	  if(this === ObjectProto && has(AllSymbols, key) && !has(OPSymbols, key))return false;
-	  return E || !has(this, key) || !has(AllSymbols, key) || has(this, HIDDEN) && this[HIDDEN][key] ? E : true;
-	};
-	var $getOwnPropertyDescriptor = function getOwnPropertyDescriptor(it, key){
-	  it  = toIObject(it);
-	  key = toPrimitive(key, true);
-	  if(it === ObjectProto && has(AllSymbols, key) && !has(OPSymbols, key))return;
-	  var D = gOPD(it, key);
-	  if(D && has(AllSymbols, key) && !(has(it, HIDDEN) && it[HIDDEN][key]))D.enumerable = true;
-	  return D;
-	};
-	var $getOwnPropertyNames = function getOwnPropertyNames(it){
-	  var names  = gOPN(toIObject(it))
-	    , result = []
-	    , i      = 0
-	    , key;
-	  while(names.length > i){
-	    if(!has(AllSymbols, key = names[i++]) && key != HIDDEN && key != META)result.push(key);
-	  } return result;
-	};
-	var $getOwnPropertySymbols = function getOwnPropertySymbols(it){
-	  var IS_OP  = it === ObjectProto
-	    , names  = gOPN(IS_OP ? OPSymbols : toIObject(it))
-	    , result = []
-	    , i      = 0
-	    , key;
-	  while(names.length > i){
-	    if(has(AllSymbols, key = names[i++]) && (IS_OP ? has(ObjectProto, key) : true))result.push(AllSymbols[key]);
-	  } return result;
-	};
-	
-	// 19.4.1.1 Symbol([description])
-	if(!USE_NATIVE){
-	  $Symbol = function Symbol(){
-	    if(this instanceof $Symbol)throw TypeError('Symbol is not a constructor!');
-	    var tag = uid(arguments.length > 0 ? arguments[0] : undefined);
-	    var $set = function(value){
-	      if(this === ObjectProto)$set.call(OPSymbols, value);
-	      if(has(this, HIDDEN) && has(this[HIDDEN], tag))this[HIDDEN][tag] = false;
-	      setSymbolDesc(this, tag, createDesc(1, value));
-	    };
-	    if(DESCRIPTORS && setter)setSymbolDesc(ObjectProto, tag, {configurable: true, set: $set});
-	    return wrap(tag);
-	  };
-	  redefine($Symbol[PROTOTYPE], 'toString', function toString(){
-	    return this._k;
-	  });
-	
-	  $GOPD.f = $getOwnPropertyDescriptor;
-	  $DP.f   = $defineProperty;
-	  __webpack_require__(113).f = gOPNExt.f = $getOwnPropertyNames;
-	  __webpack_require__(276).f  = $propertyIsEnumerable;
-	  __webpack_require__(275).f = $getOwnPropertySymbols;
-	
-	  if(DESCRIPTORS && !__webpack_require__(79)){
-	    redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
-	  }
-	
-	  wksExt.f = function(name){
-	    return wrap(wks(name));
-	  }
-	}
-	
-	$export($export.G + $export.W + $export.F * !USE_NATIVE, {Symbol: $Symbol});
-	
-	for(var symbols = (
-	  // 19.4.2.2, 19.4.2.3, 19.4.2.4, 19.4.2.6, 19.4.2.8, 19.4.2.9, 19.4.2.10, 19.4.2.11, 19.4.2.12, 19.4.2.13, 19.4.2.14
-	  'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'
-	).split(','), i = 0; symbols.length > i; )wks(symbols[i++]);
-	
-	for(var symbols = $keys(wks.store), i = 0; symbols.length > i; )wksDefine(symbols[i++]);
-	
-	$export($export.S + $export.F * !USE_NATIVE, 'Symbol', {
-	  // 19.4.2.1 Symbol.for(key)
-	  'for': function(key){
-	    return has(SymbolRegistry, key += '')
-	      ? SymbolRegistry[key]
-	      : SymbolRegistry[key] = $Symbol(key);
-	  },
-	  // 19.4.2.5 Symbol.keyFor(sym)
-	  keyFor: function keyFor(key){
-	    if(isSymbol(key))return keyOf(SymbolRegistry, key);
-	    throw TypeError(key + ' is not a symbol!');
-	  },
-	  useSetter: function(){ setter = true; },
-	  useSimple: function(){ setter = false; }
-	});
-	
-	$export($export.S + $export.F * !USE_NATIVE, 'Object', {
-	  // 19.1.2.2 Object.create(O [, Properties])
-	  create: $create,
-	  // 19.1.2.4 Object.defineProperty(O, P, Attributes)
-	  defineProperty: $defineProperty,
-	  // 19.1.2.3 Object.defineProperties(O, Properties)
-	  defineProperties: $defineProperties,
-	  // 19.1.2.6 Object.getOwnPropertyDescriptor(O, P)
-	  getOwnPropertyDescriptor: $getOwnPropertyDescriptor,
-	  // 19.1.2.7 Object.getOwnPropertyNames(O)
-	  getOwnPropertyNames: $getOwnPropertyNames,
-	  // 19.1.2.8 Object.getOwnPropertySymbols(O)
-	  getOwnPropertySymbols: $getOwnPropertySymbols
-	});
-	
-	// 24.3.2 JSON.stringify(value [, replacer [, space]])
-	$JSON && $export($export.S + $export.F * (!USE_NATIVE || $fails(function(){
-	  var S = $Symbol();
-	  // MS Edge converts symbol values to JSON as {}
-	  // WebKit converts symbol values to JSON as null
-	  // V8 throws on boxed symbols
-	  return _stringify([S]) != '[null]' || _stringify({a: S}) != '{}' || _stringify(Object(S)) != '{}';
-	})), 'JSON', {
-	  stringify: function stringify(it){
-	    if(it === undefined || isSymbol(it))return; // IE8 returns string on undefined
-	    var args = [it]
-	      , i    = 1
-	      , replacer, $replacer;
-	    while(arguments.length > i)args.push(arguments[i++]);
-	    replacer = args[1];
-	    if(typeof replacer == 'function')$replacer = replacer;
-	    if($replacer || !isArray(replacer))replacer = function(key, value){
-	      if($replacer)value = $replacer.call(this, key, value);
-	      if(!isSymbol(value))return value;
-	    };
-	    args[1] = replacer;
-	    return _stringify.apply($JSON, args);
-	  }
-	});
-	
-	// 19.4.3.4 Symbol.prototype[@@toPrimitive](hint)
-	$Symbol[PROTOTYPE][TO_PRIMITIVE] || __webpack_require__(62)($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
-	// 19.4.3.5 Symbol.prototype[@@toStringTag]
-	setToStringTag($Symbol, 'Symbol');
-	// 20.2.1.9 Math[@@toStringTag]
-	setToStringTag(Math, 'Math', true);
-	// 24.3.3 JSON[@@toStringTag]
-	setToStringTag(global.JSON, 'JSON', true);
-
-/***/ },
-/* 271 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var META     = __webpack_require__(96)('meta')
-	  , isObject = __webpack_require__(65)
-	  , has      = __webpack_require__(81)
-	  , setDesc  = __webpack_require__(63).f
-	  , id       = 0;
-	var isExtensible = Object.isExtensible || function(){
-	  return true;
-	};
-	var FREEZE = !__webpack_require__(68)(function(){
-	  return isExtensible(Object.preventExtensions({}));
-	});
-	var setMeta = function(it){
-	  setDesc(it, META, {value: {
-	    i: 'O' + ++id, // object ID
-	    w: {}          // weak collections IDs
-	  }});
-	};
-	var fastKey = function(it, create){
-	  // return primitive with prefix
-	  if(!isObject(it))return typeof it == 'symbol' ? it : (typeof it == 'string' ? 'S' : 'P') + it;
-	  if(!has(it, META)){
-	    // can't set metadata to uncaught frozen object
-	    if(!isExtensible(it))return 'F';
-	    // not necessary to add metadata
-	    if(!create)return 'E';
-	    // add missing metadata
-	    setMeta(it);
-	  // return object ID
-	  } return it[META].i;
-	};
-	var getWeak = function(it, create){
-	  if(!has(it, META)){
-	    // can't set metadata to uncaught frozen object
-	    if(!isExtensible(it))return true;
-	    // not necessary to add metadata
-	    if(!create)return false;
-	    // add missing metadata
-	    setMeta(it);
-	  // return hash weak collections IDs
-	  } return it[META].w;
-	};
-	// add metadata on freeze-family methods calling
-	var onFreeze = function(it){
-	  if(FREEZE && meta.NEED && isExtensible(it) && !has(it, META))setMeta(it);
-	  return it;
-	};
-	var meta = module.exports = {
-	  KEY:      META,
-	  NEED:     false,
-	  fastKey:  fastKey,
-	  getWeak:  getWeak,
-	  onFreeze: onFreeze
-	};
-
-/***/ },
-/* 272 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var global         = __webpack_require__(58)
-	  , core           = __webpack_require__(59)
-	  , LIBRARY        = __webpack_require__(79)
-	  , wksExt         = __webpack_require__(107)
-	  , defineProperty = __webpack_require__(63).f;
-	module.exports = function(name){
-	  var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
-	  if(name.charAt(0) != '_' && !(name in $Symbol))defineProperty($Symbol, name, {value: wksExt.f(name)});
-	};
-
-/***/ },
-/* 273 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var getKeys   = __webpack_require__(86)
-	  , toIObject = __webpack_require__(88);
-	module.exports = function(object, el){
-	  var O      = toIObject(object)
-	    , keys   = getKeys(O)
-	    , length = keys.length
-	    , index  = 0
-	    , key;
-	  while(length > index)if(O[key = keys[index++]] === el)return key;
-	};
-
-/***/ },
-/* 274 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// all enumerable object keys, includes symbols
-	var getKeys = __webpack_require__(86)
-	  , gOPS    = __webpack_require__(275)
-	  , pIE     = __webpack_require__(276);
-	module.exports = function(it){
-	  var result     = getKeys(it)
-	    , getSymbols = gOPS.f;
-	  if(getSymbols){
-	    var symbols = getSymbols(it)
-	      , isEnum  = pIE.f
-	      , i       = 0
-	      , key;
-	    while(symbols.length > i)if(isEnum.call(it, key = symbols[i++]))result.push(key);
-	  } return result;
-	};
-
-/***/ },
-/* 275 */
-/***/ function(module, exports) {
-
-	exports.f = Object.getOwnPropertySymbols;
-
-/***/ },
-/* 276 */
-/***/ function(module, exports) {
-
-	exports.f = {}.propertyIsEnumerable;
-
-/***/ },
-/* 277 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// 7.2.2 IsArray(argument)
-	var cof = __webpack_require__(90);
-	module.exports = Array.isArray || function isArray(arg){
-	  return cof(arg) == 'Array';
-	};
-
-/***/ },
-/* 278 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var pIE            = __webpack_require__(276)
-	  , createDesc     = __webpack_require__(71)
-	  , toIObject      = __webpack_require__(88)
-	  , toPrimitive    = __webpack_require__(70)
-	  , has            = __webpack_require__(81)
-	  , IE8_DOM_DEFINE = __webpack_require__(66)
-	  , gOPD           = Object.getOwnPropertyDescriptor;
-	
-	exports.f = __webpack_require__(67) ? gOPD : function getOwnPropertyDescriptor(O, P){
-	  O = toIObject(O);
-	  P = toPrimitive(P, true);
-	  if(IE8_DOM_DEFINE)try {
-	    return gOPD(O, P);
-	  } catch(e){ /* empty */ }
-	  if(has(O, P))return createDesc(!pIE.f.call(O, P), O[P]);
-	};
-
-/***/ },
-/* 279 */
-/***/ function(module, exports) {
-
-
-
-/***/ },
-/* 280 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(272)('asyncIterator');
-
-/***/ },
-/* 281 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(272)('observable');
-
-/***/ },
-/* 282 */
-/***/ function(module, exports) {
-
-	module.exports = "<div v-el:select=\"\" :class=\"classes\" _v-312fa98d=\"\">\n    <button type=\"button\" class=\"form-control dropdown-toggle\" :disabled=\"disabled || !hasParent\" :readonly=\"readonly\" @click=\"toggle()\" @keyup.esc=\"show = false\" _v-312fa98d=\"\">\n      <span class=\"btn-content\" v-html=\"loading ? text.loading : showPlaceholder || selected\" _v-312fa98d=\"\"></span>\n      <span v-if=\"clearButton&amp;&amp;values.length\" class=\"close\" @click=\"clear()\" _v-312fa98d=\"\">×</span>\n    </button>\n    <select v-el:sel=\"\" v-model=\"value\" v-show=\"show\" name=\"{{name}}\" class=\"secret\" :multiple=\"multiple\" :required=\"required\" :readonly=\"readonly\" :disabled=\"disabled\" _v-312fa98d=\"\">\n      <option v-if=\"required\" value=\"\" _v-312fa98d=\"\"></option>\n      <option v-for=\"option in options\" :value=\"option[optionsValue]||option\" _v-312fa98d=\"\">{{ option[optionsLabel]||option }}</option>\n    </select>\n    <ul class=\"dropdown-menu\" _v-312fa98d=\"\">\n      <template v-if=\"options.length\" _v-312fa98d=\"\">\n        <li v-if=\"canSearch\" class=\"bs-searchbox\" _v-312fa98d=\"\">\n          <input type=\"text\" placeholder=\"{{searchText||text.search}}\" class=\"form-control\" autocomplete=\"off\" v-el:search=\"\" v-model=\"searchValue\" @keyup.esc=\"show = false\" _v-312fa98d=\"\">\n          <span v-show=\"searchValue\" class=\"close\" @click=\"clearSearch\" _v-312fa98d=\"\">×</span>\n        </li>\n        <li v-if=\"required&amp;&amp;!clearButton\" _v-312fa98d=\"\"><a @mousedown.prevent=\"clear() &amp;&amp; blur()\" _v-312fa98d=\"\">{{ placeholder || text.notSelected }}</a></li>\n        <li v-for=\"option in options | filterBy searchValue\" :id=\"option[optionsValue]||option\" _v-312fa98d=\"\">\n          <a @mousedown.prevent=\"select(option[optionsValue],option)\" _v-312fa98d=\"\">\n            <span v-html=\"option[optionsLabel]||option\" _v-312fa98d=\"\"></span>\n            <span class=\"glyphicon glyphicon-ok check-mark\" v-show=\"isSelected(option[optionsValue])\" _v-312fa98d=\"\"></span>\n          </a>\n        </li>\n      </template>\n      <slot _v-312fa98d=\"\"></slot>\n      <div v-if=\"showNotify &amp;&amp; !closeOnSelect\" class=\"notify in\" transition=\"fadein\" _v-312fa98d=\"\">{{limitText}}</div>\n    </ul>\n    <div v-if=\"showNotify &amp;&amp; closeOnSelect\" class=\"notify out\" transition=\"fadein\" _v-312fa98d=\"\"><div _v-312fa98d=\"\">{{limitText}}</div></div>\n  </div>";
-
-/***/ },
-/* 283 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(284)
-	module.exports = __webpack_require__(286)
-	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(300)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel!./../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Question.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Question.vue","-!vue-html-loader!./../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Question.vue"], function () {
-	var newOptions = require("-!babel!./../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Question.vue")
-	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Question.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 284 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(285);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(146)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-5ef91137&file=Question.vue!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Question.vue", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-5ef91137&file=Question.vue!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Question.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 285 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(145)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".body-wrapper {\n        padding-bottom: 10px;\n    }\n    .textarea-container {\n        margin: 8px 0;\n    }\n    .textarea-container > textarea {\n        margin: 4px 0;\n    }", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 286 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _utils = __webpack_require__(122);
-	
-	var _Morph = __webpack_require__(287);
-	
-	var _Morph2 = _interopRequireDefault(_Morph);
-	
-	var _Accordion = __webpack_require__(139);
-	
-	var _Accordion2 = _interopRequireDefault(_Accordion);
-	
-	var _Panel = __webpack_require__(149);
-	
-	var _Panel2 = _interopRequireDefault(_Panel);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// <template>
-	//     <div class="question-wrapper">
-	//         <div class="body-wrapper">
-	//             <!-- Default slot is question body -->
-	//             <slot></slot>
-	//             <div v-if="hasInput" class="textarea-container">
-	//                 <div><strong>You can write your answer in the box below.</strong></div>
-	//                 <textarea class="form-control question-input" rows="3"></textarea>
-	//             </div>
-	//         </div>
-	//         <accordion>
-	//             <div v-show="hasHintSlot">
-	//                 <panel header="Hint" expandable>
-	//                     <slot name="hint">
-	//                         No hint is available for this question.
-	//                     </slot>
-	//                 </panel>
-	//             </div>
-	//             <panel header="Answer" expandable>
-	//                 <slot name="answer"></slot>
-	//             </panel>
-	//         </accordion>
-	//     </div>
-	// </template>
-	
-	// <script>
-	exports.default = {
-	  components: {
-	    panel: _Panel2.default,
-	    morph: _Morph2.default,
-	    accordion: _Accordion2.default
-	  },
-	  props: {
-	    hasInput: {
-	      type: Boolean,
-	      coerce: _utils.coerce.boolean,
-	      default: false
-	    }
-	  },
-	  data: function data() {
-	    return {
-	      hasHintSlot: true
-	    };
-	  },
-	  attached: function attached() {
-	    var hasHintSlot = !!this.$el.querySelector('[slot="hint"]');
-	    this.hasHintSlot = hasHintSlot;
-	  }
-	};
-	// </script>
-	
-	// <style>
-	//     .body-wrapper {
-	//         padding-bottom: 10px;
-	//     }
-	//     .textarea-container {
-	//         margin: 8px 0;
-	//     }
-	//     .textarea-container > textarea {
-	//         margin: 4px 0;
-	//     }
-	// </style>
-
-/***/ },
-/* 287 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(288)
-	module.exports = __webpack_require__(290)
-	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(299)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel!./../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Morph.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Morph.vue","-!vue-html-loader!./../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Morph.vue"], function () {
-	var newOptions = require("-!babel!./../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Morph.vue")
-	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Morph.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 288 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(289);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(146)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-18a61c87&file=Morph.vue!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Morph.vue", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-18a61c87&file=Morph.vue!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Morph.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 289 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(145)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".morph {\n        display: inline-block;\n    }\n\n    .morph-expanded {\n        display: block;\n        margin-top: 10px;\n    }\n\n    .morph-details > .expandable-panel {\n        margin-bottom: 20px!important;\n    }\n\n    .close-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n    }", ""]);
-	
-	// exports
-
-
-/***/ },
-/* 290 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _utils = __webpack_require__(122);
-	
-	var _markdown = __webpack_require__(153);
-	
-	var _markdown2 = _interopRequireDefault(_markdown);
-	
-	var _Panel = __webpack_require__(149);
-	
-	var _Panel2 = _interopRequireDefault(_Panel);
-	
-	var _DynamicPanel = __webpack_require__(291);
-	
-	var _DynamicPanel2 = _interopRequireDefault(_DynamicPanel);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	// <template>
-	//     <div :class="['morph', {'morph-expanded': isOpen}]">
-	//         <div class="morph-display-wrapper"
-	//              @click.prevent="expand()"
-	//              v-show="!isOpen">
-	//             <slot name="display">
-	//                 <button class="morph-display-button btn btn-default">{{{titleContent}}}</button>
-	//             </slot>
-	//         </div>
-	
-	//         <div class="morph-details"
-	//              v-el:details
-	//              v-show="isOpen">
-	//             <dynamic-panel :header="title" :src="src" :is-open="isOpen" v-if="isDynamic">
-	//                 <button type="button" class="close-button btn btn-default" slot="button" @click.stop="close()">
-	//                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-	//                 </button>
-	//             </dynamic-panel>
-	//             <Panel :header="title" v-else>
-	//                 <button type="button" class="close-button btn btn-default" slot="button" @click.stop="close()">
-	//                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-	//                 </button>
-	//                 <slot></slot>
-	//             </Panel>
-	//         </div>
-	//     </div>
-	// </template>
-	
-	// <script>
-	exports.default = {
-	  components: {
-	    panel: _Panel2.default,
-	    dynamicPanel: _DynamicPanel2.default
-	  },
-	  props: {
-	    title: {
-	      type: String
-	    },
-	    isOpen: {
-	      type: Boolean,
-	      coerce: _utils.coerce.boolean,
-	      default: false
-	    },
-	    src: {
-	      type: String
-	    }
-	  },
-	  computed: {
-	    isDynamic: function isDynamic() {
-	      return !!this.src;
-	    },
-	    titleContent: function titleContent() {
-	      return _markdown2.default.renderInline(this.title);
-	    }
-	  },
-	  methods: {
-	    expand: function expand() {
-	      this.isOpen = true;
-	    },
-	    close: function close() {
-	      this.isOpen = false;
-	    }
-	  },
-	  created: function created() {}
-	};
-	// </script>
-	
-	// <style>
-	//     .morph {
-	//         display: inline-block;
-	//     }
-	
-	//     .morph-expanded {
-	//         display: block;
-	//         margin-top: 10px;
-	//     }
-	
-	//     .morph-details > .expandable-panel {
-	//         margin-bottom: 20px!important;
-	//     }
-	
-	//     .close-button {
-	//         font-size: 10px !important;
-	//         float: right;
-	//         padding: 3px 8px !important;
-	//     }
-	// </style>
-
-/***/ },
-/* 291 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(292)
-	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(298)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel!./../node_modules/vue-loader/lib/selector.js?type=script&index=0!./DynamicPanel.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel!./../node_modules/vue-loader/lib/selector.js?type=script&index=0!./DynamicPanel.vue","-!vue-html-loader!./../node_modules/vue-loader/lib/selector.js?type=template&index=0!./DynamicPanel.vue"], function () {
-	var newOptions = require("-!babel!./../node_modules/vue-loader/lib/selector.js?type=script&index=0!./DynamicPanel.vue")
-	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
-	var newTemplate = require("-!vue-html-loader!./../node_modules/vue-loader/lib/selector.js?type=template&index=0!./DynamicPanel.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 292 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _utils = __webpack_require__(122);
-	
-	var _Retriever = __webpack_require__(293);
-	
-	var _Retriever2 = _interopRequireDefault(_Retriever);
-	
-	var _Panel = __webpack_require__(149);
-	
-	var _Panel2 = _interopRequireDefault(_Panel);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.default = {
-	  props: {
-	    src: {
-	      type: String
-	    },
-	    fragment: {
-	      type: String
-	    },
-	    header: {
-	      type: String
-	    },
-	    isOpen: {
-	      type: Boolean,
-	      coerce: _utils.coerce.boolean,
-	      default: null
-	    },
-	    type: {
-	      type: String,
-	      default: null
-	    }
-	  },
-	  components: {
-	    panel: _Panel2.default,
-	    retriever: _Retriever2.default
-	  },
-	  created: function created() {
-	    if (this.src) {
-	      var hash = (0, _utils.getFragmentByHash)(this.src);
-	      if (hash) {
-	        this.fragment = hash;
-	        this.src = this.src.split('#')[0];
-	      }
-	    }
-	  },
-	  ready: function ready() {
-	    var _this = this;
-	
-	    if (this.isOpen) {
-	      this.$refs.retriever.fetch();
-	    }
-	
-	    this.$on('isOpenEvent', function (el, isOpen) {
-	      if (isOpen) {
-	        _this.$refs.retriever.fetch();
-	      }
-	    });
-	  },
-	
-	  events: {
-	    'panel:expand': function panelExpand(level) {
-	      // Consume and do nothing
-	    },
-	    'panel:collapse': function panelCollapse(level) {
-	      // Consume and do nothing
-	    }
-	  }
-	};
-	// </script>
-	// <template>
-	//   <panel :header="header" :is-open="isOpen" :type="type" expandable no-switch>
-	//     <slot name="button" slot="button"></slot>
-	//     <retriever v-ref:retriever :src="src" :fragment="fragment" delay></retriever>
-	//   </panel>
-	// </template>
-	
-	// <script>
-
-/***/ },
-/* 293 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(294)
-	
-	if (module.exports.__esModule) module.exports = module.exports.default
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(297)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(266)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -21477,7 +20212,7 @@
 	}
 
 /***/ },
-/* 294 */
+/* 263 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -21561,17 +20296,17 @@
 	// </template>
 	
 	// <script>
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(295)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(264)))
 
 /***/ },
-/* 295 */
+/* 264 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["jQuery"] = __webpack_require__(296);
+	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["jQuery"] = __webpack_require__(265);
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 296 */
+/* 265 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -31797,10 +30532,1435 @@
 
 
 /***/ },
-/* 297 */
+/* 266 */
 /***/ function(module, exports) {
 
 	module.exports = "<div>\n    Loading...\n  </div>";
+
+/***/ },
+/* 267 */
+/***/ function(module, exports) {
+
+	module.exports = "<span class=\"panel-container\">\n        <div class=\"morph\" v-show=\"minimized\">\n            <div class=\"morph-display-wrapper\" v-on:click=\"open()\">\n                <button class=\"morph-display-button btn btn-default\">\n                    <slot name=\"header\">\n                        <span class=\"panel-title\">{{{altContent}}}</span>\n                    </slot>\n                </button>\n            </div>\n        </div>\n\n        <div :class=\"['panel', panelType, {'expandable-panel': isExpandablePanel}]\" v-else>\n            <div :class=\"['panel-heading',{'accordion-toggle':canCollapse}]\"\n                 @click.prevent.stop=\"canCollapse && toggle()\"\n                 @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\n                <div class=\"header-wrapper\">\n                    <span :class=\"['caret', {'caret-collapse': !expanded}]\" v-show=\"showCaret\"></span>\n                    <slot name=\"header\">\n                        <span class=\"panel-title\">{{{headerContent}}}</span>\n                    </slot>\n                </div>\n                <div class=\"button-wrapper\">\n                    <slot name=\"button\">\n                        <panel-switch v-show=\"canCollapse && !noSwitch && !showCaret\" v-bind:is-open=\"expanded\"\n                                      @click.stop.prevent=\"expand()\"></panel-switch>\n                        <button type=\"button\" class=\"close-button btn btn-default\"\n                                v-show=\"this.type !== 'seamless' ? (!noClose) : onHeaderHover\"\n                                @click.stop=\"close()\">\n                            <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                        </button>\n                    </slot>\n                </div>\n            </div>\n            <div class=\"panel-collapse\"\n                 v-el:panel\n                 v-show=\"expanded\"\n            >\n                <div class=\"panel-body\">\n                    <slot></slot>\n                    <retriever v-if=\"isDynamic\" v-ref:retriever :src=\"src\" :fragment=\"fragment\" delay></retriever>\n                </div>\n            </div>\n        </div>\n    </span>";
+
+/***/ },
+/* 268 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(269)
+	module.exports = __webpack_require__(271)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(287)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel!./../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Select.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel!./../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Select.vue","-!vue-html-loader!./../node_modules/vue-loader/lib/template-rewriter.js?id=_v-312fa98d&file=Select.vue!./../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Select.vue"], function () {
+	var newOptions = require("-!babel!./../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Select.vue")
+	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+	var newTemplate = require("-!vue-html-loader!./../node_modules/vue-loader/lib/template-rewriter.js?id=_v-312fa98d&file=Select.vue!./../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Select.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 269 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(270);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(146)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-312fa98d&file=Select.vue&scoped=true!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Select.vue", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-312fa98d&file=Select.vue&scoped=true!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Select.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 270 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(145)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "button.form-control.dropdown-toggle[_v-312fa98d]{\n  height: auto;\n  padding-right: 24px;\n}\nbutton.form-control.dropdown-toggle[_v-312fa98d]:after{\n  content: ' ';\n  position: absolute;\n  right: 13px;\n  top: 50%;\n  margin: -1px 0 0;\n  border-top: 4px dashed;\n  border-top: 4px solid \\9;\n  border-right: 4px solid transparent;\n  border-left: 4px solid transparent;\n}\n.bs-searchbox[_v-312fa98d] {\n  position: relative;\n  margin: 4px 8px;\n}\n.bs-searchbox .close[_v-312fa98d] {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 2;\n  display: block;\n  width: 34px;\n  height: 34px;\n  line-height: 34px;\n  text-align: center;\n}\n.bs-searchbox input[_v-312fa98d]:focus,\n.secret:focus + button[_v-312fa98d] {\n  outline: 0;\n  border-color: #66afe9 !important;\n  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);\n}\n.secret[_v-312fa98d] {\n  border: 0;\n  clip: rect(0 0 0 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}\nbutton>.close[_v-312fa98d] { margin-left: 5px;}\n.notify.out[_v-312fa98d] { position: relative; }\n.notify.in[_v-312fa98d],\n.notify>div[_v-312fa98d] {\n  position: absolute;\n  width: 96%;\n  margin: 0 2%;\n  min-height: 26px;\n  padding: 3px 5px;\n  background: #f5f5f5;\n  border: 1px solid #e3e3e3;\n  box-shadow: inset 0 1px 1px rgba(0,0,0,.05);\n  pointer-events: none;\n}\n.notify>div[_v-312fa98d] {\n  top: 5px;\n  z-index: 1;\n}\n.notify.in[_v-312fa98d] {\n  opacity: .9;\n  bottom: 5px;\n}\n.btn-group-justified .dropdown-toggle>span[_v-312fa98d]:not(.close) {\n  width: calc(100% - 18px);\n  display: inline-block;\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  margin-bottom: -4px;\n}\n.btn-group-justified .dropdown-menu[_v-312fa98d] { width: 100%; }", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 271 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _typeof2 = __webpack_require__(272);
+	
+	var _typeof3 = _interopRequireDefault(_typeof2);
+	
+	var _utils = __webpack_require__(122);
+	
+	var _NodeList = __webpack_require__(53);
+	
+	var _NodeList2 = _interopRequireDefault(_NodeList);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// <template>
+	//   <div v-el:select :class="classes">
+	//     <button type="button" class="form-control dropdown-toggle"
+	//       :disabled="disabled || !hasParent"
+	//       :readonly="readonly"
+	//       @click="toggle()"
+	//       @keyup.esc="show = false"
+	//     >
+	//       <span class="btn-content" v-html="loading ? text.loading : showPlaceholder || selected"></span>
+	//       <span v-if="clearButton&&values.length" class="close" @click="clear()">&times;</span>
+	//     </button>
+	//     <select v-el:sel v-model="value" v-show="show" name="{{name}}" class="secret" :multiple="multiple" :required="required" :readonly="readonly" :disabled="disabled">
+	//       <option v-if="required" value=""></option>
+	//       <option v-for="option in options" :value="option[optionsValue]||option">{{ option[optionsLabel]||option }}</option>
+	//     </select>
+	//     <ul class="dropdown-menu">
+	//       <template v-if="options.length">
+	//         <li v-if="canSearch" class="bs-searchbox">
+	//           <input type="text" placeholder="{{searchText||text.search}}" class="form-control" autocomplete="off"
+	//             v-el:search
+	//             v-model="searchValue"
+	//             @keyup.esc="show = false"
+	//           />
+	//           <span v-show="searchValue" class="close" @click="clearSearch">&times;</span>
+	//         </li>
+	//         <li v-if="required&&!clearButton"><a @mousedown.prevent="clear() && blur()">{{ placeholder || text.notSelected }}</a></li>
+	//         <li v-for="option in options | filterBy searchValue" :id="option[optionsValue]||option">
+	//           <a @mousedown.prevent="select(option[optionsValue],option)">
+	//             <span v-html="option[optionsLabel]||option"></span>
+	//             <span class="glyphicon glyphicon-ok check-mark" v-show="isSelected(option[optionsValue])"></span>
+	//           </a>
+	//         </li>
+	//       </template>
+	//       <slot></slot>
+	//       <div v-if="showNotify && !closeOnSelect" class="notify in" transition="fadein">{{limitText}}</div>
+	//     </ul>
+	//     <div v-if="showNotify && closeOnSelect" class="notify out" transition="fadein"><div>{{limitText}}</div></div>
+	//   </div>
+	// </template>
+	
+	// <script>
+	var timeout = {};
+	exports.default = {
+	  props: {
+	    value: {
+	      twoWay: true
+	    },
+	    options: {
+	      type: Array,
+	      default: function _default() {
+	        return [];
+	      }
+	    },
+	    multiple: {
+	      type: Boolean,
+	      coerce: _utils.coerce.boolean,
+	      default: false
+	    },
+	    clearButton: {
+	      type: Boolean,
+	      coerce: _utils.coerce.boolean,
+	      default: false
+	    },
+	    closeOnSelect: { // only works when multiple
+	      type: Boolean,
+	      coerce: _utils.coerce.boolean,
+	      default: false
+	    },
+	    disabled: {
+	      type: Boolean,
+	      coerce: _utils.coerce.boolean,
+	      default: false
+	    },
+	    lang: {
+	      type: String,
+	      default: navigator.language
+	    },
+	    limit: {
+	      type: Number,
+	      coerce: _utils.coerce.number,
+	      default: 1024
+	    },
+	    name: {
+	      type: String,
+	      default: null
+	    },
+	    optionsLabel: {
+	      type: String,
+	      default: 'label'
+	    },
+	    optionsValue: {
+	      type: String,
+	      default: 'value'
+	    },
+	    parent: {
+	      default: true
+	    },
+	    placeholder: {
+	      type: String,
+	      default: null
+	    },
+	    readonly: {
+	      type: Boolean,
+	      coerce: _utils.coerce.boolean,
+	      default: null
+	    },
+	    required: {
+	      type: Boolean,
+	      coerce: _utils.coerce.boolean,
+	      default: null
+	    },
+	    minSearch: {
+	      type: Number,
+	      coerce: _utils.coerce.number,
+	      default: 0
+	    },
+	    search: { // Allow searching (only works when options are provided)
+	      type: Boolean,
+	      coerce: _utils.coerce.boolean,
+	      default: false
+	    },
+	    searchText: {
+	      type: String,
+	      default: null
+	    },
+	    url: {
+	      type: String,
+	      default: null
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      loading: null,
+	      searchValue: null,
+	      show: false,
+	      showNotify: false,
+	      valid: null
+	    };
+	  },
+	
+	  computed: {
+	    selected: function selected() {
+	      var _this = this;
+	
+	      if (this.options.length === 0) {
+	        return '';
+	      }
+	      var foundItems = [];
+	      this.values.forEach(function (item) {
+	        if (~['number', 'string'].indexOf(typeof item === 'undefined' ? 'undefined' : (0, _typeof3.default)(item))) {
+	          var option = null;
+	          if (_this.options.some(function (o) {
+	            if (o instanceof Object ? o[_this.optionsValue] === item : o === item) {
+	              option = o;
+	              return true;
+	            }
+	          })) {
+	            foundItems.push(option[_this.optionsLabel] || option);
+	          }
+	        }
+	      });
+	      return foundItems.join(', ');
+	    },
+	    classes: function classes() {
+	      return [{ open: this.show, disabled: this.disabled }, this.class, this.isLi ? 'dropdown' : this.inInput ? 'input-group-btn' : 'btn-group'];
+	    },
+	    inInput: function inInput() {
+	      return this.$parent._input;
+	    },
+	    isLi: function isLi() {
+	      return this.$parent._navbar || this.$parent.menu || this.$parent._tabset;
+	    },
+	    canSearch: function canSearch() {
+	      return this.minSearch ? this.options.length >= this.minSearch : this.search;
+	    },
+	    limitText: function limitText() {
+	      return this.text.limit.replace('{{limit}}', this.limit);
+	    },
+	    showPlaceholder: function showPlaceholder() {
+	      return this.values.length === 0 || !this.hasParent ? this.placeholder || this.text.notSelected : null;
+	    },
+	    text: function text() {
+	      return (0, _utils.translations)(this.lang);
+	    },
+	    hasParent: function hasParent() {
+	      return this.parent instanceof Array ? this.parent.length : this.parent;
+	    },
+	    values: function values() {
+	      return this.value instanceof Array ? this.value : this.value !== null && this.value !== undefined ? [this.value] : [];
+	    }
+	  },
+	  watch: {
+	    options: function options(_options) {
+	      var _this2 = this;
+	
+	      var changed = false;
+	      if (_options instanceof Array && _options.length) {
+	        _options.map(function (el) {
+	          if (!(el instanceof Object)) {
+	            var obj = {};
+	            obj[_this2.optionsLabel] = el;
+	            obj[_this2.optionsValue] = el;
+	            changed = true;
+	            return obj;
+	          }
+	          return el;
+	        });
+	      }
+	      if (changed) {
+	        this.options = _options;
+	      }
+	    },
+	    show: function show(val) {
+	      if (val) {
+	        this.$els.sel.focus();
+	        this.$els.search && this.$els.search.focus();
+	      }
+	    },
+	    url: function url() {
+	      this.update();
+	    },
+	    value: function value(val) {
+	      var _this3 = this;
+	
+	      this.$emit('change', val);
+	      this.$emit('selected', this.selected);
+	      if (this.value instanceof Array && val.length > this.limit) {
+	        this.showNotify = true;
+	        if (timeout.limit) clearTimeout(timeout.limit);
+	        timeout.limit = setTimeout(function () {
+	          timeout.limit = false;
+	          _this3.showNotify = false;
+	        }, 1500);
+	      }
+	      this.checkValue();
+	      this.valid = this.validate();
+	    },
+	    valid: function valid(val, old) {
+	      if (val === old) {
+	        return;
+	      }
+	      this._parent && this._parent.validate();
+	    }
+	  },
+	  methods: {
+	    blur: function blur() {
+	      this.show = false;
+	    },
+	    clear: function clear() {
+	      if (this.disabled || this.readonly) {
+	        return;
+	      }
+	      this.value = this.value instanceof Array ? [] : null;
+	      this.toggle();
+	    },
+	    clearSearch: function clearSearch() {
+	      this.searchValue = '';
+	      this.$els.search.focus();
+	    },
+	    checkValue: function checkValue() {
+	      if (this.multiple && !(this.value instanceof Array)) {
+	        this.value = this.value === null || this.value === undefined ? [] : [this.value];
+	      }
+	      if (!this.multiple && this.value instanceof Array) {
+	        this.value = this.value.length ? this.value.pop() : null;
+	      }
+	      if (this.limit < 1) {
+	        this.limit = 1;
+	      }
+	      if (this.values.length > this.limit) {
+	        this.value = this.value.slice(0, this.limit);
+	      }
+	    },
+	    isSelected: function isSelected(v) {
+	      return this.values.indexOf(v) > -1;
+	    },
+	    select: function select(v, alt) {
+	      if (this.value instanceof Array) {
+	        if (~this.value.indexOf(v)) {
+	          this.value.$remove(v);
+	        } else {
+	          this.value.push(v);
+	        }
+	        if (this.closeOnSelect) {
+	          this.toggle();
+	        }
+	      } else {
+	        this.value = !~['', null, undefined].indexOf(v) ? v : alt;
+	        this.toggle();
+	      }
+	    },
+	    toggle: function toggle() {
+	      this.show = !this.show;
+	    },
+	    update: function update() {
+	      var _this4 = this;
+	
+	      if (!this.url) return;
+	      this.loading = true;
+	      (0, _utils.getJSON)(this.url).then(function (data) {
+	        var options = [];
+	        data.forEach(function (opc) {
+	          if (opc[_this4.optionsValue] !== undefined && opc[_this4.optionsLabel] !== undefined) options.push(opc);
+	        });
+	        _this4.options = options;
+	        if (!options.length) {
+	          _this4.value = _this4.value instanceof Array ? [] : null;
+	        }
+	      }).always(function () {
+	        _this4.loading = false;
+	        _this4.checkValue();
+	      });
+	    },
+	    validate: function validate() {
+	      return !this.required ? true : this.value instanceof Array ? this.value.length > 0 : this.value !== null;
+	    }
+	  },
+	  created: function created() {
+	    this._select = true;
+	    if (this.value === undefined || !this.parent) {
+	      this.value = null;
+	    }
+	    if (!this.multiple && this.value instanceof Array) {
+	      this.value = this.value.shift();
+	    }
+	    this.checkValue();
+	    if (this.url) this.update();
+	    var parent = this.$parent;
+	    while (parent && !parent._formGroup) {
+	      parent = parent.$parent;
+	    }
+	    if (parent && parent._formGroup) {
+	      parent.children.push(this);
+	      this._parent = parent;
+	    }
+	  },
+	  ready: function ready() {
+	    var _this5 = this;
+	
+	    (0, _NodeList2.default)(this.$els.select).onBlur(function (e) {
+	      _this5.show = false;
+	    });
+	  },
+	  beforeDestroy: function beforeDestroy() {
+	    if (this._parent) this._parent.children.$remove(this);
+	    (0, _NodeList2.default)(this.$els.select).offBlur();
+	  }
+	};
+	// </script>
+	
+	// <style scoped>
+	// button.form-control.dropdown-toggle{
+	//   height: auto;
+	//   padding-right: 24px;
+	// }
+	// button.form-control.dropdown-toggle:after{
+	//   content: ' ';
+	//   position: absolute;
+	//   right: 13px;
+	//   top: 50%;
+	//   margin: -1px 0 0;
+	//   border-top: 4px dashed;
+	//   border-top: 4px solid \9;
+	//   border-right: 4px solid transparent;
+	//   border-left: 4px solid transparent;
+	// }
+	// .bs-searchbox {
+	//   position: relative;
+	//   margin: 4px 8px;
+	// }
+	// .bs-searchbox .close {
+	//   position: absolute;
+	//   top: 0;
+	//   right: 0;
+	//   z-index: 2;
+	//   display: block;
+	//   width: 34px;
+	//   height: 34px;
+	//   line-height: 34px;
+	//   text-align: center;
+	// }
+	// .bs-searchbox input:focus,
+	// .secret:focus + button {
+	//   outline: 0;
+	//   border-color: #66afe9 !important;
+	//   box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+	// }
+	// .secret {
+	//   border: 0;
+	//   clip: rect(0 0 0 0);
+	//   height: 1px;
+	//   margin: -1px;
+	//   overflow: hidden;
+	//   padding: 0;
+	//   position: absolute;
+	//   width: 1px;
+	// }
+	// button>.close { margin-left: 5px;}
+	// .notify.out { position: relative; }
+	// .notify.in,
+	// .notify>div {
+	//   position: absolute;
+	//   width: 96%;
+	//   margin: 0 2%;
+	//   min-height: 26px;
+	//   padding: 3px 5px;
+	//   background: #f5f5f5;
+	//   border: 1px solid #e3e3e3;
+	//   box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+	//   pointer-events: none;
+	// }
+	// .notify>div {
+	//   top: 5px;
+	//   z-index: 1;
+	// }
+	// .notify.in {
+	//   opacity: .9;
+	//   bottom: 5px;
+	// }
+	// .btn-group-justified .dropdown-toggle>span:not(.close) {
+	//   width: calc(100% - 18px);
+	//   display: inline-block;
+	//   overflow: hidden;
+	//   white-space: nowrap;
+	//   text-overflow: ellipsis;
+	//   margin-bottom: -4px;
+	// }
+	// .btn-group-justified .dropdown-menu { width: 100%; }
+	// </style>
+
+/***/ },
+/* 272 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	exports.__esModule = true;
+	
+	var _iterator = __webpack_require__(72);
+	
+	var _iterator2 = _interopRequireDefault(_iterator);
+	
+	var _symbol = __webpack_require__(273);
+	
+	var _symbol2 = _interopRequireDefault(_symbol);
+	
+	var _typeof = typeof _symbol2.default === "function" && typeof _iterator2.default === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default && obj !== _symbol2.default.prototype ? "symbol" : typeof obj; };
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = typeof _symbol2.default === "function" && _typeof(_iterator2.default) === "symbol" ? function (obj) {
+	  return typeof obj === "undefined" ? "undefined" : _typeof(obj);
+	} : function (obj) {
+	  return obj && typeof _symbol2.default === "function" && obj.constructor === _symbol2.default && obj !== _symbol2.default.prototype ? "symbol" : typeof obj === "undefined" ? "undefined" : _typeof(obj);
+	};
+
+/***/ },
+/* 273 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(274), __esModule: true };
+
+/***/ },
+/* 274 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(275);
+	__webpack_require__(284);
+	__webpack_require__(285);
+	__webpack_require__(286);
+	module.exports = __webpack_require__(59).Symbol;
+
+/***/ },
+/* 275 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	// ECMAScript 6 symbols shim
+	var global         = __webpack_require__(58)
+	  , has            = __webpack_require__(81)
+	  , DESCRIPTORS    = __webpack_require__(67)
+	  , $export        = __webpack_require__(57)
+	  , redefine       = __webpack_require__(80)
+	  , META           = __webpack_require__(276).KEY
+	  , $fails         = __webpack_require__(68)
+	  , shared         = __webpack_require__(95)
+	  , setToStringTag = __webpack_require__(99)
+	  , uid            = __webpack_require__(96)
+	  , wks            = __webpack_require__(100)
+	  , wksExt         = __webpack_require__(107)
+	  , wksDefine      = __webpack_require__(277)
+	  , keyOf          = __webpack_require__(278)
+	  , enumKeys       = __webpack_require__(279)
+	  , isArray        = __webpack_require__(282)
+	  , anObject       = __webpack_require__(64)
+	  , toIObject      = __webpack_require__(88)
+	  , toPrimitive    = __webpack_require__(70)
+	  , createDesc     = __webpack_require__(71)
+	  , _create        = __webpack_require__(84)
+	  , gOPNExt        = __webpack_require__(112)
+	  , $GOPD          = __webpack_require__(283)
+	  , $DP            = __webpack_require__(63)
+	  , $keys          = __webpack_require__(86)
+	  , gOPD           = $GOPD.f
+	  , dP             = $DP.f
+	  , gOPN           = gOPNExt.f
+	  , $Symbol        = global.Symbol
+	  , $JSON          = global.JSON
+	  , _stringify     = $JSON && $JSON.stringify
+	  , PROTOTYPE      = 'prototype'
+	  , HIDDEN         = wks('_hidden')
+	  , TO_PRIMITIVE   = wks('toPrimitive')
+	  , isEnum         = {}.propertyIsEnumerable
+	  , SymbolRegistry = shared('symbol-registry')
+	  , AllSymbols     = shared('symbols')
+	  , OPSymbols      = shared('op-symbols')
+	  , ObjectProto    = Object[PROTOTYPE]
+	  , USE_NATIVE     = typeof $Symbol == 'function'
+	  , QObject        = global.QObject;
+	// Don't use setters in Qt Script, https://github.com/zloirock/core-js/issues/173
+	var setter = !QObject || !QObject[PROTOTYPE] || !QObject[PROTOTYPE].findChild;
+	
+	// fallback for old Android, https://code.google.com/p/v8/issues/detail?id=687
+	var setSymbolDesc = DESCRIPTORS && $fails(function(){
+	  return _create(dP({}, 'a', {
+	    get: function(){ return dP(this, 'a', {value: 7}).a; }
+	  })).a != 7;
+	}) ? function(it, key, D){
+	  var protoDesc = gOPD(ObjectProto, key);
+	  if(protoDesc)delete ObjectProto[key];
+	  dP(it, key, D);
+	  if(protoDesc && it !== ObjectProto)dP(ObjectProto, key, protoDesc);
+	} : dP;
+	
+	var wrap = function(tag){
+	  var sym = AllSymbols[tag] = _create($Symbol[PROTOTYPE]);
+	  sym._k = tag;
+	  return sym;
+	};
+	
+	var isSymbol = USE_NATIVE && typeof $Symbol.iterator == 'symbol' ? function(it){
+	  return typeof it == 'symbol';
+	} : function(it){
+	  return it instanceof $Symbol;
+	};
+	
+	var $defineProperty = function defineProperty(it, key, D){
+	  if(it === ObjectProto)$defineProperty(OPSymbols, key, D);
+	  anObject(it);
+	  key = toPrimitive(key, true);
+	  anObject(D);
+	  if(has(AllSymbols, key)){
+	    if(!D.enumerable){
+	      if(!has(it, HIDDEN))dP(it, HIDDEN, createDesc(1, {}));
+	      it[HIDDEN][key] = true;
+	    } else {
+	      if(has(it, HIDDEN) && it[HIDDEN][key])it[HIDDEN][key] = false;
+	      D = _create(D, {enumerable: createDesc(0, false)});
+	    } return setSymbolDesc(it, key, D);
+	  } return dP(it, key, D);
+	};
+	var $defineProperties = function defineProperties(it, P){
+	  anObject(it);
+	  var keys = enumKeys(P = toIObject(P))
+	    , i    = 0
+	    , l = keys.length
+	    , key;
+	  while(l > i)$defineProperty(it, key = keys[i++], P[key]);
+	  return it;
+	};
+	var $create = function create(it, P){
+	  return P === undefined ? _create(it) : $defineProperties(_create(it), P);
+	};
+	var $propertyIsEnumerable = function propertyIsEnumerable(key){
+	  var E = isEnum.call(this, key = toPrimitive(key, true));
+	  if(this === ObjectProto && has(AllSymbols, key) && !has(OPSymbols, key))return false;
+	  return E || !has(this, key) || !has(AllSymbols, key) || has(this, HIDDEN) && this[HIDDEN][key] ? E : true;
+	};
+	var $getOwnPropertyDescriptor = function getOwnPropertyDescriptor(it, key){
+	  it  = toIObject(it);
+	  key = toPrimitive(key, true);
+	  if(it === ObjectProto && has(AllSymbols, key) && !has(OPSymbols, key))return;
+	  var D = gOPD(it, key);
+	  if(D && has(AllSymbols, key) && !(has(it, HIDDEN) && it[HIDDEN][key]))D.enumerable = true;
+	  return D;
+	};
+	var $getOwnPropertyNames = function getOwnPropertyNames(it){
+	  var names  = gOPN(toIObject(it))
+	    , result = []
+	    , i      = 0
+	    , key;
+	  while(names.length > i){
+	    if(!has(AllSymbols, key = names[i++]) && key != HIDDEN && key != META)result.push(key);
+	  } return result;
+	};
+	var $getOwnPropertySymbols = function getOwnPropertySymbols(it){
+	  var IS_OP  = it === ObjectProto
+	    , names  = gOPN(IS_OP ? OPSymbols : toIObject(it))
+	    , result = []
+	    , i      = 0
+	    , key;
+	  while(names.length > i){
+	    if(has(AllSymbols, key = names[i++]) && (IS_OP ? has(ObjectProto, key) : true))result.push(AllSymbols[key]);
+	  } return result;
+	};
+	
+	// 19.4.1.1 Symbol([description])
+	if(!USE_NATIVE){
+	  $Symbol = function Symbol(){
+	    if(this instanceof $Symbol)throw TypeError('Symbol is not a constructor!');
+	    var tag = uid(arguments.length > 0 ? arguments[0] : undefined);
+	    var $set = function(value){
+	      if(this === ObjectProto)$set.call(OPSymbols, value);
+	      if(has(this, HIDDEN) && has(this[HIDDEN], tag))this[HIDDEN][tag] = false;
+	      setSymbolDesc(this, tag, createDesc(1, value));
+	    };
+	    if(DESCRIPTORS && setter)setSymbolDesc(ObjectProto, tag, {configurable: true, set: $set});
+	    return wrap(tag);
+	  };
+	  redefine($Symbol[PROTOTYPE], 'toString', function toString(){
+	    return this._k;
+	  });
+	
+	  $GOPD.f = $getOwnPropertyDescriptor;
+	  $DP.f   = $defineProperty;
+	  __webpack_require__(113).f = gOPNExt.f = $getOwnPropertyNames;
+	  __webpack_require__(281).f  = $propertyIsEnumerable;
+	  __webpack_require__(280).f = $getOwnPropertySymbols;
+	
+	  if(DESCRIPTORS && !__webpack_require__(79)){
+	    redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
+	  }
+	
+	  wksExt.f = function(name){
+	    return wrap(wks(name));
+	  }
+	}
+	
+	$export($export.G + $export.W + $export.F * !USE_NATIVE, {Symbol: $Symbol});
+	
+	for(var symbols = (
+	  // 19.4.2.2, 19.4.2.3, 19.4.2.4, 19.4.2.6, 19.4.2.8, 19.4.2.9, 19.4.2.10, 19.4.2.11, 19.4.2.12, 19.4.2.13, 19.4.2.14
+	  'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'
+	).split(','), i = 0; symbols.length > i; )wks(symbols[i++]);
+	
+	for(var symbols = $keys(wks.store), i = 0; symbols.length > i; )wksDefine(symbols[i++]);
+	
+	$export($export.S + $export.F * !USE_NATIVE, 'Symbol', {
+	  // 19.4.2.1 Symbol.for(key)
+	  'for': function(key){
+	    return has(SymbolRegistry, key += '')
+	      ? SymbolRegistry[key]
+	      : SymbolRegistry[key] = $Symbol(key);
+	  },
+	  // 19.4.2.5 Symbol.keyFor(sym)
+	  keyFor: function keyFor(key){
+	    if(isSymbol(key))return keyOf(SymbolRegistry, key);
+	    throw TypeError(key + ' is not a symbol!');
+	  },
+	  useSetter: function(){ setter = true; },
+	  useSimple: function(){ setter = false; }
+	});
+	
+	$export($export.S + $export.F * !USE_NATIVE, 'Object', {
+	  // 19.1.2.2 Object.create(O [, Properties])
+	  create: $create,
+	  // 19.1.2.4 Object.defineProperty(O, P, Attributes)
+	  defineProperty: $defineProperty,
+	  // 19.1.2.3 Object.defineProperties(O, Properties)
+	  defineProperties: $defineProperties,
+	  // 19.1.2.6 Object.getOwnPropertyDescriptor(O, P)
+	  getOwnPropertyDescriptor: $getOwnPropertyDescriptor,
+	  // 19.1.2.7 Object.getOwnPropertyNames(O)
+	  getOwnPropertyNames: $getOwnPropertyNames,
+	  // 19.1.2.8 Object.getOwnPropertySymbols(O)
+	  getOwnPropertySymbols: $getOwnPropertySymbols
+	});
+	
+	// 24.3.2 JSON.stringify(value [, replacer [, space]])
+	$JSON && $export($export.S + $export.F * (!USE_NATIVE || $fails(function(){
+	  var S = $Symbol();
+	  // MS Edge converts symbol values to JSON as {}
+	  // WebKit converts symbol values to JSON as null
+	  // V8 throws on boxed symbols
+	  return _stringify([S]) != '[null]' || _stringify({a: S}) != '{}' || _stringify(Object(S)) != '{}';
+	})), 'JSON', {
+	  stringify: function stringify(it){
+	    if(it === undefined || isSymbol(it))return; // IE8 returns string on undefined
+	    var args = [it]
+	      , i    = 1
+	      , replacer, $replacer;
+	    while(arguments.length > i)args.push(arguments[i++]);
+	    replacer = args[1];
+	    if(typeof replacer == 'function')$replacer = replacer;
+	    if($replacer || !isArray(replacer))replacer = function(key, value){
+	      if($replacer)value = $replacer.call(this, key, value);
+	      if(!isSymbol(value))return value;
+	    };
+	    args[1] = replacer;
+	    return _stringify.apply($JSON, args);
+	  }
+	});
+	
+	// 19.4.3.4 Symbol.prototype[@@toPrimitive](hint)
+	$Symbol[PROTOTYPE][TO_PRIMITIVE] || __webpack_require__(62)($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
+	// 19.4.3.5 Symbol.prototype[@@toStringTag]
+	setToStringTag($Symbol, 'Symbol');
+	// 20.2.1.9 Math[@@toStringTag]
+	setToStringTag(Math, 'Math', true);
+	// 24.3.3 JSON[@@toStringTag]
+	setToStringTag(global.JSON, 'JSON', true);
+
+/***/ },
+/* 276 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var META     = __webpack_require__(96)('meta')
+	  , isObject = __webpack_require__(65)
+	  , has      = __webpack_require__(81)
+	  , setDesc  = __webpack_require__(63).f
+	  , id       = 0;
+	var isExtensible = Object.isExtensible || function(){
+	  return true;
+	};
+	var FREEZE = !__webpack_require__(68)(function(){
+	  return isExtensible(Object.preventExtensions({}));
+	});
+	var setMeta = function(it){
+	  setDesc(it, META, {value: {
+	    i: 'O' + ++id, // object ID
+	    w: {}          // weak collections IDs
+	  }});
+	};
+	var fastKey = function(it, create){
+	  // return primitive with prefix
+	  if(!isObject(it))return typeof it == 'symbol' ? it : (typeof it == 'string' ? 'S' : 'P') + it;
+	  if(!has(it, META)){
+	    // can't set metadata to uncaught frozen object
+	    if(!isExtensible(it))return 'F';
+	    // not necessary to add metadata
+	    if(!create)return 'E';
+	    // add missing metadata
+	    setMeta(it);
+	  // return object ID
+	  } return it[META].i;
+	};
+	var getWeak = function(it, create){
+	  if(!has(it, META)){
+	    // can't set metadata to uncaught frozen object
+	    if(!isExtensible(it))return true;
+	    // not necessary to add metadata
+	    if(!create)return false;
+	    // add missing metadata
+	    setMeta(it);
+	  // return hash weak collections IDs
+	  } return it[META].w;
+	};
+	// add metadata on freeze-family methods calling
+	var onFreeze = function(it){
+	  if(FREEZE && meta.NEED && isExtensible(it) && !has(it, META))setMeta(it);
+	  return it;
+	};
+	var meta = module.exports = {
+	  KEY:      META,
+	  NEED:     false,
+	  fastKey:  fastKey,
+	  getWeak:  getWeak,
+	  onFreeze: onFreeze
+	};
+
+/***/ },
+/* 277 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var global         = __webpack_require__(58)
+	  , core           = __webpack_require__(59)
+	  , LIBRARY        = __webpack_require__(79)
+	  , wksExt         = __webpack_require__(107)
+	  , defineProperty = __webpack_require__(63).f;
+	module.exports = function(name){
+	  var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
+	  if(name.charAt(0) != '_' && !(name in $Symbol))defineProperty($Symbol, name, {value: wksExt.f(name)});
+	};
+
+/***/ },
+/* 278 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var getKeys   = __webpack_require__(86)
+	  , toIObject = __webpack_require__(88);
+	module.exports = function(object, el){
+	  var O      = toIObject(object)
+	    , keys   = getKeys(O)
+	    , length = keys.length
+	    , index  = 0
+	    , key;
+	  while(length > index)if(O[key = keys[index++]] === el)return key;
+	};
+
+/***/ },
+/* 279 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// all enumerable object keys, includes symbols
+	var getKeys = __webpack_require__(86)
+	  , gOPS    = __webpack_require__(280)
+	  , pIE     = __webpack_require__(281);
+	module.exports = function(it){
+	  var result     = getKeys(it)
+	    , getSymbols = gOPS.f;
+	  if(getSymbols){
+	    var symbols = getSymbols(it)
+	      , isEnum  = pIE.f
+	      , i       = 0
+	      , key;
+	    while(symbols.length > i)if(isEnum.call(it, key = symbols[i++]))result.push(key);
+	  } return result;
+	};
+
+/***/ },
+/* 280 */
+/***/ function(module, exports) {
+
+	exports.f = Object.getOwnPropertySymbols;
+
+/***/ },
+/* 281 */
+/***/ function(module, exports) {
+
+	exports.f = {}.propertyIsEnumerable;
+
+/***/ },
+/* 282 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// 7.2.2 IsArray(argument)
+	var cof = __webpack_require__(90);
+	module.exports = Array.isArray || function isArray(arg){
+	  return cof(arg) == 'Array';
+	};
+
+/***/ },
+/* 283 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var pIE            = __webpack_require__(281)
+	  , createDesc     = __webpack_require__(71)
+	  , toIObject      = __webpack_require__(88)
+	  , toPrimitive    = __webpack_require__(70)
+	  , has            = __webpack_require__(81)
+	  , IE8_DOM_DEFINE = __webpack_require__(66)
+	  , gOPD           = Object.getOwnPropertyDescriptor;
+	
+	exports.f = __webpack_require__(67) ? gOPD : function getOwnPropertyDescriptor(O, P){
+	  O = toIObject(O);
+	  P = toPrimitive(P, true);
+	  if(IE8_DOM_DEFINE)try {
+	    return gOPD(O, P);
+	  } catch(e){ /* empty */ }
+	  if(has(O, P))return createDesc(!pIE.f.call(O, P), O[P]);
+	};
+
+/***/ },
+/* 284 */
+/***/ function(module, exports) {
+
+
+
+/***/ },
+/* 285 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(277)('asyncIterator');
+
+/***/ },
+/* 286 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(277)('observable');
+
+/***/ },
+/* 287 */
+/***/ function(module, exports) {
+
+	module.exports = "<div v-el:select=\"\" :class=\"classes\" _v-312fa98d=\"\">\n    <button type=\"button\" class=\"form-control dropdown-toggle\" :disabled=\"disabled || !hasParent\" :readonly=\"readonly\" @click=\"toggle()\" @keyup.esc=\"show = false\" _v-312fa98d=\"\">\n      <span class=\"btn-content\" v-html=\"loading ? text.loading : showPlaceholder || selected\" _v-312fa98d=\"\"></span>\n      <span v-if=\"clearButton&amp;&amp;values.length\" class=\"close\" @click=\"clear()\" _v-312fa98d=\"\">×</span>\n    </button>\n    <select v-el:sel=\"\" v-model=\"value\" v-show=\"show\" name=\"{{name}}\" class=\"secret\" :multiple=\"multiple\" :required=\"required\" :readonly=\"readonly\" :disabled=\"disabled\" _v-312fa98d=\"\">\n      <option v-if=\"required\" value=\"\" _v-312fa98d=\"\"></option>\n      <option v-for=\"option in options\" :value=\"option[optionsValue]||option\" _v-312fa98d=\"\">{{ option[optionsLabel]||option }}</option>\n    </select>\n    <ul class=\"dropdown-menu\" _v-312fa98d=\"\">\n      <template v-if=\"options.length\" _v-312fa98d=\"\">\n        <li v-if=\"canSearch\" class=\"bs-searchbox\" _v-312fa98d=\"\">\n          <input type=\"text\" placeholder=\"{{searchText||text.search}}\" class=\"form-control\" autocomplete=\"off\" v-el:search=\"\" v-model=\"searchValue\" @keyup.esc=\"show = false\" _v-312fa98d=\"\">\n          <span v-show=\"searchValue\" class=\"close\" @click=\"clearSearch\" _v-312fa98d=\"\">×</span>\n        </li>\n        <li v-if=\"required&amp;&amp;!clearButton\" _v-312fa98d=\"\"><a @mousedown.prevent=\"clear() &amp;&amp; blur()\" _v-312fa98d=\"\">{{ placeholder || text.notSelected }}</a></li>\n        <li v-for=\"option in options | filterBy searchValue\" :id=\"option[optionsValue]||option\" _v-312fa98d=\"\">\n          <a @mousedown.prevent=\"select(option[optionsValue],option)\" _v-312fa98d=\"\">\n            <span v-html=\"option[optionsLabel]||option\" _v-312fa98d=\"\"></span>\n            <span class=\"glyphicon glyphicon-ok check-mark\" v-show=\"isSelected(option[optionsValue])\" _v-312fa98d=\"\"></span>\n          </a>\n        </li>\n      </template>\n      <slot _v-312fa98d=\"\"></slot>\n      <div v-if=\"showNotify &amp;&amp; !closeOnSelect\" class=\"notify in\" transition=\"fadein\" _v-312fa98d=\"\">{{limitText}}</div>\n    </ul>\n    <div v-if=\"showNotify &amp;&amp; closeOnSelect\" class=\"notify out\" transition=\"fadein\" _v-312fa98d=\"\"><div _v-312fa98d=\"\">{{limitText}}</div></div>\n  </div>";
+
+/***/ },
+/* 288 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(289)
+	module.exports = __webpack_require__(291)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(300)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel!./../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Question.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel!./../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Question.vue","-!vue-html-loader!./../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Question.vue"], function () {
+	var newOptions = require("-!babel!./../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Question.vue")
+	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+	var newTemplate = require("-!vue-html-loader!./../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Question.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 289 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(290);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(146)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-5ef91137&file=Question.vue!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Question.vue", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-5ef91137&file=Question.vue!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Question.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 290 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(145)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".body-wrapper {\n        padding-bottom: 10px;\n    }\n    .textarea-container {\n        margin: 8px 0;\n    }\n    .textarea-container > textarea {\n        margin: 4px 0;\n    }", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 291 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _utils = __webpack_require__(122);
+	
+	var _Morph = __webpack_require__(292);
+	
+	var _Morph2 = _interopRequireDefault(_Morph);
+	
+	var _Accordion = __webpack_require__(139);
+	
+	var _Accordion2 = _interopRequireDefault(_Accordion);
+	
+	var _Panel = __webpack_require__(149);
+	
+	var _Panel2 = _interopRequireDefault(_Panel);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// <template>
+	//     <div class="question-wrapper">
+	//         <div class="body-wrapper">
+	//             <!-- Default slot is question body -->
+	//             <slot></slot>
+	//             <div v-if="hasInput" class="textarea-container">
+	//                 <div><strong>You can write your answer in the box below.</strong></div>
+	//                 <textarea class="form-control question-input" rows="3"></textarea>
+	//             </div>
+	//         </div>
+	//         <accordion>
+	//             <div v-show="hasHintSlot">
+	//                 <panel header="Hint" expandable no-close>
+	//                     <slot name="hint">
+	//                         No hint is available for this question.
+	//                     </slot>
+	//                 </panel>
+	//             </div>
+	//             <panel header="Answer" expandable no-close>
+	//                 <slot name="answer"></slot>
+	//             </panel>
+	//         </accordion>
+	//     </div>
+	// </template>
+	
+	// <script>
+	exports.default = {
+	  components: {
+	    panel: _Panel2.default,
+	    morph: _Morph2.default,
+	    accordion: _Accordion2.default
+	  },
+	  props: {
+	    hasInput: {
+	      type: Boolean,
+	      coerce: _utils.coerce.boolean,
+	      default: false
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      hasHintSlot: true
+	    };
+	  },
+	  attached: function attached() {
+	    var hasHintSlot = !!this.$el.querySelector('[slot="hint"]');
+	    this.hasHintSlot = hasHintSlot;
+	  }
+	};
+	// </script>
+	
+	// <style>
+	//     .body-wrapper {
+	//         padding-bottom: 10px;
+	//     }
+	//     .textarea-container {
+	//         margin: 8px 0;
+	//     }
+	//     .textarea-container > textarea {
+	//         margin: 4px 0;
+	//     }
+	// </style>
+
+/***/ },
+/* 292 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(293)
+	module.exports = __webpack_require__(295)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(299)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel!./../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Morph.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel!./../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Morph.vue","-!vue-html-loader!./../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Morph.vue"], function () {
+	var newOptions = require("-!babel!./../node_modules/vue-loader/lib/selector.js?type=script&index=0!./Morph.vue")
+	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+	var newTemplate = require("-!vue-html-loader!./../node_modules/vue-loader/lib/selector.js?type=template&index=0!./Morph.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 293 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(294);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(146)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-18a61c87&file=Morph.vue!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Morph.vue", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=_v-18a61c87&file=Morph.vue!./../node_modules/vue-loader/lib/selector.js?type=style&index=0!./Morph.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 294 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(145)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".morph {\n        display: inline-block;\n    }\n\n    .morph-expanded {\n        display: block;\n        margin-top: 10px;\n    }\n\n    .morph-details > .expandable-panel {\n        margin-bottom: 20px!important;\n    }\n\n    .close-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n    }", ""]);
+	
+	// exports
+
+
+/***/ },
+/* 295 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _utils = __webpack_require__(122);
+	
+	var _markdown = __webpack_require__(153);
+	
+	var _markdown2 = _interopRequireDefault(_markdown);
+	
+	var _Panel = __webpack_require__(149);
+	
+	var _Panel2 = _interopRequireDefault(_Panel);
+	
+	var _DynamicPanel = __webpack_require__(296);
+	
+	var _DynamicPanel2 = _interopRequireDefault(_DynamicPanel);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	// <template>
+	//     <div :class="['morph', {'morph-expanded': isOpen}]">
+	//         <div class="morph-display-wrapper"
+	//              @click.prevent="expand()"
+	//              v-show="!isOpen">
+	//             <slot name="display">
+	//                 <button class="morph-display-button btn btn-default">{{{titleContent}}}</button>
+	//             </slot>
+	//         </div>
+	
+	//         <div class="morph-details"
+	//              v-el:details
+	//              v-show="isOpen">
+	//             <dynamic-panel :header="title" :src="src" :is-open="isOpen" v-if="isDynamic">
+	//                 <button type="button" class="close-button btn btn-default" slot="button" @click.stop="close()">
+	//                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+	//                 </button>
+	//             </dynamic-panel>
+	//             <Panel :header="title" v-else>
+	//                 <button type="button" class="close-button btn btn-default" slot="button" @click.stop="close()">
+	//                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+	//                 </button>
+	//                 <slot></slot>
+	//             </Panel>
+	//         </div>
+	//     </div>
+	// </template>
+	
+	// <script>
+	exports.default = {
+	  components: {
+	    panel: _Panel2.default,
+	    dynamicPanel: _DynamicPanel2.default
+	  },
+	  props: {
+	    title: {
+	      type: String
+	    },
+	    isOpen: {
+	      type: Boolean,
+	      coerce: _utils.coerce.boolean,
+	      default: false
+	    },
+	    src: {
+	      type: String
+	    }
+	  },
+	  computed: {
+	    isDynamic: function isDynamic() {
+	      return !!this.src;
+	    },
+	    titleContent: function titleContent() {
+	      return _markdown2.default.renderInline(this.title);
+	    }
+	  },
+	  methods: {
+	    expand: function expand() {
+	      this.isOpen = true;
+	    },
+	    close: function close() {
+	      this.isOpen = false;
+	    }
+	  },
+	  created: function created() {}
+	};
+	// </script>
+	
+	// <style>
+	//     .morph {
+	//         display: inline-block;
+	//     }
+	
+	//     .morph-expanded {
+	//         display: block;
+	//         margin-top: 10px;
+	//     }
+	
+	//     .morph-details > .expandable-panel {
+	//         margin-bottom: 20px!important;
+	//     }
+	
+	//     .close-button {
+	//         font-size: 10px !important;
+	//         float: right;
+	//         padding: 3px 8px !important;
+	//     }
+	// </style>
+
+/***/ },
+/* 296 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(297)
+	
+	if (module.exports.__esModule) module.exports = module.exports.default
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(298)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel!./../node_modules/vue-loader/lib/selector.js?type=script&index=0!./DynamicPanel.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel!./../node_modules/vue-loader/lib/selector.js?type=script&index=0!./DynamicPanel.vue","-!vue-html-loader!./../node_modules/vue-loader/lib/selector.js?type=template&index=0!./DynamicPanel.vue"], function () {
+	var newOptions = require("-!babel!./../node_modules/vue-loader/lib/selector.js?type=script&index=0!./DynamicPanel.vue")
+	if (newOptions && newOptions.__esModule) newOptions = newOptions.default
+	var newTemplate = require("-!vue-html-loader!./../node_modules/vue-loader/lib/selector.js?type=template&index=0!./DynamicPanel.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 297 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _utils = __webpack_require__(122);
+	
+	var _Retriever = __webpack_require__(262);
+	
+	var _Retriever2 = _interopRequireDefault(_Retriever);
+	
+	var _Panel = __webpack_require__(149);
+	
+	var _Panel2 = _interopRequireDefault(_Panel);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = {
+	  props: {
+	    src: {
+	      type: String
+	    },
+	    fragment: {
+	      type: String
+	    },
+	    header: {
+	      type: String
+	    },
+	    isOpen: {
+	      type: Boolean,
+	      coerce: _utils.coerce.boolean,
+	      default: null
+	    },
+	    type: {
+	      type: String,
+	      default: null
+	    }
+	  },
+	  components: {
+	    panel: _Panel2.default,
+	    retriever: _Retriever2.default
+	  },
+	  created: function created() {
+	    if (this.src) {
+	      var hash = (0, _utils.getFragmentByHash)(this.src);
+	      if (hash) {
+	        this.fragment = hash;
+	        this.src = this.src.split('#')[0];
+	      }
+	    }
+	  },
+	  ready: function ready() {
+	    var _this = this;
+	
+	    if (this.isOpen) {
+	      this.$refs.retriever.fetch();
+	    }
+	
+	    this.$on('isOpenEvent', function (el, isOpen) {
+	      if (isOpen) {
+	        _this.$refs.retriever.fetch();
+	      }
+	    });
+	  },
+	
+	  events: {
+	    'panel:expand': function panelExpand(level) {
+	      // Consume and do nothing
+	    },
+	    'panel:collapse': function panelCollapse(level) {
+	      // Consume and do nothing
+	    }
+	  }
+	};
+	// </script>
+	// <template>
+	//   <panel :header="header" :is-open="isOpen" :type="type" expandable no-switch>
+	//     <slot name="button" slot="button"></slot>
+	//     <retriever v-ref:retriever :src="src" :fragment="fragment" delay></retriever>
+	//   </panel>
+	// </template>
+	
+	// <script>
 
 /***/ },
 /* 298 */
@@ -31818,13 +31978,13 @@
 /* 300 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"question-wrapper\">\n        <div class=\"body-wrapper\">\n            <!-- Default slot is question body -->\n            <slot></slot>\n            <div v-if=\"hasInput\" class=\"textarea-container\">\n                <div><strong>You can write your answer in the box below.</strong></div>\n                <textarea class=\"form-control question-input\" rows=\"3\"></textarea>\n            </div>\n        </div>\n        <accordion>\n            <div v-show=\"hasHintSlot\">\n                <panel header=\"Hint\" expandable>\n                    <slot name=\"hint\">\n                        No hint is available for this question.\n                    </slot>\n                </panel>\n            </div>\n            <panel header=\"Answer\" expandable>\n                <slot name=\"answer\"></slot>\n            </panel>\n        </accordion>\n    </div>";
+	module.exports = "<div class=\"question-wrapper\">\n        <div class=\"body-wrapper\">\n            <!-- Default slot is question body -->\n            <slot></slot>\n            <div v-if=\"hasInput\" class=\"textarea-container\">\n                <div><strong>You can write your answer in the box below.</strong></div>\n                <textarea class=\"form-control question-input\" rows=\"3\"></textarea>\n            </div>\n        </div>\n        <accordion>\n            <div v-show=\"hasHintSlot\">\n                <panel header=\"Hint\" expandable no-close>\n                    <slot name=\"hint\">\n                        No hint is available for this question.\n                    </slot>\n                </panel>\n            </div>\n            <panel header=\"Answer\" expandable no-close>\n                <slot name=\"answer\"></slot>\n            </panel>\n        </accordion>\n    </div>";
 
 /***/ },
 /* 301 */
 /***/ function(module, exports) {
 
-	module.exports = "<doc-section id=\"accordion\" name=\"Accordion And Panel\">\n    <div class=\"bs-example\">\n      <checkbox :checked.sync=\"checked\" type=\"primary\">Open only one at a time.</checkbox>\n      <p><v-select :options=\"types\" clear-button :value.sync=\"selected\" placeholder=\"Global type\"></v-select></p>\n      <p><v-select :options=\"types\" clear-button :value.sync=\"first\" placeholder=\"First element type\"></v-select></p>\n      <accordion :one-at-atime=\"checked\" :type=\"selected\">\n        <panel is-open :type=\"first=='panel'?null:first\">\n          <strong slot=\"header\"><u>[20 minutes] Part 1 - Software engineering rocks! : Introduction to Software Engineering</u></strong>\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n        <panel header=\"Panel #2\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n        <panel header=\"Panel #3\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n        <panel header=\"Panel #4\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n        <panel header=\"[20 minutes] Part 1 - Software engineering rocks! : Introduction to Software Engineering\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n      </accordion>\n\n      <div v-closeable>\n        <panel header=\"%%haha!%%\">\n          <img src=\"https://vuejs.org/images/logo.png\" alt=\"\">\n\n          hahah\n\n          <div v-closeable>\n\n            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam architecto at dignissimos distinctio ea explicabo fugiat, ipsa itaque odit, rem sint totam, voluptas. Incidunt officiis quas veniam vitae voluptatum.\n            <img src=\"https://vuejs.org/images/logo.png\" alt=\"\">\n        </div>\n\n        </panel>\n      </div>\n\n      Panel with Expand Switch\n\n      <panel header=\"Parent\" expandable ctrl-lvl=\"-1\">\n        <panel header=\"Child1\" expandable>\n          <panel header=\"Child2\">\n            <panel header=\"Child3\" expandable>\n              Parent 1\n            </panel>\n          </panel>\n        </panel>\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <accordion :one-at-atime=\"checked\" type=\"info\">\n        <panel is-open type=\"primary\">\n          <strong slot=\"header\"><u>Panel #1</u></strong>\n          ...\n        </panel>\n        <panel header=\"Panel #2\">\n          ...\n        </panel>\n        <panel header=\"Panel #3\">\n          ...\n        </panel>\n        <panel header=\"Panel #4\">\n          ...\n        </panel>\n      </accordion>\n    </doc-code>\n\n    <div class=\"bs-example\">\n      Seamless panel type\n\n      <panel header=\"Seamless - Click to expand\" expandable type=\"seamless\">\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius\n        eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur\n        ullam voluptates!\n      </panel>\n\n      <panel header=\"Primary inside seamless\" expandable>\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius\n        eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur\n        ullam voluptates!\n      </panel>\n\n      <panel header=\"Seamless - Click to expand\" expandable type=\"seamless\">\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius\n        eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur\n        ullam voluptates!\n\n        <panel header=\"Primary inside seamless\" expandable>\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius\n          eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur\n          ullam voluptates!\n        </panel>\n      </panel>\n\n      <panel header=\"Seamless - Click to expand\" expandable type=\"seamless\">\n        <Question>\n          Body\n\n          <div slot=\"hint\">\n            Hint\n\n          </div>\n          <div slot=\"answer\">\n            Answer\n\n          </div>\n        </Question>\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"Click to expand\" expandable type=\"seamless\">\n        ...\n      </panel>\n\n    </doc-code>\n\n    <div class=\"bs-example\">\n      Use markdown in the header (only inline level markdown are supported)\n\n      <panel header=\"**haha** :rocket: ![](https://vuejs.org/images/logo.png =25x25)\" expandable type=\"seamless\">\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequatur consequuntur culpa enim, explicabo impedit iure maxime omnis quas recusandae sint suscipit? Accusamus cumque facere laboriosam magnam magni numquam reprehenderit.\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"**haha** :rocket: ![](https://vuejs.org/images/logo.png =25x25)\" expandable type=\"seamless\">\n        ...\n      </panel>\n\n    </doc-code>\n\n\n    <doc-table>\n      <div>\n        <p>type</p>\n        <p><code>String</code></p>\n        <p><code>null</code></p>\n        <p>Define the type of color for the tabs (global).</p>\n      </div>\n      <div>\n        <p>one-at-time</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Control whether expanding an item will cause the other items to close.</p>\n      </div>\n    </doc-table>\n    <doc-table name=\"Panel\">\n      <div>\n        <p>header</p>\n        <p><code>String</code></p>\n        <p></p>\n        <p>The clickable text on the group's header. You need one to be able to click on the header for toggling.</p>\n      </div>\n      <div>\n        <p>is-open</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Whether accordion group is open or closed.</p>\n      </div>\n      <div>\n        <p>type</p>\n        <p><code>String</code></p>\n        <p><code>null</code></p>\n        <p>Define the type of color for the tab (single).</p>\n      </div>\n    </doc-table>\n    <p>If you want to personalice your header with some html you can use the slot instead of header attribute (panel&nbsp;#1 in the example).</p>\n  </doc-section>";
+	module.exports = "<doc-section id=\"accordion\" name=\"Accordion and Panel\">\n    <h4>Panel is a flexible container that support collapse and expand its content. It is expandable by default</h4>\n    <div class=\"bs-example\">\n      <panel header=\"Header\" alt=\"Alternative Header\">\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolores excepturi expedita illum impedit ipsa labore qui veniam. Blanditiis exercitationem id ipsum libero molestiae, necessitatibus unde? Amet fugiat fugit molestias?\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"Header\" alt=\"Alternative Header\">\n        ...\n      </panel>\n    </doc-code>\n    <br>\n    <h4>With <code>minimized</code> attribute, panel is minimized into an inline block element.</h4>\n    <div class=\"bs-example\">\n      <panel header=\"Header\" alt=\"Alternative Header\" minimized>\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolores excepturi expedita illum impedit ipsa labore qui veniam. Blanditiis exercitationem id ipsum libero molestiae, necessitatibus unde? Amet fugiat fugit molestias?\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"Header\" alt=\"Alternative Header\" minimized>\n        ...\n      </panel>\n    </doc-code>\n    <br>\n    <h4>With <code>expanded</code> attribute, panel could be expanded by default.</h4>\n    <div class=\"bs-example\">\n      <panel header=\"Header\" alt=\"Alternative Header\" expanded>\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolores excepturi expedita illum impedit ipsa labore qui veniam. Blanditiis exercitationem id ipsum libero molestiae, necessitatibus unde? Amet fugiat fugit molestias?\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"Header\" alt=\"Alternative Header\" expanded>\n        ...\n      </panel>\n    </doc-code>\n    <br>\n    <h4>Panel has many types that changes the appearance of the panel.</h4>\n    <div class=\"bs-example\">\n      <h5><code>Primary</code> type</h5>\n      <panel header=\"Seamless - Click to expand\" type=\"primary\">\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius\n        eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur\n        ullam voluptates!\n      </panel>\n      <h5><code>Seamless</code> panel type</h5>\n      <panel header=\"Seamless - Click to expand\" type=\"seamless\">\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius\n        eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur\n        ullam voluptates!\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"Click to expand\" type=\"seamless\">\n        ...\n      </panel>\n\n    </doc-code>\n    <br>\n    <h4>Show/Hide buttons using <code>no-switch</code> or <code>no-close</code></h4>\n    <div class=\"bs-example\">\n      <panel header=\"Header\" no-switch>\n      </panel>\n      <panel header=\"Header\" no-close>\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"Header\" no-switch>\n      </panel>\n      <panel header=\"Header\" no-close>\n      </panel>\n    </doc-code>\n    <br>\n    <h4>Use markdown in the header (only inline level markdown are supported)</h4>\n    <div class=\"bs-example\">\n      <panel header=\"**haha** :rocket: ![](https://vuejs.org/images/logo.png =25x25)\" expandable type=\"seamless\">\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequatur consequuntur culpa enim, explicabo impedit iure maxime omnis quas recusandae sint suscipit? Accusamus cumque facere laboriosam magnam magni numquam reprehenderit.\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"**haha** :rocket: ![](https://vuejs.org/images/logo.png =25x25)\" type=\"seamless\">\n        ...\n      </panel>\n\n    </doc-code>\n    <br>\n    <h4>If <code>src</code> attribute is provided, the panel content is loaded dynamically from src.</h4>\n    <div class=\"bs-example\">\n      <panel header=\"Dynamic Loading\" src=\"/docs/loadContent.html#fragment\" minimized></panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"Dynamic Loading\" src=\"/docs/loadContent.html#fragment\" minimized></panel>\n    </doc-code>\n\n    <h4>Accordion could group panels together to provide better control</h4>\n    <div class=\"bs-example\">\n      <checkbox :checked.sync=\"checked\" type=\"primary\">Open only one at a time.</checkbox>\n      <p><v-select :options=\"types\" clear-button :value.sync=\"selected\" placeholder=\"Global type\"></v-select></p>\n      <p><v-select :options=\"types\" clear-button :value.sync=\"first\" placeholder=\"First element type\"></v-select></p>\n      <accordion :one-at-atime=\"checked\" :type=\"selected\">\n        <panel is-open :type=\"first=='panel'?null:first\">\n          <strong slot=\"header\"><u>[20 minutes] Part 1 - Software engineering rocks! : Introduction to Software Engineering</u></strong>\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n        <panel header=\"Panel #2\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n        <panel header=\"Panel #3\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n        <panel header=\"Panel #4\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n        <panel header=\"[20 minutes] Part 1 - Software engineering rocks! : Introduction to Software Engineering\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n      </accordion>\n\n      Panel with Expand Switch\n\n      <panel header=\"Parent\" expandable ctrl-lvl=\"-1\">\n        <panel header=\"Child1\" expandable>\n          <panel header=\"Child2\">\n            <panel header=\"Child3\" expandable>\n              Parent 1\n            </panel>\n          </panel>\n        </panel>\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <accordion :one-at-atime=\"checked\" type=\"info\">\n        <panel is-open type=\"primary\">\n          <strong slot=\"header\"><u>Panel #1</u></strong>\n          ...\n        </panel>\n        <panel header=\"Panel #2\">\n          ...\n        </panel>\n        <panel header=\"Panel #3\">\n          ...\n        </panel>\n        <panel header=\"Panel #4\">\n          ...\n        </panel>\n      </accordion>\n    </doc-code>\n\n    <doc-table>\n      <div>\n        <p>type</p>\n        <p><code>String</code></p>\n        <p><code>null</code></p>\n        <p>Define the type of color for the tabs (global).</p>\n      </div>\n      <div>\n        <p>one-at-time</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Control whether expanding an item will cause the other items to close.</p>\n      </div>\n    </doc-table>\n    <doc-table name=\"Panel\">\n      <div>\n        <p>header</p>\n        <p><code>String</code></p>\n        <p></p>\n        <p>The clickable text on the group's header. You need one to be able to click on the header for toggling.</p>\n      </div>\n      <div>\n        <p>expandable</p>\n        <p><code>Boolean</code></p>\n        <p><code>true</code></p>\n        <p>Whether Panel is expandable</p>\n      </div>\n      <div>\n        <p>expanded</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Whether Panel is expanded or collapsed.</p>\n      </div>\n      <div>\n        <p>minimized</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Whether Panel is minimized.</p>\n      </div>\n      <div>\n        <p>no-switch</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Whether to show the expand switch</p>\n      </div>\n      <div>\n        <p>no-close</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Whether to show the close button</p>\n      </div>\n      <div>\n        <p>url</p>\n        <p><code>String</code></p>\n        <p><code></code></p>\n        <p>The url to the remote page that to be loaded as the content of the panel.</p>\n      </div>\n      <div>\n        <p>type</p>\n        <p><code>String</code></p>\n        <p><code>null</code></p>\n        <p>\n          Define the type of color for the tab (single).<br>\n          Support: <code>default</code>, <code>primary</code>, <code>info</code>, <code>success</code>,\n          <code>warning</code>, <code>danger</code>, <code>seamless</code>\n        </p>\n      </div>\n    </doc-table>\n    <p>If you want to personalice your header with some html you can use the slot instead of header attribute (panel&nbsp;#1 in the example).</p>\n  </doc-section>";
 
 /***/ },
 /* 302 */
@@ -32282,7 +32442,7 @@
 	    if (this._trigger) (0, _NodeList2.default)(this._trigger).off();
 	  }
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(295)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(264)))
 
 /***/ },
 /* 311 */
@@ -33332,7 +33492,7 @@
 	
 	var _docCode2 = _interopRequireDefault(_docCode);
 	
-	var _DynamicPanel = __webpack_require__(291);
+	var _DynamicPanel = __webpack_require__(296);
 	
 	var _DynamicPanel2 = _interopRequireDefault(_DynamicPanel);
 	
@@ -33911,7 +34071,7 @@
 	// </template>
 	
 	// <script>
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(295)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(264)))
 
 /***/ },
 /* 343 */
@@ -34004,7 +34164,7 @@
 	
 	var _docCode2 = _interopRequireDefault(_docCode);
 	
-	var _Morph = __webpack_require__(287);
+	var _Morph = __webpack_require__(292);
 	
 	var _Morph2 = _interopRequireDefault(_Morph);
 	
@@ -34124,7 +34284,7 @@
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 	
-	var _Select = __webpack_require__(263);
+	var _Select = __webpack_require__(268);
 	
 	var _Select2 = _interopRequireDefault(_Select);
 	
@@ -34647,11 +34807,11 @@
 	
 	var _docCode2 = _interopRequireDefault(_docCode);
 	
-	var _Question = __webpack_require__(283);
+	var _Question = __webpack_require__(288);
 	
 	var _Question2 = _interopRequireDefault(_Question);
 	
-	var _Morph = __webpack_require__(287);
+	var _Morph = __webpack_require__(292);
 	
 	var _Morph2 = _interopRequireDefault(_Morph);
 	
@@ -35663,7 +35823,7 @@
 	
 	var _docCode2 = _interopRequireDefault(_docCode);
 	
-	var _Retriever = __webpack_require__(293);
+	var _Retriever = __webpack_require__(262);
 	
 	var _Retriever2 = _interopRequireDefault(_Retriever);
 	
@@ -35803,7 +35963,7 @@
 	
 	var _Checkbox2 = _interopRequireDefault(_Checkbox);
 	
-	var _Select = __webpack_require__(263);
+	var _Select = __webpack_require__(268);
 	
 	var _Select2 = _interopRequireDefault(_Select);
 	
@@ -36911,7 +37071,7 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template>
-	//     <doc-section id="imageDocs" name="Image">
+	//     <doc-section id="imageDocs" name="Pic">
 	//         <div class="bs-example">
 	//             <pic src="https://vuejs.org/images/logo.png" alt="Logo">
 	//                 Logo For Vue.js
@@ -37057,7 +37217,7 @@
 /* 416 */
 /***/ function(module, exports) {
 
-	module.exports = "<doc-section id=\"imageDocs\" name=\"Image\">\n        <div class=\"bs-example\">\n            <pic src=\"https://vuejs.org/images/logo.png\" alt=\"Logo\">\n                Logo For Vue.js\n            </pic>\n        </div>\n        <doc-code language=\"markup\">\n            <pic src=\"https://vuejs.org/images/logo.png\" alt=\"Logo\">\n                Logo For Vue.js\n            </pic>\n        </doc-code>\n    </doc-section>";
+	module.exports = "<doc-section id=\"imageDocs\" name=\"Pic\">\n        <div class=\"bs-example\">\n            <pic src=\"https://vuejs.org/images/logo.png\" alt=\"Logo\">\n                Logo For Vue.js\n            </pic>\n        </div>\n        <doc-code language=\"markup\">\n            <pic src=\"https://vuejs.org/images/logo.png\" alt=\"Logo\">\n                Logo For Vue.js\n            </pic>\n        </doc-code>\n    </doc-section>";
 
 /***/ },
 /* 417 */
@@ -37394,7 +37554,7 @@
 	
 	//         <h4>Using trigger for Tooltip</h4>
 	//         <div class="bs-example">
-	//             More about <trigger for="tt:trigger">trigger</trigger> daas
+	//             More about <trigger for="tt:trigger">trigger</trigger>
 	//             <tooltip id="tt:trigger" content="This tooltip triggered by a trigger"></tooltip>
 	//         </div>
 	//         <doc-code language="markup">
@@ -37572,7 +37732,7 @@
 	// <style>
 	
 	// </style>
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(295)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(264)))
 
 /***/ },
 /* 431 */
@@ -37584,7 +37744,7 @@
 /* 432 */
 /***/ function(module, exports) {
 
-	module.exports = "<doc-section id=\"triggerDocs\" name=\"Trigger\">\n        <p>\n            <code>Trigger</code> provides more flexibility for triggering contextual overlay such as popover, tooltip, modal.<br/>\n            You could embed an trigger within the text, and define the Tooltip or Popover at a separate location, which brings a cleaner authoring flow. <br>\n            Specify the <code>id</code> attribute on the popover, tooltip or modal component, and use the same id for the <code>for</code> attribute of the trigger\n            to allow trigger to invoke the specific overlay elements. <br>\n        </p>\n        <p>\n            Make sure your <code>id</code> attribute is unique, otherwise unexpected behaviour may occur. <br>\n            Currently only one-to-one mapping between trigger and its overlay component is allowed. Many-to-one mapping (many triggers invoke the same overlay) will\n            be considered in the future. <br>\n        </p>\n\n        <h4>Using trigger for Tooltip</h4>\n        <div class=\"bs-example\">\n            More about <trigger for=\"tt:trigger\">trigger</trigger> daas\n            <tooltip id=\"tt:trigger\" content=\"This tooltip triggered by a trigger\"></tooltip>\n        </div>\n        <doc-code language=\"markup\">\n            More about <trigger for=\"tt:trigger\">trigger</trigger>\n            <tooltip id=\"tt:trigger_id\" content=\"This tooltip triggered by a trigger\"></tooltip>\n        </doc-code>\n        <h4>Using trigger for Popover</h4>\n        <div class=\"bs-example\">\n            More about <trigger for=\"pop:trigger\">trigger</trigger>\n            <popover id=\"pop:trigger\" header=\"false\">\n                <div slot=\"content\">\n                    <img src=\"https://vuejs.org/images/logo.png\">\n                </div>\n            </popover>\n        </div>\n        <doc-code language=\"markup\">\n            More about <trigger for=\"pop:trigger_id\">trigger</trigger>\n            <popover id=\"pop:trigger_id\" content=\"This popover is triggered by a trigger\"></popover>\n        </doc-code>\n        <h4>Using trigger for Modal</h4>\n        <div class=\"bs-example\">\n            More about <trigger trigger=\"click\" for=\"modal:trigger\">trigger</trigger>\n            <modal title=\"**Modal title** :rocket:\" id=\"modal:trigger\">\n                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n            </modal>\n        </div>\n        <doc-code language=\"markup\">\n            More about <trigger for=\"modal:trigger\" trigger=\"click\">trigger</trigger>\n            <modal title=\"**Modal title** :rocket:\" id=\"modal:trigger\">\n                ...\n            </modal>\n        </doc-code>\n        <doc-table>\n            <div>\n                <p>trigger</p>\n                <p><code>String</code>, one of <code>click</code> <code>focus</code> <code>hover</code> <code>contextmenu</code></p>\n                <p><code>hover</code></p>\n                <p>How trigger triggers its overflow view.</p>\n            </div>\n            <div>\n                <p>for</p>\n                <p><code>String</code>, the id for the overlay view to be shown</p>\n                <p></p>\n                <p></p>\n            </div>\n        </doc-table>\n    </doc-section>";
+	module.exports = "<doc-section id=\"triggerDocs\" name=\"Trigger\">\n        <p>\n            <code>Trigger</code> provides more flexibility for triggering contextual overlay such as popover, tooltip, modal.<br/>\n            You could embed an trigger within the text, and define the Tooltip or Popover at a separate location, which brings a cleaner authoring flow. <br>\n            Specify the <code>id</code> attribute on the popover, tooltip or modal component, and use the same id for the <code>for</code> attribute of the trigger\n            to allow trigger to invoke the specific overlay elements. <br>\n        </p>\n        <p>\n            Make sure your <code>id</code> attribute is unique, otherwise unexpected behaviour may occur. <br>\n            Currently only one-to-one mapping between trigger and its overlay component is allowed. Many-to-one mapping (many triggers invoke the same overlay) will\n            be considered in the future. <br>\n        </p>\n\n        <h4>Using trigger for Tooltip</h4>\n        <div class=\"bs-example\">\n            More about <trigger for=\"tt:trigger\">trigger</trigger>\n            <tooltip id=\"tt:trigger\" content=\"This tooltip triggered by a trigger\"></tooltip>\n        </div>\n        <doc-code language=\"markup\">\n            More about <trigger for=\"tt:trigger\">trigger</trigger>\n            <tooltip id=\"tt:trigger_id\" content=\"This tooltip triggered by a trigger\"></tooltip>\n        </doc-code>\n        <h4>Using trigger for Popover</h4>\n        <div class=\"bs-example\">\n            More about <trigger for=\"pop:trigger\">trigger</trigger>\n            <popover id=\"pop:trigger\" header=\"false\">\n                <div slot=\"content\">\n                    <img src=\"https://vuejs.org/images/logo.png\">\n                </div>\n            </popover>\n        </div>\n        <doc-code language=\"markup\">\n            More about <trigger for=\"pop:trigger_id\">trigger</trigger>\n            <popover id=\"pop:trigger_id\" content=\"This popover is triggered by a trigger\"></popover>\n        </doc-code>\n        <h4>Using trigger for Modal</h4>\n        <div class=\"bs-example\">\n            More about <trigger trigger=\"click\" for=\"modal:trigger\">trigger</trigger>\n            <modal title=\"**Modal title** :rocket:\" id=\"modal:trigger\">\n                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n            </modal>\n        </div>\n        <doc-code language=\"markup\">\n            More about <trigger for=\"modal:trigger\" trigger=\"click\">trigger</trigger>\n            <modal title=\"**Modal title** :rocket:\" id=\"modal:trigger\">\n                ...\n            </modal>\n        </doc-code>\n        <doc-table>\n            <div>\n                <p>trigger</p>\n                <p><code>String</code>, one of <code>click</code> <code>focus</code> <code>hover</code> <code>contextmenu</code></p>\n                <p><code>hover</code></p>\n                <p>How trigger triggers its overflow view.</p>\n            </div>\n            <div>\n                <p>for</p>\n                <p><code>String</code>, the id for the overlay view to be shown</p>\n                <p></p>\n                <p></p>\n            </div>\n        </doc-table>\n    </doc-section>";
 
 /***/ },
 /* 433 */
@@ -37630,7 +37790,7 @@
 	
 	var _Dropdown2 = _interopRequireDefault(_Dropdown);
 	
-	var _DynamicPanel = __webpack_require__(291);
+	var _DynamicPanel = __webpack_require__(296);
 	
 	var _DynamicPanel2 = _interopRequireDefault(_DynamicPanel);
 	
@@ -37642,7 +37802,7 @@
 	
 	var _Modal2 = _interopRequireDefault(_Modal);
 	
-	var _Morph = __webpack_require__(287);
+	var _Morph = __webpack_require__(292);
 	
 	var _Morph2 = _interopRequireDefault(_Morph);
 	
@@ -37650,7 +37810,7 @@
 	
 	var _Navbar2 = _interopRequireDefault(_Navbar);
 	
-	var _Question = __webpack_require__(283);
+	var _Question = __webpack_require__(288);
 	
 	var _Question2 = _interopRequireDefault(_Question);
 	
@@ -37662,11 +37822,11 @@
 	
 	var _Popover2 = _interopRequireDefault(_Popover);
 	
-	var _Retriever = __webpack_require__(293);
+	var _Retriever = __webpack_require__(262);
 	
 	var _Retriever2 = _interopRequireDefault(_Retriever);
 	
-	var _Select = __webpack_require__(263);
+	var _Select = __webpack_require__(268);
 	
 	var _Select2 = _interopRequireDefault(_Select);
 	
@@ -38244,7 +38404,7 @@
 	    this.closeButton.hide();
 	  }
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(295)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(264)))
 
 /***/ },
 /* 449 */
@@ -38264,7 +38424,7 @@
 	    });
 	  }
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(295)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(264)))
 
 /***/ },
 /* 450 */
