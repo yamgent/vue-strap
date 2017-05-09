@@ -1,8 +1,6 @@
 <template>
-  <span v-el:trigger>
-    <slot></slot>
-  </span>
-  <div v-el:popover v-if="show" style="display:block;"
+  <span v-el:trigger><slot></slot></span><!--
+  --><div v-el:popover v-if="show" style="display:block;"
     :class="['tooltip',placement]"
     :transition="effect"
   >
