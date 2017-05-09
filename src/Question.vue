@@ -4,8 +4,7 @@
             <!-- Default slot is question body -->
             <slot></slot>
             <div v-if="hasInput" class="textarea-container">
-                <div><strong>You can write your answer in the box below.</strong></div>
-                <textarea class="form-control question-input" rows="3"></textarea>
+                <textarea class="form-control question-input" rows="3" placeholder="write your answer here..."></textarea>
             </div>
         </div>
         <accordion>
