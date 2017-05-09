@@ -1,6 +1,6 @@
 <template>
     <div class="alert container" :class="[boxStyle]">
-        <div class="icon-wrapper">
+        <div class="icon-wrapper" v-if="!isDefault">
             <span class="glyphicon" :class="[iconType]" aria-hidden="true"></span>
         </div>
         <div class="contents">
@@ -14,10 +14,13 @@
     props: {
       type: {
         type: String,
-        default: 'info'
+        default: 'none'
       }
     },
     computed: {
+      isDefault() {
+        return this.type === 'none'
+      },
       boxStyle() {
         switch (this.type) {
           case 'warning':
@@ -29,7 +32,7 @@
           case 'important':
             return 'alert-danger'
           default:
-            return 'alert-info'
+            return 'alert-default'
         }
       },
 
@@ -44,7 +47,7 @@
           case 'important':
             return 'glyphicon-exclamation-sign'
           default:
-            return 'glyphicon-warning-sign'
+            return 'glyphicon-info-sign'
         }
       }
     }
@@ -65,5 +68,11 @@
 
     .contents {
         padding: 0 6px;
+    }
+
+    .alert-default {
+        color: #24292e;
+        background-color: #f6f8fa;
+        border-color: #e8ebef;
     }
 </style>
