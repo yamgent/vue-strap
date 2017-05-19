@@ -7,15 +7,15 @@
             to allow trigger to invoke the specific overlay elements. <br>
         </p>
         <p>
-            Make sure your <code>id</code> attribute is unique, otherwise unexpected behaviour may occur. <br>
-            Currently only one-to-one mapping between trigger and its overlay component is allowed. Many-to-one mapping (many triggers invoke the same overlay) will
-            be considered in the future. <br>
+            Multiple <code>trigger</code> could share the same overlay by providing them the same id.
         </p>
 
         <h4>Using trigger for Tooltip</h4>
         <div class="bs-example">
             More about <trigger for="tt:trigger">trigger</trigger>
             <tooltip id="tt:trigger" content="This tooltip triggered by a trigger"></tooltip>
+            <br>
+            This is the same <trigger for="tt:trigger">trigger</trigger> as last one.
         </div>
         <doc-code language="markup">
             More about <trigger for="tt:trigger">trigger</trigger>
@@ -24,11 +24,9 @@
         <h4>Using trigger for Popover</h4>
         <div class="bs-example">
             More about <trigger for="pop:trigger">trigger</trigger>
-            <popover id="pop:trigger" header="false">
-                <div slot="content">
-                    <img src="https://vuejs.org/images/logo.png">
-                </div>
-            </popover>
+            <popover id="pop:trigger" content="This popover is triggered by a trigger"></popover>
+            <br>
+            This is the same <trigger for="pop:trigger">trigger</trigger> as last one.
         </div>
         <doc-code language="markup">
             More about <trigger for="pop:trigger_id">trigger</trigger>
@@ -45,6 +43,8 @@
                 cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
               proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             </modal>
+            <br>
+            This is the same <trigger for="modal:trigger">trigger</trigger> as last one.
         </div>
         <doc-code language="markup">
             More about <trigger for="modal:trigger" trigger="click">trigger</trigger>

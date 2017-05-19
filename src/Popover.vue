@@ -1,10 +1,10 @@
 <template>
-  <span v-el:trigger><slot></slot></span><!--
+  <span v-el:trigger v-if="hasSlot"><slot></slot></span><!--
   --><div v-el:popover v-if="show"
     :class="['popover',placement]"
     :transition="effect"
   >
-    <div class="arrow"></div>
+    <div class="arrow" v-el:arrow></div>
     <h3 class="popover-title" v-if="title"><slot name="title">{{{titleRendered}}}</slot></h3>
     <div class="popover-content"><slot name="content">{{{contentRendered}}}</slot></div>
   </div>
@@ -32,6 +32,9 @@ export default {
   computed: {
     isPureText () {
       return this.$els.trigger.children.length === 0
+    },
+    hasSlot () {
+      return this._slotContents !== void 0
     }
   },
   attached () {
@@ -46,7 +49,16 @@ export default {
 .popover.right,
 .popover.bottom {
   display: block;
-  max-width:80%;
+  overflow-wrap: break-word;
+}
+
+@media (min-width: 768px) {
+  .popover.top,
+  .popover.left,
+  .popover.right,
+  .popover.bottom {
+    max-width: 600px;
+  }
 }
 .scale-enter {
   animation:scale-in 0.15s ease-in;
