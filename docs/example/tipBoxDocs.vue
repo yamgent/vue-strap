@@ -1,6 +1,9 @@
 <template>
     <doc-section id="tipBoxDocs" name="TipBox">
         <div class="bs-example">
+            <tip-box>
+                default
+            </tip-box>
             <tip-box type="info">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta distinctio eum ex facilis molestias nesciunt perferendis possimus veniam vero! A asperiores doloribus itaque odio omnis quod. Corporis ex id quibusdam.
             </tip-box>
@@ -15,6 +18,9 @@
             </tip-box>
         </div>
         <doc-code language="markup">
+            <tip-box>
+                default
+            </tip-box>
             <tip-box type="info">
                 info (default)
             </tip-box>
