@@ -71,7 +71,7 @@ and on both the Bower and NPM packages.
 ```
 
 ## Docs
-See the [documentation](http://yuche.github.io/vue-strap/) with live editable examples.
+See the [documentation](https://markbind.github.io/vue-strap/) with live editable examples.
 
 ## Local Setup
 * Install with `npm install`
