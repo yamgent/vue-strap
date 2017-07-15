@@ -1,7 +1,7 @@
 <template>
     <div class="alert container" :class="[boxStyle]">
         <div class="icon-wrapper" v-if="!isDefault">
-            <span class="glyphicon" :class="[iconType]" aria-hidden="true"></span>
+            <span>{{{iconType}}}</span>
         </div>
         <div class="contents">
             <slot></slot>
@@ -10,6 +10,7 @@
 </template>
 
 <script>
+  import md from './utils/markdown.js'
   export default {
     props: {
       type: {
@@ -26,10 +27,13 @@
           case 'warning':
             return 'alert-warning'
           case 'info':
+          case 'definition':
             return 'alert-info'
           case 'success':
+          case 'tip':
             return 'alert-success'
           case 'important':
+          case 'wrong':
             return 'alert-danger'
           default:
             return 'alert-default'
@@ -38,16 +42,22 @@
 
       iconType() {
         switch (this.type) {
+          case 'wrong':
+            return '❌'
           case 'warning':
-            return 'glyphicon-warning-sign'
+            return '❗'
           case 'info':
-            return 'glyphicon-info-sign'
+            return '🔍'
           case 'success':
-            return 'glyphicon-ok'
+            return '✅'
           case 'important':
-            return 'glyphicon-exclamation-sign'
+            return '🔑'
+          case 'tip':
+            return '💡'
+          case 'definition':
+            return '🔖'
           default:
-            return 'glyphicon-info-sign'
+            return '❕'
         }
       }
     }
@@ -64,6 +74,9 @@
 
     .icon-wrapper {
         display: flex;
+        margin-right: .5em;
+        width: 22px;
+        height: 22px;
     }
 
     .contents {

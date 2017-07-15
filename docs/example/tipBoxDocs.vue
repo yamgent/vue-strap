@@ -5,7 +5,7 @@
                 default
             </tip-box>
             <tip-box type="info">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta distinctio eum ex facilis molestias nesciunt perferendis possimus veniam vero! A asperiores doloribus itaque odio omnis quod. Corporis ex id quibusdam.
+                info
             </tip-box>
             <tip-box type="warning">
                 warning
@@ -14,7 +14,16 @@
                 success
             </tip-box>
             <tip-box type="important">
-                warning
+                important
+            </tip-box>
+            <tip-box type="wrong">
+                wrong
+            </tip-box>
+            <tip-box type="tip">
+                tip
+            </tip-box>
+            <tip-box type="definition">
+                definition
             </tip-box>
         </div>
         <doc-code language="markup">
@@ -22,7 +31,7 @@
                 default
             </tip-box>
             <tip-box type="info">
-                info (default)
+                info
             </tip-box>
             <tip-box type="warning">
                 warning
@@ -31,7 +40,16 @@
                 success
             </tip-box>
             <tip-box type="important">
-                warning
+                important
+            </tip-box>
+            <tip-box type="wrong">
+                wrong
+            </tip-box>
+            <tip-box type="tip">
+                tip
+            </tip-box>
+            <tip-box type="definition">
+                definition
             </tip-box>
         </doc-code>
     </doc-section>
