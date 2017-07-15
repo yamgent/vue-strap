@@ -3,9 +3,14 @@
         <div class="morph" v-show="minimized">
             <div class="morph-display-wrapper" v-on:click="open()">
                 <button class="morph-display-button btn btn-default">
-                    <slot name="header">
+                    <template v-if="altContent">
                         <span class="panel-title">{{{altContent}}}</span>
-                    </slot>
+                    </template>
+                    <template v-else>
+                        <slot name="header">
+                            <span class="panel-title">{{{altContent}}}</span>
+                        </slot>
+                    </template>
                 </button>
             </div>
         </div>
@@ -225,13 +230,13 @@
 
     .header-wrapper {
         display: inline-block;
-        width: 80%;
+        width: 72%;
     }
 
     .button-wrapper {
         float: right;
         display: inline-block;
-        width: 20%;
+        width: 28%;
     }
 
     .accordion-toggle {
