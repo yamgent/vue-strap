@@ -68,6 +68,7 @@
 
     .contents {
         padding: 0 6px;
+        width: 100%;
     }
 
     .alert-default {
