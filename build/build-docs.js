@@ -3767,7 +3767,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".panel-heading {\n        width: 100%;\n    }\n\n    .panel-title {\n        font-size: 1em;\n    }\n\n    .header-wrapper {\n        display: inline-block;\n        width: 80%;\n    }\n\n    .button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 20%;\n    }\n\n    .accordion-toggle {\n        cursor: pointer;\n    }\n\n    .expandable-panel {\n        margin-bottom: 0 !important;\n        margin-top: 5px;\n    }\n\n    .panel-group > .panel-container > .expandable-panel {\n        margin-top: 0!important;\n    }\n\n    .panel-seamless {\n        padding: 0;\n    }\n\n    .caret.caret-collapse {\n        border-left: 4px dashed;\n        border-top: 4px solid transparent;\n        border-bottom: 4px solid transparent;\n        border-right: none;\n    }\n\n    .panel.panel-seamless {\n        box-shadow: none;\n        border: none;\n    }\n\n    .panel-seamless > .panel-heading {\n        padding: 0;\n    }\n\n    .panel-seamless > .panel-collapse > .panel-body {\n        padding: 10px 0;\n    }\n\n    .close-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n    }\n\n    .morph {\n        display: inline-block;\n    }", ""]);
+	exports.push([module.id, ".panel-heading {\n        width: 100%;\n    }\n\n    .panel-title {\n        font-size: 1em;\n    }\n\n    .header-wrapper {\n        display: inline-block;\n        width: 72%;\n    }\n\n    .button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 28%;\n    }\n\n    .accordion-toggle {\n        cursor: pointer;\n    }\n\n    .expandable-panel {\n        margin-bottom: 0 !important;\n        margin-top: 5px;\n    }\n\n    .panel-group > .panel-container > .expandable-panel {\n        margin-top: 0!important;\n    }\n\n    .panel-seamless {\n        padding: 0;\n    }\n\n    .caret.caret-collapse {\n        border-left: 4px dashed;\n        border-top: 4px solid transparent;\n        border-bottom: 4px solid transparent;\n        border-right: none;\n    }\n\n    .panel.panel-seamless {\n        box-shadow: none;\n        border: none;\n    }\n\n    .panel-seamless > .panel-heading {\n        padding: 0;\n    }\n\n    .panel-seamless > .panel-collapse > .panel-body {\n        padding: 10px 0;\n    }\n\n    .close-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n    }\n\n    .morph {\n        display: inline-block;\n    }", ""]);
 	
 	// exports
 
@@ -3803,9 +3803,14 @@
 	//         <div class="morph" v-show="minimized">
 	//             <div class="morph-display-wrapper" v-on:click="open()">
 	//                 <button class="morph-display-button btn btn-default">
-	//                     <slot name="header">
+	//                     <template v-if="altContent">
 	//                         <span class="panel-title">{{{altContent}}}</span>
-	//                     </slot>
+	//                     </template>
+	//                     <template v-else>
+	//                         <slot name="header">
+	//                             <span class="panel-title">{{{altContent}}}</span>
+	//                         </slot>
+	//                     </template>
 	//                 </button>
 	//             </div>
 	//         </div>
@@ -4023,13 +4028,13 @@
 	
 	//     .header-wrapper {
 	//         display: inline-block;
-	//         width: 80%;
+	//         width: 72%;
 	//     }
 	
 	//     .button-wrapper {
 	//         float: right;
 	//         display: inline-block;
-	//         width: 20%;
+	//         width: 28%;
 	//     }
 	
 	//     .accordion-toggle {
@@ -30541,7 +30546,7 @@
 /* 267 */
 /***/ function(module, exports) {
 
-	module.exports = "<span class=\"panel-container\">\n        <div class=\"morph\" v-show=\"minimized\">\n            <div class=\"morph-display-wrapper\" v-on:click=\"open()\">\n                <button class=\"morph-display-button btn btn-default\">\n                    <slot name=\"header\">\n                        <span class=\"panel-title\">{{{altContent}}}</span>\n                    </slot>\n                </button>\n            </div>\n        </div>\n\n        <div :class=\"['panel', panelType, {'expandable-panel': isExpandablePanel}]\" v-else>\n            <div :class=\"['panel-heading',{'accordion-toggle':canCollapse}]\"\n                 @click.prevent.stop=\"canCollapse && toggle()\"\n                 @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\n                <div class=\"header-wrapper\">\n                    <span :class=\"['caret', {'caret-collapse': !expanded}]\" v-show=\"showCaret\"></span>\n                    <slot name=\"header\">\n                        <span class=\"panel-title\">{{{headerContent}}}</span>\n                    </slot>\n                </div>\n                <div class=\"button-wrapper\">\n                    <slot name=\"button\">\n                        <panel-switch v-show=\"canCollapse && !noSwitch && !showCaret\" v-bind:is-open=\"expanded\"\n                                      @click.stop.prevent=\"expand()\"></panel-switch>\n                        <button type=\"button\" class=\"close-button btn btn-default\"\n                                v-show=\"this.type !== 'seamless' ? (!noClose) : onHeaderHover\"\n                                @click.stop=\"close()\">\n                            <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                        </button>\n                    </slot>\n                </div>\n            </div>\n            <div class=\"panel-collapse\"\n                 v-el:panel\n                 v-show=\"expanded\"\n            >\n                <div class=\"panel-body\">\n                    <slot></slot>\n                    <retriever v-if=\"isDynamic\" v-ref:retriever :src=\"src\" :fragment=\"fragment\" delay></retriever>\n                </div>\n            </div>\n        </div>\n    </span>";
+	module.exports = "<span class=\"panel-container\">\n        <div class=\"morph\" v-show=\"minimized\">\n            <div class=\"morph-display-wrapper\" v-on:click=\"open()\">\n                <button class=\"morph-display-button btn btn-default\">\n                    <template v-if=\"altContent\">\n                        <span class=\"panel-title\">{{{altContent}}}</span>\n                    </template>\n                    <template v-else>\n                        <slot name=\"header\">\n                            <span class=\"panel-title\">{{{altContent}}}</span>\n                        </slot>\n                    </template>\n                </button>\n            </div>\n        </div>\n\n        <div :class=\"['panel', panelType, {'expandable-panel': isExpandablePanel}]\" v-else>\n            <div :class=\"['panel-heading',{'accordion-toggle':canCollapse}]\"\n                 @click.prevent.stop=\"canCollapse && toggle()\"\n                 @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\n                <div class=\"header-wrapper\">\n                    <span :class=\"['caret', {'caret-collapse': !expanded}]\" v-show=\"showCaret\"></span>\n                    <slot name=\"header\">\n                        <span class=\"panel-title\">{{{headerContent}}}</span>\n                    </slot>\n                </div>\n                <div class=\"button-wrapper\">\n                    <slot name=\"button\">\n                        <panel-switch v-show=\"canCollapse && !noSwitch && !showCaret\" v-bind:is-open=\"expanded\"\n                                      @click.stop.prevent=\"expand()\"></panel-switch>\n                        <button type=\"button\" class=\"close-button btn btn-default\"\n                                v-show=\"this.type !== 'seamless' ? (!noClose) : onHeaderHover\"\n                                @click.stop=\"close()\">\n                            <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                        </button>\n                    </slot>\n                </div>\n            </div>\n            <div class=\"panel-collapse\"\n                 v-el:panel\n                 v-show=\"expanded\"\n            >\n                <div class=\"panel-body\">\n                    <slot></slot>\n                    <retriever v-if=\"isDynamic\" v-ref:retriever :src=\"src\" :fragment=\"fragment\" delay></retriever>\n                </div>\n            </div>\n        </div>\n    </span>";
 
 /***/ },
 /* 268 */
@@ -37405,7 +37410,7 @@
 	//                 default
 	//             </tip-box>
 	//             <tip-box type="info">
-	//                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta distinctio eum ex facilis molestias nesciunt perferendis possimus veniam vero! A asperiores doloribus itaque odio omnis quod. Corporis ex id quibusdam.
+	//                 info
 	//             </tip-box>
 	//             <tip-box type="warning">
 	//                 warning
@@ -37414,7 +37419,16 @@
 	//                 success
 	//             </tip-box>
 	//             <tip-box type="important">
-	//                 warning
+	//                 important
+	//             </tip-box>
+	//             <tip-box type="wrong">
+	//                 wrong
+	//             </tip-box>
+	//             <tip-box type="tip">
+	//                 tip
+	//             </tip-box>
+	//             <tip-box type="definition">
+	//                 definition
 	//             </tip-box>
 	//         </div>
 	//         <doc-code language="markup">
@@ -37422,7 +37436,7 @@
 	//                 default
 	//             </tip-box>
 	//             <tip-box type="info">
-	//                 info (default)
+	//                 info
 	//             </tip-box>
 	//             <tip-box type="warning">
 	//                 warning
@@ -37431,7 +37445,16 @@
 	//                 success
 	//             </tip-box>
 	//             <tip-box type="important">
-	//                 warning
+	//                 important
+	//             </tip-box>
+	//             <tip-box type="wrong">
+	//                 wrong
+	//             </tip-box>
+	//             <tip-box type="tip">
+	//                 tip
+	//             </tip-box>
+	//             <tip-box type="definition">
+	//                 definition
 	//             </tip-box>
 	//         </doc-code>
 	//     </doc-section>
@@ -37509,32 +37532,27 @@
 	
 	
 	// module
-	exports.push([module.id, ".container[_v-2170147e] {\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-orient: horizontal;\n        -webkit-box-direction: normal;\n            -ms-flex-direction: row;\n                flex-direction: row;\n        width: 100%;\n        border-radius: 6px;\n    }\n\n    .icon-wrapper[_v-2170147e] {\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n    }\n\n    .contents[_v-2170147e] {\n        padding: 0 6px;\n    }\n\n    .alert-default[_v-2170147e] {\n        color: #24292e;\n        background-color: #f6f8fa;\n        border-color: #e8ebef;\n    }", ""]);
+	exports.push([module.id, ".container[_v-2170147e] {\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-orient: horizontal;\n        -webkit-box-direction: normal;\n            -ms-flex-direction: row;\n                flex-direction: row;\n        width: 100%;\n        border-radius: 6px;\n    }\n\n    .icon-wrapper[_v-2170147e] {\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        margin-right: .5em;\n        width: 22px;\n        height: 22px;\n    }\n\n    .contents[_v-2170147e] {\n        padding: 0 6px;\n        width: 100%;\n    }\n\n    .alert-default[_v-2170147e] {\n        color: #24292e;\n        background-color: #f6f8fa;\n        border-color: #e8ebef;\n    }", ""]);
 	
 	// exports
 
 
 /***/ },
 /* 426 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	// <template>
-	//     <div class="alert container" :class="[boxStyle]">
-	//         <div class="icon-wrapper" v-if="!isDefault">
-	//             <span class="glyphicon" :class="[iconType]" aria-hidden="true"></span>
-	//         </div>
-	//         <div class="contents">
-	//             <slot></slot>
-	//         </div>
-	//     </div>
-	// </template>
 	
-	// <script>
+	var _markdown = __webpack_require__(153);
+	
+	var _markdown2 = _interopRequireDefault(_markdown);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
 	exports.default = {
 	  props: {
 	    type: {
@@ -37551,10 +37569,13 @@
 	        case 'warning':
 	          return 'alert-warning';
 	        case 'info':
+	        case 'definition':
 	          return 'alert-info';
 	        case 'success':
+	        case 'tip':
 	          return 'alert-success';
 	        case 'important':
+	        case 'wrong':
 	          return 'alert-danger';
 	        default:
 	          return 'alert-default';
@@ -37562,16 +37583,22 @@
 	    },
 	    iconType: function iconType() {
 	      switch (this.type) {
+	        case 'wrong':
+	          return '❌';
 	        case 'warning':
-	          return 'glyphicon-warning-sign';
+	          return '❗';
 	        case 'info':
-	          return 'glyphicon-info-sign';
+	          return '🔍';
 	        case 'success':
-	          return 'glyphicon-ok';
+	          return '✅';
 	        case 'important':
-	          return 'glyphicon-exclamation-sign';
+	          return '🔑';
+	        case 'tip':
+	          return '💡';
+	        case 'definition':
+	          return '🔖';
 	        default:
-	          return 'glyphicon-info-sign';
+	          return '❕';
 	      }
 	    }
 	  }
@@ -37588,10 +37615,14 @@
 	
 	//     .icon-wrapper {
 	//         display: flex;
+	//         margin-right: .5em;
+	//         width: 22px;
+	//         height: 22px;
 	//     }
 	
 	//     .contents {
 	//         padding: 0 6px;
+	//         width: 100%;
 	//     }
 	
 	//     .alert-default {
@@ -37600,18 +37631,30 @@
 	//         border-color: #e8ebef;
 	//     }
 	// </style>
+	// <template>
+	//     <div class="alert container" :class="[boxStyle]">
+	//         <div class="icon-wrapper" v-if="!isDefault">
+	//             <span>{{{iconType}}}</span>
+	//         </div>
+	//         <div class="contents">
+	//             <slot></slot>
+	//         </div>
+	//     </div>
+	// </template>
+	
+	// <script>
 
 /***/ },
 /* 427 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"alert container\" :class=\"[boxStyle]\" _v-2170147e=\"\">\n        <div class=\"icon-wrapper\" v-if=\"!isDefault\" _v-2170147e=\"\">\n            <span class=\"glyphicon\" :class=\"[iconType]\" aria-hidden=\"true\" _v-2170147e=\"\"></span>\n        </div>\n        <div class=\"contents\" _v-2170147e=\"\">\n            <slot _v-2170147e=\"\"></slot>\n        </div>\n    </div>";
+	module.exports = "<div class=\"alert container\" :class=\"[boxStyle]\" _v-2170147e=\"\">\n        <div class=\"icon-wrapper\" v-if=\"!isDefault\" _v-2170147e=\"\">\n            <span _v-2170147e=\"\">{{{iconType}}}</span>\n        </div>\n        <div class=\"contents\" _v-2170147e=\"\">\n            <slot _v-2170147e=\"\"></slot>\n        </div>\n    </div>";
 
 /***/ },
 /* 428 */
 /***/ function(module, exports) {
 
-	module.exports = "<doc-section id=\"tipBoxDocs\" name=\"TipBox\">\n        <div class=\"bs-example\">\n            <tip-box>\n                default\n            </tip-box>\n            <tip-box type=\"info\">\n                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta distinctio eum ex facilis molestias nesciunt perferendis possimus veniam vero! A asperiores doloribus itaque odio omnis quod. Corporis ex id quibusdam.\n            </tip-box>\n            <tip-box type=\"warning\">\n                warning\n            </tip-box>\n            <tip-box type=\"success\">\n                success\n            </tip-box>\n            <tip-box type=\"important\">\n                warning\n            </tip-box>\n        </div>\n        <doc-code language=\"markup\">\n            <tip-box>\n                default\n            </tip-box>\n            <tip-box type=\"info\">\n                info (default)\n            </tip-box>\n            <tip-box type=\"warning\">\n                warning\n            </tip-box>\n            <tip-box type=\"success\">\n                success\n            </tip-box>\n            <tip-box type=\"important\">\n                warning\n            </tip-box>\n        </doc-code>\n    </doc-section>";
+	module.exports = "<doc-section id=\"tipBoxDocs\" name=\"TipBox\">\n        <div class=\"bs-example\">\n            <tip-box>\n                default\n            </tip-box>\n            <tip-box type=\"info\">\n                info\n            </tip-box>\n            <tip-box type=\"warning\">\n                warning\n            </tip-box>\n            <tip-box type=\"success\">\n                success\n            </tip-box>\n            <tip-box type=\"important\">\n                important\n            </tip-box>\n            <tip-box type=\"wrong\">\n                wrong\n            </tip-box>\n            <tip-box type=\"tip\">\n                tip\n            </tip-box>\n            <tip-box type=\"definition\">\n                definition\n            </tip-box>\n        </div>\n        <doc-code language=\"markup\">\n            <tip-box>\n                default\n            </tip-box>\n            <tip-box type=\"info\">\n                info\n            </tip-box>\n            <tip-box type=\"warning\">\n                warning\n            </tip-box>\n            <tip-box type=\"success\">\n                success\n            </tip-box>\n            <tip-box type=\"important\">\n                important\n            </tip-box>\n            <tip-box type=\"wrong\">\n                wrong\n            </tip-box>\n            <tip-box type=\"tip\">\n                tip\n            </tip-box>\n            <tip-box type=\"definition\">\n                definition\n            </tip-box>\n        </doc-code>\n    </doc-section>";
 
 /***/ },
 /* 429 */
