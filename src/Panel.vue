@@ -230,13 +230,13 @@
 
     .header-wrapper {
         display: inline-block;
-        width: 80%;
+        width: 72%;
     }
 
     .button-wrapper {
         float: right;
         display: inline-block;
-        width: 20%;
+        width: 28%;
     }
 
     .accordion-toggle {
