@@ -30169,17 +30169,17 @@
 	// <template>
 	//   <doc-section id="dynamicPanel" name="DynamicPanel">
 	//     <div class="bs-example">
-	//       <dynamic-panel src="/docs/loadContent.html" header="Load content from 'content.html'" is-open="false"></dynamic-panel>
-	//       <dynamic-panel src="/docs/loadContent.html"
+	//       <dynamic-panel src="docs/loadContent.html" header="Load content from 'content.html'" is-open="false"></dynamic-panel>
+	//       <dynamic-panel src="docs/loadContent.html"
 	//                      fragment="fragment"
 	//                      header="Load fragment content from 'content.html'"
 	//                      is-open></dynamic-panel>
 	//     </div>
 	//     <doc-code language="markup">
-	//       <dynamic-panel src="/docs/loadContent.html"
+	//       <dynamic-panel src="docs/loadContent.html"
 	//                      header="Load content from 'content.html'"
 	//                      is-open></dynamic-panel>
-	//       <dynamic-panel src="/docs/loadContent.html#fragment"
+	//       <dynamic-panel src="docs/loadContent.html#fragment"
 	//                      fragment="fragment"
 	//                      header="Load fragment content from 'content.html'"
 	//                      is-open></dynamic-panel>
@@ -30206,7 +30206,7 @@
 /* 338 */
 /***/ (function(module, exports) {
 
-	module.exports = "<doc-section id=\"dynamicPanel\" name=\"DynamicPanel\">\n    <div class=\"bs-example\">\n      <dynamic-panel src=\"/docs/loadContent.html\" header=\"Load content from 'content.html'\" is-open=\"false\"></dynamic-panel>\n      <dynamic-panel src=\"/docs/loadContent.html\"\n                     fragment=\"fragment\"\n                     header=\"Load fragment content from 'content.html'\"\n                     is-open></dynamic-panel>\n    </div>\n    <doc-code language=\"markup\">\n      <dynamic-panel src=\"/docs/loadContent.html\"\n                     header=\"Load content from 'content.html'\"\n                     is-open></dynamic-panel>\n      <dynamic-panel src=\"/docs/loadContent.html#fragment\"\n                     fragment=\"fragment\"\n                     header=\"Load fragment content from 'content.html'\"\n                     is-open></dynamic-panel>\n    </doc-code>\n    <doc-table>\n\n    </doc-table>\n  </doc-section>";
+	module.exports = "<doc-section id=\"dynamicPanel\" name=\"DynamicPanel\">\n    <div class=\"bs-example\">\n      <dynamic-panel src=\"docs/loadContent.html\" header=\"Load content from 'content.html'\" is-open=\"false\"></dynamic-panel>\n      <dynamic-panel src=\"docs/loadContent.html\"\n                     fragment=\"fragment\"\n                     header=\"Load fragment content from 'content.html'\"\n                     is-open></dynamic-panel>\n    </div>\n    <doc-code language=\"markup\">\n      <dynamic-panel src=\"docs/loadContent.html\"\n                     header=\"Load content from 'content.html'\"\n                     is-open></dynamic-panel>\n      <dynamic-panel src=\"docs/loadContent.html#fragment\"\n                     fragment=\"fragment\"\n                     header=\"Load fragment content from 'content.html'\"\n                     is-open></dynamic-panel>\n    </doc-code>\n    <doc-table>\n\n    </doc-table>\n  </doc-section>";
 
 /***/ }),
 /* 339 */
@@ -31547,7 +31547,7 @@
 	//                     </div>
 	//                 </Question>
 	//             </morph>
-	//             <morph title="Remote question" src="/docs/question.html"></morph>
+	//             <morph title="Remote question" src="docs/question.html"></morph>
 	//         </div>
 	//         <p>
 	//             Use <code>has-input</code> attribute to add an input box for user to enter their answer.
@@ -31589,7 +31589,7 @@
 	//                 Body
 	//             </Question>
 	
-	//             Use inline with morph
+	//             Use inline with Morph
 	//             <morph title="Review question">
 	//                 <Question>
 	//                     Body
@@ -31603,7 +31603,7 @@
 	//             </morph>
 	
 	//             Use inline with Morph dynamic loading
-	//             <morph title="Review question" src="/docs/question.html">
+	//             <morph title="Remote question" src="docs/question.html">
 	//             </morph>
 	//         </doc-code>
 	//         <doc-table>
@@ -31618,7 +31618,7 @@
 /* 369 */
 /***/ (function(module, exports) {
 
-	module.exports = "<doc-section id=\"question\" name=\"Question\">\n        <p>\n            Question shows a structure like below, which consists of a question body, hint and answer.\n        </p>\n        <div class=\"bs-example\">\n            <Question>\n                Body\n                <div slot=\"hint\">\n                    Hint\n                </div>\n                <div slot=\"answer\">\n                    Answer\n                </div>\n            </Question>\n        </div>\n        <p>If no Hint slot is specified, it will not show:</p>\n        <div class=\"bs-example\">\n            <Question>\n                Body\n                <div slot=\"answer\">\n                    Answer\n                </div>\n            </Question>\n        </div>\n        <p>If no Answer slot is specified, it will not show:</p>\n        <div class=\"bs-example\">\n            <Question>\n                Body\n            </Question>\n        </div>\n        <p>\n            Question could be used with Morph component to create a inline question group.<br>\n            Could be also stored in a remote file and load it when it is to be shown.\n        </p>\n        <div class=\"bs-example\">\n            <morph title=\"Review question\">\n                <Question>\n                    Body\n                    <div slot=\"hint\">\n                        Hint\n                    </div>\n                    <div slot=\"answer\">\n                        Answer\n                    </div>\n                </Question>\n            </morph>\n            <morph title=\"Remote question\" src=\"/docs/question.html\"></morph>\n        </div>\n        <p>\n            Use <code>has-input</code> attribute to add an input box for user to enter their answer.\n        </p>\n        <div class=\"bs-example\">\n            <Question has-input>\n                Body\n                <div slot=\"hint\">\n                    Hint\n                </div>\n                <div slot=\"answer\">\n                    Answer\n                </div>\n            </Question>\n        </div>\n\n        <doc-code language=\"markup\">\n            Use alone\n            <Question>\n                Body\n                <div slot=\"hint\">\n                    Hint\n                </div>\n                <div slot=\"answer\">\n                    Answer\n                </div>\n            </Question>\n\n            If no Hint slot is specified, it will not show:\n            <Question>\n                Body\n                <div slot=\"answer\">\n                    Answer\n                </div>\n            </Question>\n\n            If no Answer slot is specified, it will not show:\n            <Question>\n                Body\n            </Question>\n\n            Use inline with morph\n            <morph title=\"Review question\">\n                <Question>\n                    Body\n                    <div slot=\"hint\">\n                        Hint\n                    </div>\n                    <div slot=\"answer\">\n                        Answer\n                    </div>\n                </Question>\n            </morph>\n\n            Use inline with Morph dynamic loading\n            <morph title=\"Review question\" src=\"/docs/question.html\">\n            </morph>\n        </doc-code>\n        <doc-table>\n\n        </doc-table>\n    </doc-section>";
+	module.exports = "<doc-section id=\"question\" name=\"Question\">\n        <p>\n            Question shows a structure like below, which consists of a question body, hint and answer.\n        </p>\n        <div class=\"bs-example\">\n            <Question>\n                Body\n                <div slot=\"hint\">\n                    Hint\n                </div>\n                <div slot=\"answer\">\n                    Answer\n                </div>\n            </Question>\n        </div>\n        <p>If no Hint slot is specified, it will not show:</p>\n        <div class=\"bs-example\">\n            <Question>\n                Body\n                <div slot=\"answer\">\n                    Answer\n                </div>\n            </Question>\n        </div>\n        <p>If no Answer slot is specified, it will not show:</p>\n        <div class=\"bs-example\">\n            <Question>\n                Body\n            </Question>\n        </div>\n        <p>\n            Question could be used with Morph component to create a inline question group.<br>\n            Could be also stored in a remote file and load it when it is to be shown.\n        </p>\n        <div class=\"bs-example\">\n            <morph title=\"Review question\">\n                <Question>\n                    Body\n                    <div slot=\"hint\">\n                        Hint\n                    </div>\n                    <div slot=\"answer\">\n                        Answer\n                    </div>\n                </Question>\n            </morph>\n            <morph title=\"Remote question\" src=\"docs/question.html\"></morph>\n        </div>\n        <p>\n            Use <code>has-input</code> attribute to add an input box for user to enter their answer.\n        </p>\n        <div class=\"bs-example\">\n            <Question has-input>\n                Body\n                <div slot=\"hint\">\n                    Hint\n                </div>\n                <div slot=\"answer\">\n                    Answer\n                </div>\n            </Question>\n        </div>\n\n        <doc-code language=\"markup\">\n            Use alone\n            <Question>\n                Body\n                <div slot=\"hint\">\n                    Hint\n                </div>\n                <div slot=\"answer\">\n                    Answer\n                </div>\n            </Question>\n\n            If no Hint slot is specified, it will not show:\n            <Question>\n                Body\n                <div slot=\"answer\">\n                    Answer\n                </div>\n            </Question>\n\n            If no Answer slot is specified, it will not show:\n            <Question>\n                Body\n            </Question>\n\n            Use inline with Morph\n            <morph title=\"Review question\">\n                <Question>\n                    Body\n                    <div slot=\"hint\">\n                        Hint\n                    </div>\n                    <div slot=\"answer\">\n                        Answer\n                    </div>\n                </Question>\n            </morph>\n\n            Use inline with Morph dynamic loading\n            <morph title=\"Remote question\" src=\"docs/question.html\">\n            </morph>\n        </doc-code>\n        <doc-table>\n\n        </doc-table>\n    </doc-section>";
 
 /***/ }),
 /* 370 */

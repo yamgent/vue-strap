@@ -45,7 +45,7 @@
                     </div>
                 </Question>
             </morph>
-            <morph title="Remote question" src="/docs/question.html"></morph>
+            <morph title="Remote question" src="docs/question.html"></morph>
         </div>
         <p>
             Use <code>has-input</code> attribute to add an input box for user to enter their answer.
@@ -87,7 +87,7 @@
                 Body
             </Question>
 
-            Use inline with morph
+            Use inline with Morph
             <morph title="Review question">
                 <Question>
                     Body
@@ -101,7 +101,7 @@
             </morph>
 
             Use inline with Morph dynamic loading
-            <morph title="Review question" src="/docs/question.html">
+            <morph title="Remote question" src="docs/question.html">
             </morph>
         </doc-code>
         <doc-table>
