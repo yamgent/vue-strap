@@ -30171,7 +30171,9 @@
 	// <template>
 	//   <doc-section id="dynamicPanel" name="DynamicPanel">
 	//     <div class="bs-example">
-	//       <dynamic-panel src="docs/loadContent.html" header="Load content from 'content.html'" is-open="false"></dynamic-panel>
+	//       <dynamic-panel src="docs/loadContent.html"
+	//                      header="Load content from 'content.html'"
+	//                      is-open></dynamic-panel>
 	//       <dynamic-panel src="docs/loadContent.html"
 	//                      fragment="fragment"
 	//                      header="Load fragment content from 'content.html'"
@@ -30181,7 +30183,7 @@
 	//       <dynamic-panel src="docs/loadContent.html"
 	//                      header="Load content from 'content.html'"
 	//                      is-open></dynamic-panel>
-	//       <dynamic-panel src="docs/loadContent.html#fragment"
+	//       <dynamic-panel src="docs/loadContent.html"
 	//                      fragment="fragment"
 	//                      header="Load fragment content from 'content.html'"
 	//                      is-open></dynamic-panel>
@@ -30208,7 +30210,7 @@
 /* 338 */
 /***/ (function(module, exports) {
 
-	module.exports = "<doc-section id=\"dynamicPanel\" name=\"DynamicPanel\">\n    <div class=\"bs-example\">\n      <dynamic-panel src=\"docs/loadContent.html\" header=\"Load content from 'content.html'\" is-open=\"false\"></dynamic-panel>\n      <dynamic-panel src=\"docs/loadContent.html\"\n                     fragment=\"fragment\"\n                     header=\"Load fragment content from 'content.html'\"\n                     is-open></dynamic-panel>\n    </div>\n    <doc-code language=\"markup\">\n      <dynamic-panel src=\"docs/loadContent.html\"\n                     header=\"Load content from 'content.html'\"\n                     is-open></dynamic-panel>\n      <dynamic-panel src=\"docs/loadContent.html#fragment\"\n                     fragment=\"fragment\"\n                     header=\"Load fragment content from 'content.html'\"\n                     is-open></dynamic-panel>\n    </doc-code>\n    <doc-table>\n\n    </doc-table>\n  </doc-section>";
+	module.exports = "<doc-section id=\"dynamicPanel\" name=\"DynamicPanel\">\n    <div class=\"bs-example\">\n      <dynamic-panel src=\"docs/loadContent.html\"\n                     header=\"Load content from 'content.html'\"\n                     is-open></dynamic-panel>\n      <dynamic-panel src=\"docs/loadContent.html\"\n                     fragment=\"fragment\"\n                     header=\"Load fragment content from 'content.html'\"\n                     is-open></dynamic-panel>\n    </div>\n    <doc-code language=\"markup\">\n      <dynamic-panel src=\"docs/loadContent.html\"\n                     header=\"Load content from 'content.html'\"\n                     is-open></dynamic-panel>\n      <dynamic-panel src=\"docs/loadContent.html\"\n                     fragment=\"fragment\"\n                     header=\"Load fragment content from 'content.html'\"\n                     is-open></dynamic-panel>\n    </doc-code>\n    <doc-table>\n\n    </doc-table>\n  </doc-section>";
 
 /***/ }),
 /* 339 */
