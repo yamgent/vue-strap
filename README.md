@@ -78,6 +78,9 @@ See the [documentation](https://markbind.github.io/vue-strap/) with live editabl
 * Run the docs site in development mode with `npm run docs`. This will watch for file changes as you work.
 * Build with `npm run build`.
 
+## Update Docs
+* Build docs with `npm run builddocs`.
+
 ## TODO
 See [Roadmap](https://github.com/yuche/vue-strap/issues/41)
 
