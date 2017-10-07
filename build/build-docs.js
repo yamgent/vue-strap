@@ -28505,7 +28505,7 @@
 	  // </script>
 	
 	}; // <template>
-	//   <panel :header="header" :is-open="isOpen" :type="type" expandable no-switch>
+	//   <panel :header="header" :is-open="isOpen" :type="type" expandable no-switch bottom-switch>
 	//     <slot name="button" slot="button"></slot>
 	//     <retriever v-ref:retriever :src="src" :fragment="fragment" delay></retriever>
 	//   </panel>
@@ -28517,7 +28517,7 @@
 /* 298 */
 /***/ (function(module, exports) {
 
-	module.exports = "<panel :header=\"header\" :is-open=\"isOpen\" :type=\"type\" expandable no-switch>\n    <slot name=\"button\" slot=\"button\"></slot>\n    <retriever v-ref:retriever :src=\"src\" :fragment=\"fragment\" delay></retriever>\n  </panel>";
+	module.exports = "<panel :header=\"header\" :is-open=\"isOpen\" :type=\"type\" expandable no-switch bottom-switch>\n    <slot name=\"button\" slot=\"button\"></slot>\n    <retriever v-ref:retriever :src=\"src\" :fragment=\"fragment\" delay></retriever>\n  </panel>";
 
 /***/ }),
 /* 299 */
