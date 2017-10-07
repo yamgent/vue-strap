@@ -240,7 +240,7 @@
         </p>
       </div>
     </doc-table>
-    <p>If you want to personalice your header with some html you can use the slot instead of header attribute (panel&nbsp;#1 in the example).</p>
+    <p>If you want to personalize your header with some html you can use the slot instead of header attribute (panel&nbsp;#1 in the example).</p>
   </doc-section>
 </template>
 
