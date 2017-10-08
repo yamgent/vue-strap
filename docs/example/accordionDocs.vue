@@ -36,10 +36,10 @@
       </panel>
     </doc-code>
     <br>
-    <h4>Panel has many types that changes the appearance of the panel.</h4>
+    <h4>Panel has many types that change its appearance.</h4>
     <div class="bs-example">
       <h5><code>Primary</code> type</h5>
-      <panel header="Seamless - Click to expand" type="primary">
+      <panel header="Primary - Click to expand" type="primary">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius
         eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur
         ullam voluptates!
@@ -52,10 +52,12 @@
       </panel>
     </div>
     <doc-code language="markup">
-      <panel header="Click to expand" type="seamless">
+      <panel header="Primary - Click to expand" type="primary">
         ...
       </panel>
-
+      <panel header="Seamless - Click to expand" type="seamless">
+        ...
+      </panel>
     </doc-code>
     <br>
     <h4>Show/Hide buttons using <code>no-switch</code> or <code>no-close</code></h4>
