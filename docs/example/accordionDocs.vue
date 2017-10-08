@@ -197,7 +197,7 @@
         <p>expandable</p>
         <p><code>Boolean</code></p>
         <p><code>true</code></p>
-        <p>Whether Panel is expandable</p>
+        <p>Whether Panel is expandable.</p>
       </div>
       <div>
         <p>expanded</p>
@@ -215,32 +215,38 @@
         <p>no-switch</p>
         <p><code>Boolean</code></p>
         <p><code>false</code></p>
-        <p>Whether to show the expand switch</p>
+        <p>Whether to show the expand switch.</p>
       </div>
       <div>
         <p>no-close</p>
         <p><code>Boolean</code></p>
         <p><code>false</code></p>
-        <p>Whether to show the close button</p>
+        <p>Whether to show the close button.</p>
+      </div>
+      <div>
+        <p>bottom-switch</p>
+        <p><code>Boolean</code></p>
+        <p><code>false</code></p>
+        <p>Whether to show an expand switch at bottom of the panel. Ignored when no-switch is <code>false</code>. Ignores no-switch when <code>true</code>.</p>
       </div>
       <div>
         <p>url</p>
         <p><code>String</code></p>
-        <p><code></code></p>
-        <p>The url to the remote page that to be loaded as the content of the panel.</p>
+        <p></p>
+        <p>The url to the remote page to be loaded as the content of the panel.</p>
       </div>
       <div>
         <p>type</p>
         <p><code>String</code></p>
         <p><code>null</code></p>
         <p>
-          Define the type of color for the tab (single).<br>
+          The type of color for the tab (single).<br>
           Support: <code>default</code>, <code>primary</code>, <code>info</code>, <code>success</code>,
           <code>warning</code>, <code>danger</code>, <code>seamless</code>
         </p>
       </div>
     </doc-table>
-    <p>If you want to personalize your header with some html you can use the slot instead of header attribute (panel&nbsp;#1 in the example).</p>
+    <p>If you want to personalize your header with some html, you can use the slot instead of header attribute (panel&nbsp;#1 in the example).</p>
   </doc-section>
 </template>
 
