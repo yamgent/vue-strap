@@ -44,7 +44,7 @@
                 <div class="panel-body">
                     <slot></slot>
                     <retriever v-if="isDynamic" v-ref:retriever :src="src" :fragment="fragment" delay></retriever>
-                    <panel-switch v-show="bottomSwitch || (canCollapse && !noSwitch && !showCaret)" v-bind:is-open="expanded"
+                    <panel-switch v-show="bottomSwitch || (canCollapse && !noSwitch)" v-bind:is-open="expanded"
                                   @click.stop.prevent="expand() + scrollIntoView()"></panel-switch>
                 </div>
             </div>
