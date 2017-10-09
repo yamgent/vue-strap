@@ -44,7 +44,7 @@
                 <div class="panel-body">
                     <slot></slot>
                     <retriever v-if="isDynamic" v-ref:retriever :src="src" :fragment="fragment" delay></retriever>
-                    <panel-switch v-show="bottomSwitch || (canCollapse && !noSwitch)" v-bind:is-open="expanded"
+                    <panel-switch v-show="bottomSwitch || (canCollapse && !noSwitch)" v-bind:is-open="expanded" class="there"
                                   @click.stop.prevent="expand() + scrollIntoView()"></panel-switch>
                 </div>
             </div>
@@ -284,6 +284,14 @@
 
     .panel-seamless > .panel-collapse > .panel-body {
         padding: 10px 0;
+    }
+
+    .panel-body > .collapse-button {
+        opacity: 0.5;
+    }
+
+    .panel-body > .collapse-button:hover {
+        opacity: 1;
     }
 
     .close-button {
