@@ -44,7 +44,7 @@
                 <div class="panel-body">
                     <slot></slot>
                     <retriever v-if="isDynamic" v-ref:retriever :src="src" :fragment="fragment" delay></retriever>
-                    <panel-switch v-show="canCollapse && (bottomSwitch || !noSwitch)" v-bind:is-open="expanded" class="there"
+                    <panel-switch v-show="canCollapse && (bottomSwitch || !noSwitch)" v-bind:is-open="expanded"
                                   @click.stop.prevent="collapseThenScrollIntoViewIfNeeded()"></panel-switch>
                 </div>
             </div>
@@ -297,7 +297,8 @@
     }
 
     .panel-body > .collapse-button {
-        opacity: 0.5;
+        margin-top: 5px;
+        opacity: 0.2;
     }
 
     .panel-body > .collapse-button:hover {
