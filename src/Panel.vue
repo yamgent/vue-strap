@@ -115,7 +115,7 @@
       bottomSwitch: {
         type: Boolean,
         coerce: coerce.boolean,
-        default: false
+        default: true
       }
     },
     data () {

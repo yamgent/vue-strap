@@ -14419,7 +14419,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    bottomSwitch: {
 	      type: Boolean,
 	      coerce: _utils.coerce.boolean,
-	      default: false
+	      default: true
 	    }
 	  },
 	  data: function data() {
