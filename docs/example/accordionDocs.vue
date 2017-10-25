@@ -214,22 +214,22 @@
         <p>Whether Panel is minimized.</p>
       </div>
       <div>
-        <p>no-switch</p>
-        <p><code>Boolean</code></p>
-        <p><code>false</code></p>
-        <p>Whether to show the expand switch.</p>
-      </div>
-      <div>
         <p>no-close</p>
         <p><code>Boolean</code></p>
         <p><code>false</code></p>
         <p>Whether to show the close button.</p>
       </div>
       <div>
+        <p>no-switch</p>
+        <p><code>Boolean</code></p>
+        <p><code>false</code></p>
+        <p>Whether to show the expand switch.</p>
+      </div>
+      <div>
         <p>bottom-switch</p>
         <p><code>Boolean</code></p>
         <p><code>false</code></p>
-        <p>Whether to show an expand switch at bottom of the panel. Ignores no-switch when <code>true</code>.</p>
+        <p>Whether to show an expand switch at the bottom of the panel. Independent of no-switch.</p>
       </div>
       <div>
         <p>url</p>
