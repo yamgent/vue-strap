@@ -1,5 +1,5 @@
 <template>
-  <panel :header="header" :is-open="isOpen" :type="type" expandable no-switch bottom-switch>
+  <panel :header="header" :is-open="isOpen" :type="type" expandable no-switch>
     <slot name="button" slot="button"></slot>
     <retriever v-ref:retriever :src="src" :fragment="fragment" delay></retriever>
   </panel>
