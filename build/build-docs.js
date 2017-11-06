@@ -2628,10 +2628,10 @@
 	//       </panel>
 	//     </doc-code>
 	//     <br>
-	//     <h4>Panel has many types that changes the appearance of the panel.</h4>
+	//     <h4>Panel has many types that change its appearance.</h4>
 	//     <div class="bs-example">
 	//       <h5><code>Primary</code> type</h5>
-	//       <panel header="Seamless - Click to expand" type="primary">
+	//       <panel header="Primary - Click to expand" type="primary">
 	//         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius
 	//         eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur
 	//         ullam voluptates!
@@ -2644,10 +2644,12 @@
 	//       </panel>
 	//     </div>
 	//     <doc-code language="markup">
-	//       <panel header="Click to expand" type="seamless">
+	//       <panel header="Primary - Click to expand" type="primary">
 	//         ...
 	//       </panel>
-	
+	//       <panel header="Seamless - Click to expand" type="seamless">
+	//         ...
+	//       </panel>
 	//     </doc-code>
 	//     <br>
 	//     <h4>Show/Hide buttons using <code>no-switch</code> or <code>no-close</code></h4>
@@ -2789,7 +2791,7 @@
 	//         <p>expandable</p>
 	//         <p><code>Boolean</code></p>
 	//         <p><code>true</code></p>
-	//         <p>Whether Panel is expandable</p>
+	//         <p>Whether Panel is expandable.</p>
 	//       </div>
 	//       <div>
 	//         <p>expanded</p>
@@ -2804,35 +2806,41 @@
 	//         <p>Whether Panel is minimized.</p>
 	//       </div>
 	//       <div>
-	//         <p>no-switch</p>
-	//         <p><code>Boolean</code></p>
-	//         <p><code>false</code></p>
-	//         <p>Whether to show the expand switch</p>
-	//       </div>
-	//       <div>
 	//         <p>no-close</p>
 	//         <p><code>Boolean</code></p>
 	//         <p><code>false</code></p>
-	//         <p>Whether to show the close button</p>
+	//         <p>Whether to show the close button.</p>
+	//       </div>
+	//       <div>
+	//         <p>no-switch</p>
+	//         <p><code>Boolean</code></p>
+	//         <p><code>false</code></p>
+	//         <p>Whether to show the expand switch.</p>
+	//       </div>
+	//       <div>
+	//         <p>bottom-switch</p>
+	//         <p><code>Boolean</code></p>
+	//         <p><code>false</code></p>
+	//         <p>Whether to show an expand switch at the bottom of the panel. Independent of no-switch.</p>
 	//       </div>
 	//       <div>
 	//         <p>url</p>
 	//         <p><code>String</code></p>
-	//         <p><code></code></p>
-	//         <p>The url to the remote page that to be loaded as the content of the panel.</p>
+	//         <p></p>
+	//         <p>The url to the remote page to be loaded as the content of the panel.</p>
 	//       </div>
 	//       <div>
 	//         <p>type</p>
 	//         <p><code>String</code></p>
 	//         <p><code>null</code></p>
 	//         <p>
-	//           Define the type of color for the tab (single).<br>
+	//           The type of color for the tab (single).<br>
 	//           Support: <code>default</code>, <code>primary</code>, <code>info</code>, <code>success</code>,
 	//           <code>warning</code>, <code>danger</code>, <code>seamless</code>
 	//         </p>
 	//       </div>
 	//     </doc-table>
-	//     <p>If you want to personalice your header with some html you can use the slot instead of header attribute (panel&nbsp;#1 in the example).</p>
+	//     <p>If you want to personalize your header with some html, you can use the slot instead of header attribute (panel&nbsp;#1 in the example).</p>
 	//   </doc-section>
 	// </template>
 	
@@ -3759,7 +3767,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".panel-heading {\n        width: 100%;\n    }\n\n    .panel-title {\n        font-size: 1em;\n    }\n\n    .header-wrapper {\n        display: inline-block;\n        width: 72%;\n    }\n\n    .button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 28%;\n    }\n\n    .accordion-toggle {\n        cursor: pointer;\n    }\n\n    .expandable-panel {\n        margin-bottom: 0 !important;\n        margin-top: 5px;\n    }\n\n    .panel-group > .panel-container > .expandable-panel {\n        margin-top: 0!important;\n    }\n\n    .panel-seamless {\n        padding: 0;\n    }\n\n    .caret.caret-collapse {\n        border-left: 4px dashed;\n        border-top: 4px solid transparent;\n        border-bottom: 4px solid transparent;\n        border-right: none;\n    }\n\n    .panel.panel-seamless {\n        box-shadow: none;\n        border: none;\n    }\n\n    .panel-seamless > .panel-heading {\n        padding: 0;\n    }\n\n    .panel-seamless > .panel-collapse > .panel-body {\n        padding: 10px 0;\n    }\n\n    .close-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n    }\n\n    .morph {\n        display: inline-block;\n    }", ""]);
+	exports.push([module.id, ".panel-heading {\n        width: 100%;\n    }\n\n    .panel-title {\n        font-size: 1em;\n    }\n\n    .header-wrapper {\n        display: inline-block;\n        width: 72%;\n    }\n\n    .button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 28%;\n    }\n\n    .accordion-toggle {\n        cursor: pointer;\n    }\n\n    .expandable-panel {\n        margin-bottom: 0 !important;\n        margin-top: 5px;\n    }\n\n    .panel-group > .panel-container > .expandable-panel {\n        margin-top: 0!important;\n    }\n\n    .panel-seamless {\n        padding: 0;\n    }\n\n    .caret.caret-collapse {\n        border-left: 4px dashed;\n        border-top: 4px solid transparent;\n        border-bottom: 4px solid transparent;\n        border-right: none;\n    }\n\n    .panel.panel-seamless {\n        box-shadow: none;\n        border: none;\n    }\n\n    .panel-seamless > .panel-heading {\n        padding: 0;\n    }\n\n    .panel-seamless > .panel-collapse > .panel-body {\n        padding: 10px 0;\n    }\n\n    .panel-body > .collapse-button {\n        margin-top: 5px;\n        opacity: 0.2;\n    }\n\n    .panel-body > .collapse-button:hover {\n        opacity: 1;\n    }\n\n    .close-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n    }\n\n    .morph {\n        display: inline-block;\n    }", ""]);
 	
 	// exports
 
@@ -3836,6 +3844,8 @@
 	//                 <div class="panel-body">
 	//                     <slot></slot>
 	//                     <retriever v-if="isDynamic" v-ref:retriever :src="src" :fragment="fragment" delay></retriever>
+	//                     <panel-switch v-show="canCollapse && bottomSwitch" v-bind:is-open="expanded"
+	//                                   @click.stop.prevent="collapseThenScrollIntoViewIfNeeded()"></panel-switch>
 	//                 </div>
 	//             </div>
 	//         </div>
@@ -3896,6 +3906,11 @@
 	    },
 	    src: {
 	      type: String
+	    },
+	    bottomSwitch: {
+	      type: Boolean,
+	      coerce: _utils.coerce.boolean,
+	      default: true
 	    }
 	  },
 	  data: function data() {
@@ -3966,6 +3981,21 @@
 	        this.canCollapse && (this.expanded = isExpand);
 	        this.$broadcast('panel:' + (isExpand ? 'expand' : 'collapse'), -1);
 	      }
+	    },
+	    scrollIntoViewIfNeeded: function scrollIntoViewIfNeeded() {
+	      var top = this.$el.getBoundingClientRect().top;
+	      var isTopInView = top >= 0 && top <= window.innerHeight;
+	      if (!isTopInView) {
+	        this.$el.scrollIntoView();
+	      }
+	    },
+	    collapseThenScrollIntoViewIfNeeded: function collapseThenScrollIntoViewIfNeeded() {
+	      var _this = this;
+	
+	      this.$once('isOpenEvent', function (el, isOpen) {
+	        _this.scrollIntoViewIfNeeded();
+	      });
+	      this.expand();
 	    }
 	  },
 	  watch: {
@@ -3994,15 +4024,15 @@
 	    }
 	  },
 	  attached: function attached() {
-	    var _this = this;
+	    var _this2 = this;
 	
 	    if (this.isDynamic && this.expanded) {
 	      this.$refs.retriever.fetch();
 	    }
 	
 	    this.$on('isOpenEvent', function (el, isOpen) {
-	      if (isOpen && _this.isDynamic) {
-	        _this.$refs.retriever.fetch();
+	      if (isOpen && _this2.isDynamic) {
+	        _this2.$refs.retriever.fetch();
 	      }
 	    });
 	  }
@@ -4064,6 +4094,15 @@
 	
 	//     .panel-seamless > .panel-collapse > .panel-body {
 	//         padding: 10px 0;
+	//     }
+	
+	//     .panel-body > .collapse-button {
+	//         margin-top: 5px;
+	//         opacity: 0.2;
+	//     }
+	
+	//     .panel-body > .collapse-button:hover {
+	//         opacity: 1;
 	//     }
 	
 	//     .close-button {
@@ -27083,7 +27122,7 @@
 /* 267 */
 /***/ (function(module, exports) {
 
-	module.exports = "<span class=\"panel-container\">\n        <div class=\"morph\" v-show=\"minimized\">\n            <div class=\"morph-display-wrapper\" v-on:click=\"open()\">\n                <button class=\"morph-display-button btn btn-default\">\n                    <template v-if=\"altContent\">\n                        <span class=\"panel-title\">{{{altContent}}}</span>\n                    </template>\n                    <template v-else>\n                        <slot name=\"header\">\n                            <span class=\"panel-title\">{{{altContent}}}</span>\n                        </slot>\n                    </template>\n                </button>\n            </div>\n        </div>\n\n        <div :class=\"['panel', panelType, {'expandable-panel': isExpandablePanel}]\" v-else>\n            <div :class=\"['panel-heading',{'accordion-toggle':canCollapse}]\"\n                 @click.prevent.stop=\"canCollapse && toggle()\"\n                 @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\n                <div class=\"header-wrapper\">\n                    <span :class=\"['caret', {'caret-collapse': !expanded}]\" v-show=\"showCaret\"></span>\n                    <slot name=\"header\">\n                        <span class=\"panel-title\">{{{headerContent}}}</span>\n                    </slot>\n                </div>\n                <div class=\"button-wrapper\">\n                    <slot name=\"button\">\n                        <panel-switch v-show=\"canCollapse && !noSwitch && !showCaret\" v-bind:is-open=\"expanded\"\n                                      @click.stop.prevent=\"expand()\"></panel-switch>\n                        <button type=\"button\" class=\"close-button btn btn-default\"\n                                v-show=\"this.type !== 'seamless' ? (!noClose) : onHeaderHover\"\n                                @click.stop=\"close()\">\n                            <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                        </button>\n                    </slot>\n                </div>\n            </div>\n            <div class=\"panel-collapse\"\n                 v-el:panel\n                 v-show=\"expanded\"\n            >\n                <div class=\"panel-body\">\n                    <slot></slot>\n                    <retriever v-if=\"isDynamic\" v-ref:retriever :src=\"src\" :fragment=\"fragment\" delay></retriever>\n                </div>\n            </div>\n        </div>\n    </span>";
+	module.exports = "<span class=\"panel-container\">\n        <div class=\"morph\" v-show=\"minimized\">\n            <div class=\"morph-display-wrapper\" v-on:click=\"open()\">\n                <button class=\"morph-display-button btn btn-default\">\n                    <template v-if=\"altContent\">\n                        <span class=\"panel-title\">{{{altContent}}}</span>\n                    </template>\n                    <template v-else>\n                        <slot name=\"header\">\n                            <span class=\"panel-title\">{{{altContent}}}</span>\n                        </slot>\n                    </template>\n                </button>\n            </div>\n        </div>\n\n        <div :class=\"['panel', panelType, {'expandable-panel': isExpandablePanel}]\" v-else>\n            <div :class=\"['panel-heading',{'accordion-toggle':canCollapse}]\"\n                 @click.prevent.stop=\"canCollapse && toggle()\"\n                 @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\n                <div class=\"header-wrapper\">\n                    <span :class=\"['caret', {'caret-collapse': !expanded}]\" v-show=\"showCaret\"></span>\n                    <slot name=\"header\">\n                        <span class=\"panel-title\">{{{headerContent}}}</span>\n                    </slot>\n                </div>\n                <div class=\"button-wrapper\">\n                    <slot name=\"button\">\n                        <panel-switch v-show=\"canCollapse && !noSwitch && !showCaret\" v-bind:is-open=\"expanded\"\n                                      @click.stop.prevent=\"expand()\"></panel-switch>\n                        <button type=\"button\" class=\"close-button btn btn-default\"\n                                v-show=\"this.type !== 'seamless' ? (!noClose) : onHeaderHover\"\n                                @click.stop=\"close()\">\n                            <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                        </button>\n                    </slot>\n                </div>\n            </div>\n            <div class=\"panel-collapse\"\n                 v-el:panel\n                 v-show=\"expanded\"\n            >\n                <div class=\"panel-body\">\n                    <slot></slot>\n                    <retriever v-if=\"isDynamic\" v-ref:retriever :src=\"src\" :fragment=\"fragment\" delay></retriever>\n                    <panel-switch v-show=\"canCollapse && bottomSwitch\" v-bind:is-open=\"expanded\"\n                                  @click.stop.prevent=\"collapseThenScrollIntoViewIfNeeded()\"></panel-switch>\n                </div>\n            </div>\n        </div>\n    </span>";
 
 /***/ }),
 /* 268 */
@@ -28528,7 +28567,7 @@
 /* 301 */
 /***/ (function(module, exports) {
 
-	module.exports = "<doc-section id=\"accordion\" name=\"Accordion and Panel\">\n    <h4>Panel is a flexible container that support collapse and expand its content. It is expandable by default</h4>\n    <div class=\"bs-example\">\n      <panel header=\"Header\" alt=\"Alternative Header\">\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolores excepturi expedita illum impedit ipsa labore qui veniam. Blanditiis exercitationem id ipsum libero molestiae, necessitatibus unde? Amet fugiat fugit molestias?\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"Header\" alt=\"Alternative Header\">\n        ...\n      </panel>\n    </doc-code>\n    <br>\n    <h4>With <code>minimized</code> attribute, panel is minimized into an inline block element.</h4>\n    <div class=\"bs-example\">\n      <panel header=\"Header\" alt=\"Alternative Header\" minimized>\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolores excepturi expedita illum impedit ipsa labore qui veniam. Blanditiis exercitationem id ipsum libero molestiae, necessitatibus unde? Amet fugiat fugit molestias?\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"Header\" alt=\"Alternative Header\" minimized>\n        ...\n      </panel>\n    </doc-code>\n    <br>\n    <h4>With <code>expanded</code> attribute, panel could be expanded by default.</h4>\n    <div class=\"bs-example\">\n      <panel header=\"Header\" alt=\"Alternative Header\" expanded>\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolores excepturi expedita illum impedit ipsa labore qui veniam. Blanditiis exercitationem id ipsum libero molestiae, necessitatibus unde? Amet fugiat fugit molestias?\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"Header\" alt=\"Alternative Header\" expanded>\n        ...\n      </panel>\n    </doc-code>\n    <br>\n    <h4>Panel has many types that changes the appearance of the panel.</h4>\n    <div class=\"bs-example\">\n      <h5><code>Primary</code> type</h5>\n      <panel header=\"Seamless - Click to expand\" type=\"primary\">\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius\n        eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur\n        ullam voluptates!\n      </panel>\n      <h5><code>Seamless</code> panel type</h5>\n      <panel header=\"Seamless - Click to expand\" type=\"seamless\">\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius\n        eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur\n        ullam voluptates!\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"Click to expand\" type=\"seamless\">\n        ...\n      </panel>\n\n    </doc-code>\n    <br>\n    <h4>Show/Hide buttons using <code>no-switch</code> or <code>no-close</code></h4>\n    <div class=\"bs-example\">\n      <panel header=\"Header\" no-switch>\n      </panel>\n      <panel header=\"Header\" no-close>\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"Header\" no-switch>\n      </panel>\n      <panel header=\"Header\" no-close>\n      </panel>\n    </doc-code>\n    <br>\n    <h4>Use markdown in the header (only inline level markdown are supported)</h4>\n    <div class=\"bs-example\">\n      <panel header=\"**haha** :rocket: ![](https://vuejs.org/images/logo.png =25x25)\" expandable type=\"seamless\">\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequatur consequuntur culpa enim, explicabo impedit iure maxime omnis quas recusandae sint suscipit? Accusamus cumque facere laboriosam magnam magni numquam reprehenderit.\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"**haha** :rocket: ![](https://vuejs.org/images/logo.png =25x25)\" type=\"seamless\">\n        ...\n      </panel>\n\n    </doc-code>\n    <br>\n    <h4>If <code>src</code> attribute is provided, the panel content is loaded dynamically from src.</h4>\n    <div class=\"bs-example\">\n      <panel header=\"Dynamic Loading\" src=\"/docs/loadContent.html#fragment\" minimized></panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"Dynamic Loading\" src=\"/docs/loadContent.html#fragment\" minimized></panel>\n    </doc-code>\n\n    <h4>Accordion could group panels together to provide better control</h4>\n    <div class=\"bs-example\">\n      <checkbox :checked.sync=\"checked\" type=\"primary\">Open only one at a time.</checkbox>\n      <p><v-select :options=\"types\" clear-button :value.sync=\"selected\" placeholder=\"Global type\"></v-select></p>\n      <p><v-select :options=\"types\" clear-button :value.sync=\"first\" placeholder=\"First element type\"></v-select></p>\n      <accordion :one-at-atime=\"checked\" :type=\"selected\">\n        <panel is-open :type=\"first=='panel'?null:first\">\n          <strong slot=\"header\"><u>[20 minutes] Part 1 - Software engineering rocks! : Introduction to Software Engineering</u></strong>\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n        <panel header=\"Panel #2\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n        <panel header=\"Panel #3\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n        <panel header=\"Panel #4\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n        <panel header=\"[20 minutes] Part 1 - Software engineering rocks! : Introduction to Software Engineering\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n      </accordion>\n\n      Panel with Expand Switch\n\n      <panel header=\"Parent\" expandable ctrl-lvl=\"-1\">\n        <panel header=\"Child1\" expandable>\n          <panel header=\"Child2\">\n            <panel header=\"Child3\" expandable>\n              Parent 1\n            </panel>\n          </panel>\n        </panel>\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <accordion :one-at-atime=\"checked\" type=\"info\">\n        <panel is-open type=\"primary\">\n          <strong slot=\"header\"><u>Panel #1</u></strong>\n          ...\n        </panel>\n        <panel header=\"Panel #2\">\n          ...\n        </panel>\n        <panel header=\"Panel #3\">\n          ...\n        </panel>\n        <panel header=\"Panel #4\">\n          ...\n        </panel>\n      </accordion>\n    </doc-code>\n\n    <doc-table>\n      <div>\n        <p>type</p>\n        <p><code>String</code></p>\n        <p><code>null</code></p>\n        <p>Define the type of color for the tabs (global).</p>\n      </div>\n      <div>\n        <p>one-at-time</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Control whether expanding an item will cause the other items to close.</p>\n      </div>\n    </doc-table>\n    <doc-table name=\"Panel\">\n      <div>\n        <p>header</p>\n        <p><code>String</code></p>\n        <p></p>\n        <p>The clickable text on the group's header. You need one to be able to click on the header for toggling.</p>\n      </div>\n      <div>\n        <p>expandable</p>\n        <p><code>Boolean</code></p>\n        <p><code>true</code></p>\n        <p>Whether Panel is expandable</p>\n      </div>\n      <div>\n        <p>expanded</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Whether Panel is expanded or collapsed.</p>\n      </div>\n      <div>\n        <p>minimized</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Whether Panel is minimized.</p>\n      </div>\n      <div>\n        <p>no-switch</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Whether to show the expand switch</p>\n      </div>\n      <div>\n        <p>no-close</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Whether to show the close button</p>\n      </div>\n      <div>\n        <p>url</p>\n        <p><code>String</code></p>\n        <p><code></code></p>\n        <p>The url to the remote page that to be loaded as the content of the panel.</p>\n      </div>\n      <div>\n        <p>type</p>\n        <p><code>String</code></p>\n        <p><code>null</code></p>\n        <p>\n          Define the type of color for the tab (single).<br>\n          Support: <code>default</code>, <code>primary</code>, <code>info</code>, <code>success</code>,\n          <code>warning</code>, <code>danger</code>, <code>seamless</code>\n        </p>\n      </div>\n    </doc-table>\n    <p>If you want to personalice your header with some html you can use the slot instead of header attribute (panel&nbsp;#1 in the example).</p>\n  </doc-section>";
+	module.exports = "<doc-section id=\"accordion\" name=\"Accordion and Panel\">\n    <h4>Panel is a flexible container that support collapse and expand its content. It is expandable by default</h4>\n    <div class=\"bs-example\">\n      <panel header=\"Header\" alt=\"Alternative Header\">\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolores excepturi expedita illum impedit ipsa labore qui veniam. Blanditiis exercitationem id ipsum libero molestiae, necessitatibus unde? Amet fugiat fugit molestias?\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"Header\" alt=\"Alternative Header\">\n        ...\n      </panel>\n    </doc-code>\n    <br>\n    <h4>With <code>minimized</code> attribute, panel is minimized into an inline block element.</h4>\n    <div class=\"bs-example\">\n      <panel header=\"Header\" alt=\"Alternative Header\" minimized>\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolores excepturi expedita illum impedit ipsa labore qui veniam. Blanditiis exercitationem id ipsum libero molestiae, necessitatibus unde? Amet fugiat fugit molestias?\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"Header\" alt=\"Alternative Header\" minimized>\n        ...\n      </panel>\n    </doc-code>\n    <br>\n    <h4>With <code>expanded</code> attribute, panel could be expanded by default.</h4>\n    <div class=\"bs-example\">\n      <panel header=\"Header\" alt=\"Alternative Header\" expanded>\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias dolores excepturi expedita illum impedit ipsa labore qui veniam. Blanditiis exercitationem id ipsum libero molestiae, necessitatibus unde? Amet fugiat fugit molestias?\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"Header\" alt=\"Alternative Header\" expanded>\n        ...\n      </panel>\n    </doc-code>\n    <br>\n    <h4>Panel has many types that change its appearance.</h4>\n    <div class=\"bs-example\">\n      <h5><code>Primary</code> type</h5>\n      <panel header=\"Primary - Click to expand\" type=\"primary\">\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius\n        eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur\n        ullam voluptates!\n      </panel>\n      <h5><code>Seamless</code> panel type</h5>\n      <panel header=\"Seamless - Click to expand\" type=\"seamless\">\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius\n        eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur\n        ullam voluptates!\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"Primary - Click to expand\" type=\"primary\">\n        ...\n      </panel>\n      <panel header=\"Seamless - Click to expand\" type=\"seamless\">\n        ...\n      </panel>\n    </doc-code>\n    <br>\n    <h4>Show/Hide buttons using <code>no-switch</code> or <code>no-close</code></h4>\n    <div class=\"bs-example\">\n      <panel header=\"Header\" no-switch>\n      </panel>\n      <panel header=\"Header\" no-close>\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"Header\" no-switch>\n      </panel>\n      <panel header=\"Header\" no-close>\n      </panel>\n    </doc-code>\n    <br>\n    <h4>Use markdown in the header (only inline level markdown are supported)</h4>\n    <div class=\"bs-example\">\n      <panel header=\"**haha** :rocket: ![](https://vuejs.org/images/logo.png =25x25)\" expandable type=\"seamless\">\n        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequatur consequuntur culpa enim, explicabo impedit iure maxime omnis quas recusandae sint suscipit? Accusamus cumque facere laboriosam magnam magni numquam reprehenderit.\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"**haha** :rocket: ![](https://vuejs.org/images/logo.png =25x25)\" type=\"seamless\">\n        ...\n      </panel>\n\n    </doc-code>\n    <br>\n    <h4>If <code>src</code> attribute is provided, the panel content is loaded dynamically from src.</h4>\n    <div class=\"bs-example\">\n      <panel header=\"Dynamic Loading\" src=\"/docs/loadContent.html#fragment\" minimized></panel>\n    </div>\n    <doc-code language=\"markup\">\n      <panel header=\"Dynamic Loading\" src=\"/docs/loadContent.html#fragment\" minimized></panel>\n    </doc-code>\n\n    <h4>Accordion could group panels together to provide better control</h4>\n    <div class=\"bs-example\">\n      <checkbox :checked.sync=\"checked\" type=\"primary\">Open only one at a time.</checkbox>\n      <p><v-select :options=\"types\" clear-button :value.sync=\"selected\" placeholder=\"Global type\"></v-select></p>\n      <p><v-select :options=\"types\" clear-button :value.sync=\"first\" placeholder=\"First element type\"></v-select></p>\n      <accordion :one-at-atime=\"checked\" :type=\"selected\">\n        <panel is-open :type=\"first=='panel'?null:first\">\n          <strong slot=\"header\"><u>[20 minutes] Part 1 - Software engineering rocks! : Introduction to Software Engineering</u></strong>\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n        <panel header=\"Panel #2\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n        <panel header=\"Panel #3\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n        <panel header=\"Panel #4\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n        <panel header=\"[20 minutes] Part 1 - Software engineering rocks! : Introduction to Software Engineering\">\n          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\n          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\n          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\n          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\n          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n        </panel>\n      </accordion>\n\n      Panel with Expand Switch\n\n      <panel header=\"Parent\" expandable ctrl-lvl=\"-1\">\n        <panel header=\"Child1\" expandable>\n          <panel header=\"Child2\">\n            <panel header=\"Child3\" expandable>\n              Parent 1\n            </panel>\n          </panel>\n        </panel>\n      </panel>\n    </div>\n    <doc-code language=\"markup\">\n      <accordion :one-at-atime=\"checked\" type=\"info\">\n        <panel is-open type=\"primary\">\n          <strong slot=\"header\"><u>Panel #1</u></strong>\n          ...\n        </panel>\n        <panel header=\"Panel #2\">\n          ...\n        </panel>\n        <panel header=\"Panel #3\">\n          ...\n        </panel>\n        <panel header=\"Panel #4\">\n          ...\n        </panel>\n      </accordion>\n    </doc-code>\n\n    <doc-table>\n      <div>\n        <p>type</p>\n        <p><code>String</code></p>\n        <p><code>null</code></p>\n        <p>Define the type of color for the tabs (global).</p>\n      </div>\n      <div>\n        <p>one-at-time</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Control whether expanding an item will cause the other items to close.</p>\n      </div>\n    </doc-table>\n    <doc-table name=\"Panel\">\n      <div>\n        <p>header</p>\n        <p><code>String</code></p>\n        <p></p>\n        <p>The clickable text on the group's header. You need one to be able to click on the header for toggling.</p>\n      </div>\n      <div>\n        <p>expandable</p>\n        <p><code>Boolean</code></p>\n        <p><code>true</code></p>\n        <p>Whether Panel is expandable.</p>\n      </div>\n      <div>\n        <p>expanded</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Whether Panel is expanded or collapsed.</p>\n      </div>\n      <div>\n        <p>minimized</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Whether Panel is minimized.</p>\n      </div>\n      <div>\n        <p>no-close</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Whether to show the close button.</p>\n      </div>\n      <div>\n        <p>no-switch</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Whether to show the expand switch.</p>\n      </div>\n      <div>\n        <p>bottom-switch</p>\n        <p><code>Boolean</code></p>\n        <p><code>false</code></p>\n        <p>Whether to show an expand switch at the bottom of the panel. Independent of no-switch.</p>\n      </div>\n      <div>\n        <p>url</p>\n        <p><code>String</code></p>\n        <p></p>\n        <p>The url to the remote page to be loaded as the content of the panel.</p>\n      </div>\n      <div>\n        <p>type</p>\n        <p><code>String</code></p>\n        <p><code>null</code></p>\n        <p>\n          The type of color for the tab (single).<br>\n          Support: <code>default</code>, <code>primary</code>, <code>info</code>, <code>success</code>,\n          <code>warning</code>, <code>danger</code>, <code>seamless</code>\n        </p>\n      </div>\n    </doc-table>\n    <p>If you want to personalize your header with some html, you can use the slot instead of header attribute (panel&nbsp;#1 in the example).</p>\n  </doc-section>";
 
 /***/ }),
 /* 302 */
@@ -30169,7 +30208,9 @@
 	// <template>
 	//   <doc-section id="dynamicPanel" name="DynamicPanel">
 	//     <div class="bs-example">
-	//       <dynamic-panel src="docs/loadContent.html" header="Load content from 'content.html'" is-open="false"></dynamic-panel>
+	//       <dynamic-panel src="docs/loadContent.html"
+	//                      header="Load content from 'content.html'"
+	//                      is-open></dynamic-panel>
 	//       <dynamic-panel src="docs/loadContent.html"
 	//                      fragment="fragment"
 	//                      header="Load fragment content from 'content.html'"
@@ -30179,7 +30220,7 @@
 	//       <dynamic-panel src="docs/loadContent.html"
 	//                      header="Load content from 'content.html'"
 	//                      is-open></dynamic-panel>
-	//       <dynamic-panel src="docs/loadContent.html#fragment"
+	//       <dynamic-panel src="docs/loadContent.html"
 	//                      fragment="fragment"
 	//                      header="Load fragment content from 'content.html'"
 	//                      is-open></dynamic-panel>
@@ -30206,7 +30247,7 @@
 /* 338 */
 /***/ (function(module, exports) {
 
-	module.exports = "<doc-section id=\"dynamicPanel\" name=\"DynamicPanel\">\n    <div class=\"bs-example\">\n      <dynamic-panel src=\"docs/loadContent.html\" header=\"Load content from 'content.html'\" is-open=\"false\"></dynamic-panel>\n      <dynamic-panel src=\"docs/loadContent.html\"\n                     fragment=\"fragment\"\n                     header=\"Load fragment content from 'content.html'\"\n                     is-open></dynamic-panel>\n    </div>\n    <doc-code language=\"markup\">\n      <dynamic-panel src=\"docs/loadContent.html\"\n                     header=\"Load content from 'content.html'\"\n                     is-open></dynamic-panel>\n      <dynamic-panel src=\"docs/loadContent.html#fragment\"\n                     fragment=\"fragment\"\n                     header=\"Load fragment content from 'content.html'\"\n                     is-open></dynamic-panel>\n    </doc-code>\n    <doc-table>\n\n    </doc-table>\n  </doc-section>";
+	module.exports = "<doc-section id=\"dynamicPanel\" name=\"DynamicPanel\">\n    <div class=\"bs-example\">\n      <dynamic-panel src=\"docs/loadContent.html\"\n                     header=\"Load content from 'content.html'\"\n                     is-open></dynamic-panel>\n      <dynamic-panel src=\"docs/loadContent.html\"\n                     fragment=\"fragment\"\n                     header=\"Load fragment content from 'content.html'\"\n                     is-open></dynamic-panel>\n    </div>\n    <doc-code language=\"markup\">\n      <dynamic-panel src=\"docs/loadContent.html\"\n                     header=\"Load content from 'content.html'\"\n                     is-open></dynamic-panel>\n      <dynamic-panel src=\"docs/loadContent.html\"\n                     fragment=\"fragment\"\n                     header=\"Load fragment content from 'content.html'\"\n                     is-open></dynamic-panel>\n    </doc-code>\n    <doc-table>\n\n    </doc-table>\n  </doc-section>";
 
 /***/ }),
 /* 339 */

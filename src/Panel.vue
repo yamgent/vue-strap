@@ -44,6 +44,8 @@
                 <div class="panel-body">
                     <slot></slot>
                     <retriever v-if="isDynamic" v-ref:retriever :src="src" :fragment="fragment" delay></retriever>
+                    <panel-switch v-show="canCollapse && bottomSwitch" v-bind:is-open="expanded"
+                                  @click.stop.prevent="collapseThenScrollIntoViewIfNeeded()"></panel-switch>
                 </div>
             </div>
         </div>
@@ -109,6 +111,11 @@
       },
       src: {
         type: String
+      },
+      bottomSwitch: {
+        type: Boolean,
+        coerce: coerce.boolean,
+        default: true
       }
     },
     data () {
@@ -178,6 +185,19 @@
           this.canCollapse && (this.expanded = isExpand)
           this.$broadcast('panel:' + (isExpand ? 'expand' : 'collapse'), -1)
         }
+      },
+      scrollIntoViewIfNeeded() {
+        var top = this.$el.getBoundingClientRect().top;
+        var isTopInView = (top >= 0) && (top <= window.innerHeight);
+        if (!isTopInView) {
+          this.$el.scrollIntoView();
+        }
+      },
+      collapseThenScrollIntoViewIfNeeded() {
+        this.$once('isOpenEvent', (el, isOpen) => {
+          this.scrollIntoViewIfNeeded();
+        });
+        this.expand();
       }
     },
     watch: {
@@ -274,6 +294,15 @@
 
     .panel-seamless > .panel-collapse > .panel-body {
         padding: 10px 0;
+    }
+
+    .panel-body > .collapse-button {
+        margin-top: 5px;
+        opacity: 0.2;
+    }
+
+    .panel-body > .collapse-button:hover {
+        opacity: 1;
     }
 
     .close-button {

@@ -14276,7 +14276,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, ".panel-heading {\n        width: 100%;\n    }\n\n    .panel-title {\n        font-size: 1em;\n    }\n\n    .header-wrapper {\n        display: inline-block;\n        width: 72%;\n    }\n\n    .button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 28%;\n    }\n\n    .accordion-toggle {\n        cursor: pointer;\n    }\n\n    .expandable-panel {\n        margin-bottom: 0 !important;\n        margin-top: 5px;\n    }\n\n    .panel-group > .panel-container > .expandable-panel {\n        margin-top: 0!important;\n    }\n\n    .panel-seamless {\n        padding: 0;\n    }\n\n    .caret.caret-collapse {\n        border-left: 4px dashed;\n        border-top: 4px solid transparent;\n        border-bottom: 4px solid transparent;\n        border-right: none;\n    }\n\n    .panel.panel-seamless {\n        box-shadow: none;\n        border: none;\n    }\n\n    .panel-seamless > .panel-heading {\n        padding: 0;\n    }\n\n    .panel-seamless > .panel-collapse > .panel-body {\n        padding: 10px 0;\n    }\n\n    .close-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n    }\n\n    .morph {\n        display: inline-block;\n    }", ""]);
+	exports.push([module.id, ".panel-heading {\n        width: 100%;\n    }\n\n    .panel-title {\n        font-size: 1em;\n    }\n\n    .header-wrapper {\n        display: inline-block;\n        width: 72%;\n    }\n\n    .button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 28%;\n    }\n\n    .accordion-toggle {\n        cursor: pointer;\n    }\n\n    .expandable-panel {\n        margin-bottom: 0 !important;\n        margin-top: 5px;\n    }\n\n    .panel-group > .panel-container > .expandable-panel {\n        margin-top: 0!important;\n    }\n\n    .panel-seamless {\n        padding: 0;\n    }\n\n    .caret.caret-collapse {\n        border-left: 4px dashed;\n        border-top: 4px solid transparent;\n        border-bottom: 4px solid transparent;\n        border-right: none;\n    }\n\n    .panel.panel-seamless {\n        box-shadow: none;\n        border: none;\n    }\n\n    .panel-seamless > .panel-heading {\n        padding: 0;\n    }\n\n    .panel-seamless > .panel-collapse > .panel-body {\n        padding: 10px 0;\n    }\n\n    .panel-body > .collapse-button {\n        margin-top: 5px;\n        opacity: 0.2;\n    }\n\n    .panel-body > .collapse-button:hover {\n        opacity: 1;\n    }\n\n    .close-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n    }\n\n    .morph {\n        display: inline-block;\n    }", ""]);
 	
 	// exports
 
@@ -14353,6 +14353,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	//                 <div class="panel-body">
 	//                     <slot></slot>
 	//                     <retriever v-if="isDynamic" v-ref:retriever :src="src" :fragment="fragment" delay></retriever>
+	//                     <panel-switch v-show="canCollapse && bottomSwitch" v-bind:is-open="expanded"
+	//                                   @click.stop.prevent="collapseThenScrollIntoViewIfNeeded()"></panel-switch>
 	//                 </div>
 	//             </div>
 	//         </div>
@@ -14413,6 +14415,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	    src: {
 	      type: String
+	    },
+	    bottomSwitch: {
+	      type: Boolean,
+	      coerce: _utils.coerce.boolean,
+	      default: true
 	    }
 	  },
 	  data: function data() {
@@ -14483,6 +14490,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.canCollapse && (this.expanded = isExpand);
 	        this.$broadcast('panel:' + (isExpand ? 'expand' : 'collapse'), -1);
 	      }
+	    },
+	    scrollIntoViewIfNeeded: function scrollIntoViewIfNeeded() {
+	      var top = this.$el.getBoundingClientRect().top;
+	      var isTopInView = top >= 0 && top <= window.innerHeight;
+	      if (!isTopInView) {
+	        this.$el.scrollIntoView();
+	      }
+	    },
+	    collapseThenScrollIntoViewIfNeeded: function collapseThenScrollIntoViewIfNeeded() {
+	      var _this = this;
+	
+	      this.$once('isOpenEvent', function (el, isOpen) {
+	        _this.scrollIntoViewIfNeeded();
+	      });
+	      this.expand();
 	    }
 	  },
 	  watch: {
@@ -14511,15 +14533,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  attached: function attached() {
-	    var _this = this;
+	    var _this2 = this;
 	
 	    if (this.isDynamic && this.expanded) {
 	      this.$refs.retriever.fetch();
 	    }
 	
 	    this.$on('isOpenEvent', function (el, isOpen) {
-	      if (isOpen && _this.isDynamic) {
-	        _this.$refs.retriever.fetch();
+	      if (isOpen && _this2.isDynamic) {
+	        _this2.$refs.retriever.fetch();
 	      }
 	    });
 	  }
@@ -14581,6 +14603,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	//     .panel-seamless > .panel-collapse > .panel-body {
 	//         padding: 10px 0;
+	//     }
+	
+	//     .panel-body > .collapse-button {
+	//         margin-top: 5px;
+	//         opacity: 0.2;
+	//     }
+	
+	//     .panel-body > .collapse-button:hover {
+	//         opacity: 1;
 	//     }
 	
 	//     .close-button {
@@ -27217,7 +27248,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 246 */
 /***/ (function(module, exports) {
 
-	module.exports = "<span class=\"panel-container\">\n        <div class=\"morph\" v-show=\"minimized\">\n            <div class=\"morph-display-wrapper\" v-on:click=\"open()\">\n                <button class=\"morph-display-button btn btn-default\">\n                    <template v-if=\"altContent\">\n                        <span class=\"panel-title\">{{{altContent}}}</span>\n                    </template>\n                    <template v-else>\n                        <slot name=\"header\">\n                            <span class=\"panel-title\">{{{altContent}}}</span>\n                        </slot>\n                    </template>\n                </button>\n            </div>\n        </div>\n\n        <div :class=\"['panel', panelType, {'expandable-panel': isExpandablePanel}]\" v-else>\n            <div :class=\"['panel-heading',{'accordion-toggle':canCollapse}]\"\n                 @click.prevent.stop=\"canCollapse && toggle()\"\n                 @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\n                <div class=\"header-wrapper\">\n                    <span :class=\"['caret', {'caret-collapse': !expanded}]\" v-show=\"showCaret\"></span>\n                    <slot name=\"header\">\n                        <span class=\"panel-title\">{{{headerContent}}}</span>\n                    </slot>\n                </div>\n                <div class=\"button-wrapper\">\n                    <slot name=\"button\">\n                        <panel-switch v-show=\"canCollapse && !noSwitch && !showCaret\" v-bind:is-open=\"expanded\"\n                                      @click.stop.prevent=\"expand()\"></panel-switch>\n                        <button type=\"button\" class=\"close-button btn btn-default\"\n                                v-show=\"this.type !== 'seamless' ? (!noClose) : onHeaderHover\"\n                                @click.stop=\"close()\">\n                            <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                        </button>\n                    </slot>\n                </div>\n            </div>\n            <div class=\"panel-collapse\"\n                 v-el:panel\n                 v-show=\"expanded\"\n            >\n                <div class=\"panel-body\">\n                    <slot></slot>\n                    <retriever v-if=\"isDynamic\" v-ref:retriever :src=\"src\" :fragment=\"fragment\" delay></retriever>\n                </div>\n            </div>\n        </div>\n    </span>";
+	module.exports = "<span class=\"panel-container\">\n        <div class=\"morph\" v-show=\"minimized\">\n            <div class=\"morph-display-wrapper\" v-on:click=\"open()\">\n                <button class=\"morph-display-button btn btn-default\">\n                    <template v-if=\"altContent\">\n                        <span class=\"panel-title\">{{{altContent}}}</span>\n                    </template>\n                    <template v-else>\n                        <slot name=\"header\">\n                            <span class=\"panel-title\">{{{altContent}}}</span>\n                        </slot>\n                    </template>\n                </button>\n            </div>\n        </div>\n\n        <div :class=\"['panel', panelType, {'expandable-panel': isExpandablePanel}]\" v-else>\n            <div :class=\"['panel-heading',{'accordion-toggle':canCollapse}]\"\n                 @click.prevent.stop=\"canCollapse && toggle()\"\n                 @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\n                <div class=\"header-wrapper\">\n                    <span :class=\"['caret', {'caret-collapse': !expanded}]\" v-show=\"showCaret\"></span>\n                    <slot name=\"header\">\n                        <span class=\"panel-title\">{{{headerContent}}}</span>\n                    </slot>\n                </div>\n                <div class=\"button-wrapper\">\n                    <slot name=\"button\">\n                        <panel-switch v-show=\"canCollapse && !noSwitch && !showCaret\" v-bind:is-open=\"expanded\"\n                                      @click.stop.prevent=\"expand()\"></panel-switch>\n                        <button type=\"button\" class=\"close-button btn btn-default\"\n                                v-show=\"this.type !== 'seamless' ? (!noClose) : onHeaderHover\"\n                                @click.stop=\"close()\">\n                            <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                        </button>\n                    </slot>\n                </div>\n            </div>\n            <div class=\"panel-collapse\"\n                 v-el:panel\n                 v-show=\"expanded\"\n            >\n                <div class=\"panel-body\">\n                    <slot></slot>\n                    <retriever v-if=\"isDynamic\" v-ref:retriever :src=\"src\" :fragment=\"fragment\" delay></retriever>\n                    <panel-switch v-show=\"canCollapse && bottomSwitch\" v-bind:is-open=\"expanded\"\n                                  @click.stop.prevent=\"collapseThenScrollIntoViewIfNeeded()\"></panel-switch>\n                </div>\n            </div>\n        </div>\n    </span>";
 
 /***/ }),
 /* 247 */
