@@ -80,7 +80,7 @@ export default {
         if (!content.contains(e.target)) content.classList.remove('open')
       })
     })
-    $(this.$el).on('click touchstart','li:not(.dropdown)>a', e => {
+    $(this.$el).on('click','li:not(.dropdown)>a', e => {
       setTimeout(() => { this.collapsed = true }, 200)
     }).onBlur(e => {
       if (!this.$el.contains(e.target)) { this.collapsed = true }
@@ -100,3 +100,13 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+@media (max-width: 767px) {
+  .navbar-fixed-top .navbar-collapse {
+    max-height: 80vh !important;
+    overflow-x: hidden !important;
+    overflow-y: scroll !important;
+  }
+}
+</style>
