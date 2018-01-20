@@ -260,7 +260,7 @@ class NodeList {
     })
     return this
   }
-  onBlur (callback) {
+  onBlur (callback, enableTriggerByTouchStart = true) {
     if (!this || !this.length) return this
     if (!callback) return this
     this.each(el => { blurList.push({el, callback}) })
@@ -272,7 +272,7 @@ class NodeList {
         })
       }
       document.addEventListener('click', blurEvent, false)
-      document.addEventListener('touchstart', blurEvent, false)
+      if (enableTriggerByTouchStart) document.addEventListener('touchstart', blurEvent, false)
     }
     return this
   }
