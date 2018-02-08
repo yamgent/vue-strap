@@ -30,15 +30,13 @@ export default {
     }
   },
   computed: {
-    isPureText () {
-      return this.$els.trigger.children.length === 0
-    },
     hasSlot () {
       return this._slotContents !== void 0
     }
   },
   attached () {
-    this.isPureText && (this.$els.trigger.style['border-bottom'] = '1px dotted black')
+    this.$els.trigger.style['-webkit-text-decoration'] = 'underline dotted'
+    this.$els.trigger.style['text-decoration'] = 'underline dotted'
   }
 }
 </script>

@@ -29549,15 +29549,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  computed: {
-	    isPureText: function isPureText() {
-	      return this.$els.trigger.children.length === 0;
-	    },
 	    hasSlot: function hasSlot() {
 	      return this._slotContents !== void 0;
 	    }
 	  },
 	  attached: function attached() {
-	    this.isPureText && (this.$els.trigger.style['border-bottom'] = '1px dotted black');
+	    this.$els.trigger.style['-webkit-text-decoration'] = 'underline dotted';
+	    this.$els.trigger.style['text-decoration'] = 'underline dotted';
 	  }
 	};
 	// </script>
@@ -31640,13 +31638,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 	    }
 	  },
-	  computed: {
-	    isPureText: function isPureText() {
-	      return this.$els.trigger.children.length === 0;
-	    }
-	  },
 	  attached: function attached() {
-	    this.isPureText && (this.$els.trigger.style['border-bottom'] = '1px dotted black');
+	    this.$els.trigger.style['-webkit-text-decoration'] = 'underline dotted';
+	    this.$els.trigger.style['text-decoration'] = 'underline dotted';
 	  }
 	};
 	// </script>
