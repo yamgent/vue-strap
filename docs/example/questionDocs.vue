@@ -23,6 +23,12 @@
                 </div>
             </Question>
         </div>
+        <p>If no Answer slot is specified, it will not show:</p>
+        <div class="bs-example">
+            <Question>
+                Body
+            </Question>
+        </div>
         <p>
             Question could be used with Morph component to create a inline question group.<br>
             Could be also stored in a remote file and load it when it is to be shown.
@@ -39,7 +45,7 @@
                     </div>
                 </Question>
             </morph>
-            <morph title="Remote question" src="/docs/question.html"></morph>
+            <morph title="Remote question" src="docs/question.html"></morph>
         </div>
         <p>
             Use <code>has-input</code> attribute to add an input box for user to enter their answer.
@@ -72,11 +78,16 @@
             <Question>
                 Body
                 <div slot="answer">
-                Answer
-            </div>
+                    Answer
+                </div>
             </Question>
 
-            Use inline with morph
+            If no Answer slot is specified, it will not show:
+            <Question>
+                Body
+            </Question>
+
+            Use inline with Morph
             <morph title="Review question">
                 <Question>
                     Body
@@ -90,7 +101,7 @@
             </morph>
 
             Use inline with Morph dynamic loading
-            <morph title="Review question" src="/docs/question.html">
+            <morph title="Remote question" src="docs/question.html">
             </morph>
         </doc-code>
         <doc-table>

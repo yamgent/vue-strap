@@ -36,10 +36,10 @@
       </panel>
     </doc-code>
     <br>
-    <h4>Panel has many types that changes the appearance of the panel.</h4>
+    <h4>Panel has many types that change its appearance.</h4>
     <div class="bs-example">
       <h5><code>Primary</code> type</h5>
-      <panel header="Seamless - Click to expand" type="primary">
+      <panel header="Primary - Click to expand" type="primary">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius
         eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur
         ullam voluptates!
@@ -52,10 +52,12 @@
       </panel>
     </div>
     <doc-code language="markup">
-      <panel header="Click to expand" type="seamless">
+      <panel header="Primary - Click to expand" type="primary">
         ...
       </panel>
-
+      <panel header="Seamless - Click to expand" type="seamless">
+        ...
+      </panel>
     </doc-code>
     <br>
     <h4>Show/Hide buttons using <code>no-switch</code> or <code>no-close</code></h4>
@@ -197,7 +199,7 @@
         <p>expandable</p>
         <p><code>Boolean</code></p>
         <p><code>true</code></p>
-        <p>Whether Panel is expandable</p>
+        <p>Whether Panel is expandable.</p>
       </div>
       <div>
         <p>expanded</p>
@@ -212,35 +214,41 @@
         <p>Whether Panel is minimized.</p>
       </div>
       <div>
-        <p>no-switch</p>
-        <p><code>Boolean</code></p>
-        <p><code>false</code></p>
-        <p>Whether to show the expand switch</p>
-      </div>
-      <div>
         <p>no-close</p>
         <p><code>Boolean</code></p>
         <p><code>false</code></p>
-        <p>Whether to show the close button</p>
+        <p>Whether to show the close button.</p>
+      </div>
+      <div>
+        <p>no-switch</p>
+        <p><code>Boolean</code></p>
+        <p><code>false</code></p>
+        <p>Whether to show the expand switch.</p>
+      </div>
+      <div>
+        <p>bottom-switch</p>
+        <p><code>Boolean</code></p>
+        <p><code>false</code></p>
+        <p>Whether to show an expand switch at the bottom of the panel. Independent of no-switch.</p>
       </div>
       <div>
         <p>url</p>
         <p><code>String</code></p>
-        <p><code></code></p>
-        <p>The url to the remote page that to be loaded as the content of the panel.</p>
+        <p></p>
+        <p>The url to the remote page to be loaded as the content of the panel.</p>
       </div>
       <div>
         <p>type</p>
         <p><code>String</code></p>
         <p><code>null</code></p>
         <p>
-          Define the type of color for the tab (single).<br>
+          The type of color for the tab (single).<br>
           Support: <code>default</code>, <code>primary</code>, <code>info</code>, <code>success</code>,
           <code>warning</code>, <code>danger</code>, <code>seamless</code>
         </p>
       </div>
     </doc-table>
-    <p>If you want to personalice your header with some html you can use the slot instead of header attribute (panel&nbsp;#1 in the example).</p>
+    <p>If you want to personalize your header with some html, you can use the slot instead of header attribute (panel&nbsp;#1 in the example).</p>
   </doc-section>
 </template>
 

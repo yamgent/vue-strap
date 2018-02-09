@@ -15,7 +15,7 @@
                     </slot>
                 </panel>
             </div>
-            <panel header="Answer" expandable no-close>
+            <panel v-show="hasAnswerSlot" header="Answer" expandable no-close>
                 <slot name="answer"></slot>
             </panel>
         </accordion>
@@ -43,10 +43,13 @@
     },
     data () {
       return {
+        hasAnswerSlot: true,
         hasHintSlot: true
       }
     },
     attached() {
+      let hasAnswerSlot = !!this.$el.querySelector('[slot="answer"]');
+      this.hasAnswerSlot = hasAnswerSlot
       let hasHintSlot = !!this.$el.querySelector('[slot="hint"]');
       this.hasHintSlot = hasHintSlot
     }

@@ -51,7 +51,7 @@
           case 'success':
             return '✅'
           case 'important':
-            return '🔑'
+            return '🚩'
           case 'tip':
             return '💡'
           case 'definition':

@@ -1,11 +1,11 @@
 <template>
-  <span v-el:trigger><slot></slot></span><!--
+  <span v-el:trigger v-on:click="void(0)"><slot></slot></span><!--
   --><div v-el:popover v-if="show" style="display:block;"
     :class="['tooltip',placement]"
     :transition="effect"
   >
     <div class="tooltip-arrow"></div>
-    <div class="tooltip-inner">
+    <div class="tooltip-inner" v-on:click="void(0)">
       <slot name="content">{{{contentRendered}}}</slot>
    </div>
   </div>
