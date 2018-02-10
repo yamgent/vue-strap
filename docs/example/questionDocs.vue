@@ -1,8 +1,8 @@
 <template>
     <doc-section id="question" name="Question">
-        <p>
-            Question shows a structure like below, which consists of a question body, hint and answer.
-        </p>
+        <h4>
+            Question component consists of a question body, a hint and an answer.
+        </h4>
         <div class="bs-example">
             <Question>
                 Body
@@ -14,7 +14,7 @@
                 </div>
             </Question>
         </div>
-        <p>If no Hint slot is specified, it will not show:</p>
+        <h4>If no Hint slot is specified, it will not show:</h4>
         <div class="bs-example">
             <Question>
                 Body
@@ -23,15 +23,17 @@
                 </div>
             </Question>
         </div>
-        <p>If no Answer slot is specified, it will not show:</p>
+        <h4>If no Answer slot is specified, it will not show:</h4>
         <div class="bs-example">
             <Question>
                 Body
             </Question>
         </div>
+        <h4>
+            Question component can be used with Morph component to create an inline question group.
+        </h4>
         <p>
-            Question could be used with Morph component to create a inline question group.<br>
-            Could be also stored in a remote file and load it when it is to be shown.
+            It can also be stored in a remote file and loaded when it is to be shown.
         </p>
         <div class="bs-example">
             <morph title="Review question">
@@ -47,9 +49,9 @@
             </morph>
             <morph title="Remote question" src="docs/question.html"></morph>
         </div>
-        <p>
-            Use <code>has-input</code> attribute to add an input box for user to enter their answer.
-        </p>
+        <h4>
+            Use <code>has-input</code> attribute to add an input box for users to enter their answer.
+        </h4>
         <div class="bs-example">
             <Question has-input>
                 Body
