@@ -14,6 +14,18 @@
                 </div>
             </Question>
         </div>
+        <doc-code language="markup">
+            <Question>
+                Body
+                <div slot="hint">
+                    Hint
+                </div>
+                <div slot="answer">
+                    Answer
+                </div>
+            </Question>
+        </doc-code>
+        <br>
         <h4>If no Hint slot is specified, it will not show:</h4>
         <div class="bs-example">
             <Question>
@@ -29,6 +41,21 @@
                 Body
             </Question>
         </div>
+        <doc-code language="markup">
+            If no Hint slot is specified, it will not show:
+            <Question>
+                Body
+                <div slot="answer">
+                    Answer
+                </div>
+            </Question>
+
+            If no Answer slot is specified, it will not show:
+            <Question>
+                Body
+            </Question>
+        </doc-code>
+        <br>
         <h4>
             Question component can be used with Morph component to create an inline question group.
         </h4>
@@ -49,46 +76,7 @@
             </morph>
             <morph title="Remote question" src="docs/question.html"></morph>
         </div>
-        <h4>
-            Use <code>has-input</code> attribute to add an input box for users to enter their answer.
-        </h4>
-        <div class="bs-example">
-            <Question has-input>
-                Body
-                <div slot="hint">
-                    Hint
-                </div>
-                <div slot="answer">
-                    Answer
-                </div>
-            </Question>
-        </div>
-
         <doc-code language="markup">
-            Use alone
-            <Question>
-                Body
-                <div slot="hint">
-                    Hint
-                </div>
-                <div slot="answer">
-                    Answer
-                </div>
-            </Question>
-
-            If no Hint slot is specified, it will not show:
-            <Question>
-                Body
-                <div slot="answer">
-                    Answer
-                </div>
-            </Question>
-
-            If no Answer slot is specified, it will not show:
-            <Question>
-                Body
-            </Question>
-
             Use inline with Morph
             <morph title="Review question">
                 <Question>
@@ -106,8 +94,33 @@
             <morph title="Remote question" src="docs/question.html">
             </morph>
         </doc-code>
+        <br>
+        <h4>
+            Use <code>has-input</code> attribute to add an input box for users to enter their answer.
+        </h4>
+        <div class="bs-example">
+            <Question has-input>
+                Body
+                <div slot="hint">
+                    Hint
+                </div>
+                <div slot="answer">
+                    Answer
+                </div>
+            </Question>
+        </div>
+        <doc-code language="markup">
+            <Question has-input>
+                Body
+                <div slot="hint">
+                    Hint
+                </div>
+                <div slot="answer">
+                    Answer
+                </div>
+            </Question>
+        </doc-code>
         <doc-table>
-
         </doc-table>
     </doc-section>
 </template>
