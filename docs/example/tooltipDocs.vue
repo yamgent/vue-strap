@@ -23,7 +23,7 @@
       </tooltip>
       <h4>Free Text</h4>
       <tooltip content=" coupling is the degree of interdependence between software modules; a measure of how closely
-  connected two routines or modules are; the strength of the relationships between modules.">coupling</tooltip>
+  connected two routines or modules are; the strength of the relationships between modules."><i>coupling</i></tooltip>
 
     </div>
     <doc-code language="markup">
