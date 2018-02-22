@@ -14,6 +14,10 @@
       },
       _triggerBy: {
         type: Object
+      },
+      _isBinded: {
+        type: Boolean,
+        default: false
       }
     },
     attached () {
@@ -33,8 +37,13 @@
     },
     methods: {
       setTriggerBy (vm) {
-        this._triggerBy = vm
-      }
+        if (!this._isBinded) {
+        let events = {contextmenu: 'contextmenu', hover: 'mouseleave mouseenter', focus: 'blur focus'}
+          this._isBinded = true
+          this._triggerBy = vm
+          jQuery(this.$el).on(events[this.trigger] || 'click', this._triggerBy.toggle)
+        }
+       }
     }
   }
 </script>

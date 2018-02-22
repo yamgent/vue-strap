@@ -53,10 +53,8 @@ export default {
      * @param el a Vue instance
      */
     setTrigger (el) {
-      let events = {contextmenu: 'contextmenu', hover: 'mouseleave mouseenter', focus: 'blur focus'}
       this.trigger = el.trigger // trigger event
       this._trigger = el.$el
-      jQuery(el.$el).on(events[this.trigger] || 'click', this.toggle)
     },
     toggle (e) {
       if (e && this.trigger === 'contextmenu') e.preventDefault()
