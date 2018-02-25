@@ -24,6 +24,7 @@ import showModal from './directives/ShowModal'
 import pic from './Pic.vue'
 import tipBox from './TipBox.vue'
 import trigger from './trigger.vue'
+import typeahead from './Typeahead.vue'
 
 const components = {
   accordion,
@@ -46,7 +47,8 @@ const components = {
   tipBox,
   tooltip,
   pic,
-  trigger
+  trigger,
+  typeahead
 }
 
 const directives = {
