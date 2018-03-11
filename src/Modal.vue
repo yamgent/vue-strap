@@ -134,9 +134,6 @@ export default {
     'trigger:bind': function (el, id) {
       if (id === this.id) {
         el.setTriggerBy(this)
-        // Add event listener for the el
-        let events = {contextmenu: 'contextmenu', hover: 'mouseleave mouseenter', focus: 'blur focus'}
-        jQuery(el.$el).on(events[el.trigger] || 'click', this.toggle)
       }
     }
   },
