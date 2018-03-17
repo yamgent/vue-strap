@@ -88,6 +88,7 @@ export default {
     let height = this.$el.offsetHeight
     if (this.placement === 'top') {
       document.body.style.paddingTop = height + 'px'
+      $(window).on('hashchange', () => scrollBy(0, -height))
     }
     if (this.placement === 'bottom') {
       document.body.style.paddingBottom = height + 'px'
