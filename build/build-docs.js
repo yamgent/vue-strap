@@ -31625,6 +31625,9 @@
 	    var height = this.$el.offsetHeight;
 	    if (this.placement === 'top') {
 	      document.body.style.paddingTop = height + 'px';
+	      (0, _NodeList2.default)(window).on('hashchange', function () {
+	        return scrollBy(0, -height);
+	      });
 	    }
 	    if (this.placement === 'bottom') {
 	      document.body.style.paddingBottom = height + 'px';
