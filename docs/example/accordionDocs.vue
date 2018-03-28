@@ -39,13 +39,13 @@
     <h4>Panel has many types that change its appearance.</h4>
     <div class="bs-example">
       <h5><code>Primary</code> type</h5>
-      <panel header="Primary - Click to expand" type="primary">
+      <panel header="## Primary - Click to expand" type="primary">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius
         eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur
         ullam voluptates!
       </panel>
       <h5><code>Seamless</code> panel type</h5>
-      <panel header="Seamless - Click to expand" type="seamless">
+      <panel header="## Seamless - Click to expand" type="seamless">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dignissimos, doloribus dolorum ducimus eius
         eligendi est et excepturi iure iusto laborum, perferendis possimus quod repudiandae sapiente similique tenetur
         ullam voluptates!

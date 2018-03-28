@@ -22,7 +22,7 @@
                 <div class="header-wrapper">
                     <span :class="['caret', {'caret-collapse': !expanded}]" v-show="showCaret"></span>
                     <slot name="header">
-                        <span class="panel-title">{{{headerContent}}}</span>
+                        <div class="panel-title">{{{headerContent}}}</div>
                     </slot>
                 </div>
                 <div class="button-wrapper">
@@ -140,7 +140,7 @@
         return 'panel panel-' + (this.type || (this.inAccordion && this.$parent.type) || 'default')
       },
       headerContent () {
-        return md.renderInline(this.header);
+        return md.render(this.header);
       },
       altContent () {
         return this.alt && md.renderInline(this.alt) || md.renderInline(this.header);
@@ -245,7 +245,13 @@
     }
 
     .panel-title {
+        display: inline-block;
         font-size: 1em;
+        vertical-align: middle;
+    }
+
+    .panel-title * {
+        margin: 0px;
     }
 
     .header-wrapper {
