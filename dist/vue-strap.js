@@ -14768,7 +14768,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	//                     <template v-if="altContent">
 	
-	//                         <span class="panel-title">{{{altContent}}}</span>
+	//                         <div class="panel-title">{{{altContent}}}</div>
 	
 	//                     </template>
 	
@@ -14776,7 +14776,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	//                         <slot name="header">
 	
-	//                             <span class="panel-title">{{{altContent}}}</span>
+	//                             <div class="panel-title">{{{altContent}}}</div>
 	
 	//                         </slot>
 	
@@ -14949,7 +14949,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return _markdown2.default.render(this.header);
 	    },
 	    altContent: function altContent() {
-	      return this.alt && _markdown2.default.renderInline(this.alt) || _markdown2.default.renderInline(this.header);
+	      return this.alt && _markdown2.default.render(this.alt) || _markdown2.default.render(this.header);
 	    },
 	    isDynamic: function isDynamic() {
 	      return this.src && this.src.length > 0;
@@ -27830,7 +27830,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 247 */
 /***/ (function(module, exports) {
 
-	module.exports = "<span class=\"panel-container\">\r\n        <div class=\"morph\" v-show=\"minimized\">\r\n            <div class=\"morph-display-wrapper\" v-on:click=\"open()\">\r\n                <button class=\"morph-display-button btn btn-default\">\r\n                    <template v-if=\"altContent\">\r\n                        <span class=\"panel-title\">{{{altContent}}}</span>\r\n                    </template>\r\n                    <template v-else>\r\n                        <slot name=\"header\">\r\n                            <span class=\"panel-title\">{{{altContent}}}</span>\r\n                        </slot>\r\n                    </template>\r\n                </button>\r\n            </div>\r\n        </div>\r\n\r\n        <div :class=\"['panel', panelType, {'expandable-panel': isExpandablePanel}]\" v-else>\r\n            <div :class=\"['panel-heading',{'accordion-toggle':canCollapse}]\"\r\n                 @click.prevent.stop=\"canCollapse && toggle()\"\r\n                 @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\r\n                <div class=\"header-wrapper\">\r\n                    <span :class=\"['caret', {'caret-collapse': !expanded}]\" v-show=\"showCaret\"></span>\r\n                    <slot name=\"header\">\r\n                        <div class=\"panel-title\">{{{headerContent}}}</div>\r\n                    </slot>\r\n                </div>\r\n                <div class=\"button-wrapper\">\r\n                    <slot name=\"button\">\r\n                        <panel-switch v-show=\"canCollapse && !noSwitch && !showCaret\" v-bind:is-open=\"expanded\"\r\n                                      @click.stop.prevent=\"expand()\"></panel-switch>\r\n                        <button type=\"button\" class=\"close-button btn btn-default\"\r\n                                v-show=\"this.type !== 'seamless' ? (!noClose) : onHeaderHover\"\r\n                                @click.stop=\"close()\">\r\n                            <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\r\n                        </button>\r\n                    </slot>\r\n                </div>\r\n            </div>\r\n            <div class=\"panel-collapse\"\r\n                 v-el:panel\r\n                 v-show=\"expanded\"\r\n            >\r\n                <div class=\"panel-body\">\r\n                    <slot></slot>\r\n                    <retriever v-if=\"isDynamic\" v-ref:retriever :src=\"src\" :fragment=\"fragment\" delay></retriever>\r\n                    <panel-switch v-show=\"canCollapse && bottomSwitch\" v-bind:is-open=\"expanded\"\r\n                                  @click.stop.prevent=\"collapseThenScrollIntoViewIfNeeded()\"></panel-switch>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </span>";
+	module.exports = "<span class=\"panel-container\">\r\n        <div class=\"morph\" v-show=\"minimized\">\r\n            <div class=\"morph-display-wrapper\" v-on:click=\"open()\">\r\n                <button class=\"morph-display-button btn btn-default\">\r\n                    <template v-if=\"altContent\">\r\n                        <div class=\"panel-title\">{{{altContent}}}</div>\r\n                    </template>\r\n                    <template v-else>\r\n                        <slot name=\"header\">\r\n                            <div class=\"panel-title\">{{{altContent}}}</div>\r\n                        </slot>\r\n                    </template>\r\n                </button>\r\n            </div>\r\n        </div>\r\n\r\n        <div :class=\"['panel', panelType, {'expandable-panel': isExpandablePanel}]\" v-else>\r\n            <div :class=\"['panel-heading',{'accordion-toggle':canCollapse}]\"\r\n                 @click.prevent.stop=\"canCollapse && toggle()\"\r\n                 @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\r\n                <div class=\"header-wrapper\">\r\n                    <span :class=\"['caret', {'caret-collapse': !expanded}]\" v-show=\"showCaret\"></span>\r\n                    <slot name=\"header\">\r\n                        <div class=\"panel-title\">{{{headerContent}}}</div>\r\n                    </slot>\r\n                </div>\r\n                <div class=\"button-wrapper\">\r\n                    <slot name=\"button\">\r\n                        <panel-switch v-show=\"canCollapse && !noSwitch && !showCaret\" v-bind:is-open=\"expanded\"\r\n                                      @click.stop.prevent=\"expand()\"></panel-switch>\r\n                        <button type=\"button\" class=\"close-button btn btn-default\"\r\n                                v-show=\"this.type !== 'seamless' ? (!noClose) : onHeaderHover\"\r\n                                @click.stop=\"close()\">\r\n                            <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\r\n                        </button>\r\n                    </slot>\r\n                </div>\r\n            </div>\r\n            <div class=\"panel-collapse\"\r\n                 v-el:panel\r\n                 v-show=\"expanded\"\r\n            >\r\n                <div class=\"panel-body\">\r\n                    <slot></slot>\r\n                    <retriever v-if=\"isDynamic\" v-ref:retriever :src=\"src\" :fragment=\"fragment\" delay></retriever>\r\n                    <panel-switch v-show=\"canCollapse && bottomSwitch\" v-bind:is-open=\"expanded\"\r\n                                  @click.stop.prevent=\"collapseThenScrollIntoViewIfNeeded()\"></panel-switch>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </span>";
 
 /***/ }),
 /* 248 */

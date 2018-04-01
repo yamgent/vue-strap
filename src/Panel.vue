@@ -4,11 +4,11 @@
             <div class="morph-display-wrapper" v-on:click="open()">
                 <button class="morph-display-button btn btn-default">
                     <template v-if="altContent">
-                        <span class="panel-title">{{{altContent}}}</span>
+                        <div class="panel-title">{{{altContent}}}</div>
                     </template>
                     <template v-else>
                         <slot name="header">
-                            <span class="panel-title">{{{altContent}}}</span>
+                            <div class="panel-title">{{{altContent}}}</div>
                         </slot>
                     </template>
                 </button>
@@ -143,7 +143,7 @@
         return md.render(this.header);
       },
       altContent () {
-        return this.alt && md.renderInline(this.alt) || md.renderInline(this.header);
+        return this.alt && md.render(this.alt) || md.render(this.header);
       },
       isDynamic () {
         return this.src && this.src.length > 0;
