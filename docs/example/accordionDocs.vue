@@ -53,13 +53,14 @@
       </panel>
     </div>
     <doc-code language="markup">
-      <panel header="Primary - Click to expand" type="primary">
+      <panel header="#### Primary - Click to expand" type="primary">
         ...
       </panel>
-      <panel header="Seamless - Click to expand" type="seamless">
+      <panel header="#### Seamless - Click to expand" type="seamless">
         ...
       </panel>
     </doc-code>
+    <br>
     <h4>Show/Hide buttons using <code>no-switch</code> or <code>no-close</code></h4>
     <div class="bs-example">
       <panel header="Header" no-switch>
