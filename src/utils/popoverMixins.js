@@ -74,12 +74,14 @@ export default {
         console.log(trigger.offsetTop)
         console.log(popover.offsetHeight)
         this.calculateOffset(trigger, popover)
+        this.updateOffsetForMargins(popover)
         popover.style.top = this.position.top + 'px'
         popover.style.left = this.position.left + 'px'
         if (this.$els.arrow) {
           let actualWidth  = popover.offsetWidth
           let actualHeight = popover.offsetHeight
           this.calculateOffset(trigger, popover) // Update for CSS adjustment
+          this.updateOffsetForMargins(popover)
           let delta = this.getViewportAdjustedDelta(this.position, actualWidth, actualHeight)
           if (delta.left) this.position.left += delta.left
           else this.position.top += delta.top
@@ -112,6 +114,17 @@ export default {
           break
         default:
           console.warn('Wrong placement prop')
+      }
+    },
+    updateOffsetForMargins (popover) {
+      const rect = popover.getBoundingClientRect()
+      if (rect.left < 0) {
+        this.position.left -= rect.left
+        const marginLeft = parseInt(jQuery(popover).css('margin-left'), 10)
+        if (marginLeft < 0) {
+          this.position.left += marginLeft
+          popover.style.marginLeft = 0
+        }
       }
     },
     getViewportAdjustedDelta (pos, actualWidth, actualHeight) {
