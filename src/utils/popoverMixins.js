@@ -2,6 +2,14 @@ import {coerce} from './utils.js'
 import $ from './NodeList.js'
 import md from './markdown.js'
 
+function getFirst(nodeList) {
+  return nodeList && (nodeList.length ? nodeList[0] : nodeList)
+}
+
+function getFirstChild(node) {
+  return node && (node.children.length ? node.children[0] : node)
+}
+
 export default {
   props: {
     trigger: {
@@ -48,25 +56,17 @@ export default {
     }
   },
   methods: {
-    /**
-     * Reset the trigger element
-     * @param el a Vue instance
-     */
-    setTrigger (el) {
-      this.trigger = el.trigger // trigger event
-      this._trigger = el.$el
-    },
     toggle (e) {
-      if (e && this.trigger === 'contextmenu') e.preventDefault()
+      let trigger = getFirstChild(this.$els.trigger)
+      if (e && this.trigger === 'contextmenu' && trigger === e.target) e.preventDefault()
       if (!(this.show = !this.show)) {
         return
       }
-      let trigger = this._trigger.children.length === 0 ? this._trigger : this._trigger.children[0]
       if (e) {
         let target = e.target
-        if (trigger != e.target) {
+        if (trigger !== target && getFirst(this._trigger) !== target) {
           // Multiple triggers share this popover
-          trigger = target.children.length === 0 ? target : target.children[0]
+          trigger = getFirstChild(target)
         }
       }
       setTimeout(() => {

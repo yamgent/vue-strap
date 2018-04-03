@@ -14,19 +14,16 @@
       },
       _triggerBy: {
         type: Object
-      },
-      _isBinded: {
-        type: Boolean,
-        default: false
       }
     },
     attached () {
       let events = {contextmenu: 'contextmenu', hover: 'mouseleave mouseenter', focus: 'blur focus'}
-      jQuery(this.$el).on(events[this.trigger] || 'click', () => {
+      jQuery(this.$el).on(events[this.trigger] || 'click', (e) => {
+        if (e && this.trigger === 'contextmenu') e.preventDefault()
         if (!this._triggerBy) {
           this.$dispatch('trigger:register', this, this.for)
-          this._triggerBy && this._triggerBy.toggle()
         }
+        this._triggerBy && this._triggerBy.toggle(e)
       })
 
       this.$els.trigger.style['border-bottom'] = (this.trigger === 'click') ? '1px dashed #333' : '1px dotted #333'
@@ -37,13 +34,8 @@
     },
     methods: {
       setTriggerBy (vm) {
-        if (!this._isBinded) {
-        let events = {contextmenu: 'contextmenu', hover: 'mouseleave mouseenter', focus: 'blur focus'}
-          this._isBinded = true
-          this._triggerBy = vm
-          jQuery(this.$el).on(events[this.trigger] || 'click', this._triggerBy.toggle)
-        }
-       }
+        this._triggerBy = vm
+      }
     }
   }
 </script>
