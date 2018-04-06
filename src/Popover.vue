@@ -1,12 +1,12 @@
 <template>
-  <span v-el:trigger v-if="hasSlot" v-on:click="void(0)"><slot></slot></span><!--
+  <span v-el:trigger v-if="hasSlot" v-on:click="false"><slot></slot></span><!--
   --><div v-el:popover v-if="show"
     :class="['popover',placement]"
     :transition="effect"
   >
     <div class="arrow" v-el:arrow></div>
-    <h3 class="popover-title" v-if="title" v-on:click="void(0)"><slot name="title">{{{titleRendered}}}</slot></h3>
-    <div class="popover-content" v-on:click="void(0)"><slot name="content">{{{contentRendered}}}</slot></div>
+    <h3 class="popover-title" v-if="title" v-on:click="false"><slot name="title">{{{titleRendered}}}</slot></h3>
+    <div class="popover-content" v-on:click="false"><slot name="content">{{{contentRendered}}}</slot></div>
   </div>
 </template>
 
@@ -25,20 +25,19 @@ export default {
     'trigger:bind': function (el, id) {
       if (id === this.id) {
         el.setTriggerBy(this)
-        this.setTrigger(el) // rebind events
       }
     }
   },
   computed: {
-    isPureText () {
-      return this.$els.trigger.children.length === 0
-    },
     hasSlot () {
       return this._slotContents !== void 0
     }
   },
   attached () {
-    this.isPureText && (this.$els.trigger.style['border-bottom'] = '1px dotted black')
+    if (this.$els.trigger) {
+      this.$els.trigger.style['-webkit-text-decoration'] = 'underline dotted'
+      this.$els.trigger.style['text-decoration'] = 'underline dotted'
+    }
   }
 }
 </script>

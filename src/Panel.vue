@@ -4,11 +4,11 @@
             <div class="morph-display-wrapper" v-on:click="open()">
                 <button class="morph-display-button btn btn-default">
                     <template v-if="altContent">
-                        <span class="panel-title">{{{altContent}}}</span>
+                        <div class="panel-title">{{{altContent}}}</div>
                     </template>
                     <template v-else>
                         <slot name="header">
-                            <span class="panel-title">{{{altContent}}}</span>
+                            <div class="panel-title">{{{altContent}}}</div>
                         </slot>
                     </template>
                 </button>
@@ -22,7 +22,7 @@
                 <div class="header-wrapper">
                     <span :class="['caret', {'caret-collapse': !expanded}]" v-show="showCaret"></span>
                     <slot name="header">
-                        <span class="panel-title">{{{headerContent}}}</span>
+                        <div class="panel-title">{{{headerContent}}}</div>
                     </slot>
                 </div>
                 <div class="button-wrapper">
@@ -140,10 +140,10 @@
         return 'panel panel-' + (this.type || (this.inAccordion && this.$parent.type) || 'default')
       },
       headerContent () {
-        return md.renderInline(this.header);
+        return md.render(this.header);
       },
       altContent () {
-        return this.alt && md.renderInline(this.alt) || md.renderInline(this.header);
+        return this.alt && md.render(this.alt) || md.render(this.header);
       },
       isDynamic () {
         return this.src && this.src.length > 0;
@@ -245,7 +245,13 @@
     }
 
     .panel-title {
+        display: inline-block;
         font-size: 1em;
+        vertical-align: middle;
+    }
+
+    .panel-title * {
+        margin: 0px;
     }
 
     .header-wrapper {

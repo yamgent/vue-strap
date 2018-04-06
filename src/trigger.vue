@@ -18,11 +18,12 @@
     },
     attached () {
       let events = {contextmenu: 'contextmenu', hover: 'mouseleave mouseenter', focus: 'blur focus'}
-      jQuery(this.$el).on(events[this.trigger] || 'click', () => {
+      jQuery(this.$el).on(events[this.trigger] || 'click', (e) => {
+        if (e && this.trigger === 'contextmenu') e.preventDefault()
         if (!this._triggerBy) {
           this.$dispatch('trigger:register', this, this.for)
-          this._triggerBy && this._triggerBy.toggle()
         }
+        this._triggerBy && this._triggerBy.toggle(e)
       })
 
       this.$els.trigger.style['border-bottom'] = (this.trigger === 'click') ? '1px dashed #333' : '1px dotted #333'

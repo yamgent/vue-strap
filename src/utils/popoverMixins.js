@@ -2,6 +2,14 @@ import {coerce} from './utils.js'
 import $ from './NodeList.js'
 import md from './markdown.js'
 
+function getFirst(nodeList) {
+  return nodeList && (nodeList.length ? nodeList[0] : nodeList)
+}
+
+function getFirstChild(node) {
+  return node && (node.children.length ? node.children[0] : node)
+}
+
 export default {
   props: {
     trigger: {
@@ -48,27 +56,17 @@ export default {
     }
   },
   methods: {
-    /**
-     * Reset the trigger element
-     * @param el a Vue instance
-     */
-    setTrigger (el) {
-      let events = {contextmenu: 'contextmenu', hover: 'mouseleave mouseenter', focus: 'blur focus'}
-      this.trigger = el.trigger // trigger event
-      this._trigger = el.$el
-      jQuery(el.$el).on(events[this.trigger] || 'click', this.toggle)
-    },
     toggle (e) {
-      if (e && this.trigger === 'contextmenu') e.preventDefault()
+      let trigger = getFirstChild(this.$els.trigger)
+      if (e && this.trigger === 'contextmenu' && trigger === e.target) e.preventDefault()
       if (!(this.show = !this.show)) {
         return
       }
-      let trigger = this._trigger.children.length === 0 ? this._trigger : this._trigger.children[0]
       if (e) {
         let target = e.target
-        if (trigger != e.target) {
+        if (trigger !== target && getFirst(this._trigger) !== target) {
           // Multiple triggers share this popover
-          trigger = target.children.length === 0 ? target : target.children[0]
+          trigger = getFirstChild(target)
         }
       }
       setTimeout(() => {
@@ -76,12 +74,14 @@ export default {
         console.log(trigger.offsetTop)
         console.log(popover.offsetHeight)
         this.calculateOffset(trigger, popover)
+        this.updateOffsetForMargins(popover)
         popover.style.top = this.position.top + 'px'
         popover.style.left = this.position.left + 'px'
         if (this.$els.arrow) {
           let actualWidth  = popover.offsetWidth
           let actualHeight = popover.offsetHeight
           this.calculateOffset(trigger, popover) // Update for CSS adjustment
+          this.updateOffsetForMargins(popover)
           let delta = this.getViewportAdjustedDelta(this.position, actualWidth, actualHeight)
           if (delta.left) this.position.left += delta.left
           else this.position.top += delta.top
@@ -114,6 +114,17 @@ export default {
           break
         default:
           console.warn('Wrong placement prop')
+      }
+    },
+    updateOffsetForMargins (popover) {
+      const rect = popover.getBoundingClientRect()
+      if (rect.left < 0) {
+        this.position.left -= rect.left
+        const marginLeft = parseInt(jQuery(popover).css('margin-left'), 10)
+        if (marginLeft < 0) {
+          this.position.left += marginLeft
+          popover.style.marginLeft = 0
+        }
       }
     },
     getViewportAdjustedDelta (pos, actualWidth, actualHeight) {
