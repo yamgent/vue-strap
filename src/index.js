@@ -25,7 +25,6 @@ import pic from './Pic.vue'
 import tipBox from './TipBox.vue'
 import trigger from './trigger.vue'
 import typeahead from './Typeahead.vue'
-import frontMatterSearch from './FrontMatterSearch.vue'
 
 const components = {
   accordion,
@@ -49,8 +48,7 @@ const components = {
   tooltip,
   pic,
   trigger,
-  typeahead,
-  frontMatterSearch
+  typeahead
 }
 
 const directives = {
