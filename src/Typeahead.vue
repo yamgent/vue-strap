@@ -32,6 +32,10 @@ const _DELAY_ = 200
 export default {
   created () {
     this.items = this.primitiveData
+    // register a partial:
+    if (this.templateName && this.templateName !== 'default') {
+      Vue.partial(this.templateName, this.template)
+    }
   },
   partials: {
     default: '<span v-html="item | highlight value"></span>'
@@ -106,12 +110,6 @@ export default {
           return this.matchStart ? value.indexOf(query) === 0 : value.indexOf(query) !== -1
         }).slice(0, this.limit)
       }
-    }
-  },
-  ready () {
-    // register a partial:
-    if (this.templateName && this.templateName !== 'default') {
-      Vue.partial(this.templateName, this.template)
     }
   },
   methods: {
