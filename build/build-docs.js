@@ -35587,6 +35587,10 @@
 	exports.default = {
 	  created: function created() {
 	    this.items = this.primitiveData;
+	    // register a partial:
+	    if (this.templateName && this.templateName !== 'default') {
+	      Vue.partial(this.templateName, this.template);
+	    }
 	  },
 	
 	  partials: {
@@ -35667,13 +35671,6 @@
 	      }
 	    }
 	  },
-	  ready: function ready() {
-	    // register a partial:
-	    if (this.templateName && this.templateName !== 'default') {
-	      Vue.partial(this.templateName, this.template);
-	    }
-	  },
-	
 	  methods: {
 	    update: function update() {
 	      if (!this.value) {
