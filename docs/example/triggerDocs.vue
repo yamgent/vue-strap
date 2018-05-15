@@ -12,29 +12,33 @@
 
         <h4>Using trigger for Tooltip</h4>
         <div class="bs-example">
-            More about <trigger for="tt:trigger">trigger</trigger>
+            More about <trigger for="tt:trigger">trigger</trigger>.
             <tooltip id="tt:trigger" content="This tooltip triggered by a trigger"></tooltip>
             <br>
             This is the same <trigger for="tt:trigger">trigger</trigger> as last one.
         </div>
         <doc-code language="markup">
-            More about <trigger for="tt:trigger">trigger</trigger>
+            More about <trigger for="tt:trigger_id">trigger</trigger>.
             <tooltip id="tt:trigger_id" content="This tooltip triggered by a trigger"></tooltip>
+            <br>
+            This is the same <trigger for="tt:trigger_id">trigger</trigger> as last one.
         </doc-code>
         <h4>Using trigger for Popover</h4>
         <div class="bs-example">
-            More about <trigger for="pop:trigger">trigger</trigger>
+            More about <trigger for="pop:trigger">trigger</trigger>.
             <popover id="pop:trigger" content="This popover is triggered by a trigger"></popover>
             <br>
             This is the same <trigger for="pop:trigger">trigger</trigger> as last one.
         </div>
         <doc-code language="markup">
-            More about <trigger for="pop:trigger_id">trigger</trigger>
+            More about <trigger for="pop:trigger_id">trigger</trigger>.
             <popover id="pop:trigger_id" content="This popover is triggered by a trigger"></popover>
+            <br>
+            This is the same <trigger for="pop:trigger_id">trigger</trigger> as last one.
         </doc-code>
         <h4>Using trigger for Modal</h4>
         <div class="bs-example">
-            More about <trigger trigger="click" for="modal:trigger">trigger</trigger>
+            More about <trigger for="modal:trigger">trigger</trigger>.
             <modal title="**Modal title** :rocket:" id="modal:trigger">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -47,10 +51,12 @@
             This is the same <trigger for="modal:trigger">trigger</trigger> as last one.
         </div>
         <doc-code language="markup">
-            More about <trigger for="modal:trigger" trigger="click">trigger</trigger>
-            <modal title="**Modal title** :rocket:" id="modal:trigger">
+            More about <trigger for="modal:trigger_id">trigger</trigger>.
+            <modal title="**Modal title** :rocket:" id="modal:trigger_id">
                 ...
             </modal>
+            <br>
+            This is the same <trigger for="modal:trigger_id">trigger</trigger> as last one.
         </doc-code>
         <doc-table>
             <div>
