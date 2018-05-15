@@ -47,6 +47,7 @@
                     <panel-switch v-show="canCollapse && bottomSwitch" v-bind:is-open="expanded"
                                   @click.stop.prevent="collapseThenScrollIntoViewIfNeeded()"></panel-switch>
                 </div>
+                <hr v-show="this.type === 'seamless'" />
             </div>
         </div>
     </span>
@@ -298,8 +299,18 @@
         padding: 0;
     }
 
+    .panel-seamless > .panel-collapse > hr {
+        margin: 0;
+        width: calc(100% - 27px);
+    }
+
     .panel-seamless > .panel-collapse > .panel-body {
         padding: 10px 0;
+    }
+
+    .panel-seamless > .panel-collapse > .panel-body > .collapse-button {
+        position: relative;
+        top: 22px;
     }
 
     .panel-body > .collapse-button {
