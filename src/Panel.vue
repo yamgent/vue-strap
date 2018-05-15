@@ -175,6 +175,7 @@
         this.minimized = true;
       },
       open () {
+        this.expanded = true;
         this.minimized = false;
       },
       expandCollapseHandler (isExpand, level) {
