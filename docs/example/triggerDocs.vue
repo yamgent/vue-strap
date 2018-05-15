@@ -61,6 +61,28 @@
             <br>
             This is the same <trigger for="modal:trigger_id">trigger</trigger> as last one.
         </doc-code>
+        <br>
+        <h4>Trigger's <code>trigger</code> attribute (which defaults to <code>hover</code>) is independent of the target's.</h4>
+        <div class="bs-example">
+            This is a hover <trigger for="pop:xp-user-stories">trigger</trigger>.
+            <popover id="pop:xp-user-stories" trigger="click">
+              <div slot="content">
+                User stories...
+              </div>
+            </popover>
+            <br>
+            This is a click <trigger for="pop:xp-user-stories" trigger="click">trigger</trigger>.
+        </div>
+        <doc-code language="markup">
+            This is a hover <trigger for="pop:xp-user-stories">trigger</trigger>.
+            <popover id="pop:xp-user-stories" trigger="click">
+              <div slot="content">
+                User stories...
+              </div>
+            </popover>
+            <br>
+            This is a click <trigger for="pop:xp-user-stories" trigger="click">trigger</trigger>.
+        </doc-code>
         <doc-table>
             <div>
                 <p>trigger</p>
