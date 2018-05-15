@@ -1,15 +1,18 @@
 <template>
     <doc-section id="triggerDocs" name="Trigger">
         <p>
-            <code>Trigger</code> provides more flexibility for triggering contextual overlay such as popover, tooltip, modal.<br/>
-            You could embed an trigger within the text, and define the Tooltip or Popover at a separate location, which brings a cleaner authoring flow. <br>
-            Specify the <code>id</code> attribute on the popover, tooltip or modal component, and use the same id for the <code>for</code> attribute of the trigger
-            to allow trigger to invoke the specific overlay elements. <br>
+            Trigger provides more flexibility in triggering contextual overlay via Tooltip, Popover or Modal.
         </p>
         <p>
-            Multiple <code>trigger</code> could share the same overlay by providing them the same id.
+            You could embed a Trigger within the text, and define the Tooltip, Popover or Modal at a separate location, which allows for a cleaner authoring flow.
         </p>
-
+            Specify the <code>id</code> attribute on the Tooltip, Popover or Modal component, and use the same <code>id</code> in the <code>for</code> attribute of the Trigger
+            to allow the Trigger to invoke the specific overlay elements.
+        </p>
+        <p>
+            Additionally, multiple Triggers could share the same overlay by providing them with the same <code>id</code>.
+        </p>
+        <br>
         <h4>Using trigger for Tooltip</h4>
         <div class="bs-example">
             More about <trigger for="tt:trigger">trigger</trigger>.
@@ -63,7 +66,7 @@
                 <p>trigger</p>
                 <p><code>String</code>, one of <code>click</code> <code>focus</code> <code>hover</code> <code>contextmenu</code></p>
                 <p><code>hover</code></p>
-                <p>How trigger triggers its overflow view.</p>
+                <p>How its overlay view is triggered.</p>
             </div>
             <div>
                 <p>for</p>
