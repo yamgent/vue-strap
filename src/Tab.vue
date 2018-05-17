@@ -4,6 +4,7 @@
     :transition="transition"
   >
     <slot></slot>
+    <hr />
   </div>
 </template>
 
@@ -72,3 +73,8 @@ export default {
   }
 }
 </script>
+<style>
+    .tab-pane > hr {
+        margin: 0;
+    }
+</style>
