@@ -33,6 +33,9 @@
             </tip-box>
             <tip-box color="white" background-color="blue" border-color="darkblue">
                 default with custom colors
+            </tip-box>            
+            <tip-box background-color="white" border-color="grey" border-left-color="blue">
+                empty box with left border
             </tip-box>
         </div>
         <doc-code language="markup">
@@ -68,6 +71,9 @@
             </tip-box>
             <tip-box color="white" background-color="blue" border-color="darkblue">
                 default with custom colors
+            </tip-box>                       
+            <tip-box background-color="white" border-color="grey" border-left-color="blue">
+                empty box with left border
             </tip-box>
         </doc-code>
     </doc-section>

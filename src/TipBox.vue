@@ -21,6 +21,10 @@
         type: String,
         default: null
       },
+      borderLeftColor: {
+        type: String,
+        default: null
+      },
       color: {
         type: String,
         default: null
@@ -63,6 +67,9 @@
         }
         if (this.borderColor) {
           style.borderColor = this.borderColor;
+        }
+        if (this.borderLeftColor) {
+          style.borderLeft = `5px solid ${this.borderLeftColor}`;
         }
         if (this.color) {
           style.color = this.color;
