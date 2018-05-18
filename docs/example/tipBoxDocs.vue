@@ -1,5 +1,6 @@
 <template>
     <doc-section id="tipBoxDocs" name="TipBox">
+        <p>Alternative alias: box</p>
         <div class="bs-example">
             <tip-box>
                 default
@@ -34,9 +35,9 @@
             <tip-box color="white" background-color="blue" border-color="darkblue">
                 default with custom colors
             </tip-box>            
-            <tip-box background-color="white" border-color="grey" border-left-color="blue">
+            <box background-color="white" border-color="grey" border-left-color="blue">
                 empty box with left border
-            </tip-box>
+            </box>
         </div>
         <doc-code language="markup">
             <tip-box>
@@ -72,9 +73,9 @@
             <tip-box color="white" background-color="blue" border-color="darkblue">
                 default with custom colors
             </tip-box>                       
-            <tip-box background-color="white" border-color="grey" border-left-color="blue">
+            <box background-color="white" border-color="grey" border-left-color="blue">
                 empty box with left border
-            </tip-box>
+            </box>
         </doc-code>
         <doc-table name="TipBox Options">
           <div>

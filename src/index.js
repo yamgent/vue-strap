@@ -2,6 +2,7 @@ import accordion from './Accordion.vue'
 import affix from './Affix.vue'
 import alert from './Alert.vue'
 import aside from './Aside.vue'
+import box from './Box.vue'
 import carousel from './Carousel.vue'
 import checkbox from './Checkbox.vue'
 import dropdown from './Dropdown.vue'
@@ -30,6 +31,7 @@ const components = {
   accordion,
   affix,
   aside,
+  box,
   checkbox,
   dropdown,
   dynamicPanel,
