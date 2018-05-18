@@ -76,6 +76,44 @@
                 empty box with left border
             </tip-box>
         </doc-code>
+        <doc-table name="TipBox Options">
+          <div>
+            <p>backgroundColor</p>
+            <p><code>String</code></p>
+            <p><code>null</code></p>
+            <p>Color of the background.</p>
+          </div>
+          <div>
+            <p>borderColor</p>
+            <p><code>String</code></p>
+            <p><code>null</code></p>
+            <p>Color of the entire border.</p>
+          </div>
+          <div>
+            <p>borderLeftColor</p>
+            <p><code>String</code></p>
+            <p><code>null</code></p>
+            <p>Color of the left border.</p>
+          </div>
+          <div>
+            <p>color</p>
+            <p><code>String</code></p>
+            <p><code>null</code></p>
+            <p>Color of the text.</p>
+          </div>
+          <div>
+            <p>icon</p>
+            <p><code>String</code></p>
+            <p><code>null</code></p>
+            <p>Icon to be used inside.</p>
+          </div>
+          <div>
+            <p>type</p>
+            <p><code>String</code>, one of <code>warning</code>, <code>info</code>, <code>definition</code>, <code>success</code>, <code>tip</code>, <code>important</code>, <code>wrong</code>, or empty for default.</p>
+            <p><code>'none'</code></p>
+            <p></p>
+          </div>
+        </doc-table>
     </doc-section>
 </template>
 
