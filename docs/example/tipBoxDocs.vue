@@ -25,6 +25,15 @@
             <tip-box type="definition">
                 definition
             </tip-box>
+            <tip-box type="info" icon=":rocket:">
+                info but with rocket
+            </tip-box>
+            <tip-box type="info" color="white" background-color="red">
+                info but with different colors
+            </tip-box>
+            <tip-box color="white" background-color="blue" border-color="darkblue">
+                default with custom colors
+            </tip-box>
         </div>
         <doc-code language="markup">
             <tip-box>
@@ -50,6 +59,15 @@
             </tip-box>
             <tip-box type="definition">
                 definition
+            </tip-box>
+            <tip-box type="info" icon=":rocket:">
+                info but with rocket
+            </tip-box>
+            <tip-box type="info" color="white" background-color="red">
+                info but with different colors
+            </tip-box>
+            <tip-box color="white" background-color="blue" border-color="darkblue">
+                default with custom colors
             </tip-box>
         </doc-code>
     </doc-section>
