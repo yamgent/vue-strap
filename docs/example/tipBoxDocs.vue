@@ -1,6 +1,6 @@
 <template>
     <doc-section id="tipBoxDocs" name="TipBox">
-        <p>Alternative alias: box</p>
+        <p>Alias: box</p>
         <div class="bs-example">
             <tip-box>
                 default
@@ -26,18 +26,6 @@
             <tip-box type="definition">
                 definition
             </tip-box>
-            <tip-box type="info" icon=":rocket:">
-                info but with rocket
-            </tip-box>
-            <tip-box type="info" color="white" background-color="red">
-                info but with different colors
-            </tip-box>
-            <tip-box color="white" background-color="blue" border-color="darkblue">
-                default with custom colors
-            </tip-box>            
-            <box background-color="white" border-color="grey" border-left-color="blue">
-                empty box with left border
-            </box>
         </div>
         <doc-code language="markup">
             <tip-box>
@@ -64,37 +52,43 @@
             <tip-box type="definition">
                 definition
             </tip-box>
-            <tip-box type="info" icon=":rocket:">
-                info but with rocket
-            </tip-box>
-            <tip-box type="info" color="white" background-color="red">
-                info but with different colors
-            </tip-box>
-            <tip-box color="white" background-color="blue" border-color="darkblue">
-                default with custom colors
-            </tip-box>                       
+        </doc-code>
+        <br>
+        <h4>Custom boxes</h4>
+        <div class="bs-example">
             <box background-color="white" border-color="grey" border-left-color="blue">
-                empty box with left border
+                default, styled as empty box with blue left border
+            </box>
+            <box type="info" icon=":rocket:">
+                info, with rocket icon
+            </box>
+        </div>
+        <doc-code language="markup">
+            <box background-color="white" border-color="grey" border-left-color="blue">
+                default, styled as empty box with blue left border
+            </box>
+            <box type="info" icon=":rocket:">
+                info, with rocket icon
             </box>
         </doc-code>
-        <doc-table name="TipBox Options">
+        <doc-table name="TipBox">
           <div>
-            <p>backgroundColor</p>
+            <p>background-color</p>
             <p><code>String</code></p>
             <p><code>null</code></p>
-            <p>Color of the background.</p>
+            <p></p>
           </div>
           <div>
-            <p>borderColor</p>
+            <p>border-color</p>
             <p><code>String</code></p>
             <p><code>null</code></p>
-            <p>Color of the entire border.</p>
+            <p></p>
           </div>
           <div>
-            <p>borderLeftColor</p>
+            <p>border-left-color</p>
             <p><code>String</code></p>
             <p><code>null</code></p>
-            <p>Color of the left border.</p>
+            <p>Overrides border-color for the left border.</p>
           </div>
           <div>
             <p>color</p>
@@ -106,13 +100,13 @@
             <p>icon</p>
             <p><code>String</code></p>
             <p><code>null</code></p>
-            <p>Icon to be used inside.</p>
+            <p></p>
           </div>
           <div>
             <p>type</p>
-            <p><code>String</code>, one of <code>warning</code>, <code>info</code>, <code>definition</code>, <code>success</code>, <code>tip</code>, <code>important</code>, <code>wrong</code>, or empty for default.</p>
+            <p><code>String</code></p>
             <p><code>'none'</code></p>
-            <p></p>
+            <p>Support: <code>info</code>, <code>warning</code>, <code>success</code>, <code>important</code>, <code>wrong</code>, <code>tip</code>, <code>definition</code>, or empty for default.</p></p>
           </div>
         </doc-table>
     </doc-section>
