@@ -1,0 +1,10 @@
+*.min.*
+build
+dist
+docs/js/showLanguage.js
+src/directives
+src/utils
+
+!.eslintrc.js
+
+*.vue
