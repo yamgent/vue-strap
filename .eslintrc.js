@@ -20,5 +20,6 @@ module.exports = {
     'max-len': ['error', { 'code': 110 }],
     'operator-linebreak': ['error', 'before'],
     'quote-props': 'off',
+    'vue/order-in-components': 'off',
   },
 };
