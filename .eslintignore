@@ -8,8 +8,11 @@ src/utils
 !.eslintrc.js
 
 # yuche/vue-strap
+webpack.build.js
+webpack.config.js
 docs/affixSidebar.vue
 docs/bodyDocs.vue
+docs/index.js
 docs/example/accordionDocs.vue
 docs/example/affixDocs.vue
 docs/example/alertDocs.vue
@@ -46,7 +49,9 @@ src/Checkbox.vue
 src/Datepicker.vue
 src/Dropdown.vue
 src/FormGroup.vue
+src/index.js
 src/Input.vue
+src/main.js
 src/Modal.vue
 src/Navbar.vue
 src/Option.vue
