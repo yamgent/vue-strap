@@ -30,6 +30,7 @@ const components = {
   accordion,
   affix,
   aside,
+  box: tipBox,
   checkbox,
   dropdown,
   dynamicPanel,

@@ -1,5 +1,5 @@
 <template>
-    <div class="alert container" :class="[boxStyle]">
+    <div class="alert container" :class="[boxStyle]" :style="customStyle">
         <div class="icon-wrapper" v-if="!isDefault">
             <span>{{{iconType}}}</span>
         </div>
@@ -13,6 +13,26 @@
   import md from './utils/markdown.js'
   export default {
     props: {
+      backgroundColor: {
+        type: String,
+        default: null
+      },
+      borderColor: {
+        type: String,
+        default: null
+      },
+      borderLeftColor: {
+        type: String,
+        default: null
+      },
+      color: {
+        type: String,
+        default: null
+      },
+      icon: {
+        type: String,
+        default: null
+      },
       type: {
         type: String,
         default: 'none'
@@ -39,8 +59,27 @@
             return 'alert-default'
         }
       },
-
+      customStyle() {
+        var style = {};
+        if (this.backgroundColor) {
+          style.backgroundColor = this.backgroundColor;
+          style.borderColor = this.backgroundColor;
+        }
+        if (this.borderColor) {
+          style.borderColor = this.borderColor;
+        }
+        if (this.borderLeftColor) {
+          style.borderLeft = `5px solid ${this.borderLeftColor}`;
+        }
+        if (this.color) {
+          style.color = this.color;
+        }
+        return style;
+      },
       iconType() {
+        if (this.icon) {
+          return md.renderInline(this.icon);
+        }
         switch (this.type) {
           case 'wrong':
             return '❌'
