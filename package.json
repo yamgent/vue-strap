@@ -83,6 +83,7 @@
     "docs": "webpack-dev-server --inline --hot --quiet --host 0.0.0.0",
     "gpages": "gh-pages -d .",
     "lint": "./node_modules/.bin/eslint . --ext .vue; exit 0",
+    "lintwin": "./node_modules/.bin/eslint . --ext .vue",
     "postversion": "git push && git push --tags",
     "version": "npm run build && git add -A dist"
   },
