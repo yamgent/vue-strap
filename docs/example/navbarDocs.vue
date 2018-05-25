@@ -39,7 +39,7 @@
         </li>
         <!-- For right positioning use slot -->
         <li slot="right">
-          <a href="https://github.com/yuche/vue-strap" target="_blank">Fork...</a>
+          <a href="https://github.com/MarkBind/vue-strap" target="_blank">Fork...</a>
         </li>
       </navbar>
     </doc-code>
