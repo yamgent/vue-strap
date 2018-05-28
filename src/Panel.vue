@@ -34,6 +34,11 @@
                                 @click.stop="close()">
                             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                         </button>
+                        <button type="button" class="popup-button btn btn-default"
+                                v-show="this.popupUrl !== null"
+                                @click.stop="openPopup()">
+                            <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
+                        </button>
                     </slot>
                 </div>
             </div>
@@ -109,6 +114,10 @@
         type: Boolean,
         coerce: coerce.boolean,
         default: false
+      },
+      popupUrl: {
+        type: String,
+        default: null
       },
       src: {
         type: String
@@ -200,6 +209,9 @@
           this.scrollIntoViewIfNeeded();
         });
         this.expand();
+      },
+      openPopup() {
+        window.open(this.popupUrl);
       }
     },
     watch: {
@@ -327,6 +339,13 @@
         font-size: 10px !important;
         float: right;
         padding: 3px 8px !important;
+    }
+
+    .popup-button {
+        font-size: 10px !important;
+        float: right;
+        padding: 3px 8px !important;
+        margin-right: 4px;
     }
 
     .morph {

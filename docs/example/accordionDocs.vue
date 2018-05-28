@@ -95,6 +95,20 @@
     <doc-code language="markup">
       <panel header="Dynamic Loading" src="docs/loadContent.html#fragment" minimized></panel>
     </doc-code>
+    <br>
+
+    <h4>If <code>popup-url</code> attribute is provided, a popup button will be shown. If clicked, it opens the specified url in a new window.</h4>
+    <div class="bs-example">
+      <panel header="Some panel" popup-url="docs/loadContent.html">
+        This panel has a popup.
+      </panel>
+    </div>
+    <doc-code language="markup">
+      <panel header="Some panel" popup-url="docs/loadContent.html">
+        This panel has a popup.
+      </panel>
+    </doc-code>
+    <br>
 
     <h4>Accordion could group panels together to provide better control</h4>
     <div class="bs-example">
@@ -231,6 +245,12 @@
         <p><code>Boolean</code></p>
         <p><code>false</code></p>
         <p>Whether to show an expand switch at the bottom of the panel. Independent of no-switch.</p>
+      </div>
+      <div>
+        <p>popup-url</p>
+        <p><code>String</code></p>
+        <p></p>
+        <p>The url that the popup window will navigate to. The url can be absolute or relative.</p>
       </div>
       <div>
         <p>url</p>
