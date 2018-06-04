@@ -4,25 +4,26 @@ import alert from './Alert.vue'
 import aside from './Aside.vue'
 import carousel from './Carousel.vue'
 import checkbox from './Checkbox.vue'
+import closeable from './directives/Closeable'
 import dropdown from './Dropdown.vue'
 import dynamicPanel from './DynamicPanel.vue'
 import input from './Input.vue'
 import modal from './Modal.vue'
 import morph from './Morph.vue'
 import navbar from './Navbar.vue'
-import question from './Question.vue'
 import panel from './Panel.vue'
+import pic from './Pic.vue'
 import popover from './Popover.vue'
+import question from './Question.vue'
 import retriever from './Retriever.vue'
+import searchbar from './Searchbar.vue'
 import select from './Select.vue'
+import showModal from './directives/ShowModal'
 import tab from './Tab.vue'
 import tabGroup from './TabGroup.vue'
 import tabset from './Tabset.vue'
-import tooltip from './Tooltip.vue'
-import closeable from './directives/Closeable'
-import showModal from './directives/ShowModal'
-import pic from './Pic.vue'
 import tipBox from './TipBox.vue'
+import tooltip from './Tooltip.vue'
 import trigger from './trigger.vue'
 import typeahead from './Typeahead.vue'
 
@@ -37,19 +38,20 @@ const components = {
   modal,
   morph,
   navbar,
-  question,
   panel,
+  pic,
   popover,
+  question,
   retriever,
+  searchbar,
   select,
   tab,
   tabGroup,
   tabs: tabset,
   tipBox,
   tooltip,
-  pic,
   trigger,
-  typeahead
+  typeahead,
 }
 
 const directives = {
