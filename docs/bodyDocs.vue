@@ -30,6 +30,7 @@
         <tooltip-docs></tooltip-docs>
         <popover-docs></popover-docs>
         <trigger-docs></trigger-docs>
+        <searchbar-docs></searchbar-docs>
       </div>
       <div class="col-md-3">
         <affix-sidebar></affix-sidebar>
@@ -71,6 +72,7 @@ import selectDocs from './example/selectDocs.vue'
 import tabsDocs from './example/tabsDocs.vue'
 import tooltipDocs from './example/tooltipDocs.vue'
 import imageDocs from './example/imageDocs.vue'
+import searchbarDocs from './example/searchbarDocs.vue'
 import tipBoxDocs from './example/tipBoxDocs.vue'
 import triggerDocs from './example/triggerDocs.vue'
 
@@ -90,6 +92,7 @@ export default {
     questionDocs,
     popoverDocs,
     retrieverDocs,
+    searchbarDocs,
     selectDocs,
     tabsDocs,
     tooltipDocs,
