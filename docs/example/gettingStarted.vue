@@ -56,15 +56,15 @@
     <doc-code language="markup">
       <v-select :options="options"></v-select>
 
-      <script src="path/to/vue.js"></script>
-      <script src="path/to/vue-strap.js"></script>
-      <script>
+      &lt;script src="path/to/vue.js">&lt;/script>
+      &lt;script src="path/to/vue-strap.js">&lt;/script>
+      &lt;script>
         Vue.use(VueStrap)
         var vm = new Vue({
           el: 'body'
         })
         VueStrap.installEvents(vm)
-      </script>
+      &lt;/script>
     </doc-code>
   </div>
 </template>
