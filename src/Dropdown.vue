@@ -1,13 +1,12 @@
 <template>
   <li v-if="isLi" v-el:dropdown :class="classes">
     <slot name="button">
-      <a class="dropdown-toggle" role="button" :class="{disabled: disabled}" @keyup.esc="show = false">
-        {{{ text }}}
+      <a class="dropdown-toggle" role="button" :class="{disabled: disabled}" @keyup.esc="show = false" v-html="text">
         <span class="caret"></span>
       </a>
     </slot>
     <slot name="dropdown-menu">
-      <ul v-else class="dropdown-menu">
+      <ul v-if="!isLi" class="dropdown-menu">
         <slot></slot>
       </ul>
     </slot>
@@ -15,8 +14,7 @@
   <div v-else v-el:dropdown :class="classes">
     <slot name="before"></slot>
     <slot name="button">
-      <button type="button" class="btn btn-{{type}} dropdown-toggle" @keyup.esc="show = false" :disabled="disabled">
-        {{ text }}
+      <button type="button" class="btn dropdown-toggle" :class="btnType" @keyup.esc="show = false" :disabled="disabled" v-html="text">
         <span class="caret"></span>
       </button>
     </slot>
@@ -55,6 +53,9 @@ export default {
     }
   },
   computed: {
+    btnType () {
+      return `btn-${this.type}`;
+    },
     classes () {
       return [{open: this.show, disabled: this.disabled}, this.class, this.isLi ? 'dropdown' : this.inInput ? 'input-group-btn': 'btn-group']
     },
