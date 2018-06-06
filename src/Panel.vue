@@ -4,25 +4,25 @@
             <div class="morph-display-wrapper" v-on:click="open()">
                 <button class="morph-display-button btn btn-default">
                     <template v-if="altContent">
-                        <div class="panel-title">{{{altContent}}}</div>
+                        <div class="panel-title" v-html="altContent"></div>
                     </template>
                     <template v-else>
                         <slot name="header">
-                            <div class="panel-title">{{{altContent}}}</div>
+                            <div class="panel-title" v-html="altContent"></div>
                         </slot>
                     </template>
                 </button>
             </div>
         </div>
 
-        <div :class="['panel', panelType, {'expandable-panel': isExpandablePanel}]" v-else>
+        <div :class="['panel', panelType, {'expandable-panel': isExpandablePanel}]" v-if="!altContent">
             <div :class="['panel-heading',{'accordion-toggle':canCollapse}]"
                  @click.prevent.stop="canCollapse && toggle()"
                  @mouseover="onHeaderHover = true" @mouseleave="onHeaderHover = false">
                 <div class="header-wrapper">
                     <span :class="['caret', {'caret-collapse': !expanded}]" v-show="showCaret"></span>
                     <slot name="header">
-                        <div class="panel-title">{{{headerContent}}}</div>
+                        <div class="panel-title" v-html="headerContent"></div>
                     </slot>
                 </div>
                 <div class="button-wrapper">
