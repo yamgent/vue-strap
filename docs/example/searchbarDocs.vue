@@ -96,11 +96,11 @@
     Default template:
     <doc-code>
       <!-- eslint-disable vue/no-parsing-error, vue/valid-v-html -->
-      <span v-html="item.title | highlight value"></span>
+      <span v-html="highlight(item.title, value)"></span>
       <br v-if="item.keywords" />
-      <small v-if="item.keywords" v-html="item.keywords | highlight value"></small>
+      <small v-if="item.keywords" v-html="highlight(item.keywords, value)"></small>
       <br v-if="item.heading" />
-      <small v-if="item.heading" v-html="item.heading.text | highlight value"></small>
+      <small v-if="item.heading" v-html="highlight(item.heading.text, value)"></small>
       <!-- eslint-enable vue/no-parsing-error, vue/valid-v-html -->
     </doc-code>
   </doc-section>
