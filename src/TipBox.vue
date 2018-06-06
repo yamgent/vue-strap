@@ -1,7 +1,7 @@
 <template>
     <div class="alert container" :class="[boxStyle]" :style="customStyle">
         <div class="icon-wrapper" v-if="!isDefault">
-            <span>{{{iconType}}}</span>
+            <span v-html="iconType"></span>
         </div>
         <div class="contents">
             <slot></slot>
