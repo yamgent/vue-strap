@@ -15,6 +15,9 @@ export default {
   },
   computed: {
     primitiveData() {
+      if (this.value.length < 2) {
+        return [];
+      }
       if (!this.data) {
         return undefined;
       }
