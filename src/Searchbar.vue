@@ -22,14 +22,18 @@ export default {
         return undefined;
       }
       const matches = [];
-      const regex = new RegExp(this.value, 'i');
+      const regexes = this.value.split(' ').map(searchKeyword => new RegExp(searchKeyword, 'i'));
       this.data.forEach((entry) => {
         const { headings, src, title } = entry;
         const keywords = entry.keywords || '';
-        let hasMatchingHeading = false;
+        let searchTarget = [title].concat(keywords).join(' ');
+        const isMatchingPage = regexes.every(regex => regex.test(searchTarget));
+        if (isMatchingPage) {
+          matches.push(entry);
+        }
         Object.entries(headings).forEach(([id, text]) => {
-          if (regex.test(text)) {
-            hasMatchingHeading = true;
+          searchTarget = [title].concat(keywords).concat(text).join(' ');
+          if (isMatchingPage || regexes.every(regex => regex.test(searchTarget))) {
             matches.push({
               heading: { id, text },
               keywords,
@@ -38,18 +42,53 @@ export default {
             });
           }
         });
-        if (!hasMatchingHeading) {
-          if (regex.test(title) || regex.test(keywords)) {
-            matches.push(entry);
-          }
-        }
       });
       return matches;
     },
   },
   filters: {
     highlight(value, phrase) {
-      return value.replace(new RegExp(`(${phrase})`, 'gi'), '<mark>$1</mark>');
+      function getMatchIntervals() {
+        const keywords = phrase.split(' ').filter(keyword => keyword !== '');
+        const matchIntervals = [];
+        keywords.forEach((keyword) => {
+          const regex = new RegExp(`(${keyword})`, 'gi');
+          let match = regex.exec(value);
+          while (match !== null) {
+            matchIntervals.push({ start: match.index, end: regex.lastIndex });
+            match = regex.exec(value);
+          }
+        });
+        return matchIntervals;
+      }
+
+      // https://www.geeksforgeeks.org/merging-intervals/
+      function mergeOverlappingIntervals(intervals) {
+        if (intervals.length <= 1) {
+          return intervals;
+        }
+        return intervals
+          .sort((a, b) => a.start - b.start)
+          .reduce((stack, current) => {
+            const top = stack[stack.length - 1];
+            if (!top || top.end < current.start) {
+              stack.push(current);
+            } else if (top.end < current.end) {
+              top.end = current.end;
+            }
+            return stack;
+          }, []);
+      }
+
+      const matchIntervals = mergeOverlappingIntervals(getMatchIntervals());
+      let highlightedValue = value;
+      // Traverse from back to front to avoid the positioning going out of sync
+      for (let i = matchIntervals.length - 1; i >= 0; i -= 1) {
+        highlightedValue = `${highlightedValue.slice(0, matchIntervals[i].start)}<mark>`
+                         + `${highlightedValue.slice(matchIntervals[i].start, matchIntervals[i].end)}</mark>`
+                         + `${highlightedValue.slice(matchIntervals[i].end)}`;
+      }
+      return highlightedValue;
     },
   },
 };
