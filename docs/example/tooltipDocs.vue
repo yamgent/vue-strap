@@ -64,7 +64,7 @@
         <p>How to position the tooltip.</p>
       </div>
     </doc-table>
-  </div>
+  </doc-section>
 </template>
 
 <script>

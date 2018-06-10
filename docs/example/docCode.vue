@@ -1,9 +1,11 @@
 <template>
-  <pre v-if="!language" v-el:container></pre>
-  <template v-else>
-    <pre v-if="language=='markup'"><code class="language-markup"><script v-el:container type="language-mark-up"></script></code></pre>
-    <pre v-else><code class="language-{{language}}"><script v-el:container type="language-{{language}}"></script></code></pre>
-  </template>
+  <div>
+    <pre v-if="!language" v-el:container></pre>
+    <template v-else>
+      <pre v-if="language=='markup'"><code class="language-markup"><script v-el:container type="language-mark-up"></script></code></pre>
+      <pre v-else><code :class="getLanguageClass">&lt;script v-el:container :type="getLanguageClass">&lt;/script></code></pre>
+    </template>
+  </div>
 </template>
 
 <script>
@@ -15,6 +17,11 @@ export default {
       type: String,
       default: 'html'
     }
+  },
+  computed: {
+    getLanguageClass() {
+      return `language-${language}`;
+    },
   },
   compiled () {
     let content = ''

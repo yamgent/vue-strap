@@ -1,17 +1,19 @@
 <template>
-  <!-- Nav tabs -->
-  <ul class="nav nav-{{navStyle}}" role="tablist">
-    <template v-for="t in headers">
-      <li v-if="!t._tabgroup" :class="{active:t.active, disabled:t.disabled}" @click.prevent="select(t)">
-        <a href="#"><slot name="header">{{{t.headerRendered}}}</slot></a>
-      </li>
-      <dropdown v-else :text="t.headerRendered" :class="{active:t.active}" :disabled="t.disabled">
-        <li v-for="tab in t.tabs" :class="{disabled:tab.disabled}"><a href="#" @click.prevent="select(tab)">{{{tab.headerRendered}}}</a></li>
-      </dropdown>
-    </template>
-  </ul>
-  <div class="tab-content" v-el:tab-content>
-    <slot></slot>
+  <div>
+    <!-- Nav tabs -->
+    <ul class="nav" :class="getNavStyleClass" role="tablist">
+      <template v-for="t in headers">
+        <li v-if="!t._tabgroup" :class="{active:t.active, disabled:t.disabled}" @click.prevent="select(t)">
+          <a href="#"><slot name="header" v-html="t.headerRendered"></slot></a>
+        </li>
+        <dropdown v-else :text="t.headerRendered" :class="{active:t.active}" :disabled="t.disabled">
+          <li v-for="tab in t.tabs" :class="{disabled:tab.disabled}"><a href="#" @click.prevent="select(tab)" v-html="tab.headerRendered"></a></li>
+        </dropdown>
+      </template>
+    </ul>
+    <div class="tab-content" v-el:tab-content>
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -48,6 +50,11 @@ export default {
   },
   created () {
     this._tabset = true
+  },
+  computed: {
+    getNavStyleClass() {
+      return `nav-${this.navStyle}`;
+    }
   },
   watch: {
     active (val) {

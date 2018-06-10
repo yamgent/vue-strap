@@ -1,13 +1,15 @@
 <template>
-  <span v-el:trigger v-on:click="false"><slot></slot></span><!--
-  --><div v-el:popover v-if="show" style="display:block;"
-    :class="['tooltip',placement]"
-    :transition="effect"
-  >
-    <div class="tooltip-arrow"></div>
-    <div class="tooltip-inner" v-on:click="false">
-      <slot name="content">{{{contentRendered}}}</slot>
-   </div>
+  <div>
+    <span v-el:trigger v-on:click="false"><slot></slot></span><!--
+    --><div v-el:popover v-if="show" style="display:block;"
+      :class="['tooltip',placement]"
+      :transition="effect"
+    >
+      <div class="tooltip-arrow"></div>
+      <div class="tooltip-inner" v-on:click="false">
+        <slot name="content" v-html="contentRendered"></slot>
+     </div>
+    </div>
   </div>
 </template>
 

@@ -4,7 +4,7 @@
              @click.prevent="expand()"
              v-show="!isOpen">
             <slot name="display">
-                <button class="morph-display-button btn btn-default">{{{titleContent}}}</button>
+                <button class="morph-display-button btn btn-default" v-html="titleContent"></button>
             </slot>
         </div>
 

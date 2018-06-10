@@ -9,14 +9,14 @@
       <span class="btn-content" v-html="loading ? text.loading : showPlaceholder || selected"></span>
       <span v-if="clearButton&&values.length" class="close" @click="clear()">&times;</span>
     </button>
-    <select v-el:sel v-model="value" v-show="show" name="{{name}}" class="secret" :multiple="multiple" :required="required" :readonly="readonly" :disabled="disabled">
+    <select v-el:sel v-model="value" v-show="show" :name="name" class="secret" :multiple="multiple" :required="required" :readonly="readonly" :disabled="disabled">
       <option v-if="required" value=""></option>
       <option v-for="option in options" :value="option[optionsValue]||option">{{ option[optionsLabel]||option }}</option>
     </select>
     <ul class="dropdown-menu">
       <template v-if="options.length">
         <li v-if="canSearch" class="bs-searchbox">
-          <input type="text" placeholder="{{searchText||text.search}}" class="form-control" autocomplete="off"
+          <input type="text" :placeholder="searchText || text.search" class="form-control" autocomplete="off"
             v-el:search
             v-model="searchValue"
             @keyup.esc="show = false"
@@ -24,7 +24,7 @@
           <span v-show="searchValue" class="close" @click="clearSearch">&times;</span>
         </li>
         <li v-if="required&&!clearButton"><a @mousedown.prevent="clear() && blur()">{{ placeholder || text.notSelected }}</a></li>
-        <li v-for="option in options | filterBy searchValue" :id="option[optionsValue]||option">
+        <li v-for="option in filteredSearchOptions" :id="option[optionsValue]||option">
           <a @mousedown.prevent="select(option[optionsValue],option)">
             <span v-html="option[optionsLabel]||option"></span>
             <span class="glyphicon glyphicon-ok check-mark" v-show="isSelected(option[optionsValue])"></span>
@@ -139,6 +139,9 @@ export default {
     }
   },
   computed: {
+    filteredSearchOptions() {
+      return this.options.filter(value => value == this.searchValue);
+    },
     selected () {
       if (this.options.length === 0) { return '' }
       let foundItems = []
