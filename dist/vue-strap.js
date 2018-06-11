@@ -29566,25 +29566,38 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  computed: {
 	    primitiveData: function primitiveData() {
+	      if (this.value.length < 2) {
+	        return [];
+	      }
 	      if (!this.data) {
 	        return undefined;
 	      }
 	      var matches = [];
-	      var regex = new RegExp(this.value, 'i');
+	      var regexes = this.value.split(' ').map(function (searchKeyword) {
+	        return new RegExp(searchKeyword, 'i');
+	      });
 	      this.data.forEach(function (entry) {
 	        var headings = entry.headings,
 	            src = entry.src,
 	            title = entry.title;
 	
 	        var keywords = entry.keywords || '';
-	        var hasMatchingHeading = false;
+	        var searchTarget = [title].concat(keywords).join(' ');
+	        var isMatchingPage = regexes.every(function (regex) {
+	          return regex.test(searchTarget);
+	        });
+	        if (isMatchingPage) {
+	          matches.push(entry);
+	        }
 	        (0, _entries2.default)(headings).forEach(function (_ref) {
 	          var _ref2 = (0, _slicedToArray3.default)(_ref, 2),
 	              id = _ref2[0],
 	              text = _ref2[1];
 	
-	          if (regex.test(text)) {
-	            hasMatchingHeading = true;
+	          searchTarget = [title].concat(keywords).concat(text).join(' ');
+	          if (isMatchingPage || regexes.every(function (regex) {
+	            return regex.test(searchTarget);
+	          })) {
 	            matches.push({
 	              heading: { id: id, text: text },
 	              keywords: keywords,
@@ -29593,18 +29606,80 @@ return /******/ (function(modules) { // webpackBootstrap
 	            });
 	          }
 	        });
-	        if (!hasMatchingHeading) {
-	          if (regex.test(title) || regex.test(keywords)) {
-	            matches.push(entry);
-	          }
-	        }
 	      });
 	      return matches;
 	    }
 	  },
 	  filters: {
 	    highlight: function highlight(value, phrase) {
-	      return value.replace(new RegExp('(' + phrase + ')', 'gi'), '<mark>$1</mark>');
+	      function getMatchIntervals() {
+	        var keywords = phrase.split(' ').filter(function (keyword) {
+	          return keyword !== '';
+	        });
+	        var matchIntervals = [];
+	        keywords.forEach(function (keyword) {
+	          var regex = new RegExp('(' + keyword + ')', 'gi');
+	          var match = regex.exec(value);
+	          while (match !== null) {
+	            matchIntervals.push({ start: match.index, end: regex.lastIndex });
+	            match = regex.exec(value);
+	          }
+	        });
+	        return matchIntervals;
+	      }
+	
+	      // https://www.geeksforgeeks.org/merging-intervals/
+	      function mergeOverlappingIntervals(intervals) {
+	        if (intervals.length <= 1) {
+	          return intervals;
+	        }
+	        return intervals.sort(function (a, b) {
+	          return a.start - b.start;
+	        }).reduce(function (stack, current) {
+	          var top = stack[stack.length - 1];
+	          if (!top || top.end < current.start) {
+	            stack.push(current);
+	          } else if (top.end < current.end) {
+	            top.end = current.end;
+	          }
+	          return stack;
+	        }, []);
+	      }
+	
+	      var matchIntervals = mergeOverlappingIntervals(getMatchIntervals());
+	      var highlightedValue = value;
+	      // Traverse from back to front to avoid the positioning going out of sync
+	      for (var i = matchIntervals.length - 1; i >= 0; i -= 1) {
+	        highlightedValue = highlightedValue.slice(0, matchIntervals[i].start) + '<mark>' + (highlightedValue.slice(matchIntervals[i].start, matchIntervals[i].end) + '</mark>') + ('' + highlightedValue.slice(matchIntervals[i].end));
+	      }
+	      return highlightedValue;
+	    }
+	  },
+	  methods: {
+	    down: function down() {
+	      if (this.current < this.items.length - 1) {
+	        this.current += 1;
+	        this.scrollListView();
+	      }
+	    },
+	    up: function up() {
+	      if (this.current > 0) {
+	        this.current -= 1;
+	        this.scrollListView();
+	      }
+	    },
+	    scrollListView: function scrollListView() {
+	      var dropdown = this.$els.dropdown;
+	
+	      var currentEntry = dropdown.children[this.current];
+	      var upperBound = dropdown.scrollTop;
+	      var lowerBound = upperBound + dropdown.clientHeight;
+	      var currentEntryOffsetBottom = currentEntry.offsetTop + currentEntry.offsetHeight;
+	      if (currentEntry.offsetTop < upperBound) {
+	        dropdown.scrollTop = currentEntry.offsetTop;
+	      } else if (currentEntryOffsetBottom > lowerBound) {
+	        dropdown.scrollTop = currentEntryOffsetBottom - dropdown.clientHeight;
+	      }
 	    }
 	  }
 	};
