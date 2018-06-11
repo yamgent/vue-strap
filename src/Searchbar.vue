@@ -91,6 +91,32 @@ export default {
       return highlightedValue;
     },
   },
+  methods: {
+    down() {
+      if (this.current < this.items.length - 1) {
+        this.current += 1;
+        this.scrollListView();
+      }
+    },
+    up() {
+      if (this.current > 0) {
+        this.current -= 1;
+        this.scrollListView();
+      }
+    },
+    scrollListView() {
+      const { dropdown } = this.$els;
+      const currentEntry = dropdown.children[this.current];
+      const upperBound = dropdown.scrollTop;
+      const lowerBound = upperBound + dropdown.clientHeight;
+      const currentEntryOffsetBottom = currentEntry.offsetTop + currentEntry.offsetHeight;
+      if (currentEntry.offsetTop < upperBound) {
+        dropdown.scrollTop = currentEntry.offsetTop;
+      } else if (currentEntryOffsetBottom > lowerBound) {
+        dropdown.scrollTop = currentEntryOffsetBottom - dropdown.clientHeight;
+      }
+    },
+  },
 };
 </script>
 
