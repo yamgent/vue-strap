@@ -43,12 +43,12 @@
                 </div>
             </div>
             <div class="panel-collapse"
-                 v-el:panel
+                 ref="panel"
                  v-show="expanded"
             >
                 <div class="panel-body">
                     <slot></slot>
-                    <retriever v-if="isDynamic" v-ref:retriever :src="src" :fragment="fragment" delay></retriever>
+                    <retriever v-if="isDynamic" ref="retriever" :src="src" :fragment="fragment" delay></retriever>
                     <panel-switch v-show="canCollapse && bottomSwitch" v-bind:is-open="expanded"
                                   @click.stop.prevent="collapseThenScrollIntoViewIfNeeded()"></panel-switch>
                 </div>
@@ -82,37 +82,30 @@
       },
       expandable: {
         type: Boolean,
-        coerce: coerce.boolean,
         default: true
       },
       isOpen: {
         type: Boolean,
-        coerce: coerce.boolean,
         default: null
       },
       expanded: {
         type: Boolean,
-        coerce: coerce.boolean,
         default: null
       },
       minimized: {
         type: Boolean,
-        coerce: coerce.boolean,
         default: false
       },
       ctrlLvl: {
         type: Number,
-        coerce: coerce.number,
         default: 0
       },
       noSwitch: {
         type: Boolean,
-        coerce: coerce.boolean,
         default: false
       },
       noClose: {
         type: Boolean,
-        coerce: coerce.boolean,
         default: false
       },
       popupUrl: {
@@ -124,7 +117,6 @@
       },
       bottomSwitch: {
         type: Boolean,
-        coerce: coerce.boolean,
         default: true
       }
     },
@@ -134,14 +126,20 @@
       }
     },
     computed: {
+      expandableBool() {    // TODO: still pretty doubtful whether this is even necessary
+        return coerce.boolean(this.expandable);
+      },
+      ctrlLvlNumber() {     // TODO: still pretty doubtful whether this is even necessary
+        return coerce.number(this.ctrlLvl);
+      },
       inAccordion () {
         return this.$parent && this.$parent._isAccordion
       },
       isExpandablePanel () {
-        return this.expandable;
+        return this.expandableBool;
       },
       canCollapse () {
-        return this.inAccordion || this.expandable
+        return this.inAccordion || this.expandableBool
       },
       showCaret () {
         return this.type == 'seamless';
@@ -173,10 +171,10 @@
       expand() {
         if (this.expanded) {
           // Ask children to collapse
-          this.$broadcast('panel:collapse', this.ctrlLvl)
+          this.$broadcast('panel:collapse', this.ctrlLvlNumber)
         } else {
           // Expand children
-          this.$broadcast('panel:expand', this.ctrlLvl)
+          this.$broadcast('panel:expand', this.ctrlLvlNumber)
         }
         this.expanded = !this.expanded
       },
