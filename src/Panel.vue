@@ -15,7 +15,7 @@
             </div>
         </div>
 
-        <div :class="['panel', panelType, {'expandable-panel': isExpandablePanel}]" v-if="!altContent">
+        <div :class="['panel', panelType, {'expandable-panel': isExpandablePanel}]">
             <div :class="['panel-heading',{'accordion-toggle':canCollapse}]"
                  @click.prevent.stop="canCollapse && toggle()"
                  @mouseover="onHeaderHover = true" @mouseleave="onHeaderHover = false">

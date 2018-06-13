@@ -6,7 +6,7 @@
       </a>
     </slot>
     <slot name="dropdown-menu">
-      <ul v-if="!isLi" class="dropdown-menu">
+      <ul class="dropdown-menu">
         <slot></slot>
       </ul>
     </slot>
