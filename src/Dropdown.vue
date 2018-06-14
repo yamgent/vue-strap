@@ -87,7 +87,7 @@ export default {
     }
   },
   ready () {
-    const $el = $(this.$els.dropdown)
+    const $el = $(this.$refs.dropdown)
     $el.onBlur((e) => { this.show = false }, false)
     $el.findChildren('a,button.dropdown-toggle').on('click', e => {
       e.preventDefault()
@@ -98,7 +98,7 @@ export default {
     $el.findChildren('ul').on('click', 'li>a', e => { this.show = false })
   },
   beforeDestroy () {
-    const $el = $(this.$els.dropdown)
+    const $el = $(this.$refs.dropdown)
     $el.offBlur()
     $el.findChildren('a,button').off()
     $el.findChildren('ul').off()
