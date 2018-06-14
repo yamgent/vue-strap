@@ -1,5 +1,5 @@
 <template>
-  <li v-if="isLi" v-el:dropdown :class="classes">
+  <li v-if="isLi" ref="dropdown" :class="classes">
     <slot name="button">
       <a class="dropdown-toggle" role="button" :class="{disabled: disabled}" @keyup.esc="show = false" v-html="text">
         <span class="caret"></span>
@@ -11,7 +11,7 @@
       </ul>
     </slot>
   </li>
-  <div v-else v-el:dropdown :class="classes">
+  <div v-else ref="dropdown" :class="classes">
     <slot name="before"></slot>
     <slot name="button">
       <button type="button" class="btn dropdown-toggle" :class="btnType" @keyup.esc="show = false" :disabled="disabled" v-html="text">
