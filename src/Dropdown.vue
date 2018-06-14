@@ -86,7 +86,7 @@ export default {
       }
     }
   },
-  ready () {
+  mounted () {
     const $el = $(this.$refs.dropdown)
     $el.onBlur((e) => { this.show = false }, false)
     $el.findChildren('a,button.dropdown-toggle').on('click', e => {
