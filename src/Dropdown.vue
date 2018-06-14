@@ -34,7 +34,6 @@ import $ from './utils/NodeList.js'
 export default {
   props: {
     show: {
-      twoWay: true,
       type: Boolean,
       default: false
     },
