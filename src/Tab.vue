@@ -1,15 +1,16 @@
 <template>
-  <div role="tabpanel" class="tab-pane active" v-show="show"
-    :class="{hide:!show}"
-    :transition="transition"
-  >
-    <slot></slot>
-    <hr />
-  </div>
+  <transition name="fade">
+    <div role="tabpanel" class="tab-pane active" v-show="show"
+      :class="{hide:!show}"
+    >
+      <slot></slot>
+      <hr />
+    </div>
+  </transition>
 </template>
 
 <script>
-import {coerce} from './utils/utils.js'
+import {toBoolean} from './utils/utils.js'
 import md from './utils/markdown.js'
 
 export default {
@@ -19,7 +20,6 @@ export default {
     },
     disabled: {
       type: Boolean,
-      coerce: coerce.boolean,
       default: false
     }
   },
@@ -38,6 +38,9 @@ export default {
     },
     transition () {
       return this._tabset ? this._tabset.effect : null
+    },
+    disabledBool () {
+      return toBoolean(this.disabled)
     }
   },
   created () {
@@ -67,14 +70,19 @@ export default {
   beforeDestroy () {
     if (this._tabset.active === this.index) { this._tabset.active = 0 }
     if (this._ingroup) {
-      this.$parent.tabs.$remove(this)
+      var index = parent.tabs.indexOf(this);
+      parent.tabs.splice(index, 1)
     }
-    this._tabset.tabs.$remove(this)
+    var index = this._tabset.tabs.indexOf(this);
+    this._tabset.tabs.splice(index, 1)
   }
 }
 </script>
 <style>
     .tab-pane > hr {
         margin: 0;
+    }
+    .fade-enter-active, .fade-leave-active {
+      transition: opacity .5s;
     }
 </style>
