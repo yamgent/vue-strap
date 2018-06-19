@@ -3,22 +3,22 @@
     <!-- Nav tabs -->
     <ul class="nav" :class="getNavStyleClass" role="tablist">
       <template v-for="t in headers">
-        <li v-if="!t._tabgroup" :class="{active:t.active, disabled:t.disabled}" @click.prevent="select(t)">
-          <a href="#"><slot name="header" v-html="t.headerRendered"></slot></a>
+        <li v-if="!t._tabgroup" :class="{active:t.active, disabled:t.disabledBool}" @click.prevent="select(t)">
+          <a href="#"><span v-html="t.headerRendered"></span></a>
         </li>
         <dropdown v-else :text="t.headerRendered" :class="{active:t.active}" :disabled="t.disabled">
           <li v-for="tab in t.tabs" :class="{disabled:tab.disabled}"><a href="#" @click.prevent="select(tab)" v-html="tab.headerRendered"></a></li>
         </dropdown>
       </template>
     </ul>
-    <div class="tab-content" v-el:tab-content>
+    <div class="tab-content" ref="tab-content">
       <slot></slot>
     </div>
   </div>
 </template>
 
 <script>
-import {coerce} from './utils/utils.js'
+import {toNumber} from './utils/utils.js'
 import dropdown from './Dropdown.vue'
 
 export default {
@@ -30,14 +30,8 @@ export default {
       type: String,
       default: 'tabs'
     },
-    effect: {
-      type: String,
-      default: 'fadein'
-    },
     active: {
-      twoWay: true,
       type: Number,
-      coerce: coerce.number,
       default: 0
     }
   },
@@ -54,15 +48,18 @@ export default {
   computed: {
     getNavStyleClass() {
       return `nav-${this.navStyle}`;
-    }
+    },
+    activeNumber () {
+       return toNumber(this.active);
+    },
   },
   watch: {
-    active (val) {
+    activeNumber (val) {
       this.show = this.tabs[val]
     }
   },
-  ready () {
-    this.show = this.tabs[this.active]
+  mounted () {
+    this.show = this.tabs[this.activeNumber]
   },
   methods: {
     select (tab) {
