@@ -1,5 +1,5 @@
 <template>
-  <nav v-el:navbar :class="['navbar',{
+  <nav ref="navbar" :class="['navbar',{
     'navbar-inverse':(type == 'inverse'),
     'navbar-default':(type == 'default'),
     'navbar-fixed-top':(placement === 'top'),
@@ -52,7 +52,7 @@ export default {
   },
   computed: {
     slots () {
-      return this._slotContents
+      return this.$slots
     }
   },
   methods: {
@@ -64,7 +64,7 @@ export default {
   created () {
     this._navbar = true
   },
-  ready () {
+  mounted () {
     let $dropdown = $('.dropdown>[data-toggle="dropdown"]',this.$el).parent()
     $dropdown.on('click', '.dropdown-toggle', (e) => {
       e.preventDefault()
