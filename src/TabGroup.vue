@@ -12,7 +12,6 @@ export default {
   props: {
     disabled: {
       type: Boolean,
-      coerce: coerce.boolean,
       default: false
     },
     header: {
@@ -31,6 +30,9 @@ export default {
     },
     headerRendered () {
       return md.renderInline(this.header)
+    },
+    disabledBool () {
+      return coerce.boolean(this.disabled)
     }
   },
   created () {
