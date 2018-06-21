@@ -13,10 +13,10 @@
       @keydown.esc="reset"
       @blur="showDropdown = false"
     />
-    <ul class="dropdown-menu" v-el:dropdown>
-      <li v-for="item in items" v-bind:class="{'active': isActive($index)}">
-        <a @mousedown.prevent="hit" @mousemove="setActive($index)">
-          <partial :name="templateName"></partial>
+    <ul class="dropdown-menu" ref="dropdown">
+      <li v-for="(item, index) in items" v-bind:class="{'active': isActive(index)}">
+        <a @mousedown.prevent="hit" @mousemove="setActive(index)">
+          <component v-bind:is="entryTemplate" :item="item" :value="value"></component>
         </a>
       </li>
     </ul>
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import {coerce, delayer, getJSON} from './utils/utils.js'
+import {delayer, getJSON} from './utils/utils.js'
 
 let Vue = window.Vue
 const _DELAY_ = 200
@@ -32,17 +32,9 @@ const _DELAY_ = 200
 export default {
   created () {
     this.items = this.primitiveData
-    // register a partial:
-    if (this.templateName && this.templateName !== 'default') {
-      Vue.partial(this.templateName, this.template)
-    }
-  },
-  partials: {
-    default: '<span v-html="item | highlight value"></span>'
   },
   props: {
     value: {
-      twoWay : true,
       type: String,
       default: ''
     },
@@ -56,26 +48,9 @@ export default {
     async: {
       type: String
     },
-    template: {
-      type: String
-    },
-    templateName: {
-      type: String,
-      default: 'default'
-    },
     key: {
       type: String,
       default: null
-    },
-    matchCase: {
-      type: Boolean,
-      coerce: coerce.boolean,
-      default: false
-    },
-    matchStart: {
-      type: Boolean,
-      coerce: coerce.boolean,
-      default: false
     },
     onHit: {
       type: Function,
@@ -90,7 +65,6 @@ export default {
     delay: {
       type: Number,
       default: _DELAY_,
-      coerce: coerce.number
     }
   },
   data () {
@@ -110,6 +84,9 @@ export default {
           return this.matchStart ? value.indexOf(query) === 0 : value.indexOf(query) !== -1
         }).slice(0, this.limit)
       }
+    },
+    entryTemplate () {
+      return 'typeaheadTemplate';
     }
   },
   methods: {
@@ -153,10 +130,17 @@ export default {
       if (this.current < this.items.length - 1) this.current++
     }
   },
-  filters: {
-    highlight (value, phrase) {
-      return value.replace(new RegExp('(' + phrase + ')', 'gi'), '<strong>$1</strong>')
-    }
+  components: {
+    typeaheadTemplate: {
+      props: ['item', 'value'],
+      template: '<span v-html="highlight(item, value)"></span>',
+      methods: {
+        highlight(value, phrase) {
+          return value.replace(new RegExp(`(${phrase})`, 'gi'), '<mark>$1</mark>');
+        },
+      }
+    },
+
   }
 }
 </script>
