@@ -1,33 +1,33 @@
 <template>
-    <div :class="['morph', {'morph-expanded': isOpen}]">
+    <div :class="['morph', {'morph-expanded': isOpenBool}]">
         <div class="morph-display-wrapper"
              @click.prevent="expand()"
-             v-show="!isOpen">
+             v-show="!isOpenBool">
             <slot name="display">
                 <button class="morph-display-button btn btn-default" v-html="titleContent"></button>
             </slot>
         </div>
 
         <div class="morph-details"
-             v-el:details
-             v-show="isOpen">
-            <dynamic-panel :header="title" :src="src" :is-open="isOpen" v-if="isDynamic">
+             ref="details"
+             v-show="isOpenBool">
+            <dynamic-panel :header="title" :src="src" :is-open="true" v-if="isDynamic">
                 <button type="button" class="close-button btn btn-default" slot="button" @click.stop="close()">
                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                 </button>
             </dynamic-panel>
-            <Panel :header="title" v-else>
+            <panel :header="title" v-else>
                 <button type="button" class="close-button btn btn-default" slot="button" @click.stop="close()">
                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                 </button>
                 <slot></slot>
-            </Panel>
+            </panel>
         </div>
     </div>
 </template>
 
 <script>
-  import {coerce} from './utils/utils.js'
+  import {toBoolean} from './utils/utils.js'
   import md from './utils/markdown.js'
   import panel from './Panel.vue'
   import dynamicPanel from './DynamicPanel.vue'
@@ -43,7 +43,6 @@
       },
       isOpen: {
         type: Boolean,
-        coerce: coerce.boolean,
         default: false
       },
       src: {
@@ -51,7 +50,12 @@
       }
     },
     computed: {
-      isDynamic() {
+      // Vue 2.0 coerce migration
+      isOpenBool () {
+        return toBoolean(this.isOpen);
+      },
+      // Vue 2.0 coerce migration end
+      isDynamic () {
         return !!this.src;
       },
       titleContent () {
