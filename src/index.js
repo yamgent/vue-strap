@@ -1,5 +1,4 @@
 import affix from './Affix.vue'
-import checkbox from './Checkbox.vue'
 import closeable from './directives/Closeable'
 import dropdown from './Dropdown.vue'
 import input from './Input.vue'
@@ -23,7 +22,6 @@ import typeahead from './Typeahead.vue'
 const components = {
   affix,
   box: tipBox,
-  checkbox,
   dropdown,
   modal,
   navbar,
