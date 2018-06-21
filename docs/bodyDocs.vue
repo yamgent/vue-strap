@@ -55,7 +55,6 @@
 import affixSidebar from './affixSidebar.vue'
 import gettingStarted from './example/gettingStarted.vue'
 import affixDocs from './example/affixDocs.vue'
-import buttonGroupDocs  from './example/buttonGroupDocs.vue'
 import dynamicPanelDocs from './example/dynamicPanelDocs.vue'
 import container from './example/container.vue'
 import modalDocs from './example/modalDocs.vue'
@@ -77,7 +76,6 @@ export default {
     affixSidebar,
     gettingStarted,
     affixDocs,
-    buttonGroupDocs,
     container,
     modalDocs,
     navbarDocs,
