@@ -1,12 +1,12 @@
 <template>
-  <panel :header="header" :is-open="isOpen" :type="type" expandable no-switch>
+  <panel :header="header" :is-open="isOpenBool" :type="type" expandable no-switch>
     <slot name="button" slot="button"></slot>
-    <retriever v-ref:retriever :src="src" :fragment="fragment" delay></retriever>
+    <retriever ref="retriever" :src="src" :fragment="fragment" delay></retriever>
   </panel>
 </template>
 
 <script>
-import {coerce, getFragmentByHash} from './utils/utils.js'
+import {getFragmentByHash, toBoolean} from './utils/utils.js'
 import retriever from './Retriever.vue'
 import panel from './Panel.vue'
 
@@ -23,13 +23,19 @@ export default {
     },
     isOpen: {
       type: Boolean,
-      coerce: coerce.boolean,
       default: null
     },
     type: {
       type: String,
       default : null
     }
+  },
+  computed: {
+    // Vue 2.0 coerce migration
+    isOpenBool () {
+      return toBoolean(this.isOpen);
+    }
+    // Vue 2.0 coerce migration end
   },
   components: {
     panel,
@@ -44,24 +50,18 @@ export default {
       }
     }
   },
-  ready() {
-    if (this.isOpen) {
-      this.$refs.retriever.fetch()
-    }
-
-    this.$on('isOpenEvent', (el, isOpen) => {
-      if (isOpen) {
+  mounted() {
+    this.$nextTick(function () {
+      if (this.isOpenBool) {
         this.$refs.retriever.fetch()
       }
+
+      this.$on('is-open-event', (el, isOpen) => {
+        if (isOpen) {
+          this.$refs.retriever.fetch()
+        }
+      })
     })
-  },
-  events: {
-    'panel:expand': function (level) {
-      // Consume and do nothing
-    },
-    'panel:collapse': function (level) {
-      // Consume and do nothing
-    }
   },
 }
 </script>
