@@ -6,10 +6,8 @@ import carousel from './Carousel.vue'
 import checkbox from './Checkbox.vue'
 import closeable from './directives/Closeable'
 import dropdown from './Dropdown.vue'
-import dynamicPanel from './DynamicPanel.vue'
 import input from './Input.vue'
 import modal from './Modal.vue'
-import morph from './Morph.vue'
 import navbar from './Navbar.vue'
 import panel from './Panel.vue'
 import pic from './Pic.vue'
@@ -34,9 +32,7 @@ const components = {
   box: tipBox,
   checkbox,
   dropdown,
-  dynamicPanel,
   modal,
-  morph,
   navbar,
   panel,
   pic,
@@ -74,9 +70,6 @@ function install (Vue) {
 function installEvents (vm) {
   vm.$on('modal:shouldShow', function (name) {
     this.$broadcast('modal:show', name)
-  })
-  vm.$on('retriever:fetched', function (el) {
-    vm.$compile(el);
   })
   vm.$on('trigger:register', function (el, name) {
     this.$broadcast('trigger:bind', el, name)
