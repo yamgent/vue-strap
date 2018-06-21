@@ -16,7 +16,6 @@
       <container>
         <div v-el:sections class="col-md-9">
           <getting-started></getting-started>
-          <accordion-docs></accordion-docs>
           <affix-docs></affix-docs>
           <aside-docs></aside-docs>
           <image-docs></image-docs>
@@ -56,7 +55,6 @@
 <script>
 import affixSidebar from './affixSidebar.vue'
 import gettingStarted from './example/gettingStarted.vue'
-import accordionDocs from './example/accordionDocs.vue'
 import affixDocs from './example/affixDocs.vue'
 import asideDocs from './example/asideDocs.vue'
 import buttonGroupDocs  from './example/buttonGroupDocs.vue'
@@ -80,7 +78,6 @@ export default {
   components: {
     affixSidebar,
     gettingStarted,
-    accordionDocs,
     affixDocs,
     asideDocs,
     buttonGroupDocs,

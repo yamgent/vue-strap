@@ -1,4 +1,3 @@
-import accordion from './Accordion.vue'
 import affix from './Affix.vue'
 import alert from './Alert.vue'
 import aside from './Aside.vue'
@@ -26,7 +25,6 @@ import trigger from './trigger.vue'
 import typeahead from './Typeahead.vue'
 
 const components = {
-  accordion,
   affix,
   aside,
   box: tipBox,
