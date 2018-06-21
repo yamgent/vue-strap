@@ -17,7 +17,6 @@
         <div v-el:sections class="col-md-9">
           <getting-started></getting-started>
           <affix-docs></affix-docs>
-          <aside-docs></aside-docs>
           <image-docs></image-docs>
           <modal-docs></modal-docs>
           <navbar-docs></navbar-docs>
@@ -56,7 +55,6 @@
 import affixSidebar from './affixSidebar.vue'
 import gettingStarted from './example/gettingStarted.vue'
 import affixDocs from './example/affixDocs.vue'
-import asideDocs from './example/asideDocs.vue'
 import buttonGroupDocs  from './example/buttonGroupDocs.vue'
 import dynamicPanelDocs from './example/dynamicPanelDocs.vue'
 import container from './example/container.vue'
@@ -79,7 +77,6 @@ export default {
     affixSidebar,
     gettingStarted,
     affixDocs,
-    asideDocs,
     buttonGroupDocs,
     container,
     modalDocs,

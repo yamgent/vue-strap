@@ -1,5 +1,4 @@
 import affix from './Affix.vue'
-import aside from './Aside.vue'
 import carousel from './Carousel.vue'
 import checkbox from './Checkbox.vue'
 import closeable from './directives/Closeable'
@@ -25,7 +24,6 @@ import typeahead from './Typeahead.vue'
 
 const components = {
   affix,
-  aside,
   box: tipBox,
   checkbox,
   dropdown,
