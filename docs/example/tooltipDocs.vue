@@ -14,9 +14,6 @@
           <button class="btn btn-default">Contextmenu (right click)</button>
         </tooltip>
       </p>
-      <tooltip effect="scale" content="Lorem ipsum dolor sit amet" placement="bottom" trigger="focus">
-        <bs-input type="text" placeholder="Focus"></bs-input>
-      </tooltip>
       <h4>Markdown</h4>
       <tooltip effect="scale" content="*Hello* **World**">
         <a href="">Hover me</a>
@@ -71,7 +68,6 @@
 import docSection from './docSection.vue'
 import docTable from './docTable.vue'
 import docCode from './docCode.vue'
-import bsInput from 'src/Input.vue'
 import tooltip from 'src/Tooltip.vue'
 
 export default {
@@ -79,7 +75,6 @@ export default {
     docSection,
     docTable,
     docCode,
-    bsInput,
     tooltip
   },
   data () {

@@ -1,7 +1,6 @@
 import affix from './Affix.vue'
 import closeable from './directives/Closeable'
 import dropdown from './Dropdown.vue'
-import input from './Input.vue'
 import modal from './Modal.vue'
 import navbar from './Navbar.vue'
 import panel from './Panel.vue'
