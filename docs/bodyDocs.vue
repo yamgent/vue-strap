@@ -63,7 +63,6 @@ import navbarDocs from './example/navbarDocs.vue'
 import questionDocs from './example/questionDocs.vue'
 import popoverDocs from './example/popoverDocs.vue'
 import retrieverDocs from './example/retrieverDocs.vue'
-import selectDocs from './example/selectDocs.vue'
 import tabsDocs from './example/tabsDocs.vue'
 import tooltipDocs from './example/tooltipDocs.vue'
 import imageDocs from './example/imageDocs.vue'
@@ -83,7 +82,6 @@ export default {
     popoverDocs,
     retrieverDocs,
     searchbarDocs,
-    selectDocs,
     tabsDocs,
     tooltipDocs,
     imageDocs,

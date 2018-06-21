@@ -11,7 +11,6 @@ import popover from './Popover.vue'
 import question from './Question.vue'
 import retriever from './Retriever.vue'
 import searchbar from './Searchbar.vue'
-import select from './Select.vue'
 import showModal from './directives/ShowModal'
 import tab from './Tab.vue'
 import tabGroup from './TabGroup.vue'
@@ -34,7 +33,6 @@ const components = {
   question,
   retriever,
   searchbar,
-  select,
   tab,
   tabGroup,
   tabs: tabset,
