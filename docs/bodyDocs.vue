@@ -19,10 +19,8 @@
           <accordion-docs></accordion-docs>
           <affix-docs></affix-docs>
           <aside-docs></aside-docs>
-          <dynamic-panel-docs></dynamic-panel-docs>
           <image-docs></image-docs>
           <modal-docs></modal-docs>
-          <morph-docs></morph-docs>
           <navbar-docs></navbar-docs>
           <question-docs></question-docs>
           <retriever-docs></retriever-docs>
@@ -87,9 +85,7 @@ export default {
     asideDocs,
     buttonGroupDocs,
     container,
-    dynamicPanelDocs,
     modalDocs,
-    morphDocs,
     navbarDocs,
     questionDocs,
     popoverDocs,
