@@ -1,5 +1,4 @@
 import affix from './Affix.vue'
-import carousel from './Carousel.vue'
 import checkbox from './Checkbox.vue'
 import closeable from './directives/Closeable'
 import dropdown from './Dropdown.vue'
