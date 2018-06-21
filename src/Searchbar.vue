@@ -3,15 +3,8 @@ import typeahead from './Typeahead.vue';
 
 export default {
   extends: typeahead,
-  ready() {
-    this.$els.dropdown.classList.add('search-dropdown-menu');
-  },
-  partials: {
-    default: '<span v-html="item.title | highlight value"></span>'
-      + '<br v-if="item.keywords" />'
-      + '<small v-if="item.keywords" v-html="item.keywords | highlight value"></small>'
-      + '<br v-if="item.heading" />'
-      + '<small v-if="item.heading" v-html="item.heading.text | highlight value"></small>',
+  mounted() {
+    this.$refs.dropdown.classList.add('search-dropdown-menu');
   },
   computed: {
     primitiveData() {
@@ -43,10 +36,23 @@ export default {
       });
       return matches;
     },
+    entryTemplate() {
+      return 'searchbarTemplate';
+    },
   },
-  filters: {
-    highlight(value, phrase) {
-      return value.replace(new RegExp(`(${phrase})`, 'gi'), '<mark>$1</mark>');
+  components: {
+    searchbarTemplate: {
+      props: ['item', 'value'],
+      template: '<div><span v-html="highlight(item.title, value)"></span>'
+      + '<br v-if="item.keywords" />'
+      + '<small v-if="item.keywords" v-html="highlight(item.keywords, value)"></small>'
+      + '<br v-if="item.heading" />'
+      + '<small v-if="item.heading" v-html="highlight(item.heading.text, value)"></small></div>',
+      methods: {
+        highlight(value, phrase) {
+          return value.replace(new RegExp(`(${phrase})`, 'gi'), '<mark>$1</mark>');
+        },
+      },
     },
   },
 };
