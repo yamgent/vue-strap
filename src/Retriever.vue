@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import {coerce, getFragmentByHash} from './utils/utils.js'
+import {getFragmentByHash, toBoolean} from './utils/utils.js'
 
 export default {
   props: {
@@ -17,13 +17,19 @@ export default {
     },
     delay: {
       type: Boolean,
-      coerce: coerce.boolean,
       default: false
     },
     _hasFetched: {
       type: Boolean,
       default: false
     }
+  },
+  computed: {
+    // Vue 2.0 coerce migration
+    delayBool () {
+      return toBoolean(this.delay);
+    }
+    // Vue 2.0 coerce migration end
   },
   methods: {
     fetch() {
@@ -47,8 +53,12 @@ export default {
             this.$el.innerHTML = `<strong>Error</strong>: Failed to retrieve page fragment: ${this.src}#${this.fragment}`
             return
           }
-          var element = jQuery(this.$el).html(result)
-          this.$dispatch('retriever:fetched', element.get(0))
+
+          // Mount result in retriever
+          let tempComponent = Vue.extend({
+            template: `<div>\n${result}\n</div>`,
+          })
+          new tempComponent().$mount(this.$el);
         })
         .fail((error) => {
           console.error(error.responseText)
@@ -56,20 +66,22 @@ export default {
         });
     }
   },
-  ready() {
-    if (!this.src) {
-      this.$el.innerHTML = ''
-    } else {
-      var hash = getFragmentByHash(this.src)
-      if (hash) {
-        this.fragment = hash
-        this.src = this.src.split('#')[0];
-      }
-    }
+  mounted() {
+    this.$nextTick( function () {
+        if (!this.src) {
+          this.$el.innerHTML = ''
+        } else {
+          var hash = getFragmentByHash(this.src)
+          if (hash) {
+            this.fragment = hash
+            this.src = this.src.split('#')[0];
+          }
+        }
 
-    if (!this.delay) {
-      this.fetch();
-    }
+        if (!this.delayBool) {
+          this.fetch();
+        }
+    })
   }
 }
 </script>
