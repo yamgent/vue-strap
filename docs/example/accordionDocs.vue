@@ -88,12 +88,14 @@
 
     </doc-code>
     <br>
-    <h4>If <code>src</code> attribute is provided, the panel content is loaded dynamically from src.</h4>
+    <h4>If <code>src</code> attribute is provided, the panel content is loaded dynamically from src. If you would like the contents to be loaded immediately, provide the <code>load-all</code> attribute.</h4>
     <div class="bs-example">
       <panel header="Dynamic Loading" src="docs/loadContent.html#fragment" minimized></panel>
+      <panel header="**Non**-Dynamic Loading" src="docs/loadContent.html#fragment" minimized load-all></panel>
     </div>
     <doc-code language="markup">
       <panel header="Dynamic Loading" src="docs/loadContent.html#fragment" minimized></panel>
+      <panel header="**Non**-Dynamic Loading" src="docs/loadContent.html#fragment" minimized load-all></panel>
     </doc-code>
     <br>
 
@@ -243,7 +245,7 @@
       <div>
         <p>bottom-switch</p>
         <p><code>Boolean</code></p>
-        <p><code>false</code></p>
+        <p><code>true</code></p>
         <p>Whether to show an expand switch at the bottom of the panel. Independent of no-switch.</p>
       </div>
       <div>
@@ -253,10 +255,10 @@
         <p>The url that the popup window will navigate to. The url can be absolute or relative.</p>
       </div>
       <div>
-        <p>url</p>
+        <p>src</p>
         <p><code>String</code></p>
         <p></p>
-        <p>The url to the remote page to be loaded as the content of the panel.</p>
+        <p>The url to the local or remote page to be dynamically loaded as the content of the panel.</p>
       </div>
       <div>
         <p>type</p>
