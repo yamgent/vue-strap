@@ -1,5 +1,4 @@
 import affix from './Affix.vue'
-import alert from './Alert.vue'
 import aside from './Aside.vue'
 import carousel from './Carousel.vue'
 import checkbox from './Checkbox.vue'
