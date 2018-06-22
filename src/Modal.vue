@@ -33,6 +33,7 @@
 <script>
 import {coerce, getScrollBarWidth} from './utils/utils.js'
 import $ from './utils/NodeList.js'
+import {globalEventBus} from './GlobalEventBus.js'
 import md from './utils/markdown.js'
 
 export default {
@@ -124,17 +125,19 @@ export default {
       }
     }
   },
-  events: {
-    'modal:show': function (name) {
-      if (name === this.name) {
-        this.show = true
+  created() {
+    const thisInstance = this;
+    globalEventBus.$on('modal:show', function (name) {
+      if (name === thisInstance.name) {
+        thisInstance.show = true
       }
-    },
-    'trigger:bind': function (el, id) {
-      if (id === this.id) {
-        el.setTriggerBy(this)
+    });
+
+    globalEventBus.$on('trigger:bind', function (el, id) {
+      if (id === thisInstance.id) {
+        el.setTriggerBy(thisInstance)
       }
-    }
+    });
   },
   methods: {
     close () {

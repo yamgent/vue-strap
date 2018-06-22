@@ -71,9 +71,6 @@ function installEvents (vm) {
   vm.$on('modal:shouldShow', function (name) {
     this.$broadcast('modal:show', name)
   })
-  vm.$on('trigger:register', function (el, name) {
-    this.$broadcast('trigger:bind', el, name)
-  })
 }
 
 const VueStrap = {

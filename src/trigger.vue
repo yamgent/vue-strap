@@ -1,8 +1,10 @@
 <template>
-    <span v-el:trigger><slot></slot></span>
+    <span ref="trigger"><slot></slot></span>
 </template>
 
 <script>
+  import {globalEventBus} from './GlobalEventBus.js'
+
   export default {
     props: {
       trigger: {
@@ -16,23 +18,23 @@
         type: Object
       }
     },
-    attached () {
+    mounted () {
       let events = {contextmenu: 'contextmenu', hover: 'mouseleave mouseenter', focus: 'blur focus'}
       jQuery(this.$el).on(events[this.trigger] || 'click', (e) => {
         if (e && this.trigger === 'contextmenu') e.preventDefault()
         if (!this._triggerBy) {
-          this.$dispatch('trigger:register', this, this.for)
+          globalEventBus.$emit('trigger:bind', this, this.for)
         }
         this._triggerBy && this._triggerBy.toggle(e)
       })
 
       if (this.trigger === 'click') {
-        this.$els.trigger.style['cursor'] = 'pointer'
-        this.$els.trigger.style['-webkit-text-decoration'] = 'underline dashed';
-        this.$els.trigger.style['text-decoration'] = 'underline dashed';
+        this.$refs.trigger.style['cursor'] = 'pointer'
+        this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dashed';
+        this.$refs.trigger.style['text-decoration'] = 'underline dashed';
       } else {
-        this.$els.trigger.style['-webkit-text-decoration'] = 'underline dotted';
-        this.$els.trigger.style['text-decoration'] = 'underline dotted'
+        this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dotted';
+        this.$refs.trigger.style['text-decoration'] = 'underline dotted'
       }
     },
     methods: {

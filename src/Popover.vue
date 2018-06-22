@@ -14,6 +14,7 @@
 
 <script>
 import PopoverMixin from './utils/popoverMixins.js'
+import {globalEventBus} from './GlobalEventBus.js'
 
 export default {
   mixins: [PopoverMixin],
@@ -23,12 +24,13 @@ export default {
       default: 'hover'
     }
   },
-  events: {
-    'trigger:bind': function (el, id) {
-      if (id === this.id) {
-        el.setTriggerBy(this)
+  created () {
+    const thisInstance = this
+    globalEventBus.$on('trigger:bind', function(el, id) {
+      if (id === thisInstance.id) {
+        el.setTriggerBy(thisInstance)
       }
-    }
+    });
   },
   computed: {
     hasSlot () {

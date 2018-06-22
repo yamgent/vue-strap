@@ -15,6 +15,7 @@
 
 <script>
 import PopoverMixin from './utils/popoverMixins.js'
+import {globalEventBus} from './GlobalEventBus.js'
 import md from './utils/markdown.js'
 
 export default {
@@ -33,12 +34,13 @@ export default {
       default: 'top'
     }
   },
-  events: {
-    'trigger:bind': function (el, id) {
-      if (id === this.id) {
-        el.setTriggerBy(this)
+  created () {
+    const thisInstance = this
+    globalEventBus.$on('trigger:bind', function(el, id) {
+      if (id === thisInstance.id) {
+        el.setTriggerBy(thisInstance)
       }
-    }
+    });
   },
   attached () {
     if (this.$els.trigger) {
