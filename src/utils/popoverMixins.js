@@ -27,7 +27,6 @@ export default {
     },
     header: {
       type: Boolean,
-      coerce: coerce.boolean,
       default: true
     },
     placement: {
@@ -57,7 +56,7 @@ export default {
   },
   methods: {
     toggle (e) {
-      let trigger = getFirstChild(this.$els.trigger)
+      let trigger = getFirstChild(this.$refs.trigger)
       if (e && this.trigger === 'contextmenu' && trigger === e.target) e.preventDefault()
       if (!(this.show = !this.show)) {
         return
@@ -70,14 +69,14 @@ export default {
         }
       }
       setTimeout(() => {
-        const popover = this.$els.popover
+        const popover = this.$refs.popover
         console.log(trigger.offsetTop)
         console.log(popover.offsetHeight)
         this.calculateOffset(trigger, popover)
         this.updateOffsetForMargins(popover)
         popover.style.top = this.position.top + 'px'
         popover.style.left = this.position.left + 'px'
-        if (this.$els.arrow) {
+        if (this.$refs.arrow) {
           let actualWidth  = popover.offsetWidth
           let actualHeight = popover.offsetHeight
           this.calculateOffset(trigger, popover) // Update for CSS adjustment
@@ -155,25 +154,27 @@ export default {
       return delta
     },
     adjustArrow (delta, dimension, isVertical) {
-      this.$els.arrow.style[isVertical ? 'left' : 'top'] = 50 * (1 - delta / dimension) + '%'
-      this.$els.arrow.style[isVertical ? 'top' : 'left'] = ''
+      this.$refs.arrow.style[isVertical ? 'left' : 'top'] = 50 * (1 - delta / dimension) + '%'
+      this.$refs.arrow.style[isVertical ? 'top' : 'left'] = ''
     }
   },
-  ready () {
-    let trigger = this.$els.trigger
-    this._viewport = document.body
-    if (!trigger) return
-    if (this.trigger === 'focus' && !~trigger.tabIndex) {
-      trigger = $('a,input,select,textarea,button', trigger)
-      if (!trigger.length) {
-        trigger = null
+  mounted () {
+    this.$nextTick(function() {
+      let trigger = this.$refs.trigger
+      this._viewport = document.body
+      if (!trigger) return
+      if (this.trigger === 'focus' && !~trigger.tabIndex) {
+        trigger = $('a,input,select,textarea,button', trigger)
+        if (!trigger.length) {
+          trigger = null
+        }
       }
-    }
-    if (trigger) {
-      let events = {contextmenu: 'contextmenu', hover: 'mouseleave mouseenter', focus: 'blur focus'}
-      $(trigger).on(events[this.trigger] || 'click', this.toggle)
-      this._trigger = trigger
-    }
+      if (trigger) {
+        let events = {contextmenu: 'contextmenu', hover: 'mouseleave mouseenter', focus: 'blur focus'}
+        $(trigger).on(events[this.trigger] || 'click', this.toggle)
+        this._trigger = trigger
+      }
+    });
   },
   beforeDestroy () {
     if (this._trigger) $(this._trigger).off()
