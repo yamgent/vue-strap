@@ -1,11 +1,11 @@
 <template>
   <div>
-    <span v-el:trigger v-if="hasSlot" v-on:click="false"><slot></slot></span><!--
-    --><div v-el:popover v-if="show"
+    <span ref="trigger" v-if="hasSlot" v-on:click="false"><slot></slot></span><!--
+    --><div ref="popover" v-if="show"
       :class="['popover',placement]"
       :transition="effect"
     >
-      <div class="arrow" v-el:arrow></div>
+      <div class="arrow" ref="arrow"></div>
       <h3 class="popover-title" v-if="title" v-on:click="false"><slot name="title" v-html="titleRendered"></slot></h3>
       <div class="popover-content" v-on:click="false"><slot name="content" v-html="contentRendered"></slot></div>
     </div>
@@ -37,11 +37,14 @@ export default {
       return this._slotContents !== void 0
     }
   },
-  attached () {
-    if (this.$els.trigger) {
-      this.$els.trigger.style['-webkit-text-decoration'] = 'underline dotted'
-      this.$els.trigger.style['text-decoration'] = 'underline dotted'
-    }
+  mounted () {
+    this.$nextTick(function() {
+      if (this.$refs.trigger) {
+        this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dotted'
+        this.$refs.trigger.style['text-decoration'] = 'underline dotted'
+      }
+    });
+
   }
 }
 </script>
@@ -66,7 +69,7 @@ export default {
 .scale-enter {
   animation:scale-in 0.15s ease-in;
 }
-.scale-leave {
+.scale-leave-active {
   animation:scale-out 0.15s ease-out;
 }
 @keyframes scale-in {
