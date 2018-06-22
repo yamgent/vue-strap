@@ -1,6 +1,6 @@
 <template>
     <span class="panel-container">
-        <div class="morph" v-show="minimizedBool">
+        <div class="morph" v-show="localMinimized">
             <div class="morph-display-wrapper" @click="open()">
                 <button class="morph-display-button btn btn-default">
                     <template v-if="altContent">
@@ -14,19 +14,19 @@
                 </button>
             </div>
         </div>
-        <div :class="['panel', panelType, {'expandable-panel': isExpandablePanel}]" v-show="!minimizedBool">
+        <div :class="['panel', panelType, {'expandable-panel': isExpandablePanel}]" v-show="!localMinimized">
             <div :class="['panel-heading',{'accordion-toggle':canCollapse}]"
                  @click.prevent.stop="canCollapse && toggle()"
                  @mouseover="onHeaderHover = true" @mouseleave="onHeaderHover = false">
                 <div class="header-wrapper">
-                    <span :class="['caret', {'caret-collapse': !expandedBool}]" v-show="showCaret"></span>
+                    <span :class="['caret', {'caret-collapse': !localExpanded}]" v-show="showCaret"></span>
                     <slot name="header">
                         <div class="panel-title" v-html="headerContent"></div>
                     </slot>
                 </div>
                 <div class="button-wrapper">
                     <slot name="button">
-                        <panel-switch v-show="canCollapse && !noSwitchBool && !showCaret" v-bind:is-open="expandedBool"
+                        <panel-switch v-show="canCollapse && !noSwitchBool && !showCaret" v-bind:is-open="localExpanded"
                                       @click.native.stop.prevent="expand()"
                                       @is-open-event="retrieveOnOpen"></panel-switch>
                         <button type="button" class="close-button btn btn-default"
@@ -44,12 +44,12 @@
             </div>
             <div class="panel-collapse"
                  ref="panel"
-                 v-show="expandedBool"
+                 v-show="localExpanded"
             >
                 <div class="panel-body">
                     <slot></slot>
                     <retriever v-if="isDynamic" ref="retriever" :src="src" :fragment="fragment" delay></retriever>
-                    <panel-switch v-show="canCollapse && bottomSwitchBool" v-bind:is-open="expandedBool"
+                    <panel-switch v-show="canCollapse && bottomSwitchBool" v-bind:is-open="localExpanded"
                                   @click.native.stop.prevent="collapseThenScrollIntoViewIfNeeded()"
                                   @is-open-event="retrieveOnOpen"></panel-switch>
                 </div>
@@ -185,21 +185,23 @@
     data () {
       return {
         onHeaderHover: false,
+        localExpanded: false,
+        localMinimized: false
       }
     },
     methods: {
       toggle() {
-        this.expanded = !this.expandedBool;
+        this.localExpanded = !this.localExpanded;
       },
       expand() {
-        this.expanded = !this.expandedBool;
+        this.localExpanded = !this.localExpanded;
       },
       close() {
-        this.minimized = true;
+        this.localMinimized = true;
       },
       open() {
-        this.expanded = true;
-        this.minimized = false;
+        this.localExpanded = true;
+        this.localMinimized = false;
       },
       scrollIntoViewIfNeeded() {
         let top = this.$el.getBoundingClientRect().top;
@@ -224,7 +226,7 @@
       }
     },
     watch: {
-      'expanded': function (val, oldVal) {
+      'localExpanded': function (val, oldVal) {
         this.retrieveOnOpen(this, val);
       },
     },
@@ -238,9 +240,9 @@
       }
       // Edge case where user might want non-expandable panel that isn't expanded by default
       const notExpandableNoExpand = !this.expandableBool && this.expanded !== 'false';
-      // Set prop data to computed prop value
-      this.expanded =  notExpandableNoExpand || this.expandedBool; // Ensure this expr ordering is maintained
-      this.minimized = this.minimizedBool;
+      // Set local data to computed prop value
+      this.localExpanded =  notExpandableNoExpand || this.expandedBool; // Ensure this expr ordering is maintained
+      this.localMinimized = this.minimizedBool;
     },
     mounted() {
       this.$nextTick(function () {
