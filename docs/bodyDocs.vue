@@ -16,9 +16,7 @@
       <container>
         <div v-el:sections class="col-md-9">
           <getting-started></getting-started>
-          <accordion-docs></accordion-docs>
           <affix-docs></affix-docs>
-          <aside-docs></aside-docs>
           <image-docs></image-docs>
           <modal-docs></modal-docs>
           <navbar-docs></navbar-docs>
@@ -56,10 +54,7 @@
 <script>
 import affixSidebar from './affixSidebar.vue'
 import gettingStarted from './example/gettingStarted.vue'
-import accordionDocs from './example/accordionDocs.vue'
 import affixDocs from './example/affixDocs.vue'
-import asideDocs from './example/asideDocs.vue'
-import buttonGroupDocs  from './example/buttonGroupDocs.vue'
 import dynamicPanelDocs from './example/dynamicPanelDocs.vue'
 import container from './example/container.vue'
 import modalDocs from './example/modalDocs.vue'
@@ -68,7 +63,6 @@ import navbarDocs from './example/navbarDocs.vue'
 import questionDocs from './example/questionDocs.vue'
 import popoverDocs from './example/popoverDocs.vue'
 import retrieverDocs from './example/retrieverDocs.vue'
-import selectDocs from './example/selectDocs.vue'
 import tabsDocs from './example/tabsDocs.vue'
 import tooltipDocs from './example/tooltipDocs.vue'
 import imageDocs from './example/imageDocs.vue'
@@ -80,10 +74,7 @@ export default {
   components: {
     affixSidebar,
     gettingStarted,
-    accordionDocs,
     affixDocs,
-    asideDocs,
-    buttonGroupDocs,
     container,
     modalDocs,
     navbarDocs,
@@ -91,7 +82,6 @@ export default {
     popoverDocs,
     retrieverDocs,
     searchbarDocs,
-    selectDocs,
     tabsDocs,
     tooltipDocs,
     imageDocs,
