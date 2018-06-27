@@ -1,5 +1,6 @@
-import {coerce} from './utils.js'
+import {toBoolean} from './utils.js'
 import $ from './NodeList.js'
+import {globalEventBus} from '../GlobalEventBus.js'
 import md from './markdown.js'
 
 function getFirst(nodeList) {
@@ -24,11 +25,6 @@ export default {
     },
     content: {
       type: String
-    },
-    header: {
-      type: Boolean,
-      coerce: coerce.boolean,
-      default: true
     },
     placement: {
       type: String,
@@ -56,8 +52,13 @@ export default {
     }
   },
   methods: {
+    bindTrigger (trigger, popover) {
+      if (popover === this.id) {
+        trigger.setTriggerBy(this)
+      }
+    },
     toggle (e) {
-      let trigger = getFirstChild(this.$els.trigger)
+      let trigger = getFirstChild(this.$refs.trigger)
       if (e && this.trigger === 'contextmenu' && trigger === e.target) e.preventDefault()
       if (!(this.show = !this.show)) {
         return
@@ -70,14 +71,14 @@ export default {
         }
       }
       setTimeout(() => {
-        const popover = this.$els.popover
+        const popover = this.$refs.popover
         console.log(trigger.offsetTop)
         console.log(popover.offsetHeight)
         this.calculateOffset(trigger, popover)
         this.updateOffsetForMargins(popover)
         popover.style.top = this.position.top + 'px'
         popover.style.left = this.position.left + 'px'
-        if (this.$els.arrow) {
+        if (this.$refs.arrow) {
           let actualWidth  = popover.offsetWidth
           let actualHeight = popover.offsetHeight
           this.calculateOffset(trigger, popover) // Update for CSS adjustment
@@ -92,7 +93,7 @@ export default {
           let arrowOffsetPosition = isVertical ? popover.offsetWidth : popover.offsetHeight
           this.adjustArrow(arrowDelta, arrowOffsetPosition, isVertical)
         }
-      }, 0)
+      }, 20)
     },
     calculateOffset (trigger, popover) {
       switch (this.placement) {
@@ -155,12 +156,15 @@ export default {
       return delta
     },
     adjustArrow (delta, dimension, isVertical) {
-      this.$els.arrow.style[isVertical ? 'left' : 'top'] = 50 * (1 - delta / dimension) + '%'
-      this.$els.arrow.style[isVertical ? 'top' : 'left'] = ''
+      this.$refs.arrow.style[isVertical ? 'left' : 'top'] = 50 * (1 - delta / dimension) + '%'
+      this.$refs.arrow.style[isVertical ? 'top' : 'left'] = ''
     }
   },
-  ready () {
-    let trigger = this.$els.trigger
+  created () {
+    globalEventBus.$on('trigger:bind', this.bindTrigger)
+  },
+  mounted () {
+    let trigger = this.$refs.trigger
     this._viewport = document.body
     if (!trigger) return
     if (this.trigger === 'focus' && !~trigger.tabIndex) {
@@ -176,6 +180,6 @@ export default {
     }
   },
   beforeDestroy () {
-    if (this._trigger) $(this._trigger).off()
+    globalEventBus.$off('trigger:bind', this.bindTrigger)
   }
 }
