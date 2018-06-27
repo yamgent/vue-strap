@@ -9,7 +9,6 @@ import popover from './Popover.vue'
 import question from './Question.vue'
 import retriever from './Retriever.vue'
 import searchbar from './Searchbar.vue'
-import showModal from './directives/ShowModal'
 import tab from './Tab.vue'
 import tabGroup from './TabGroup.vue'
 import tabset from './Tabset.vue'
@@ -41,7 +40,6 @@ const components = {
 
 const directives = {
   closeable,
-  showModal
 }
 
 function install (Vue) {
@@ -57,12 +55,7 @@ function install (Vue) {
 }
 
 function installEvents (vm) {
-  vm.$on('modal:shouldShow', function (name) {
-    this.$broadcast('modal:show', name)
-  })
-  vm.$on('trigger:register', function (el, name) {
-    this.$broadcast('trigger:bind', el, name)
-  })
+
 }
 
 const VueStrap = {
