@@ -8,33 +8,47 @@ export default {
   },
   computed: {
     primitiveData() {
+      function getTotalMatches(searchTarget, regexes) {
+        return regexes.reduce((total, regex) => (regex.test(searchTarget) ? total + 1 : total), 0);
+      }
+
+      if (this.value.length < 2) {
+        return [];
+      }
       if (!this.data) {
         return undefined;
       }
       const matches = [];
-      const regex = new RegExp(this.value, 'i');
+      const regexes = this.value.split(' ')
+        .filter(searchKeyword => searchKeyword !== '')
+        .map(searchKeyword => new RegExp(searchKeyword, 'i'));
       this.data.forEach((entry) => {
         const { headings, src, title } = entry;
         const keywords = entry.keywords || '';
-        let hasMatchingHeading = false;
-        Object.entries(headings).forEach(([id, text]) => {
-          if (regex.test(text)) {
-            hasMatchingHeading = true;
-            matches.push({
-              heading: { id, text },
-              keywords,
-              src,
-              title,
-            });
+        let searchTarget = [title].concat(keywords).concat(Object.values(headings)).join(' ');
+        let totalMatches = getTotalMatches(searchTarget, regexes);
+        if (totalMatches > 0) {
+          searchTarget = [title].concat(keywords).join(' ');
+          const isMatchingPage = getTotalMatches(searchTarget, regexes) === totalMatches;
+          if (isMatchingPage) {
+            matches.push(Object.assign(entry, { totalMatches }));
           }
-        });
-        if (!hasMatchingHeading) {
-          if (regex.test(title) || regex.test(keywords)) {
-            matches.push(entry);
-          }
+          Object.entries(headings).forEach(([id, text]) => {
+            if (regexes.some(regex => regex.test(text))) {
+              searchTarget = [title].concat(keywords).concat(text).join(' ');
+              totalMatches = getTotalMatches(searchTarget, regexes);
+              matches.push({
+                heading: { id, text },
+                keywords,
+                src,
+                title,
+                totalMatches,
+              });
+            }
+          });
         }
       });
-      return matches;
+      return matches.sort((a, b) => b.totalMatches - a.totalMatches);
     },
     entryTemplate() {
       return 'searchbarTemplate';
