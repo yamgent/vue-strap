@@ -12,7 +12,7 @@
     "src": "src/"
   },
   "dependencies": {
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^4.1.1",
     "jquery": "^3.3.1",
     "markdown-it": "^8.3.1",
     "markdown-it-emoji": "^1.3.0",
