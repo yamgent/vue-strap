@@ -1,13 +1,22 @@
 <template>
-  <span v-el:trigger v-if="hasSlot" v-on:click="false"><slot></slot></span><!--
-  --><div v-el:popover v-if="show"
-    :class="['popover',placement]"
-    :transition="effect"
-  >
-    <div class="arrow" v-el:arrow></div>
-    <h3 class="popover-title" v-if="title" v-on:click="false"><slot name="title">{{{titleRendered}}}</slot></h3>
-    <div class="popover-content" v-on:click="false"><slot name="content">{{{contentRendered}}}</slot></div>
-  </div>
+  <span>
+    <span ref="trigger" v-if="hasSlot" v-on:click="false"><slot></slot></span><!--
+    -->
+    <transition :name="effect">
+    <div ref="popover" v-if="show"
+      :class="['popover',placement]">
+      <div class="arrow" ref="arrow"></div>
+      <h3 class="popover-title" v-if="title" v-on:click="false">
+        <slot name="title" v-if="hasTitleSlot"></slot>
+        <span v-else v-html="titleRendered"></span>
+      </h3>
+      <div class="popover-content" v-on:click="false">
+        <slot name="content" v-if="hasContentSlot"></slot>
+        <span v-else v-html="contentRendered"></span>
+      </div>
+    </div>
+    </transition>
+  </span>
 </template>
 
 <script>
@@ -21,28 +30,35 @@ export default {
       default: 'hover'
     }
   },
-  events: {
-    'trigger:bind': function (el, id) {
-      if (id === this.id) {
-        el.setTriggerBy(this)
-      }
-    }
-  },
   computed: {
     hasSlot () {
-      return this._slotContents !== void 0
-    }
+      return this.$slots.default;
+    },
+    hasTitleSlot () {
+      return this.$slots.title
+    },
+    hasContentSlot () {
+      return this.$slots.content;
+    },
   },
-  attached () {
-    if (this.$els.trigger) {
-      this.$els.trigger.style['-webkit-text-decoration'] = 'underline dotted'
-      this.$els.trigger.style['text-decoration'] = 'underline dotted'
+  mounted () {
+    if (this.$refs.trigger) {
+      this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dotted'
+      this.$refs.trigger.style['text-decoration'] = 'underline dotted'
     }
   }
 }
 </script>
 
 <style>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s ease;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
 .popover.top,
 .popover.left,
 .popover.right,
@@ -59,10 +75,10 @@ export default {
     max-width: 600px;
   }
 }
-.scale-enter {
+.scale-enter-active {
   animation:scale-in 0.15s ease-in;
 }
-.scale-leave {
+.scale-leave-active {
   animation:scale-out 0.15s ease-out;
 }
 @keyframes scale-in {

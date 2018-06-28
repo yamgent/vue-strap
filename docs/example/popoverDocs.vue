@@ -19,9 +19,6 @@
           <button class="btn btn-default">Contextmenu (right click)</button>
         </popover>
       </p>
-      <popover effect="scale" title="Title" :content="text" placement="bottom" trigger="focus">
-        <bs-input type="text" placeholder="Focus"></bs-input>
-      </popover>
       <h4>Markdown</h4>
       <p>
         <popover effect="scale" title="**Emoji title** :rocket:" content="++emoji++ content :cat:">
@@ -107,14 +104,12 @@ import docSection from './docSection.vue'
 import docTable from './docTable.vue'
 import docCode from './docCode.vue'
 import popover from 'src/Popover.vue'
-import bsInput from 'src/Input.vue'
 
 export default {
   components: {
     docSection,
     docTable,
     docCode,
-    bsInput,
     popover
   },
   data () {

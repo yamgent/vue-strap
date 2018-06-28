@@ -1,4 +1,8 @@
-<template><slot></slot></template>
+<template>
+  <div>
+    <slot></slot>
+  </div>
+</template>
 
 <script>
 import {coerce} from './utils/utils.js'
@@ -8,7 +12,6 @@ export default {
   props: {
     disabled: {
       type: Boolean,
-      coerce: coerce.boolean,
       default: false
     },
     header: {
@@ -27,6 +30,9 @@ export default {
     },
     headerRendered () {
       return md.renderInline(this.header)
+    },
+    disabledBool () {
+      return coerce.boolean(this.disabled)
     }
   },
   created () {

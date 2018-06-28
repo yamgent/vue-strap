@@ -10,6 +10,24 @@ export const coerce = {
   pattern: val => (val instanceof Function || val instanceof RegExp ? val : typeof val === 'string' ? new RegExp(val) : null)
 }
 
+export function toBoolean (val) {
+  return (typeof val === 'string')
+    ? ((val === '' || val === 'true')
+      ? true
+      : ((val === 'false' || val === 'null' || val === 'undefined')
+        ? false
+        : val))
+    : val;
+}
+
+export function toNumber (val) {
+  return (typeof val === 'number')
+    ? val
+    : ((val === undefined || val === null || isNaN(Number(val)))
+      ? null
+      : Number(val));
+}
+
 export function getJSON (url) {
   var request = new window.XMLHttpRequest()
   var data = {}

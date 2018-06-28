@@ -1,14 +1,18 @@
 <template>
-  <span v-el:trigger v-on:click="false"><slot></slot></span><!--
-  --><div v-el:popover v-if="show" style="display:block;"
-    :class="['tooltip',placement]"
-    :transition="effect"
-  >
-    <div class="tooltip-arrow"></div>
-    <div class="tooltip-inner" v-on:click="false">
-      <slot name="content">{{{contentRendered}}}</slot>
-   </div>
-  </div>
+  <span>
+    <span ref="trigger" v-on:click="false"><slot></slot></span><!--
+    -->
+    <transition :name="effect">
+      <div ref="popover" v-if="show" style="display:block;"
+        :class="['tooltip',placement]"
+      >
+        <div class="tooltip-arrow"></div>
+        <div class="tooltip-inner" v-on:click="false">
+          <span name="content" v-html="contentRendered"></span>
+       </div>
+      </div>
+    </transition>
+  </span>
 </template>
 
 <script>
@@ -31,49 +35,27 @@ export default {
       default: 'top'
     }
   },
-  events: {
-    'trigger:bind': function (el, id) {
-      if (id === this.id) {
-        el.setTriggerBy(this)
-      }
-    }
-  },
-  attached () {
-    if (this.$els.trigger) {
-      this.$els.trigger.style['-webkit-text-decoration'] = 'underline dotted'
-      this.$els.trigger.style['text-decoration'] = 'underline dotted'
+  mounted () {
+    if (this.$refs.trigger) {
+      this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dotted'
+      this.$refs.trigger.style['text-decoration'] = 'underline dotted'
     }
   }
 }
 </script>
 
 <style>
+.scale-enter-active {
+  animation:scale-in 0.15s ease-in;
+}
+.scale-leave-active {
+  animation:scale-out 0.15s ease-out;
+}
+
 .tooltip.top,
 .tooltip.left,
 .tooltip.right,
 .tooltip.bottom {
   opacity: .9
-}
-.fadein-enter {
-  animation:fadein-in 0.3s ease-in;
-}
-.fadein-leave {
-  animation:fadein-out 0.3s ease-out;
-}
-@keyframes fadein-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: .9;
-  }
-}
-@keyframes fadein-out {
-  0% {
-    opacity: .9;
-  }
-  100% {
-    opacity: 0;
-  }
 }
 </style>

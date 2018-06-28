@@ -7,14 +7,13 @@
 </template>
 
 <script>
-import {coerce} from './utils/utils.js'
+import {toNumber} from './utils/utils.js'
 import $ from './utils/NodeList.js'
 
 export default {
   props: {
     offset: {
       type: Number,
-      coerce: coerce.number,
       default: 0
     }
   },
@@ -24,8 +23,11 @@ export default {
     }
   },
   computed: {
+    offsetNumber() {
+      return toNumber(this.offset)
+    },
     top () {
-      return this.offset > 0 ? this.offset + 'px' : null
+      return this.offsetNumber > 0 ? this.offsetNumber + 'px' : null
     }
   },
   methods: {
@@ -53,11 +55,11 @@ export default {
         scroll[t] = ret
         element[t] = scroll[t] + rect[t] - (this.$el['client'+type] || body['client'+type] || 0)
       })
-      let fix = scroll.top > element.top - this.offset
+      let fix = scroll.top > element.top - this.offsetNumber
       if (this.affixed !== fix) { this.affixed = fix }
     }
   },
-  ready () {
+  mounted () {
     $(window).on('scroll resize', () => this.checkScroll())
     setTimeout(() => this.checkScroll(), 0)
   },

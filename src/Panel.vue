@@ -1,36 +1,36 @@
 <template>
     <span class="panel-container">
-        <div class="morph" v-show="minimized">
-            <div class="morph-display-wrapper" v-on:click="open()">
+        <div class="morph" v-show="localMinimized">
+            <div class="morph-display-wrapper" @click="open()">
                 <button class="morph-display-button btn btn-default">
                     <template v-if="altContent">
-                        <div class="panel-title">{{{altContent}}}</div>
+                        <div class="panel-title" v-html="altContent"></div>
                     </template>
                     <template v-else>
                         <slot name="header">
-                            <div class="panel-title">{{{altContent}}}</div>
+                            <div class="panel-title" v-html="altContent"></div>
                         </slot>
                     </template>
                 </button>
             </div>
         </div>
-
-        <div :class="['panel', panelType, {'expandable-panel': isExpandablePanel}]" v-else>
+        <div :class="['panel', panelType, {'expandable-panel': isExpandablePanel}]" v-show="!localMinimized">
             <div :class="['panel-heading',{'accordion-toggle':canCollapse}]"
                  @click.prevent.stop="canCollapse && toggle()"
                  @mouseover="onHeaderHover = true" @mouseleave="onHeaderHover = false">
                 <div class="header-wrapper">
-                    <span :class="['caret', {'caret-collapse': !expanded}]" v-show="showCaret"></span>
+                    <span :class="['caret', {'caret-collapse': !localExpanded}]" v-show="showCaret"></span>
                     <slot name="header">
-                        <div class="panel-title">{{{headerContent}}}</div>
+                        <div class="panel-title" v-html="headerContent"></div>
                     </slot>
                 </div>
                 <div class="button-wrapper">
                     <slot name="button">
-                        <panel-switch v-show="canCollapse && !noSwitch && !showCaret" v-bind:is-open="expanded"
-                                      @click.stop.prevent="expand()"></panel-switch>
+                        <panel-switch v-show="canCollapse && !noSwitchBool && !showCaret" v-bind:is-open="localExpanded"
+                                      @click.native.stop.prevent="expand()"
+                                      @is-open-event="retrieveOnOpen"></panel-switch>
                         <button type="button" class="close-button btn btn-default"
-                                v-show="this.type !== 'seamless' ? (!noClose) : onHeaderHover"
+                                v-show="this.type !== 'seamless' ? (!noCloseBool) : onHeaderHover"
                                 @click.stop="close()">
                             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                         </button>
@@ -43,14 +43,15 @@
                 </div>
             </div>
             <div class="panel-collapse"
-                 v-el:panel
-                 v-show="expanded"
+                 ref="panel"
+                 v-show="localExpanded"
             >
                 <div class="panel-body">
                     <slot></slot>
-                    <retriever v-if="isDynamic" v-ref:retriever :src="src" :fragment="fragment" delay></retriever>
-                    <panel-switch v-show="canCollapse && bottomSwitch" v-bind:is-open="expanded"
-                                  @click.stop.prevent="collapseThenScrollIntoViewIfNeeded()"></panel-switch>
+                    <retriever v-if="isDynamic" ref="retriever" :src="src" :fragment="fragment" delay></retriever>
+                    <panel-switch v-show="canCollapse && bottomSwitchBool" v-bind:is-open="localExpanded"
+                                  @click.native.stop.prevent="collapseThenScrollIntoViewIfNeeded()"
+                                  @is-open-event="retrieveOnOpen"></panel-switch>
                 </div>
                 <hr v-show="this.type === 'seamless'" />
             </div>
@@ -59,7 +60,7 @@
 </template>
 
 <script>
-  import {coerce, getFragmentByHash} from './utils/utils.js'
+  import {getFragmentByHash, toBoolean, toNumber} from './utils/utils.js'
   import md from './utils/markdown.js'
   import panelSwitch from './PanelSwitch.vue'
   import retriever from './Retriever.vue'
@@ -71,10 +72,12 @@
     },
     props: {
       header: {
-        type: String
+        type: String,
+        default: ''
       },
       alt: {
-        type: String
+        type: String,
+        default: ''
       },
       type: {
         type: String,
@@ -82,37 +85,26 @@
       },
       expandable: {
         type: Boolean,
-        coerce: coerce.boolean,
         default: true
       },
       isOpen: {
         type: Boolean,
-        coerce: coerce.boolean,
         default: null
       },
       expanded: {
         type: Boolean,
-        coerce: coerce.boolean,
         default: null
       },
       minimized: {
         type: Boolean,
-        coerce: coerce.boolean,
         default: false
-      },
-      ctrlLvl: {
-        type: Number,
-        coerce: coerce.number,
-        default: 0
       },
       noSwitch: {
         type: Boolean,
-        coerce: coerce.boolean,
         default: false
       },
       noClose: {
         type: Boolean,
-        coerce: coerce.boolean,
         default: false
       },
       popupUrl: {
@@ -124,30 +116,54 @@
       },
       bottomSwitch: {
         type: Boolean,
-        coerce: coerce.boolean,
         default: true
-      }
-    },
-    data () {
-      return {
-        onHeaderHover: false
+      },
+      loadAll: {
+        type: Boolean,
+        default: false
       }
     },
     computed: {
+      // Vue 2.0 coerce migration
+      expandableBool () {
+        return toBoolean(this.expandable);
+      },
+      isOpenBool () {
+        return toBoolean(this.isOpen);
+      },
+      expandedBool () {
+        return toBoolean(this.expanded);
+      },
+      minimizedBool () {
+        return toBoolean(this.minimized);
+      },
+      noSwitchBool () {
+        return toBoolean(this.noSwitch);
+      },
+      noCloseBool () {
+        return toBoolean(this.noClose);
+      },
+      bottomSwitchBool () {
+        return toBoolean(this.bottomSwitch);
+      },
+      loadAllBool () {
+        return toBoolean(this.loadAll);
+      },
+      // Vue 2.0 coerce migration end
       inAccordion () {
-        return this.$parent && this.$parent._isAccordion
+        return this.$parent && this.$parent._isAccordion;
       },
       isExpandablePanel () {
-        return this.expandable;
+        return this.expandableBool;
       },
       canCollapse () {
-        return this.inAccordion || this.expandable
+        return this.inAccordion || this.expandableBool;
       },
       showCaret () {
         return this.type == 'seamless';
       },
       panelType () {
-        return 'panel panel-' + (this.type || (this.inAccordion && this.$parent.type) || 'default')
+        return 'panel panel-' + (this.type || (this.inAccordion && this.$parent.type) || 'default');
       },
       headerContent () {
         return md.render(this.header);
@@ -160,92 +176,77 @@
       },
       showCloseButton () {
         if (this.type !== 'seamless') {
-          return !this.noClose;
+          return !this.noCloseBool;
         } else {
           return onHeaderHover;
         }
       }
     },
+    data () {
+      return {
+        onHeaderHover: false,
+        localExpanded: false,
+        localMinimized: false
+      }
+    },
     methods: {
-      toggle () {
-        this.expanded = !this.expanded
+      toggle() {
+        this.localExpanded = !this.localExpanded;
       },
       expand() {
-        if (this.expanded) {
-          // Ask children to collapse
-          this.$broadcast('panel:collapse', this.ctrlLvl)
-        } else {
-          // Expand children
-          this.$broadcast('panel:expand', this.ctrlLvl)
-        }
-        this.expanded = !this.expanded
+        this.localExpanded = !this.localExpanded;
       },
       close() {
-        console.log('close')
-        this.minimized = true;
+        this.localMinimized = true;
       },
-      open () {
-        this.expanded = true;
-        this.minimized = false;
-      },
-      expandCollapseHandler (isExpand, level) {
-        if (level > 0) {
-          this.canCollapse && (this.expanded = isExpand)
-          this.$broadcast('panel:' + (isExpand ? 'expand' : 'collapse'), level - 1)
-        } else if (level === -1) {
-          this.canCollapse && (this.expanded = isExpand)
-          this.$broadcast('panel:' + (isExpand ? 'expand' : 'collapse'), -1)
-        }
+      open() {
+        this.localExpanded = true;
+        this.localMinimized = false;
       },
       scrollIntoViewIfNeeded() {
-        var top = this.$el.getBoundingClientRect().top;
-        var isTopInView = (top >= 0) && (top <= window.innerHeight);
+        let top = this.$el.getBoundingClientRect().top;
+        let isTopInView = (top >= 0) && (top <= window.innerHeight);
         if (!isTopInView) {
           this.$el.scrollIntoView();
         }
       },
       collapseThenScrollIntoViewIfNeeded() {
-        this.$once('isOpenEvent', (el, isOpen) => {
+        this.$once('is-open-event', (el, isOpen) => {
           this.scrollIntoViewIfNeeded();
         });
         this.expand();
       },
       openPopup() {
         window.open(this.popupUrl);
-      }
-    },
-    watch: {
-      'expanded': function (val, oldVal) {
-        this.$dispatch('isOpenEvent', this, val)
-      }
-    },
-    events: {
-      'panel:expand': function (level) {
-        this.expandCollapseHandler(true, level)
       },
-      'panel:collapse': function (level) {
-        this.expandCollapseHandler(false, level)
-      }
-    },
-    created () {
-      if (this.expanded === null) {
-        this.expanded = !this.canCollapse
-      }
-      if (this.src) {
-        var hash = getFragmentByHash(this.src)
-        if (hash) {
-          this.fragment = hash
-          this.src = this.src.split('#')[0]
+      retrieveOnOpen(el, isOpen) {
+        if (isOpen && this.isDynamic) {
+          this.$refs.retriever.fetch()
         }
       }
     },
-    attached() {
-      if (this.isDynamic && this.expanded) {
-        this.$refs.retriever.fetch()
+    watch: {
+      'localExpanded': function (val, oldVal) {
+        this.retrieveOnOpen(this, val);
+      },
+    },
+    created () {
+      if (this.src) {
+        let hash = getFragmentByHash(this.src);
+        if (hash) {
+          this.fragment = hash;
+          this.src = this.src.split('#')[0];
+        }
       }
-
-      this.$on('isOpenEvent', (el, isOpen) => {
-        if (isOpen && this.isDynamic) {
+      // Edge case where user might want non-expandable panel that isn't expanded by default
+      const notExpandableNoExpand = !this.expandableBool && this.expanded !== 'false';
+      // Set local data to computed prop value
+      this.localExpanded =  notExpandableNoExpand || this.expandedBool; // Ensure this expr ordering is maintained
+      this.localMinimized = this.minimizedBool;
+    },
+    mounted() {
+      this.$nextTick(function () {
+        if (this.isDynamic && (this.expandedBool || this.loadAllBool)) {
           this.$refs.retriever.fetch()
         }
       })

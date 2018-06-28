@@ -1,25 +1,29 @@
 <template>
     <button type="button" class="collapse-button btn btn-default">
-        <span :class="['glyphicon', {'glyphicon-menu-down': !isOpen, 'glyphicon-menu-up': isOpen}]"
+        <span :class="['glyphicon', {'glyphicon-menu-down': !isOpenBool, 'glyphicon-menu-up': isOpenBool}]"
               aria-hidden="true"></span>
     </button>
 </template>
 
 <script>
-  import {coerce} from './utils/utils.js'
+  import {toBoolean} from './utils/utils.js'
 
   export default {
     props: {
       isOpen: {
         type: Boolean,
-        coerce: coerce.boolean,
         default: null
       },
     },
+    computed: {
+      isOpenBool () {
+        return toBoolean(this.isOpen);
+      }
+    },
     methods: {
       toggle () {
-        this.isOpen = !this.isOpen
-        this.$dispatch('isOpenEvent', this, this.isOpen)
+        this.isOpen = !this.isOpenBool
+        this.$emit('is-open-event', this, this.isOpenBool)
       }
     },
     created () {

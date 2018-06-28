@@ -5,16 +5,15 @@
     'fade':effect === 'fade',
     'zoom':effect === 'zoom'
     }">
-    <div v-bind:class="{'modal-dialog':true,'modal-lg':large,'modal-sm':small}" role="document"
+    <div v-bind:class="{'modal-dialog':true,'modal-lg':largeBool,'modal-sm':smallBool}" role="document"
       v-bind:style="{width: optionalWidth}">
       <div class="modal-content">
         <slot name="modal-header">
           <div class="modal-header">
             <button type="button" class="close" @click="close"><span>&times;</span></button>
             <h4 class="modal-title">
-              <slot name="title">
-                {{{titleRendered}}}
-              </slot>
+              <span name="title" v-html="titleRendered">
+              </span>
             </h4>
           </div>
         </slot>
@@ -32,7 +31,8 @@
 </template>
 
 <script>
-import {coerce, getScrollBarWidth} from './utils/utils.js'
+import {globalEventBus} from './GlobalEventBus.js'
+import {toBoolean, getScrollBarWidth} from './utils/utils.js'
 import $ from './utils/NodeList.js'
 import md from './utils/markdown.js'
 
@@ -46,12 +46,6 @@ export default {
       type: String,
       default: ''
     },
-    show: {
-      required: true,
-      type: Boolean,
-      coerce: coerce.boolean,
-      twoWay: true
-    },
     width: {
       default: null
     },
@@ -61,17 +55,14 @@ export default {
     },
     backdrop: {
       type: Boolean,
-      coerce: coerce.boolean,
       default: true
     },
     large: {
       type: Boolean,
-      coerce: coerce.boolean,
       default: false
     },
     small: {
       type: Boolean,
-      coerce: coerce.boolean,
       default: false
     },
     name: {
@@ -81,7 +72,21 @@ export default {
       type: String
     }
   },
+  data() {
+    return {
+      show: false
+    }
+  },
   computed: {
+    backdropBool () {
+      return toBoolean(this.backdrop)
+    },
+    largeBool () {
+      return toBoolean(this.large)
+    },
+    smallBool () {
+      return toBoolean(this.small)
+    },
     titleRendered () {
       return md.renderInline(this.title);
     },
@@ -110,7 +115,7 @@ export default {
         if (scrollBarWidth !== 0) {
           body.style.paddingRight = scrollBarWidth + 'px'
         }
-        if (this.backdrop) {
+        if (this.backdropBool) {
           $(el).on('click', e => {
             if (e.target === el) this.show = false
           })
@@ -125,25 +130,29 @@ export default {
       }
     }
   },
-  events: {
-    'modal:show': function (name) {
+  created () {
+    globalEventBus.$on('trigger:bind', this.bindTrigger)
+  },
+  methods: {
+    bindTrigger (trigger, popover) {
+      if (popover === this.id) {
+        trigger.setTriggerBy(this)
+      }
+    },
+    showModal (name) {
       if (name === this.name) {
         this.show = true
       }
     },
-    'trigger:bind': function (el, id) {
-      if (id === this.id) {
-        el.setTriggerBy(this)
-      }
-    }
-  },
-  methods: {
     close () {
       this.show = false
     },
     toggle () {
       this.show = true
     }
+  },
+  beforeDestroy () {
+    globalEventBus.$off('trigger:bind', this.bindTrigger)
   }
 }
 </script>

@@ -1,15 +1,7 @@
-import accordion from './Accordion.vue'
 import affix from './Affix.vue'
-import alert from './Alert.vue'
-import aside from './Aside.vue'
-import carousel from './Carousel.vue'
-import checkbox from './Checkbox.vue'
 import closeable from './directives/Closeable'
 import dropdown from './Dropdown.vue'
-import dynamicPanel from './DynamicPanel.vue'
-import input from './Input.vue'
 import modal from './Modal.vue'
-import morph from './Morph.vue'
 import navbar from './Navbar.vue'
 import panel from './Panel.vue'
 import pic from './Pic.vue'
@@ -17,8 +9,6 @@ import popover from './Popover.vue'
 import question from './Question.vue'
 import retriever from './Retriever.vue'
 import searchbar from './Searchbar.vue'
-import select from './Select.vue'
-import showModal from './directives/ShowModal'
 import tab from './Tab.vue'
 import tabGroup from './TabGroup.vue'
 import tabset from './Tabset.vue'
@@ -28,15 +18,10 @@ import trigger from './trigger.vue'
 import typeahead from './Typeahead.vue'
 
 const components = {
-  accordion,
   affix,
-  aside,
   box: tipBox,
-  checkbox,
   dropdown,
-  dynamicPanel,
   modal,
-  morph,
   navbar,
   panel,
   pic,
@@ -44,7 +29,6 @@ const components = {
   question,
   retriever,
   searchbar,
-  select,
   tab,
   tabGroup,
   tabs: tabset,
@@ -56,7 +40,6 @@ const components = {
 
 const directives = {
   closeable,
-  showModal
 }
 
 function install (Vue) {
@@ -72,15 +55,7 @@ function install (Vue) {
 }
 
 function installEvents (vm) {
-  vm.$on('modal:shouldShow', function (name) {
-    this.$broadcast('modal:show', name)
-  })
-  vm.$on('retriever:fetched', function (el) {
-    vm.$compile(el);
-  })
-  vm.$on('trigger:register', function (el, name) {
-    this.$broadcast('trigger:bind', el, name)
-  })
+
 }
 
 const VueStrap = {
