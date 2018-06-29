@@ -14,7 +14,7 @@
         </div>
       </div>
       <container>
-        <div v-el:sections class="col-md-9">
+        <div ref="sections" class="col-md-9">
           <getting-started></getting-started>
           <affix-docs></affix-docs>
           <image-docs></image-docs>
