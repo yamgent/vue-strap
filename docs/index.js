@@ -10,7 +10,7 @@ import VueStrap from 'src/index.js';
 Vue.config.devtools = true
 Vue.use(VueStrap);
 var vm = new Vue({
-  el: 'body',
+  el: '#mainContent',
   components: {
     bodyDocs,
   },
