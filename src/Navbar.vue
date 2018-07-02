@@ -8,16 +8,12 @@
     'fixed-bottom':(placement === 'bottom')
   }]">
     <div class="container-fluid">
-      <div class="navbar-header">
-        <button v-if="!slots.collapse" type="button" class="navbar-toggle collapsed"  aria-expanded="false" @click="toggleCollapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+      <div class="navbar-brand"><slot name="brand"></slot></div>
+      <button v-if="!slots.collapse" class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation" @click="toggleCollapse">
+        <span class="navbar-toggler-icon"></span>
         <slot name="collapse"></slot>
-        <slot name="brand"></slot>
-      </div>
+      </button>
+
       <div :class="['navbar-collapse',{collapse:collapsed}]">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <slot></slot>
