@@ -1,10 +1,11 @@
 <template>
-  <nav ref="navbar" :class="['navbar',{
-    'navbar-inverse':(type == 'inverse'),
-    'navbar-default':(type == 'default'),
-    'navbar-fixed-top':(placement === 'top'),
-    'navbar-fixed-bottom':(placement === 'bottom'),
-    'navbar-static-top':(placement === 'static')
+  <nav ref="navbar" :class="['navbar', 'navbar-expand-md', {
+    'navbar-dark':(type === 'inverse'),
+    'navbar-light':(type === 'default'),
+    'bg-dark':(type === 'inverse'),
+    'bg-light':(type === 'default'),
+    'fixed-top':(placement === 'top'),
+    'fixed-bottom':(placement === 'bottom')
   }]">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -18,10 +19,10 @@
         <slot name="brand"></slot>
       </div>
       <div :class="['navbar-collapse',{collapse:collapsed}]">
-        <ul class="nav navbar-nav">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <slot></slot>
         </ul>
-        <ul v-if="slots.right" class="nav navbar-nav navbar-right">
+        <ul v-if="slots.right" class="navbar-nav navbar-right">
           <slot name="right"></slot>
         </ul>
       </div>
