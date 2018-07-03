@@ -6,8 +6,8 @@
         <span class="caret"></span>
       </a>
     </slot>
-    <slot name="dropdown-menu">
-      <ul class="dropdown-menu">
+    <slot name="dropdown-menu" :class="menuClasses">
+      <ul class="dropdown-menu" :class="menuClasses">
         <slot></slot>
       </ul>
     </slot>
@@ -20,8 +20,8 @@
         <span class="caret"></span>
       </button>
     </slot>
-    <slot name="dropdown-menu">
-      <ul class="dropdown-menu">
+    <slot name="dropdown-menu" :class="menuClasses">
+      <ul class="dropdown-menu" :class="menuClasses">
         <slot></slot>
       </ul>
     </slot>
@@ -56,7 +56,10 @@ export default {
       return `btn-${this.type}`;
     },
     classes () {
-      return [{open: this.showBool, disabled: this.disabledBool}, this.class, this.isLi ? 'dropdown' : this.inInput ? 'input-group-btn': 'btn-group']
+      return [{disabled: this.disabledBool}, this.class, this.isLi ? 'dropdown' : this.inInput ? 'input-group-btn': 'btn-group']
+    },
+    menuClasses() {
+      return [{show: this.showBool}];
     },
     disabledBool() {
       return toBoolean(this.disabled);
