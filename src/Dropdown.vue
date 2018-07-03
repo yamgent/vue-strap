@@ -3,7 +3,6 @@
     <slot name="button">
       <a class="dropdown-toggle" role="button" :class="{disabled: disabled}" @keyup.esc="show = false">
         {{ text }}
-        <span class="caret"></span>
       </a>
     </slot>
     <slot name="dropdown-menu" :class="menuClasses">
@@ -17,7 +16,6 @@
     <slot name="button">
       <button type="button" class="btn dropdown-toggle" :class="btnType" @keyup.esc="show = false" :disabled="disabled">
         {{ text }}
-        <span class="caret"></span>
       </button>
     </slot>
     <slot name="dropdown-menu" :class="menuClasses">
