@@ -17,7 +17,7 @@
                  @click.prevent.stop="canCollapse && toggle()"
                  @mouseover="onHeaderHover = true" @mouseleave="onHeaderHover = false">
                 <div class="header-wrapper">
-                    <span :class="['caret', {'caret-collapse': !localExpanded}]" v-show="showCaret"></span>
+                    <span :class="['glyphicon', localExpanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right']" v-show="showCaret"></span>
                     <slot name="header">
                         <div :class="['card-title', cardType, {'text-white':!isLightBg}]" v-html="headerContent"></div>
                     </slot>
@@ -26,13 +26,13 @@
                     <slot name="button">
                         <panel-switch v-show="canCollapse && !noSwitchBool && !showCaret" v-bind:is-open="localExpanded"
                                       @click.native.stop.prevent="expand()"
-                                      @is-open-event="retrieveOnOpen"></panel-switch>
-                        <button type="button" class="close-button btn btn-default"
+                                      @is-open-event="retrieveOnOpen" v-bind:is-light-bg="isLightBg"></panel-switch>
+                        <button type="button" :class="['close-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']"
                                 v-show="!isSeamless ? (!noCloseBool) : onHeaderHover"
                                 @click.stop="close()">
                             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                         </button>
-                        <button type="button" class="popup-button btn btn-default"
+                        <button type="button" :class="['popup-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']"
                                 v-show="this.popupUrl !== null"
                                 @click.stop="openPopup()">
                             <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
@@ -60,7 +60,7 @@
 <script>
   import {getFragmentByHash, toBoolean, toNumber} from './utils/utils.js'
   import md from './utils/markdown.js'
-  import panelSwitch from './panelSwitch.vue'
+  import panelSwitch from './PanelSwitch.vue'
   import retriever from './Retriever.vue'
 
   export default {
@@ -319,13 +319,6 @@
 
     .card-seamless {
         padding: 0;
-    }
-
-    .caret.caret-collapse {
-        border-left: 4px dashed;
-        border-top: 4px solid transparent;
-        border-bottom: 4px solid transparent;
-        border-right: none;
     }
 
     .card.card-seamless {

@@ -1,5 +1,5 @@
 <template>
-    <button type="button" class="collapse-button btn btn-default">
+    <button type="button" :class="['collapse-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']">
         <span :class="['glyphicon', {'glyphicon-menu-down': !isOpenBool, 'glyphicon-menu-up': isOpenBool}]"
               aria-hidden="true"></span>
     </button>
@@ -14,6 +14,10 @@
         type: Boolean,
         default: null
       },
+      isLightBg: {
+        type: Boolean,
+        default: true
+      }
     },
     computed: {
       isOpenBool () {
