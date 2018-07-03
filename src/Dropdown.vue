@@ -74,7 +74,7 @@ export default {
       return this.$parent && (this.$parent.menu || this.$parent.submenu)
     },
     slots () {
-      return this._slotContents
+      return this.$slots.default
     }
   },
   methods: {
