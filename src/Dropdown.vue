@@ -1,7 +1,7 @@
 <template>
   <li v-if="isLi" ref="dropdown" :class="classes">
     <slot name="button">
-      <a class="dropdown-toggle" role="button" :class="{disabled: disabled}" @keyup.esc="show = false">
+      <a class="dropdown-toggle" role="button" :class="{disabled: disabled}" @keyup.esc="hideDropdownMenu()">
         {{ text }}
       </a>
     </slot>
@@ -14,7 +14,7 @@
   <div v-else ref="dropdown" :class="classes">
     <slot name="before"></slot>
     <slot name="button">
-      <button type="button" class="btn dropdown-toggle" :class="btnType" @keyup.esc="show = false" :disabled="disabled">
+      <button type="button" class="btn dropdown-toggle" :class="btnType" @keyup.esc="hideDropdownMenu()" :disabled="disabled">
         {{ text }}
       </button>
     </slot>
@@ -82,7 +82,7 @@ export default {
       this.unblur()
       this._hide = setTimeout(() => {
         this._hide = null
-        this.show = false
+        this.hideDropdownMenu();
       }, 100)
     },
     unblur () {
@@ -90,18 +90,30 @@ export default {
         clearTimeout(this._hide)
         this._hide = null
       }
-    }
+    },
+    hideDropdownMenu() {
+      this.show = false;
+      $(this.$refs.dropdown).findChildren('ul').each(ul => ul.classList.toggle('show', false));
+    },
+    showDropdownMenu() {
+      this.show = true;
+      $(this.$refs.dropdown).findChildren('ul').each(ul => ul.classList.toggle('show', true));
+    },
   },
   mounted () {
     const $el = $(this.$refs.dropdown)
-    $el.onBlur((e) => { this.show = false }, false)
+    $el.onBlur((e) => { this.hideDropdownMenu() }, false)
     $el.findChildren('a,button.dropdown-toggle').on('click', e => {
       e.preventDefault()
       if (this.disabledBool) { return false }
-      this.show = !this.showBool
+      if (this.showBool) {
+        this.hideDropdownMenu();
+      } else {
+        this.showDropdownMenu();
+      }
       return false
     })
-    $el.findChildren('ul').on('click', 'li>a', e => { this.show = false })
+    $el.findChildren('ul').on('click', 'li>a', e => { this.hideDropdownMenu() })
   },
   beforeDestroy () {
     const $el = $(this.$refs.dropdown)
