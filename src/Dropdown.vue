@@ -46,7 +46,7 @@ export default {
     },
     type: {
       type: String,
-      default: 'default'
+      default: 'light'
     }
   },
   computed: {
