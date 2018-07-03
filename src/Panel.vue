@@ -164,29 +164,30 @@
         return this.type === 'seamless';
       },
       btnType () {
-        if (this.isSeamless) {
+        if (this.isSeamless || this.type === 'light') {
           return 'btn-outline-secondary';
-        } else {
-          return 'btn-outline-' + (this.type || 'secondary');
         }
+        return 'btn-outline-' + (this.type || 'secondary');
       },
       borderType () {
         if (this.isSeamless) {
           return 'border-0';
         } else if (this.type) {
+          if (this.type === 'light') {
+            return ''; // Bootstrap 4.x light border is almost invisible on a white page
+          }
           return 'border-' + this.type;
         }
-        else '';
+        return '';
       },
       cardType () {
         if (this.isSeamless) {
           return 'bg-white';
-        } else {
-          return 'bg-' + (this.type || 'light');
         }
+        return 'bg-' + (this.type || 'light');
       },
-      isLightBg() {
-        return this.cardType === 'bg-light' || this.cardType === 'bg-white';
+      isLightBg () {
+        return this.cardType === 'bg-light' || this.cardType === 'bg-white' || this.cardType === 'bg-warning';
       },
       headerContent () {
         return md.render(this.header);
