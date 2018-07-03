@@ -54,7 +54,7 @@ export default {
       return `btn-${this.type}`;
     },
     classes () {
-      return [{disabled: this.disabledBool}, this.class, this.isLi ? 'dropdown' : this.inInput ? 'input-group-btn': 'btn-group']
+      return [{disabled: this.disabledBool}, this.class, this.isLi ? 'dropdown' : 'btn-group']
     },
     menuClasses() {
       return [{show: this.showBool}];
@@ -62,7 +62,6 @@ export default {
     disabledBool() {
       return toBoolean(this.disabled);
     },
-    inInput () { return this.$parent._input },
     isLi () { return this.$parent._navbar || this.$parent.menu || this.$parent._tabset },
     menu () {
       return !this.$parent || this.$parent.navbar
