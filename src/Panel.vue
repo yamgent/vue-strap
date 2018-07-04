@@ -346,6 +346,7 @@
     }
 
     .card-body > .collapse-button {
+        margin-bottom: 13px;
         margin-top: 5px;
         opacity: 0.2;
     }
