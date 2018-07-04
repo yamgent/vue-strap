@@ -101,6 +101,9 @@ export default {
   },
   mounted () {
     const $el = $(this.$refs.dropdown)
+    if (this.show) {
+      this.showDropdownMenu();
+    }
     $el.onBlur((e) => { this.hideDropdownMenu() }, false)
     $el.findChildren('a,button.dropdown-toggle').on('click', e => {
       e.preventDefault()
