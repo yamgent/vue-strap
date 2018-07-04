@@ -14,7 +14,7 @@
   <div v-else ref="dropdown" :class="classes">
     <slot name="before"></slot>
     <slot name="button">
-      <button type="button" class="btn dropdown-toggle" :class="btnType" @keyup.esc="hideDropdownMenu()" :disabled="disabled">
+      <button type="button" class="btn dropdown-toggle" :class="[btnType, btnWithBefore]" @keyup.esc="hideDropdownMenu()" :disabled="disabled">
         {{ text }}
       </button>
     </slot>
@@ -74,6 +74,12 @@ export default {
     },
     slots () {
       return this.$slots.default
+    },
+    btnWithBefore () {
+      if (this.$slots.before) {
+        return 'btn-with-before';
+      }
+      return '';
     }
   },
   methods: {
@@ -136,5 +142,10 @@ export default {
   width: 1px;
   padding: 0;
   border: 0;
+}
+
+.btn-with-before {
+  padding-left: 0.2rem;
+  padding-right: 0.4rem;
 }
 </style>
