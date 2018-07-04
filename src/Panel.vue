@@ -24,9 +24,9 @@
                 </div>
                 <div class="button-wrapper">
                     <slot name="button">
-                        <panel-switch v-show="canCollapse && !noSwitchBool && !showCaret" v-bind:is-open="localExpanded"
+                        <panel-switch v-show="canCollapse && !noSwitchBool && !showCaret" :is-open="localExpanded"
                                       @click.native.stop.prevent="expand()"
-                                      @is-open-event="retrieveOnOpen" v-bind:is-light-bg="isLightBg"></panel-switch>
+                                      @is-open-event="retrieveOnOpen" :is-light-bg="isLightBg"></panel-switch>
                         <button type="button" :class="['close-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']"
                                 v-show="!isSeamless ? (!noCloseBool) : onHeaderHover"
                                 @click.stop="close()">
@@ -47,7 +47,7 @@
                 <div class="card-body">
                     <slot></slot>
                     <retriever v-if="isDynamic" ref="retriever" :src="src" :fragment="fragment" delay></retriever>
-                    <panel-switch v-show="canCollapse && bottomSwitchBool" v-bind:is-open="localExpanded"
+                    <panel-switch v-show="canCollapse && bottomSwitchBool" :is-open="localExpanded"
                                   @click.native.stop.prevent="collapseThenScrollIntoViewIfNeeded()"
                                   @is-open-event="retrieveOnOpen"></panel-switch>
                 </div>
