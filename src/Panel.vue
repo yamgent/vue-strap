@@ -3,7 +3,7 @@
         <div class="morph" v-show="localMinimized">
             <button :class="['morph-display-wrapper', 'btn', btnType, 'card-title']" @click="open()">
                 <template v-if="altContent">
-                    <div  v-html="altContent"></div>
+                    <div v-html="altContent"></div>
                 </template>
                 <template v-else>
                     <slot name="header">
@@ -13,8 +13,8 @@
             </button>
         </div>
         <div :class="['card', {'expandable-card': isExpandableCard}, borderType]" v-show="!localMinimized">
-            <div :class="['card-header',{'accordion-toggle':canCollapse}, cardType, borderType]"
-                 @click.prevent.stop="canCollapse && toggle()"
+            <div :class="['card-header',{'header-toggle':isExpandableCard}, cardType, borderType]"
+                 @click.prevent.stop="isExpandableCard && toggle()"
                  @mouseover="onHeaderHover = true" @mouseleave="onHeaderHover = false">
                 <div class="header-wrapper">
                     <span :class="['glyphicon', localExpanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right']" v-show="showCaret"></span>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="button-wrapper">
                     <slot name="button">
-                        <panel-switch v-show="canCollapse && !noSwitchBool && !showCaret" :is-open="localExpanded"
+                        <panel-switch v-show="isExpandableCard && !noSwitchBool && !showCaret" :is-open="localExpanded"
                                       @click.native.stop.prevent="expand()"
                                       @is-open-event="retrieveOnOpen" :is-light-bg="isLightBg"></panel-switch>
                         <button type="button" :class="['close-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']"
@@ -47,7 +47,7 @@
                 <div class="card-body">
                     <slot></slot>
                     <retriever v-if="isDynamic" ref="retriever" :src="src" :fragment="fragment" delay></retriever>
-                    <panel-switch v-show="canCollapse && bottomSwitchBool" :is-open="localExpanded"
+                    <panel-switch v-show="isExpandableCard && bottomSwitchBool" :is-open="localExpanded"
                                   @click.native.stop.prevent="collapseThenScrollIntoViewIfNeeded()"
                                   @is-open-event="retrieveOnOpen"></panel-switch>
                 </div>
@@ -148,14 +148,8 @@
         return toBoolean(this.loadAll);
       },
       // Vue 2.0 coerce migration end
-      inAccordion () {
-        return this.$parent && this.$parent._isAccordion;
-      },
       isExpandableCard () {
         return this.expandableBool;
-      },
-      canCollapse () {
-        return this.inAccordion || this.expandableBool;
       },
       showCaret () {
         return this.isSeamless;
@@ -305,7 +299,7 @@
         width: 28%;
     }
 
-    .accordion-toggle {
+    .header-toggle {
         cursor: pointer;
     }
 
