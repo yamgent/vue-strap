@@ -1,40 +1,38 @@
 <template>
-    <span class="panel-container">
+    <span class="card-container">
         <div class="morph" v-show="localMinimized">
-            <div class="morph-display-wrapper" @click="open()">
-                <button class="morph-display-button btn btn-default">
-                    <template v-if="altContent">
-                        <div class="panel-title" v-html="altContent"></div>
-                    </template>
-                    <template v-else>
-                        <slot name="header">
-                            <div class="panel-title" v-html="altContent"></div>
-                        </slot>
-                    </template>
-                </button>
-            </div>
+            <button :class="['morph-display-wrapper', 'btn', btnType, 'card-title']" @click="open()">
+                <template v-if="altContent">
+                    <div v-html="altContent"></div>
+                </template>
+                <template v-else>
+                    <slot name="header">
+                        <div v-html="altContent"></div>
+                    </slot>
+                </template>
+            </button>
         </div>
-        <div :class="['panel', panelType, {'expandable-panel': isExpandablePanel}]" v-show="!localMinimized">
-            <div :class="['panel-heading',{'accordion-toggle':canCollapse}]"
-                 @click.prevent.stop="canCollapse && toggle()"
+        <div :class="['card', {'expandable-card': isExpandableCard}, borderType]" v-show="!localMinimized">
+            <div :class="['card-header',{'header-toggle':isExpandableCard}, cardType, borderType]"
+                 @click.prevent.stop="isExpandableCard && toggle()"
                  @mouseover="onHeaderHover = true" @mouseleave="onHeaderHover = false">
                 <div class="header-wrapper">
-                    <span :class="['caret', {'caret-collapse': !localExpanded}]" v-show="showCaret"></span>
+                    <span :class="['glyphicon', localExpanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right']" v-show="showCaret"></span>
                     <slot name="header">
-                        <div class="panel-title" v-html="headerContent"></div>
+                        <div :class="['card-title', cardType, {'text-white':!isLightBg}]" v-html="headerContent"></div>
                     </slot>
                 </div>
                 <div class="button-wrapper">
                     <slot name="button">
-                        <panel-switch v-show="canCollapse && !noSwitchBool && !showCaret" v-bind:is-open="localExpanded"
+                        <panel-switch v-show="isExpandableCard && !noSwitchBool && !showCaret" :is-open="localExpanded"
                                       @click.native.stop.prevent="expand()"
-                                      @is-open-event="retrieveOnOpen"></panel-switch>
-                        <button type="button" class="close-button btn btn-default"
-                                v-show="this.type !== 'seamless' ? (!noCloseBool) : onHeaderHover"
+                                      @is-open-event="retrieveOnOpen" :is-light-bg="isLightBg"></panel-switch>
+                        <button type="button" :class="['close-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']"
+                                v-show="!isSeamless ? (!noCloseBool) : onHeaderHover"
                                 @click.stop="close()">
                             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                         </button>
-                        <button type="button" class="popup-button btn btn-default"
+                        <button type="button" :class="['popup-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']"
                                 v-show="this.popupUrl !== null"
                                 @click.stop="openPopup()">
                             <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
@@ -42,18 +40,18 @@
                     </slot>
                 </div>
             </div>
-            <div class="panel-collapse"
+            <div class="card-collapse"
                  ref="panel"
                  v-show="localExpanded"
             >
-                <div class="panel-body">
+                <div class="card-body">
                     <slot></slot>
                     <retriever v-if="isDynamic" ref="retriever" :src="src" :fragment="fragment" delay></retriever>
-                    <panel-switch v-show="canCollapse && bottomSwitchBool" v-bind:is-open="localExpanded"
+                    <panel-switch v-show="isExpandableCard && bottomSwitchBool" :is-open="localExpanded"
                                   @click.native.stop.prevent="collapseThenScrollIntoViewIfNeeded()"
                                   @is-open-event="retrieveOnOpen"></panel-switch>
                 </div>
-                <hr v-show="this.type === 'seamless'" />
+                <hr v-show="isSeamless" />
             </div>
         </div>
     </span>
@@ -150,20 +148,40 @@
         return toBoolean(this.loadAll);
       },
       // Vue 2.0 coerce migration end
-      inAccordion () {
-        return this.$parent && this.$parent._isAccordion;
-      },
-      isExpandablePanel () {
+      isExpandableCard () {
         return this.expandableBool;
       },
-      canCollapse () {
-        return this.inAccordion || this.expandableBool;
-      },
       showCaret () {
-        return this.type == 'seamless';
+        return this.isSeamless;
       },
-      panelType () {
-        return 'panel panel-' + (this.type || (this.inAccordion && this.$parent.type) || 'default');
+      isSeamless () {
+        return this.type === 'seamless';
+      },
+      btnType () {
+        if (this.isSeamless || this.type === 'light') {
+          return 'btn-outline-secondary';
+        }
+        return 'btn-outline-' + (this.type || 'secondary');
+      },
+      borderType () {
+        if (this.isSeamless) {
+          return 'border-0';
+        } else if (this.type) {
+          if (this.type === 'light') {
+            return ''; // Bootstrap 4.x light border is almost invisible on a white page
+          }
+          return 'border-' + this.type;
+        }
+        return '';
+      },
+      cardType () {
+        if (this.isSeamless) {
+          return 'bg-white';
+        }
+        return 'bg-' + (this.type || 'light');
+      },
+      isLightBg () {
+        return this.cardType === 'bg-light' || this.cardType === 'bg-white' || this.cardType === 'bg-warning';
       },
       headerContent () {
         return md.render(this.header);
@@ -175,7 +193,7 @@
         return this.src && this.src.length > 0;
       },
       showCloseButton () {
-        if (this.type !== 'seamless') {
+        if (!this.isSeamless) {
           return !this.noCloseBool;
         } else {
           return onHeaderHover;
@@ -238,7 +256,7 @@
           this.src = this.src.split('#')[0];
         }
       }
-      // Edge case where user might want non-expandable panel that isn't expanded by default
+      // Edge case where user might want non-expandable card that isn't expanded by default
       const notExpandableNoExpand = !this.expandableBool && this.expanded !== 'false';
       // Set local data to computed prop value
       this.localExpanded =  notExpandableNoExpand || this.expandedBool; // Ensure this expr ordering is maintained
@@ -255,18 +273,19 @@
 </script>
 
 <style>
-    .panel-heading {
+    .card-heading {
         width: 100%;
     }
 
-    .panel-title {
+    .card-title {
         display: inline-block;
         font-size: 1em;
+        margin: 0;
         vertical-align: middle;
     }
 
-    .panel-title * {
-        margin: 0px;
+    .card-title * {
+        margin: 0px !important;
     }
 
     .header-wrapper {
@@ -280,59 +299,53 @@
         width: 28%;
     }
 
-    .accordion-toggle {
+    .header-toggle {
         cursor: pointer;
     }
 
-    .expandable-panel {
+    .expandable-card {
         margin-bottom: 0 !important;
         margin-top: 5px;
     }
 
-    .panel-group > .panel-container > .expandable-panel {
+    .card-group > .card-container > .expandable-card {
         margin-top: 0!important;
     }
 
-    .panel-seamless {
+    .card-seamless {
         padding: 0;
     }
 
-    .caret.caret-collapse {
-        border-left: 4px dashed;
-        border-top: 4px solid transparent;
-        border-bottom: 4px solid transparent;
-        border-right: none;
-    }
-
-    .panel.panel-seamless {
+    .card.card-seamless {
         box-shadow: none;
         border: none;
     }
 
-    .panel-seamless > .panel-heading {
+    .card-seamless > .card-heading {
         padding: 0;
     }
 
-    .panel-seamless > .panel-collapse > hr {
+    .card-seamless > .card-collapse > hr {
         margin: 0;
         width: calc(100% - 27px);
     }
 
-    .panel-seamless > .panel-collapse > .panel-body {
+    .card-seamless > .card-collapse > .card-body {
         padding: 10px 0;
     }
 
-    .panel-seamless > .panel-collapse > .panel-body > .collapse-button {
+    .card-seamless > .card-collapse > .card-body > .collapse-button {
         position: relative;
         top: 22px;
     }
 
-    .panel-body > .collapse-button {
+    .card-body > .collapse-button {
+        margin-bottom: 13px;
         margin-top: 5px;
         opacity: 0.2;
     }
 
-    .panel-body > .collapse-button:hover {
+    .card-body > .collapse-button:hover {
         opacity: 1;
     }
 
