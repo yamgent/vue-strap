@@ -41,5 +41,3 @@ var vm = new Vue({
     })
   }
 })
-
-VueStrap.installEvents(vm)

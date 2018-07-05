@@ -26,8 +26,6 @@
       var vm = new Vue({
         el: 'body'
       })
-
-      VueStrap.installEvents(vm)
     </doc-code>
     <h2>ES6</h2>
     <doc-code language="javascript">
@@ -38,7 +36,6 @@
       var vm = new Vue({
         el: 'body'
       })
-      VueStrap.installEvents(vm)
     </doc-code>
 
     <h2>AMD</h2>
@@ -63,7 +60,6 @@
         var vm = new Vue({
           el: 'body'
         })
-        VueStrap.installEvents(vm)
       &lt;/script>
     </doc-code>
   </div>
