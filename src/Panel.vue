@@ -118,7 +118,7 @@
         type: Boolean,
         default: true
       },
-      loadAll: {
+      preload: {
         type: Boolean,
         default: false
       }
@@ -146,8 +146,8 @@
       bottomSwitchBool () {
         return toBoolean(this.bottomSwitch);
       },
-      loadAllBool () {
-        return toBoolean(this.loadAll);
+      preloadBool () {
+        return toBoolean(this.preload);
       },
       // Vue 2.0 coerce migration end
       inAccordion () {
@@ -246,7 +246,7 @@
     },
     mounted() {
       this.$nextTick(function () {
-        if (this.isDynamic && (this.expandedBool || this.loadAllBool)) {
+        if (this.isDynamic && (this.expandedBool || this.preloadBool)) {
           this.$refs.retriever.fetch()
         }
       })
