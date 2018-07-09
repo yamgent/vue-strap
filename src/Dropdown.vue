@@ -47,6 +47,10 @@ export default {
     type: {
       type: String,
       default: 'light'
+    },
+    menuAlignRight: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -57,7 +61,7 @@ export default {
       return [{disabled: this.disabledBool}, this.class, this.isLi ? 'dropdown' : 'btn-group']
     },
     menuClasses() {
-      return [{show: this.showBool}];
+      return [{show: this.showBool}, {'dropdown-menu-right': this.menuAlignRight}];
     },
     disabledBool() {
       return toBoolean(this.disabled);
