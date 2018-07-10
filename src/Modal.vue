@@ -10,11 +10,11 @@
       <div class="modal-content">
         <slot name="modal-header">
           <div class="modal-header">
-            <button type="button" class="close" @click="close"><span>&times;</span></button>
             <h4 class="modal-title">
               <span name="title" v-html="titleRendered">
               </span>
             </h4>
+            <button type="button" class="close" @click="close"><span>&times;</span></button>
           </div>
         </slot>
           <div class="modal-body">
@@ -110,7 +110,7 @@ export default {
       if (val) {
         $(el).find('.modal-content').focus()
         el.style.display = 'block'
-        setTimeout(() => $(el).addClass('in'), 0)
+        setTimeout(() => $(el).addClass('show in'), 0)
         $(body).addClass('modal-open')
         if (scrollBarWidth !== 0) {
           body.style.paddingRight = scrollBarWidth + 'px'
@@ -123,7 +123,7 @@ export default {
       } else {
         body.style.paddingRight = null
         $(body).removeClass('modal-open')
-        $(el).removeClass('in').on('transitionend', () => {
+        $(el).removeClass('show in').on('transitionend', () => {
           $(el).off('click transitionend')
           el.style.display = 'none'
         })
