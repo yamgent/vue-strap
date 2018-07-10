@@ -40,6 +40,7 @@ export default {
         top: 0,
         left: 0
       },
+      isPopover: false,
       show: false
     }
   },
@@ -72,6 +73,7 @@ export default {
       }
       setTimeout(() => {
         const popover = this.$refs.popover
+        this.isPopover = Array.some(popover.classList, classname => classname === 'popover');
         console.log(trigger.offsetTop)
         console.log(popover.offsetHeight)
         this.calculateOffset(trigger, popover)
@@ -100,10 +102,16 @@ export default {
         case 'top' :
           this.position.left = trigger.offsetLeft - popover.offsetWidth / 2 + trigger.offsetWidth / 2
           this.position.top = trigger.offsetTop - popover.offsetHeight
+          if (this.isPopover) {
+            this.position.top -= this.$refs.arrow.offsetHeight;
+          }
           break
         case 'left':
           this.position.left = trigger.offsetLeft - popover.offsetWidth
           this.position.top = trigger.offsetTop + trigger.offsetHeight / 2 - popover.offsetHeight / 2
+          if (this.isPopover) {
+            this.position.left -= this.$refs.arrow.offsetWidth;
+          }
           break
         case 'right':
           this.position.left = trigger.offsetLeft + trigger.offsetWidth
@@ -158,6 +166,15 @@ export default {
     adjustArrow (delta, dimension, isVertical) {
       this.$refs.arrow.style[isVertical ? 'left' : 'top'] = 50 * (1 - delta / dimension) + '%'
       this.$refs.arrow.style[isVertical ? 'top' : 'left'] = ''
+      let translateLeft = 0;
+      let translateTop = 0;
+      if (this.placement === 'left' || this.placement === 'right') {
+        translateTop = this.isPopover ? -75 : -50;
+      }
+      if (this.placement === 'top' || this.placement === 'bottom') {
+        translateLeft = this.isPopover ? -100 : -50;
+      }
+      this.$refs.arrow.style['transform'] = `translate(${translateLeft}%, ${translateTop}%)`;
     }
   },
   created () {
