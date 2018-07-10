@@ -40,19 +40,36 @@
                     </slot>
                 </div>
             </div>
-            <div class="card-collapse"
-                 ref="panel"
-                 v-show="localExpanded"
-            >
-                <div class="card-body">
-                    <slot></slot>
-                    <retriever v-if="isDynamic" ref="retriever" :src="src" :fragment="fragment" delay></retriever>
-                    <panel-switch v-show="isExpandableCard && bottomSwitchBool" :is-open="localExpanded"
-                                  @click.native.stop.prevent="collapseThenScrollIntoViewIfNeeded()"
-                                  @is-open-event="retrieveOnOpen"></panel-switch>
+            <template v-if="dynamicBool">
+                <div class="card-collapse"
+                     ref="panel"
+                     v-if="localExpanded"
+                >
+                    <div class="card-body">
+                        <slot></slot>
+                        <retriever v-if="hasSrc" ref="retriever" :src="src" :fragment="fragment" delay></retriever>
+                        <panel-switch v-show="isExpandableCard && bottomSwitchBool" :is-open="localExpanded"
+                                      @click.native.stop.prevent="collapseThenScrollIntoViewIfNeeded()"
+                                      @is-open-event="retrieveOnOpen"></panel-switch>
+                    </div>
+                    <hr v-show="isSeamless" />
                 </div>
-                <hr v-show="isSeamless" />
-            </div>
+            </template>
+            <template v-else>
+                <div class="card-collapse"
+                     ref="panel"
+                     v-show="localExpanded"
+                >
+                    <div class="card-body">
+                        <slot></slot>
+                        <retriever v-if="hasSrc" ref="retriever" :src="src" :fragment="fragment" delay></retriever>
+                        <panel-switch v-show="isExpandableCard && bottomSwitchBool" :is-open="localExpanded"
+                                      @click.native.stop.prevent="collapseThenScrollIntoViewIfNeeded()"
+                                      @is-open-event="retrieveOnOpen"></panel-switch>
+                    </div>
+                    <hr v-show="isSeamless" />
+                </div>
+            </template>
         </div>
     </span>
 </template>
@@ -116,7 +133,7 @@
         type: Boolean,
         default: true
       },
-      loadAll: {
+      dynamic: {
         type: Boolean,
         default: false
       }
@@ -144,8 +161,8 @@
       bottomSwitchBool () {
         return toBoolean(this.bottomSwitch);
       },
-      loadAllBool () {
-        return toBoolean(this.loadAll);
+      dynamicBool () {
+        return toBoolean(this.dynamic);
       },
       // Vue 2.0 coerce migration end
       isExpandableCard () {
@@ -189,7 +206,7 @@
       altContent () {
         return this.alt && md.render(this.alt) || md.render(this.header);
       },
-      isDynamic () {
+      hasSrc () {
         return this.src && this.src.length > 0;
       },
       showCloseButton () {
@@ -238,14 +255,16 @@
         window.open(this.popupUrl);
       },
       retrieveOnOpen(el, isOpen) {
-        if (isOpen && this.isDynamic) {
+        if (isOpen && this.hasSrc) {
           this.$refs.retriever.fetch()
         }
       }
     },
     watch: {
       'localExpanded': function (val, oldVal) {
-        this.retrieveOnOpen(this, val);
+        this.$nextTick(function () {
+          this.retrieveOnOpen(this, val);
+        })
       },
     },
     created () {
@@ -264,7 +283,7 @@
     },
     mounted() {
       this.$nextTick(function () {
-        if (this.isDynamic && (this.expandedBool || this.loadAllBool)) {
+        if (this.hasSrc && (!this.dynamicBool || this.localExpanded)) {
           this.$refs.retriever.fetch()
         }
       })
