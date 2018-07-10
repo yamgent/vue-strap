@@ -152,4 +152,8 @@ export default {
   padding-left: 0.2rem;
   padding-right: 0.4rem;
 }
+
+.dropdown-toggle {
+  cursor: pointer;
+}
 </style>
