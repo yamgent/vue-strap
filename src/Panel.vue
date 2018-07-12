@@ -40,10 +40,10 @@
                     </slot>
                 </div>
             </div>
-            <template v-if="dynamicBool">
+            <template v-if="staticBool">
                 <div class="card-collapse"
                      ref="panel"
-                     v-if="localExpanded"
+                     v-show="localExpanded"
                 >
                     <div class="card-body">
                         <slot></slot>
@@ -58,7 +58,7 @@
             <template v-else>
                 <div class="card-collapse"
                      ref="panel"
-                     v-show="localExpanded"
+                     v-if="localExpanded"
                 >
                     <div class="card-body">
                         <slot></slot>
@@ -133,7 +133,7 @@
         type: Boolean,
         default: true
       },
-      dynamic: {
+      static: {
         type: Boolean,
         default: false
       }
@@ -161,8 +161,8 @@
       bottomSwitchBool () {
         return toBoolean(this.bottomSwitch);
       },
-      dynamicBool () {
-        return toBoolean(this.dynamic);
+      staticBool () {
+        return toBoolean(this.static);
       },
       // Vue 2.0 coerce migration end
       isExpandableCard () {
@@ -283,7 +283,7 @@
     },
     mounted() {
       this.$nextTick(function () {
-        if (this.hasSrc && (!this.dynamicBool || this.localExpanded)) {
+        if (this.hasSrc && (this.staticBool || this.localExpanded)) {
           this.$refs.retriever.fetch()
         }
       })
