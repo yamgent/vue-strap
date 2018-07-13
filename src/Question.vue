@@ -7,7 +7,7 @@
                 <textarea class="form-control question-input" rows="3" placeholder="write your answer here..."></textarea>
             </div>
         </div>
-        <panel v-show="hasHintSlot" header="Hint" expandable no-close>
+        <panel v-show="hasHintSlot" header="Hint" expandable no-close preload>
             <template v-if="isEmptyHint">
                 No hint is available for this question.
             </template>
@@ -17,7 +17,7 @@
                 </div>
             </template>
         </panel>
-        <panel v-show="hasAnswerSlot" header="Answer" expandable no-close>
+        <panel v-show="hasAnswerSlot" header="Answer" expandable no-close preload>
             <template v-if="isEmptyAnswer">
                 No answer is provided for this question.
             </template>
@@ -64,8 +64,12 @@
         const emptyDiv = '<div></div>';
         this.hasAnswerSlot = !!this.$slots.answer;
         this.hasHintSlot = !!this.$slots.hint;
-        this.isEmptyAnswer = this.$refs.answerWrapper.innerHTML === emptyDiv;
-        this.isEmptyHint = this.$refs.hintWrapper.innerHTML === emptyDiv;
+        if (this.$refs.answerWrapper) {
+          this.isEmptyAnswer = this.$refs.answerWrapper.innerHTML === emptyDiv;
+        }
+        if (this.$refs.hintWrapper) {
+          this.isEmptyHint = this.$refs.hintWrapper.innerHTML === emptyDiv;
+        }
       })
     }
   }

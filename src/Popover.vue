@@ -4,13 +4,13 @@
     -->
     <transition :name="effect">
     <div ref="popover" v-if="show"
-      :class="['popover',placement]">
+      :class="['popover', popoverPlacementClass]">
       <div class="arrow" ref="arrow"></div>
-      <h3 class="popover-title" v-if="title" v-on:click="false">
+      <h3 class="popover-header" v-if="title" v-on:click="false">
         <slot name="title" v-if="hasTitleSlot"></slot>
         <span v-else v-html="titleRendered"></span>
       </h3>
-      <div class="popover-content" v-on:click="false">
+      <div class="popover-body" v-on:click="false">
         <slot name="content" v-if="hasContentSlot"></slot>
         <span v-else v-html="contentRendered"></span>
       </div>
@@ -40,6 +40,9 @@ export default {
     hasContentSlot () {
       return this.$slots.content;
     },
+    popoverPlacementClass() {
+      return `bs-popover-${this.placement}`;
+    }
   },
   mounted () {
     if (this.$refs.trigger) {

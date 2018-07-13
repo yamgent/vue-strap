@@ -4,9 +4,9 @@
     -->
     <transition :name="effect">
       <div ref="popover" v-if="show" style="display:block;"
-        :class="['tooltip',placement]"
+        :class="['tooltip', tooltipPlacementClass, 'show']"
       >
-        <div class="tooltip-arrow"></div>
+        <div class="arrow" ref="arrow"></div>
         <div class="tooltip-inner" v-on:click="false">
           <span name="content" v-html="contentRendered"></span>
        </div>
@@ -33,6 +33,11 @@ export default {
     placement: {
       type: String,
       default: 'top'
+    }
+  },
+  computed: {
+    tooltipPlacementClass ()  {
+      return `bs-tooltip-${this.placement}`;
     }
   },
   mounted () {

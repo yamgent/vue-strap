@@ -3,9 +3,6 @@ import typeahead from './Typeahead.vue';
 
 export default {
   extends: typeahead,
-  mounted() {
-    this.$refs.dropdown.classList.add('search-dropdown-menu');
-  },
   computed: {
     primitiveData() {
       function getTotalMatches(searchTarget, regexes) {

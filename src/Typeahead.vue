@@ -1,7 +1,5 @@
 <template>
-  <div style="position: relative"
-       v-bind:class="{'open':showDropdown}"
-  >
+  <div style="position: relative">
     <input type="text" class="form-control"
       :placeholder="placeholder"
       autocomplete="off"
@@ -13,9 +11,9 @@
       @keydown.esc="reset"
       @blur="showDropdown = false"
     />
-    <ul class="dropdown-menu" ref="dropdown">
-      <li v-for="(item, index) in items" v-bind:class="{'active': isActive(index)}">
-        <a @mousedown.prevent="hit" @mousemove="setActive(index)">
+    <ul :class="dropdownMenuClasses" ref="dropdown">
+      <li v-for="(item, index) in items" v-bind:class="{'table-active': isActive(index)}">
+        <a class="dropdown-item" @mousedown.prevent="hit" @mousemove="setActive(index)">
           <component v-bind:is="entryTemplate" :item="item" :value="value"></component>
         </a>
       </li>
@@ -65,6 +63,10 @@ export default {
     delay: {
       type: Number,
       default: _DELAY_,
+    },
+    menuAlignRight: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -87,6 +89,10 @@ export default {
     },
     entryTemplate () {
       return 'typeaheadTemplate';
+    },
+    dropdownMenuClasses () {
+      return ['dropdown-menu', 'search-dropdown-menu', {show: this.showDropdown},
+        {'dropdown-menu-right': this.menuAlignRight}];
     }
   },
   methods: {
