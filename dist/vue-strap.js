@@ -92,7 +92,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _Popover2 = _interopRequireDefault(_Popover);
 	
-	var _Question = __webpack_require__(231);
+	var _Question = __webpack_require__(239);
 	
 	var _Question2 = _interopRequireDefault(_Question);
 	
@@ -100,35 +100,35 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _Retriever2 = _interopRequireDefault(_Retriever);
 	
-	var _Searchbar = __webpack_require__(236);
+	var _Searchbar = __webpack_require__(244);
 	
 	var _Searchbar2 = _interopRequireDefault(_Searchbar);
 	
-	var _Tab = __webpack_require__(261);
+	var _Tab = __webpack_require__(269);
 	
 	var _Tab2 = _interopRequireDefault(_Tab);
 	
-	var _TabGroup = __webpack_require__(266);
+	var _TabGroup = __webpack_require__(274);
 	
 	var _TabGroup2 = _interopRequireDefault(_TabGroup);
 	
-	var _Tabset = __webpack_require__(271);
+	var _Tabset = __webpack_require__(279);
 	
 	var _Tabset2 = _interopRequireDefault(_Tabset);
 	
-	var _TipBox = __webpack_require__(276);
+	var _TipBox = __webpack_require__(284);
 	
 	var _TipBox2 = _interopRequireDefault(_TipBox);
 	
-	var _Tooltip = __webpack_require__(281);
+	var _Tooltip = __webpack_require__(289);
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 	
-	var _trigger = __webpack_require__(286);
+	var _trigger = __webpack_require__(294);
 	
 	var _trigger2 = _interopRequireDefault(_trigger);
 	
-	var _Typeahead = __webpack_require__(256);
+	var _Typeahead = __webpack_require__(264);
 	
 	var _Typeahead2 = _interopRequireDefault(_Typeahead);
 	
@@ -2187,47 +2187,50 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
 	
 	module.exports = {
-	  isShown: true,
-	  bind: function bind() {
-	    jQuery(this.el).wrap(function () {
-	      return '<div style="position: relative;"></div>';
-	    });
-	    var message = this.el.getAttribute('alt') || 'Expand Content';
-	    this.wrapper = jQuery(this.el).parent();
-	    this.wrapper.attr('class', this.el.className + ' closeable-wrapper');
+	  bind: function bind(el) {
+	    function onClose() {
+	      el.dataset.isShown = 'false';
+	      $showLabel.show();
+	      $closeButton.hide();
+	      $content.get()[0].style.display = 'none';
+	    }
+	
+	    function onShow() {
+	      el.dataset.isShown = 'true';
+	      $showLabel.hide();
+	      $content.get()[0].style.display = '';
+	    }
+	
+	    function onMouseOver() {
+	      if (el.dataset.isShown === 'false') {
+	        return;
+	      }
+	      $closeButton.show();
+	    }
+	
+	    function onMouseOut() {
+	      if (el.dataset.isShown === 'false') {
+	        return;
+	      }
+	      $closeButton.hide();
+	    }
+	
+	    el.dataset.isShown = 'true';
+	    el.style.position = 'relative';
+	    var message = el.getAttribute('alt') || 'Expand Content';
+	    var $content = jQuery('<div class="content"></div>');
+	    jQuery(el).contents().appendTo($content);
+	    jQuery(el).empty();
+	    jQuery(el).append($content);
+	    jQuery(el).attr('class', el.className + ' closeable-wrapper');
 	    var $closeButton = jQuery('<span class="closeable-button label label-default hidden-print" style="display: none; position: absolute; top: 0; left: 0; cursor: pointer;background: #d9534f;"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></span>');
-	    this.wrapper.append($closeButton);
+	    jQuery(el).append($closeButton);
 	    var $showLabel = jQuery('<a class="closeable-show hidden-print" style="display: none; cursor: pointer;text-decoration: underline">' + message + '</a>');
-	    this.wrapper.append($showLabel);
-	    this.closeButton = $closeButton;
-	    this.showButton = $showLabel;
-	    this.closeButton.click(this.onClose.bind(this));
-	    this.showButton.click(this.onShow.bind(this));
-	    this.wrapper.on('mouseover', this.onMouseOver.bind(this));
-	    this.wrapper.on('mouseout', this.onMouseOut.bind(this));
-	  },
-	  onClose: function onClose() {
-	    this.isShown = false;
-	    this.showButton.show();
-	    this.closeButton.hide();
-	    this.el.style.display = 'none';
-	  },
-	  onShow: function onShow() {
-	    this.isShown = true;
-	    this.showButton.hide();
-	    this.el.style.display = '';
-	  },
-	  onMouseOver: function onMouseOver() {
-	    if (!this.isShown) {
-	      return;
-	    }
-	    this.closeButton.show();
-	  },
-	  onMouseOut: function onMouseOut() {
-	    if (!this.isShown) {
-	      return;
-	    }
-	    this.closeButton.hide();
+	    jQuery(el).append($showLabel);
+	    $closeButton.click(onClose);
+	    $showLabel.click(onShow);
+	    jQuery(el).on('mouseover', onMouseOver);
+	    jQuery(el).on('mouseout', onMouseOut);
 	  }
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(72)))
@@ -12692,7 +12695,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.secret[data-v-31b7fcdd] {\n  position: absolute;\n  clip: rect(0 0 0 0);\n  overflow: hidden;\n  margin: -1px;\n  height: 1px;\n  width: 1px;\n  padding: 0;\n  border: 0;\n}\n", "", {"version":3,"sources":["/./src/Dropdown.vue?eaa90502"],"names":[],"mappings":";AAkHA;EACA,mBAAA;EACA,oBAAA;EACA,iBAAA;EACA,aAAA;EACA,YAAA;EACA,WAAA;EACA,WAAA;EACA,UAAA;CACA","file":"Dropdown.vue","sourcesContent":["<template>\n  <li v-if=\"isLi\" ref=\"dropdown\" :class=\"classes\">\n    <slot name=\"button\">\n      <a class=\"dropdown-toggle\" role=\"button\" :class=\"{disabled: disabled}\" @keyup.esc=\"show = false\">\n        {{ text }}\n        <span class=\"caret\"></span>\n      </a>\n    </slot>\n    <slot name=\"dropdown-menu\">\n      <ul class=\"dropdown-menu\">\n        <slot></slot>\n      </ul>\n    </slot>\n  </li>\n  <div v-else ref=\"dropdown\" :class=\"classes\">\n    <slot name=\"before\"></slot>\n    <slot name=\"button\">\n      <button type=\"button\" class=\"btn dropdown-toggle\" :class=\"btnType\" @keyup.esc=\"show = false\" :disabled=\"disabled\">\n        {{ text }}\n        <span class=\"caret\"></span>\n      </button>\n    </slot>\n    <slot name=\"dropdown-menu\">\n      <ul class=\"dropdown-menu\">\n        <slot></slot>\n      </ul>\n    </slot>\n  </div>\n</template>\n<script>\nimport {toBoolean} from './utils/utils.js'\nimport $ from './utils/NodeList.js'\n\nexport default {\n  props: {\n    show: {\n      type: Boolean,\n      default: false\n    },\n    'class': null,\n    disabled: {\n      type: Boolean,\n      default: false\n    },\n    text: {\n      type: String,\n      default: null\n    },\n    type: {\n      type: String,\n      default: 'default'\n    }\n  },\n  computed: {\n    btnType () {\n      return `btn-${this.type}`;\n    },\n    classes () {\n      return [{open: this.showBool, disabled: this.disabledBool}, this.class, this.isLi ? 'dropdown' : this.inInput ? 'input-group-btn': 'btn-group']\n    },\n    disabledBool() {\n      return toBoolean(this.disabled);\n    },\n    inInput () { return this.$parent._input },\n    isLi () { return this.$parent._navbar || this.$parent.menu || this.$parent._tabset },\n    menu () {\n      return !this.$parent || this.$parent.navbar\n    },\n    showBool() {\n      return toBoolean(this.show);\n    },\n    submenu () {\n      return this.$parent && (this.$parent.menu || this.$parent.submenu)\n    },\n    slots () {\n      return this._slotContents\n    }\n  },\n  methods: {\n    blur () {\n      this.unblur()\n      this._hide = setTimeout(() => {\n        this._hide = null\n        this.show = false\n      }, 100)\n    },\n    unblur () {\n      if (this._hide) {\n        clearTimeout(this._hide)\n        this._hide = null\n      }\n    }\n  },\n  mounted () {\n    const $el = $(this.$refs.dropdown)\n    $el.onBlur((e) => { this.show = false }, false)\n    $el.findChildren('a,button.dropdown-toggle').on('click', e => {\n      e.preventDefault()\n      if (this.disabledBool) { return false }\n      this.show = !this.showBool\n      return false\n    })\n    $el.findChildren('ul').on('click', 'li>a', e => { this.show = false })\n  },\n  beforeDestroy () {\n    const $el = $(this.$refs.dropdown)\n    $el.offBlur()\n    $el.findChildren('a,button').off()\n    $el.findChildren('ul').off()\n  }\n}\n</script>\n\n<style scoped>\n.secret {\n  position: absolute;\n  clip: rect(0 0 0 0);\n  overflow: hidden;\n  margin: -1px;\n  height: 1px;\n  width: 1px;\n  padding: 0;\n  border: 0;\n}\n</style>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.secret[data-v-31b7fcdd] {\n  position: absolute;\n  clip: rect(0 0 0 0);\n  overflow: hidden;\n  margin: -1px;\n  height: 1px;\n  width: 1px;\n  padding: 0;\n  border: 0;\n}\n.btn-with-before[data-v-31b7fcdd] {\n  padding-left: 0.2rem;\n  padding-right: 0.4rem;\n}\n.dropdown-toggle[data-v-31b7fcdd] {\n  cursor: pointer;\n}\n", "", {"version":3,"sources":["/./src/Dropdown.vue?4ad77a0c"],"names":[],"mappings":";AA2IA;EACA,mBAAA;EACA,oBAAA;EACA,iBAAA;EACA,aAAA;EACA,YAAA;EACA,WAAA;EACA,WAAA;EACA,UAAA;CACA;AAEA;EACA,qBAAA;EACA,sBAAA;CACA;AAEA;EACA,gBAAA;CACA","file":"Dropdown.vue","sourcesContent":["<template>\n  <li v-if=\"isLi\" ref=\"dropdown\" :class=\"classes\">\n    <slot name=\"button\">\n      <a class=\"dropdown-toggle\" role=\"button\" :class=\"{disabled: disabled}\" @keyup.esc=\"hideDropdownMenu()\">\n        {{ text }}\n      </a>\n    </slot>\n    <slot name=\"dropdown-menu\" :class=\"menuClasses\">\n      <ul class=\"dropdown-menu\" :class=\"menuClasses\">\n        <slot></slot>\n      </ul>\n    </slot>\n  </li>\n  <div v-else ref=\"dropdown\" :class=\"classes\">\n    <slot name=\"before\"></slot>\n    <slot name=\"button\">\n      <button type=\"button\" class=\"btn dropdown-toggle\" :class=\"[btnType, btnWithBefore]\" @keyup.esc=\"hideDropdownMenu()\" :disabled=\"disabled\">\n        {{ text }}\n      </button>\n    </slot>\n    <slot name=\"dropdown-menu\" :class=\"menuClasses\">\n      <ul class=\"dropdown-menu\" :class=\"menuClasses\">\n        <slot></slot>\n      </ul>\n    </slot>\n  </div>\n</template>\n<script>\nimport {toBoolean} from './utils/utils.js'\nimport $ from './utils/NodeList.js'\n\nexport default {\n  props: {\n    show: {\n      type: Boolean,\n      default: false\n    },\n    'class': null,\n    disabled: {\n      type: Boolean,\n      default: false\n    },\n    text: {\n      type: String,\n      default: null\n    },\n    type: {\n      type: String,\n      default: 'light'\n    },\n    menuAlignRight: {\n      type: Boolean,\n      default: false\n    }\n  },\n  computed: {\n    btnType () {\n      return `btn-${this.type}`;\n    },\n    classes () {\n      return [{disabled: this.disabledBool}, this.class, this.isLi ? 'dropdown' : 'btn-group']\n    },\n    menuClasses() {\n      return [{show: this.showBool}, {'dropdown-menu-right': this.menuAlignRight}];\n    },\n    disabledBool() {\n      return toBoolean(this.disabled);\n    },\n    isLi () { return this.$parent._navbar || this.$parent.menu || this.$parent._tabset },\n    menu () {\n      return !this.$parent || this.$parent.navbar\n    },\n    showBool() {\n      return toBoolean(this.show);\n    },\n    submenu () {\n      return this.$parent && (this.$parent.menu || this.$parent.submenu)\n    },\n    slots () {\n      return this.$slots.default\n    },\n    btnWithBefore () {\n      if (this.$slots.before) {\n        return 'btn-with-before';\n      }\n      return '';\n    }\n  },\n  methods: {\n    blur () {\n      this.unblur()\n      this._hide = setTimeout(() => {\n        this._hide = null\n        this.hideDropdownMenu();\n      }, 100)\n    },\n    unblur () {\n      if (this._hide) {\n        clearTimeout(this._hide)\n        this._hide = null\n      }\n    },\n    hideDropdownMenu() {\n      this.show = false;\n      $(this.$refs.dropdown).findChildren('ul').each(ul => ul.classList.toggle('show', false));\n    },\n    showDropdownMenu() {\n      this.show = true;\n      $(this.$refs.dropdown).findChildren('ul').each(ul => ul.classList.toggle('show', true));\n    },\n  },\n  mounted () {\n    const $el = $(this.$refs.dropdown)\n    if (this.show) {\n      this.showDropdownMenu();\n    }\n    $el.onBlur((e) => { this.hideDropdownMenu() }, false)\n    $el.findChildren('a,button.dropdown-toggle').on('click', e => {\n      e.preventDefault()\n      if (this.disabledBool) { return false }\n      if (this.showBool) {\n        this.hideDropdownMenu();\n      } else {\n        this.showDropdownMenu();\n      }\n      return false\n    })\n    $el.findChildren('ul').on('click', 'li>a', e => { this.hideDropdownMenu() })\n  },\n  beforeDestroy () {\n    const $el = $(this.$refs.dropdown)\n    $el.offBlur()\n    $el.findChildren('a,button').off()\n    $el.findChildren('ul').off()\n  }\n}\n</script>\n\n<style scoped>\n.secret {\n  position: absolute;\n  clip: rect(0 0 0 0);\n  overflow: hidden;\n  margin: -1px;\n  height: 1px;\n  width: 1px;\n  padding: 0;\n  border: 0;\n}\n\n.btn-with-before {\n  padding-left: 0.2rem;\n  padding-right: 0.4rem;\n}\n\n.dropdown-toggle {\n  cursor: pointer;\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -13020,8 +13023,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 	//
 	//
-	//
-	//
 	
 	exports.default = {
 	  props: {
@@ -13040,7 +13041,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	    type: {
 	      type: String,
-	      default: 'default'
+	      default: 'light'
+	    },
+	    menuAlignRight: {
+	      type: Boolean,
+	      default: false
 	    }
 	  },
 	  computed: {
@@ -13048,13 +13053,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return 'btn-' + this.type;
 	    },
 	    classes: function classes() {
-	      return [{ open: this.showBool, disabled: this.disabledBool }, this.class, this.isLi ? 'dropdown' : this.inInput ? 'input-group-btn' : 'btn-group'];
+	      return [{ disabled: this.disabledBool }, this.class, this.isLi ? 'dropdown' : 'btn-group'];
+	    },
+	    menuClasses: function menuClasses() {
+	      return [{ show: this.showBool }, { 'dropdown-menu-right': this.menuAlignRight }];
 	    },
 	    disabledBool: function disabledBool() {
 	      return (0, _utils.toBoolean)(this.disabled);
-	    },
-	    inInput: function inInput() {
-	      return this.$parent._input;
 	    },
 	    isLi: function isLi() {
 	      return this.$parent._navbar || this.$parent.menu || this.$parent._tabset;
@@ -13069,7 +13074,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return this.$parent && (this.$parent.menu || this.$parent.submenu);
 	    },
 	    slots: function slots() {
-	      return this._slotContents;
+	      return this.$slots.default;
+	    },
+	    btnWithBefore: function btnWithBefore() {
+	      if (this.$slots.before) {
+	        return 'btn-with-before';
+	      }
+	      return '';
 	    }
 	  },
 	  methods: {
@@ -13079,7 +13090,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      this.unblur();
 	      this._hide = setTimeout(function () {
 	        _this._hide = null;
-	        _this.show = false;
+	        _this.hideDropdownMenu();
 	      }, 100);
 	    },
 	    unblur: function unblur() {
@@ -13087,25 +13098,44 @@ return /******/ (function(modules) { // webpackBootstrap
 	        clearTimeout(this._hide);
 	        this._hide = null;
 	      }
+	    },
+	    hideDropdownMenu: function hideDropdownMenu() {
+	      this.show = false;
+	      (0, _NodeList2.default)(this.$refs.dropdown).findChildren('ul').each(function (ul) {
+	        return ul.classList.toggle('show', false);
+	      });
+	    },
+	    showDropdownMenu: function showDropdownMenu() {
+	      this.show = true;
+	      (0, _NodeList2.default)(this.$refs.dropdown).findChildren('ul').each(function (ul) {
+	        return ul.classList.toggle('show', true);
+	      });
 	    }
 	  },
 	  mounted: function mounted() {
 	    var _this2 = this;
 	
 	    var $el = (0, _NodeList2.default)(this.$refs.dropdown);
+	    if (this.show) {
+	      this.showDropdownMenu();
+	    }
 	    $el.onBlur(function (e) {
-	      _this2.show = false;
+	      _this2.hideDropdownMenu();
 	    }, false);
 	    $el.findChildren('a,button.dropdown-toggle').on('click', function (e) {
 	      e.preventDefault();
 	      if (_this2.disabledBool) {
 	        return false;
 	      }
-	      _this2.show = !_this2.showBool;
+	      if (_this2.showBool) {
+	        _this2.hideDropdownMenu();
+	      } else {
+	        _this2.showDropdownMenu();
+	      }
 	      return false;
 	    });
 	    $el.findChildren('ul').on('click', 'li>a', function (e) {
-	      _this2.show = false;
+	      _this2.hideDropdownMenu();
 	    });
 	  },
 	  beforeDestroy: function beforeDestroy() {
@@ -13135,19 +13165,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	    on: {
 	      "keyup": function($event) {
 	        if (!('button' in $event) && _vm._k($event.keyCode, "esc", 27, $event.key, "Escape")) { return null; }
-	        _vm.show = false
+	        _vm.hideDropdownMenu()
 	      }
 	    }
-	  }, [_vm._v("\n      " + _vm._s(_vm.text) + "\n      "), _c('span', {
-	    staticClass: "caret"
-	  })])]), _vm._v(" "), _vm._t("dropdown-menu", [_c('ul', {
-	    staticClass: "dropdown-menu"
+	  }, [_vm._v("\n      " + _vm._s(_vm.text) + "\n    ")])]), _vm._v(" "), _vm._t("dropdown-menu", [_c('ul', {
+	    staticClass: "dropdown-menu",
+	    class: _vm.menuClasses
 	  }, [_vm._t("default")], 2)])], 2) : _c('div', {
 	    ref: "dropdown",
 	    class: _vm.classes
 	  }, [_vm._t("before"), _vm._v(" "), _vm._t("button", [_c('button', {
 	    staticClass: "btn dropdown-toggle",
-	    class: _vm.btnType,
+	    class: [_vm.btnType, _vm.btnWithBefore],
 	    attrs: {
 	      "type": "button",
 	      "disabled": _vm.disabled
@@ -13155,13 +13184,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    on: {
 	      "keyup": function($event) {
 	        if (!('button' in $event) && _vm._k($event.keyCode, "esc", 27, $event.key, "Escape")) { return null; }
-	        _vm.show = false
+	        _vm.hideDropdownMenu()
 	      }
 	    }
-	  }, [_vm._v("\n      " + _vm._s(_vm.text) + "\n      "), _c('span', {
-	    staticClass: "caret"
-	  })])]), _vm._v(" "), _vm._t("dropdown-menu", [_c('ul', {
-	    staticClass: "dropdown-menu"
+	  }, [_vm._v("\n      " + _vm._s(_vm.text) + "\n    ")])]), _vm._v(" "), _vm._t("dropdown-menu", [_c('ul', {
+	    staticClass: "dropdown-menu",
+	    class: _vm.menuClasses
 	  }, [_vm._t("default")], 2)])], 2)
 	},staticRenderFns: []}
 	if (false) {
@@ -13253,7 +13281,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.modal {\n  transition: all 0.3s ease;\n}\n.modal.in {\n  background-color: rgba(0,0,0,0.5);\n}\n.modal.zoom .modal-dialog {\n  -webkit-transform: scale(0.1);\n  -moz-transform: scale(0.1);\n  -ms-transform: scale(0.1);\n  transform: scale(0.1);\n  top: 300px;\n  opacity: 0;\n  -webkit-transition: all 0.3s;\n  -moz-transition: all 0.3s;\n  transition: all 0.3s;\n}\n.modal.zoom.in .modal-dialog {\n  -webkit-transform: scale(1);\n  -moz-transform: scale(1);\n  -ms-transform: scale(1);\n  transform: scale(1);\n  -webkit-transform: translate3d(0, -300px, 0);\n  transform: translate3d(0, -300px, 0);\n  opacity: 1;\n}\n", "", {"version":3,"sources":["/./src/Modal.vue?630f51ea"],"names":[],"mappings":";AA+JA;EACA,0BAAA;CACA;AACA;EACA,kCAAA;CACA;AACA;EACA,8BAAA;EACA,2BAAA;EACA,0BAAA;EACA,sBAAA;EACA,WAAA;EACA,WAAA;EACA,6BAAA;EACA,0BAAA;EACA,qBAAA;CACA;AACA;EACA,4BAAA;EACA,yBAAA;EACA,wBAAA;EACA,oBAAA;EACA,6CAAA;EACA,qCAAA;EACA,WAAA;CACA","file":"Modal.vue","sourcesContent":["<template>\n  <div role=\"dialog\"\n    v-bind:class=\"{\n    'modal':true,\n    'fade':effect === 'fade',\n    'zoom':effect === 'zoom'\n    }\">\n    <div v-bind:class=\"{'modal-dialog':true,'modal-lg':largeBool,'modal-sm':smallBool}\" role=\"document\"\n      v-bind:style=\"{width: optionalWidth}\">\n      <div class=\"modal-content\">\n        <slot name=\"modal-header\">\n          <div class=\"modal-header\">\n            <button type=\"button\" class=\"close\" @click=\"close\"><span>&times;</span></button>\n            <h4 class=\"modal-title\">\n              <span name=\"title\" v-html=\"titleRendered\">\n              </span>\n            </h4>\n          </div>\n        </slot>\n          <div class=\"modal-body\">\n              <slot></slot>\n          </div>\n        <slot name=\"modal-footer\">\n          <div class=\"modal-footer\" v-if=\"showOkButton\">\n            <button type=\"button\" class=\"btn btn-primary\" v-if=\"showOkButton\" @click=\"close\">{{ okText }}</button>\n          </div>\n        </slot>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script>\nimport {globalEventBus} from './GlobalEventBus.js'\nimport {toBoolean, getScrollBarWidth} from './utils/utils.js'\nimport $ from './utils/NodeList.js'\nimport md from './utils/markdown.js'\n\nexport default {\n  props: {\n    okText: {\n      type: String,\n      default: ''\n    },\n    title: {\n      type: String,\n      default: ''\n    },\n    width: {\n      default: null\n    },\n    effect: {\n      type: String,\n      default: 'zoom'\n    },\n    backdrop: {\n      type: Boolean,\n      default: true\n    },\n    large: {\n      type: Boolean,\n      default: false\n    },\n    small: {\n      type: Boolean,\n      default: false\n    },\n    name: {\n      type: String\n    },\n    id: {\n      type: String\n    }\n  },\n  data() {\n    return {\n      show: false\n    }\n  },\n  computed: {\n    backdropBool () {\n      return toBoolean(this.backdrop)\n    },\n    largeBool () {\n      return toBoolean(this.large)\n    },\n    smallBool () {\n      return toBoolean(this.small)\n    },\n    titleRendered () {\n      return md.renderInline(this.title);\n    },\n    optionalWidth () {\n      if (this.width === null) {\n        return null\n      } else if (Number.isInteger(this.width)) {\n        return this.width + 'px'\n      }\n      return this.width\n    },\n    showOkButton () {\n      return this.okText.length !== 0;\n    }\n  },\n  watch: {\n    show (val) {\n      const el = this.$el\n      const body = document.body\n      const scrollBarWidth = getScrollBarWidth()\n      if (val) {\n        $(el).find('.modal-content').focus()\n        el.style.display = 'block'\n        setTimeout(() => $(el).addClass('in'), 0)\n        $(body).addClass('modal-open')\n        if (scrollBarWidth !== 0) {\n          body.style.paddingRight = scrollBarWidth + 'px'\n        }\n        if (this.backdropBool) {\n          $(el).on('click', e => {\n            if (e.target === el) this.show = false\n          })\n        }\n      } else {\n        body.style.paddingRight = null\n        $(body).removeClass('modal-open')\n        $(el).removeClass('in').on('transitionend', () => {\n          $(el).off('click transitionend')\n          el.style.display = 'none'\n        })\n      }\n    }\n  },\n  created () {\n    globalEventBus.$on('trigger:bind', this.bindTrigger)\n  },\n  methods: {\n    bindTrigger (trigger, popover) {\n      if (popover === this.id) {\n        trigger.setTriggerBy(this)\n      }\n    },\n    showModal (name) {\n      if (name === this.name) {\n        this.show = true\n      }\n    },\n    close () {\n      this.show = false\n    },\n    toggle () {\n      this.show = true\n    }\n  },\n  beforeDestroy () {\n    globalEventBus.$off('trigger:bind', this.bindTrigger)\n  }\n}\n</script>\n<style>\n.modal {\n  transition: all 0.3s ease;\n}\n.modal.in {\n  background-color: rgba(0,0,0,0.5);\n}\n.modal.zoom .modal-dialog {\n  -webkit-transform: scale(0.1);\n  -moz-transform: scale(0.1);\n  -ms-transform: scale(0.1);\n  transform: scale(0.1);\n  top: 300px;\n  opacity: 0;\n  -webkit-transition: all 0.3s;\n  -moz-transition: all 0.3s;\n  transition: all 0.3s;\n}\n.modal.zoom.in .modal-dialog {\n  -webkit-transform: scale(1);\n  -moz-transform: scale(1);\n  -ms-transform: scale(1);\n  transform: scale(1);\n  -webkit-transform: translate3d(0, -300px, 0);\n  transform: translate3d(0, -300px, 0);\n  opacity: 1;\n}\n</style>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.modal {\n  transition: all 0.3s ease;\n}\n.modal.in {\n  background-color: rgba(0,0,0,0.5);\n}\n.modal.zoom .modal-dialog {\n  -webkit-transform: scale(0.1);\n  -moz-transform: scale(0.1);\n  -ms-transform: scale(0.1);\n  transform: scale(0.1);\n  top: 300px;\n  opacity: 0;\n  -webkit-transition: all 0.3s;\n  -moz-transition: all 0.3s;\n  transition: all 0.3s;\n}\n.modal.zoom.in .modal-dialog {\n  -webkit-transform: scale(1);\n  -moz-transform: scale(1);\n  -ms-transform: scale(1);\n  transform: scale(1);\n  -webkit-transform: translate3d(0, -300px, 0);\n  transform: translate3d(0, -300px, 0);\n  opacity: 1;\n}\n", "", {"version":3,"sources":["/./src/Modal.vue?738b66e0"],"names":[],"mappings":";AA+JA;EACA,0BAAA;CACA;AACA;EACA,kCAAA;CACA;AACA;EACA,8BAAA;EACA,2BAAA;EACA,0BAAA;EACA,sBAAA;EACA,WAAA;EACA,WAAA;EACA,6BAAA;EACA,0BAAA;EACA,qBAAA;CACA;AACA;EACA,4BAAA;EACA,yBAAA;EACA,wBAAA;EACA,oBAAA;EACA,6CAAA;EACA,qCAAA;EACA,WAAA;CACA","file":"Modal.vue","sourcesContent":["<template>\n  <div role=\"dialog\"\n    v-bind:class=\"{\n    'modal':true,\n    'fade':effect === 'fade',\n    'zoom':effect === 'zoom'\n    }\">\n    <div v-bind:class=\"{'modal-dialog':true,'modal-lg':largeBool,'modal-sm':smallBool}\" role=\"document\"\n      v-bind:style=\"{width: optionalWidth}\">\n      <div class=\"modal-content\">\n        <slot name=\"modal-header\">\n          <div class=\"modal-header\">\n            <h4 class=\"modal-title\">\n              <span name=\"title\" v-html=\"titleRendered\">\n              </span>\n            </h4>\n            <button type=\"button\" class=\"close\" @click=\"close\"><span>&times;</span></button>\n          </div>\n        </slot>\n          <div class=\"modal-body\">\n              <slot></slot>\n          </div>\n        <slot name=\"modal-footer\">\n          <div class=\"modal-footer\" v-if=\"showOkButton\">\n            <button type=\"button\" class=\"btn btn-primary\" v-if=\"showOkButton\" @click=\"close\">{{ okText }}</button>\n          </div>\n        </slot>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script>\nimport {globalEventBus} from './GlobalEventBus.js'\nimport {toBoolean, getScrollBarWidth} from './utils/utils.js'\nimport $ from './utils/NodeList.js'\nimport md from './utils/markdown.js'\n\nexport default {\n  props: {\n    okText: {\n      type: String,\n      default: ''\n    },\n    title: {\n      type: String,\n      default: ''\n    },\n    width: {\n      default: null\n    },\n    effect: {\n      type: String,\n      default: 'zoom'\n    },\n    backdrop: {\n      type: Boolean,\n      default: true\n    },\n    large: {\n      type: Boolean,\n      default: false\n    },\n    small: {\n      type: Boolean,\n      default: false\n    },\n    name: {\n      type: String\n    },\n    id: {\n      type: String\n    }\n  },\n  data() {\n    return {\n      show: false\n    }\n  },\n  computed: {\n    backdropBool () {\n      return toBoolean(this.backdrop)\n    },\n    largeBool () {\n      return toBoolean(this.large)\n    },\n    smallBool () {\n      return toBoolean(this.small)\n    },\n    titleRendered () {\n      return md.renderInline(this.title);\n    },\n    optionalWidth () {\n      if (this.width === null) {\n        return null\n      } else if (Number.isInteger(this.width)) {\n        return this.width + 'px'\n      }\n      return this.width\n    },\n    showOkButton () {\n      return this.okText.length !== 0;\n    }\n  },\n  watch: {\n    show (val) {\n      const el = this.$el\n      const body = document.body\n      const scrollBarWidth = getScrollBarWidth()\n      if (val) {\n        $(el).find('.modal-content').focus()\n        el.style.display = 'block'\n        setTimeout(() => $(el).addClass('show in'), 0)\n        $(body).addClass('modal-open')\n        if (scrollBarWidth !== 0) {\n          body.style.paddingRight = scrollBarWidth + 'px'\n        }\n        if (this.backdropBool) {\n          $(el).on('click', e => {\n            if (e.target === el) this.show = false\n          })\n        }\n      } else {\n        body.style.paddingRight = null\n        $(body).removeClass('modal-open')\n        $(el).removeClass('show in').on('transitionend', () => {\n          $(el).off('click transitionend')\n          el.style.display = 'none'\n        })\n      }\n    }\n  },\n  created () {\n    globalEventBus.$on('trigger:bind', this.bindTrigger)\n  },\n  methods: {\n    bindTrigger (trigger, popover) {\n      if (popover === this.id) {\n        trigger.setTriggerBy(this)\n      }\n    },\n    showModal (name) {\n      if (name === this.name) {\n        this.show = true\n      }\n    },\n    close () {\n      this.show = false\n    },\n    toggle () {\n      this.show = true\n    }\n  },\n  beforeDestroy () {\n    globalEventBus.$off('trigger:bind', this.bindTrigger)\n  }\n}\n</script>\n<style>\n.modal {\n  transition: all 0.3s ease;\n}\n.modal.in {\n  background-color: rgba(0,0,0,0.5);\n}\n.modal.zoom .modal-dialog {\n  -webkit-transform: scale(0.1);\n  -moz-transform: scale(0.1);\n  -ms-transform: scale(0.1);\n  transform: scale(0.1);\n  top: 300px;\n  opacity: 0;\n  -webkit-transition: all 0.3s;\n  -moz-transition: all 0.3s;\n  transition: all 0.3s;\n}\n.modal.zoom.in .modal-dialog {\n  -webkit-transform: scale(1);\n  -moz-transform: scale(1);\n  -ms-transform: scale(1);\n  transform: scale(1);\n  -webkit-transform: translate3d(0, -300px, 0);\n  transform: translate3d(0, -300px, 0);\n  opacity: 1;\n}\n</style>"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -13397,7 +13425,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        (0, _NodeList2.default)(el).find('.modal-content').focus();
 	        el.style.display = 'block';
 	        setTimeout(function () {
-	          return (0, _NodeList2.default)(el).addClass('in');
+	          return (0, _NodeList2.default)(el).addClass('show in');
 	        }, 0);
 	        (0, _NodeList2.default)(body).addClass('modal-open');
 	        if (scrollBarWidth !== 0) {
@@ -13411,7 +13439,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      } else {
 	        body.style.paddingRight = null;
 	        (0, _NodeList2.default)(body).removeClass('modal-open');
-	        (0, _NodeList2.default)(el).removeClass('in').on('transitionend', function () {
+	        (0, _NodeList2.default)(el).removeClass('show in').on('transitionend', function () {
 	          (0, _NodeList2.default)(el).off('click transitionend');
 	          el.style.display = 'none';
 	        });
@@ -26264,15 +26292,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    staticClass: "modal-content"
 	  }, [_vm._t("modal-header", [_c('div', {
 	    staticClass: "modal-header"
-	  }, [_c('button', {
-	    staticClass: "close",
-	    attrs: {
-	      "type": "button"
-	    },
-	    on: {
-	      "click": _vm.close
-	    }
-	  }, [_c('span', [_vm._v("×")])]), _vm._v(" "), _c('h4', {
+	  }, [_c('h4', {
 	    staticClass: "modal-title"
 	  }, [_c('span', {
 	    attrs: {
@@ -26281,7 +26301,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	    domProps: {
 	      "innerHTML": _vm._s(_vm.titleRendered)
 	    }
-	  })])])]), _vm._v(" "), _c('div', {
+	  })]), _vm._v(" "), _c('button', {
+	    staticClass: "close",
+	    attrs: {
+	      "type": "button"
+	    },
+	    on: {
+	      "click": _vm.close
+	    }
+	  }, [_c('span', [_vm._v("×")])])])]), _vm._v(" "), _c('div', {
 	    staticClass: "modal-body"
 	  }, [_vm._t("default")], 2), _vm._v(" "), _vm._t("modal-footer", [(_vm.showOkButton) ? _c('div', {
 	    staticClass: "modal-footer"
@@ -26385,7 +26413,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n@media (max-width: 767px) {\n.navbar-fixed-top .navbar-collapse[data-v-e1504b48] {\n    max-height: 80vh !important;\n    overflow-x: hidden !important;\n    overflow-y: scroll !important;\n}\n}\n", "", {"version":3,"sources":["/./src/Navbar.vue?5a6ddadc"],"names":[],"mappings":";AAyGA;AACA;IACA,4BAAA;IACA,8BAAA;IACA,8BAAA;CACA;CACA","file":"Navbar.vue","sourcesContent":["<template>\n  <nav ref=\"navbar\" :class=\"['navbar',{\n    'navbar-inverse':(type == 'inverse'),\n    'navbar-default':(type == 'default'),\n    'navbar-fixed-top':(placement === 'top'),\n    'navbar-fixed-bottom':(placement === 'bottom'),\n    'navbar-static-top':(placement === 'static')\n  }]\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <button v-if=\"!slots.collapse\" type=\"button\" class=\"navbar-toggle collapsed\"  aria-expanded=\"false\" @click=\"toggleCollapse\">\n          <span class=\"sr-only\">Toggle navigation</span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n        </button>\n        <slot name=\"collapse\"></slot>\n        <slot name=\"brand\"></slot>\n      </div>\n      <div :class=\"['navbar-collapse',{collapse:collapsed}]\">\n        <ul class=\"nav navbar-nav\">\n          <slot></slot>\n        </ul>\n        <ul v-if=\"slots.right\" class=\"nav navbar-nav navbar-right\">\n          <slot name=\"right\"></slot>\n        </ul>\n      </div>\n    </div>\n  </nav>\n</template>\n\n<script>\nimport $ from './utils/NodeList.js'\n\nexport default {\n  props: {\n    type: {\n      type: String,\n      default: 'default'\n    },\n    placement: {\n      type: String,\n      default: ''\n    }\n  },\n  data () {\n    return {\n      id: 'bs-example-navbar-collapse-1',\n      collapsed: true,\n      styles: {}\n    }\n  },\n  computed: {\n    slots () {\n      return this.$slots\n    }\n  },\n  methods: {\n    toggleCollapse (e) {\n      e && e.preventDefault()\n      this.collapsed = !this.collapsed\n    }\n  },\n  created () {\n    this._navbar = true\n  },\n  mounted () {\n    let $dropdown = $('.dropdown>[data-toggle=\"dropdown\"]',this.$el).parent()\n    $dropdown.on('click', '.dropdown-toggle', (e) => {\n      e.preventDefault()\n      $dropdown.each((content) => {\n        if (content.contains(e.target)) content.classList.toggle('open')\n      })\n    }).on('click', '.dropdown-menu>li>a', (e) => {\n      $dropdown.each((content) => {\n        if (content.contains(e.target)) content.classList.remove('open')\n      })\n    }).onBlur((e) => {\n      $dropdown.each((content) => {\n        if (!content.contains(e.target)) content.classList.remove('open')\n      })\n    })\n    $(this.$el).on('click','li:not(.dropdown)>a', e => {\n      setTimeout(() => { this.collapsed = true }, 200)\n    }).onBlur(e => {\n      if (!this.$el.contains(e.target)) { this.collapsed = true }\n    })\n    let height = this.$el.offsetHeight\n    if (this.placement === 'top') {\n      document.body.style.paddingTop = height + 'px'\n      $(window).on('hashchange', () => scrollBy(0, -height))\n    }\n    if (this.placement === 'bottom') {\n      document.body.style.paddingBottom = height + 'px'\n    }\n    if (this.slots.collapse) $('[data-toggle=\"collapse\"]',this.$el).on('click', (e) => this.toggleCollapse(e))\n  },\n  beforeDestroy () {\n    $('.dropdown',this.$el).off('click').offBlur()\n    if (this.slots.collapse) $('[data-toggle=\"collapse\"]',this.$el).off('click')\n  }\n}\n</script>\n\n<style scoped>\n@media (max-width: 767px) {\n  .navbar-fixed-top .navbar-collapse {\n    max-height: 80vh !important;\n    overflow-x: hidden !important;\n    overflow-y: scroll !important;\n  }\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n@media (max-width: 767px) {\n.navbar-fixed-top .navbar-collapse[data-v-e1504b48] {\n    max-height: 80vh !important;\n    overflow-x: hidden !important;\n    overflow-y: scroll !important;\n}\n}\n", "", {"version":3,"sources":["/./src/Navbar.vue?eb0aabb8"],"names":[],"mappings":";AAsGA;AACA;IACA,4BAAA;IACA,8BAAA;IACA,8BAAA;CACA;CACA","file":"Navbar.vue","sourcesContent":["<template>\n  <nav ref=\"navbar\" :class=\"['navbar', 'navbar-expand-md', {\n    'navbar-dark':(type === 'inverse'),\n    'navbar-light':(type === 'default'),\n    'bg-dark':(type === 'inverse'),\n    'bg-light':(type === 'default'),\n    'fixed-top':(placement === 'top'),\n    'fixed-bottom':(placement === 'bottom')\n  }]\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-brand\"><slot name=\"brand\"></slot></div>\n      <button v-if=\"!slots.collapse\" class=\"navbar-toggler\" type=\"button\" aria-expanded=\"false\" aria-label=\"Toggle navigation\" @click=\"toggleCollapse\">\n        <span class=\"navbar-toggler-icon\"></span>\n        <slot name=\"collapse\"></slot>\n      </button>\n\n      <div :class=\"['navbar-collapse',{collapse:collapsed}]\">\n        <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">\n          <slot></slot>\n        </ul>\n        <ul v-if=\"slots.right\" class=\"navbar-nav navbar-right\">\n          <slot name=\"right\"></slot>\n        </ul>\n      </div>\n    </div>\n  </nav>\n</template>\n\n<script>\nimport $ from './utils/NodeList.js'\n\nexport default {\n  props: {\n    type: {\n      type: String,\n      default: 'default'\n    },\n    placement: {\n      type: String,\n      default: ''\n    }\n  },\n  data () {\n    return {\n      id: 'bs-example-navbar-collapse-1',\n      collapsed: true,\n      styles: {}\n    }\n  },\n  computed: {\n    slots () {\n      return this.$slots\n    }\n  },\n  methods: {\n    toggleCollapse (e) {\n      e && e.preventDefault()\n      this.collapsed = !this.collapsed\n    }\n  },\n  created () {\n    this._navbar = true\n  },\n  mounted () {\n    let $dropdown = $('.dropdown>[data-toggle=\"dropdown\"]',this.$el).parent()\n    $dropdown.on('click', '.dropdown-toggle', (e) => {\n      e.preventDefault()\n      $dropdown.each((content) => {\n        if (content.contains(e.target)) content.classList.toggle('open')\n      })\n    }).on('click', '.dropdown-menu>li>a', (e) => {\n      $dropdown.each((content) => {\n        if (content.contains(e.target)) content.classList.remove('open')\n      })\n    }).onBlur((e) => {\n      $dropdown.each((content) => {\n        if (!content.contains(e.target)) content.classList.remove('open')\n      })\n    })\n    $(this.$el).on('click','li:not(.dropdown)>a', e => {\n      setTimeout(() => { this.collapsed = true }, 200)\n    }).onBlur(e => {\n      if (!this.$el.contains(e.target)) { this.collapsed = true }\n    })\n    let height = this.$el.offsetHeight\n    if (this.placement === 'top') {\n      document.body.style.paddingTop = height + 'px'\n      $(window).on('hashchange', () => scrollBy(0, -height))\n    }\n    if (this.placement === 'bottom') {\n      document.body.style.paddingBottom = height + 'px'\n    }\n    if (this.slots.collapse) $('[data-toggle=\"collapse\"]',this.$el).on('click', (e) => this.toggleCollapse(e))\n  },\n  beforeDestroy () {\n    $('.dropdown',this.$el).off('click').offBlur()\n    if (this.slots.collapse) $('[data-toggle=\"collapse\"]',this.$el).off('click')\n  }\n}\n</script>\n\n<style scoped>\n@media (max-width: 767px) {\n  .navbar-fixed-top .navbar-collapse {\n    max-height: 80vh !important;\n    overflow-x: hidden !important;\n    overflow-y: scroll !important;\n  }\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -26512,9 +26540,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 	//
 	//
-	//
-	//
-	//
 
 /***/ }),
 /* 200 */
@@ -26523,42 +26548,38 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('nav', {
 	    ref: "navbar",
-	    class: ['navbar', {
-	      'navbar-inverse': (_vm.type == 'inverse'),
-	      'navbar-default': (_vm.type == 'default'),
-	      'navbar-fixed-top': (_vm.placement === 'top'),
-	      'navbar-fixed-bottom': (_vm.placement === 'bottom'),
-	      'navbar-static-top': (_vm.placement === 'static')
+	    class: ['navbar', 'navbar-expand-md', {
+	      'navbar-dark': (_vm.type === 'inverse'),
+	      'navbar-light': (_vm.type === 'default'),
+	      'bg-dark': (_vm.type === 'inverse'),
+	      'bg-light': (_vm.type === 'default'),
+	      'fixed-top': (_vm.placement === 'top'),
+	      'fixed-bottom': (_vm.placement === 'bottom')
 	    }]
 	  }, [_c('div', {
 	    staticClass: "container-fluid"
 	  }, [_c('div', {
-	    staticClass: "navbar-header"
-	  }, [(!_vm.slots.collapse) ? _c('button', {
-	    staticClass: "navbar-toggle collapsed",
+	    staticClass: "navbar-brand"
+	  }, [_vm._t("brand")], 2), _vm._v(" "), (!_vm.slots.collapse) ? _c('button', {
+	    staticClass: "navbar-toggler",
 	    attrs: {
 	      "type": "button",
-	      "aria-expanded": "false"
+	      "aria-expanded": "false",
+	      "aria-label": "Toggle navigation"
 	    },
 	    on: {
 	      "click": _vm.toggleCollapse
 	    }
 	  }, [_c('span', {
-	    staticClass: "sr-only"
-	  }, [_vm._v("Toggle navigation")]), _vm._v(" "), _c('span', {
-	    staticClass: "icon-bar"
-	  }), _vm._v(" "), _c('span', {
-	    staticClass: "icon-bar"
-	  }), _vm._v(" "), _c('span', {
-	    staticClass: "icon-bar"
-	  })]) : _vm._e(), _vm._v(" "), _vm._t("collapse"), _vm._v(" "), _vm._t("brand")], 2), _vm._v(" "), _c('div', {
+	    staticClass: "navbar-toggler-icon"
+	  }), _vm._v(" "), _vm._t("collapse")], 2) : _vm._e(), _vm._v(" "), _c('div', {
 	    class: ['navbar-collapse', {
 	      collapse: _vm.collapsed
 	    }]
 	  }, [_c('ul', {
-	    staticClass: "nav navbar-nav"
+	    staticClass: "navbar-nav mr-auto mt-2 mt-lg-0"
 	  }, [_vm._t("default")], 2), _vm._v(" "), (_vm.slots.right) ? _c('ul', {
-	    staticClass: "nav navbar-nav navbar-right"
+	    staticClass: "navbar-nav navbar-right"
 	  }, [_vm._t("right")], 2) : _vm._e()])])])
 	},staticRenderFns: []}
 	if (false) {
@@ -26650,7 +26671,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.panel-heading {\n    width: 100%;\n}\n.panel-title {\n    display: inline-block;\n    font-size: 1em;\n    vertical-align: middle;\n}\n.panel-title * {\n    margin: 0px;\n}\n.header-wrapper {\n    display: inline-block;\n    width: 72%;\n}\n.button-wrapper {\n    float: right;\n    display: inline-block;\n    width: 28%;\n}\n.accordion-toggle {\n    cursor: pointer;\n}\n.expandable-panel {\n    margin-bottom: 0 !important;\n    margin-top: 5px;\n}\n.panel-group > .panel-container > .expandable-panel {\n    margin-top: 0!important;\n}\n.panel-seamless {\n    padding: 0;\n}\n.caret.caret-collapse {\n    border-left: 4px dashed;\n    border-top: 4px solid transparent;\n    border-bottom: 4px solid transparent;\n    border-right: none;\n}\n.panel.panel-seamless {\n    box-shadow: none;\n    border: none;\n}\n.panel-seamless > .panel-heading {\n    padding: 0;\n}\n.panel-seamless > .panel-collapse > hr {\n    margin: 0;\n    width: calc(100% - 27px);\n}\n.panel-seamless > .panel-collapse > .panel-body {\n    padding: 10px 0;\n}\n.panel-seamless > .panel-collapse > .panel-body > .collapse-button {\n    position: relative;\n    top: 22px;\n}\n.panel-body > .collapse-button {\n    margin-top: 5px;\n    opacity: 0.2;\n}\n.panel-body > .collapse-button:hover {\n    opacity: 1;\n}\n.close-button {\n    font-size: 10px !important;\n    float: right;\n    padding: 3px 8px !important;\n}\n.popup-button {\n    font-size: 10px !important;\n    float: right;\n    padding: 3px 8px !important;\n    margin-right: 4px;\n}\n.morph {\n    display: inline-block;\n}\n", "", {"version":3,"sources":["/./src/Panel.vue?6e52aaa3"],"names":[],"mappings":";AAiQA;IACA,YAAA;CACA;AAEA;IACA,sBAAA;IACA,eAAA;IACA,uBAAA;CACA;AAEA;IACA,YAAA;CACA;AAEA;IACA,sBAAA;IACA,WAAA;CACA;AAEA;IACA,aAAA;IACA,sBAAA;IACA,WAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,4BAAA;IACA,gBAAA;CACA;AAEA;IACA,wBAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,wBAAA;IACA,kCAAA;IACA,qCAAA;IACA,mBAAA;CACA;AAEA;IACA,iBAAA;IACA,aAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,UAAA;IACA,yBAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,mBAAA;IACA,UAAA;CACA;AAEA;IACA,gBAAA;IACA,aAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,2BAAA;IACA,aAAA;IACA,4BAAA;CACA;AAEA;IACA,2BAAA;IACA,aAAA;IACA,4BAAA;IACA,kBAAA;CACA;AAEA;IACA,sBAAA;CACA","file":"Panel.vue","sourcesContent":["<template>\n    <span class=\"panel-container\">\n        <div class=\"morph\" v-show=\"localMinimized\">\n            <div class=\"morph-display-wrapper\" @click=\"open()\">\n                <button class=\"morph-display-button btn btn-default\">\n                    <template v-if=\"altContent\">\n                        <div class=\"panel-title\" v-html=\"altContent\"></div>\n                    </template>\n                    <template v-else>\n                        <slot name=\"header\">\n                            <div class=\"panel-title\" v-html=\"altContent\"></div>\n                        </slot>\n                    </template>\n                </button>\n            </div>\n        </div>\n        <div :class=\"['panel', panelType, {'expandable-panel': isExpandablePanel}]\" v-show=\"!localMinimized\">\n            <div :class=\"['panel-heading',{'accordion-toggle':canCollapse}]\"\n                 @click.prevent.stop=\"canCollapse && toggle()\"\n                 @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\n                <div class=\"header-wrapper\">\n                    <span :class=\"['caret', {'caret-collapse': !localExpanded}]\" v-show=\"showCaret\"></span>\n                    <slot name=\"header\">\n                        <div class=\"panel-title\" v-html=\"headerContent\"></div>\n                    </slot>\n                </div>\n                <div class=\"button-wrapper\">\n                    <slot name=\"button\">\n                        <panel-switch v-show=\"canCollapse && !noSwitchBool && !showCaret\" v-bind:is-open=\"localExpanded\"\n                                      @click.native.stop.prevent=\"expand()\"\n                                      @is-open-event=\"retrieveOnOpen\"></panel-switch>\n                        <button type=\"button\" class=\"close-button btn btn-default\"\n                                v-show=\"this.type !== 'seamless' ? (!noCloseBool) : onHeaderHover\"\n                                @click.stop=\"close()\">\n                            <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                        </button>\n                        <button type=\"button\" class=\"popup-button btn btn-default\"\n                                v-show=\"this.popupUrl !== null\"\n                                @click.stop=\"openPopup()\">\n                            <span class=\"glyphicon glyphicon-new-window\" aria-hidden=\"true\"></span>\n                        </button>\n                    </slot>\n                </div>\n            </div>\n            <div class=\"panel-collapse\"\n                 ref=\"panel\"\n                 v-show=\"localExpanded\"\n            >\n                <div class=\"panel-body\">\n                    <slot></slot>\n                    <retriever v-if=\"isDynamic\" ref=\"retriever\" :src=\"src\" :fragment=\"fragment\" delay></retriever>\n                    <panel-switch v-show=\"canCollapse && bottomSwitchBool\" v-bind:is-open=\"localExpanded\"\n                                  @click.native.stop.prevent=\"collapseThenScrollIntoViewIfNeeded()\"\n                                  @is-open-event=\"retrieveOnOpen\"></panel-switch>\n                </div>\n                <hr v-show=\"this.type === 'seamless'\" />\n            </div>\n        </div>\n    </span>\n</template>\n\n<script>\n  import {getFragmentByHash, toBoolean, toNumber} from './utils/utils.js'\n  import md from './utils/markdown.js'\n  import panelSwitch from './PanelSwitch.vue'\n  import retriever from './Retriever.vue'\n\n  export default {\n    components: {\n      panelSwitch,\n      retriever\n    },\n    props: {\n      header: {\n        type: String,\n        default: ''\n      },\n      alt: {\n        type: String,\n        default: ''\n      },\n      type: {\n        type: String,\n        default: null\n      },\n      expandable: {\n        type: Boolean,\n        default: true\n      },\n      isOpen: {\n        type: Boolean,\n        default: null\n      },\n      expanded: {\n        type: Boolean,\n        default: null\n      },\n      minimized: {\n        type: Boolean,\n        default: false\n      },\n      noSwitch: {\n        type: Boolean,\n        default: false\n      },\n      noClose: {\n        type: Boolean,\n        default: false\n      },\n      popupUrl: {\n        type: String,\n        default: null\n      },\n      src: {\n        type: String\n      },\n      bottomSwitch: {\n        type: Boolean,\n        default: true\n      },\n      preload: {\n        type: Boolean,\n        default: false\n      }\n    },\n    computed: {\n      // Vue 2.0 coerce migration\n      expandableBool () {\n        return toBoolean(this.expandable);\n      },\n      isOpenBool () {\n        return toBoolean(this.isOpen);\n      },\n      expandedBool () {\n        return toBoolean(this.expanded);\n      },\n      minimizedBool () {\n        return toBoolean(this.minimized);\n      },\n      noSwitchBool () {\n        return toBoolean(this.noSwitch);\n      },\n      noCloseBool () {\n        return toBoolean(this.noClose);\n      },\n      bottomSwitchBool () {\n        return toBoolean(this.bottomSwitch);\n      },\n      preloadBool () {\n        return toBoolean(this.preload);\n      },\n      // Vue 2.0 coerce migration end\n      inAccordion () {\n        return this.$parent && this.$parent._isAccordion;\n      },\n      isExpandablePanel () {\n        return this.expandableBool;\n      },\n      canCollapse () {\n        return this.inAccordion || this.expandableBool;\n      },\n      showCaret () {\n        return this.type == 'seamless';\n      },\n      panelType () {\n        return 'panel panel-' + (this.type || (this.inAccordion && this.$parent.type) || 'default');\n      },\n      headerContent () {\n        return md.render(this.header);\n      },\n      altContent () {\n        return this.alt && md.render(this.alt) || md.render(this.header);\n      },\n      isDynamic () {\n        return this.src && this.src.length > 0;\n      },\n      showCloseButton () {\n        if (this.type !== 'seamless') {\n          return !this.noCloseBool;\n        } else {\n          return onHeaderHover;\n        }\n      }\n    },\n    data () {\n      return {\n        onHeaderHover: false,\n        localExpanded: false,\n        localMinimized: false\n      }\n    },\n    methods: {\n      toggle() {\n        this.localExpanded = !this.localExpanded;\n      },\n      expand() {\n        this.localExpanded = !this.localExpanded;\n      },\n      close() {\n        this.localMinimized = true;\n      },\n      open() {\n        this.localExpanded = true;\n        this.localMinimized = false;\n      },\n      scrollIntoViewIfNeeded() {\n        let top = this.$el.getBoundingClientRect().top;\n        let isTopInView = (top >= 0) && (top <= window.innerHeight);\n        if (!isTopInView) {\n          this.$el.scrollIntoView();\n        }\n      },\n      collapseThenScrollIntoViewIfNeeded() {\n        this.$once('is-open-event', (el, isOpen) => {\n          this.scrollIntoViewIfNeeded();\n        });\n        this.expand();\n      },\n      openPopup() {\n        window.open(this.popupUrl);\n      },\n      retrieveOnOpen(el, isOpen) {\n        if (isOpen && this.isDynamic) {\n          this.$refs.retriever.fetch()\n        }\n      }\n    },\n    watch: {\n      'localExpanded': function (val, oldVal) {\n        this.retrieveOnOpen(this, val);\n      },\n    },\n    created () {\n      if (this.src) {\n        let hash = getFragmentByHash(this.src);\n        if (hash) {\n          this.fragment = hash;\n          this.src = this.src.split('#')[0];\n        }\n      }\n      // Edge case where user might want non-expandable panel that isn't expanded by default\n      const notExpandableNoExpand = !this.expandableBool && this.expanded !== 'false';\n      // Set local data to computed prop value\n      this.localExpanded =  notExpandableNoExpand || this.expandedBool; // Ensure this expr ordering is maintained\n      this.localMinimized = this.minimizedBool;\n    },\n    mounted() {\n      this.$nextTick(function () {\n        if (this.isDynamic && (this.expandedBool || this.preloadBool)) {\n          this.$refs.retriever.fetch()\n        }\n      })\n    },\n  }\n</script>\n\n<style>\n    .panel-heading {\n        width: 100%;\n    }\n\n    .panel-title {\n        display: inline-block;\n        font-size: 1em;\n        vertical-align: middle;\n    }\n\n    .panel-title * {\n        margin: 0px;\n    }\n\n    .header-wrapper {\n        display: inline-block;\n        width: 72%;\n    }\n\n    .button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 28%;\n    }\n\n    .accordion-toggle {\n        cursor: pointer;\n    }\n\n    .expandable-panel {\n        margin-bottom: 0 !important;\n        margin-top: 5px;\n    }\n\n    .panel-group > .panel-container > .expandable-panel {\n        margin-top: 0!important;\n    }\n\n    .panel-seamless {\n        padding: 0;\n    }\n\n    .caret.caret-collapse {\n        border-left: 4px dashed;\n        border-top: 4px solid transparent;\n        border-bottom: 4px solid transparent;\n        border-right: none;\n    }\n\n    .panel.panel-seamless {\n        box-shadow: none;\n        border: none;\n    }\n\n    .panel-seamless > .panel-heading {\n        padding: 0;\n    }\n\n    .panel-seamless > .panel-collapse > hr {\n        margin: 0;\n        width: calc(100% - 27px);\n    }\n\n    .panel-seamless > .panel-collapse > .panel-body {\n        padding: 10px 0;\n    }\n\n    .panel-seamless > .panel-collapse > .panel-body > .collapse-button {\n        position: relative;\n        top: 22px;\n    }\n\n    .panel-body > .collapse-button {\n        margin-top: 5px;\n        opacity: 0.2;\n    }\n\n    .panel-body > .collapse-button:hover {\n        opacity: 1;\n    }\n\n    .close-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n    }\n\n    .popup-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n        margin-right: 4px;\n    }\n\n    .morph {\n        display: inline-block;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.card-heading {\n    width: 100%;\n}\n.card-title {\n    display: inline-block;\n    font-size: 1em;\n    margin: 0;\n    vertical-align: middle;\n}\n.card-title * {\n    margin: 0px !important;\n}\n.header-wrapper {\n    display: inline-block;\n    width: 72%;\n}\n.button-wrapper {\n    float: right;\n    display: inline-block;\n    width: 28%;\n}\n.header-toggle {\n    cursor: pointer;\n}\n.expandable-card {\n    margin-bottom: 0 !important;\n    margin-top: 5px;\n}\n.card-group > .card-container > .expandable-card {\n    margin-top: 0!important;\n}\n.card-seamless {\n    padding: 0;\n}\n.card.card-seamless {\n    box-shadow: none;\n    border: none;\n}\n.card-seamless > .card-heading {\n    padding: 0;\n}\n.card-seamless > .card-collapse > hr {\n    margin: 0;\n    width: calc(100% - 27px);\n}\n.card-seamless > .card-collapse > .card-body {\n    padding: 10px 0;\n}\n.card-seamless > .card-collapse > .card-body > .collapse-button {\n    position: relative;\n    top: 22px;\n}\n.card-body > .collapse-button {\n    margin-bottom: 13px;\n    margin-top: 5px;\n    opacity: 0.2;\n}\n.card-body > .collapse-button:hover {\n    opacity: 1;\n}\n.close-button {\n    font-size: 10px !important;\n    float: right;\n    padding: 3px 8px !important;\n}\n.popup-button {\n    font-size: 10px !important;\n    float: right;\n    padding: 3px 8px !important;\n    margin-right: 4px;\n}\n.morph {\n    display: inline-block;\n}\n", "", {"version":3,"sources":["/./src/Panel.vue?aae37e8e"],"names":[],"mappings":";AAsSA;IACA,YAAA;CACA;AAEA;IACA,sBAAA;IACA,eAAA;IACA,UAAA;IACA,uBAAA;CACA;AAEA;IACA,uBAAA;CACA;AAEA;IACA,sBAAA;IACA,WAAA;CACA;AAEA;IACA,aAAA;IACA,sBAAA;IACA,WAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,4BAAA;IACA,gBAAA;CACA;AAEA;IACA,wBAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,iBAAA;IACA,aAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,UAAA;IACA,yBAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,mBAAA;IACA,UAAA;CACA;AAEA;IACA,oBAAA;IACA,gBAAA;IACA,aAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,2BAAA;IACA,aAAA;IACA,4BAAA;CACA;AAEA;IACA,2BAAA;IACA,aAAA;IACA,4BAAA;IACA,kBAAA;CACA;AAEA;IACA,sBAAA;CACA","file":"Panel.vue","sourcesContent":["<template>\n    <span class=\"card-container\">\n        <div class=\"morph\" v-show=\"localMinimized\">\n            <button :class=\"['morph-display-wrapper', 'btn', btnType, 'card-title']\" @click=\"open()\">\n                <template v-if=\"altContent\">\n                    <div v-html=\"altContent\"></div>\n                </template>\n                <template v-else>\n                    <slot name=\"header\">\n                        <div v-html=\"altContent\"></div>\n                    </slot>\n                </template>\n            </button>\n        </div>\n        <div :class=\"['card', {'expandable-card': isExpandableCard}, borderType]\" v-show=\"!localMinimized\">\n            <div :class=\"['card-header',{'header-toggle':isExpandableCard}, cardType, borderType]\"\n                 @click.prevent.stop=\"isExpandableCard && toggle()\"\n                 @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\n                <div class=\"header-wrapper\">\n                    <span :class=\"['glyphicon', localExpanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right']\" v-show=\"showCaret\"></span>\n                    <slot name=\"header\">\n                        <div :class=\"['card-title', cardType, {'text-white':!isLightBg}]\" v-html=\"headerContent\"></div>\n                    </slot>\n                </div>\n                <div class=\"button-wrapper\">\n                    <slot name=\"button\">\n                        <panel-switch v-show=\"isExpandableCard && !noSwitchBool && !showCaret\" :is-open=\"localExpanded\"\n                                      @click.native.stop.prevent=\"expand()\"\n                                      @is-open-event=\"retrieveOnOpen\" :is-light-bg=\"isLightBg\"></panel-switch>\n                        <button type=\"button\" :class=\"['close-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\"\n                                v-show=\"!isSeamless ? (!noCloseBool) : onHeaderHover\"\n                                @click.stop=\"close()\">\n                            <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                        </button>\n                        <button type=\"button\" :class=\"['popup-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\"\n                                v-show=\"this.popupUrl !== null\"\n                                @click.stop=\"openPopup()\">\n                            <span class=\"glyphicon glyphicon-new-window\" aria-hidden=\"true\"></span>\n                        </button>\n                    </slot>\n                </div>\n            </div>\n            <template v-if=\"preloadBool\">\n                <div class=\"card-collapse\"\n                     ref=\"panel\"\n                     v-show=\"localExpanded\"\n                >\n                    <div class=\"card-body\">\n                        <slot></slot>\n                        <retriever v-if=\"hasSrc\" ref=\"retriever\" :src=\"src\" :fragment=\"fragment\" delay></retriever>\n                        <panel-switch v-show=\"isExpandableCard && bottomSwitchBool\" :is-open=\"localExpanded\"\n                                      @click.native.stop.prevent=\"collapseThenScrollIntoViewIfNeeded()\"\n                                      @is-open-event=\"retrieveOnOpen\"></panel-switch>\n                    </div>\n                    <hr v-show=\"isSeamless\" />\n                </div>\n            </template>\n            <template v-else>\n                <div class=\"card-collapse\"\n                     ref=\"panel\"\n                     v-if=\"localExpanded\"\n                >\n                    <div class=\"card-body\">\n                        <slot></slot>\n                        <retriever v-if=\"hasSrc\" ref=\"retriever\" :src=\"src\" :fragment=\"fragment\" delay></retriever>\n                        <panel-switch v-show=\"isExpandableCard && bottomSwitchBool\" :is-open=\"localExpanded\"\n                                      @click.native.stop.prevent=\"collapseThenScrollIntoViewIfNeeded()\"\n                                      @is-open-event=\"retrieveOnOpen\"></panel-switch>\n                    </div>\n                    <hr v-show=\"isSeamless\" />\n                </div>\n            </template>\n        </div>\n    </span>\n</template>\n\n<script>\n  import {getFragmentByHash, toBoolean, toNumber} from './utils/utils.js'\n  import md from './utils/markdown.js'\n  import panelSwitch from './PanelSwitch.vue'\n  import retriever from './Retriever.vue'\n\n  export default {\n    components: {\n      panelSwitch,\n      retriever\n    },\n    props: {\n      header: {\n        type: String,\n        default: ''\n      },\n      alt: {\n        type: String,\n        default: ''\n      },\n      type: {\n        type: String,\n        default: null\n      },\n      expandable: {\n        type: Boolean,\n        default: true\n      },\n      isOpen: {\n        type: Boolean,\n        default: null\n      },\n      expanded: {\n        type: Boolean,\n        default: null\n      },\n      minimized: {\n        type: Boolean,\n        default: false\n      },\n      noSwitch: {\n        type: Boolean,\n        default: false\n      },\n      noClose: {\n        type: Boolean,\n        default: false\n      },\n      popupUrl: {\n        type: String,\n        default: null\n      },\n      src: {\n        type: String\n      },\n      bottomSwitch: {\n        type: Boolean,\n        default: true\n      },\n      preload: {\n        type: Boolean,\n        default: false\n      }\n    },\n    computed: {\n      // Vue 2.0 coerce migration\n      expandableBool () {\n        return toBoolean(this.expandable);\n      },\n      isOpenBool () {\n        return toBoolean(this.isOpen);\n      },\n      expandedBool () {\n        return toBoolean(this.expanded);\n      },\n      minimizedBool () {\n        return toBoolean(this.minimized);\n      },\n      noSwitchBool () {\n        return toBoolean(this.noSwitch);\n      },\n      noCloseBool () {\n        return toBoolean(this.noClose);\n      },\n      bottomSwitchBool () {\n        return toBoolean(this.bottomSwitch);\n      },\n      preloadBool () {\n        return toBoolean(this.preload);\n      },\n      // Vue 2.0 coerce migration end\n      isExpandableCard () {\n        return this.expandableBool;\n      },\n      showCaret () {\n        return this.isSeamless;\n      },\n      isSeamless () {\n        return this.type === 'seamless';\n      },\n      btnType () {\n        if (this.isSeamless || this.type === 'light') {\n          return 'btn-outline-secondary';\n        }\n        return 'btn-outline-' + (this.type || 'secondary');\n      },\n      borderType () {\n        if (this.isSeamless) {\n          return 'border-0';\n        } else if (this.type) {\n          if (this.type === 'light') {\n            return ''; // Bootstrap 4.x light border is almost invisible on a white page\n          }\n          return 'border-' + this.type;\n        }\n        return '';\n      },\n      cardType () {\n        if (this.isSeamless) {\n          return 'bg-white';\n        }\n        return 'bg-' + (this.type || 'light');\n      },\n      isLightBg () {\n        return this.cardType === 'bg-light' || this.cardType === 'bg-white' || this.cardType === 'bg-warning';\n      },\n      headerContent () {\n        return md.render(this.header);\n      },\n      altContent () {\n        return this.alt && md.render(this.alt) || md.render(this.header);\n      },\n      hasSrc () {\n        return this.src && this.src.length > 0;\n      },\n      showCloseButton () {\n        if (!this.isSeamless) {\n          return !this.noCloseBool;\n        } else {\n          return onHeaderHover;\n        }\n      }\n    },\n    data () {\n      return {\n        onHeaderHover: false,\n        localExpanded: false,\n        localMinimized: false\n      }\n    },\n    methods: {\n      toggle() {\n        this.localExpanded = !this.localExpanded;\n      },\n      expand() {\n        this.localExpanded = !this.localExpanded;\n      },\n      close() {\n        this.localMinimized = true;\n      },\n      open() {\n        this.localExpanded = true;\n        this.localMinimized = false;\n      },\n      scrollIntoViewIfNeeded() {\n        let top = this.$el.getBoundingClientRect().top;\n        let isTopInView = (top >= 0) && (top <= window.innerHeight);\n        if (!isTopInView) {\n          this.$el.scrollIntoView();\n        }\n      },\n      collapseThenScrollIntoViewIfNeeded() {\n        this.$once('is-open-event', (el, isOpen) => {\n          this.scrollIntoViewIfNeeded();\n        });\n        this.expand();\n      },\n      openPopup() {\n        window.open(this.popupUrl);\n      },\n      retrieveOnOpen(el, isOpen) {\n        if (isOpen && this.hasSrc) {\n          this.$refs.retriever.fetch()\n        }\n      }\n    },\n    watch: {\n      'localExpanded': function (val, oldVal) {\n        this.$nextTick(function () {\n          this.retrieveOnOpen(this, val);\n        })\n      },\n    },\n    created () {\n      if (this.src) {\n        let hash = getFragmentByHash(this.src);\n        if (hash) {\n          this.fragment = hash;\n          this.src = this.src.split('#')[0];\n        }\n      }\n      // Edge case where user might want non-expandable card that isn't expanded by default\n      const notExpandableNoExpand = !this.expandableBool && this.expanded !== 'false';\n      // Set local data to computed prop value\n      this.localExpanded =  notExpandableNoExpand || this.expandedBool; // Ensure this expr ordering is maintained\n      this.localMinimized = this.minimizedBool;\n    },\n    mounted() {\n      this.$nextTick(function () {\n        if (this.hasSrc && (this.preloadBool || this.expandedBool)) {\n          this.$refs.retriever.fetch()\n        }\n      })\n    },\n  }\n</script>\n\n<style>\n    .card-heading {\n        width: 100%;\n    }\n\n    .card-title {\n        display: inline-block;\n        font-size: 1em;\n        margin: 0;\n        vertical-align: middle;\n    }\n\n    .card-title * {\n        margin: 0px !important;\n    }\n\n    .header-wrapper {\n        display: inline-block;\n        width: 72%;\n    }\n\n    .button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 28%;\n    }\n\n    .header-toggle {\n        cursor: pointer;\n    }\n\n    .expandable-card {\n        margin-bottom: 0 !important;\n        margin-top: 5px;\n    }\n\n    .card-group > .card-container > .expandable-card {\n        margin-top: 0!important;\n    }\n\n    .card-seamless {\n        padding: 0;\n    }\n\n    .card.card-seamless {\n        box-shadow: none;\n        border: none;\n    }\n\n    .card-seamless > .card-heading {\n        padding: 0;\n    }\n\n    .card-seamless > .card-collapse > hr {\n        margin: 0;\n        width: calc(100% - 27px);\n    }\n\n    .card-seamless > .card-collapse > .card-body {\n        padding: 10px 0;\n    }\n\n    .card-seamless > .card-collapse > .card-body > .collapse-button {\n        position: relative;\n        top: 22px;\n    }\n\n    .card-body > .collapse-button {\n        margin-bottom: 13px;\n        margin-top: 5px;\n        opacity: 0.2;\n    }\n\n    .card-body > .collapse-button:hover {\n        opacity: 1;\n    }\n\n    .close-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n    }\n\n    .popup-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n        margin-right: 4px;\n    }\n\n    .morph {\n        display: inline-block;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -26681,6 +26702,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 	//
 	//
 	//
@@ -26829,20 +26865,40 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	
 	    // Vue 2.0 coerce migration end
-	    inAccordion: function inAccordion() {
-	      return this.$parent && this.$parent._isAccordion;
-	    },
-	    isExpandablePanel: function isExpandablePanel() {
+	    isExpandableCard: function isExpandableCard() {
 	      return this.expandableBool;
 	    },
-	    canCollapse: function canCollapse() {
-	      return this.inAccordion || this.expandableBool;
-	    },
 	    showCaret: function showCaret() {
-	      return this.type == 'seamless';
+	      return this.isSeamless;
 	    },
-	    panelType: function panelType() {
-	      return 'panel panel-' + (this.type || this.inAccordion && this.$parent.type || 'default');
+	    isSeamless: function isSeamless() {
+	      return this.type === 'seamless';
+	    },
+	    btnType: function btnType() {
+	      if (this.isSeamless || this.type === 'light') {
+	        return 'btn-outline-secondary';
+	      }
+	      return 'btn-outline-' + (this.type || 'secondary');
+	    },
+	    borderType: function borderType() {
+	      if (this.isSeamless) {
+	        return 'border-0';
+	      } else if (this.type) {
+	        if (this.type === 'light') {
+	          return ''; // Bootstrap 4.x light border is almost invisible on a white page
+	        }
+	        return 'border-' + this.type;
+	      }
+	      return '';
+	    },
+	    cardType: function cardType() {
+	      if (this.isSeamless) {
+	        return 'bg-white';
+	      }
+	      return 'bg-' + (this.type || 'light');
+	    },
+	    isLightBg: function isLightBg() {
+	      return this.cardType === 'bg-light' || this.cardType === 'bg-white' || this.cardType === 'bg-warning';
 	    },
 	    headerContent: function headerContent() {
 	      return _markdown2.default.render(this.header);
@@ -26850,11 +26906,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    altContent: function altContent() {
 	      return this.alt && _markdown2.default.render(this.alt) || _markdown2.default.render(this.header);
 	    },
-	    isDynamic: function isDynamic() {
+	    hasSrc: function hasSrc() {
 	      return this.src && this.src.length > 0;
 	    },
 	    showCloseButton: function showCloseButton() {
-	      if (this.type !== 'seamless') {
+	      if (!this.isSeamless) {
 	        return !this.noCloseBool;
 	      } else {
 	        return onHeaderHover;
@@ -26902,14 +26958,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	      window.open(this.popupUrl);
 	    },
 	    retrieveOnOpen: function retrieveOnOpen(el, isOpen) {
-	      if (isOpen && this.isDynamic) {
+	      if (isOpen && this.hasSrc) {
 	        this.$refs.retriever.fetch();
 	      }
 	    }
 	  },
 	  watch: {
 	    'localExpanded': function localExpanded(val, oldVal) {
-	      this.retrieveOnOpen(this, val);
+	      this.$nextTick(function () {
+	        this.retrieveOnOpen(this, val);
+	      });
 	    }
 	  },
 	  created: function created() {
@@ -26920,7 +26978,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.src = this.src.split('#')[0];
 	      }
 	    }
-	    // Edge case where user might want non-expandable panel that isn't expanded by default
+	    // Edge case where user might want non-expandable card that isn't expanded by default
 	    var notExpandableNoExpand = !this.expandableBool && this.expanded !== 'false';
 	    // Set local data to computed prop value
 	    this.localExpanded = notExpandableNoExpand || this.expandedBool; // Ensure this expr ordering is maintained
@@ -26928,7 +26986,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  mounted: function mounted() {
 	    this.$nextTick(function () {
-	      if (this.isDynamic && (this.expandedBool || this.preloadBool)) {
+	      if (this.hasSrc && (this.preloadBool || this.expandedBool)) {
 	        this.$refs.retriever.fetch();
 	      }
 	    });
@@ -27017,7 +27075,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.collapse-button {\n    font-size: 10px !important;\n    float: right;\n    padding: 3px 8px !important;\n    margin-left: 3px;\n}\n", "", {"version":3,"sources":["/./src/PanelSwitch.vue?08d50cb4"],"names":[],"mappings":";AAqCA;IACA,2BAAA;IACA,aAAA;IACA,4BAAA;IACA,iBAAA;CACA","file":"PanelSwitch.vue","sourcesContent":["<template>\n    <button type=\"button\" class=\"collapse-button btn btn-default\">\n        <span :class=\"['glyphicon', {'glyphicon-menu-down': !isOpenBool, 'glyphicon-menu-up': isOpenBool}]\"\n              aria-hidden=\"true\"></span>\n    </button>\n</template>\n\n<script>\n  import {toBoolean} from './utils/utils.js'\n\n  export default {\n    props: {\n      isOpen: {\n        type: Boolean,\n        default: null\n      },\n    },\n    computed: {\n      isOpenBool () {\n        return toBoolean(this.isOpen);\n      }\n    },\n    methods: {\n      toggle () {\n        this.isOpen = !this.isOpenBool\n        this.$emit('is-open-event', this, this.isOpenBool)\n      }\n    },\n    created () {\n      if (this.isOpen === null) {\n        this.isOpen = false\n      }\n    }\n  }\n</script>\n\n<style>\n    .collapse-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n        margin-left: 3px;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.collapse-button {\n    font-size: 10px !important;\n    float: right;\n    padding: 3px 8px !important;\n    margin-left: 3px;\n}\n", "", {"version":3,"sources":["/./src/PanelSwitch.vue?a59497e8"],"names":[],"mappings":";AAyCA;IACA,2BAAA;IACA,aAAA;IACA,4BAAA;IACA,iBAAA;CACA","file":"PanelSwitch.vue","sourcesContent":["<template>\n    <button type=\"button\" :class=\"['collapse-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\">\n        <span :class=\"['glyphicon', {'glyphicon-menu-down': !isOpenBool, 'glyphicon-menu-up': isOpenBool}]\"\n              aria-hidden=\"true\"></span>\n    </button>\n</template>\n\n<script>\n  import {toBoolean} from './utils/utils.js'\n\n  export default {\n    props: {\n      isOpen: {\n        type: Boolean,\n        default: null\n      },\n      isLightBg: {\n        type: Boolean,\n        default: true\n      }\n    },\n    computed: {\n      isOpenBool () {\n        return toBoolean(this.isOpen);\n      }\n    },\n    methods: {\n      toggle () {\n        this.isOpen = !this.isOpenBool\n        this.$emit('is-open-event', this, this.isOpenBool)\n      }\n    },\n    created () {\n      if (this.isOpen === null) {\n        this.isOpen = false\n      }\n    }\n  }\n</script>\n\n<style>\n    .collapse-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n        margin-left: 3px;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -27039,6 +27097,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    isOpen: {
 	      type: Boolean,
 	      default: null
+	    },
+	    isLightBg: {
+	      type: Boolean,
+	      default: true
 	    }
 	  },
 	  computed: {
@@ -27071,7 +27133,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('button', {
-	    staticClass: "collapse-button btn btn-default",
+	    class: ['collapse-button', 'btn', _vm.isLightBg ? 'btn-outline-secondary' : 'btn-outline-light'],
 	    attrs: {
 	      "type": "button"
 	    }
@@ -27253,7 +27315,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('span', {
-	    staticClass: "panel-container"
+	    staticClass: "card-container"
 	  }, [_c('div', {
 	    directives: [{
 	      name: "show",
@@ -27262,44 +27324,40 @@ return /******/ (function(modules) { // webpackBootstrap
 	      expression: "localMinimized"
 	    }],
 	    staticClass: "morph"
-	  }, [_c('div', {
-	    staticClass: "morph-display-wrapper",
+	  }, [_c('button', {
+	    class: ['morph-display-wrapper', 'btn', _vm.btnType, 'card-title'],
 	    on: {
 	      "click": function($event) {
 	        _vm.open()
 	      }
 	    }
-	  }, [_c('button', {
-	    staticClass: "morph-display-button btn btn-default"
 	  }, [(_vm.altContent) ? [_c('div', {
-	    staticClass: "panel-title",
 	    domProps: {
 	      "innerHTML": _vm._s(_vm.altContent)
 	    }
 	  })] : [_vm._t("header", [_c('div', {
-	    staticClass: "panel-title",
 	    domProps: {
 	      "innerHTML": _vm._s(_vm.altContent)
 	    }
-	  })])]], 2)])]), _vm._v(" "), _c('div', {
+	  })])]], 2)]), _vm._v(" "), _c('div', {
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
 	      value: (!_vm.localMinimized),
 	      expression: "!localMinimized"
 	    }],
-	    class: ['panel', _vm.panelType, {
-	      'expandable-panel': _vm.isExpandablePanel
-	    }]
+	    class: ['card', {
+	      'expandable-card': _vm.isExpandableCard
+	    }, _vm.borderType]
 	  }, [_c('div', {
-	    class: ['panel-heading', {
-	      'accordion-toggle': _vm.canCollapse
-	    }],
+	    class: ['card-header', {
+	      'header-toggle': _vm.isExpandableCard
+	    }, _vm.cardType, _vm.borderType],
 	    on: {
 	      "click": function($event) {
 	        $event.preventDefault();
 	        $event.stopPropagation();
-	        _vm.canCollapse && _vm.toggle()
+	        _vm.isExpandableCard && _vm.toggle()
 	      },
 	      "mouseover": function($event) {
 	        _vm.onHeaderHover = true
@@ -27317,11 +27375,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	      value: (_vm.showCaret),
 	      expression: "showCaret"
 	    }],
-	    class: ['caret', {
-	      'caret-collapse': !_vm.localExpanded
-	    }]
+	    class: ['glyphicon', _vm.localExpanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right']
 	  }), _vm._v(" "), _vm._t("header", [_c('div', {
-	    staticClass: "panel-title",
+	    class: ['card-title', _vm.cardType, {
+	      'text-white': !_vm.isLightBg
+	    }],
 	    domProps: {
 	      "innerHTML": _vm._s(_vm.headerContent)
 	    }
@@ -27331,11 +27389,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
-	      value: (_vm.canCollapse && !_vm.noSwitchBool && !_vm.showCaret),
-	      expression: "canCollapse && !noSwitchBool && !showCaret"
+	      value: (_vm.isExpandableCard && !_vm.noSwitchBool && !_vm.showCaret),
+	      expression: "isExpandableCard && !noSwitchBool && !showCaret"
 	    }],
 	    attrs: {
-	      "is-open": _vm.localExpanded
+	      "is-open": _vm.localExpanded,
+	      "is-light-bg": _vm.isLightBg
 	    },
 	    on: {
 	      "is-open-event": _vm.retrieveOnOpen
@@ -27351,10 +27410,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
-	      value: (this.type !== 'seamless' ? (!_vm.noCloseBool) : _vm.onHeaderHover),
-	      expression: "this.type !== 'seamless' ? (!noCloseBool) : onHeaderHover"
+	      value: (!_vm.isSeamless ? (!_vm.noCloseBool) : _vm.onHeaderHover),
+	      expression: "!isSeamless ? (!noCloseBool) : onHeaderHover"
 	    }],
-	    staticClass: "close-button btn btn-default",
+	    class: ['close-button', 'btn', _vm.isLightBg ? 'btn-outline-secondary' : 'btn-outline-light'],
 	    attrs: {
 	      "type": "button"
 	    },
@@ -27376,7 +27435,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      value: (this.popupUrl !== null),
 	      expression: "this.popupUrl !== null"
 	    }],
-	    staticClass: "popup-button btn btn-default",
+	    class: ['popup-button', 'btn', _vm.isLightBg ? 'btn-outline-secondary' : 'btn-outline-light'],
 	    attrs: {
 	      "type": "button"
 	    },
@@ -27391,7 +27450,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    attrs: {
 	      "aria-hidden": "true"
 	    }
-	  })])])], 2)]), _vm._v(" "), _c('div', {
+	  })])])], 2)]), _vm._v(" "), (_vm.preloadBool) ? [_c('div', {
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
@@ -27399,10 +27458,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	      expression: "localExpanded"
 	    }],
 	    ref: "panel",
-	    staticClass: "panel-collapse"
+	    staticClass: "card-collapse"
 	  }, [_c('div', {
-	    staticClass: "panel-body"
-	  }, [_vm._t("default"), _vm._v(" "), (_vm.isDynamic) ? _c('retriever', {
+	    staticClass: "card-body"
+	  }, [_vm._t("default"), _vm._v(" "), (_vm.hasSrc) ? _c('retriever', {
 	    ref: "retriever",
 	    attrs: {
 	      "src": _vm.src,
@@ -27413,8 +27472,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
-	      value: (_vm.canCollapse && _vm.bottomSwitchBool),
-	      expression: "canCollapse && bottomSwitchBool"
+	      value: (_vm.isExpandableCard && _vm.bottomSwitchBool),
+	      expression: "isExpandableCard && bottomSwitchBool"
 	    }],
 	    attrs: {
 	      "is-open": _vm.localExpanded
@@ -27433,10 +27492,49 @@ return /******/ (function(modules) { // webpackBootstrap
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
-	      value: (this.type === 'seamless'),
-	      expression: "this.type === 'seamless'"
+	      value: (_vm.isSeamless),
+	      expression: "isSeamless"
 	    }]
-	  })])])])
+	  })])] : [(_vm.localExpanded) ? _c('div', {
+	    ref: "panel",
+	    staticClass: "card-collapse"
+	  }, [_c('div', {
+	    staticClass: "card-body"
+	  }, [_vm._t("default"), _vm._v(" "), (_vm.hasSrc) ? _c('retriever', {
+	    ref: "retriever",
+	    attrs: {
+	      "src": _vm.src,
+	      "fragment": _vm.fragment,
+	      "delay": ""
+	    }
+	  }) : _vm._e(), _vm._v(" "), _c('panel-switch', {
+	    directives: [{
+	      name: "show",
+	      rawName: "v-show",
+	      value: (_vm.isExpandableCard && _vm.bottomSwitchBool),
+	      expression: "isExpandableCard && bottomSwitchBool"
+	    }],
+	    attrs: {
+	      "is-open": _vm.localExpanded
+	    },
+	    on: {
+	      "is-open-event": _vm.retrieveOnOpen
+	    },
+	    nativeOn: {
+	      "click": function($event) {
+	        $event.stopPropagation();
+	        $event.preventDefault();
+	        _vm.collapseThenScrollIntoViewIfNeeded()
+	      }
+	    }
+	  })], 2), _vm._v(" "), _c('hr', {
+	    directives: [{
+	      name: "show",
+	      rawName: "v-show",
+	      value: (_vm.isSeamless),
+	      expression: "isSeamless"
+	    }]
+	  })]) : _vm._e()]], 2)])
 	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
@@ -27607,7 +27705,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	__vue_exports__ = __webpack_require__(222)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(230)
+	var __vue_template__ = __webpack_require__(238)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -27675,7 +27773,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.fade-enter-active, .fade-leave-active {\n  transition: opacity .5s ease;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\n  opacity: 0;\n}\n.popover.top,\n.popover.left,\n.popover.right,\n.popover.bottom {\n  display: block;\n  overflow-wrap: break-word;\n}\n@media (min-width: 768px) {\n.popover.top,\n  .popover.left,\n  .popover.right,\n  .popover.bottom {\n    max-width: 600px;\n}\n}\n.scale-enter-active {\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\n  animation:scale-out 0.15s ease-out;\n}\n@keyframes scale-in {\n0% {\n    transform: scale(0);\n    opacity: 0;\n}\n100% {\n    transform: scale(1);\n    opacity: 1;\n}\n}\n@keyframes scale-out {\n0% {\n    transform: scale(1);\n    opacity: 1;\n}\n100% {\n    transform: scale(0);\n    opacity: 0;\n}\n}\n", "", {"version":3,"sources":["/./src/Popover.vue?88b397f4"],"names":[],"mappings":";AAqDA;EACA,6BAAA;CACA;AAEA;EACA,WAAA;CACA;AAEA;;;;EAIA,eAAA;EACA,0BAAA;CACA;AAEA;AACA;;;;IAIA,iBAAA;CACA;CACA;AACA;EACA,iCAAA;CACA;AACA;EACA,mCAAA;CACA;AACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;CACA;AACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;CACA","file":"Popover.vue","sourcesContent":["<template>\n  <span>\n    <span ref=\"trigger\" v-if=\"hasSlot\" v-on:click=\"false\"><slot></slot></span><!--\n    -->\n    <transition :name=\"effect\">\n    <div ref=\"popover\" v-if=\"show\"\n      :class=\"['popover',placement]\">\n      <div class=\"arrow\" ref=\"arrow\"></div>\n      <h3 class=\"popover-title\" v-if=\"title\" v-on:click=\"false\">\n        <slot name=\"title\" v-if=\"hasTitleSlot\"></slot>\n        <span v-else v-html=\"titleRendered\"></span>\n      </h3>\n      <div class=\"popover-content\" v-on:click=\"false\">\n        <slot name=\"content\" v-if=\"hasContentSlot\"></slot>\n        <span v-else v-html=\"contentRendered\"></span>\n      </div>\n    </div>\n    </transition>\n  </span>\n</template>\n\n<script>\nimport PopoverMixin from './utils/popoverMixins.js'\n\nexport default {\n  mixins: [PopoverMixin],\n  props: {\n    trigger: {\n      type: String,\n      default: 'hover'\n    }\n  },\n  computed: {\n    hasSlot () {\n      return this.$slots.default;\n    },\n    hasTitleSlot () {\n      return this.$slots.title\n    },\n    hasContentSlot () {\n      return this.$slots.content;\n    },\n  },\n  mounted () {\n    if (this.$refs.trigger) {\n      this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dotted'\n      this.$refs.trigger.style['text-decoration'] = 'underline dotted'\n    }\n  }\n}\n</script>\n\n<style>\n.fade-enter-active, .fade-leave-active {\n  transition: opacity .5s ease;\n}\n\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\n  opacity: 0;\n}\n\n.popover.top,\n.popover.left,\n.popover.right,\n.popover.bottom {\n  display: block;\n  overflow-wrap: break-word;\n}\n\n@media (min-width: 768px) {\n  .popover.top,\n  .popover.left,\n  .popover.right,\n  .popover.bottom {\n    max-width: 600px;\n  }\n}\n.scale-enter-active {\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\n  animation:scale-out 0.15s ease-out;\n}\n@keyframes scale-in {\n  0% {\n    transform: scale(0);\n    opacity: 0;\n  }\n  100% {\n    transform: scale(1);\n    opacity: 1;\n  }\n}\n@keyframes scale-out {\n  0% {\n    transform: scale(1);\n    opacity: 1;\n  }\n  100% {\n    transform: scale(0);\n    opacity: 0;\n  }\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.fade-enter-active, .fade-leave-active {\n  transition: opacity .5s ease;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\n  opacity: 0;\n}\n.popover.top,\n.popover.left,\n.popover.right,\n.popover.bottom {\n  display: block;\n  overflow-wrap: break-word;\n}\n@media (min-width: 768px) {\n.popover.top,\n  .popover.left,\n  .popover.right,\n  .popover.bottom {\n    max-width: 600px;\n}\n}\n.scale-enter-active {\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\n  animation:scale-out 0.15s ease-out;\n}\n@keyframes scale-in {\n0% {\n    transform: scale(0);\n    opacity: 0;\n}\n100% {\n    transform: scale(1);\n    opacity: 1;\n}\n}\n@keyframes scale-out {\n0% {\n    transform: scale(1);\n    opacity: 1;\n}\n100% {\n    transform: scale(0);\n    opacity: 0;\n}\n}\n", "", {"version":3,"sources":["/./src/Popover.vue?6acc512a"],"names":[],"mappings":";AAwDA;EACA,6BAAA;CACA;AAEA;EACA,WAAA;CACA;AAEA;;;;EAIA,eAAA;EACA,0BAAA;CACA;AAEA;AACA;;;;IAIA,iBAAA;CACA;CACA;AACA;EACA,iCAAA;CACA;AACA;EACA,mCAAA;CACA;AACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;CACA;AACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;CACA","file":"Popover.vue","sourcesContent":["<template>\n  <span>\n    <span ref=\"trigger\" v-if=\"hasSlot\" v-on:click=\"false\"><slot></slot></span><!--\n    -->\n    <transition :name=\"effect\">\n    <div ref=\"popover\" v-if=\"show\"\n      :class=\"['popover', popoverPlacementClass]\">\n      <div class=\"arrow\" ref=\"arrow\"></div>\n      <h3 class=\"popover-header\" v-if=\"title\" v-on:click=\"false\">\n        <slot name=\"title\" v-if=\"hasTitleSlot\"></slot>\n        <span v-else v-html=\"titleRendered\"></span>\n      </h3>\n      <div class=\"popover-body\" v-on:click=\"false\">\n        <slot name=\"content\" v-if=\"hasContentSlot\"></slot>\n        <span v-else v-html=\"contentRendered\"></span>\n      </div>\n    </div>\n    </transition>\n  </span>\n</template>\n\n<script>\nimport PopoverMixin from './utils/popoverMixins.js'\n\nexport default {\n  mixins: [PopoverMixin],\n  props: {\n    trigger: {\n      type: String,\n      default: 'hover'\n    }\n  },\n  computed: {\n    hasSlot () {\n      return this.$slots.default;\n    },\n    hasTitleSlot () {\n      return this.$slots.title\n    },\n    hasContentSlot () {\n      return this.$slots.content;\n    },\n    popoverPlacementClass() {\n      return `bs-popover-${this.placement}`;\n    }\n  },\n  mounted () {\n    if (this.$refs.trigger) {\n      this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dotted'\n      this.$refs.trigger.style['text-decoration'] = 'underline dotted'\n    }\n  }\n}\n</script>\n\n<style>\n.fade-enter-active, .fade-leave-active {\n  transition: opacity .5s ease;\n}\n\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\n  opacity: 0;\n}\n\n.popover.top,\n.popover.left,\n.popover.right,\n.popover.bottom {\n  display: block;\n  overflow-wrap: break-word;\n}\n\n@media (min-width: 768px) {\n  .popover.top,\n  .popover.left,\n  .popover.right,\n  .popover.bottom {\n    max-width: 600px;\n  }\n}\n.scale-enter-active {\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\n  animation:scale-out 0.15s ease-out;\n}\n@keyframes scale-in {\n  0% {\n    transform: scale(0);\n    opacity: 0;\n  }\n  100% {\n    transform: scale(1);\n    opacity: 1;\n  }\n}\n@keyframes scale-out {\n  0% {\n    transform: scale(1);\n    opacity: 1;\n  }\n  100% {\n    transform: scale(0);\n    opacity: 0;\n  }\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -27713,6 +27811,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	    hasContentSlot: function hasContentSlot() {
 	      return this.$slots.content;
+	    },
+	    popoverPlacementClass: function popoverPlacementClass() {
+	      return 'bs-popover-' + this.placement;
 	    }
 	  },
 	  mounted: function mounted() {
@@ -27756,6 +27857,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _assign = __webpack_require__(224);
 	
 	var _assign2 = _interopRequireDefault(_assign);
+	
+	var _some = __webpack_require__(230);
+	
+	var _some2 = _interopRequireDefault(_some);
 	
 	var _utils = __webpack_require__(38);
 	
@@ -27808,6 +27913,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        top: 0,
 	        left: 0
 	      },
+	      isPopover: false,
 	      show: false
 	    };
 	  },
@@ -27843,8 +27949,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 	      setTimeout(function () {
 	        var popover = _this.$refs.popover;
-	        console.log(trigger.offsetTop);
-	        console.log(popover.offsetHeight);
+	        _this.isPopover = (0, _some2.default)(popover.classList, function (classname) {
+	          return classname === 'popover';
+	        });
 	        _this.calculateOffset(trigger, popover);
 	        _this.updateOffsetForMargins(popover);
 	        popover.style.top = _this.position.top + 'px';
@@ -27870,10 +27977,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	        case 'top':
 	          this.position.left = trigger.offsetLeft - popover.offsetWidth / 2 + trigger.offsetWidth / 2;
 	          this.position.top = trigger.offsetTop - popover.offsetHeight;
+	          if (this.isPopover) {
+	            this.position.top -= this.$refs.arrow.offsetHeight;
+	          }
 	          break;
 	        case 'left':
 	          this.position.left = trigger.offsetLeft - popover.offsetWidth;
 	          this.position.top = trigger.offsetTop + trigger.offsetHeight / 2 - popover.offsetHeight / 2;
+	          if (this.isPopover) {
+	            this.position.left -= this.$refs.arrow.offsetWidth;
+	          }
 	          break;
 	        case 'right':
 	          this.position.left = trigger.offsetLeft + trigger.offsetWidth;
@@ -27932,6 +28045,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	    adjustArrow: function adjustArrow(delta, dimension, isVertical) {
 	      this.$refs.arrow.style[isVertical ? 'left' : 'top'] = 50 * (1 - delta / dimension) + '%';
 	      this.$refs.arrow.style[isVertical ? 'top' : 'left'] = '';
+	      var translateLeft = 0;
+	      var translateTop = 0;
+	      if (this.placement === 'left' || this.placement === 'right') {
+	        translateTop = this.isPopover ? -75 : -50;
+	      }
+	      if (this.placement === 'top' || this.placement === 'bottom') {
+	        translateLeft = this.isPopover ? -100 : -50;
+	      }
+	      this.$refs.arrow.style['transform'] = 'translate(' + translateLeft + '%, ' + translateTop + '%)';
 	    }
 	  },
 	  created: function created() {
@@ -28041,6 +28163,146 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	module.exports = { "default": __webpack_require__(231), __esModule: true };
+
+/***/ }),
+/* 231 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	__webpack_require__(232);
+	module.exports = __webpack_require__(23).Array.some;
+
+
+/***/ }),
+/* 232 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var $export = __webpack_require__(22);
+	var $some = __webpack_require__(233)(3);
+	
+	$export($export.P + $export.F * !__webpack_require__(237)([].some, true), 'Array', {
+	  // 22.1.3.23 / 15.4.4.17 Array.prototype.some(callbackfn [, thisArg])
+	  some: function some(callbackfn /* , thisArg */) {
+	    return $some(this, callbackfn, arguments[1]);
+	  }
+	});
+
+
+/***/ }),
+/* 233 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// 0 -> Array#forEach
+	// 1 -> Array#map
+	// 2 -> Array#filter
+	// 3 -> Array#some
+	// 4 -> Array#every
+	// 5 -> Array#find
+	// 6 -> Array#findIndex
+	var ctx = __webpack_require__(24);
+	var IObject = __webpack_require__(10);
+	var toObject = __webpack_require__(4);
+	var toLength = __webpack_require__(13);
+	var asc = __webpack_require__(234);
+	module.exports = function (TYPE, $create) {
+	  var IS_MAP = TYPE == 1;
+	  var IS_FILTER = TYPE == 2;
+	  var IS_SOME = TYPE == 3;
+	  var IS_EVERY = TYPE == 4;
+	  var IS_FIND_INDEX = TYPE == 6;
+	  var NO_HOLES = TYPE == 5 || IS_FIND_INDEX;
+	  var create = $create || asc;
+	  return function ($this, callbackfn, that) {
+	    var O = toObject($this);
+	    var self = IObject(O);
+	    var f = ctx(callbackfn, that, 3);
+	    var length = toLength(self.length);
+	    var index = 0;
+	    var result = IS_MAP ? create($this, length) : IS_FILTER ? create($this, 0) : undefined;
+	    var val, res;
+	    for (;length > index; index++) if (NO_HOLES || index in self) {
+	      val = self[index];
+	      res = f(val, index, O);
+	      if (TYPE) {
+	        if (IS_MAP) result[index] = res;   // map
+	        else if (res) switch (TYPE) {
+	          case 3: return true;             // some
+	          case 5: return val;              // find
+	          case 6: return index;            // findIndex
+	          case 2: result.push(val);        // filter
+	        } else if (IS_EVERY) return false; // every
+	      }
+	    }
+	    return IS_FIND_INDEX ? -1 : IS_SOME || IS_EVERY ? IS_EVERY : result;
+	  };
+	};
+
+
+/***/ }),
+/* 234 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// 9.4.2.3 ArraySpeciesCreate(originalArray, length)
+	var speciesConstructor = __webpack_require__(235);
+	
+	module.exports = function (original, length) {
+	  return new (speciesConstructor(original))(length);
+	};
+
+
+/***/ }),
+/* 235 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var isObject = __webpack_require__(29);
+	var isArray = __webpack_require__(236);
+	var SPECIES = __webpack_require__(56)('species');
+	
+	module.exports = function (original) {
+	  var C;
+	  if (isArray(original)) {
+	    C = original.constructor;
+	    // cross-realm fallback
+	    if (typeof C == 'function' && (C === Array || isArray(C.prototype))) C = undefined;
+	    if (isObject(C)) {
+	      C = C[SPECIES];
+	      if (C === null) C = undefined;
+	    }
+	  } return C === undefined ? Array : C;
+	};
+
+
+/***/ }),
+/* 236 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// 7.2.2 IsArray(argument)
+	var cof = __webpack_require__(11);
+	module.exports = Array.isArray || function isArray(arg) {
+	  return cof(arg) == 'Array';
+	};
+
+
+/***/ }),
+/* 237 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var fails = __webpack_require__(32);
+	
+	module.exports = function (method, arg) {
+	  return !!method && fails(function () {
+	    // eslint-disable-next-line no-useless-call
+	    arg ? method.call(null, function () { /* empty */ }, 1) : method.call(null);
+	  });
+	};
+
+
+/***/ }),
+/* 238 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('span', [(_vm.hasSlot) ? _c('span', {
 	    ref: "trigger",
@@ -28053,12 +28315,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  }, [(_vm.show) ? _c('div', {
 	    ref: "popover",
-	    class: ['popover', _vm.placement]
+	    class: ['popover', _vm.popoverPlacementClass]
 	  }, [_c('div', {
 	    ref: "arrow",
 	    staticClass: "arrow"
 	  }), _vm._v(" "), (_vm.title) ? _c('h3', {
-	    staticClass: "popover-title",
+	    staticClass: "popover-header",
 	    on: {
 	      "click": false
 	    }
@@ -28067,7 +28329,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      "innerHTML": _vm._s(_vm.titleRendered)
 	    }
 	  })], 2) : _vm._e(), _vm._v(" "), _c('div', {
-	    staticClass: "popover-content",
+	    staticClass: "popover-body",
 	    on: {
 	      "click": false
 	    }
@@ -28085,20 +28347,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 231 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(232)
+	__webpack_require__(240)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(234)
+	__vue_exports__ = __webpack_require__(242)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(235)
+	var __vue_template__ = __webpack_require__(243)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -28132,13 +28394,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 232 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(233);
+	var content = __webpack_require__(241);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -28158,7 +28420,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 233 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -28166,13 +28428,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.body-wrapper {\n    padding-bottom: 10px;\n}\n.question-wrapper > .panel-group > .panel-container + .panel-container {\n    display: block;\n    margin-top: 5px;\n}\n.textarea-container {\n    margin: 8px 0;\n}\n.textarea-container > textarea {\n    margin: 4px 0;\n}\n", "", {"version":3,"sources":["/./src/Question.vue?c8e548d6"],"names":[],"mappings":";AA0EA;IACA,qBAAA;CACA;AACA;IACA,eAAA;IACA,gBAAA;CACA;AACA;IACA,cAAA;CACA;AACA;IACA,cAAA;CACA","file":"Question.vue","sourcesContent":["<template>\n    <div class=\"question-wrapper\">\n        <div class=\"body-wrapper\">\n            <!-- Default slot is question body -->\n            <slot></slot>\n            <div v-if=\"hasInputBool\" class=\"textarea-container\">\n                <textarea class=\"form-control question-input\" rows=\"3\" placeholder=\"write your answer here...\"></textarea>\n            </div>\n        </div>\n        <panel v-show=\"hasHintSlot\" header=\"Hint\" expandable no-close>\n            <template v-if=\"isEmptyHint\">\n                No hint is available for this question.\n            </template>\n            <template v-else>\n                <div ref=\"hintWrapper\">\n                    <slot name=\"hint\"></slot>\n                </div>\n            </template>\n        </panel>\n        <panel v-show=\"hasAnswerSlot\" header=\"Answer\" expandable no-close>\n            <template v-if=\"isEmptyAnswer\">\n                No answer is provided for this question.\n            </template>\n            <template v-else>\n                <div ref=\"answerWrapper\">\n                    <slot name=\"answer\"></slot>\n                </div>\n            </template>\n        </panel>\n    </div>\n</template>\n\n<script>\n  import {toBoolean} from './utils/utils.js'\n  import panel from './Panel.vue'\n\n  export default {\n    components: {\n      panel,\n    },\n    props: {\n      hasInput: {\n        type: Boolean,\n        default: false\n      }\n    },\n    computed: {\n      // Vue 2.0 coerce migration\n      hasInputBool () {\n        return toBoolean(this.hasInput);\n      }\n      // Vue 2.0 coerce migration end\n    },\n    data () {\n      return {\n        hasAnswerSlot: true,\n        hasHintSlot: true,\n        isEmptyAnswer: false,\n        isEmptyHint: false\n      }\n    },\n    mounted() {\n      this.$nextTick(function() {\n        const emptyDiv = '<div></div>';\n        this.hasAnswerSlot = !!this.$slots.answer;\n        this.hasHintSlot = !!this.$slots.hint;\n        this.isEmptyAnswer = this.$refs.answerWrapper.innerHTML === emptyDiv;\n        this.isEmptyHint = this.$refs.hintWrapper.innerHTML === emptyDiv;\n      })\n    }\n  }\n</script>\n\n<style>\n    .body-wrapper {\n        padding-bottom: 10px;\n    }\n    .question-wrapper > .panel-group > .panel-container + .panel-container {\n        display: block;\n        margin-top: 5px;\n    }\n    .textarea-container {\n        margin: 8px 0;\n    }\n    .textarea-container > textarea {\n        margin: 4px 0;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.body-wrapper {\n    padding-bottom: 10px;\n}\n.question-wrapper > .panel-group > .panel-container + .panel-container {\n    display: block;\n    margin-top: 5px;\n}\n.textarea-container {\n    margin: 8px 0;\n}\n.textarea-container > textarea {\n    margin: 4px 0;\n}\n", "", {"version":3,"sources":["/./src/Question.vue?48cd99b2"],"names":[],"mappings":";AA8EA;IACA,qBAAA;CACA;AACA;IACA,eAAA;IACA,gBAAA;CACA;AACA;IACA,cAAA;CACA;AACA;IACA,cAAA;CACA","file":"Question.vue","sourcesContent":["<template>\n    <div class=\"question-wrapper\">\n        <div class=\"body-wrapper\">\n            <!-- Default slot is question body -->\n            <slot></slot>\n            <div v-if=\"hasInputBool\" class=\"textarea-container\">\n                <textarea class=\"form-control question-input\" rows=\"3\" placeholder=\"write your answer here...\"></textarea>\n            </div>\n        </div>\n        <panel v-show=\"hasHintSlot\" header=\"Hint\" expandable no-close preload>\n            <template v-if=\"isEmptyHint\">\n                No hint is available for this question.\n            </template>\n            <template v-else>\n                <div ref=\"hintWrapper\">\n                    <slot name=\"hint\"></slot>\n                </div>\n            </template>\n        </panel>\n        <panel v-show=\"hasAnswerSlot\" header=\"Answer\" expandable no-close preload>\n            <template v-if=\"isEmptyAnswer\">\n                No answer is provided for this question.\n            </template>\n            <template v-else>\n                <div ref=\"answerWrapper\">\n                    <slot name=\"answer\"></slot>\n                </div>\n            </template>\n        </panel>\n    </div>\n</template>\n\n<script>\n  import {toBoolean} from './utils/utils.js'\n  import panel from './Panel.vue'\n\n  export default {\n    components: {\n      panel,\n    },\n    props: {\n      hasInput: {\n        type: Boolean,\n        default: false\n      }\n    },\n    computed: {\n      // Vue 2.0 coerce migration\n      hasInputBool () {\n        return toBoolean(this.hasInput);\n      }\n      // Vue 2.0 coerce migration end\n    },\n    data () {\n      return {\n        hasAnswerSlot: true,\n        hasHintSlot: true,\n        isEmptyAnswer: false,\n        isEmptyHint: false\n      }\n    },\n    mounted() {\n      this.$nextTick(function() {\n        const emptyDiv = '<div></div>';\n        this.hasAnswerSlot = !!this.$slots.answer;\n        this.hasHintSlot = !!this.$slots.hint;\n        if (this.$refs.answerWrapper) {\n          this.isEmptyAnswer = this.$refs.answerWrapper.innerHTML === emptyDiv;\n        }\n        if (this.$refs.hintWrapper) {\n          this.isEmptyHint = this.$refs.hintWrapper.innerHTML === emptyDiv;\n        }\n      })\n    }\n  }\n</script>\n\n<style>\n    .body-wrapper {\n        padding-bottom: 10px;\n    }\n    .question-wrapper > .panel-group > .panel-container + .panel-container {\n        display: block;\n        margin-top: 5px;\n    }\n    .textarea-container {\n        margin: 8px 0;\n    }\n    .textarea-container > textarea {\n        margin: 4px 0;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
-/* 234 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28253,14 +28515,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var emptyDiv = '<div></div>';
 	      this.hasAnswerSlot = !!this.$slots.answer;
 	      this.hasHintSlot = !!this.$slots.hint;
-	      this.isEmptyAnswer = this.$refs.answerWrapper.innerHTML === emptyDiv;
-	      this.isEmptyHint = this.$refs.hintWrapper.innerHTML === emptyDiv;
+	      if (this.$refs.answerWrapper) {
+	        this.isEmptyAnswer = this.$refs.answerWrapper.innerHTML === emptyDiv;
+	      }
+	      if (this.$refs.hintWrapper) {
+	        this.isEmptyHint = this.$refs.hintWrapper.innerHTML === emptyDiv;
+	      }
 	    });
 	  }
 	};
 
 /***/ }),
-/* 235 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -28286,7 +28552,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    attrs: {
 	      "header": "Hint",
 	      "expandable": "",
-	      "no-close": ""
+	      "no-close": "",
+	      "preload": ""
 	    }
 	  }, [(_vm.isEmptyHint) ? [_vm._v("\n            No hint is available for this question.\n        ")] : [_c('div', {
 	    ref: "hintWrapper"
@@ -28300,7 +28567,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    attrs: {
 	      "header": "Answer",
 	      "expandable": "",
-	      "no-close": ""
+	      "no-close": "",
+	      "preload": ""
 	    }
 	  }, [(_vm.isEmptyAnswer) ? [_vm._v("\n            No answer is provided for this question.\n        ")] : [_c('div', {
 	    ref: "answerWrapper"
@@ -28314,17 +28582,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 236 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(237)
+	__webpack_require__(245)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(239)
+	__vue_exports__ = __webpack_require__(247)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -28356,13 +28624,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 237 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(238);
+	var content = __webpack_require__(246);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -28382,7 +28650,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 238 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -28390,13 +28658,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.search-dropdown-menu {\n  max-height: 30em;\n  overflow-y: scroll;\n}\n", "", {"version":3,"sources":["/./src/Searchbar.vue?6f500dda"],"names":[],"mappings":";AA2IA;EACA,iBAAA;EACA,mBAAA;CACA","file":"Searchbar.vue","sourcesContent":["<script>\nimport typeahead from './Typeahead.vue';\n\nexport default {\n  extends: typeahead,\n  mounted() {\n    this.$refs.dropdown.classList.add('search-dropdown-menu');\n  },\n  computed: {\n    primitiveData() {\n      function getTotalMatches(searchTarget, regexes) {\n        return regexes.reduce((total, regex) => (regex.test(searchTarget) ? total + 1 : total), 0);\n      }\n\n      if (this.value.length < 2) {\n        return [];\n      }\n      if (!this.data) {\n        return undefined;\n      }\n      const matches = [];\n      const regexes = this.value.split(' ')\n        .filter(searchKeyword => searchKeyword !== '')\n        .map(searchKeyword => new RegExp(searchKeyword, 'i'));\n      this.data.forEach((entry) => {\n        const { headings, src, title } = entry;\n        const keywords = entry.keywords || '';\n        let searchTarget = [title].concat(keywords).concat(Object.values(headings)).join(' ');\n        let totalMatches = getTotalMatches(searchTarget, regexes);\n        if (totalMatches > 0) {\n          searchTarget = [title].concat(keywords).join(' ');\n          const isMatchingPage = getTotalMatches(searchTarget, regexes) === totalMatches;\n          if (isMatchingPage) {\n            matches.push(Object.assign(entry, { totalMatches }));\n          }\n          Object.entries(headings).forEach(([id, text]) => {\n            if (regexes.some(regex => regex.test(text))) {\n              searchTarget = [title].concat(keywords).concat(text).join(' ');\n              totalMatches = getTotalMatches(searchTarget, regexes);\n              matches.push({\n                heading: { id, text },\n                keywords,\n                src,\n                title,\n                totalMatches,\n              });\n            }\n          });\n        }\n      });\n      return matches.sort((a, b) => b.totalMatches - a.totalMatches);\n    },\n    entryTemplate() {\n      return 'searchbarTemplate';\n    },\n  },\n  methods: {\n    down() {\n      if (this.current < this.items.length - 1) {\n        this.current += 1;\n        this.scrollListView();\n      }\n    },\n    up() {\n      if (this.current > 0) {\n        this.current -= 1;\n        this.scrollListView();\n      }\n    },\n    scrollListView() {\n      const { dropdown } = this.$refs;\n      const currentEntry = dropdown.children[this.current];\n      const upperBound = dropdown.scrollTop;\n      const lowerBound = upperBound + dropdown.clientHeight;\n      const currentEntryOffsetBottom = currentEntry.offsetTop + currentEntry.offsetHeight;\n      if (currentEntry.offsetTop < upperBound) {\n        dropdown.scrollTop = currentEntry.offsetTop;\n      } else if (currentEntryOffsetBottom > lowerBound) {\n        dropdown.scrollTop = currentEntryOffsetBottom - dropdown.clientHeight;\n      }\n    },\n  },\n  components: {\n    searchbarTemplate: {\n      props: ['item', 'value'],\n      template: '<div><span v-html=\"highlight(item.title, value)\"></span>'\n      + '<br v-if=\"item.keywords\" />'\n      + '<small v-if=\"item.keywords\" v-html=\"highlight(item.keywords, value)\"></small>'\n      + '<br v-if=\"item.heading\" />'\n      + '<small v-if=\"item.heading\" v-html=\"highlight(item.heading.text, value)\"></small></div>',\n      methods: {\n        highlight(value, phrase) {\n          function getMatchIntervals() {\n            const keywords = phrase.split(' ').filter(keyword => keyword !== '');\n            const matchIntervals = [];\n            keywords.forEach((keyword) => {\n              const regex = new RegExp(`(${keyword})`, 'gi');\n              let match = regex.exec(value);\n              while (match !== null) {\n                matchIntervals.push({ start: match.index, end: regex.lastIndex });\n                match = regex.exec(value);\n              }\n            });\n            return matchIntervals;\n          }\n          // https://www.geeksforgeeks.org/merging-intervals/\n          function mergeOverlappingIntervals(intervals) {\n            if (intervals.length <= 1) {\n              return intervals;\n            }\n            return intervals\n              .sort((a, b) => a.start - b.start)\n              .reduce((stack, current) => {\n                const top = stack[stack.length - 1];\n                if (!top || top.end < current.start) {\n                  stack.push(current);\n                } else if (top.end < current.end) {\n                  top.end = current.end;\n                }\n                return stack;\n              }, []);\n          }\n          const matchIntervals = mergeOverlappingIntervals(getMatchIntervals());\n          let highlightedValue = value;\n          // Traverse from back to front to avoid the positioning going out of sync\n          for (let i = matchIntervals.length - 1; i >= 0; i -= 1) {\n            highlightedValue = `${highlightedValue.slice(0, matchIntervals[i].start)}<mark>`\n              + `${highlightedValue.slice(matchIntervals[i].start, matchIntervals[i].end)}</mark>`\n              + `${highlightedValue.slice(matchIntervals[i].end)}`;\n          }\n          return highlightedValue;\n        },\n      },\n    },\n  },\n};\n</script>\n\n<style>\n.search-dropdown-menu {\n  max-height: 30em;\n  overflow-y: scroll;\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.search-dropdown-menu {\n  max-height: 30em;\n  overflow-y: scroll;\n}\n", "", {"version":3,"sources":["/./src/Searchbar.vue?7a7cad9f"],"names":[],"mappings":";AAwIA;EACA,iBAAA;EACA,mBAAA;CACA","file":"Searchbar.vue","sourcesContent":["<script>\nimport typeahead from './Typeahead.vue';\n\nexport default {\n  extends: typeahead,\n  computed: {\n    primitiveData() {\n      function getTotalMatches(searchTarget, regexes) {\n        return regexes.reduce((total, regex) => (regex.test(searchTarget) ? total + 1 : total), 0);\n      }\n\n      if (this.value.length < 2) {\n        return [];\n      }\n      if (!this.data) {\n        return undefined;\n      }\n      const matches = [];\n      const regexes = this.value.split(' ')\n        .filter(searchKeyword => searchKeyword !== '')\n        .map(searchKeyword => new RegExp(searchKeyword, 'i'));\n      this.data.forEach((entry) => {\n        const { headings, src, title } = entry;\n        const keywords = entry.keywords || '';\n        let searchTarget = [title].concat(keywords).concat(Object.values(headings)).join(' ');\n        let totalMatches = getTotalMatches(searchTarget, regexes);\n        if (totalMatches > 0) {\n          searchTarget = [title].concat(keywords).join(' ');\n          const isMatchingPage = getTotalMatches(searchTarget, regexes) === totalMatches;\n          if (isMatchingPage) {\n            matches.push(Object.assign(entry, { totalMatches }));\n          }\n          Object.entries(headings).forEach(([id, text]) => {\n            if (regexes.some(regex => regex.test(text))) {\n              searchTarget = [title].concat(keywords).concat(text).join(' ');\n              totalMatches = getTotalMatches(searchTarget, regexes);\n              matches.push({\n                heading: { id, text },\n                keywords,\n                src,\n                title,\n                totalMatches,\n              });\n            }\n          });\n        }\n      });\n      return matches.sort((a, b) => b.totalMatches - a.totalMatches);\n    },\n    entryTemplate() {\n      return 'searchbarTemplate';\n    },\n  },\n  methods: {\n    down() {\n      if (this.current < this.items.length - 1) {\n        this.current += 1;\n        this.scrollListView();\n      }\n    },\n    up() {\n      if (this.current > 0) {\n        this.current -= 1;\n        this.scrollListView();\n      }\n    },\n    scrollListView() {\n      const { dropdown } = this.$refs;\n      const currentEntry = dropdown.children[this.current];\n      const upperBound = dropdown.scrollTop;\n      const lowerBound = upperBound + dropdown.clientHeight;\n      const currentEntryOffsetBottom = currentEntry.offsetTop + currentEntry.offsetHeight;\n      if (currentEntry.offsetTop < upperBound) {\n        dropdown.scrollTop = currentEntry.offsetTop;\n      } else if (currentEntryOffsetBottom > lowerBound) {\n        dropdown.scrollTop = currentEntryOffsetBottom - dropdown.clientHeight;\n      }\n    },\n  },\n  components: {\n    searchbarTemplate: {\n      props: ['item', 'value'],\n      template: '<div><span v-html=\"highlight(item.title, value)\"></span>'\n      + '<br v-if=\"item.keywords\" />'\n      + '<small v-if=\"item.keywords\" v-html=\"highlight(item.keywords, value)\"></small>'\n      + '<br v-if=\"item.heading\" />'\n      + '<small v-if=\"item.heading\" v-html=\"highlight(item.heading.text, value)\"></small></div>',\n      methods: {\n        highlight(value, phrase) {\n          function getMatchIntervals() {\n            const keywords = phrase.split(' ').filter(keyword => keyword !== '');\n            const matchIntervals = [];\n            keywords.forEach((keyword) => {\n              const regex = new RegExp(`(${keyword})`, 'gi');\n              let match = regex.exec(value);\n              while (match !== null) {\n                matchIntervals.push({ start: match.index, end: regex.lastIndex });\n                match = regex.exec(value);\n              }\n            });\n            return matchIntervals;\n          }\n          // https://www.geeksforgeeks.org/merging-intervals/\n          function mergeOverlappingIntervals(intervals) {\n            if (intervals.length <= 1) {\n              return intervals;\n            }\n            return intervals\n              .sort((a, b) => a.start - b.start)\n              .reduce((stack, current) => {\n                const top = stack[stack.length - 1];\n                if (!top || top.end < current.start) {\n                  stack.push(current);\n                } else if (top.end < current.end) {\n                  top.end = current.end;\n                }\n                return stack;\n              }, []);\n          }\n          const matchIntervals = mergeOverlappingIntervals(getMatchIntervals());\n          let highlightedValue = value;\n          // Traverse from back to front to avoid the positioning going out of sync\n          for (let i = matchIntervals.length - 1; i >= 0; i -= 1) {\n            highlightedValue = `${highlightedValue.slice(0, matchIntervals[i].start)}<mark>`\n              + `${highlightedValue.slice(matchIntervals[i].start, matchIntervals[i].end)}</mark>`\n              + `${highlightedValue.slice(matchIntervals[i].end)}`;\n          }\n          return highlightedValue;\n        },\n      },\n    },\n  },\n};\n</script>\n\n<style>\n.search-dropdown-menu {\n  max-height: 30em;\n  overflow-y: scroll;\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
-/* 239 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28405,11 +28673,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _slicedToArray2 = __webpack_require__(240);
+	var _slicedToArray2 = __webpack_require__(248);
 	
 	var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 	
-	var _entries = __webpack_require__(249);
+	var _entries = __webpack_require__(257);
 	
 	var _entries2 = _interopRequireDefault(_entries);
 	
@@ -28417,11 +28685,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _assign2 = _interopRequireDefault(_assign);
 	
-	var _values = __webpack_require__(253);
+	var _values = __webpack_require__(261);
 	
 	var _values2 = _interopRequireDefault(_values);
 	
-	var _Typeahead = __webpack_require__(256);
+	var _Typeahead = __webpack_require__(264);
 	
 	var _Typeahead2 = _interopRequireDefault(_Typeahead);
 	
@@ -28429,10 +28697,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	exports.default = {
 	  extends: _Typeahead2.default,
-	  mounted: function mounted() {
-	    this.$refs.dropdown.classList.add('search-dropdown-menu');
-	  },
-	
 	  computed: {
 	    primitiveData: function primitiveData() {
 	      function getTotalMatches(searchTarget, regexes) {
@@ -28575,18 +28839,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 240 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	exports.__esModule = true;
 	
-	var _isIterable2 = __webpack_require__(241);
+	var _isIterable2 = __webpack_require__(249);
 	
 	var _isIterable3 = _interopRequireDefault(_isIterable2);
 	
-	var _getIterator2 = __webpack_require__(245);
+	var _getIterator2 = __webpack_require__(253);
 	
 	var _getIterator3 = _interopRequireDefault(_getIterator2);
 	
@@ -28631,25 +28895,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	}();
 
 /***/ }),
-/* 241 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(242), __esModule: true };
+	module.exports = { "default": __webpack_require__(250), __esModule: true };
 
 /***/ }),
-/* 242 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	__webpack_require__(58);
 	__webpack_require__(45);
-	module.exports = __webpack_require__(243);
+	module.exports = __webpack_require__(251);
 
 
 /***/ }),
-/* 243 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var classof = __webpack_require__(244);
+	var classof = __webpack_require__(252);
 	var ITERATOR = __webpack_require__(56)('iterator');
 	var Iterators = __webpack_require__(50);
 	module.exports = __webpack_require__(23).isIterable = function (it) {
@@ -28662,7 +28926,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 244 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// getting tag from 19.1.3.6 Object.prototype.toString()
@@ -28691,26 +28955,26 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 245 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(246), __esModule: true };
+	module.exports = { "default": __webpack_require__(254), __esModule: true };
 
 /***/ }),
-/* 246 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	__webpack_require__(58);
 	__webpack_require__(45);
-	module.exports = __webpack_require__(247);
+	module.exports = __webpack_require__(255);
 
 
 /***/ }),
-/* 247 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var anObject = __webpack_require__(28);
-	var get = __webpack_require__(248);
+	var get = __webpack_require__(256);
 	module.exports = __webpack_require__(23).getIterator = function (it) {
 	  var iterFn = get(it);
 	  if (typeof iterFn != 'function') throw TypeError(it + ' is not iterable!');
@@ -28719,10 +28983,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 248 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var classof = __webpack_require__(244);
+	var classof = __webpack_require__(252);
 	var ITERATOR = __webpack_require__(56)('iterator');
 	var Iterators = __webpack_require__(50);
 	module.exports = __webpack_require__(23).getIteratorMethod = function (it) {
@@ -28733,26 +28997,26 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 249 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(250), __esModule: true };
+	module.exports = { "default": __webpack_require__(258), __esModule: true };
 
 /***/ }),
-/* 250 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(251);
+	__webpack_require__(259);
 	module.exports = __webpack_require__(23).Object.entries;
 
 
 /***/ }),
-/* 251 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// https://github.com/tc39/proposal-object-values-entries
 	var $export = __webpack_require__(22);
-	var $entries = __webpack_require__(252)(true);
+	var $entries = __webpack_require__(260)(true);
 	
 	$export($export.S, 'Object', {
 	  entries: function entries(it) {
@@ -28762,7 +29026,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 252 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var getKeys = __webpack_require__(6);
@@ -28784,26 +29048,26 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 253 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(254), __esModule: true };
+	module.exports = { "default": __webpack_require__(262), __esModule: true };
 
 /***/ }),
-/* 254 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(255);
+	__webpack_require__(263);
 	module.exports = __webpack_require__(23).Object.values;
 
 
 /***/ }),
-/* 255 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// https://github.com/tc39/proposal-object-values-entries
 	var $export = __webpack_require__(22);
-	var $values = __webpack_require__(252)(false);
+	var $values = __webpack_require__(260)(false);
 	
 	$export($export.S, 'Object', {
 	  values: function values(it) {
@@ -28813,20 +29077,20 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 256 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(257)
+	__webpack_require__(265)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(259)
+	__vue_exports__ = __webpack_require__(267)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(260)
+	var __vue_template__ = __webpack_require__(268)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -28860,13 +29124,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 257 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(258);
+	var content = __webpack_require__(266);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -28886,7 +29150,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 258 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -28894,13 +29158,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.dropdown-menu > li > a {\n  cursor: pointer;\n}\n", "", {"version":3,"sources":["/./src/Typeahead.vue?07842908"],"names":[],"mappings":";AAoJA;EACA,gBAAA;CACA","file":"Typeahead.vue","sourcesContent":["<template>\n  <div style=\"position: relative\"\n       v-bind:class=\"{'open':showDropdown}\"\n  >\n    <input type=\"text\" class=\"form-control\"\n      :placeholder=\"placeholder\"\n      autocomplete=\"off\"\n      v-model=\"value\"\n      @input=\"update\"\n      @keydown.up=\"up\"\n      @keydown.down=\"down\"\n      @keydown.enter= \"hit\"\n      @keydown.esc=\"reset\"\n      @blur=\"showDropdown = false\"\n    />\n    <ul class=\"dropdown-menu\" ref=\"dropdown\">\n      <li v-for=\"(item, index) in items\" v-bind:class=\"{'active': isActive(index)}\">\n        <a @mousedown.prevent=\"hit\" @mousemove=\"setActive(index)\">\n          <component v-bind:is=\"entryTemplate\" :item=\"item\" :value=\"value\"></component>\n        </a>\n      </li>\n    </ul>\n  </div>\n</template>\n\n<script>\nimport {delayer, getJSON} from './utils/utils.js'\n\nlet Vue = window.Vue\nconst _DELAY_ = 200\n\nexport default {\n  created () {\n    this.items = this.primitiveData\n  },\n  props: {\n    value: {\n      type: String,\n      default: ''\n    },\n    data: {\n      type: Array\n    },\n    limit: {\n      type: Number,\n      default: 8\n    },\n    async: {\n      type: String\n    },\n    key: {\n      type: String,\n      default: null\n    },\n    onHit: {\n      type: Function,\n      default (items) {\n        this.reset()\n        this.value = items\n      }\n    },\n    placeholder: {\n      type: String\n    },\n    delay: {\n      type: Number,\n      default: _DELAY_,\n    }\n  },\n  data () {\n    return {\n      showDropdown: false,\n      noResults: true,\n      current: 0,\n      items: []\n    }\n  },\n  computed: {\n    primitiveData () {\n      if (this.data) {\n        return this.data.filter(value => {\n          value = this.matchCase ? value : value.toLowerCase()\n          var query = this.matchCase ? this.value : this.value.toLowerCase()\n          return this.matchStart ? value.indexOf(query) === 0 : value.indexOf(query) !== -1\n        }).slice(0, this.limit)\n      }\n    },\n    entryTemplate () {\n      return 'typeaheadTemplate';\n    }\n  },\n  methods: {\n    update () {\n      if (!this.value) {\n        this.reset()\n        return false\n      }\n      if (this.data) {\n        this.items = this.primitiveData\n        this.showDropdown = this.items.length > 0\n      }\n      if (this.async) this.query()\n    },\n    query: delayer(function () {\n      getJSON(this.async + this.value).then(data => {\n        this.items = (this.key ? data[this.key] : data).slice(0, this.limit)\n        this.showDropdown = this.items.length\n      })\n    }, 'delay', _DELAY_),\n    reset () {\n      this.items = []\n      this.value = ''\n      this.loading = false\n      this.showDropdown = false\n    },\n    setActive (index) {\n      this.current = index\n    },\n    isActive (index) {\n      return this.current === index\n    },\n    hit (e) {\n      e.preventDefault()\n      this.onHit(this.items[this.current], this)\n    },\n    up () {\n      if (this.current > 0) this.current--\n    },\n    down () {\n      if (this.current < this.items.length - 1) this.current++\n    }\n  },\n  components: {\n    typeaheadTemplate: {\n      props: ['item', 'value'],\n      template: '<span v-html=\"highlight(item, value)\"></span>',\n      methods: {\n        highlight(value, phrase) {\n          return value.replace(new RegExp(`(${phrase})`, 'gi'), '<mark>$1</mark>');\n        },\n      }\n    },\n\n  }\n}\n</script>\n\n<style>\n.dropdown-menu > li > a {\n  cursor: pointer;\n}\n</style>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.dropdown-menu > li > a {\n  cursor: pointer;\n}\n", "", {"version":3,"sources":["/./src/Typeahead.vue?965ff9d6"],"names":[],"mappings":";AA0JA;EACA,gBAAA;CACA","file":"Typeahead.vue","sourcesContent":["<template>\n  <div style=\"position: relative\">\n    <input type=\"text\" class=\"form-control\"\n      :placeholder=\"placeholder\"\n      autocomplete=\"off\"\n      v-model=\"value\"\n      @input=\"update\"\n      @keydown.up=\"up\"\n      @keydown.down=\"down\"\n      @keydown.enter= \"hit\"\n      @keydown.esc=\"reset\"\n      @blur=\"showDropdown = false\"\n    />\n    <ul :class=\"dropdownMenuClasses\" ref=\"dropdown\">\n      <li v-for=\"(item, index) in items\" v-bind:class=\"{'table-active': isActive(index)}\">\n        <a class=\"dropdown-item\" @mousedown.prevent=\"hit\" @mousemove=\"setActive(index)\">\n          <component v-bind:is=\"entryTemplate\" :item=\"item\" :value=\"value\"></component>\n        </a>\n      </li>\n    </ul>\n  </div>\n</template>\n\n<script>\nimport {delayer, getJSON} from './utils/utils.js'\n\nlet Vue = window.Vue\nconst _DELAY_ = 200\n\nexport default {\n  created () {\n    this.items = this.primitiveData\n  },\n  props: {\n    value: {\n      type: String,\n      default: ''\n    },\n    data: {\n      type: Array\n    },\n    limit: {\n      type: Number,\n      default: 8\n    },\n    async: {\n      type: String\n    },\n    key: {\n      type: String,\n      default: null\n    },\n    onHit: {\n      type: Function,\n      default (items) {\n        this.reset()\n        this.value = items\n      }\n    },\n    placeholder: {\n      type: String\n    },\n    delay: {\n      type: Number,\n      default: _DELAY_,\n    },\n    menuAlignRight: {\n      type: Boolean,\n      default: false\n    }\n  },\n  data () {\n    return {\n      showDropdown: false,\n      noResults: true,\n      current: 0,\n      items: []\n    }\n  },\n  computed: {\n    primitiveData () {\n      if (this.data) {\n        return this.data.filter(value => {\n          value = this.matchCase ? value : value.toLowerCase()\n          var query = this.matchCase ? this.value : this.value.toLowerCase()\n          return this.matchStart ? value.indexOf(query) === 0 : value.indexOf(query) !== -1\n        }).slice(0, this.limit)\n      }\n    },\n    entryTemplate () {\n      return 'typeaheadTemplate';\n    },\n    dropdownMenuClasses () {\n      return ['dropdown-menu', 'search-dropdown-menu', {show: this.showDropdown},\n        {'dropdown-menu-right': this.menuAlignRight}];\n    }\n  },\n  methods: {\n    update () {\n      if (!this.value) {\n        this.reset()\n        return false\n      }\n      if (this.data) {\n        this.items = this.primitiveData\n        this.showDropdown = this.items.length > 0\n      }\n      if (this.async) this.query()\n    },\n    query: delayer(function () {\n      getJSON(this.async + this.value).then(data => {\n        this.items = (this.key ? data[this.key] : data).slice(0, this.limit)\n        this.showDropdown = this.items.length\n      })\n    }, 'delay', _DELAY_),\n    reset () {\n      this.items = []\n      this.value = ''\n      this.loading = false\n      this.showDropdown = false\n    },\n    setActive (index) {\n      this.current = index\n    },\n    isActive (index) {\n      return this.current === index\n    },\n    hit (e) {\n      e.preventDefault()\n      this.onHit(this.items[this.current], this)\n    },\n    up () {\n      if (this.current > 0) this.current--\n    },\n    down () {\n      if (this.current < this.items.length - 1) this.current++\n    }\n  },\n  components: {\n    typeaheadTemplate: {\n      props: ['item', 'value'],\n      template: '<span v-html=\"highlight(item, value)\"></span>',\n      methods: {\n        highlight(value, phrase) {\n          return value.replace(new RegExp(`(${phrase})`, 'gi'), '<mark>$1</mark>');\n        },\n      }\n    },\n\n  }\n}\n</script>\n\n<style>\n.dropdown-menu > li > a {\n  cursor: pointer;\n}\n</style>"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
-/* 259 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28912,8 +29176,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _utils = __webpack_require__(38);
 	
 	var Vue = window.Vue; //
-	//
-	//
 	//
 	//
 	//
@@ -28976,6 +29238,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    delay: {
 	      type: Number,
 	      default: _DELAY_
+	    },
+	    menuAlignRight: {
+	      type: Boolean,
+	      default: false
 	    }
 	  },
 	  data: function data() {
@@ -29001,6 +29267,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	    entryTemplate: function entryTemplate() {
 	      return 'typeaheadTemplate';
+	    },
+	    dropdownMenuClasses: function dropdownMenuClasses() {
+	      return ['dropdown-menu', 'search-dropdown-menu', { show: this.showDropdown }, { 'dropdown-menu-right': this.menuAlignRight }];
 	    }
 	  },
 	  methods: {
@@ -29062,14 +29331,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 260 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
-	    class: {
-	      'open': _vm.showDropdown
-	    },
 	    staticStyle: {
 	      "position": "relative"
 	    }
@@ -29113,13 +29379,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  }), _vm._v(" "), _c('ul', {
 	    ref: "dropdown",
-	    staticClass: "dropdown-menu"
+	    class: _vm.dropdownMenuClasses
 	  }, _vm._l((_vm.items), function(item, index) {
 	    return _c('li', {
 	      class: {
-	        'active': _vm.isActive(index)
+	        'table-active': _vm.isActive(index)
 	      }
 	    }, [_c('a', {
+	      staticClass: "dropdown-item",
 	      on: {
 	        "mousedown": function($event) {
 	          $event.preventDefault();
@@ -29146,20 +29413,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 261 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(262)
+	__webpack_require__(270)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(264)
+	__vue_exports__ = __webpack_require__(272)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(265)
+	var __vue_template__ = __webpack_require__(273)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -29193,13 +29460,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 262 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(263);
+	var content = __webpack_require__(271);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -29219,7 +29486,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 263 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -29227,13 +29494,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.tab-pane > hr {\n    margin: 0;\n}\n.fade-enter-active, .fade-leave-active {\n  transition: opacity .5s;\n}\n", "", {"version":3,"sources":["/./src/Tab.vue?51b71842"],"names":[],"mappings":";AAiFA;IACA,UAAA;CACA;AACA;EACA,wBAAA;CACA","file":"Tab.vue","sourcesContent":["<template>\n  <transition name=\"fade\">\n    <div role=\"tabpanel\" class=\"tab-pane active\" v-show=\"show\"\n      :class=\"{hide:!show}\"\n    >\n      <slot></slot>\n      <hr />\n    </div>\n  </transition>\n</template>\n\n<script>\nimport {toBoolean} from './utils/utils.js'\nimport md from './utils/markdown.js'\n\nexport default {\n  props: {\n    header: {\n      type: String\n    },\n    disabled: {\n      type: Boolean,\n      default: false\n    }\n  },\n  computed: {\n    headerRendered () {\n      return md.renderInline(this.header)\n    },\n    active () {\n      return this._tabset.show === this\n    },\n    index () {\n      return this._tabset.tabs.indexOf(this)\n    },\n    show () {\n      return this._tabset && this._tabset.show === this\n    },\n    transition () {\n      return this._tabset ? this._tabset.effect : null\n    },\n    disabledBool () {\n      return toBoolean(this.disabled)\n    }\n  },\n  created () {\n    this._ingroup = this.$parent && this.$parent._tabgroup\n    let tabset = this\n    while (tabset && tabset._tabset!==true && tabset.$parent) {\n      tabset = tabset.$parent\n    }\n    if (!tabset._tabset) {\n      this._tabset = {}\n      console.warn('Warning: \"tab\" depend on \"tabset\" to work properly.')\n    } else {\n      tabset.tabs.push(this)\n      if (!this._ingroup) {\n        tabset.headers.push(this)\n      } else {\n        if (!~tabset.headers.indexOf(this.$parent)) {\n          tabset.headers.push(this.$parent)\n        }\n      }\n      this._tabset = tabset\n    }\n    if (this._ingroup) {\n      this.$parent.tabs.push(this)\n    }\n  },\n  beforeDestroy () {\n    if (this._tabset.active === this.index) { this._tabset.active = 0 }\n    if (this._ingroup) {\n      var index = parent.tabs.indexOf(this);\n      parent.tabs.splice(index, 1)\n    }\n    var index = this._tabset.tabs.indexOf(this);\n    this._tabset.tabs.splice(index, 1)\n  }\n}\n</script>\n<style>\n    .tab-pane > hr {\n        margin: 0;\n    }\n    .fade-enter-active, .fade-leave-active {\n      transition: opacity .5s;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.tab-pane > hr {\n    margin: 0;\n}\n.fade-enter-active {\n  transition: opacity .5s;\n}\n.fade-leave-active {\n  transition: opacity 0s;\n}\n", "", {"version":3,"sources":["/./src/Tab.vue?651d8a00"],"names":[],"mappings":";AAiFA;IACA,UAAA;CACA;AACA;EACA,wBAAA;CACA;AACA;EACA,uBAAA;CACA","file":"Tab.vue","sourcesContent":["<template>\n  <transition name=\"fade\">\n    <div role=\"tabpanel\" class=\"tab-pane active\" v-show=\"show\"\n      :class=\"{hide:!show}\"\n    >\n      <slot></slot>\n      <hr />\n    </div>\n  </transition>\n</template>\n\n<script>\nimport {toBoolean} from './utils/utils.js'\nimport md from './utils/markdown.js'\n\nexport default {\n  props: {\n    header: {\n      type: String\n    },\n    disabled: {\n      type: Boolean,\n      default: false\n    }\n  },\n  computed: {\n    headerRendered () {\n      return md.renderInline(this.header)\n    },\n    active () {\n      return this._tabset.show === this\n    },\n    index () {\n      return this._tabset.tabs.indexOf(this)\n    },\n    show () {\n      return this._tabset && this._tabset.show === this\n    },\n    transition () {\n      return this._tabset ? this._tabset.effect : null\n    },\n    disabledBool () {\n      return toBoolean(this.disabled)\n    }\n  },\n  created () {\n    this._ingroup = this.$parent && this.$parent._tabgroup\n    let tabset = this\n    while (tabset && tabset._tabset!==true && tabset.$parent) {\n      tabset = tabset.$parent\n    }\n    if (!tabset._tabset) {\n      this._tabset = {}\n      console.warn('Warning: \"tab\" depend on \"tabset\" to work properly.')\n    } else {\n      tabset.tabs.push(this)\n      if (!this._ingroup) {\n        tabset.headers.push(this)\n      } else {\n        if (!~tabset.headers.indexOf(this.$parent)) {\n          tabset.headers.push(this.$parent)\n        }\n      }\n      this._tabset = tabset\n    }\n    if (this._ingroup) {\n      this.$parent.tabs.push(this)\n    }\n  },\n  beforeDestroy () {\n    if (this._tabset.active === this.index) { this._tabset.active = 0 }\n    if (this._ingroup) {\n      var index = parent.tabs.indexOf(this);\n      parent.tabs.splice(index, 1)\n    }\n    var index = this._tabset.tabs.indexOf(this);\n    this._tabset.tabs.splice(index, 1)\n  }\n}\n</script>\n<style>\n    .tab-pane > hr {\n        margin: 0;\n    }\n    .fade-enter-active {\n      transition: opacity .5s;\n    }\n    .fade-leave-active {\n      transition: opacity 0s;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
-/* 264 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29330,7 +29597,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 265 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -29362,20 +29629,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 266 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(267)
+	__webpack_require__(275)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(269)
+	__vue_exports__ = __webpack_require__(277)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(270)
+	var __vue_template__ = __webpack_require__(278)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -29410,13 +29677,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 267 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(268);
+	var content = __webpack_require__(276);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -29436,7 +29703,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 268 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -29450,7 +29717,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 269 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29531,7 +29798,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 270 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -29545,20 +29812,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 271 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(272)
+	__webpack_require__(280)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(274)
+	__vue_exports__ = __webpack_require__(282)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(275)
+	var __vue_template__ = __webpack_require__(283)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -29593,13 +29860,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 272 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(273);
+	var content = __webpack_require__(281);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -29619,7 +29886,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 273 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -29627,13 +29894,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.nav-tabs[data-v-949aff0e] {\n  margin-bottom: 15px;\n}\n", "", {"version":3,"sources":["/./src/Tabset.vue?762de1ae"],"names":[],"mappings":";AA0EA;EACA,oBAAA;CACA","file":"Tabset.vue","sourcesContent":["<template>\n  <div>\n    <!-- Nav tabs -->\n    <ul class=\"nav\" :class=\"getNavStyleClass\" role=\"tablist\">\n      <template v-for=\"t in headers\">\n        <li v-if=\"!t._tabgroup\" :class=\"{active:t.active, disabled:t.disabledBool}\" @click.prevent=\"select(t)\">\n          <a href=\"#\"><span v-html=\"t.headerRendered\"></span></a>\n        </li>\n        <dropdown v-else :text=\"t.headerRendered\" :class=\"{active:t.active}\" :disabled=\"t.disabled\">\n          <li v-for=\"tab in t.tabs\" :class=\"{disabled:tab.disabled}\"><a href=\"#\" @click.prevent=\"select(tab)\" v-html=\"tab.headerRendered\"></a></li>\n        </dropdown>\n      </template>\n    </ul>\n    <div class=\"tab-content\" ref=\"tab-content\">\n      <slot></slot>\n    </div>\n  </div>\n</template>\n\n<script>\nimport {toNumber} from './utils/utils.js'\nimport dropdown from './Dropdown.vue'\n\nexport default {\n  components: {\n    dropdown\n  },\n  props: {\n    navStyle: {\n      type: String,\n      default: 'tabs'\n    },\n    active: {\n      type: Number,\n      default: 0\n    }\n  },\n  data () {\n    return {\n      show: null,\n      headers: [],\n      tabs: []\n    }\n  },\n  created () {\n    this._tabset = true\n  },\n  computed: {\n    getNavStyleClass() {\n      return `nav-${this.navStyle}`;\n    },\n    activeNumber () {\n       return toNumber(this.active);\n    },\n  },\n  watch: {\n    activeNumber (val) {\n      this.show = this.tabs[val]\n    }\n  },\n  mounted () {\n    this.show = this.tabs[this.activeNumber]\n  },\n  methods: {\n    select (tab) {\n      if (!tab.disabled) {\n        this.active = tab.index\n      }\n    }\n  }\n}\n</script>\n\n<style scoped>\n.nav-tabs {\n  margin-bottom: 15px;\n}\n</style>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.nav-tabs[data-v-949aff0e] {\n  margin-bottom: 15px;\n}\n", "", {"version":3,"sources":["/./src/Tabset.vue?1b313e9c"],"names":[],"mappings":";AA0EA;EACA,oBAAA;CACA","file":"Tabset.vue","sourcesContent":["<template>\n  <div>\n    <!-- Nav tabs -->\n    <ul class=\"nav nav-tabs\" :class=\"getNavStyleClass\" role=\"tablist\">\n      <template v-for=\"t in headers\">\n        <li v-if=\"!t._tabgroup\" class=\"nav-item\" @click.prevent=\"select(t)\">\n          <a class=\"nav-link\" :class=\"{active: t.active, disabled:t.disabledBool}\" href=\"#\"><span v-html=\"t.headerRendered\"></span></a>\n        </li>\n        <dropdown v-else class=\"nav-item nav-link\" :text=\"t.headerRendered\" :class=\"{active:t.active}\" :disabled=\"t.disabled\">\n          <li v-for=\"tab in t.tabs\"><a class=\"nav-link\" :class=\"{disabled:tab.disabled}\" href=\"#\" @click.prevent=\"select(tab)\" v-html=\"tab.headerRendered\"></a></li>\n        </dropdown>\n      </template>\n    </ul>\n    <div class=\"tab-content\" ref=\"tab-content\">\n      <slot></slot>\n    </div>\n  </div>\n</template>\n\n<script>\nimport {toNumber} from './utils/utils.js'\nimport dropdown from './Dropdown.vue'\n\nexport default {\n  components: {\n    dropdown\n  },\n  props: {\n    navStyle: {\n      type: String,\n      default: 'tabs'\n    },\n    active: {\n      type: Number,\n      default: 0\n    }\n  },\n  data () {\n    return {\n      show: null,\n      headers: [],\n      tabs: []\n    }\n  },\n  created () {\n    this._tabset = true\n  },\n  computed: {\n    getNavStyleClass() {\n      return `nav-${this.navStyle}`;\n    },\n    activeNumber () {\n       return toNumber(this.active);\n    },\n  },\n  watch: {\n    activeNumber (val) {\n      this.show = this.tabs[val]\n    }\n  },\n  mounted () {\n    this.show = this.tabs[this.activeNumber]\n  },\n  methods: {\n    select (tab) {\n      if (!tab.disabled) {\n        this.active = tab.index\n      }\n    }\n  }\n}\n</script>\n\n<style scoped>\n.nav-tabs {\n  margin-bottom: 15px;\n}\n</style>"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
-/* 274 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29722,21 +29989,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 275 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', [_c('ul', {
-	    staticClass: "nav",
+	    staticClass: "nav nav-tabs",
 	    class: _vm.getNavStyleClass,
 	    attrs: {
 	      "role": "tablist"
 	    }
 	  }, [_vm._l((_vm.headers), function(t) {
 	    return [(!t._tabgroup) ? _c('li', {
-	      class: {
-	        active: t.active, disabled: t.disabledBool
-	      },
+	      staticClass: "nav-item",
 	      on: {
 	        "click": function($event) {
 	          $event.preventDefault();
@@ -29744,6 +30009,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	      }
 	    }, [_c('a', {
+	      staticClass: "nav-link",
+	      class: {
+	        active: t.active, disabled: t.disabledBool
+	      },
 	      attrs: {
 	        "href": "#"
 	      }
@@ -29752,6 +30021,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        "innerHTML": _vm._s(t.headerRendered)
 	      }
 	    })])]) : _c('dropdown', {
+	      staticClass: "nav-item nav-link",
 	      class: {
 	        active: t.active
 	      },
@@ -29760,11 +30030,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	        "disabled": t.disabled
 	      }
 	    }, _vm._l((t.tabs), function(tab) {
-	      return _c('li', {
+	      return _c('li', [_c('a', {
+	        staticClass: "nav-link",
 	        class: {
 	          disabled: tab.disabled
-	        }
-	      }, [_c('a', {
+	        },
 	        attrs: {
 	          "href": "#"
 	        },
@@ -29792,20 +30062,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 276 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(277)
+	__webpack_require__(285)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(279)
+	__vue_exports__ = __webpack_require__(287)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(280)
+	var __vue_template__ = __webpack_require__(288)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -29840,13 +30110,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 277 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(278);
+	var content = __webpack_require__(286);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -29866,7 +30136,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 278 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -29880,7 +30150,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 279 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29997,7 +30267,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 
 /***/ }),
-/* 280 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -30023,20 +30293,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 281 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(282)
+	__webpack_require__(290)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(284)
+	__vue_exports__ = __webpack_require__(292)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(285)
+	var __vue_template__ = __webpack_require__(293)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -30070,13 +30340,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 282 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(283);
+	var content = __webpack_require__(291);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -30096,7 +30366,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 283 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -30104,13 +30374,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.scale-enter-active {\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\n  animation:scale-out 0.15s ease-out;\n}\n.tooltip.top,\n.tooltip.left,\n.tooltip.right,\n.tooltip.bottom {\n  opacity: .9\n}\n", "", {"version":3,"sources":["/./src/Tooltip.vue?272d996e"],"names":[],"mappings":";AA+CA;EACA,iCAAA;CACA;AACA;EACA,mCAAA;CACA;AAEA;;;;EAIA,WAAA;CACA","file":"Tooltip.vue","sourcesContent":["<template>\n  <span>\n    <span ref=\"trigger\" v-on:click=\"false\"><slot></slot></span><!--\n    -->\n    <transition :name=\"effect\">\n      <div ref=\"popover\" v-if=\"show\" style=\"display:block;\"\n        :class=\"['tooltip',placement]\"\n      >\n        <div class=\"tooltip-arrow\"></div>\n        <div class=\"tooltip-inner\" v-on:click=\"false\">\n          <span name=\"content\" v-html=\"contentRendered\"></span>\n       </div>\n      </div>\n    </transition>\n  </span>\n</template>\n\n<script>\nimport PopoverMixin from './utils/popoverMixins.js'\nimport md from './utils/markdown.js'\n\nexport default {\n  mixins: [PopoverMixin],\n  props: {\n    trigger: {\n      type: String,\n      default: 'hover'\n    },\n    effect: {\n      type: String,\n      default: 'scale'\n    },\n    placement: {\n      type: String,\n      default: 'top'\n    }\n  },\n  mounted () {\n    if (this.$refs.trigger) {\n      this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dotted'\n      this.$refs.trigger.style['text-decoration'] = 'underline dotted'\n    }\n  }\n}\n</script>\n\n<style>\n.scale-enter-active {\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\n  animation:scale-out 0.15s ease-out;\n}\n\n.tooltip.top,\n.tooltip.left,\n.tooltip.right,\n.tooltip.bottom {\n  opacity: .9\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.scale-enter-active {\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\n  animation:scale-out 0.15s ease-out;\n}\n.tooltip.top,\n.tooltip.left,\n.tooltip.right,\n.tooltip.bottom {\n  opacity: .9\n}\n", "", {"version":3,"sources":["/./src/Tooltip.vue?6f4dd364"],"names":[],"mappings":";AAoDA;EACA,iCAAA;CACA;AACA;EACA,mCAAA;CACA;AAEA;;;;EAIA,WAAA;CACA","file":"Tooltip.vue","sourcesContent":["<template>\n  <span>\n    <span ref=\"trigger\" v-on:click=\"false\"><slot></slot></span><!--\n    -->\n    <transition :name=\"effect\">\n      <div ref=\"popover\" v-if=\"show\" style=\"display:block;\"\n        :class=\"['tooltip', tooltipPlacementClass, 'show']\"\n      >\n        <div class=\"arrow\" ref=\"arrow\"></div>\n        <div class=\"tooltip-inner\" v-on:click=\"false\">\n          <span name=\"content\" v-html=\"contentRendered\"></span>\n       </div>\n      </div>\n    </transition>\n  </span>\n</template>\n\n<script>\nimport PopoverMixin from './utils/popoverMixins.js'\nimport md from './utils/markdown.js'\n\nexport default {\n  mixins: [PopoverMixin],\n  props: {\n    trigger: {\n      type: String,\n      default: 'hover'\n    },\n    effect: {\n      type: String,\n      default: 'scale'\n    },\n    placement: {\n      type: String,\n      default: 'top'\n    }\n  },\n  computed: {\n    tooltipPlacementClass ()  {\n      return `bs-tooltip-${this.placement}`;\n    }\n  },\n  mounted () {\n    if (this.$refs.trigger) {\n      this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dotted'\n      this.$refs.trigger.style['text-decoration'] = 'underline dotted'\n    }\n  }\n}\n</script>\n\n<style>\n.scale-enter-active {\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\n  animation:scale-out 0.15s ease-out;\n}\n\n.tooltip.top,\n.tooltip.left,\n.tooltip.right,\n.tooltip.bottom {\n  opacity: .9\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
-/* 284 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30163,6 +30433,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	      default: 'top'
 	    }
 	  },
+	  computed: {
+	    tooltipPlacementClass: function tooltipPlacementClass() {
+	      return 'bs-tooltip-' + this.placement;
+	    }
+	  },
 	  mounted: function mounted() {
 	    if (this.$refs.trigger) {
 	      this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dotted';
@@ -30172,7 +30447,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 285 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -30187,12 +30462,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  }, [(_vm.show) ? _c('div', {
 	    ref: "popover",
-	    class: ['tooltip', _vm.placement],
+	    class: ['tooltip', _vm.tooltipPlacementClass, 'show'],
 	    staticStyle: {
 	      "display": "block"
 	    }
 	  }, [_c('div', {
-	    staticClass: "tooltip-arrow"
+	    ref: "arrow",
+	    staticClass: "arrow"
 	  }), _vm._v(" "), _c('div', {
 	    staticClass: "tooltip-inner",
 	    on: {
@@ -30215,20 +30491,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 286 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(287)
+	__webpack_require__(295)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(289)
+	__vue_exports__ = __webpack_require__(297)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(290)
+	var __vue_template__ = __webpack_require__(298)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -30262,13 +30538,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 287 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(288);
+	var content = __webpack_require__(296);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -30288,7 +30564,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 288 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -30302,7 +30578,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 289 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -30360,7 +30636,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(72)))
 
 /***/ }),
-/* 290 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
