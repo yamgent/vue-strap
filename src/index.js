@@ -54,13 +54,8 @@ function install (Vue) {
   })
 }
 
-function installEvents (vm) {
-
-}
-
 const VueStrap = {
   install,
-  installEvents,
   components: {}
 }
 

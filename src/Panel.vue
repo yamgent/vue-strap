@@ -283,7 +283,7 @@
     },
     mounted() {
       this.$nextTick(function () {
-        if (this.hasSrc && (this.preloadBool || this.localExpanded)) {
+        if (this.hasSrc && (this.preloadBool || this.expandedBool)) {
           this.$refs.retriever.fetch()
         }
       })
