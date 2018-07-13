@@ -40,7 +40,7 @@
                     </slot>
                 </div>
             </div>
-            <template v-if="staticBool">
+            <template v-if="preloadBool">
                 <div class="card-collapse"
                      ref="panel"
                      v-show="localExpanded"
@@ -133,7 +133,7 @@
         type: Boolean,
         default: true
       },
-      static: {
+      preload: {
         type: Boolean,
         default: false
       }
@@ -161,8 +161,8 @@
       bottomSwitchBool () {
         return toBoolean(this.bottomSwitch);
       },
-      staticBool () {
-        return toBoolean(this.static);
+      preloadBool () {
+        return toBoolean(this.preload);
       },
       // Vue 2.0 coerce migration end
       isExpandableCard () {
@@ -283,7 +283,7 @@
     },
     mounted() {
       this.$nextTick(function () {
-        if (this.hasSrc && (this.staticBool || this.localExpanded)) {
+        if (this.hasSrc && (this.preloadBool || this.localExpanded)) {
           this.$refs.retriever.fetch()
         }
       })
