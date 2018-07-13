@@ -6,7 +6,7 @@
         <li v-if="!t._tabgroup" class="nav-item" @click.prevent="select(t)">
           <a class="nav-link" :class="{active: t.active, disabled:t.disabledBool}" href="#"><span v-html="t.headerRendered"></span></a>
         </li>
-        <dropdown v-else class="nav-link" :text="t.headerRendered" :class="{active:t.active}" :disabled="t.disabled">
+        <dropdown v-else class="nav-item nav-link" :text="t.headerRendered" :class="{active:t.active}" :disabled="t.disabled">
           <li v-for="tab in t.tabs"><a class="nav-link" :class="{disabled:tab.disabled}" href="#" @click.prevent="select(tab)" v-html="tab.headerRendered"></a></li>
         </dropdown>
       </template>
