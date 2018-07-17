@@ -44,5 +44,6 @@
         float: right;
         padding: 3px 8px !important;
         margin-left: 3px;
+        margin-top: 2px;
     }
 </style>
