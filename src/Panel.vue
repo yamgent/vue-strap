@@ -386,4 +386,28 @@
     .morph {
         display: inline-block;
     }
+
+    /* Bootstrap extra small(xs) responsive breakpoint */
+    @media (max-width: 575.98px) {
+
+        .header-wrapper {
+            width: 88%;
+        }
+
+        .button-wrapper {
+            width: 12%;
+        }
+
+        .card-body {
+            padding: 0.5rem;
+        }
+
+        .card-collapse > hr {
+            margin-top: 1.5rem;
+        }
+
+        .card-header {
+            padding: 0.5rem;
+        }
+    }
 </style>
