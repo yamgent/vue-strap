@@ -1,6 +1,6 @@
 <template>
     <div class="image-wrapper">
-        <img :src="src" :alt="alt" :width="width" :height="height">
+        <img :src="src" :alt="alt" :width="width" class="img-fluid img-rounded">
         <div class="image-caption">
             <slot></slot>
         </div>
