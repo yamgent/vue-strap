@@ -1,5 +1,4 @@
 *.min.*
-build
 dist
 docs/js/showLanguage.js
 src/directives
