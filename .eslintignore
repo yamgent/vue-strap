@@ -74,6 +74,7 @@ docs/example/questionDocs.vue
 docs/example/retrieverDocs.vue
 docs/example/tipBoxDocs.vue
 docs/example/triggerDocs.vue
+src/GlobalEventBus.js
 src/PanelSwitch.vue
 src/Pic.vue
 src/Question.vue
