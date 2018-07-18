@@ -79,5 +79,4 @@ src/PanelSwitch.vue
 src/Pic.vue
 src/Question.vue
 src/Retriever.vue
-src/TipBox.vue
 src/trigger.vue
