@@ -82,21 +82,21 @@
         }
         switch (this.type) {
           case 'wrong':
-            return '❌'
+            return '<i class="fas fa-times"></i>';
           case 'warning':
-            return '❗'
+            return '<i class="fas fa-exclamation"></i>';
           case 'info':
-            return '🔍'
+            return '<i class="fas fa-info"></i>';
           case 'success':
-            return '✅'
+            return '<i class="fas fa-check"></i>';
           case 'important':
-            return '🚩'
+            return '<i class="fas fa-flag"></i>';
           case 'tip':
-            return '💡'
+            return '<i class="fas fa-lightbulb"></i>';
           case 'definition':
-            return '🔖'
+            return '<i class="fas fa-atlas"></i>';
           default:
-            return '❕'
+            return '<i class="fas fa-exclamation"></i>';
         }
       }
     }
