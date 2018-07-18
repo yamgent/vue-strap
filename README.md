@@ -35,15 +35,11 @@ See the [documentation](https://markbind.github.io/vue-strap/) with live editabl
 
 ## Local Setup
 * Install with `npm install`.
-* Run the docs site in development mode with `npm run docs`. This will watch for file changes as you work.
 * Build with `npm run build`.
 
 ## Lint the code for any code and style errors using ESLint
 * For Unix: `npm run lint`
 * For Windows: `npm run lintwin`
-
-## Update Docs
-* Build docs with `npm run builddocs`.
 
 ## License
 vue-strap is licensed under [The MIT License](LICENSE).
