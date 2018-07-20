@@ -26671,7 +26671,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.card-heading {\n    width: 100%;\n}\n.card-title {\n    display: inline-block;\n    font-size: 1em;\n    margin: 0;\n    vertical-align: middle;\n}\n.card-title * {\n    margin: 0px !important;\n}\n.header-wrapper {\n    display: inline-block;\n    width: 72%;\n}\n.button-wrapper {\n    float: right;\n    display: inline-block;\n    width: 28%;\n}\n.header-toggle {\n    cursor: pointer;\n}\n.expandable-card {\n    margin-bottom: 0 !important;\n    margin-top: 5px;\n}\n.card-group > .card-container > .expandable-card {\n    margin-top: 0!important;\n}\n.card-seamless {\n    padding: 0;\n}\n.card.card-seamless {\n    box-shadow: none;\n    border: none;\n}\n.card-seamless > .card-heading {\n    padding: 0;\n}\n.card-seamless > .card-collapse > hr {\n    margin: 0;\n    width: calc(100% - 27px);\n}\n.card-seamless > .card-collapse > .card-body {\n    padding: 10px 0;\n}\n.card-seamless > .card-collapse > .card-body > .collapse-button {\n    position: relative;\n    top: 22px;\n}\n.card-body > .collapse-button {\n    margin-bottom: 13px;\n    margin-top: 5px;\n    opacity: 0.2;\n}\n.card-body > .collapse-button:hover {\n    opacity: 1;\n}\n.close-button {\n    font-size: 10px !important;\n    float: right;\n    padding: 3px 8px !important;\n}\n.popup-button {\n    font-size: 10px !important;\n    float: right;\n    padding: 3px 8px !important;\n    margin-right: 4px;\n}\n.morph {\n    display: inline-block;\n}\n", "", {"version":3,"sources":["/./src/Panel.vue?aae37e8e"],"names":[],"mappings":";AAsSA;IACA,YAAA;CACA;AAEA;IACA,sBAAA;IACA,eAAA;IACA,UAAA;IACA,uBAAA;CACA;AAEA;IACA,uBAAA;CACA;AAEA;IACA,sBAAA;IACA,WAAA;CACA;AAEA;IACA,aAAA;IACA,sBAAA;IACA,WAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,4BAAA;IACA,gBAAA;CACA;AAEA;IACA,wBAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,iBAAA;IACA,aAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,UAAA;IACA,yBAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,mBAAA;IACA,UAAA;CACA;AAEA;IACA,oBAAA;IACA,gBAAA;IACA,aAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,2BAAA;IACA,aAAA;IACA,4BAAA;CACA;AAEA;IACA,2BAAA;IACA,aAAA;IACA,4BAAA;IACA,kBAAA;CACA;AAEA;IACA,sBAAA;CACA","file":"Panel.vue","sourcesContent":["<template>\n    <span class=\"card-container\">\n        <div class=\"morph\" v-show=\"localMinimized\">\n            <button :class=\"['morph-display-wrapper', 'btn', btnType, 'card-title']\" @click=\"open()\">\n                <template v-if=\"altContent\">\n                    <div v-html=\"altContent\"></div>\n                </template>\n                <template v-else>\n                    <slot name=\"header\">\n                        <div v-html=\"altContent\"></div>\n                    </slot>\n                </template>\n            </button>\n        </div>\n        <div :class=\"['card', {'expandable-card': isExpandableCard}, borderType]\" v-show=\"!localMinimized\">\n            <div :class=\"['card-header',{'header-toggle':isExpandableCard}, cardType, borderType]\"\n                 @click.prevent.stop=\"isExpandableCard && toggle()\"\n                 @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\n                <div class=\"header-wrapper\">\n                    <span :class=\"['glyphicon', localExpanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right']\" v-show=\"showCaret\"></span>\n                    <slot name=\"header\">\n                        <div :class=\"['card-title', cardType, {'text-white':!isLightBg}]\" v-html=\"headerContent\"></div>\n                    </slot>\n                </div>\n                <div class=\"button-wrapper\">\n                    <slot name=\"button\">\n                        <panel-switch v-show=\"isExpandableCard && !noSwitchBool && !showCaret\" :is-open=\"localExpanded\"\n                                      @click.native.stop.prevent=\"expand()\"\n                                      @is-open-event=\"retrieveOnOpen\" :is-light-bg=\"isLightBg\"></panel-switch>\n                        <button type=\"button\" :class=\"['close-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\"\n                                v-show=\"!isSeamless ? (!noCloseBool) : onHeaderHover\"\n                                @click.stop=\"close()\">\n                            <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                        </button>\n                        <button type=\"button\" :class=\"['popup-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\"\n                                v-show=\"this.popupUrl !== null\"\n                                @click.stop=\"openPopup()\">\n                            <span class=\"glyphicon glyphicon-new-window\" aria-hidden=\"true\"></span>\n                        </button>\n                    </slot>\n                </div>\n            </div>\n            <template v-if=\"preloadBool\">\n                <div class=\"card-collapse\"\n                     ref=\"panel\"\n                     v-show=\"localExpanded\"\n                >\n                    <div class=\"card-body\">\n                        <slot></slot>\n                        <retriever v-if=\"hasSrc\" ref=\"retriever\" :src=\"src\" :fragment=\"fragment\" delay></retriever>\n                        <panel-switch v-show=\"isExpandableCard && bottomSwitchBool\" :is-open=\"localExpanded\"\n                                      @click.native.stop.prevent=\"collapseThenScrollIntoViewIfNeeded()\"\n                                      @is-open-event=\"retrieveOnOpen\"></panel-switch>\n                    </div>\n                    <hr v-show=\"isSeamless\" />\n                </div>\n            </template>\n            <template v-else>\n                <div class=\"card-collapse\"\n                     ref=\"panel\"\n                     v-if=\"localExpanded\"\n                >\n                    <div class=\"card-body\">\n                        <slot></slot>\n                        <retriever v-if=\"hasSrc\" ref=\"retriever\" :src=\"src\" :fragment=\"fragment\" delay></retriever>\n                        <panel-switch v-show=\"isExpandableCard && bottomSwitchBool\" :is-open=\"localExpanded\"\n                                      @click.native.stop.prevent=\"collapseThenScrollIntoViewIfNeeded()\"\n                                      @is-open-event=\"retrieveOnOpen\"></panel-switch>\n                    </div>\n                    <hr v-show=\"isSeamless\" />\n                </div>\n            </template>\n        </div>\n    </span>\n</template>\n\n<script>\n  import {getFragmentByHash, toBoolean, toNumber} from './utils/utils.js'\n  import md from './utils/markdown.js'\n  import panelSwitch from './PanelSwitch.vue'\n  import retriever from './Retriever.vue'\n\n  export default {\n    components: {\n      panelSwitch,\n      retriever\n    },\n    props: {\n      header: {\n        type: String,\n        default: ''\n      },\n      alt: {\n        type: String,\n        default: ''\n      },\n      type: {\n        type: String,\n        default: null\n      },\n      expandable: {\n        type: Boolean,\n        default: true\n      },\n      isOpen: {\n        type: Boolean,\n        default: null\n      },\n      expanded: {\n        type: Boolean,\n        default: null\n      },\n      minimized: {\n        type: Boolean,\n        default: false\n      },\n      noSwitch: {\n        type: Boolean,\n        default: false\n      },\n      noClose: {\n        type: Boolean,\n        default: false\n      },\n      popupUrl: {\n        type: String,\n        default: null\n      },\n      src: {\n        type: String\n      },\n      bottomSwitch: {\n        type: Boolean,\n        default: true\n      },\n      preload: {\n        type: Boolean,\n        default: false\n      }\n    },\n    computed: {\n      // Vue 2.0 coerce migration\n      expandableBool () {\n        return toBoolean(this.expandable);\n      },\n      isOpenBool () {\n        return toBoolean(this.isOpen);\n      },\n      expandedBool () {\n        return toBoolean(this.expanded);\n      },\n      minimizedBool () {\n        return toBoolean(this.minimized);\n      },\n      noSwitchBool () {\n        return toBoolean(this.noSwitch);\n      },\n      noCloseBool () {\n        return toBoolean(this.noClose);\n      },\n      bottomSwitchBool () {\n        return toBoolean(this.bottomSwitch);\n      },\n      preloadBool () {\n        return toBoolean(this.preload);\n      },\n      // Vue 2.0 coerce migration end\n      isExpandableCard () {\n        return this.expandableBool;\n      },\n      showCaret () {\n        return this.isSeamless;\n      },\n      isSeamless () {\n        return this.type === 'seamless';\n      },\n      btnType () {\n        if (this.isSeamless || this.type === 'light') {\n          return 'btn-outline-secondary';\n        }\n        return 'btn-outline-' + (this.type || 'secondary');\n      },\n      borderType () {\n        if (this.isSeamless) {\n          return 'border-0';\n        } else if (this.type) {\n          if (this.type === 'light') {\n            return ''; // Bootstrap 4.x light border is almost invisible on a white page\n          }\n          return 'border-' + this.type;\n        }\n        return '';\n      },\n      cardType () {\n        if (this.isSeamless) {\n          return 'bg-white';\n        }\n        return 'bg-' + (this.type || 'light');\n      },\n      isLightBg () {\n        return this.cardType === 'bg-light' || this.cardType === 'bg-white' || this.cardType === 'bg-warning';\n      },\n      headerContent () {\n        return md.render(this.header);\n      },\n      altContent () {\n        return this.alt && md.render(this.alt) || md.render(this.header);\n      },\n      hasSrc () {\n        return this.src && this.src.length > 0;\n      },\n      showCloseButton () {\n        if (!this.isSeamless) {\n          return !this.noCloseBool;\n        } else {\n          return onHeaderHover;\n        }\n      }\n    },\n    data () {\n      return {\n        onHeaderHover: false,\n        localExpanded: false,\n        localMinimized: false\n      }\n    },\n    methods: {\n      toggle() {\n        this.localExpanded = !this.localExpanded;\n      },\n      expand() {\n        this.localExpanded = !this.localExpanded;\n      },\n      close() {\n        this.localMinimized = true;\n      },\n      open() {\n        this.localExpanded = true;\n        this.localMinimized = false;\n      },\n      scrollIntoViewIfNeeded() {\n        let top = this.$el.getBoundingClientRect().top;\n        let isTopInView = (top >= 0) && (top <= window.innerHeight);\n        if (!isTopInView) {\n          this.$el.scrollIntoView();\n        }\n      },\n      collapseThenScrollIntoViewIfNeeded() {\n        this.$once('is-open-event', (el, isOpen) => {\n          this.scrollIntoViewIfNeeded();\n        });\n        this.expand();\n      },\n      openPopup() {\n        window.open(this.popupUrl);\n      },\n      retrieveOnOpen(el, isOpen) {\n        if (isOpen && this.hasSrc) {\n          this.$refs.retriever.fetch()\n        }\n      }\n    },\n    watch: {\n      'localExpanded': function (val, oldVal) {\n        this.$nextTick(function () {\n          this.retrieveOnOpen(this, val);\n        })\n      },\n    },\n    created () {\n      if (this.src) {\n        let hash = getFragmentByHash(this.src);\n        if (hash) {\n          this.fragment = hash;\n          this.src = this.src.split('#')[0];\n        }\n      }\n      // Edge case where user might want non-expandable card that isn't expanded by default\n      const notExpandableNoExpand = !this.expandableBool && this.expanded !== 'false';\n      // Set local data to computed prop value\n      this.localExpanded =  notExpandableNoExpand || this.expandedBool; // Ensure this expr ordering is maintained\n      this.localMinimized = this.minimizedBool;\n    },\n    mounted() {\n      this.$nextTick(function () {\n        if (this.hasSrc && (this.preloadBool || this.expandedBool)) {\n          this.$refs.retriever.fetch()\n        }\n      })\n    },\n  }\n</script>\n\n<style>\n    .card-heading {\n        width: 100%;\n    }\n\n    .card-title {\n        display: inline-block;\n        font-size: 1em;\n        margin: 0;\n        vertical-align: middle;\n    }\n\n    .card-title * {\n        margin: 0px !important;\n    }\n\n    .header-wrapper {\n        display: inline-block;\n        width: 72%;\n    }\n\n    .button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 28%;\n    }\n\n    .header-toggle {\n        cursor: pointer;\n    }\n\n    .expandable-card {\n        margin-bottom: 0 !important;\n        margin-top: 5px;\n    }\n\n    .card-group > .card-container > .expandable-card {\n        margin-top: 0!important;\n    }\n\n    .card-seamless {\n        padding: 0;\n    }\n\n    .card.card-seamless {\n        box-shadow: none;\n        border: none;\n    }\n\n    .card-seamless > .card-heading {\n        padding: 0;\n    }\n\n    .card-seamless > .card-collapse > hr {\n        margin: 0;\n        width: calc(100% - 27px);\n    }\n\n    .card-seamless > .card-collapse > .card-body {\n        padding: 10px 0;\n    }\n\n    .card-seamless > .card-collapse > .card-body > .collapse-button {\n        position: relative;\n        top: 22px;\n    }\n\n    .card-body > .collapse-button {\n        margin-bottom: 13px;\n        margin-top: 5px;\n        opacity: 0.2;\n    }\n\n    .card-body > .collapse-button:hover {\n        opacity: 1;\n    }\n\n    .close-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n    }\n\n    .popup-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n        margin-right: 4px;\n    }\n\n    .morph {\n        display: inline-block;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.card-heading {\n    width: 100%;\n}\n.card-title {\n    display: inline-block;\n    font-size: 1em;\n    margin: 0;\n    vertical-align: middle;\n}\n.card-title * {\n    margin: 0px !important;\n}\n.header-wrapper {\n    display: inline-block;\n    width: 72%;\n}\n.button-wrapper {\n    float: right;\n    display: inline-block;\n    width: 28%;\n}\n.header-toggle {\n    cursor: pointer;\n}\n.expandable-card {\n    margin-bottom: 0 !important;\n    margin-top: 5px;\n}\n.card-group > .card-container > .expandable-card {\n    margin-top: 0!important;\n}\n.card-seamless {\n    padding: 0;\n}\n.card.card-seamless {\n    box-shadow: none;\n    border: none;\n}\n.card-seamless > .card-heading {\n    padding: 0;\n}\n.card-seamless > .card-collapse > hr {\n    margin: 0;\n    width: calc(100% - 27px);\n}\n.card-seamless > .card-collapse > .card-body {\n    padding: 10px 0;\n}\n.card-seamless > .card-collapse > .card-body > .collapse-button {\n    position: relative;\n    top: 22px;\n}\n.card-body > .collapse-button {\n    margin-bottom: 13px;\n    margin-top: 5px;\n    opacity: 0.2;\n}\n.card-body > .collapse-button:hover {\n    opacity: 1;\n}\n.close-button {\n    font-size: 10px !important;\n    float: right;\n    padding: 3px 8px !important;\n    margin-left: 3px;\n    margin-top: 2px;\n}\n.popup-button {\n    font-size: 10px !important;\n    float: right;\n    margin-top: 2px;\n    padding: 3px 8px !important;\n}\n.morph {\n    display: inline-block;\n}\n.morph-display-wrapper {\n    white-space: normal;\n}\n\n/* Bootstrap extra small(xs) responsive breakpoint */\n@media (max-width: 575.98px) {\n.header-wrapper {\n        width: 88%;\n}\n.button-wrapper {\n        width: 12%;\n}\n.card-body {\n        padding: 0.5rem;\n}\n.card-collapse > hr {\n        margin-top: 1.5rem;\n}\n.card-header {\n        padding: 0.5rem;\n}\n}\n", "", {"version":3,"sources":["/./src/Panel.vue?05c280b8"],"names":[],"mappings":";AAiVA;IACA,YAAA;CACA;AAEA;IACA,sBAAA;IACA,eAAA;IACA,UAAA;IACA,uBAAA;CACA;AAEA;IACA,uBAAA;CACA;AAEA;IACA,sBAAA;IACA,WAAA;CACA;AAEA;IACA,aAAA;IACA,sBAAA;IACA,WAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,4BAAA;IACA,gBAAA;CACA;AAEA;IACA,wBAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,iBAAA;IACA,aAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,UAAA;IACA,yBAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,mBAAA;IACA,UAAA;CACA;AAEA;IACA,oBAAA;IACA,gBAAA;IACA,aAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,2BAAA;IACA,aAAA;IACA,4BAAA;IACA,iBAAA;IACA,gBAAA;CACA;AAEA;IACA,2BAAA;IACA,aAAA;IACA,gBAAA;IACA,4BAAA;CACA;AAEA;IACA,sBAAA;CACA;AAEA;IACA,oBAAA;CACA;;AAEA,qDAAA;AACA;AAEA;QACA,WAAA;CACA;AAEA;QACA,WAAA;CACA;AAEA;QACA,gBAAA;CACA;AAEA;QACA,mBAAA;CACA;AAEA;QACA,gBAAA;CACA;CACA","file":"Panel.vue","sourcesContent":["<template>\n    <span class=\"card-container\">\n        <div class=\"morph\" v-show=\"localMinimized\">\n            <button :class=\"['morph-display-wrapper', 'btn', btnType, 'card-title']\" @click=\"open()\">\n                <template v-if=\"altContent\">\n                    <div v-html=\"altContent\"></div>\n                </template>\n                <template v-else>\n                    <slot name=\"header\">\n                        <div v-html=\"altContent\"></div>\n                    </slot>\n                </template>\n            </button>\n        </div>\n        <div :class=\"['card', {'expandable-card': isExpandableCard}, borderType]\" v-show=\"!localMinimized\">\n            <div :class=\"['card-header',{'header-toggle':isExpandableCard}, cardType, borderType]\"\n                 @click.prevent.stop=\"isExpandableCard && toggle()\"\n                 @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\n                <div class=\"header-wrapper\">\n                    <span :class=\"['glyphicon', localExpanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right']\" v-if=\"showCaret && hasCustomHeader\" aria-hidden=\"true\"></span>\n                    <slot name=\"header\">\n                        <div :class=\"['card-title', cardType, {'text-white':!isLightBg}]\" v-html=\"headerContent\"></div>\n                    </slot>\n                </div>\n                <div class=\"button-wrapper\">\n                    <slot name=\"button\">\n                        <panel-switch v-show=\"isExpandableCard && !noSwitchBool && !showCaret\" :is-open=\"localExpanded\"\n                                      @click.native.stop.prevent=\"expand()\"\n                                      @is-open-event=\"retrieveOnOpen\" :is-light-bg=\"isLightBg\"></panel-switch>\n                        <button type=\"button\" :class=\"['close-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\"\n                                v-show=\"isSeamless ? onHeaderHover : (!noCloseBool)\"\n                                @click.stop=\"close()\">\n                            <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                        </button>\n                        <button type=\"button\" :class=\"['popup-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\"\n                                v-show=\"((this.popupUrl !== null) && (!isSeamless || onHeaderHover))\"\n                                @click.stop=\"openPopup()\">\n                            <span class=\"glyphicon glyphicon-new-window\" aria-hidden=\"true\"></span>\n                        </button>\n                    </slot>\n                </div>\n            </div>\n            <template v-if=\"preloadBool\">\n                <div class=\"card-collapse\"\n                     ref=\"panel\"\n                     v-show=\"localExpanded\"\n                >\n                    <div class=\"card-body\">\n                        <slot></slot>\n                        <retriever v-if=\"hasSrc\" ref=\"retriever\" :src=\"src\" :fragment=\"fragment\" delay></retriever>\n                        <panel-switch v-show=\"isExpandableCard && bottomSwitchBool\" :is-open=\"localExpanded\"\n                                      @click.native.stop.prevent=\"collapseThenScrollIntoViewIfNeeded()\"\n                                      @is-open-event=\"retrieveOnOpen\"></panel-switch>\n                    </div>\n                    <hr v-show=\"isSeamless\" />\n                </div>\n            </template>\n            <template v-else>\n                <div class=\"card-collapse\"\n                     ref=\"panel\"\n                     v-if=\"localExpanded\"\n                >\n                    <div class=\"card-body\">\n                        <slot></slot>\n                        <retriever v-if=\"hasSrc\" ref=\"retriever\" :src=\"src\" :fragment=\"fragment\" delay></retriever>\n                        <panel-switch v-show=\"isExpandableCard && bottomSwitchBool\" :is-open=\"localExpanded\"\n                                      @click.native.stop.prevent=\"collapseThenScrollIntoViewIfNeeded()\"\n                                      @is-open-event=\"retrieveOnOpen\"></panel-switch>\n                    </div>\n                    <hr v-show=\"isSeamless\" />\n                </div>\n            </template>\n        </div>\n    </span>\n</template>\n\n<script>\n  import {getFragmentByHash, toBoolean, toNumber} from './utils/utils.js'\n  import md from './utils/markdown.js'\n  import panelSwitch from './PanelSwitch.vue'\n  import retriever from './Retriever.vue'\n\n  export default {\n    components: {\n      panelSwitch,\n      retriever\n    },\n    props: {\n      header: {\n        type: String,\n        default: ''\n      },\n      alt: {\n        type: String,\n        default: ''\n      },\n      type: {\n        type: String,\n        default: null\n      },\n      expandable: {\n        type: Boolean,\n        default: true\n      },\n      isOpen: {\n        type: Boolean,\n        default: null\n      },\n      expanded: {\n        type: Boolean,\n        default: null\n      },\n      minimized: {\n        type: Boolean,\n        default: false\n      },\n      noSwitch: {\n        type: Boolean,\n        default: false\n      },\n      noClose: {\n        type: Boolean,\n        default: false\n      },\n      popupUrl: {\n        type: String,\n        default: null\n      },\n      src: {\n        type: String\n      },\n      bottomSwitch: {\n        type: Boolean,\n        default: true\n      },\n      preload: {\n        type: Boolean,\n        default: false\n      }\n    },\n    computed: {\n      // Vue 2.0 coerce migration\n      expandableBool () {\n        return toBoolean(this.expandable);\n      },\n      isOpenBool () {\n        return toBoolean(this.isOpen);\n      },\n      expandedBool () {\n        return toBoolean(this.expanded);\n      },\n      minimizedBool () {\n        return toBoolean(this.minimized);\n      },\n      noSwitchBool () {\n        return toBoolean(this.noSwitch);\n      },\n      noCloseBool () {\n        return toBoolean(this.noClose);\n      },\n      bottomSwitchBool () {\n        return toBoolean(this.bottomSwitch);\n      },\n      preloadBool () {\n        return toBoolean(this.preload);\n      },\n      // Vue 2.0 coerce migration end\n      isExpandableCard () {\n        return this.expandableBool;\n      },\n      showCaret () {\n        return this.isSeamless;\n      },\n      isSeamless () {\n        return this.type === 'seamless';\n      },\n      btnType () {\n        if (this.isSeamless || this.type === 'light') {\n          return 'btn-outline-secondary';\n        }\n        return 'btn-outline-' + (this.type || 'secondary');\n      },\n      borderType () {\n        if (this.isSeamless) {\n          return 'border-0';\n        } else if (this.type) {\n          if (this.type === 'light') {\n            return ''; // Bootstrap 4.x light border is almost invisible on a white page\n          }\n          return 'border-' + this.type;\n        }\n        return '';\n      },\n      cardType () {\n        if (this.isSeamless) {\n          return 'bg-white';\n        }\n        return 'bg-' + (this.type || 'light');\n      },\n      isLightBg () {\n        return this.cardType === 'bg-light' || this.cardType === 'bg-white' || this.cardType === 'bg-warning';\n      },\n      headerContent () {\n        return this.renderedHeader;\n      },\n      altContent () {\n        return this.alt && md.render(this.alt) || this.renderedHeader;\n      },\n      renderedHeader () {\n        let htmlRenderedHeader = md.render(this.header).trim();\n\n        if (this.isSeamless) {\n          // insert the caret to the header content\n          let caretAdded = false;\n\n          // if the header content is wrapped by a <p> or any <h1>, <h2>, ...\n          // then it must be inserted inside these HTML tags, otherwise the\n          // header content will not be in the same line as caret\n          const tags = [\n            ['<p>', '</p>'],\n            ['<h1>', '</h1>'],\n            ['<h2>', '</h2>'],\n            ['<h3>', '</h3>'],\n            ['<h4>', '</h4>'],\n            ['<h5>', '</h5>'],\n            ['<h6>', '</h6>']];\n\n          tags.forEach(header => {\n            if (!caretAdded && htmlRenderedHeader.startsWith(header[0]))  {\n              htmlRenderedHeader = jQuery(htmlRenderedHeader).unwrap().prepend(this.caretHtml + ' ')\n                .wrap(header[0] + header[1]).parent().html();\n              caretAdded = true;\n            }\n          });\n\n          if (!caretAdded) {\n            htmlRenderedHeader = this.caretHtml + ' ' + htmlRenderedHeader;\n          }\n        }\n        return htmlRenderedHeader;\n      },\n      hasSrc () {\n        return this.src && this.src.length > 0;\n      },\n      showCloseButton () {\n        if (!this.isSeamless) {\n          return !this.noCloseBool;\n        } else {\n          return onHeaderHover;\n        }\n      },\n      caretHtml () {\n        if (this.localExpanded) {\n          return '<span class=\"glyphicon glyphicon-chevron-down\" aria-hidden=\"true\"></span>'\n        } else {\n          return '<span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>'\n        }\n      },\n      hasCustomHeader () {\n        return this.$slots.header !== undefined;\n      }\n    },\n    data () {\n      return {\n        onHeaderHover: false,\n        localExpanded: false,\n        localMinimized: false\n      }\n    },\n    methods: {\n      toggle() {\n        this.localExpanded = !this.localExpanded;\n      },\n      expand() {\n        this.localExpanded = !this.localExpanded;\n      },\n      close() {\n        this.localMinimized = true;\n      },\n      open() {\n        this.localExpanded = true;\n        this.localMinimized = false;\n      },\n      scrollIntoViewIfNeeded() {\n        let top = this.$el.getBoundingClientRect().top;\n        let isTopInView = (top >= 0) && (top <= window.innerHeight);\n        if (!isTopInView) {\n          this.$el.scrollIntoView();\n        }\n      },\n      collapseThenScrollIntoViewIfNeeded() {\n        this.$once('is-open-event', (el, isOpen) => {\n          this.scrollIntoViewIfNeeded();\n        });\n        this.expand();\n      },\n      openPopup() {\n        window.open(this.popupUrl);\n      },\n      retrieveOnOpen(el, isOpen) {\n        if (isOpen && this.hasSrc) {\n          this.$refs.retriever.fetch()\n        }\n      }\n    },\n    watch: {\n      'localExpanded': function (val, oldVal) {\n        this.$nextTick(function () {\n          this.retrieveOnOpen(this, val);\n        })\n      },\n    },\n    created () {\n      if (this.src) {\n        let hash = getFragmentByHash(this.src);\n        if (hash) {\n          this.fragment = hash;\n          this.src = this.src.split('#')[0];\n        }\n      }\n      // Edge case where user might want non-expandable card that isn't expanded by default\n      const notExpandableNoExpand = !this.expandableBool && this.expanded !== 'false';\n      // Set local data to computed prop value\n      this.localExpanded =  notExpandableNoExpand || this.expandedBool; // Ensure this expr ordering is maintained\n      this.localMinimized = this.minimizedBool;\n    },\n    mounted() {\n      this.$nextTick(function () {\n        if (this.hasSrc && (this.preloadBool || this.expandedBool)) {\n          this.$refs.retriever.fetch()\n        }\n      })\n    },\n  }\n</script>\n\n<style>\n    .card-heading {\n        width: 100%;\n    }\n\n    .card-title {\n        display: inline-block;\n        font-size: 1em;\n        margin: 0;\n        vertical-align: middle;\n    }\n\n    .card-title * {\n        margin: 0px !important;\n    }\n\n    .header-wrapper {\n        display: inline-block;\n        width: 72%;\n    }\n\n    .button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 28%;\n    }\n\n    .header-toggle {\n        cursor: pointer;\n    }\n\n    .expandable-card {\n        margin-bottom: 0 !important;\n        margin-top: 5px;\n    }\n\n    .card-group > .card-container > .expandable-card {\n        margin-top: 0!important;\n    }\n\n    .card-seamless {\n        padding: 0;\n    }\n\n    .card.card-seamless {\n        box-shadow: none;\n        border: none;\n    }\n\n    .card-seamless > .card-heading {\n        padding: 0;\n    }\n\n    .card-seamless > .card-collapse > hr {\n        margin: 0;\n        width: calc(100% - 27px);\n    }\n\n    .card-seamless > .card-collapse > .card-body {\n        padding: 10px 0;\n    }\n\n    .card-seamless > .card-collapse > .card-body > .collapse-button {\n        position: relative;\n        top: 22px;\n    }\n\n    .card-body > .collapse-button {\n        margin-bottom: 13px;\n        margin-top: 5px;\n        opacity: 0.2;\n    }\n\n    .card-body > .collapse-button:hover {\n        opacity: 1;\n    }\n\n    .close-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n        margin-left: 3px;\n        margin-top: 2px;\n    }\n\n    .popup-button {\n        font-size: 10px !important;\n        float: right;\n        margin-top: 2px;\n        padding: 3px 8px !important;\n    }\n\n    .morph {\n        display: inline-block;\n    }\n\n    .morph-display-wrapper {\n        white-space: normal;\n    }\n\n    /* Bootstrap extra small(xs) responsive breakpoint */\n    @media (max-width: 575.98px) {\n\n        .header-wrapper {\n            width: 88%;\n        }\n\n        .button-wrapper {\n            width: 12%;\n        }\n\n        .card-body {\n            padding: 0.5rem;\n        }\n\n        .card-collapse > hr {\n            margin-top: 1.5rem;\n        }\n\n        .card-header {\n            padding: 0.5rem;\n        }\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -26680,7 +26680,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -26901,10 +26901,37 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return this.cardType === 'bg-light' || this.cardType === 'bg-white' || this.cardType === 'bg-warning';
 	    },
 	    headerContent: function headerContent() {
-	      return _markdown2.default.render(this.header);
+	      return this.renderedHeader;
 	    },
 	    altContent: function altContent() {
-	      return this.alt && _markdown2.default.render(this.alt) || _markdown2.default.render(this.header);
+	      return this.alt && _markdown2.default.render(this.alt) || this.renderedHeader;
+	    },
+	    renderedHeader: function renderedHeader() {
+	      var _this = this;
+	
+	      var htmlRenderedHeader = _markdown2.default.render(this.header).trim();
+	
+	      if (this.isSeamless) {
+	        // insert the caret to the header content
+	        var caretAdded = false;
+	
+	        // if the header content is wrapped by a <p> or any <h1>, <h2>, ...
+	        // then it must be inserted inside these HTML tags, otherwise the
+	        // header content will not be in the same line as caret
+	        var tags = [['<p>', '</p>'], ['<h1>', '</h1>'], ['<h2>', '</h2>'], ['<h3>', '</h3>'], ['<h4>', '</h4>'], ['<h5>', '</h5>'], ['<h6>', '</h6>']];
+	
+	        tags.forEach(function (header) {
+	          if (!caretAdded && htmlRenderedHeader.startsWith(header[0])) {
+	            htmlRenderedHeader = jQuery(htmlRenderedHeader).unwrap().prepend(_this.caretHtml + ' ').wrap(header[0] + header[1]).parent().html();
+	            caretAdded = true;
+	          }
+	        });
+	
+	        if (!caretAdded) {
+	          htmlRenderedHeader = this.caretHtml + ' ' + htmlRenderedHeader;
+	        }
+	      }
+	      return htmlRenderedHeader;
 	    },
 	    hasSrc: function hasSrc() {
 	      return this.src && this.src.length > 0;
@@ -26915,6 +26942,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	      } else {
 	        return onHeaderHover;
 	      }
+	    },
+	    caretHtml: function caretHtml() {
+	      if (this.localExpanded) {
+	        return '<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>';
+	      } else {
+	        return '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>';
+	      }
+	    },
+	    hasCustomHeader: function hasCustomHeader() {
+	      return this.$slots.header !== undefined;
 	    }
 	  },
 	  data: function data() {
@@ -26947,10 +26984,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 	    },
 	    collapseThenScrollIntoViewIfNeeded: function collapseThenScrollIntoViewIfNeeded() {
-	      var _this = this;
+	      var _this2 = this;
 	
 	      this.$once('is-open-event', function (el, isOpen) {
-	        _this.scrollIntoViewIfNeeded();
+	        _this2.scrollIntoViewIfNeeded();
 	      });
 	      this.expand();
 	    },
@@ -26992,6 +27029,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    });
 	  }
 	};
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(72)))
 
 /***/ }),
 /* 205 */
@@ -27075,7 +27113,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.collapse-button {\n    font-size: 10px !important;\n    float: right;\n    padding: 3px 8px !important;\n    margin-left: 3px;\n}\n", "", {"version":3,"sources":["/./src/PanelSwitch.vue?a59497e8"],"names":[],"mappings":";AAyCA;IACA,2BAAA;IACA,aAAA;IACA,4BAAA;IACA,iBAAA;CACA","file":"PanelSwitch.vue","sourcesContent":["<template>\n    <button type=\"button\" :class=\"['collapse-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\">\n        <span :class=\"['glyphicon', {'glyphicon-menu-down': !isOpenBool, 'glyphicon-menu-up': isOpenBool}]\"\n              aria-hidden=\"true\"></span>\n    </button>\n</template>\n\n<script>\n  import {toBoolean} from './utils/utils.js'\n\n  export default {\n    props: {\n      isOpen: {\n        type: Boolean,\n        default: null\n      },\n      isLightBg: {\n        type: Boolean,\n        default: true\n      }\n    },\n    computed: {\n      isOpenBool () {\n        return toBoolean(this.isOpen);\n      }\n    },\n    methods: {\n      toggle () {\n        this.isOpen = !this.isOpenBool\n        this.$emit('is-open-event', this, this.isOpenBool)\n      }\n    },\n    created () {\n      if (this.isOpen === null) {\n        this.isOpen = false\n      }\n    }\n  }\n</script>\n\n<style>\n    .collapse-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n        margin-left: 3px;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.collapse-button {\n    font-size: 10px !important;\n    float: right;\n    padding: 3px 8px !important;\n    margin-left: 3px;\n    margin-top: 2px;\n}\n", "", {"version":3,"sources":["/./src/PanelSwitch.vue?1b0610e1"],"names":[],"mappings":";AAyCA;IACA,2BAAA;IACA,aAAA;IACA,4BAAA;IACA,iBAAA;IACA,gBAAA;CACA","file":"PanelSwitch.vue","sourcesContent":["<template>\n    <button type=\"button\" :class=\"['collapse-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\">\n        <span :class=\"['glyphicon', {'glyphicon-menu-down': !isOpenBool, 'glyphicon-menu-up': isOpenBool}]\"\n              aria-hidden=\"true\"></span>\n    </button>\n</template>\n\n<script>\n  import {toBoolean} from './utils/utils.js'\n\n  export default {\n    props: {\n      isOpen: {\n        type: Boolean,\n        default: null\n      },\n      isLightBg: {\n        type: Boolean,\n        default: true\n      }\n    },\n    computed: {\n      isOpenBool () {\n        return toBoolean(this.isOpen);\n      }\n    },\n    methods: {\n      toggle () {\n        this.isOpen = !this.isOpenBool\n        this.$emit('is-open-event', this, this.isOpenBool)\n      }\n    },\n    created () {\n      if (this.isOpen === null) {\n        this.isOpen = false\n      }\n    }\n  }\n</script>\n\n<style>\n    .collapse-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n        margin-left: 3px;\n        margin-top: 2px;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -27368,15 +27406,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  }, [_c('div', {
 	    staticClass: "header-wrapper"
-	  }, [_c('span', {
-	    directives: [{
-	      name: "show",
-	      rawName: "v-show",
-	      value: (_vm.showCaret),
-	      expression: "showCaret"
-	    }],
-	    class: ['glyphicon', _vm.localExpanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right']
-	  }), _vm._v(" "), _vm._t("header", [_c('div', {
+	  }, [(_vm.showCaret && _vm.hasCustomHeader) ? _c('span', {
+	    class: ['glyphicon', _vm.localExpanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right'],
+	    attrs: {
+	      "aria-hidden": "true"
+	    }
+	  }) : _vm._e(), _vm._v(" "), _vm._t("header", [_c('div', {
 	    class: ['card-title', _vm.cardType, {
 	      'text-white': !_vm.isLightBg
 	    }],
@@ -27410,8 +27445,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
-	      value: (!_vm.isSeamless ? (!_vm.noCloseBool) : _vm.onHeaderHover),
-	      expression: "!isSeamless ? (!noCloseBool) : onHeaderHover"
+	      value: (_vm.isSeamless ? _vm.onHeaderHover : (!_vm.noCloseBool)),
+	      expression: "isSeamless ? onHeaderHover : (!noCloseBool)"
 	    }],
 	    class: ['close-button', 'btn', _vm.isLightBg ? 'btn-outline-secondary' : 'btn-outline-light'],
 	    attrs: {
@@ -27432,8 +27467,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
-	      value: (this.popupUrl !== null),
-	      expression: "this.popupUrl !== null"
+	      value: (((this.popupUrl !== null) && (!_vm.isSeamless || _vm.onHeaderHover))),
+	      expression: "((this.popupUrl !== null) && (!isSeamless || onHeaderHover))"
 	    }],
 	    class: ['popup-button', 'btn', _vm.isLightBg ? 'btn-outline-secondary' : 'btn-outline-light'],
 	    attrs: {
@@ -27625,29 +27660,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.image-wrapper {\n    display: inline-block;\n    text-align: center;\n    padding: 4px;\n}\n", "", {"version":3,"sources":["/./src/Pic.vue?78e877d2"],"names":[],"mappings":";AA6BA;IACA,sBAAA;IACA,mBAAA;IACA,aAAA;CACA","file":"Pic.vue","sourcesContent":["<template>\n    <div class=\"image-wrapper\">\n        <img :src=\"src\" :alt=\"alt\" :width=\"width\" :height=\"height\">\n        <div class=\"image-caption\">\n            <slot></slot>\n        </div>\n    </div>\n</template>\n\n<script>\n  export default {\n    props: {\n      src: {\n        type: String\n      },\n      alt: {\n        type: String\n      },\n      height: {\n        type: String\n      },\n      width: {\n        type: String\n      }\n    }\n  }\n</script>\n\n<style>\n    .image-wrapper {\n        display: inline-block;\n        text-align: center;\n        padding: 4px;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.image-wrapper {\n    display: inline-block;\n    text-align: center;\n    padding: 4px;\n}\n", "", {"version":3,"sources":["/./src/Pic.vue?0802e4cf"],"names":[],"mappings":";AA+DA;IACA,sBAAA;IACA,mBAAA;IACA,aAAA;CACA","file":"Pic.vue","sourcesContent":["<template>\n    <div class=\"image-wrapper\">\n        <img ref=\"pic\" @load.once=\"computeWidth\" :src=\"src\" :alt=\"alt\" :width=\"computedWidth\" class=\"img-fluid rounded\">\n        <div class=\"image-caption\">\n            <slot></slot>\n        </div>\n    </div>\n</template>\n\n<script>\n  import {toNumber} from './utils/utils.js'\n\n  export default {\n    props: {\n      src: {\n        type: String\n      },\n      alt: {\n        type: String\n      },\n      height: {\n        type: String,\n        default: ''\n      },\n      width: {\n        type: String,\n        default: ''\n      }\n    },\n    computed: {\n      hasWidth () {\n        return this.width !== '';\n      },\n      hasHeight () {\n        return this.height !== '';\n      },\n      computedWidth () {\n        if (this.hasWidth) {\n          return this.width;\n        }\n        return this.widthFromHeight;\n      }\n    },\n    data () {\n      return {\n        widthFromHeight: '',\n      }\n    },\n    methods: {\n      computeWidth() {\n        if (!this.hasWidth && this.hasHeight) {\n          const renderedImg = this.$refs.pic;\n          const imgHeight = renderedImg.naturalHeight;\n          const imgWidth = renderedImg.naturalWidth;\n          const aspectRatio = imgWidth / imgHeight;\n          this.widthFromHeight = Math.round(toNumber(this.height) * aspectRatio).toString();\n        }\n      }\n    }\n  }\n</script>\n\n<style>\n    .image-wrapper {\n        display: inline-block;\n        text-align: center;\n        padding: 4px;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
 /* 217 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
+	
+	var _utils = __webpack_require__(38);
 	
 	exports.default = {
 	  props: {
@@ -27658,13 +27686,54 @@ return /******/ (function(modules) { // webpackBootstrap
 	      type: String
 	    },
 	    height: {
-	      type: String
+	      type: String,
+	      default: ''
 	    },
 	    width: {
-	      type: String
+	      type: String,
+	      default: ''
+	    }
+	  },
+	  computed: {
+	    hasWidth: function hasWidth() {
+	      return this.width !== '';
+	    },
+	    hasHeight: function hasHeight() {
+	      return this.height !== '';
+	    },
+	    computedWidth: function computedWidth() {
+	      if (this.hasWidth) {
+	        return this.width;
+	      }
+	      return this.widthFromHeight;
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      widthFromHeight: ''
+	    };
+	  },
+	
+	  methods: {
+	    computeWidth: function computeWidth() {
+	      if (!this.hasWidth && this.hasHeight) {
+	        var renderedImg = this.$refs.pic;
+	        var imgHeight = renderedImg.naturalHeight;
+	        var imgWidth = renderedImg.naturalWidth;
+	        var aspectRatio = imgWidth / imgHeight;
+	        this.widthFromHeight = Math.round((0, _utils.toNumber)(this.height) * aspectRatio).toString();
+	      }
 	    }
 	  }
-	};
+	}; //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 /***/ }),
 /* 218 */
@@ -27674,11 +27743,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return _c('div', {
 	    staticClass: "image-wrapper"
 	  }, [_c('img', {
+	    ref: "pic",
+	    staticClass: "img-fluid rounded",
 	    attrs: {
 	      "src": _vm.src,
 	      "alt": _vm.alt,
-	      "width": _vm.width,
-	      "height": _vm.height
+	      "width": _vm.computedWidth
+	    },
+	    on: {
+	      "~load": function($event) {
+	        return _vm.computeWidth($event)
+	      }
 	    }
 	  }), _vm._v(" "), _c('div', {
 	    staticClass: "image-caption"
@@ -30144,7 +30219,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.container[data-v-11442d08] {\n    display: flex;\n    flex-direction: row;\n    width: 100%;\n    border-radius: 6px;\n}\n.icon-wrapper[data-v-11442d08] {\n    display: flex;\n    margin-right: .5em;\n    width: 22px;\n    height: 22px;\n}\n.contents[data-v-11442d08] {\n    padding: 0 6px;\n    width: 100%;\n}\n.alert-default[data-v-11442d08] {\n    color: #24292e;\n    background-color: #f6f8fa;\n    border-color: #e8ebef;\n}\n", "", {"version":3,"sources":["/./src/TipBox.vue?3bd930d0"],"names":[],"mappings":";AA0GA;IACA,cAAA;IACA,oBAAA;IACA,YAAA;IACA,mBAAA;CACA;AAEA;IACA,cAAA;IACA,mBAAA;IACA,YAAA;IACA,aAAA;CACA;AAEA;IACA,eAAA;IACA,YAAA;CACA;AAEA;IACA,eAAA;IACA,0BAAA;IACA,sBAAA;CACA","file":"TipBox.vue","sourcesContent":["<template>\n    <div class=\"alert container\" :class=\"[boxStyle]\" :style=\"customStyle\">\n        <div class=\"icon-wrapper\" v-if=\"!isDefault\">\n            <span v-html=\"iconType\"></span>\n        </div>\n        <div class=\"contents\">\n            <slot></slot>\n        </div>\n    </div>\n</template>\n\n<script>\n  import md from './utils/markdown.js'\n  export default {\n    props: {\n      backgroundColor: {\n        type: String,\n        default: null\n      },\n      borderColor: {\n        type: String,\n        default: null\n      },\n      borderLeftColor: {\n        type: String,\n        default: null\n      },\n      color: {\n        type: String,\n        default: null\n      },\n      icon: {\n        type: String,\n        default: null\n      },\n      type: {\n        type: String,\n        default: 'none'\n      }\n    },\n    computed: {\n      isDefault() {\n        return this.type === 'none'\n      },\n      boxStyle() {\n        switch (this.type) {\n          case 'warning':\n            return 'alert-warning'\n          case 'info':\n          case 'definition':\n            return 'alert-info'\n          case 'success':\n          case 'tip':\n            return 'alert-success'\n          case 'important':\n          case 'wrong':\n            return 'alert-danger'\n          default:\n            return 'alert-default'\n        }\n      },\n      customStyle() {\n        var style = {};\n        if (this.backgroundColor) {\n          style.backgroundColor = this.backgroundColor;\n          style.borderColor = this.backgroundColor;\n        }\n        if (this.borderColor) {\n          style.borderColor = this.borderColor;\n        }\n        if (this.borderLeftColor) {\n          style.borderLeft = `5px solid ${this.borderLeftColor}`;\n        }\n        if (this.color) {\n          style.color = this.color;\n        }\n        return style;\n      },\n      iconType() {\n        if (this.icon) {\n          return md.renderInline(this.icon);\n        }\n        switch (this.type) {\n          case 'wrong':\n            return '❌'\n          case 'warning':\n            return '❗'\n          case 'info':\n            return '🔍'\n          case 'success':\n            return '✅'\n          case 'important':\n            return '🚩'\n          case 'tip':\n            return '💡'\n          case 'definition':\n            return '🔖'\n          default:\n            return '❕'\n        }\n      }\n    }\n  }\n</script>\n\n<style scoped>\n    .container {\n        display: flex;\n        flex-direction: row;\n        width: 100%;\n        border-radius: 6px;\n    }\n\n    .icon-wrapper {\n        display: flex;\n        margin-right: .5em;\n        width: 22px;\n        height: 22px;\n    }\n\n    .contents {\n        padding: 0 6px;\n        width: 100%;\n    }\n\n    .alert-default {\n        color: #24292e;\n        background-color: #f6f8fa;\n        border-color: #e8ebef;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.container[data-v-11442d08] {\n    display: flex;\n    flex-direction: row;\n    width: 100%;\n    border-radius: 6px;\n}\n.icon-wrapper[data-v-11442d08] {\n    display: flex;\n    margin-right: .5em;\n    width: 22px;\n    height: 22px;\n}\n.contents[data-v-11442d08] {\n    padding: 0 6px;\n    width: 100%;\n}\n.alert-default[data-v-11442d08] {\n    color: #24292e;\n    background-color: #f6f8fa;\n    border-color: #e8ebef;\n}\n", "", {"version":3,"sources":["/./src/TipBox.vue?437ac30c"],"names":[],"mappings":";AA0GA;IACA,cAAA;IACA,oBAAA;IACA,YAAA;IACA,mBAAA;CACA;AAEA;IACA,cAAA;IACA,mBAAA;IACA,YAAA;IACA,aAAA;CACA;AAEA;IACA,eAAA;IACA,YAAA;CACA;AAEA;IACA,eAAA;IACA,0BAAA;IACA,sBAAA;CACA","file":"TipBox.vue","sourcesContent":["<template>\n    <div class=\"alert container\" :class=\"[boxStyle]\" :style=\"customStyle\">\n        <div class=\"icon-wrapper\" v-if=\"!isDefault\">\n            <span v-html=\"iconType\"></span>\n        </div>\n        <div class=\"contents\">\n            <slot></slot>\n        </div>\n    </div>\n</template>\n\n<script>\n  import md from './utils/markdown.js'\n  export default {\n    props: {\n      backgroundColor: {\n        type: String,\n        default: null\n      },\n      borderColor: {\n        type: String,\n        default: null\n      },\n      borderLeftColor: {\n        type: String,\n        default: null\n      },\n      color: {\n        type: String,\n        default: null\n      },\n      icon: {\n        type: String,\n        default: null\n      },\n      type: {\n        type: String,\n        default: 'none'\n      }\n    },\n    computed: {\n      isDefault() {\n        return this.type === 'none'\n      },\n      boxStyle() {\n        switch (this.type) {\n          case 'warning':\n            return 'alert-warning'\n          case 'info':\n          case 'definition':\n            return 'alert-info'\n          case 'success':\n          case 'tip':\n            return 'alert-success'\n          case 'important':\n          case 'wrong':\n            return 'alert-danger'\n          default:\n            return 'alert-default'\n        }\n      },\n      customStyle() {\n        var style = {};\n        if (this.backgroundColor) {\n          style.backgroundColor = this.backgroundColor;\n          style.borderColor = this.backgroundColor;\n        }\n        if (this.borderColor) {\n          style.borderColor = this.borderColor;\n        }\n        if (this.borderLeftColor) {\n          style.borderLeft = `5px solid ${this.borderLeftColor}`;\n        }\n        if (this.color) {\n          style.color = this.color;\n        }\n        return style;\n      },\n      iconType() {\n        if (this.icon) {\n          return md.renderInline(this.icon);\n        }\n        switch (this.type) {\n          case 'wrong':\n            return '<i class=\"fas fa-times\"></i>';\n          case 'warning':\n            return '<i class=\"fas fa-exclamation\"></i>';\n          case 'info':\n            return '<i class=\"fas fa-info\"></i>';\n          case 'success':\n            return '<i class=\"fas fa-check\"></i>';\n          case 'important':\n            return '<i class=\"fas fa-flag\"></i>';\n          case 'tip':\n            return '<i class=\"fas fa-lightbulb\"></i>';\n          case 'definition':\n            return '<i class=\"fas fa-atlas\"></i>';\n          default:\n            return '<i class=\"fas fa-exclamation\"></i>';\n        }\n      }\n    }\n  }\n</script>\n\n<style scoped>\n    .container {\n        display: flex;\n        flex-direction: row;\n        width: 100%;\n        border-radius: 6px;\n    }\n\n    .icon-wrapper {\n        display: flex;\n        margin-right: .5em;\n        width: 22px;\n        height: 22px;\n    }\n\n    .contents {\n        padding: 0 6px;\n        width: 100%;\n    }\n\n    .alert-default {\n        color: #24292e;\n        background-color: #f6f8fa;\n        border-color: #e8ebef;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -30236,21 +30311,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 	      switch (this.type) {
 	        case 'wrong':
-	          return '❌';
+	          return '<i class="fas fa-times"></i>';
 	        case 'warning':
-	          return '❗';
+	          return '<i class="fas fa-exclamation"></i>';
 	        case 'info':
-	          return '🔍';
+	          return '<i class="fas fa-info"></i>';
 	        case 'success':
-	          return '✅';
+	          return '<i class="fas fa-check"></i>';
 	        case 'important':
-	          return '🚩';
+	          return '<i class="fas fa-flag"></i>';
 	        case 'tip':
-	          return '💡';
+	          return '<i class="fas fa-lightbulb"></i>';
 	        case 'definition':
-	          return '🔖';
+	          return '<i class="fas fa-atlas"></i>';
 	        default:
-	          return '❕';
+	          return '<i class="fas fa-exclamation"></i>';
 	      }
 	    }
 	  }
