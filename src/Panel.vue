@@ -210,7 +210,7 @@
         return this.alt && md.render(this.alt) || this.renderedHeader;
       },
       renderedHeader () {
-        return md.renderInline(this.header);
+        return md.render(this.header);
       },
       hasSrc () {
         return this.src && this.src.length > 0;
