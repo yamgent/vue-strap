@@ -403,6 +403,10 @@
         display: inline-block;
     }
 
+    .morph-display-wrapper {
+        white-space: normal;
+    }
+
     /* Bootstrap extra small(xs) responsive breakpoint */
     @media (max-width: 575.98px) {
 
