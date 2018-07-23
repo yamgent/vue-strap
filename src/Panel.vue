@@ -216,19 +216,10 @@
           // if the header content is wrapped by a <p> or any <h1>, <h2>, ...
           // then it must be inserted inside these HTML tags, otherwise the
           // header content will not be in the same line as caret
-          const tags = [
-            ['<p>', '</p>'],
-            ['<h1>', '</h1>'],
-            ['<h2>', '</h2>'],
-            ['<h3>', '</h3>'],
-            ['<h4>', '</h4>'],
-            ['<h5>', '</h5>'],
-            ['<h6>', '</h6>']];
-
-          tags.forEach(header => {
-            if (!caretAdded && htmlRenderedHeader.startsWith(header[0]))  {
-              htmlRenderedHeader = jQuery(htmlRenderedHeader).unwrap().prepend(this.caretHtml + ' ')
-                .wrap(header[0] + header[1]).parent().html();
+          const tags = ['<p>', '<h1>', '<h2>', '<h3>', '<h4>', '<h5>', '<h6>'];
+          tags.forEach(tag => {
+            if (!caretAdded && htmlRenderedHeader.startsWith(tag))  {
+              htmlRenderedHeader = this.insertCaretInsideHeader(htmlRenderedHeader);
               caretAdded = true;
             }
           });
@@ -301,6 +292,11 @@
         if (isOpen && this.hasSrc) {
           this.$refs.retriever.fetch()
         }
+      },
+      insertCaretInsideHeader(originalHeaderHTML) {
+        const wrappedElementName = jQuery(originalHeaderHTML).attr("name");
+        return jQuery(originalHeaderHTML).unwrap().prepend(this.caretHtml + ' ')
+            .wrap(`<${wrappedElementName}></${wrappedElementName}>`).parent().html();
       }
     },
     watch: {
