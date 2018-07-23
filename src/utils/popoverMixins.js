@@ -100,25 +100,25 @@ export default {
     calculateOffset (trigger, popover) {
       switch (this.placement) {
         case 'top' :
-          this.position.left = trigger.offsetLeft - popover.offsetWidth / 2 + trigger.offsetWidth / 2
-          this.position.top = trigger.offsetTop - popover.offsetHeight
+          this.position.left = trigger.offsetLeft;
+          this.position.top = trigger.offsetTop - popover.offsetHeight;
           if (this.isPopover) {
             this.position.top -= this.$refs.arrow.offsetHeight;
           }
           break
         case 'left':
           this.position.left = trigger.offsetLeft - popover.offsetWidth
-          this.position.top = trigger.offsetTop + trigger.offsetHeight / 2 - popover.offsetHeight / 2
+          this.position.top = trigger.offsetTop
           if (this.isPopover) {
             this.position.left -= this.$refs.arrow.offsetWidth;
           }
           break
         case 'right':
           this.position.left = trigger.offsetLeft + trigger.offsetWidth
-          this.position.top = trigger.offsetTop + trigger.offsetHeight / 2 - popover.offsetHeight / 2
+          this.position.top = trigger.offsetTop
           break
         case 'bottom':
-          this.position.left = trigger.offsetLeft - popover.offsetWidth / 2 + trigger.offsetWidth / 2
+          this.position.left = trigger.offsetLeft
           this.position.top = trigger.offsetTop + trigger.offsetHeight
           break
         default:
