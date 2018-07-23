@@ -164,7 +164,7 @@ export default {
       return delta
     },
     adjustArrow (delta, dimension, isVertical) {
-      this.$refs.arrow.style[isVertical ? 'left' : 'top'] = 50 * (1 - delta / dimension) + '%'
+      this.$refs.arrow.style[isVertical ? 'left' : 'top'] = '10px'
       this.$refs.arrow.style[isVertical ? 'top' : 'left'] = ''
       let translateLeft = 0;
       let translateTop = 0;
