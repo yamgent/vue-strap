@@ -206,6 +206,10 @@
         return this.alt && md.render(this.alt) || this.renderedHeader;
       },
       renderedHeader () {
+        if (!this.header) {
+          return '';
+        }
+
         let htmlRenderedHeader = md.render(this.header).trim();
 
         if (this.isSeamless) {
