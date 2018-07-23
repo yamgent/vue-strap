@@ -16,8 +16,7 @@
             <div :class="['card-header',{'header-toggle':isExpandableCard}, cardType, borderType]"
                  @click.prevent.stop="isExpandableCard && toggle()"
                  @mouseover="onHeaderHover = true" @mouseleave="onHeaderHover = false">
-                <div class="header-wrapper">
-                    <span :class="['glyphicon', localExpanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right']" v-if="showCaret && hasCustomHeader" aria-hidden="true"></span>
+                <div class="header-wrapper" ref="headerWrapper">
                     <slot name="header">
                         <div :class="['card-title', cardType, {'text-white':!isLightBg}]" v-html="headerContent"></div>
                     </slot>
@@ -324,6 +323,11 @@
       this.$nextTick(function () {
         if (this.hasSrc && (this.preloadBool || this.expandedBool)) {
           this.$refs.retriever.fetch()
+        }
+
+        if (this.hasCustomHeader) {
+          this.$refs.headerWrapper.innerHTML =
+            this.insertCaretInsideHeader(this.$refs.headerWrapper.innerHTML);
         }
       })
     },
