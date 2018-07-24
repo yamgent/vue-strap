@@ -1,5 +1,5 @@
 <template>
-    <span class="card-container" ref="cardContainer">
+    <span :class="['card-container', addClass]" ref="cardContainer">
         <div class="morph" v-show="localMinimized">
             <button :class="['morph-display-wrapper', 'btn', btnType, 'card-title']" @click="open()">
                 <template v-if="altContent">
@@ -135,6 +135,10 @@
       preload: {
         type: Boolean,
         default: false
+      },
+      addClass: {
+        type: String,
+        default: ''
       }
     },
     computed: {
