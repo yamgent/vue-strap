@@ -1,5 +1,5 @@
 <template>
-    <div class="image-wrapper">
+    <div :class="['image-wrapper', addClass]">
         <img ref="pic" @load.once="computeWidth" :src="src" :alt="alt" :width="computedWidth" class="img-fluid rounded">
         <div class="image-caption">
             <slot></slot>
@@ -23,6 +23,10 @@
         default: ''
       },
       width: {
+        type: String,
+        default: ''
+      },
+      addClass: {
         type: String,
         default: ''
       }
