@@ -1,26 +1,17 @@
 <template>
   <span>
-    <span ref="trigger" v-on:click="false"><slot></slot></span><!--
-    -->
-    <transition :name="effect">
-      <div ref="popover" v-if="show" style="display:block;"
-        :class="['tooltip', tooltipPlacementClass, 'show']"
-      >
-        <div class="arrow" ref="arrow"></div>
-        <div class="tooltip-inner" v-on:click="false">
-          <span name="content" v-html="contentRendered"></span>
-       </div>
-      </div>
-    </transition>
+    <b-tooltip :target="targetId" :triggers="trigger" :placement="placement" ref="tooltip">
+      <span v-html="contentRendered"></span>
+    </b-tooltip>
+    <span :id="targetId" ref="trigger"><slot></slot></span>
   </span>
 </template>
 
 <script>
-import PopoverMixin from './utils/popoverMixins.js'
 import md from './utils/markdown.js'
+import {globalEventBus} from './GlobalEventBus.js'
 
 export default {
-  mixins: [PopoverMixin],
   props: {
     trigger: {
       type: String,
@@ -33,12 +24,48 @@ export default {
     placement: {
       type: String,
       default: 'top'
+    },
+    content: {
+      type: String
+    },
+    placement: {
+      type: String,
+      default: 'top'
+    },
+    id: {
+      type: String
+    }
+  },
+  data () {
+    return {
+      show: false,
+      targetId: null
+    }
+  },
+  methods: {
+    bindTrigger (trigger, popover) {
+      if (popover === this.id) {
+        trigger.setTriggerBy(this)
+      }
+    },
+    toggle (e) {
+      this.show = !this.show;
+      console.log(this.targetId + ' ' + this.show ? 'open' : 'close');
+      console.log(this.$refs.tooltip);
+      this.$refs.tooltip.$emit(this.show ? 'open' : 'close');
     }
   },
   computed: {
-    tooltipPlacementClass ()  {
-      return `bs-tooltip-${this.placement}`;
-    }
+    contentRendered () {
+      return md.renderInline(this.content);
+    },
+  },
+  created () {
+    this.targetId = `tooltip_${this._uid}`;
+    globalEventBus.$on('trigger:bind', this.bindTrigger);
+  },
+  beforeDestroy () {
+    globalEventBus.$off('trigger:bind', this.bindTrigger);
   },
   mounted () {
     if (this.$refs.trigger) {
@@ -48,19 +75,3 @@ export default {
   }
 }
 </script>
-
-<style>
-.scale-enter-active {
-  animation:scale-in 0.15s ease-in;
-}
-.scale-leave-active {
-  animation:scale-out 0.15s ease-out;
-}
-
-.tooltip.top,
-.tooltip.left,
-.tooltip.right,
-.tooltip.bottom {
-  opacity: .9
-}
-</style>
