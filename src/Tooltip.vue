@@ -48,21 +48,23 @@ export default {
         trigger.setTriggerBy(this)
       }
     },
-  },
-  computed: {
-    contentRendered () {
-      return md.renderInline(this.content)
-    },
     toggle (e) {
       this.show = !this.show;
+      console.log(this.targetId + ' ' + this.show ? 'open' : 'close');
+      console.log(this.$refs.tooltip);
       this.$refs.tooltip.$emit(this.show ? 'open' : 'close');
     }
   },
+  computed: {
+    contentRendered () {
+      return md.renderInline(this.content);
+    },
+  },
   created () {
-    globalEventBus.$on('trigger:bind', this.bindTrigger)
+    globalEventBus.$on('trigger:bind', this.bindTrigger);
   },
   beforeDestroy () {
-    globalEventBus.$off('trigger:bind', this.bindTrigger)
+    globalEventBus.$off('trigger:bind', this.bindTrigger);
   },
   mounted () {
     this.targetId = `tooltip_${this._uid}`;
