@@ -1,5 +1,5 @@
 <template>
-  <span>
+  <span :class="[addClass]">
     <span ref="trigger" v-on:click="false"><slot></slot></span><!--
     -->
     <transition :name="effect">
@@ -33,6 +33,10 @@ export default {
     placement: {
       type: String,
       default: 'top'
+    },
+    addClass: {
+      type: String,
+      default: ''
     }
   },
   computed: {
