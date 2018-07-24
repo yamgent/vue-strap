@@ -74,6 +74,8 @@ export default {
       setTimeout(() => {
         const popover = this.$refs.popover
         this.isPopover = Array.some(popover.classList, classname => classname === 'popover');
+        trigger.offsetParent.style.position = 'relative';
+        popover.style.position = 'absolute';
         this.calculateOffset(trigger, popover)
         this.updateOffsetForMargins(popover)
         popover.style.top = this.position.top + 'px'
