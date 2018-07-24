@@ -1,5 +1,5 @@
 <template>
-    <span class="card-container">
+    <span class="card-container" ref="cardContainer">
         <div class="morph" v-show="localMinimized">
             <button :class="['morph-display-wrapper', 'btn', btnType, 'card-title']" @click="open()">
                 <template v-if="altContent">
@@ -333,7 +333,12 @@
           this.$refs.headerWrapper.innerHTML =
             this.insertCaretInsideHeader(this.$refs.headerWrapper.innerHTML);
         }
-      })
+      });
+      const panelHeader = this.$slots.header ? this.$refs.headerWrapper.innerHTML : this.headerContent;
+      const panelHeaderText = jQuery(panelHeader).wrap('<div></div>').parent().find(':header').text();
+      if (panelHeaderText) {
+        this.$refs.cardContainer.setAttribute('id', panelHeaderText.trim().replace(/\s+/g, '-').toLowerCase());
+      }
     },
   }
 </script>
