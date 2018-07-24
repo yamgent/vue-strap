@@ -1,5 +1,5 @@
 <template>
-    <span ref="trigger"><slot></slot></span>
+    <span ref="trigger" :class="[addClass]"><slot></slot></span>
 </template>
 
 <script>
@@ -16,6 +16,10 @@
       },
       _triggerBy: {
         type: Object
+      },
+      addClass: {
+        type: String,
+        default: ''
       }
     },
     mounted () {
