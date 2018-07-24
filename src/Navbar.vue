@@ -1,12 +1,13 @@
 <template>
-  <nav ref="navbar" :class="['navbar', 'navbar-expand-md', {
+  <nav ref="navbar" :class="['navbar', 'navbar-expand-md',
+  {
     'navbar-dark':(type === 'inverse'),
     'navbar-light':(type === 'default'),
     'bg-dark':(type === 'inverse'),
     'bg-light':(type === 'default'),
     'fixed-top':(placement === 'top'),
     'fixed-bottom':(placement === 'bottom')
-  }]">
+  }, addClass]">
     <div class="container-fluid">
       <div class="navbar-brand"><slot name="brand"></slot></div>
       <button v-if="!slots.collapse" class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation" @click="toggleCollapse">
@@ -36,6 +37,10 @@ export default {
       default: 'default'
     },
     placement: {
+      type: String,
+      default: ''
+    },
+    addClass: {
       type: String,
       default: ''
     }
