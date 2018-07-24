@@ -1,10 +1,11 @@
 <template>
   <div role="dialog"
-    v-bind:class="{
-    'modal':true,
-    'fade':effect === 'fade',
-    'zoom':effect === 'zoom'
-    }">
+    :class="[
+    {
+      'modal':true,
+      'fade':effect === 'fade',
+      'zoom':effect === 'zoom'
+    }, addClass]">
     <div v-bind:class="{'modal-dialog':true,'modal-lg':largeBool,'modal-sm':smallBool}" role="document"
       v-bind:style="{width: optionalWidth}">
       <div class="modal-content">
@@ -70,6 +71,10 @@ export default {
     },
     id: {
       type: String
+    },
+    addClass: {
+      type: String,
+      default: ''
     }
   },
   data() {
