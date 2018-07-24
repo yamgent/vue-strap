@@ -86,8 +86,9 @@ export default {
           this.calculateOffset(trigger, popover) // Update for CSS adjustment
           this.updateOffsetForMargins(popover)
           let delta = this.getViewportAdjustedDelta(this.position, actualWidth, actualHeight)
-          if (delta.left) this.position.left += delta.left
-          else this.position.top += delta.top
+          // if (delta.left) this.position.left += delta.left
+          // else this.position.top += delta.top
+          this.keepPopoverWithinScreen(popover);
           popover.style.top = this.position.top + 'px'
           popover.style.left = this.position.left + 'px'
           let isVertical = /top|bottom/.test(this.placement)
@@ -139,6 +140,21 @@ export default {
           this.position.left += marginLeft
           popover.style.marginLeft = 0
         }
+      }
+    },
+    keepPopoverWithinScreen(popover) {
+      const popoverViewportOffset = popover.getBoundingClientRect();
+      if (popoverViewportOffset.left < 0) {
+        this.position.left -= popoverViewportOffset.left;
+      }
+      if (popoverViewportOffset.top < 5) {
+        this.position.top -= popoverViewportOffset.top - 5;
+      }
+      if (popoverViewportOffset.left > window.innerWidth - popover.offsetWidth) {
+        this.position.left -= popoverViewportOffset.left - (window.innerWidth - popover.offsetWidth);
+      }
+      if (popoverViewportOffset.top > window.innerHeight - popover.offsetHeight) {
+        this.position.top -= popoverViewportOffset.top - (window.innerHeight - popover.offsetHeight);
       }
     },
     getViewportAdjustedDelta (pos, actualWidth, actualHeight) {
