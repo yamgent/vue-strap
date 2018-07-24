@@ -114,7 +114,12 @@ export default {
           }
           break
         case 'right':
-          this.position.left = trigger.offsetLeft + trigger.offsetWidth
+          const triggerClientRects = trigger.getClientRects();
+          if (triggerClientRects) {
+            this.position.left = trigger.offsetLeft + triggerClientRects[0].width
+          } else {
+            this.position.left = trigger.offsetLeft + trigger.offsetWidth
+          }
           this.position.top = trigger.offsetTop
           break
         case 'bottom':
