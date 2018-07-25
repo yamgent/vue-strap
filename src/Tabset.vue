@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="[addClass]">
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" :class="getNavStyleClass" role="tablist">
       <template v-for="t in headers">
@@ -33,6 +33,10 @@ export default {
     active: {
       type: Number,
       default: 0
+    },
+    addClass: {
+      type: String,
+      default: ''
     }
   },
   data () {

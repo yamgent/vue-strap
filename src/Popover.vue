@@ -1,5 +1,5 @@
 <template>
-  <span>
+  <span :class="[addClass]">
     <span ref="trigger" v-if="hasSlot" v-on:click="false"><slot></slot></span><!--
     -->
     <transition :name="effect">
@@ -28,6 +28,10 @@ export default {
     trigger: {
       type: String,
       default: 'hover'
+    },
+    addClass: {
+      type: String,
+      default: ''
     }
   },
   computed: {

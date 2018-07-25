@@ -51,6 +51,10 @@ export default {
     menuAlignRight: {
       type: Boolean,
       default: false
+    },
+    addClass: {
+      type: String,
+      default: ''
     }
   },
   computed: {
@@ -58,7 +62,7 @@ export default {
       return `btn-${this.type}`;
     },
     classes () {
-      return [{disabled: this.disabledBool}, this.class, this.isLi ? 'dropdown' : 'btn-group']
+      return [{disabled: this.disabledBool}, this.class, this.isLi ? 'dropdown' : 'btn-group', this.addClass]
     },
     menuClasses() {
       return [{show: this.showBool}, {'dropdown-menu-right': this.menuAlignRight}];

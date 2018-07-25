@@ -1,5 +1,5 @@
 <template>
-    <div class="alert container" :class="[boxStyle]" :style="customStyle">
+    <div class="alert container" :class="[boxStyle, addClass]" :style="customStyle">
         <div class="icon-wrapper" v-if="!isDefault">
             <span v-html="iconType"></span>
         </div>
@@ -36,6 +36,10 @@
       type: {
         type: String,
         default: 'none'
+      },
+      addClass: {
+        type: String,
+        default: ''
       }
     },
     computed: {

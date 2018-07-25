@@ -1,5 +1,5 @@
 <template>
-    <div class="question-wrapper">
+    <div :class="['question-wrapper', addClass]">
         <div class="body-wrapper">
             <!-- Default slot is question body -->
             <slot></slot>
@@ -42,6 +42,10 @@
       hasInput: {
         type: Boolean,
         default: false
+      },
+      addClass: {
+        type: String,
+        default: ''
       }
     },
     computed: {
