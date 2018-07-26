@@ -75,8 +75,6 @@ export default {
         const popover = this.$refs.popover
 
         this.isPopover = Array.some(popover.classList, classname => classname === 'popover');
-        trigger.offsetParent.style.position = 'relative';
-        popover.style.position = 'absolute';
         let finalPosition = this.calculateOffset(trigger, popover)
         if (this.$refs.arrow) {
           let delta = this.getViewportAdjustedDelta(finalPosition);
@@ -91,36 +89,47 @@ export default {
         popover.style.left = finalPosition.left + 'px';
       }, 20)
     },
+    getBoundingBoxRelativeToDocument(element) {
+      const boundingClientRect = element.getBoundingClientRect();
+      const boundingBox = {
+        left: boundingClientRect.left + (window.pageXOffset || document.documentElement.scrollLeft),
+        top: boundingClientRect.top + (window.pageYOffset || document.documentElement.scrollTop),
+        width: boundingClientRect.width,
+        height: boundingClientRect.height
+      };
+      return boundingBox;
+    },
     calculateOffset (trigger, popover) {
       const finalPosition = {
         top: 0, left: 0, width: popover.offsetWidth, height: popover.offsetHeight
       };
+      const triggerBoundingBox = this.getBoundingBoxRelativeToDocument(trigger);
 
       switch (this.placement) {
         case 'top' :
-          finalPosition.left = trigger.offsetLeft - popover.offsetWidth / 2 + trigger.offsetWidth / 2
-          finalPosition.top = trigger.offsetTop - popover.offsetHeight
+          finalPosition.left = triggerBoundingBox.left + (triggerBoundingBox.width - popover.offsetWidth) / 2;
+          finalPosition.top = triggerBoundingBox.top - popover.offsetHeight;
           if (this.isPopover) {
             finalPosition.top -= this.$refs.arrow.offsetHeight;
           }
-          break
+          break;
         case 'left':
-          finalPosition.left = trigger.offsetLeft - popover.offsetWidth
-          finalPosition.top = trigger.offsetTop + trigger.offsetHeight / 2 - popover.offsetHeight / 2
+          finalPosition.left = triggerBoundingBox.left - popover.offsetWidth;
+          finalPosition.top = triggerBoundingBox.top + (triggerBoundingBox.height - popover.offsetHeight) / 2;
           if (this.isPopover) {
             finalPosition.left -= this.$refs.arrow.offsetWidth;
           }
-          break
+          break;
         case 'right':
-          finalPosition.left = trigger.offsetLeft + trigger.offsetWidth
-          finalPosition.top = trigger.offsetTop + trigger.offsetHeight / 2 - popover.offsetHeight / 2
-          break
+          finalPosition.left = triggerBoundingBox.left + triggerBoundingBox.width;
+          finalPosition.top = triggerBoundingBox.top + (triggerBoundingBox.height - popover.offsetHeight) / 2;
+          break;
         case 'bottom':
-          finalPosition.left = trigger.offsetLeft - popover.offsetWidth / 2 + trigger.offsetWidth / 2
-          finalPosition.top = trigger.offsetTop + trigger.offsetHeight
-          break
+          finalPosition.left = triggerBoundingBox.left + (triggerBoundingBox.width - popover.offsetWidth) / 2;
+          finalPosition.top = triggerBoundingBox.top + triggerBoundingBox.height;
+          break;
         default:
-          console.warn('Wrong placement prop')
+          console.warn('Wrong placement prop');
       }
 
       return finalPosition;
