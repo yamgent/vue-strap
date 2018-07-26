@@ -77,103 +77,112 @@ export default {
         trigger.offsetParent.style.position = 'relative';
         popover.style.position = 'absolute';
         this.calculateOffset(trigger, popover)
-        this.updateOffsetForMargins(popover)
+        this.keepPopoverWithinScreen(popover);
         popover.style.top = this.position.top + 'px'
         popover.style.left = this.position.left + 'px'
         if (this.$refs.arrow) {
-          let actualWidth  = popover.offsetWidth
-          let actualHeight = popover.offsetHeight
-          this.calculateOffset(trigger, popover) // Update for CSS adjustment
-          this.updateOffsetForMargins(popover)
-          let delta = this.getViewportAdjustedDelta(this.position, actualWidth, actualHeight)
-          if (delta.left) this.position.left += delta.left
-          else this.position.top += delta.top
-          popover.style.top = this.position.top + 'px'
-          popover.style.left = this.position.left + 'px'
-          let isVertical = /top|bottom/.test(this.placement)
-          let arrowDelta = isVertical ? delta.left * 2 : delta.top * 2;
-          let arrowOffsetPosition = isVertical ? popover.offsetWidth : popover.offsetHeight
-          this.adjustArrow(arrowDelta, arrowOffsetPosition, isVertical)
+          let isVertical = /top|bottom/.test(this.placement);
+          this.adjustArrow(isVertical)
         }
       }, 20)
     },
+    calculateTriggerBoundingBox(trigger) {
+      const triggerClientRects = trigger.getClientRects();
+      if (!triggerClientRects || triggerClientRects.length === 0) {
+        return {
+          left: trigger.offsetLeft,
+          top: trigger.offsetTop,
+          right: trigger.offsetLeft + trigger.offsetWidth,
+          bottom: trigger.offsetTop + trigger.offsetHeight
+        };
+      }
+
+      let triggerBoundingBox = {
+        left: triggerClientRects[0].left,
+        top: triggerClientRects[0].top,
+        right: triggerClientRects[0].right,
+        bottom: triggerClientRects[0].bottom
+      };
+
+      var i;
+      for (i = 1; i < triggerClientRects.length; i++) {
+        triggerBoundingBox.left = Math.min(triggerBoundingBox.left, triggerClientRects[i].left);
+        triggerBoundingBox.top = Math.min(triggerBoundingBox.top, triggerClientRects[i].top);
+        triggerBoundingBox.right = Math.max(triggerBoundingBox.right, triggerClientRects[i].right);
+        triggerBoundingBox.bottom = Math.max(triggerBoundingBox.bottom, triggerClientRects[i].bottom);
+      }
+
+      return triggerBoundingBox;
+    },
+    getViewportOffset() {
+      const vueViewportRect = this._viewport.getBoundingClientRect();
+      return {
+        left: -vueViewportRect.left,
+        right: -vueViewportRect.left + vueViewportRect.width,
+        top: -vueViewportRect.top,
+        bottom: -vueViewportRect.top + vueViewportRect.height,
+      };
+    },
     calculateOffset (trigger, popover) {
+      const triggerBoundingBox = this.calculateTriggerBoundingBox(trigger);
+      const viewportOffset = this.getViewportOffset();
+      triggerBoundingBox.left += viewportOffset.left;
+      triggerBoundingBox.right += viewportOffset.left;
+      triggerBoundingBox.top += viewportOffset.top;
+      triggerBoundingBox.bottom += viewportOffset.top;
+
       switch (this.placement) {
         case 'top' :
-          this.position.left = trigger.offsetLeft - popover.offsetWidth / 2 + trigger.offsetWidth / 2
-          this.position.top = trigger.offsetTop - popover.offsetHeight
+          this.position.left = ((triggerBoundingBox.left + triggerBoundingBox.right) / 2)
+            - (popover.offsetWidth / 2);
+          this.position.top = triggerBoundingBox.top - popover.offsetHeight;
           if (this.isPopover) {
             this.position.top -= this.$refs.arrow.offsetHeight;
           }
           break
         case 'left':
-          this.position.left = trigger.offsetLeft - popover.offsetWidth
-          this.position.top = trigger.offsetTop + trigger.offsetHeight / 2 - popover.offsetHeight / 2
+          this.position.left = triggerBoundingBox.left - popover.offsetWidth;
+          this.position.top = ((triggerBoundingBox.top + triggerBoundingBox.bottom) / 2)
+            - (popover.offsetHeight / 2);
           if (this.isPopover) {
             this.position.left -= this.$refs.arrow.offsetWidth;
           }
           break
         case 'right':
-          this.position.left = trigger.offsetLeft + trigger.offsetWidth
-          this.position.top = trigger.offsetTop + trigger.offsetHeight / 2 - popover.offsetHeight / 2
+          this.position.left = triggerBoundingBox.right;
+          this.position.top = ((triggerBoundingBox.top + triggerBoundingBox.bottom) / 2)
+            - (popover.offsetHeight / 2);
           break
         case 'bottom':
-          this.position.left = trigger.offsetLeft - popover.offsetWidth / 2 + trigger.offsetWidth / 2
-          this.position.top = trigger.offsetTop + trigger.offsetHeight
+          this.position.left = ((triggerBoundingBox.left + triggerBoundingBox.right) / 2)
+            - (popover.offsetWidth / 2);
+          this.position.top = triggerBoundingBox.bottom;
           break
         default:
           console.warn('Wrong placement prop')
       }
     },
-    updateOffsetForMargins (popover) {
-      const rect = popover.getBoundingClientRect()
-      if (rect.left < 0) {
-        this.position.left -= rect.left
-        const marginLeft = parseInt(jQuery(popover).css('margin-left'), 10)
-        if (marginLeft < 0) {
-          this.position.left += marginLeft
-          popover.style.marginLeft = 0
-        }
-      }
-    },
-    getViewportAdjustedDelta (pos, actualWidth, actualHeight) {
-      var delta = { top: 0, left: 0 };
-      let vpRect = this._viewport.getBoundingClientRect();
-      let vpOffset = { top: 0, left: 0 };
-      let scroll = {scroll: document.documentElement.scrollTop || document.body.scrollTop}
-      let outerDims = { width: jQuery(window).width(), height: jQuery(window).height() };
-      let viewportDimensions = Object.assign({}, vpRect, scroll, outerDims, vpOffset)
+    keepPopoverWithinScreen(popover) {
+      const viewportBoundingRect = this.getViewportOffset();
 
-      if (/right|left/.test(this.placement)) {
-        var topEdgeOffset    = pos.top - scroll
-        var bottomEdgeOffset = pos.top - scroll + actualHeight
-        if (topEdgeOffset < viewportDimensions.top) { // top overflow
-          delta.top = viewportDimensions.top - topEdgeOffset
-        } else if (bottomEdgeOffset > viewportDimensions.top + viewportDimensions.height) { // bottom overflow
-          delta.top = viewportDimensions.top + viewportDimensions.height - bottomEdgeOffset
-        }
-      } else {
-        var leftEdgeOffset  = pos.left
-        var rightEdgeOffset = pos.left + actualWidth
-        if (leftEdgeOffset < viewportDimensions.left) { // left overflow
-          delta.left = viewportDimensions.left - leftEdgeOffset
-        } else if (rightEdgeOffset > viewportDimensions.right) { // right overflow
-          delta.left = viewportDimensions.left + viewportDimensions.width - rightEdgeOffset
-        }
+      if (this.position.left < viewportBoundingRect.left) {
+        this.position.left = viewportBoundingRect.left;
       }
-      return delta
+      if (this.position.left > viewportBoundingRect.right - popover.offsetWidth - 5) {
+        this.position.left = viewportBoundingRect.right - popover.offsetWidth - 5;
+      }
+      if (this.position.top < viewportBoundingRect.top) {
+        this.position.top = viewportBoundingRect.top;
+      }
+      if (this.position.top > viewportBoundingRect.bottom - popover.offsetHeight) {
+        this.position.top = viewportBoundingRect.bottom - popover.offsetHeight;
+      }
     },
-    adjustArrow (delta, dimension, isVertical) {
-      this.$refs.arrow.style[isVertical ? 'left' : 'top'] = 50 * (1 - delta / dimension) + '%'
-      this.$refs.arrow.style[isVertical ? 'top' : 'left'] = ''
-      let translateLeft = 0;
-      let translateTop = 0;
-      if (this.placement === 'left' || this.placement === 'right') {
-        translateTop = this.isPopover ? -75 : -50;
-      }
-      if (this.placement === 'top' || this.placement === 'bottom') {
-        translateLeft = this.isPopover ? -100 : -50;
-      }
+    adjustArrow (isVertical) {
+      this.$refs.arrow.style[isVertical ? 'left' : 'top'] = '50%';
+      this.$refs.arrow.style[isVertical ? 'top' : 'left'] = '';
+      const translateLeft = (this.placement === 'top' || this.placement === 'bottom') ? -50 : 0;
+      const translateTop = (this.placement === 'left' || this.placement === 'right') ? -50 : 0;
       this.$refs.arrow.style['transform'] = `translate(${translateLeft}%, ${translateTop}%)`;
     }
   },
