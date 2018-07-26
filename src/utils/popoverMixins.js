@@ -74,17 +74,10 @@ export default {
       setTimeout(() => {
         const popover = this.$refs.popover
 
-        let finalPosition = {
-          top: this.position.top,
-          left: this.position.left,
-          width: popover.offsetWidth,
-          height: popover.offsetHeight
-        }
-
         this.isPopover = Array.some(popover.classList, classname => classname === 'popover');
         trigger.offsetParent.style.position = 'relative';
         popover.style.position = 'absolute';
-        finalPosition = this.calculateOffset(trigger, popover, finalPosition)
+        let finalPosition = this.calculateOffset(trigger, popover)
         if (this.$refs.arrow) {
           let delta = this.getViewportAdjustedDelta(finalPosition);
           if (delta.left) finalPosition.left += delta.left
@@ -98,13 +91,10 @@ export default {
         popover.style.left = finalPosition.left + 'px';
       }, 20)
     },
-    calculateOffset (trigger, popover, initialPosition) {
+    calculateOffset (trigger, popover) {
       const finalPosition = {
-        top: initialPosition.top,
-        left: initialPosition.left,
-        width: initialPosition.width,
-        height: initialPosition.height
-      }
+        top: 0, left: 0, width: popover.offsetWidth, height: popover.offsetHeight
+      };
 
       switch (this.placement) {
         case 'top' :
