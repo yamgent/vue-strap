@@ -85,20 +85,17 @@ export default {
         trigger.offsetParent.style.position = 'relative';
         popover.style.position = 'absolute';
         finalPosition = this.calculateOffset(trigger, popover, finalPosition)
-        popover.style.top = finalPosition.top + 'px'
-        popover.style.left = finalPosition.left + 'px'
         if (this.$refs.arrow) {
-          finalPosition = this.calculateOffset(trigger, popover, finalPosition) // Update for CSS adjustment
           let delta = this.getViewportAdjustedDelta(finalPosition);
           if (delta.left) finalPosition.left += delta.left
           else finalPosition.top += delta.top
-          popover.style.top = finalPosition.top + 'px'
-          popover.style.left = finalPosition.left + 'px'
           let isVertical = /top|bottom/.test(this.placement)
           let arrowDelta = isVertical ? delta.left * 2 : delta.top * 2;
           let arrowOffsetPosition = isVertical ? popover.offsetWidth : popover.offsetHeight
           this.adjustArrow(arrowDelta, arrowOffsetPosition, isVertical)
         }
+        popover.style.top = finalPosition.top + 'px';
+        popover.style.left = finalPosition.left + 'px';
       }, 20)
     },
     calculateOffset (trigger, popover, initialPosition) {
