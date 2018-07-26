@@ -89,11 +89,9 @@ export default {
         popover.style.top = finalPosition.top + 'px'
         popover.style.left = finalPosition.left + 'px'
         if (this.$refs.arrow) {
-          let actualWidth  = popover.offsetWidth
-          let actualHeight = popover.offsetHeight
           finalPosition = this.calculateOffset(trigger, popover, finalPosition) // Update for CSS adjustment
           finalPosition = this.updateOffsetForMargins(popover, finalPosition)
-          let delta = this.getViewportAdjustedDelta(finalPosition, actualWidth, actualHeight)
+          let delta = this.getViewportAdjustedDelta(finalPosition);
           if (delta.left) finalPosition.left += delta.left
           else finalPosition.top += delta.top
           popover.style.top = finalPosition.top + 'px'
@@ -162,7 +160,7 @@ export default {
 
       return finalPosition;
     },
-    getViewportAdjustedDelta (pos, actualWidth, actualHeight) {
+    getViewportAdjustedDelta (pos) {
       var delta = { top: 0, left: 0 };
       let vpRect = this._viewport.getBoundingClientRect();
       let vpOffset = { top: 0, left: 0 };
@@ -172,7 +170,7 @@ export default {
 
       if (/right|left/.test(this.placement)) {
         var topEdgeOffset    = pos.top - scroll
-        var bottomEdgeOffset = pos.top - scroll + actualHeight
+        var bottomEdgeOffset = pos.top - scroll + pos.height;
         if (topEdgeOffset < viewportDimensions.top) { // top overflow
           delta.top = viewportDimensions.top - topEdgeOffset
         } else if (bottomEdgeOffset > viewportDimensions.top + viewportDimensions.height) { // bottom overflow
@@ -180,7 +178,7 @@ export default {
         }
       } else {
         var leftEdgeOffset  = pos.left
-        var rightEdgeOffset = pos.left + actualWidth
+        var rightEdgeOffset = pos.left + pos.width;
         if (leftEdgeOffset < viewportDimensions.left) { // left overflow
           delta.left = viewportDimensions.left - leftEdgeOffset
         } else if (rightEdgeOffset > viewportDimensions.right) { // right overflow
