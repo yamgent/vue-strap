@@ -205,43 +205,16 @@
         return this.cardType === 'bg-light' || this.cardType === 'bg-white' || this.cardType === 'bg-warning';
       },
       headerContent () {
+        if (this.isSeamless) {
+            return this.caretHtml + ' ' + this.renderedHeader;
+        }
         return this.renderedHeader;
       },
       altContent () {
         return this.alt && md.render(this.alt) || this.renderedHeader;
       },
       renderedHeader () {
-        let htmlRenderedHeader = md.render(this.header).trim();
-
-        if (this.isSeamless) {
-          // insert the caret to the header content
-          let caretAdded = false;
-
-          // if the header content is wrapped by a <p> or any <h1>, <h2>, ...
-          // then it must be inserted inside these HTML tags, otherwise the
-          // header content will not be in the same line as caret
-          const tags = [
-            ['<p>', '</p>'],
-            ['<h1>', '</h1>'],
-            ['<h2>', '</h2>'],
-            ['<h3>', '</h3>'],
-            ['<h4>', '</h4>'],
-            ['<h5>', '</h5>'],
-            ['<h6>', '</h6>']];
-
-          tags.forEach(header => {
-            if (!caretAdded && htmlRenderedHeader.startsWith(header[0]))  {
-              htmlRenderedHeader = jQuery(htmlRenderedHeader).unwrap().prepend(this.caretHtml + ' ')
-                .wrap(header[0] + header[1]).parent().html();
-              caretAdded = true;
-            }
-          });
-
-          if (!caretAdded) {
-            htmlRenderedHeader = this.caretHtml + ' ' + htmlRenderedHeader;
-          }
-        }
-        return htmlRenderedHeader;
+        return md.renderInline(this.header);
       },
       hasSrc () {
         return this.src && this.src.length > 0;
