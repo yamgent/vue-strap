@@ -17,7 +17,7 @@
                  @click.prevent.stop="isExpandableCard && toggle()"
                  @mouseover="onHeaderHover = true" @mouseleave="onHeaderHover = false">
                 <div class="header-wrapper">
-                    <span :class="['glyphicon', localExpanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right']" v-if="showCaret && hasCustomHeader" aria-hidden="true"></span>
+                    <span :class="['glyphicon', localExpanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right']" v-show="showCaret"></span>
                     <slot name="header">
                         <div :class="['card-title', cardType, {'text-white':!isLightBg}]" v-html="headerContent"></div>
                     </slot>
@@ -28,12 +28,12 @@
                                       @click.native.stop.prevent="expand()"
                                       @is-open-event="retrieveOnOpen" :is-light-bg="isLightBg"></panel-switch>
                         <button type="button" :class="['close-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']"
-                                v-show="isSeamless ? onHeaderHover : (!noCloseBool)"
+                                v-show="!isSeamless ? (!noCloseBool) : onHeaderHover"
                                 @click.stop="close()">
                             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                         </button>
                         <button type="button" :class="['popup-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']"
-                                v-show="((this.popupUrl !== null) && (!isSeamless || onHeaderHover))"
+                                v-show="this.popupUrl !== null"
                                 @click.stop="openPopup()">
                             <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
                         </button>
@@ -205,16 +205,10 @@
         return this.cardType === 'bg-light' || this.cardType === 'bg-white' || this.cardType === 'bg-warning';
       },
       headerContent () {
-        if (this.isSeamless) {
-            return this.caretHtml + ' ' + this.renderedHeader;
-        }
-        return this.renderedHeader;
+        return md.render(this.header);
       },
       altContent () {
-        return this.alt && md.render(this.alt) || this.renderedHeader;
-      },
-      renderedHeader () {
-        return md.renderInline(this.header);
+        return this.alt && md.render(this.alt) || md.render(this.header);
       },
       hasSrc () {
         return this.src && this.src.length > 0;
@@ -225,16 +219,6 @@
         } else {
           return onHeaderHover;
         }
-      },
-      caretHtml () {
-        if (this.localExpanded) {
-          return '<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>'
-        } else {
-          return '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>'
-        }
-      },
-      hasCustomHeader () {
-        return this.$slots.header !== undefined;
       }
     },
     data () {
