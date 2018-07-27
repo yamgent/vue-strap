@@ -16,8 +16,10 @@
             <div :class="['card-header',{'header-toggle':isExpandableCard}, cardType, borderType]"
                  @click.prevent.stop="isExpandableCard && toggle()"
                  @mouseover="onHeaderHover = true" @mouseleave="onHeaderHover = false">
-                <div class="header-wrapper">
+                <div class="caret-wrapper">
                     <span :class="['glyphicon', localExpanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right']" v-show="showCaret"></span>
+                </div>
+                <div class="header-wrapper">
                     <slot name="header">
                         <div :class="['card-title', cardType, {'text-white':!isLightBg}]" v-html="headerContent"></div>
                     </slot>
@@ -316,15 +318,21 @@
         margin: 0px !important;
     }
 
+    .caret-wrapper {
+        float: left;
+        display: inline-block;
+        width: 32px;
+    }
+
     .header-wrapper {
         display: inline-block;
-        width: 72%;
+        width: calc(100% - 32px - 96px);
     }
 
     .button-wrapper {
         float: right;
         display: inline-block;
-        width: 28%;
+        width: 96px;
     }
 
     .header-toggle {
@@ -403,12 +411,21 @@
     /* Bootstrap extra small(xs) responsive breakpoint */
     @media (max-width: 575.98px) {
 
+        .caret-wrapper {
+            float: left;
+            display: inline-block;
+            width: 32px;
+        }
+
         .header-wrapper {
-            width: 88%;
+            display: inline-block;
+            width: calc(100% - 32px - 32px);
         }
 
         .button-wrapper {
-            width: 12%;
+            float: right;
+            display: inline-block;
+            width: 32px;
         }
 
         .card-body {
