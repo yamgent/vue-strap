@@ -30,7 +30,7 @@
                                       @click.native.stop.prevent="expand()"
                                       @is-open-event="retrieveOnOpen" :is-light-bg="isLightBg"></panel-switch>
                         <button type="button" :class="['close-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']"
-                                v-show="!isSeamless ? (!noCloseBool) : onHeaderHover"
+                                v-show="isSeamless ? onHeaderHover : (!noCloseBool)"
                                 @click.stop="close()">
                             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                         </button>
