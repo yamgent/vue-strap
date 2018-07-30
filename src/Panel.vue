@@ -35,7 +35,7 @@
                             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                         </button>
                         <button type="button" :class="['popup-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']"
-                                v-show="this.popupUrl !== null"
+                                v-show="((this.popupUrl !== null) && (!isSeamless || onHeaderHover))"
                                 @click.stop="openPopup()">
                             <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
                         </button>
