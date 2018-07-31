@@ -95,6 +95,18 @@ export default {
           let arrowOffsetPosition = isVertical ? popover.offsetWidth : popover.offsetHeight
           this.adjustArrow(arrowDelta, arrowOffsetPosition, isVertical)
         }
+
+        // temporary fix for popover going off screen - start
+        popover.style.position = 'fixed';
+        popover.style.top = `${(e.clientY + 5)}px`;
+        popover.style.left = `${(e.clientX + 5)}px`;
+        popover.style.margin = 0;
+        popover.style.padding = 0;
+        if (this.$refs.arrow) {
+          this.$refs.arrow.style['display'] = 'none';
+        }
+        // temporary fix for popover going off screen - end
+
       }, 20)
     },
     calculateOffset (trigger, popover) {
