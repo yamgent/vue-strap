@@ -19,7 +19,7 @@
                 <div class="caret-wrapper">
                     <span :class="['glyphicon', localExpanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right']" v-if="showCaret"></span>
                 </div>
-                <div class="header-wrapper">
+                <div class="header-wrapper" ref="headerWrapper">
                     <slot name="header">
                         <div :class="['card-title', cardType, {'text-white':!isLightBg}]" v-html="headerContent"></div>
                     </slot>
@@ -82,6 +82,8 @@
   import panelSwitch from './PanelSwitch.vue'
   import retriever from './Retriever.vue'
 
+  const string = require('string');
+  
   export default {
     components: {
       panelSwitch,
@@ -293,10 +295,17 @@
           this.$refs.retriever.fetch()
         }
       });
-      const panelHeader = this.$slots.header ? this.$refs.headerWrapper.innerHTML : this.headerContent;
-      const panelHeaderText = jQuery(panelHeader).wrap('<div></div>').parent().find(':header').text();
-      if (panelHeaderText) {
-        this.$refs.cardContainer.setAttribute('id', panelHeaderText.trim().replace(/\s+/g, '-').toLowerCase());
+
+      if (this.headerContent) {
+        const panelHeaderText = jQuery(this.headerContent).wrap('<div></div>').parent().find(':header').text();
+        if (panelHeaderText) {
+          this.$refs.cardContainer.setAttribute('id', string(panelHeaderText).slugify().toString());
+        }
+      } else if (this.$refs.headerWrapper.innerHTML) {
+        const header = jQuery(this.$refs.headerWrapper.innerHTML).wrap('<div></div>').parent().find(':header');
+        if (header.length > 0) {
+          this.$refs.cardContainer.setAttribute('id', header[0].id);
+        }
       }
     },
   }
