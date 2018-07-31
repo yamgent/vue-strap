@@ -16,7 +16,10 @@
             <div :class="['card-header',{'header-toggle':isExpandableCard}, cardType, borderType]"
                  @click.prevent.stop="isExpandableCard && toggle()"
                  @mouseover="onHeaderHover = true" @mouseleave="onHeaderHover = false">
-                <div class="header-wrapper" ref="headerWrapper">
+                <div class="caret-wrapper">
+                    <span :class="['glyphicon', localExpanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right']" v-if="showCaret"></span>
+                </div>
+                <div class="header-wrapper">
                     <slot name="header">
                         <div :class="['card-title', cardType, {'text-white':!isLightBg}]" v-html="headerContent"></div>
                     </slot>
@@ -204,38 +207,10 @@
         return this.cardType === 'bg-light' || this.cardType === 'bg-white' || this.cardType === 'bg-warning';
       },
       headerContent () {
-        return this.renderedHeader;
+        return md.render(this.header);
       },
       altContent () {
-        return this.alt && md.render(this.alt) || this.renderedHeader;
-      },
-      renderedHeader () {
-        if (!this.header) {
-          return '';
-        }
-
-        let htmlRenderedHeader = md.render(this.header).trim();
-
-        if (this.isSeamless) {
-          // insert the caret to the header content
-          let caretAdded = false;
-
-          // if the header content is wrapped by a <p> or any <h1>, <h2>, ...
-          // then it must be inserted inside these HTML tags, otherwise the
-          // header content will not be in the same line as caret
-          const tags = ['<p>', '<h1>', '<h2>', '<h3>', '<h4>', '<h5>', '<h6>'];
-          tags.forEach(tag => {
-            if (!caretAdded && htmlRenderedHeader.startsWith(tag))  {
-              htmlRenderedHeader = this.insertCaretInsideHeader(htmlRenderedHeader);
-              caretAdded = true;
-            }
-          });
-
-          if (!caretAdded) {
-            htmlRenderedHeader = this.caretHtml + ' ' + htmlRenderedHeader;
-          }
-        }
-        return htmlRenderedHeader;
+        return this.alt && md.render(this.alt) || md.render(this.header);
       },
       hasSrc () {
         return this.src && this.src.length > 0;
@@ -246,16 +221,6 @@
         } else {
           return onHeaderHover;
         }
-      },
-      caretHtml () {
-        if (this.localExpanded) {
-          return '<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>'
-        } else {
-          return '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>'
-        }
-      },
-      hasCustomHeader () {
-        return this.$slots.header !== undefined;
       }
     },
     data () {
@@ -299,11 +264,6 @@
         if (isOpen && this.hasSrc) {
           this.$refs.retriever.fetch()
         }
-      },
-      insertCaretInsideHeader(originalHeaderHTML) {
-        const wrappedElementName = jQuery(originalHeaderHTML).attr("name");
-        return jQuery(originalHeaderHTML).unwrap().prepend(this.caretHtml + ' ')
-            .wrap(`<${wrappedElementName}></${wrappedElementName}>`).parent().html();
       }
     },
     watch: {
@@ -332,11 +292,6 @@
         if (this.hasSrc && (this.preloadBool || this.expandedBool)) {
           this.$refs.retriever.fetch()
         }
-
-        if (this.hasCustomHeader) {
-          this.$refs.headerWrapper.innerHTML =
-            this.insertCaretInsideHeader(this.$refs.headerWrapper.innerHTML);
-        }
       });
       const panelHeader = this.$slots.header ? this.$refs.headerWrapper.innerHTML : this.headerContent;
       const panelHeaderText = jQuery(panelHeader).wrap('<div></div>').parent().find(':header').text();
@@ -363,15 +318,21 @@
         margin: 0px !important;
     }
 
+    .caret-wrapper {
+        float: left;
+        display: inline-block;
+        width: 32px;
+    }
+
     .header-wrapper {
         display: inline-block;
-        width: 72%;
+        width: calc(100% - 32px - 96px);
     }
 
     .button-wrapper {
         float: right;
         display: inline-block;
-        width: 28%;
+        width: 96px;
     }
 
     .header-toggle {
@@ -450,12 +411,21 @@
     /* Bootstrap extra small(xs) responsive breakpoint */
     @media (max-width: 575.98px) {
 
+        .caret-wrapper {
+            float: left;
+            display: inline-block;
+            width: 32px;
+        }
+
         .header-wrapper {
-            width: 88%;
+            display: inline-block;
+            width: calc(100% - 32px - 32px);
         }
 
         .button-wrapper {
-            width: 12%;
+            float: right;
+            display: inline-block;
+            width: 32px;
         }
 
         .card-body {
