@@ -81,8 +81,6 @@
   import md from './utils/markdown.js'
   import panelSwitch from './PanelSwitch.vue'
   import retriever from './Retriever.vue'
-
-  const string = require('string');
   
   export default {
     components: {
@@ -296,10 +294,11 @@
         }
       });
 
+      const slugify = (s) => encodeURIComponent(String(s).trim().toLowerCase().replace(/\s+/g, '-'))
       if (this.headerContent) {
         const panelHeaderText = jQuery(this.headerContent).wrap('<div></div>').parent().find(':header').text();
         if (panelHeaderText) {
-          this.$refs.cardContainer.setAttribute('id', string(panelHeaderText).slugify().toString());
+          this.$refs.cardContainer.setAttribute('id', slugify(panelHeaderText));
         }
       } else if (this.$refs.headerWrapper.innerHTML) {
         const header = jQuery(this.$refs.headerWrapper.innerHTML).wrap('<div></div>').parent().find(':header');
