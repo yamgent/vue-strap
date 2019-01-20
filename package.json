@@ -12,6 +12,7 @@
     "src": "src/"
   },
   "dependencies": {
+    "@sindresorhus/slugify": "^0.8.0",
     "bootstrap": "^3.3.7",
     "jquery": "^3.3.1",
     "markdown-it": "^8.3.1",
