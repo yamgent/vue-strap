@@ -84,15 +84,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _Panel2 = _interopRequireDefault(_Panel);
 	
-	var _Pic = __webpack_require__(214);
+	var _Pic = __webpack_require__(219);
 	
 	var _Pic2 = _interopRequireDefault(_Pic);
 	
-	var _Popover = __webpack_require__(219);
+	var _Popover = __webpack_require__(224);
 	
 	var _Popover2 = _interopRequireDefault(_Popover);
 	
-	var _Question = __webpack_require__(239);
+	var _Question = __webpack_require__(244);
 	
 	var _Question2 = _interopRequireDefault(_Question);
 	
@@ -100,35 +100,35 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _Retriever2 = _interopRequireDefault(_Retriever);
 	
-	var _Searchbar = __webpack_require__(244);
+	var _Searchbar = __webpack_require__(249);
 	
 	var _Searchbar2 = _interopRequireDefault(_Searchbar);
 	
-	var _Tab = __webpack_require__(269);
+	var _Tab = __webpack_require__(274);
 	
 	var _Tab2 = _interopRequireDefault(_Tab);
 	
-	var _TabGroup = __webpack_require__(274);
+	var _TabGroup = __webpack_require__(279);
 	
 	var _TabGroup2 = _interopRequireDefault(_TabGroup);
 	
-	var _Tabset = __webpack_require__(279);
+	var _Tabset = __webpack_require__(284);
 	
 	var _Tabset2 = _interopRequireDefault(_Tabset);
 	
-	var _TipBox = __webpack_require__(284);
+	var _TipBox = __webpack_require__(289);
 	
 	var _TipBox2 = _interopRequireDefault(_TipBox);
 	
-	var _Tooltip = __webpack_require__(289);
+	var _Tooltip = __webpack_require__(294);
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 	
-	var _trigger = __webpack_require__(294);
+	var _trigger = __webpack_require__(299);
 	
 	var _trigger2 = _interopRequireDefault(_trigger);
 	
-	var _Typeahead = __webpack_require__(264);
+	var _Typeahead = __webpack_require__(269);
 	
 	var _Typeahead2 = _interopRequireDefault(_Typeahead);
 	
@@ -26620,7 +26620,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	__vue_exports__ = __webpack_require__(204)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(213)
+	var __vue_template__ = __webpack_require__(218)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -26688,7 +26688,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.card-heading {\n    width: 100%;\n}\n.card-title {\n    display: inline-block;\n    font-size: 1em;\n    margin: 0;\n    vertical-align: middle;\n}\n.card-title * {\n    margin: 0px !important;\n}\n.caret-wrapper {\n    float: left;\n    display: inline-block;\n    width: 32px;\n}\n.header-wrapper {\n    display: inline-block;\n    width: calc(100% - 32px - 96px);\n}\n.button-wrapper {\n    float: right;\n    display: inline-block;\n    width: 96px;\n}\n.header-toggle {\n    cursor: pointer;\n}\n.expandable-card {\n    margin-bottom: 0 !important;\n    margin-top: 5px;\n}\n.card-group > .card-container > .expandable-card {\n    margin-top: 0!important;\n}\n.card-seamless {\n    padding: 0;\n}\n.card.card-seamless {\n    box-shadow: none;\n    border: none;\n}\n.card-seamless > .card-heading {\n    padding: 0;\n}\n.card-seamless > .card-collapse > hr {\n    margin: 0;\n    width: calc(100% - 27px);\n}\n.card-seamless > .card-collapse > .card-body {\n    padding: 10px 0;\n}\n.card-seamless > .card-collapse > .card-body > .collapse-button {\n    position: relative;\n    top: 22px;\n}\n.card-body > .collapse-button {\n    margin-bottom: 13px;\n    margin-top: 5px;\n    opacity: 0.2;\n}\n.card-body > .collapse-button:hover {\n    opacity: 1;\n}\n.close-button {\n    font-size: 10px !important;\n    float: right;\n    padding: 3px 8px !important;\n    margin-left: 3px;\n    margin-top: 2px;\n}\n.popup-button {\n    font-size: 10px !important;\n    float: right;\n    margin-top: 2px;\n    padding: 3px 8px !important;\n}\n.morph {\n    display: inline-block;\n}\n.morph-display-wrapper {\n    white-space: normal;\n}\n\n/* Bootstrap extra small(xs) responsive breakpoint */\n@media (max-width: 575.98px) {\n.caret-wrapper {\n        float: left;\n        display: inline-block;\n        width: 32px;\n}\n.header-wrapper {\n        display: inline-block;\n        width: calc(100% - 32px - 32px);\n}\n.button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 32px;\n}\n.card-body {\n        padding: 0.5rem;\n}\n.card-collapse > hr {\n        margin-top: 1.5rem;\n}\n.card-header {\n        padding: 0.5rem;\n}\n}\n", "", {"version":3,"sources":["/./src/Panel.vue?0b2fe14c"],"names":[],"mappings":";AAyTA;IACA,YAAA;CACA;AAEA;IACA,sBAAA;IACA,eAAA;IACA,UAAA;IACA,uBAAA;CACA;AAEA;IACA,uBAAA;CACA;AAEA;IACA,YAAA;IACA,sBAAA;IACA,YAAA;CACA;AAEA;IACA,sBAAA;IACA,gCAAA;CACA;AAEA;IACA,aAAA;IACA,sBAAA;IACA,YAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,4BAAA;IACA,gBAAA;CACA;AAEA;IACA,wBAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,iBAAA;IACA,aAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,UAAA;IACA,yBAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,mBAAA;IACA,UAAA;CACA;AAEA;IACA,oBAAA;IACA,gBAAA;IACA,aAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,2BAAA;IACA,aAAA;IACA,4BAAA;IACA,iBAAA;IACA,gBAAA;CACA;AAEA;IACA,2BAAA;IACA,aAAA;IACA,gBAAA;IACA,4BAAA;CACA;AAEA;IACA,sBAAA;CACA;AAEA;IACA,oBAAA;CACA;;AAEA,qDAAA;AACA;AAEA;QACA,YAAA;QACA,sBAAA;QACA,YAAA;CACA;AAEA;QACA,sBAAA;QACA,gCAAA;CACA;AAEA;QACA,aAAA;QACA,sBAAA;QACA,YAAA;CACA;AAEA;QACA,gBAAA;CACA;AAEA;QACA,mBAAA;CACA;AAEA;QACA,gBAAA;CACA;CACA","file":"Panel.vue","sourcesContent":["<template>\r\n    <span :class=\"['card-container', addClass]\" ref=\"cardContainer\">\r\n        <div class=\"morph\" v-show=\"localMinimized\">\r\n            <button :class=\"['morph-display-wrapper', 'btn', btnType, 'card-title']\" @click=\"open()\">\r\n                <template v-if=\"altContent\">\r\n                    <div v-html=\"altContent\"></div>\r\n                </template>\r\n                <template v-else>\r\n                    <slot name=\"header\">\r\n                        <div v-html=\"altContent\"></div>\r\n                    </slot>\r\n                </template>\r\n            </button>\r\n        </div>\r\n        <div :class=\"['card', {'expandable-card': isExpandableCard}, borderType]\" v-show=\"!localMinimized\">\r\n            <div :class=\"['card-header',{'header-toggle':isExpandableCard}, cardType, borderType]\"\r\n                 @click.prevent.stop=\"isExpandableCard && toggle()\"\r\n                 @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\r\n                <div class=\"caret-wrapper\">\r\n                    <span :class=\"['glyphicon', localExpanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right']\" v-if=\"showCaret\"></span>\r\n                </div>\r\n                <div class=\"header-wrapper\" ref=\"headerWrapper\">\r\n                    <slot name=\"header\">\r\n                        <div :class=\"['card-title', cardType, {'text-white':!isLightBg}]\" v-html=\"headerContent\"></div>\r\n                    </slot>\r\n                </div>\r\n                <div class=\"button-wrapper\">\r\n                    <slot name=\"button\">\r\n                        <panel-switch v-show=\"isExpandableCard && !noSwitchBool && !showCaret\" :is-open=\"localExpanded\"\r\n                                      @click.native.stop.prevent=\"expand()\"\r\n                                      @is-open-event=\"retrieveOnOpen\" :is-light-bg=\"isLightBg\"></panel-switch>\r\n                        <button type=\"button\" :class=\"['close-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\"\r\n                                v-show=\"isSeamless ? onHeaderHover : (!noCloseBool)\"\r\n                                @click.stop=\"close()\">\r\n                            <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\r\n                        </button>\r\n                        <button type=\"button\" :class=\"['popup-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\"\r\n                                v-show=\"((this.popupUrl !== null) && (!isSeamless || onHeaderHover))\"\r\n                                @click.stop=\"openPopup()\">\r\n                            <span class=\"glyphicon glyphicon-new-window\" aria-hidden=\"true\"></span>\r\n                        </button>\r\n                    </slot>\r\n                </div>\r\n            </div>\r\n            <template v-if=\"preloadBool\">\r\n                <div class=\"card-collapse\"\r\n                     ref=\"panel\"\r\n                     v-show=\"localExpanded\"\r\n                >\r\n                    <div class=\"card-body\">\r\n                        <slot></slot>\r\n                        <retriever v-if=\"hasSrc\" ref=\"retriever\" :src=\"src\" :fragment=\"fragment\" delay></retriever>\r\n                        <panel-switch v-show=\"isExpandableCard && bottomSwitchBool\" :is-open=\"localExpanded\"\r\n                                      @click.native.stop.prevent=\"collapseThenScrollIntoViewIfNeeded()\"\r\n                                      @is-open-event=\"retrieveOnOpen\"></panel-switch>\r\n                    </div>\r\n                    <hr v-show=\"isSeamless\" />\r\n                </div>\r\n            </template>\r\n            <template v-else>\r\n                <div class=\"card-collapse\"\r\n                     ref=\"panel\"\r\n                     v-if=\"localExpanded\"\r\n                >\r\n                    <div class=\"card-body\">\r\n                        <slot></slot>\r\n                        <retriever v-if=\"hasSrc\" ref=\"retriever\" :src=\"src\" :fragment=\"fragment\" delay></retriever>\r\n                        <panel-switch v-show=\"isExpandableCard && bottomSwitchBool\" :is-open=\"localExpanded\"\r\n                                      @click.native.stop.prevent=\"collapseThenScrollIntoViewIfNeeded()\"\r\n                                      @is-open-event=\"retrieveOnOpen\"></panel-switch>\r\n                    </div>\r\n                    <hr v-show=\"isSeamless\" />\r\n                </div>\r\n            </template>\r\n        </div>\r\n    </span>\r\n</template>\r\n\r\n<script>\r\n  import {getFragmentByHash, toBoolean, toNumber} from './utils/utils.js'\r\n  import md from './utils/markdown.js'\r\n  import panelSwitch from './PanelSwitch.vue'\r\n  import retriever from './Retriever.vue'\r\n  \r\n  export default {\r\n    components: {\r\n      panelSwitch,\r\n      retriever\r\n    },\r\n    props: {\r\n      header: {\r\n        type: String,\r\n        default: ''\r\n      },\r\n      alt: {\r\n        type: String,\r\n        default: ''\r\n      },\r\n      type: {\r\n        type: String,\r\n        default: null\r\n      },\r\n      expandable: {\r\n        type: Boolean,\r\n        default: true\r\n      },\r\n      isOpen: {\r\n        type: Boolean,\r\n        default: null\r\n      },\r\n      expanded: {\r\n        type: Boolean,\r\n        default: null\r\n      },\r\n      minimized: {\r\n        type: Boolean,\r\n        default: false\r\n      },\r\n      noSwitch: {\r\n        type: Boolean,\r\n        default: false\r\n      },\r\n      noClose: {\r\n        type: Boolean,\r\n        default: false\r\n      },\r\n      popupUrl: {\r\n        type: String,\r\n        default: null\r\n      },\r\n      src: {\r\n        type: String\r\n      },\r\n      bottomSwitch: {\r\n        type: Boolean,\r\n        default: true\r\n      },\r\n      preload: {\r\n        type: Boolean,\r\n        default: false\r\n      },\r\n      addClass: {\r\n        type: String,\r\n        default: ''\r\n      }\r\n    },\r\n    computed: {\r\n      // Vue 2.0 coerce migration\r\n      expandableBool () {\r\n        return toBoolean(this.expandable);\r\n      },\r\n      isOpenBool () {\r\n        return toBoolean(this.isOpen);\r\n      },\r\n      expandedBool () {\r\n        return toBoolean(this.expanded);\r\n      },\r\n      minimizedBool () {\r\n        return toBoolean(this.minimized);\r\n      },\r\n      noSwitchBool () {\r\n        return toBoolean(this.noSwitch);\r\n      },\r\n      noCloseBool () {\r\n        return toBoolean(this.noClose);\r\n      },\r\n      bottomSwitchBool () {\r\n        return toBoolean(this.bottomSwitch);\r\n      },\r\n      preloadBool () {\r\n        return toBoolean(this.preload);\r\n      },\r\n      // Vue 2.0 coerce migration end\r\n      isExpandableCard () {\r\n        return this.expandableBool;\r\n      },\r\n      showCaret () {\r\n        return this.isSeamless;\r\n      },\r\n      isSeamless () {\r\n        return this.type === 'seamless';\r\n      },\r\n      btnType () {\r\n        if (this.isSeamless || this.type === 'light') {\r\n          return 'btn-outline-secondary';\r\n        }\r\n        return 'btn-outline-' + (this.type || 'secondary');\r\n      },\r\n      borderType () {\r\n        if (this.isSeamless) {\r\n          return 'border-0';\r\n        } else if (this.type) {\r\n          if (this.type === 'light') {\r\n            return ''; // Bootstrap 4.x light border is almost invisible on a white page\r\n          }\r\n          return 'border-' + this.type;\r\n        }\r\n        return '';\r\n      },\r\n      cardType () {\r\n        if (this.isSeamless) {\r\n          return 'bg-white';\r\n        }\r\n        return 'bg-' + (this.type || 'light');\r\n      },\r\n      isLightBg () {\r\n        return this.cardType === 'bg-light' || this.cardType === 'bg-white' || this.cardType === 'bg-warning';\r\n      },\r\n      headerContent () {\r\n        return md.render(this.header);\r\n      },\r\n      altContent () {\r\n        return this.alt && md.render(this.alt) || md.render(this.header);\r\n      },\r\n      hasSrc () {\r\n        return this.src && this.src.length > 0;\r\n      },\r\n      showCloseButton () {\r\n        if (!this.isSeamless) {\r\n          return !this.noCloseBool;\r\n        } else {\r\n          return onHeaderHover;\r\n        }\r\n      }\r\n    },\r\n    data () {\r\n      return {\r\n        onHeaderHover: false,\r\n        localExpanded: false,\r\n        localMinimized: false\r\n      }\r\n    },\r\n    methods: {\r\n      toggle() {\r\n        this.localExpanded = !this.localExpanded;\r\n      },\r\n      expand() {\r\n        this.localExpanded = !this.localExpanded;\r\n      },\r\n      close() {\r\n        this.localMinimized = true;\r\n      },\r\n      open() {\r\n        this.localExpanded = true;\r\n        this.localMinimized = false;\r\n      },\r\n      scrollIntoViewIfNeeded() {\r\n        let top = this.$el.getBoundingClientRect().top;\r\n        let isTopInView = (top >= 0) && (top <= window.innerHeight);\r\n        if (!isTopInView) {\r\n          this.$el.scrollIntoView();\r\n        }\r\n      },\r\n      collapseThenScrollIntoViewIfNeeded() {\r\n        this.$once('is-open-event', (el, isOpen) => {\r\n          this.scrollIntoViewIfNeeded();\r\n        });\r\n        this.expand();\r\n      },\r\n      openPopup() {\r\n        window.open(this.popupUrl);\r\n      },\r\n      retrieveOnOpen(el, isOpen) {\r\n        if (isOpen && this.hasSrc) {\r\n          this.$refs.retriever.fetch()\r\n        }\r\n      }\r\n    },\r\n    watch: {\r\n      'localExpanded': function (val, oldVal) {\r\n        this.$nextTick(function () {\r\n          this.retrieveOnOpen(this, val);\r\n        })\r\n      },\r\n    },\r\n    created () {\r\n      if (this.src) {\r\n        let hash = getFragmentByHash(this.src);\r\n        if (hash) {\r\n          this.fragment = hash;\r\n          this.src = this.src.split('#')[0];\r\n        }\r\n      }\r\n      // Edge case where user might want non-expandable card that isn't expanded by default\r\n      const notExpandableNoExpand = !this.expandableBool && this.expanded !== 'false';\r\n      // Set local data to computed prop value\r\n      this.localExpanded =  notExpandableNoExpand || this.expandedBool; // Ensure this expr ordering is maintained\r\n      this.localMinimized = this.minimizedBool;\r\n    },\r\n    mounted() {\r\n      this.$nextTick(function () {\r\n        if (this.hasSrc && (this.preloadBool || this.expandedBool)) {\r\n          this.$refs.retriever.fetch()\r\n        }\r\n      });\r\n\r\n      const slugify = (s) => encodeURIComponent(String(s).trim().toLowerCase().replace(/\\s+/g, '-'))\r\n      if (this.headerContent) {\r\n        const panelHeaderText = jQuery(this.headerContent).wrap('<div></div>').parent().find(':header').text();\r\n        if (panelHeaderText) {\r\n          this.$refs.cardContainer.setAttribute('id', slugify(panelHeaderText));\r\n        }\r\n      } else if (this.$refs.headerWrapper.innerHTML) {\r\n        const header = jQuery(this.$refs.headerWrapper.innerHTML).wrap('<div></div>').parent().find(':header');\r\n        if (header.length > 0) {\r\n          this.$refs.cardContainer.setAttribute('id', header[0].id);\r\n        }\r\n      }\r\n    },\r\n  }\r\n</script>\r\n\r\n<style>\r\n    .card-heading {\r\n        width: 100%;\r\n    }\r\n\r\n    .card-title {\r\n        display: inline-block;\r\n        font-size: 1em;\r\n        margin: 0;\r\n        vertical-align: middle;\r\n    }\r\n\r\n    .card-title * {\r\n        margin: 0px !important;\r\n    }\r\n\r\n    .caret-wrapper {\r\n        float: left;\r\n        display: inline-block;\r\n        width: 32px;\r\n    }\r\n\r\n    .header-wrapper {\r\n        display: inline-block;\r\n        width: calc(100% - 32px - 96px);\r\n    }\r\n\r\n    .button-wrapper {\r\n        float: right;\r\n        display: inline-block;\r\n        width: 96px;\r\n    }\r\n\r\n    .header-toggle {\r\n        cursor: pointer;\r\n    }\r\n\r\n    .expandable-card {\r\n        margin-bottom: 0 !important;\r\n        margin-top: 5px;\r\n    }\r\n\r\n    .card-group > .card-container > .expandable-card {\r\n        margin-top: 0!important;\r\n    }\r\n\r\n    .card-seamless {\r\n        padding: 0;\r\n    }\r\n\r\n    .card.card-seamless {\r\n        box-shadow: none;\r\n        border: none;\r\n    }\r\n\r\n    .card-seamless > .card-heading {\r\n        padding: 0;\r\n    }\r\n\r\n    .card-seamless > .card-collapse > hr {\r\n        margin: 0;\r\n        width: calc(100% - 27px);\r\n    }\r\n\r\n    .card-seamless > .card-collapse > .card-body {\r\n        padding: 10px 0;\r\n    }\r\n\r\n    .card-seamless > .card-collapse > .card-body > .collapse-button {\r\n        position: relative;\r\n        top: 22px;\r\n    }\r\n\r\n    .card-body > .collapse-button {\r\n        margin-bottom: 13px;\r\n        margin-top: 5px;\r\n        opacity: 0.2;\r\n    }\r\n\r\n    .card-body > .collapse-button:hover {\r\n        opacity: 1;\r\n    }\r\n\r\n    .close-button {\r\n        font-size: 10px !important;\r\n        float: right;\r\n        padding: 3px 8px !important;\r\n        margin-left: 3px;\r\n        margin-top: 2px;\r\n    }\r\n\r\n    .popup-button {\r\n        font-size: 10px !important;\r\n        float: right;\r\n        margin-top: 2px;\r\n        padding: 3px 8px !important;\r\n    }\r\n\r\n    .morph {\r\n        display: inline-block;\r\n    }\r\n\r\n    .morph-display-wrapper {\r\n        white-space: normal;\r\n    }\r\n\r\n    /* Bootstrap extra small(xs) responsive breakpoint */\r\n    @media (max-width: 575.98px) {\r\n\r\n        .caret-wrapper {\r\n            float: left;\r\n            display: inline-block;\r\n            width: 32px;\r\n        }\r\n\r\n        .header-wrapper {\r\n            display: inline-block;\r\n            width: calc(100% - 32px - 32px);\r\n        }\r\n\r\n        .button-wrapper {\r\n            float: right;\r\n            display: inline-block;\r\n            width: 32px;\r\n        }\r\n\r\n        .card-body {\r\n            padding: 0.5rem;\r\n        }\r\n\r\n        .card-collapse > hr {\r\n            margin-top: 1.5rem;\r\n        }\r\n\r\n        .card-header {\r\n            padding: 0.5rem;\r\n        }\r\n    }\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.card-heading {\n    width: 100%;\n}\n.card-title {\n    display: inline-block;\n    font-size: 1em;\n    margin: 0;\n    vertical-align: middle;\n}\n.card-title * {\n    margin: 0px !important;\n}\n.caret-wrapper {\n    float: left;\n    display: inline-block;\n    width: 32px;\n}\n.header-wrapper {\n    display: inline-block;\n    width: calc(100% - 32px - 96px);\n}\n.button-wrapper {\n    float: right;\n    display: inline-block;\n    width: 96px;\n}\n.header-toggle {\n    cursor: pointer;\n}\n.expandable-card {\n    margin-bottom: 0 !important;\n    margin-top: 5px;\n}\n.card-group > .card-container > .expandable-card {\n    margin-top: 0!important;\n}\n.card-seamless {\n    padding: 0;\n}\n.card.card-seamless {\n    box-shadow: none;\n    border: none;\n}\n.card-seamless > .card-heading {\n    padding: 0;\n}\n.card-seamless > .card-collapse > hr {\n    margin: 0;\n    width: calc(100% - 27px);\n}\n.card-seamless > .card-collapse > .card-body {\n    padding: 10px 0;\n}\n.card-seamless > .card-collapse > .card-body > .collapse-button {\n    position: relative;\n    top: 22px;\n}\n.card-body > .collapse-button {\n    margin-bottom: 13px;\n    margin-top: 5px;\n    opacity: 0.2;\n}\n.card-body > .collapse-button:hover {\n    opacity: 1;\n}\n.close-button {\n    font-size: 10px !important;\n    float: right;\n    padding: 3px 8px !important;\n    margin-left: 3px;\n    margin-top: 2px;\n}\n.popup-button {\n    font-size: 10px !important;\n    float: right;\n    margin-top: 2px;\n    padding: 3px 8px !important;\n}\n.morph {\n    display: inline-block;\n}\n.morph-display-wrapper {\n    white-space: normal;\n}\n\n/* Bootstrap extra small(xs) responsive breakpoint */\n@media (max-width: 575.98px) {\n.caret-wrapper {\n        float: left;\n        display: inline-block;\n        width: 32px;\n}\n.header-wrapper {\n        display: inline-block;\n        width: calc(100% - 32px - 32px);\n}\n.button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 32px;\n}\n.card-body {\n        padding: 0.5rem;\n}\n.card-collapse > hr {\n        margin-top: 1.5rem;\n}\n.card-header {\n        padding: 0.5rem;\n}\n}\n", "", {"version":3,"sources":["/./src/Panel.vue?039ebb5a"],"names":[],"mappings":";AA0TA;IACA,YAAA;CACA;AAEA;IACA,sBAAA;IACA,eAAA;IACA,UAAA;IACA,uBAAA;CACA;AAEA;IACA,uBAAA;CACA;AAEA;IACA,YAAA;IACA,sBAAA;IACA,YAAA;CACA;AAEA;IACA,sBAAA;IACA,gCAAA;CACA;AAEA;IACA,aAAA;IACA,sBAAA;IACA,YAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,4BAAA;IACA,gBAAA;CACA;AAEA;IACA,wBAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,iBAAA;IACA,aAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,UAAA;IACA,yBAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,mBAAA;IACA,UAAA;CACA;AAEA;IACA,oBAAA;IACA,gBAAA;IACA,aAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,2BAAA;IACA,aAAA;IACA,4BAAA;IACA,iBAAA;IACA,gBAAA;CACA;AAEA;IACA,2BAAA;IACA,aAAA;IACA,gBAAA;IACA,4BAAA;CACA;AAEA;IACA,sBAAA;CACA;AAEA;IACA,oBAAA;CACA;;AAEA,qDAAA;AACA;AAEA;QACA,YAAA;QACA,sBAAA;QACA,YAAA;CACA;AAEA;QACA,sBAAA;QACA,gCAAA;CACA;AAEA;QACA,aAAA;QACA,sBAAA;QACA,YAAA;CACA;AAEA;QACA,gBAAA;CACA;AAEA;QACA,mBAAA;CACA;AAEA;QACA,gBAAA;CACA;CACA","file":"Panel.vue","sourcesContent":["<template>\r\n    <span :class=\"['card-container', addClass]\" ref=\"cardContainer\">\r\n        <div class=\"morph\" v-show=\"localMinimized\">\r\n            <button :class=\"['morph-display-wrapper', 'btn', btnType, 'card-title']\" @click=\"open()\">\r\n                <template v-if=\"altContent\">\r\n                    <div v-html=\"altContent\"></div>\r\n                </template>\r\n                <template v-else>\r\n                    <slot name=\"header\">\r\n                        <div v-html=\"altContent\"></div>\r\n                    </slot>\r\n                </template>\r\n            </button>\r\n        </div>\r\n        <div :class=\"['card', {'expandable-card': isExpandableCard}, borderType]\" v-show=\"!localMinimized\">\r\n            <div :class=\"['card-header',{'header-toggle':isExpandableCard}, cardType, borderType]\"\r\n                 @click.prevent.stop=\"isExpandableCard && toggle()\"\r\n                 @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\r\n                <div class=\"caret-wrapper\">\r\n                    <span :class=\"['glyphicon', localExpanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right']\" v-if=\"showCaret\"></span>\r\n                </div>\r\n                <div class=\"header-wrapper\" ref=\"headerWrapper\">\r\n                    <slot name=\"header\">\r\n                        <div :class=\"['card-title', cardType, {'text-white':!isLightBg}]\" v-html=\"headerContent\"></div>\r\n                    </slot>\r\n                </div>\r\n                <div class=\"button-wrapper\">\r\n                    <slot name=\"button\">\r\n                        <panel-switch v-show=\"isExpandableCard && !noSwitchBool && !showCaret\" :is-open=\"localExpanded\"\r\n                                      @click.native.stop.prevent=\"expand()\"\r\n                                      @is-open-event=\"retrieveOnOpen\" :is-light-bg=\"isLightBg\"></panel-switch>\r\n                        <button type=\"button\" :class=\"['close-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\"\r\n                                v-show=\"isSeamless ? onHeaderHover : (!noCloseBool)\"\r\n                                @click.stop=\"close()\">\r\n                            <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\r\n                        </button>\r\n                        <button type=\"button\" :class=\"['popup-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\"\r\n                                v-show=\"((this.popupUrl !== null) && (!isSeamless || onHeaderHover))\"\r\n                                @click.stop=\"openPopup()\">\r\n                            <span class=\"glyphicon glyphicon-new-window\" aria-hidden=\"true\"></span>\r\n                        </button>\r\n                    </slot>\r\n                </div>\r\n            </div>\r\n            <template v-if=\"preloadBool\">\r\n                <div class=\"card-collapse\"\r\n                     ref=\"panel\"\r\n                     v-show=\"localExpanded\"\r\n                >\r\n                    <div class=\"card-body\">\r\n                        <slot></slot>\r\n                        <retriever v-if=\"hasSrc\" ref=\"retriever\" :src=\"src\" :fragment=\"fragment\" delay></retriever>\r\n                        <panel-switch v-show=\"isExpandableCard && bottomSwitchBool\" :is-open=\"localExpanded\"\r\n                                      @click.native.stop.prevent=\"collapseThenScrollIntoViewIfNeeded()\"\r\n                                      @is-open-event=\"retrieveOnOpen\"></panel-switch>\r\n                    </div>\r\n                    <hr v-show=\"isSeamless\" />\r\n                </div>\r\n            </template>\r\n            <template v-else>\r\n                <div class=\"card-collapse\"\r\n                     ref=\"panel\"\r\n                     v-if=\"localExpanded\"\r\n                >\r\n                    <div class=\"card-body\">\r\n                        <slot></slot>\r\n                        <retriever v-if=\"hasSrc\" ref=\"retriever\" :src=\"src\" :fragment=\"fragment\" delay></retriever>\r\n                        <panel-switch v-show=\"isExpandableCard && bottomSwitchBool\" :is-open=\"localExpanded\"\r\n                                      @click.native.stop.prevent=\"collapseThenScrollIntoViewIfNeeded()\"\r\n                                      @is-open-event=\"retrieveOnOpen\"></panel-switch>\r\n                    </div>\r\n                    <hr v-show=\"isSeamless\" />\r\n                </div>\r\n            </template>\r\n        </div>\r\n    </span>\r\n</template>\r\n\r\n<script>\r\n  import {getFragmentByHash, toBoolean, toNumber} from './utils/utils.js'\r\n  import md from './utils/markdown.js'\r\n  import panelSwitch from './PanelSwitch.vue'\r\n  import retriever from './Retriever.vue'\r\n\r\n  const slugify = require('@sindresorhus/slugify');\r\n  \r\n  export default {\r\n    components: {\r\n      panelSwitch,\r\n      retriever\r\n    },\r\n    props: {\r\n      header: {\r\n        type: String,\r\n        default: ''\r\n      },\r\n      alt: {\r\n        type: String,\r\n        default: ''\r\n      },\r\n      type: {\r\n        type: String,\r\n        default: null\r\n      },\r\n      expandable: {\r\n        type: Boolean,\r\n        default: true\r\n      },\r\n      isOpen: {\r\n        type: Boolean,\r\n        default: null\r\n      },\r\n      expanded: {\r\n        type: Boolean,\r\n        default: null\r\n      },\r\n      minimized: {\r\n        type: Boolean,\r\n        default: false\r\n      },\r\n      noSwitch: {\r\n        type: Boolean,\r\n        default: false\r\n      },\r\n      noClose: {\r\n        type: Boolean,\r\n        default: false\r\n      },\r\n      popupUrl: {\r\n        type: String,\r\n        default: null\r\n      },\r\n      src: {\r\n        type: String\r\n      },\r\n      bottomSwitch: {\r\n        type: Boolean,\r\n        default: true\r\n      },\r\n      preload: {\r\n        type: Boolean,\r\n        default: false\r\n      },\r\n      addClass: {\r\n        type: String,\r\n        default: ''\r\n      }\r\n    },\r\n    computed: {\r\n      // Vue 2.0 coerce migration\r\n      expandableBool () {\r\n        return toBoolean(this.expandable);\r\n      },\r\n      isOpenBool () {\r\n        return toBoolean(this.isOpen);\r\n      },\r\n      expandedBool () {\r\n        return toBoolean(this.expanded);\r\n      },\r\n      minimizedBool () {\r\n        return toBoolean(this.minimized);\r\n      },\r\n      noSwitchBool () {\r\n        return toBoolean(this.noSwitch);\r\n      },\r\n      noCloseBool () {\r\n        return toBoolean(this.noClose);\r\n      },\r\n      bottomSwitchBool () {\r\n        return toBoolean(this.bottomSwitch);\r\n      },\r\n      preloadBool () {\r\n        return toBoolean(this.preload);\r\n      },\r\n      // Vue 2.0 coerce migration end\r\n      isExpandableCard () {\r\n        return this.expandableBool;\r\n      },\r\n      showCaret () {\r\n        return this.isSeamless;\r\n      },\r\n      isSeamless () {\r\n        return this.type === 'seamless';\r\n      },\r\n      btnType () {\r\n        if (this.isSeamless || this.type === 'light') {\r\n          return 'btn-outline-secondary';\r\n        }\r\n        return 'btn-outline-' + (this.type || 'secondary');\r\n      },\r\n      borderType () {\r\n        if (this.isSeamless) {\r\n          return 'border-0';\r\n        } else if (this.type) {\r\n          if (this.type === 'light') {\r\n            return ''; // Bootstrap 4.x light border is almost invisible on a white page\r\n          }\r\n          return 'border-' + this.type;\r\n        }\r\n        return '';\r\n      },\r\n      cardType () {\r\n        if (this.isSeamless) {\r\n          return 'bg-white';\r\n        }\r\n        return 'bg-' + (this.type || 'light');\r\n      },\r\n      isLightBg () {\r\n        return this.cardType === 'bg-light' || this.cardType === 'bg-white' || this.cardType === 'bg-warning';\r\n      },\r\n      headerContent () {\r\n        return md.render(this.header);\r\n      },\r\n      altContent () {\r\n        return this.alt && md.render(this.alt) || md.render(this.header);\r\n      },\r\n      hasSrc () {\r\n        return this.src && this.src.length > 0;\r\n      },\r\n      showCloseButton () {\r\n        if (!this.isSeamless) {\r\n          return !this.noCloseBool;\r\n        } else {\r\n          return onHeaderHover;\r\n        }\r\n      }\r\n    },\r\n    data () {\r\n      return {\r\n        onHeaderHover: false,\r\n        localExpanded: false,\r\n        localMinimized: false\r\n      }\r\n    },\r\n    methods: {\r\n      toggle() {\r\n        this.localExpanded = !this.localExpanded;\r\n      },\r\n      expand() {\r\n        this.localExpanded = !this.localExpanded;\r\n      },\r\n      close() {\r\n        this.localMinimized = true;\r\n      },\r\n      open() {\r\n        this.localExpanded = true;\r\n        this.localMinimized = false;\r\n      },\r\n      scrollIntoViewIfNeeded() {\r\n        let top = this.$el.getBoundingClientRect().top;\r\n        let isTopInView = (top >= 0) && (top <= window.innerHeight);\r\n        if (!isTopInView) {\r\n          this.$el.scrollIntoView();\r\n        }\r\n      },\r\n      collapseThenScrollIntoViewIfNeeded() {\r\n        this.$once('is-open-event', (el, isOpen) => {\r\n          this.scrollIntoViewIfNeeded();\r\n        });\r\n        this.expand();\r\n      },\r\n      openPopup() {\r\n        window.open(this.popupUrl);\r\n      },\r\n      retrieveOnOpen(el, isOpen) {\r\n        if (isOpen && this.hasSrc) {\r\n          this.$refs.retriever.fetch()\r\n        }\r\n      }\r\n    },\r\n    watch: {\r\n      'localExpanded': function (val, oldVal) {\r\n        this.$nextTick(function () {\r\n          this.retrieveOnOpen(this, val);\r\n        })\r\n      },\r\n    },\r\n    created () {\r\n      if (this.src) {\r\n        let hash = getFragmentByHash(this.src);\r\n        if (hash) {\r\n          this.fragment = hash;\r\n          this.src = this.src.split('#')[0];\r\n        }\r\n      }\r\n      // Edge case where user might want non-expandable card that isn't expanded by default\r\n      const notExpandableNoExpand = !this.expandableBool && this.expanded !== 'false';\r\n      // Set local data to computed prop value\r\n      this.localExpanded =  notExpandableNoExpand || this.expandedBool; // Ensure this expr ordering is maintained\r\n      this.localMinimized = this.minimizedBool;\r\n    },\r\n    mounted() {\r\n      this.$nextTick(function () {\r\n        if (this.hasSrc && (this.preloadBool || this.expandedBool)) {\r\n          this.$refs.retriever.fetch()\r\n        }\r\n      });\r\n\r\n      if (this.headerContent) {\r\n        const panelHeaderText = jQuery(this.headerContent).wrap('<div></div>').parent().find(':header').text();\r\n        if (panelHeaderText) {\r\n          this.$refs.cardContainer.setAttribute('id', slugify(panelHeaderText));\r\n        }\r\n      } else if (this.$refs.headerWrapper.innerHTML) {\r\n        const header = jQuery(this.$refs.headerWrapper.innerHTML).wrap('<div></div>').parent().find(':header');\r\n        if (header.length > 0) {\r\n          this.$refs.cardContainer.setAttribute('id', header[0].id);\r\n        }\r\n      }\r\n    },\r\n  }\r\n</script>\r\n\r\n<style>\r\n    .card-heading {\r\n        width: 100%;\r\n    }\r\n\r\n    .card-title {\r\n        display: inline-block;\r\n        font-size: 1em;\r\n        margin: 0;\r\n        vertical-align: middle;\r\n    }\r\n\r\n    .card-title * {\r\n        margin: 0px !important;\r\n    }\r\n\r\n    .caret-wrapper {\r\n        float: left;\r\n        display: inline-block;\r\n        width: 32px;\r\n    }\r\n\r\n    .header-wrapper {\r\n        display: inline-block;\r\n        width: calc(100% - 32px - 96px);\r\n    }\r\n\r\n    .button-wrapper {\r\n        float: right;\r\n        display: inline-block;\r\n        width: 96px;\r\n    }\r\n\r\n    .header-toggle {\r\n        cursor: pointer;\r\n    }\r\n\r\n    .expandable-card {\r\n        margin-bottom: 0 !important;\r\n        margin-top: 5px;\r\n    }\r\n\r\n    .card-group > .card-container > .expandable-card {\r\n        margin-top: 0!important;\r\n    }\r\n\r\n    .card-seamless {\r\n        padding: 0;\r\n    }\r\n\r\n    .card.card-seamless {\r\n        box-shadow: none;\r\n        border: none;\r\n    }\r\n\r\n    .card-seamless > .card-heading {\r\n        padding: 0;\r\n    }\r\n\r\n    .card-seamless > .card-collapse > hr {\r\n        margin: 0;\r\n        width: calc(100% - 27px);\r\n    }\r\n\r\n    .card-seamless > .card-collapse > .card-body {\r\n        padding: 10px 0;\r\n    }\r\n\r\n    .card-seamless > .card-collapse > .card-body > .collapse-button {\r\n        position: relative;\r\n        top: 22px;\r\n    }\r\n\r\n    .card-body > .collapse-button {\r\n        margin-bottom: 13px;\r\n        margin-top: 5px;\r\n        opacity: 0.2;\r\n    }\r\n\r\n    .card-body > .collapse-button:hover {\r\n        opacity: 1;\r\n    }\r\n\r\n    .close-button {\r\n        font-size: 10px !important;\r\n        float: right;\r\n        padding: 3px 8px !important;\r\n        margin-left: 3px;\r\n        margin-top: 2px;\r\n    }\r\n\r\n    .popup-button {\r\n        font-size: 10px !important;\r\n        float: right;\r\n        margin-top: 2px;\r\n        padding: 3px 8px !important;\r\n    }\r\n\r\n    .morph {\r\n        display: inline-block;\r\n    }\r\n\r\n    .morph-display-wrapper {\r\n        white-space: normal;\r\n    }\r\n\r\n    /* Bootstrap extra small(xs) responsive breakpoint */\r\n    @media (max-width: 575.98px) {\r\n\r\n        .caret-wrapper {\r\n            float: left;\r\n            display: inline-block;\r\n            width: 32px;\r\n        }\r\n\r\n        .header-wrapper {\r\n            display: inline-block;\r\n            width: calc(100% - 32px - 32px);\r\n        }\r\n\r\n        .button-wrapper {\r\n            float: right;\r\n            display: inline-block;\r\n            width: 32px;\r\n        }\r\n\r\n        .card-body {\r\n            padding: 0.5rem;\r\n        }\r\n\r\n        .card-collapse > hr {\r\n            margin-top: 1.5rem;\r\n        }\r\n\r\n        .card-header {\r\n            padding: 0.5rem;\r\n        }\r\n    }\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -26797,6 +26797,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 	//
 	//
+	
+	var slugify = __webpack_require__(213);
 	
 	exports.default = {
 	  components: {
@@ -27014,9 +27016,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 	    });
 	
-	    var slugify = function slugify(s) {
-	      return encodeURIComponent(String(s).trim().toLowerCase().replace(/\s+/g, '-'));
-	    };
 	    if (this.headerContent) {
 	      var panelHeaderText = jQuery(this.headerContent).wrap('<div></div>').parent().find(':header').text();
 	      if (panelHeaderText) {
@@ -27352,6 +27351,706 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	'use strict';
+	const deburr = __webpack_require__(214);
+	const escapeStringRegexp = __webpack_require__(215);
+	const builtinReplacements = __webpack_require__(216);
+	const builtinOverridableReplacements = __webpack_require__(217);
+	
+	const decamelize = string => {
+		return string
+			.replace(/([a-z\d])([A-Z])/g, '$1 $2')
+			.replace(/([A-Z]+)([A-Z][a-z\d]+)/g, '$1 $2');
+	};
+	
+	const doCustomReplacements = (string, replacements) => {
+		for (const [key, value] of replacements) {
+			string = string.replace(new RegExp(escapeStringRegexp(key), 'g'), value);
+		}
+	
+		return string;
+	};
+	
+	const removeMootSeparators = (string, separator) => {
+		return string
+			.replace(new RegExp(`${separator}{2,}`, 'g'), separator)
+			.replace(new RegExp(`^${separator}|${separator}$`, 'g'), '');
+	};
+	
+	module.exports = (string, options) => {
+		if (typeof string !== 'string') {
+			throw new TypeError(`Expected a string, got \`${typeof string}\``);
+		}
+	
+		options = Object.assign({
+			separator: '-',
+			lowercase: true,
+			decamelize: true,
+			customReplacements: []
+		}, options);
+	
+		const separator = escapeStringRegexp(options.separator);
+		const customReplacements = new Map([
+			...builtinOverridableReplacements,
+			...options.customReplacements,
+			...builtinReplacements
+		]);
+	
+		string = doCustomReplacements(string, customReplacements);
+		string = deburr(string);
+		string = string.normalize('NFKD');
+	
+		if (options.decamelize) {
+			string = decamelize(string);
+		}
+	
+		let patternSlug = /[^a-zA-Z\d]+/g;
+	
+		if (options.lowercase) {
+			string = string.toLowerCase();
+			patternSlug = /[^a-z\d]+/g;
+		}
+	
+		string = string.replace(patternSlug, separator);
+		string = string.replace(/\\/g, '');
+		string = removeMootSeparators(string, separator);
+	
+		return string;
+	};
+
+
+/***/ }),
+/* 214 */
+/***/ (function(module, exports) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {/**
+	 * lodash (Custom Build) <https://lodash.com/>
+	 * Build: `lodash modularize exports="npm" -o ./`
+	 * Copyright jQuery Foundation and other contributors <https://jquery.org/>
+	 * Released under MIT license <https://lodash.com/license>
+	 * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+	 * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+	 */
+	
+	/** Used as references for various `Number` constants. */
+	var INFINITY = 1 / 0;
+	
+	/** `Object#toString` result references. */
+	var symbolTag = '[object Symbol]';
+	
+	/** Used to match Latin Unicode letters (excluding mathematical operators). */
+	var reLatin = /[\xc0-\xd6\xd8-\xf6\xf8-\xff\u0100-\u017f]/g;
+	
+	/** Used to compose unicode character classes. */
+	var rsComboMarksRange = '\\u0300-\\u036f\\ufe20-\\ufe23',
+	    rsComboSymbolsRange = '\\u20d0-\\u20f0';
+	
+	/** Used to compose unicode capture groups. */
+	var rsCombo = '[' + rsComboMarksRange + rsComboSymbolsRange + ']';
+	
+	/**
+	 * Used to match [combining diacritical marks](https://en.wikipedia.org/wiki/Combining_Diacritical_Marks) and
+	 * [combining diacritical marks for symbols](https://en.wikipedia.org/wiki/Combining_Diacritical_Marks_for_Symbols).
+	 */
+	var reComboMark = RegExp(rsCombo, 'g');
+	
+	/** Used to map Latin Unicode letters to basic Latin letters. */
+	var deburredLetters = {
+	  // Latin-1 Supplement block.
+	  '\xc0': 'A',  '\xc1': 'A', '\xc2': 'A', '\xc3': 'A', '\xc4': 'A', '\xc5': 'A',
+	  '\xe0': 'a',  '\xe1': 'a', '\xe2': 'a', '\xe3': 'a', '\xe4': 'a', '\xe5': 'a',
+	  '\xc7': 'C',  '\xe7': 'c',
+	  '\xd0': 'D',  '\xf0': 'd',
+	  '\xc8': 'E',  '\xc9': 'E', '\xca': 'E', '\xcb': 'E',
+	  '\xe8': 'e',  '\xe9': 'e', '\xea': 'e', '\xeb': 'e',
+	  '\xcc': 'I',  '\xcd': 'I', '\xce': 'I', '\xcf': 'I',
+	  '\xec': 'i',  '\xed': 'i', '\xee': 'i', '\xef': 'i',
+	  '\xd1': 'N',  '\xf1': 'n',
+	  '\xd2': 'O',  '\xd3': 'O', '\xd4': 'O', '\xd5': 'O', '\xd6': 'O', '\xd8': 'O',
+	  '\xf2': 'o',  '\xf3': 'o', '\xf4': 'o', '\xf5': 'o', '\xf6': 'o', '\xf8': 'o',
+	  '\xd9': 'U',  '\xda': 'U', '\xdb': 'U', '\xdc': 'U',
+	  '\xf9': 'u',  '\xfa': 'u', '\xfb': 'u', '\xfc': 'u',
+	  '\xdd': 'Y',  '\xfd': 'y', '\xff': 'y',
+	  '\xc6': 'Ae', '\xe6': 'ae',
+	  '\xde': 'Th', '\xfe': 'th',
+	  '\xdf': 'ss',
+	  // Latin Extended-A block.
+	  '\u0100': 'A',  '\u0102': 'A', '\u0104': 'A',
+	  '\u0101': 'a',  '\u0103': 'a', '\u0105': 'a',
+	  '\u0106': 'C',  '\u0108': 'C', '\u010a': 'C', '\u010c': 'C',
+	  '\u0107': 'c',  '\u0109': 'c', '\u010b': 'c', '\u010d': 'c',
+	  '\u010e': 'D',  '\u0110': 'D', '\u010f': 'd', '\u0111': 'd',
+	  '\u0112': 'E',  '\u0114': 'E', '\u0116': 'E', '\u0118': 'E', '\u011a': 'E',
+	  '\u0113': 'e',  '\u0115': 'e', '\u0117': 'e', '\u0119': 'e', '\u011b': 'e',
+	  '\u011c': 'G',  '\u011e': 'G', '\u0120': 'G', '\u0122': 'G',
+	  '\u011d': 'g',  '\u011f': 'g', '\u0121': 'g', '\u0123': 'g',
+	  '\u0124': 'H',  '\u0126': 'H', '\u0125': 'h', '\u0127': 'h',
+	  '\u0128': 'I',  '\u012a': 'I', '\u012c': 'I', '\u012e': 'I', '\u0130': 'I',
+	  '\u0129': 'i',  '\u012b': 'i', '\u012d': 'i', '\u012f': 'i', '\u0131': 'i',
+	  '\u0134': 'J',  '\u0135': 'j',
+	  '\u0136': 'K',  '\u0137': 'k', '\u0138': 'k',
+	  '\u0139': 'L',  '\u013b': 'L', '\u013d': 'L', '\u013f': 'L', '\u0141': 'L',
+	  '\u013a': 'l',  '\u013c': 'l', '\u013e': 'l', '\u0140': 'l', '\u0142': 'l',
+	  '\u0143': 'N',  '\u0145': 'N', '\u0147': 'N', '\u014a': 'N',
+	  '\u0144': 'n',  '\u0146': 'n', '\u0148': 'n', '\u014b': 'n',
+	  '\u014c': 'O',  '\u014e': 'O', '\u0150': 'O',
+	  '\u014d': 'o',  '\u014f': 'o', '\u0151': 'o',
+	  '\u0154': 'R',  '\u0156': 'R', '\u0158': 'R',
+	  '\u0155': 'r',  '\u0157': 'r', '\u0159': 'r',
+	  '\u015a': 'S',  '\u015c': 'S', '\u015e': 'S', '\u0160': 'S',
+	  '\u015b': 's',  '\u015d': 's', '\u015f': 's', '\u0161': 's',
+	  '\u0162': 'T',  '\u0164': 'T', '\u0166': 'T',
+	  '\u0163': 't',  '\u0165': 't', '\u0167': 't',
+	  '\u0168': 'U',  '\u016a': 'U', '\u016c': 'U', '\u016e': 'U', '\u0170': 'U', '\u0172': 'U',
+	  '\u0169': 'u',  '\u016b': 'u', '\u016d': 'u', '\u016f': 'u', '\u0171': 'u', '\u0173': 'u',
+	  '\u0174': 'W',  '\u0175': 'w',
+	  '\u0176': 'Y',  '\u0177': 'y', '\u0178': 'Y',
+	  '\u0179': 'Z',  '\u017b': 'Z', '\u017d': 'Z',
+	  '\u017a': 'z',  '\u017c': 'z', '\u017e': 'z',
+	  '\u0132': 'IJ', '\u0133': 'ij',
+	  '\u0152': 'Oe', '\u0153': 'oe',
+	  '\u0149': "'n", '\u017f': 'ss'
+	};
+	
+	/** Detect free variable `global` from Node.js. */
+	var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+	
+	/** Detect free variable `self`. */
+	var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+	
+	/** Used as a reference to the global object. */
+	var root = freeGlobal || freeSelf || Function('return this')();
+	
+	/**
+	 * The base implementation of `_.propertyOf` without support for deep paths.
+	 *
+	 * @private
+	 * @param {Object} object The object to query.
+	 * @returns {Function} Returns the new accessor function.
+	 */
+	function basePropertyOf(object) {
+	  return function(key) {
+	    return object == null ? undefined : object[key];
+	  };
+	}
+	
+	/**
+	 * Used by `_.deburr` to convert Latin-1 Supplement and Latin Extended-A
+	 * letters to basic Latin letters.
+	 *
+	 * @private
+	 * @param {string} letter The matched letter to deburr.
+	 * @returns {string} Returns the deburred letter.
+	 */
+	var deburrLetter = basePropertyOf(deburredLetters);
+	
+	/** Used for built-in method references. */
+	var objectProto = Object.prototype;
+	
+	/**
+	 * Used to resolve the
+	 * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
+	 * of values.
+	 */
+	var objectToString = objectProto.toString;
+	
+	/** Built-in value references. */
+	var Symbol = root.Symbol;
+	
+	/** Used to convert symbols to primitives and strings. */
+	var symbolProto = Symbol ? Symbol.prototype : undefined,
+	    symbolToString = symbolProto ? symbolProto.toString : undefined;
+	
+	/**
+	 * The base implementation of `_.toString` which doesn't convert nullish
+	 * values to empty strings.
+	 *
+	 * @private
+	 * @param {*} value The value to process.
+	 * @returns {string} Returns the string.
+	 */
+	function baseToString(value) {
+	  // Exit early for strings to avoid a performance hit in some environments.
+	  if (typeof value == 'string') {
+	    return value;
+	  }
+	  if (isSymbol(value)) {
+	    return symbolToString ? symbolToString.call(value) : '';
+	  }
+	  var result = (value + '');
+	  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
+	}
+	
+	/**
+	 * Checks if `value` is object-like. A value is object-like if it's not `null`
+	 * and has a `typeof` result of "object".
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 4.0.0
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
+	 * @example
+	 *
+	 * _.isObjectLike({});
+	 * // => true
+	 *
+	 * _.isObjectLike([1, 2, 3]);
+	 * // => true
+	 *
+	 * _.isObjectLike(_.noop);
+	 * // => false
+	 *
+	 * _.isObjectLike(null);
+	 * // => false
+	 */
+	function isObjectLike(value) {
+	  return !!value && typeof value == 'object';
+	}
+	
+	/**
+	 * Checks if `value` is classified as a `Symbol` primitive or object.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 4.0.0
+	 * @category Lang
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+	 * @example
+	 *
+	 * _.isSymbol(Symbol.iterator);
+	 * // => true
+	 *
+	 * _.isSymbol('abc');
+	 * // => false
+	 */
+	function isSymbol(value) {
+	  return typeof value == 'symbol' ||
+	    (isObjectLike(value) && objectToString.call(value) == symbolTag);
+	}
+	
+	/**
+	 * Converts `value` to a string. An empty string is returned for `null`
+	 * and `undefined` values. The sign of `-0` is preserved.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 4.0.0
+	 * @category Lang
+	 * @param {*} value The value to process.
+	 * @returns {string} Returns the string.
+	 * @example
+	 *
+	 * _.toString(null);
+	 * // => ''
+	 *
+	 * _.toString(-0);
+	 * // => '-0'
+	 *
+	 * _.toString([1, 2, 3]);
+	 * // => '1,2,3'
+	 */
+	function toString(value) {
+	  return value == null ? '' : baseToString(value);
+	}
+	
+	/**
+	 * Deburrs `string` by converting
+	 * [Latin-1 Supplement](https://en.wikipedia.org/wiki/Latin-1_Supplement_(Unicode_block)#Character_table)
+	 * and [Latin Extended-A](https://en.wikipedia.org/wiki/Latin_Extended-A)
+	 * letters to basic Latin letters and removing
+	 * [combining diacritical marks](https://en.wikipedia.org/wiki/Combining_Diacritical_Marks).
+	 *
+	 * @static
+	 * @memberOf _
+	 * @since 3.0.0
+	 * @category String
+	 * @param {string} [string=''] The string to deburr.
+	 * @returns {string} Returns the deburred string.
+	 * @example
+	 *
+	 * _.deburr('déjà vu');
+	 * // => 'deja vu'
+	 */
+	function deburr(string) {
+	  string = toString(string);
+	  return string && string.replace(reLatin, deburrLetter).replace(reComboMark, '');
+	}
+	
+	module.exports = deburr;
+	
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ }),
+/* 215 */
+/***/ (function(module, exports) {
+
+	'use strict';
+	
+	var matchOperatorsRe = /[|\\{}()[\]^$+*?.]/g;
+	
+	module.exports = function (str) {
+		if (typeof str !== 'string') {
+			throw new TypeError('Expected a string');
+		}
+	
+		return str.replace(matchOperatorsRe, '\\$&');
+	};
+
+
+/***/ }),
+/* 216 */
+/***/ (function(module, exports) {
+
+	'use strict';
+	
+	module.exports = [
+		// German umlauts
+		['ß', 'ss'],
+		['ä', 'ae'],
+		['Ä', 'Ae'],
+		['ö', 'oe'],
+		['Ö', 'Oe'],
+		['ü', 'ue'],
+		['Ü', 'Ue'],
+	
+		// Vietnamese
+		['à', 'a'],
+		['À', 'A'],
+		['á', 'a'],
+		['Á', 'A'],
+		['â', 'a'],
+		['Â', 'A'],
+		['ã', 'a'],
+		['Ã', 'A'],
+		['è', 'e'],
+		['È', 'E'],
+		['é', 'e'],
+		['É', 'E'],
+		['ê', 'e'],
+		['Ê', 'E'],
+		['ì', 'i'],
+		['Ì', 'I'],
+		['í', 'i'],
+		['Í', 'I'],
+		['ò', 'o'],
+		['Ò', 'O'],
+		['ó', 'o'],
+		['Ó', 'O'],
+		['ô', 'o'],
+		['Ô', 'O'],
+		['õ', 'o'],
+		['Õ', 'O'],
+		['ù', 'u'],
+		['Ù', 'U'],
+		['ú', 'u'],
+		['Ú', 'U'],
+		['ý', 'y'],
+		['Ý', 'Y'],
+		['ă', 'a'],
+		['Ă', 'A'],
+		['Đ', 'D'],
+		['đ', 'd'],
+		['ĩ', 'i'],
+		['Ĩ', 'I'],
+		['ũ', 'u'],
+		['Ũ', 'U'],
+		['ơ', 'o'],
+		['Ơ', 'O'],
+		['ư', 'u'],
+		['Ư', 'U'],
+		['ạ', 'a'],
+		['Ạ', 'A'],
+		['ả', 'a'],
+		['Ả', 'A'],
+		['ấ', 'a'],
+		['Ấ', 'A'],
+		['ầ', 'a'],
+		['Ầ', 'A'],
+		['ẩ', 'a'],
+		['Ẩ', 'A'],
+		['ẫ', 'a'],
+		['Ẫ', 'A'],
+		['ậ', 'a'],
+		['Ậ', 'A'],
+		['ắ', 'a'],
+		['Ắ', 'A'],
+		['ằ', 'a'],
+		['Ằ', 'A'],
+		['ẳ', 'a'],
+		['Ẳ', 'A'],
+		['ẵ', 'a'],
+		['Ẵ', 'A'],
+		['ặ', 'a'],
+		['Ặ', 'A'],
+		['ẹ', 'e'],
+		['Ẹ', 'E'],
+		['ẻ', 'e'],
+		['Ẻ', 'E'],
+		['ẽ', 'e'],
+		['Ẽ', 'E'],
+		['ế', 'e'],
+		['Ế', 'E'],
+		['ề', 'e'],
+		['Ề', 'E'],
+		['ể', 'e'],
+		['Ể', 'E'],
+		['ễ', 'e'],
+		['Ễ', 'E'],
+		['ệ', 'e'],
+		['Ệ', 'E'],
+		['ỉ', 'i'],
+		['Ỉ', 'I'],
+		['ị', 'i'],
+		['Ị', 'I'],
+		['ọ', 'o'],
+		['Ọ', 'O'],
+		['ỏ', 'o'],
+		['Ỏ', 'O'],
+		['ố', 'o'],
+		['Ố', 'O'],
+		['ồ', 'o'],
+		['Ồ', 'O'],
+		['ổ', 'o'],
+		['Ổ', 'O'],
+		['ỗ', 'o'],
+		['Ỗ', 'O'],
+		['ộ', 'o'],
+		['Ộ', 'O'],
+		['ớ', 'o'],
+		['Ớ', 'O'],
+		['ờ', 'o'],
+		['Ờ', 'O'],
+		['ở', 'o'],
+		['Ở', 'O'],
+		['ỡ', 'o'],
+		['Ỡ', 'O'],
+		['ợ', 'o'],
+		['Ợ', 'O'],
+		['ụ', 'u'],
+		['Ụ', 'U'],
+		['ủ', 'u'],
+		['Ủ', 'U'],
+		['ứ', 'u'],
+		['Ứ', 'U'],
+		['ừ', 'u'],
+		['Ừ', 'U'],
+		['ử', 'u'],
+		['Ử', 'U'],
+		['ữ', 'u'],
+		['Ữ', 'U'],
+		['ự', 'u'],
+		['Ự', 'U'],
+		['ỳ', 'y'],
+		['Ỳ', 'Y'],
+		['ỵ', 'y'],
+		['Ỵ', 'Y'],
+		['ỷ', 'y'],
+		['Ỷ', 'Y'],
+		['ỹ', 'y'],
+		['Ỹ', 'Y'],
+	
+		// Arabic
+		['ء', 'e'],
+		['آ', 'a'],
+		['أ', 'a'],
+		['ؤ', 'w'],
+		['إ', 'i'],
+		['ئ', 'y'],
+		['ا', 'a'],
+		['ب', 'b'],
+		['ة', 't'],
+		['ت', 't'],
+		['ث', 'th'],
+		['ج', 'j'],
+		['ح', 'h'],
+		['خ', 'kh'],
+		['د', 'd'],
+		['ذ', 'dh'],
+		['ر', 'r'],
+		['ز', 'z'],
+		['س', 's'],
+		['ش', 'sh'],
+		['ص', 's'],
+		['ض', 'd'],
+		['ط', 't'],
+		['ظ', 'z'],
+		['ع', 'e'],
+		['غ', 'gh'],
+		['ـ', '_'],
+		['ف', 'f'],
+		['ق', 'q'],
+		['ك', 'k'],
+		['ل', 'l'],
+		['م', 'm'],
+		['ن', 'n'],
+		['ه', 'h'],
+		['و', 'w'],
+		['ى', 'a'],
+		['ي', 'y'],
+		['َ‎', 'a'],
+		['ُ', 'u'],
+		['ِ‎', 'i'],
+		['٠', '0'],
+		['١', '1'],
+		['٢', '2'],
+		['٣', '3'],
+		['٤', '4'],
+		['٥', '5'],
+		['٦', '6'],
+		['٧', '7'],
+		['٨', '8'],
+		['٩', '9'],
+	
+		// Persian / Farsi
+		['چ', 'ch'],
+		['ک', 'k'],
+		['گ', 'g'],
+		['پ', 'p'],
+		['ژ', 'zh'],
+		['ی', 'y'],
+		['۰', '0'],
+		['۱', '1'],
+		['۲', '2'],
+		['۳', '3'],
+		['۴', '4'],
+		['۵', '5'],
+		['۶', '6'],
+		['۷', '7'],
+		['۸', '8'],
+		['۹', '9'],
+	
+		// Pashto
+		['ټ', 'p'],
+		['ځ', 'z'],
+		['څ', 'c'],
+		['ډ', 'd'],
+		['ﺫ', 'd'],
+		['ﺭ', 'r'],
+		['ړ', 'r'],
+		['ﺯ', 'z'],
+		['ږ', 'g'],
+		['ښ', 'x'],
+		['ګ', 'g'],
+		['ڼ', 'n'],
+		['ۀ', 'e'],
+		['ې', 'e'],
+		['ۍ', 'ai'],
+	
+		// Urdu
+		['ٹ', 't'],
+		['ڈ', 'd'],
+		['ڑ', 'r'],
+		['ں', 'n'],
+		['ہ', 'h'],
+		['ھ', 'h'],
+		['ے', 'e'],
+	
+		// Russian
+		['А', 'A'],
+		['а', 'a'],
+		['Б', 'B'],
+		['б', 'b'],
+		['В', 'V'],
+		['в', 'v'],
+		['Г', 'G'],
+		['г', 'g'],
+		['Д', 'D'],
+		['д', 'd'],
+		['Е', 'E'],
+		['е', 'e'],
+		['Ж', 'Zh'],
+		['ж', 'zh'],
+		['З', 'Z'],
+		['з', 'z'],
+		['И', 'I'],
+		['и', 'i'],
+		['Й', 'J'],
+		['й', 'j'],
+		['К', 'K'],
+		['к', 'k'],
+		['Л', 'L'],
+		['л', 'l'],
+		['М', 'M'],
+		['м', 'm'],
+		['Н', 'N'],
+		['н', 'n'],
+		['О', 'O'],
+		['о', 'o'],
+		['П', 'P'],
+		['п', 'p'],
+		['Р', 'R'],
+		['р', 'r'],
+		['С', 'S'],
+		['с', 's'],
+		['Т', 'T'],
+		['т', 't'],
+		['У', 'U'],
+		['у', 'u'],
+		['Ф', 'F'],
+		['ф', 'f'],
+		['Х', 'H'],
+		['х', 'h'],
+		['Ц', 'Cz'],
+		['ц', 'cz'],
+		['Ч', 'Ch'],
+		['ч', 'ch'],
+		['Ш', 'Sh'],
+		['ш', 'sh'],
+		['Щ', 'Shh'],
+		['щ', 'shh'],
+		['Ъ', ''],
+		['ъ', ''],
+		['Ы', 'Y'],
+		['ы', 'y'],
+		['Ь', ''],
+		['ь', ''],
+		['Э', 'E'],
+		['э', 'e'],
+		['Ю', 'Yu'],
+		['ю', 'yu'],
+		['Я', 'Ya'],
+		['я', 'ya'],
+		['Ё', 'Yo'],
+		['ё', 'yo'],
+	
+		// Romanian
+		['ș', 's'],
+		['Ș', 's'],
+		['ț', 't'],
+		['Ț', 't'],
+	
+		// Turkish
+		['ş', 's'],
+		['Ş', 's'],
+		['ç', 'c'],
+		['Ç', 'c'],
+		['ğ', 'g'],
+		['Ğ', 'g'],
+		['ı', 'i'],
+		['İ', 'i']
+	];
+
+
+/***/ }),
+/* 217 */
+/***/ (function(module, exports) {
+
+	'use strict';
+	
+	module.exports = [
+		['&', ' and '],
+		['🦄', ' unicorn '],
+		['♥', ' love ']
+	];
+
+
+/***/ }),
+/* 218 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('span', {
 	    ref: "cardContainer",
@@ -27581,20 +28280,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 214 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(215)
+	__webpack_require__(220)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(217)
+	__vue_exports__ = __webpack_require__(222)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(218)
+	var __vue_template__ = __webpack_require__(223)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -27628,13 +28327,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 215 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(216);
+	var content = __webpack_require__(221);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -27654,7 +28353,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 216 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -27668,7 +28367,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 217 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27742,7 +28441,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 
 /***/ }),
-/* 218 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -27773,20 +28472,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 219 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(220)
+	__webpack_require__(225)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(222)
+	__vue_exports__ = __webpack_require__(227)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(238)
+	var __vue_template__ = __webpack_require__(243)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -27820,13 +28519,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 220 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(221);
+	var content = __webpack_require__(226);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -27846,7 +28545,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 221 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -27860,7 +28559,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 222 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27869,7 +28568,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _popoverMixins = __webpack_require__(223);
+	var _popoverMixins = __webpack_require__(228);
 	
 	var _popoverMixins2 = _interopRequireDefault(_popoverMixins);
 	
@@ -27930,7 +28629,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 
 /***/ }),
-/* 223 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -27939,11 +28638,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _assign = __webpack_require__(224);
+	var _assign = __webpack_require__(229);
 	
 	var _assign2 = _interopRequireDefault(_assign);
 	
-	var _some = __webpack_require__(230);
+	var _some = __webpack_require__(235);
 	
 	var _some2 = _interopRequireDefault(_some);
 	
@@ -28180,38 +28879,38 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(72)))
 
 /***/ }),
-/* 224 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(225), __esModule: true };
+	module.exports = { "default": __webpack_require__(230), __esModule: true };
 
 /***/ }),
-/* 225 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(226);
+	__webpack_require__(231);
 	module.exports = __webpack_require__(23).Object.assign;
 
 
 /***/ }),
-/* 226 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 19.1.3.1 Object.assign(target, source)
 	var $export = __webpack_require__(22);
 	
-	$export($export.S + $export.F, 'Object', { assign: __webpack_require__(227) });
+	$export($export.S + $export.F, 'Object', { assign: __webpack_require__(232) });
 
 
 /***/ }),
-/* 227 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	// 19.1.2.1 Object.assign(target, source, ...)
 	var getKeys = __webpack_require__(6);
-	var gOPS = __webpack_require__(228);
-	var pIE = __webpack_require__(229);
+	var gOPS = __webpack_require__(233);
+	var pIE = __webpack_require__(234);
 	var toObject = __webpack_require__(4);
 	var IObject = __webpack_require__(10);
 	var $assign = Object.assign;
@@ -28244,42 +28943,42 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 228 */
+/* 233 */
 /***/ (function(module, exports) {
 
 	exports.f = Object.getOwnPropertySymbols;
 
 
 /***/ }),
-/* 229 */
+/* 234 */
 /***/ (function(module, exports) {
 
 	exports.f = {}.propertyIsEnumerable;
 
 
 /***/ }),
-/* 230 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(231), __esModule: true };
+	module.exports = { "default": __webpack_require__(236), __esModule: true };
 
 /***/ }),
-/* 231 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(232);
+	__webpack_require__(237);
 	module.exports = __webpack_require__(23).Array.some;
 
 
 /***/ }),
-/* 232 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	var $export = __webpack_require__(22);
-	var $some = __webpack_require__(233)(3);
+	var $some = __webpack_require__(238)(3);
 	
-	$export($export.P + $export.F * !__webpack_require__(237)([].some, true), 'Array', {
+	$export($export.P + $export.F * !__webpack_require__(242)([].some, true), 'Array', {
 	  // 22.1.3.23 / 15.4.4.17 Array.prototype.some(callbackfn [, thisArg])
 	  some: function some(callbackfn /* , thisArg */) {
 	    return $some(this, callbackfn, arguments[1]);
@@ -28288,7 +28987,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 233 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 0 -> Array#forEach
@@ -28302,7 +29001,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var IObject = __webpack_require__(10);
 	var toObject = __webpack_require__(4);
 	var toLength = __webpack_require__(13);
-	var asc = __webpack_require__(234);
+	var asc = __webpack_require__(239);
 	module.exports = function (TYPE, $create) {
 	  var IS_MAP = TYPE == 1;
 	  var IS_FILTER = TYPE == 2;
@@ -28338,11 +29037,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 234 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 9.4.2.3 ArraySpeciesCreate(originalArray, length)
-	var speciesConstructor = __webpack_require__(235);
+	var speciesConstructor = __webpack_require__(240);
 	
 	module.exports = function (original, length) {
 	  return new (speciesConstructor(original))(length);
@@ -28350,11 +29049,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 235 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var isObject = __webpack_require__(29);
-	var isArray = __webpack_require__(236);
+	var isArray = __webpack_require__(241);
 	var SPECIES = __webpack_require__(56)('species');
 	
 	module.exports = function (original) {
@@ -28372,7 +29071,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 236 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 7.2.2 IsArray(argument)
@@ -28383,7 +29082,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 237 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28398,7 +29097,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 238 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -28447,20 +29146,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 239 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(240)
+	__webpack_require__(245)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(242)
+	__vue_exports__ = __webpack_require__(247)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(243)
+	var __vue_template__ = __webpack_require__(248)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -28494,13 +29193,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 240 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(241);
+	var content = __webpack_require__(246);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -28520,7 +29219,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 241 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -28534,7 +29233,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 242 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28630,7 +29329,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 243 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -28686,17 +29385,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 244 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(245)
+	__webpack_require__(250)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(247)
+	__vue_exports__ = __webpack_require__(252)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -28728,13 +29427,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 245 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(246);
+	var content = __webpack_require__(251);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -28754,7 +29453,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 246 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -28768,7 +29467,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 247 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28777,23 +29476,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _slicedToArray2 = __webpack_require__(248);
+	var _slicedToArray2 = __webpack_require__(253);
 	
 	var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 	
-	var _entries = __webpack_require__(257);
+	var _entries = __webpack_require__(262);
 	
 	var _entries2 = _interopRequireDefault(_entries);
 	
-	var _assign = __webpack_require__(224);
+	var _assign = __webpack_require__(229);
 	
 	var _assign2 = _interopRequireDefault(_assign);
 	
-	var _values = __webpack_require__(261);
+	var _values = __webpack_require__(266);
 	
 	var _values2 = _interopRequireDefault(_values);
 	
-	var _Typeahead = __webpack_require__(264);
+	var _Typeahead = __webpack_require__(269);
 	
 	var _Typeahead2 = _interopRequireDefault(_Typeahead);
 	
@@ -28951,18 +29650,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 248 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	exports.__esModule = true;
 	
-	var _isIterable2 = __webpack_require__(249);
+	var _isIterable2 = __webpack_require__(254);
 	
 	var _isIterable3 = _interopRequireDefault(_isIterable2);
 	
-	var _getIterator2 = __webpack_require__(253);
+	var _getIterator2 = __webpack_require__(258);
 	
 	var _getIterator3 = _interopRequireDefault(_getIterator2);
 	
@@ -29007,25 +29706,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	}();
 
 /***/ }),
-/* 249 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(250), __esModule: true };
+	module.exports = { "default": __webpack_require__(255), __esModule: true };
 
 /***/ }),
-/* 250 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	__webpack_require__(58);
 	__webpack_require__(45);
-	module.exports = __webpack_require__(251);
+	module.exports = __webpack_require__(256);
 
 
 /***/ }),
-/* 251 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var classof = __webpack_require__(252);
+	var classof = __webpack_require__(257);
 	var ITERATOR = __webpack_require__(56)('iterator');
 	var Iterators = __webpack_require__(50);
 	module.exports = __webpack_require__(23).isIterable = function (it) {
@@ -29038,7 +29737,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 252 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// getting tag from 19.1.3.6 Object.prototype.toString()
@@ -29067,26 +29766,26 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 253 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(254), __esModule: true };
+	module.exports = { "default": __webpack_require__(259), __esModule: true };
 
 /***/ }),
-/* 254 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	__webpack_require__(58);
 	__webpack_require__(45);
-	module.exports = __webpack_require__(255);
+	module.exports = __webpack_require__(260);
 
 
 /***/ }),
-/* 255 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var anObject = __webpack_require__(28);
-	var get = __webpack_require__(256);
+	var get = __webpack_require__(261);
 	module.exports = __webpack_require__(23).getIterator = function (it) {
 	  var iterFn = get(it);
 	  if (typeof iterFn != 'function') throw TypeError(it + ' is not iterable!');
@@ -29095,10 +29794,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 256 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var classof = __webpack_require__(252);
+	var classof = __webpack_require__(257);
 	var ITERATOR = __webpack_require__(56)('iterator');
 	var Iterators = __webpack_require__(50);
 	module.exports = __webpack_require__(23).getIteratorMethod = function (it) {
@@ -29109,26 +29808,26 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 257 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(258), __esModule: true };
+	module.exports = { "default": __webpack_require__(263), __esModule: true };
 
 /***/ }),
-/* 258 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(259);
+	__webpack_require__(264);
 	module.exports = __webpack_require__(23).Object.entries;
 
 
 /***/ }),
-/* 259 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// https://github.com/tc39/proposal-object-values-entries
 	var $export = __webpack_require__(22);
-	var $entries = __webpack_require__(260)(true);
+	var $entries = __webpack_require__(265)(true);
 	
 	$export($export.S, 'Object', {
 	  entries: function entries(it) {
@@ -29138,12 +29837,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 260 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var getKeys = __webpack_require__(6);
 	var toIObject = __webpack_require__(9);
-	var isEnum = __webpack_require__(229).f;
+	var isEnum = __webpack_require__(234).f;
 	module.exports = function (isEntries) {
 	  return function (it) {
 	    var O = toIObject(it);
@@ -29160,26 +29859,26 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 261 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(262), __esModule: true };
+	module.exports = { "default": __webpack_require__(267), __esModule: true };
 
 /***/ }),
-/* 262 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(263);
+	__webpack_require__(268);
 	module.exports = __webpack_require__(23).Object.values;
 
 
 /***/ }),
-/* 263 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// https://github.com/tc39/proposal-object-values-entries
 	var $export = __webpack_require__(22);
-	var $values = __webpack_require__(260)(false);
+	var $values = __webpack_require__(265)(false);
 	
 	$export($export.S, 'Object', {
 	  values: function values(it) {
@@ -29189,20 +29888,20 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 264 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(265)
+	__webpack_require__(270)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(267)
+	__vue_exports__ = __webpack_require__(272)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(268)
+	var __vue_template__ = __webpack_require__(273)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -29236,13 +29935,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 265 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(266);
+	var content = __webpack_require__(271);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -29262,7 +29961,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 266 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -29276,7 +29975,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 267 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29443,7 +30142,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 268 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -29525,20 +30224,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 269 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(270)
+	__webpack_require__(275)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(272)
+	__vue_exports__ = __webpack_require__(277)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(273)
+	var __vue_template__ = __webpack_require__(278)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -29572,13 +30271,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 270 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(271);
+	var content = __webpack_require__(276);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -29598,7 +30297,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 271 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -29612,7 +30311,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 272 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29709,7 +30408,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 273 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -29741,20 +30440,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 274 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(275)
+	__webpack_require__(280)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(277)
+	__vue_exports__ = __webpack_require__(282)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(278)
+	var __vue_template__ = __webpack_require__(283)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -29789,13 +30488,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 275 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(276);
+	var content = __webpack_require__(281);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -29815,7 +30514,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 276 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -29829,7 +30528,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 277 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29910,7 +30609,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 278 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -29924,20 +30623,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 279 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(280)
+	__webpack_require__(285)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(282)
+	__vue_exports__ = __webpack_require__(287)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(283)
+	var __vue_template__ = __webpack_require__(288)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -29972,13 +30671,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 280 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(281);
+	var content = __webpack_require__(286);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -29998,7 +30697,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 281 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -30012,7 +30711,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 282 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30105,7 +30804,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 283 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -30180,20 +30879,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 284 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(285)
+	__webpack_require__(290)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(287)
+	__vue_exports__ = __webpack_require__(292)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(288)
+	var __vue_template__ = __webpack_require__(293)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -30228,13 +30927,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 285 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(286);
+	var content = __webpack_require__(291);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -30254,7 +30953,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 286 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -30268,7 +30967,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 287 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30389,7 +31088,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 
 /***/ }),
-/* 288 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -30415,20 +31114,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 289 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(290)
+	__webpack_require__(295)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(292)
+	__vue_exports__ = __webpack_require__(297)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(293)
+	var __vue_template__ = __webpack_require__(298)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -30462,13 +31161,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 290 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(291);
+	var content = __webpack_require__(296);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -30488,7 +31187,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 291 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -30502,7 +31201,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 292 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30511,7 +31210,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _popoverMixins = __webpack_require__(223);
+	var _popoverMixins = __webpack_require__(228);
 	
 	var _popoverMixins2 = _interopRequireDefault(_popoverMixins);
 	
@@ -30573,7 +31272,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 293 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -30619,20 +31318,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 294 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(295)
+	__webpack_require__(300)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(297)
+	__vue_exports__ = __webpack_require__(302)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(298)
+	var __vue_template__ = __webpack_require__(303)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -30666,13 +31365,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 295 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(296);
+	var content = __webpack_require__(301);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -30692,7 +31391,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 296 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -30706,7 +31405,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 297 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -30768,7 +31467,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(72)))
 
 /***/ }),
-/* 298 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
