@@ -1,6 +1,8 @@
 var webpack = require('webpack')
 var path = require('path')
 
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+
 module.exports = {
   entry: {
     'vue-strap': './src/index.js',
@@ -55,11 +57,7 @@ if (process.env.NODE_ENV === 'production') {
         NODE_ENV: '"production"'
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    }),
+    new UglifyJsPlugin(),
     new webpack.ProvidePlugin({
       jQuery: 'jquery'
     })
