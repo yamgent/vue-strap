@@ -81,6 +81,8 @@
   import md from './utils/markdown.js'
   import panelSwitch from './PanelSwitch.vue'
   import retriever from './Retriever.vue'
+
+  const slugify = require('@sindresorhus/slugify');
   
   export default {
     components: {
@@ -294,7 +296,6 @@
         }
       });
 
-      const slugify = (s) => encodeURIComponent(String(s).trim().toLowerCase().replace(/\s+/g, '-'))
       if (this.headerContent) {
         const panelHeaderText = jQuery(this.headerContent).wrap('<div></div>').parent().find(':header').text();
         if (panelHeaderText) {
