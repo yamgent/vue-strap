@@ -719,7 +719,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\GitHub\\yamgent\\vue-strap\\src\\Affix.vue"
+	__vue_options__.__file = "C:\\Users\\pzy5a\\Documents\\GitHub\\CS3281-2\\vue-strap\\src\\Affix.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 	
@@ -730,9 +730,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-2694bff1", __vue_options__)
+	    hotAPI.createRecord("data-v-66083ce2", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-2694bff1", __vue_options__)
+	    hotAPI.reload("data-v-66083ce2", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Affix.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -2176,7 +2176,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-2694bff1", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-66083ce2", module.exports)
 	  }
 	}
 
@@ -12638,10 +12638,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\GitHub\\yamgent\\vue-strap\\src\\Dropdown.vue"
+	__vue_options__.__file = "C:\\Users\\pzy5a\\Documents\\GitHub\\CS3281-2\\vue-strap\\src\\Dropdown.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-7ef36c00"
+	__vue_options__._scopeId = "data-v-3c075ba2"
 	
 	/* hot reload */
 	if (false) {(function () {
@@ -12650,9 +12650,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-7ef36c00", __vue_options__)
+	    hotAPI.createRecord("data-v-3c075ba2", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-7ef36c00", __vue_options__)
+	    hotAPI.reload("data-v-3c075ba2", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Dropdown.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -12676,8 +12676,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7ef36c00&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Dropdown.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7ef36c00&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Dropdown.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-3c075ba2&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Dropdown.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-3c075ba2&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Dropdown.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -12695,7 +12695,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.secret[data-v-7ef36c00] {\r\n  position: absolute;\r\n  clip: rect(0 0 0 0);\r\n  overflow: hidden;\r\n  margin: -1px;\r\n  height: 1px;\r\n  width: 1px;\r\n  padding: 0;\r\n  border: 0;\n}\n.btn-with-before[data-v-7ef36c00] {\r\n  padding-left: 0.2rem;\r\n  padding-right: 0.4rem;\n}\n.dropdown-toggle[data-v-7ef36c00] {\r\n  cursor: pointer;\n}\r\n", "", {"version":3,"sources":["/./src/Dropdown.vue?d3be79aa"],"names":[],"mappings":";AA+IA;EACA,mBAAA;EACA,oBAAA;EACA,iBAAA;EACA,aAAA;EACA,YAAA;EACA,WAAA;EACA,WAAA;EACA,UAAA;CACA;AAEA;EACA,qBAAA;EACA,sBAAA;CACA;AAEA;EACA,gBAAA;CACA","file":"Dropdown.vue","sourcesContent":["<template>\r\n  <li v-if=\"isLi\" ref=\"dropdown\" :class=\"classes\">\r\n    <slot name=\"button\">\r\n      <a class=\"dropdown-toggle\" role=\"button\" :class=\"{disabled: disabled}\" @keyup.esc=\"hideDropdownMenu()\">\r\n        {{ text }}\r\n      </a>\r\n    </slot>\r\n    <slot name=\"dropdown-menu\" :class=\"menuClasses\">\r\n      <ul class=\"dropdown-menu\" :class=\"menuClasses\">\r\n        <slot></slot>\r\n      </ul>\r\n    </slot>\r\n  </li>\r\n  <div v-else ref=\"dropdown\" :class=\"classes\">\r\n    <slot name=\"before\"></slot>\r\n    <slot name=\"button\">\r\n      <button type=\"button\" class=\"btn dropdown-toggle\" :class=\"[btnType, btnWithBefore]\" @keyup.esc=\"hideDropdownMenu()\" :disabled=\"disabled\">\r\n        {{ text }}\r\n      </button>\r\n    </slot>\r\n    <slot name=\"dropdown-menu\" :class=\"menuClasses\">\r\n      <ul class=\"dropdown-menu\" :class=\"menuClasses\">\r\n        <slot></slot>\r\n      </ul>\r\n    </slot>\r\n  </div>\r\n</template>\r\n<script>\r\nimport {toBoolean} from './utils/utils.js'\r\nimport $ from './utils/NodeList.js'\r\n\r\nexport default {\r\n  props: {\r\n    show: {\r\n      type: Boolean,\r\n      default: false\r\n    },\r\n    'class': null,\r\n    disabled: {\r\n      type: Boolean,\r\n      default: false\r\n    },\r\n    text: {\r\n      type: String,\r\n      default: null\r\n    },\r\n    type: {\r\n      type: String,\r\n      default: 'light'\r\n    },\r\n    menuAlignRight: {\r\n      type: Boolean,\r\n      default: false\r\n    },\r\n    addClass: {\r\n      type: String,\r\n      default: ''\r\n    }\r\n  },\r\n  computed: {\r\n    btnType () {\r\n      return `btn-${this.type}`;\r\n    },\r\n    classes () {\r\n      return [{disabled: this.disabledBool}, this.class, this.isLi ? 'dropdown' : 'btn-group', this.addClass]\r\n    },\r\n    menuClasses() {\r\n      return [{show: this.showBool}, {'dropdown-menu-right': this.menuAlignRight}];\r\n    },\r\n    disabledBool() {\r\n      return toBoolean(this.disabled);\r\n    },\r\n    isLi () { return this.$parent._navbar || this.$parent.menu || this.$parent._tabset },\r\n    menu () {\r\n      return !this.$parent || this.$parent.navbar\r\n    },\r\n    showBool() {\r\n      return toBoolean(this.show);\r\n    },\r\n    submenu () {\r\n      return this.$parent && (this.$parent.menu || this.$parent.submenu)\r\n    },\r\n    slots () {\r\n      return this.$slots.default\r\n    },\r\n    btnWithBefore () {\r\n      if (this.$slots.before) {\r\n        return 'btn-with-before';\r\n      }\r\n      return '';\r\n    }\r\n  },\r\n  methods: {\r\n    blur () {\r\n      this.unblur()\r\n      this._hide = setTimeout(() => {\r\n        this._hide = null\r\n        this.hideDropdownMenu();\r\n      }, 100)\r\n    },\r\n    unblur () {\r\n      if (this._hide) {\r\n        clearTimeout(this._hide)\r\n        this._hide = null\r\n      }\r\n    },\r\n    hideDropdownMenu() {\r\n      this.show = false;\r\n      $(this.$refs.dropdown).findChildren('ul').each(ul => ul.classList.toggle('show', false));\r\n    },\r\n    showDropdownMenu() {\r\n      this.show = true;\r\n      $(this.$refs.dropdown).findChildren('ul').each(ul => ul.classList.toggle('show', true));\r\n    },\r\n  },\r\n  mounted () {\r\n    const $el = $(this.$refs.dropdown)\r\n    if (this.show) {\r\n      this.showDropdownMenu();\r\n    }\r\n    $el.onBlur((e) => { this.hideDropdownMenu() }, false)\r\n    $el.findChildren('a,button.dropdown-toggle').on('click', e => {\r\n      e.preventDefault()\r\n      if (this.disabledBool) { return false }\r\n      if (this.showBool) {\r\n        this.hideDropdownMenu();\r\n      } else {\r\n        this.showDropdownMenu();\r\n      }\r\n      return false\r\n    })\r\n    $el.findChildren('ul').on('click', 'li>a', e => { this.hideDropdownMenu() })\r\n  },\r\n  beforeDestroy () {\r\n    const $el = $(this.$refs.dropdown)\r\n    $el.offBlur()\r\n    $el.findChildren('a,button').off()\r\n    $el.findChildren('ul').off()\r\n  }\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n.secret {\r\n  position: absolute;\r\n  clip: rect(0 0 0 0);\r\n  overflow: hidden;\r\n  margin: -1px;\r\n  height: 1px;\r\n  width: 1px;\r\n  padding: 0;\r\n  border: 0;\r\n}\r\n\r\n.btn-with-before {\r\n  padding-left: 0.2rem;\r\n  padding-right: 0.4rem;\r\n}\r\n\r\n.dropdown-toggle {\r\n  cursor: pointer;\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.secret[data-v-3c075ba2] {\n  position: absolute;\n  clip: rect(0 0 0 0);\n  overflow: hidden;\n  margin: -1px;\n  height: 1px;\n  width: 1px;\n  padding: 0;\n  border: 0;\n}\n.btn-with-before[data-v-3c075ba2] {\n  padding-left: 0.2rem;\n  padding-right: 0.4rem;\n}\n.dropdown-toggle[data-v-3c075ba2] {\n  cursor: pointer;\n}\n", "", {"version":3,"sources":["/./src/Dropdown.vue?0cec7c98"],"names":[],"mappings":";AA+IA;EACA,mBAAA;EACA,oBAAA;EACA,iBAAA;EACA,aAAA;EACA,YAAA;EACA,WAAA;EACA,WAAA;EACA,UAAA;CACA;AAEA;EACA,qBAAA;EACA,sBAAA;CACA;AAEA;EACA,gBAAA;CACA","file":"Dropdown.vue","sourcesContent":["<template>\n  <li v-if=\"isLi\" ref=\"dropdown\" :class=\"classes\">\n    <slot name=\"button\">\n      <a class=\"dropdown-toggle\" role=\"button\" :class=\"{disabled: disabled}\" @keyup.esc=\"hideDropdownMenu()\">\n        {{ text }}\n      </a>\n    </slot>\n    <slot name=\"dropdown-menu\" :class=\"menuClasses\">\n      <ul class=\"dropdown-menu\" :class=\"menuClasses\">\n        <slot></slot>\n      </ul>\n    </slot>\n  </li>\n  <div v-else ref=\"dropdown\" :class=\"classes\">\n    <slot name=\"before\"></slot>\n    <slot name=\"button\">\n      <button type=\"button\" class=\"btn dropdown-toggle\" :class=\"[btnType, btnWithBefore]\" @keyup.esc=\"hideDropdownMenu()\" :disabled=\"disabled\">\n        {{ text }}\n      </button>\n    </slot>\n    <slot name=\"dropdown-menu\" :class=\"menuClasses\">\n      <ul class=\"dropdown-menu\" :class=\"menuClasses\">\n        <slot></slot>\n      </ul>\n    </slot>\n  </div>\n</template>\n<script>\nimport {toBoolean} from './utils/utils.js'\nimport $ from './utils/NodeList.js'\n\nexport default {\n  props: {\n    show: {\n      type: Boolean,\n      default: false\n    },\n    'class': null,\n    disabled: {\n      type: Boolean,\n      default: false\n    },\n    text: {\n      type: String,\n      default: null\n    },\n    type: {\n      type: String,\n      default: 'light'\n    },\n    menuAlignRight: {\n      type: Boolean,\n      default: false\n    },\n    addClass: {\n      type: String,\n      default: ''\n    }\n  },\n  computed: {\n    btnType () {\n      return `btn-${this.type}`;\n    },\n    classes () {\n      return [{disabled: this.disabledBool}, this.class, this.isLi ? 'dropdown' : 'btn-group', this.addClass]\n    },\n    menuClasses() {\n      return [{show: this.showBool}, {'dropdown-menu-right': this.menuAlignRight}];\n    },\n    disabledBool() {\n      return toBoolean(this.disabled);\n    },\n    isLi () { return this.$parent._navbar || this.$parent.menu || this.$parent._tabset },\n    menu () {\n      return !this.$parent || this.$parent.navbar\n    },\n    showBool() {\n      return toBoolean(this.show);\n    },\n    submenu () {\n      return this.$parent && (this.$parent.menu || this.$parent.submenu)\n    },\n    slots () {\n      return this.$slots.default\n    },\n    btnWithBefore () {\n      if (this.$slots.before) {\n        return 'btn-with-before';\n      }\n      return '';\n    }\n  },\n  methods: {\n    blur () {\n      this.unblur()\n      this._hide = setTimeout(() => {\n        this._hide = null\n        this.hideDropdownMenu();\n      }, 100)\n    },\n    unblur () {\n      if (this._hide) {\n        clearTimeout(this._hide)\n        this._hide = null\n      }\n    },\n    hideDropdownMenu() {\n      this.show = false;\n      $(this.$refs.dropdown).findChildren('ul').each(ul => ul.classList.toggle('show', false));\n    },\n    showDropdownMenu() {\n      this.show = true;\n      $(this.$refs.dropdown).findChildren('ul').each(ul => ul.classList.toggle('show', true));\n    },\n  },\n  mounted () {\n    const $el = $(this.$refs.dropdown)\n    if (this.show) {\n      this.showDropdownMenu();\n    }\n    $el.onBlur((e) => { this.hideDropdownMenu() }, false)\n    $el.findChildren('a,button.dropdown-toggle').on('click', e => {\n      e.preventDefault()\n      if (this.disabledBool) { return false }\n      if (this.showBool) {\n        this.hideDropdownMenu();\n      } else {\n        this.showDropdownMenu();\n      }\n      return false\n    })\n    $el.findChildren('ul').on('click', 'li>a', e => { this.hideDropdownMenu() })\n  },\n  beforeDestroy () {\n    const $el = $(this.$refs.dropdown)\n    $el.offBlur()\n    $el.findChildren('a,button').off()\n    $el.findChildren('ul').off()\n  }\n}\n</script>\n\n<style scoped>\n.secret {\n  position: absolute;\n  clip: rect(0 0 0 0);\n  overflow: hidden;\n  margin: -1px;\n  height: 1px;\n  width: 1px;\n  padding: 0;\n  border: 0;\n}\n\n.btn-with-before {\n  padding-left: 0.2rem;\n  padding-right: 0.4rem;\n}\n\n.dropdown-toggle {\n  cursor: pointer;\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -13199,7 +13199,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-7ef36c00", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-3c075ba2", module.exports)
 	  }
 	}
 
@@ -13229,7 +13229,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\GitHub\\yamgent\\vue-strap\\src\\Modal.vue"
+	__vue_options__.__file = "C:\\Users\\pzy5a\\Documents\\GitHub\\CS3281-2\\vue-strap\\src\\Modal.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 	
@@ -13240,9 +13240,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-4898324e", __vue_options__)
+	    hotAPI.createRecord("data-v-22015828", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-4898324e", __vue_options__)
+	    hotAPI.reload("data-v-22015828", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Modal.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -13266,8 +13266,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4898324e!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Modal.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4898324e!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Modal.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-22015828!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Modal.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-22015828!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Modal.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -13285,7 +13285,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.modal {\r\n  transition: all 0.3s ease;\n}\n.modal.in {\r\n  background-color: rgba(0,0,0,0.5);\n}\n.modal.zoom .modal-dialog {\r\n  -webkit-transform: scale(0.1);\r\n  -moz-transform: scale(0.1);\r\n  -ms-transform: scale(0.1);\r\n  transform: scale(0.1);\r\n  top: 300px;\r\n  opacity: 0;\r\n  -webkit-transition: all 0.3s;\r\n  -moz-transition: all 0.3s;\r\n  transition: all 0.3s;\n}\n.modal.zoom.in .modal-dialog {\r\n  -webkit-transform: scale(1);\r\n  -moz-transform: scale(1);\r\n  -ms-transform: scale(1);\r\n  transform: scale(1);\r\n  -webkit-transform: translate3d(0, -300px, 0);\r\n  transform: translate3d(0, -300px, 0);\r\n  opacity: 1;\n}\r\n", "", {"version":3,"sources":["/./src/Modal.vue?40547714"],"names":[],"mappings":";AAoKA;EACA,0BAAA;CACA;AACA;EACA,kCAAA;CACA;AACA;EACA,8BAAA;EACA,2BAAA;EACA,0BAAA;EACA,sBAAA;EACA,WAAA;EACA,WAAA;EACA,6BAAA;EACA,0BAAA;EACA,qBAAA;CACA;AACA;EACA,4BAAA;EACA,yBAAA;EACA,wBAAA;EACA,oBAAA;EACA,6CAAA;EACA,qCAAA;EACA,WAAA;CACA","file":"Modal.vue","sourcesContent":["<template>\r\n  <div role=\"dialog\"\r\n    :class=\"[\r\n    {\r\n      'modal':true,\r\n      'fade':effect === 'fade',\r\n      'zoom':effect === 'zoom'\r\n    }, addClass]\">\r\n    <div v-bind:class=\"{'modal-dialog':true,'modal-lg':largeBool,'modal-sm':smallBool}\" role=\"document\"\r\n      v-bind:style=\"{width: optionalWidth}\">\r\n      <div class=\"modal-content\">\r\n        <slot name=\"modal-header\">\r\n          <div class=\"modal-header\">\r\n            <h4 class=\"modal-title\">\r\n              <span name=\"title\" v-html=\"titleRendered\">\r\n              </span>\r\n            </h4>\r\n            <button type=\"button\" class=\"close\" @click=\"close\"><span>&times;</span></button>\r\n          </div>\r\n        </slot>\r\n          <div class=\"modal-body\">\r\n              <slot></slot>\r\n          </div>\r\n        <slot name=\"modal-footer\">\r\n          <div class=\"modal-footer\" v-if=\"showOkButton\">\r\n            <button type=\"button\" class=\"btn btn-primary\" v-if=\"showOkButton\" @click=\"close\">{{ okText }}</button>\r\n          </div>\r\n        </slot>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<script>\r\nimport {globalEventBus} from './GlobalEventBus.js'\r\nimport {toBoolean, getScrollBarWidth} from './utils/utils.js'\r\nimport $ from './utils/NodeList.js'\r\nimport md from './utils/markdown.js'\r\n\r\nexport default {\r\n  props: {\r\n    okText: {\r\n      type: String,\r\n      default: ''\r\n    },\r\n    title: {\r\n      type: String,\r\n      default: ''\r\n    },\r\n    width: {\r\n      default: null\r\n    },\r\n    effect: {\r\n      type: String,\r\n      default: 'zoom'\r\n    },\r\n    backdrop: {\r\n      type: Boolean,\r\n      default: true\r\n    },\r\n    large: {\r\n      type: Boolean,\r\n      default: false\r\n    },\r\n    small: {\r\n      type: Boolean,\r\n      default: false\r\n    },\r\n    name: {\r\n      type: String\r\n    },\r\n    id: {\r\n      type: String\r\n    },\r\n    addClass: {\r\n      type: String,\r\n      default: ''\r\n    }\r\n  },\r\n  data() {\r\n    return {\r\n      show: false\r\n    }\r\n  },\r\n  computed: {\r\n    backdropBool () {\r\n      return toBoolean(this.backdrop)\r\n    },\r\n    largeBool () {\r\n      return toBoolean(this.large)\r\n    },\r\n    smallBool () {\r\n      return toBoolean(this.small)\r\n    },\r\n    titleRendered () {\r\n      return md.renderInline(this.title);\r\n    },\r\n    optionalWidth () {\r\n      if (this.width === null) {\r\n        return null\r\n      } else if (Number.isInteger(this.width)) {\r\n        return this.width + 'px'\r\n      }\r\n      return this.width\r\n    },\r\n    showOkButton () {\r\n      return this.okText.length !== 0;\r\n    }\r\n  },\r\n  watch: {\r\n    show (val) {\r\n      const el = this.$el\r\n      const body = document.body\r\n      const scrollBarWidth = getScrollBarWidth()\r\n      if (val) {\r\n        $(el).find('.modal-content').focus()\r\n        el.style.display = 'block'\r\n        setTimeout(() => $(el).addClass('show in'), 0)\r\n        $(body).addClass('modal-open')\r\n        if (scrollBarWidth !== 0) {\r\n          body.style.paddingRight = scrollBarWidth + 'px'\r\n        }\r\n        if (this.backdropBool) {\r\n          $(el).on('click', e => {\r\n            if (e.target === el) this.show = false\r\n          })\r\n        }\r\n      } else {\r\n        body.style.paddingRight = null\r\n        $(body).removeClass('modal-open')\r\n        $(el).removeClass('show in').on('transitionend', () => {\r\n          $(el).off('click transitionend')\r\n          el.style.display = 'none'\r\n        })\r\n      }\r\n    }\r\n  },\r\n  created () {\r\n    globalEventBus.$on('trigger:bind', this.bindTrigger)\r\n  },\r\n  methods: {\r\n    bindTrigger (trigger, popover) {\r\n      if (popover === this.id) {\r\n        trigger.setTriggerBy(this)\r\n      }\r\n    },\r\n    showModal (name) {\r\n      if (name === this.name) {\r\n        this.show = true\r\n      }\r\n    },\r\n    close () {\r\n      this.show = false\r\n    },\r\n    toggle () {\r\n      this.show = true\r\n    }\r\n  },\r\n  beforeDestroy () {\r\n    globalEventBus.$off('trigger:bind', this.bindTrigger)\r\n  }\r\n}\r\n</script>\r\n<style>\r\n.modal {\r\n  transition: all 0.3s ease;\r\n}\r\n.modal.in {\r\n  background-color: rgba(0,0,0,0.5);\r\n}\r\n.modal.zoom .modal-dialog {\r\n  -webkit-transform: scale(0.1);\r\n  -moz-transform: scale(0.1);\r\n  -ms-transform: scale(0.1);\r\n  transform: scale(0.1);\r\n  top: 300px;\r\n  opacity: 0;\r\n  -webkit-transition: all 0.3s;\r\n  -moz-transition: all 0.3s;\r\n  transition: all 0.3s;\r\n}\r\n.modal.zoom.in .modal-dialog {\r\n  -webkit-transform: scale(1);\r\n  -moz-transform: scale(1);\r\n  -ms-transform: scale(1);\r\n  transform: scale(1);\r\n  -webkit-transform: translate3d(0, -300px, 0);\r\n  transform: translate3d(0, -300px, 0);\r\n  opacity: 1;\r\n}\r\n</style>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.modal {\n  transition: all 0.3s ease;\n}\n.modal.in {\n  background-color: rgba(0,0,0,0.5);\n}\n.modal.zoom .modal-dialog {\n  -webkit-transform: scale(0.1);\n  -moz-transform: scale(0.1);\n  -ms-transform: scale(0.1);\n  transform: scale(0.1);\n  top: 300px;\n  opacity: 0;\n  -webkit-transition: all 0.3s;\n  -moz-transition: all 0.3s;\n  transition: all 0.3s;\n}\n.modal.zoom.in .modal-dialog {\n  -webkit-transform: scale(1);\n  -moz-transform: scale(1);\n  -ms-transform: scale(1);\n  transform: scale(1);\n  -webkit-transform: translate3d(0, -300px, 0);\n  transform: translate3d(0, -300px, 0);\n  opacity: 1;\n}\n", "", {"version":3,"sources":["/./src/Modal.vue?598c402c"],"names":[],"mappings":";AAoKA;EACA,0BAAA;CACA;AACA;EACA,kCAAA;CACA;AACA;EACA,8BAAA;EACA,2BAAA;EACA,0BAAA;EACA,sBAAA;EACA,WAAA;EACA,WAAA;EACA,6BAAA;EACA,0BAAA;EACA,qBAAA;CACA;AACA;EACA,4BAAA;EACA,yBAAA;EACA,wBAAA;EACA,oBAAA;EACA,6CAAA;EACA,qCAAA;EACA,WAAA;CACA","file":"Modal.vue","sourcesContent":["<template>\n  <div role=\"dialog\"\n    :class=\"[\n    {\n      'modal':true,\n      'fade':effect === 'fade',\n      'zoom':effect === 'zoom'\n    }, addClass]\">\n    <div v-bind:class=\"{'modal-dialog':true,'modal-lg':largeBool,'modal-sm':smallBool}\" role=\"document\"\n      v-bind:style=\"{width: optionalWidth}\">\n      <div class=\"modal-content\">\n        <slot name=\"modal-header\">\n          <div class=\"modal-header\">\n            <h4 class=\"modal-title\">\n              <span name=\"title\" v-html=\"titleRendered\">\n              </span>\n            </h4>\n            <button type=\"button\" class=\"close\" @click=\"close\"><span>&times;</span></button>\n          </div>\n        </slot>\n          <div class=\"modal-body\">\n              <slot></slot>\n          </div>\n        <slot name=\"modal-footer\">\n          <div class=\"modal-footer\" v-if=\"showOkButton\">\n            <button type=\"button\" class=\"btn btn-primary\" v-if=\"showOkButton\" @click=\"close\">{{ okText }}</button>\n          </div>\n        </slot>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script>\nimport {globalEventBus} from './GlobalEventBus.js'\nimport {toBoolean, getScrollBarWidth} from './utils/utils.js'\nimport $ from './utils/NodeList.js'\nimport md from './utils/markdown.js'\n\nexport default {\n  props: {\n    okText: {\n      type: String,\n      default: ''\n    },\n    title: {\n      type: String,\n      default: ''\n    },\n    width: {\n      default: null\n    },\n    effect: {\n      type: String,\n      default: 'zoom'\n    },\n    backdrop: {\n      type: Boolean,\n      default: true\n    },\n    large: {\n      type: Boolean,\n      default: false\n    },\n    small: {\n      type: Boolean,\n      default: false\n    },\n    name: {\n      type: String\n    },\n    id: {\n      type: String\n    },\n    addClass: {\n      type: String,\n      default: ''\n    }\n  },\n  data() {\n    return {\n      show: false\n    }\n  },\n  computed: {\n    backdropBool () {\n      return toBoolean(this.backdrop)\n    },\n    largeBool () {\n      return toBoolean(this.large)\n    },\n    smallBool () {\n      return toBoolean(this.small)\n    },\n    titleRendered () {\n      return md.renderInline(this.title);\n    },\n    optionalWidth () {\n      if (this.width === null) {\n        return null\n      } else if (Number.isInteger(this.width)) {\n        return this.width + 'px'\n      }\n      return this.width\n    },\n    showOkButton () {\n      return this.okText.length !== 0;\n    }\n  },\n  watch: {\n    show (val) {\n      const el = this.$el\n      const body = document.body\n      const scrollBarWidth = getScrollBarWidth()\n      if (val) {\n        $(el).find('.modal-content').focus()\n        el.style.display = 'block'\n        setTimeout(() => $(el).addClass('show in'), 0)\n        $(body).addClass('modal-open')\n        if (scrollBarWidth !== 0) {\n          body.style.paddingRight = scrollBarWidth + 'px'\n        }\n        if (this.backdropBool) {\n          $(el).on('click', e => {\n            if (e.target === el) this.show = false\n          })\n        }\n      } else {\n        body.style.paddingRight = null\n        $(body).removeClass('modal-open')\n        $(el).removeClass('show in').on('transitionend', () => {\n          $(el).off('click transitionend')\n          el.style.display = 'none'\n        })\n      }\n    }\n  },\n  created () {\n    globalEventBus.$on('trigger:bind', this.bindTrigger)\n  },\n  methods: {\n    bindTrigger (trigger, popover) {\n      if (popover === this.id) {\n        trigger.setTriggerBy(this)\n      }\n    },\n    showModal (name) {\n      if (name === this.name) {\n        this.show = true\n      }\n    },\n    close () {\n      this.show = false\n    },\n    toggle () {\n      this.show = true\n    }\n  },\n  beforeDestroy () {\n    globalEventBus.$off('trigger:bind', this.bindTrigger)\n  }\n}\n</script>\n<style>\n.modal {\n  transition: all 0.3s ease;\n}\n.modal.in {\n  background-color: rgba(0,0,0,0.5);\n}\n.modal.zoom .modal-dialog {\n  -webkit-transform: scale(0.1);\n  -moz-transform: scale(0.1);\n  -ms-transform: scale(0.1);\n  transform: scale(0.1);\n  top: 300px;\n  opacity: 0;\n  -webkit-transition: all 0.3s;\n  -moz-transition: all 0.3s;\n  transition: all 0.3s;\n}\n.modal.zoom.in .modal-dialog {\n  -webkit-transform: scale(1);\n  -moz-transform: scale(1);\n  -ms-transform: scale(1);\n  transform: scale(1);\n  -webkit-transform: translate3d(0, -300px, 0);\n  transform: translate3d(0, -300px, 0);\n  opacity: 1;\n}\n</style>"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -22372,7 +22372,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, ".dimmed {\r\n    color: #777;\r\n}\r\n", ""]);
+	exports.push([module.id, ".dimmed {\n    color: #777;\n}\n", ""]);
 	
 	// exports
 
@@ -27118,7 +27118,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-4898324e", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-22015828", module.exports)
 	  }
 	}
 
@@ -27148,10 +27148,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\GitHub\\yamgent\\vue-strap\\src\\Navbar.vue"
+	__vue_options__.__file = "C:\\Users\\pzy5a\\Documents\\GitHub\\CS3281-2\\vue-strap\\src\\Navbar.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-168d143f"
+	__vue_options__._scopeId = "data-v-3d0a2661"
 	
 	/* hot reload */
 	if (false) {(function () {
@@ -27160,9 +27160,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-168d143f", __vue_options__)
+	    hotAPI.createRecord("data-v-3d0a2661", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-168d143f", __vue_options__)
+	    hotAPI.reload("data-v-3d0a2661", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Navbar.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -27186,8 +27186,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-168d143f&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Navbar.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-168d143f&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Navbar.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-3d0a2661&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Navbar.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-3d0a2661&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Navbar.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -27205,7 +27205,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n@media (max-width: 767px) {\n.navbar-fixed-top .navbar-collapse[data-v-168d143f] {\r\n    max-height: 80vh !important;\r\n    overflow-x: hidden !important;\r\n    overflow-y: scroll !important;\n}\n}\r\n", "", {"version":3,"sources":["/./src/Navbar.vue?65480166"],"names":[],"mappings":";AA2GA;AACA;IACA,4BAAA;IACA,8BAAA;IACA,8BAAA;CACA;CACA","file":"Navbar.vue","sourcesContent":["<template>\r\n  <nav ref=\"navbar\" :class=\"['navbar', 'navbar-expand-md',\r\n  {\r\n    'navbar-dark':(type === 'inverse'),\r\n    'navbar-light':(type === 'default'),\r\n    'bg-dark':(type === 'inverse'),\r\n    'bg-light':(type === 'default'),\r\n    'fixed-top':(placement === 'top'),\r\n    'fixed-bottom':(placement === 'bottom')\r\n  }, addClass]\">\r\n    <div class=\"container-fluid\">\r\n      <div class=\"navbar-brand\"><slot name=\"brand\"></slot></div>\r\n      <button v-if=\"!slots.collapse\" class=\"navbar-toggler\" type=\"button\" aria-expanded=\"false\" aria-label=\"Toggle navigation\" @click=\"toggleCollapse\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n        <slot name=\"collapse\"></slot>\r\n      </button>\r\n\r\n      <div :class=\"['navbar-collapse',{collapse:collapsed}]\">\r\n        <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">\r\n          <slot></slot>\r\n        </ul>\r\n        <ul v-if=\"slots.right\" class=\"navbar-nav navbar-right\">\r\n          <slot name=\"right\"></slot>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n  </nav>\r\n</template>\r\n\r\n<script>\r\nimport $ from './utils/NodeList.js'\r\n\r\nexport default {\r\n  props: {\r\n    type: {\r\n      type: String,\r\n      default: 'default'\r\n    },\r\n    placement: {\r\n      type: String,\r\n      default: ''\r\n    },\r\n    addClass: {\r\n      type: String,\r\n      default: ''\r\n    }\r\n  },\r\n  data () {\r\n    return {\r\n      id: 'bs-example-navbar-collapse-1',\r\n      collapsed: true,\r\n      styles: {}\r\n    }\r\n  },\r\n  computed: {\r\n    slots () {\r\n      return this.$slots\r\n    }\r\n  },\r\n  methods: {\r\n    toggleCollapse (e) {\r\n      e && e.preventDefault()\r\n      this.collapsed = !this.collapsed\r\n    }\r\n  },\r\n  created () {\r\n    this._navbar = true\r\n  },\r\n  mounted () {\r\n    let $dropdown = $('.dropdown>[data-toggle=\"dropdown\"]',this.$el).parent()\r\n    $dropdown.on('click', '.dropdown-toggle', (e) => {\r\n      e.preventDefault()\r\n      $dropdown.each((content) => {\r\n        if (content.contains(e.target)) content.classList.toggle('open')\r\n      })\r\n    }).on('click', '.dropdown-menu>li>a', (e) => {\r\n      $dropdown.each((content) => {\r\n        if (content.contains(e.target)) content.classList.remove('open')\r\n      })\r\n    }).onBlur((e) => {\r\n      $dropdown.each((content) => {\r\n        if (!content.contains(e.target)) content.classList.remove('open')\r\n      })\r\n    })\r\n    $(this.$el).on('click','li:not(.dropdown)>a', e => {\r\n      setTimeout(() => { this.collapsed = true }, 200)\r\n    }).onBlur(e => {\r\n      if (!this.$el.contains(e.target)) { this.collapsed = true }\r\n    })\r\n    let height = this.$el.offsetHeight\r\n    if (this.placement === 'top') {\r\n      document.body.style.paddingTop = height + 'px'\r\n      $(window).on('hashchange', () => scrollBy(0, -height))\r\n    }\r\n    if (this.placement === 'bottom') {\r\n      document.body.style.paddingBottom = height + 'px'\r\n    }\r\n    if (this.slots.collapse) $('[data-toggle=\"collapse\"]',this.$el).on('click', (e) => this.toggleCollapse(e))\r\n  },\r\n  beforeDestroy () {\r\n    $('.dropdown',this.$el).off('click').offBlur()\r\n    if (this.slots.collapse) $('[data-toggle=\"collapse\"]',this.$el).off('click')\r\n  }\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n@media (max-width: 767px) {\r\n  .navbar-fixed-top .navbar-collapse {\r\n    max-height: 80vh !important;\r\n    overflow-x: hidden !important;\r\n    overflow-y: scroll !important;\r\n  }\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n@media (max-width: 767px) {\n.navbar-collapse[data-v-3d0a2661] {\n    max-height: 80vh !important;\n    overflow-x: hidden !important;\n    overflow-y: scroll !important;\n}\n}\n", "", {"version":3,"sources":["/./src/Navbar.vue?c81ebc80"],"names":[],"mappings":";AA6FA;AACA;IACA,4BAAA;IACA,8BAAA;IACA,8BAAA;CACA;CACA","file":"Navbar.vue","sourcesContent":["<template>\n  <nav ref=\"navbar\" :class=\"['navbar', 'navbar-expand-md',\n  {\n    'navbar-dark':(type === 'inverse'),\n    'navbar-light':(type === 'default'),\n    'bg-dark':(type === 'inverse'),\n    'bg-light':(type === 'default')\n  }, addClass]\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-brand\"><slot name=\"brand\"></slot></div>\n      <button v-if=\"!slots.collapse\" class=\"navbar-toggler\" type=\"button\" aria-expanded=\"false\" aria-label=\"Toggle navigation\" @click=\"toggleCollapse\">\n        <span class=\"navbar-toggler-icon\"></span>\n        <slot name=\"collapse\"></slot>\n      </button>\n\n      <div :class=\"['navbar-collapse',{collapse:collapsed}]\">\n        <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">\n          <slot></slot>\n        </ul>\n        <ul v-if=\"slots.right\" class=\"navbar-nav navbar-right\">\n          <slot name=\"right\"></slot>\n        </ul>\n      </div>\n    </div>\n  </nav>\n</template>\n\n<script>\nimport $ from './utils/NodeList.js'\n\nexport default {\n  props: {\n    type: {\n      type: String,\n      default: 'default'\n    },\n    addClass: {\n      type: String,\n      default: ''\n    }\n  },\n  data () {\n    return {\n      id: 'bs-example-navbar-collapse-1',\n      collapsed: true,\n      styles: {}\n    }\n  },\n  computed: {\n    slots () {\n      return this.$slots\n    }\n  },\n  methods: {\n    toggleCollapse (e) {\n      e && e.preventDefault()\n      this.collapsed = !this.collapsed\n    }\n  },\n  created () {\n    this._navbar = true\n  },\n  mounted () {\n    let $dropdown = $('.dropdown>[data-toggle=\"dropdown\"]',this.$el).parent()\n    $dropdown.on('click', '.dropdown-toggle', (e) => {\n      e.preventDefault()\n      $dropdown.each((content) => {\n        if (content.contains(e.target)) content.classList.toggle('open')\n      })\n    }).on('click', '.dropdown-menu>li>a', (e) => {\n      $dropdown.each((content) => {\n        if (content.contains(e.target)) content.classList.remove('open')\n      })\n    }).onBlur((e) => {\n      $dropdown.each((content) => {\n        if (!content.contains(e.target)) content.classList.remove('open')\n      })\n    })\n    $(this.$el).on('click','li:not(.dropdown)>a', e => {\n      setTimeout(() => { this.collapsed = true }, 200)\n    }).onBlur(e => {\n      if (!this.$el.contains(e.target)) { this.collapsed = true }\n    })\n    if (this.slots.collapse) $('[data-toggle=\"collapse\"]',this.$el).on('click', (e) => this.toggleCollapse(e))\n  },\n  beforeDestroy () {\n    $('.dropdown',this.$el).off('click').offBlur()\n    if (this.slots.collapse) $('[data-toggle=\"collapse\"]',this.$el).off('click')\n  }\n}\n</script>\n\n<style scoped>\n@media (max-width: 767px) {\n  .navbar-collapse {\n    max-height: 80vh !important;\n    overflow-x: hidden !important;\n    overflow-y: scroll !important;\n  }\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -27231,10 +27231,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    type: {
 	      type: String,
 	      default: 'default'
-	    },
-	    placement: {
-	      type: String,
-	      default: ''
 	    },
 	    addClass: {
 	      type: String,
@@ -27290,16 +27286,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	        _this.collapsed = true;
 	      }
 	    });
-	    var height = this.$el.offsetHeight;
-	    if (this.placement === 'top') {
-	      document.body.style.paddingTop = height + 'px';
-	      (0, _NodeList2.default)(window).on('hashchange', function () {
-	        return scrollBy(0, -height);
-	      });
-	    }
-	    if (this.placement === 'bottom') {
-	      document.body.style.paddingBottom = height + 'px';
-	    }
 	    if (this.slots.collapse) (0, _NodeList2.default)('[data-toggle="collapse"]', this.$el).on('click', function (e) {
 	      return _this.toggleCollapse(e);
 	    });
@@ -27309,8 +27295,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (this.slots.collapse) (0, _NodeList2.default)('[data-toggle="collapse"]', this.$el).off('click');
 	  }
 	}; //
-	//
-	//
 	//
 	//
 	//
@@ -27350,9 +27334,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        'navbar-dark': (_vm.type === 'inverse'),
 	        'navbar-light': (_vm.type === 'default'),
 	        'bg-dark': (_vm.type === 'inverse'),
-	        'bg-light': (_vm.type === 'default'),
-	        'fixed-top': (_vm.placement === 'top'),
-	        'fixed-bottom': (_vm.placement === 'bottom')
+	        'bg-light': (_vm.type === 'default')
 	      },
 	      _vm.addClass
 	    ]
@@ -27385,7 +27367,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-168d143f", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-3d0a2661", module.exports)
 	  }
 	}
 
@@ -27415,7 +27397,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\GitHub\\yamgent\\vue-strap\\src\\Panel.vue"
+	__vue_options__.__file = "C:\\Users\\pzy5a\\Documents\\GitHub\\CS3281-2\\vue-strap\\src\\Panel.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 	
@@ -27426,9 +27408,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-6ee6be25", __vue_options__)
+	    hotAPI.createRecord("data-v-154ddfc3", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-6ee6be25", __vue_options__)
+	    hotAPI.reload("data-v-154ddfc3", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Panel.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -27452,8 +27434,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-6ee6be25!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Panel.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-6ee6be25!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Panel.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-154ddfc3!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Panel.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-154ddfc3!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Panel.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -27471,7 +27453,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.card-heading {\n    width: 100%;\n}\n.card-title {\n    display: inline-block;\n    font-size: 1em;\n    margin: 0;\n    vertical-align: middle;\n}\n.card-title * {\n    margin: 0px !important;\n}\n.caret-wrapper {\n    float: left;\n    display: inline-block;\n    width: 32px;\n}\n.header-wrapper {\n    display: inline-block;\n    width: calc(100% - 32px - 96px);\n}\n.button-wrapper {\n    float: right;\n    display: inline-block;\n    width: 96px;\n}\n.header-toggle {\n    cursor: pointer;\n}\n.expandable-card {\n    margin-bottom: 0 !important;\n    margin-top: 5px;\n}\n.card-group > .card-container > .expandable-card {\n    margin-top: 0!important;\n}\n.card-seamless {\n    padding: 0;\n}\n.card.card-seamless {\n    box-shadow: none;\n    border: none;\n}\n.card-seamless > .card-heading {\n    padding: 0;\n}\n.card-seamless > .card-collapse > hr {\n    margin: 0;\n    width: calc(100% - 27px);\n}\n.card-seamless > .card-collapse > .card-body {\n    padding: 10px 0;\n}\n.card-seamless > .card-collapse > .card-body > .collapse-button {\n    position: relative;\n    top: 22px;\n}\n.card-body > .collapse-button {\n    margin-bottom: 13px;\n    margin-top: 5px;\n    opacity: 0.2;\n}\n.card-body > .collapse-button:hover {\n    opacity: 1;\n}\n.close-button {\n    font-size: 10px !important;\n    float: right;\n    padding: 3px 8px !important;\n    margin-left: 3px;\n    margin-top: 2px;\n}\n.popup-button {\n    font-size: 10px !important;\n    float: right;\n    margin-top: 2px;\n    padding: 3px 8px !important;\n}\n.morph {\n    display: inline-block;\n}\n.morph-display-wrapper {\n    white-space: normal;\n}\n\n/* Bootstrap extra small(xs) responsive breakpoint */\n@media (max-width: 575.98px) {\n.caret-wrapper {\n        float: left;\n        display: inline-block;\n        width: 32px;\n}\n.header-wrapper {\n        display: inline-block;\n        width: calc(100% - 32px - 32px);\n}\n.button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 32px;\n}\n.card-body {\n        padding: 0.5rem;\n}\n.card-collapse > hr {\n        margin-top: 1.5rem;\n}\n.card-header {\n        padding: 0.5rem;\n}\n}\n", "", {"version":3,"sources":["/./src/Panel.vue?acb35568"],"names":[],"mappings":";AA0TA;IACA,YAAA;CACA;AAEA;IACA,sBAAA;IACA,eAAA;IACA,UAAA;IACA,uBAAA;CACA;AAEA;IACA,uBAAA;CACA;AAEA;IACA,YAAA;IACA,sBAAA;IACA,YAAA;CACA;AAEA;IACA,sBAAA;IACA,gCAAA;CACA;AAEA;IACA,aAAA;IACA,sBAAA;IACA,YAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,4BAAA;IACA,gBAAA;CACA;AAEA;IACA,wBAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,iBAAA;IACA,aAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,UAAA;IACA,yBAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,mBAAA;IACA,UAAA;CACA;AAEA;IACA,oBAAA;IACA,gBAAA;IACA,aAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,2BAAA;IACA,aAAA;IACA,4BAAA;IACA,iBAAA;IACA,gBAAA;CACA;AAEA;IACA,2BAAA;IACA,aAAA;IACA,gBAAA;IACA,4BAAA;CACA;AAEA;IACA,sBAAA;CACA;AAEA;IACA,oBAAA;CACA;;AAEA,qDAAA;AACA;AAEA;QACA,YAAA;QACA,sBAAA;QACA,YAAA;CACA;AAEA;QACA,sBAAA;QACA,gCAAA;CACA;AAEA;QACA,aAAA;QACA,sBAAA;QACA,YAAA;CACA;AAEA;QACA,gBAAA;CACA;AAEA;QACA,mBAAA;CACA;AAEA;QACA,gBAAA;CACA;CACA","file":"Panel.vue","sourcesContent":["<template>\r\n    <span :class=\"['card-container', addClass]\" ref=\"cardContainer\">\r\n        <div class=\"morph\" v-show=\"localMinimized\">\r\n            <button :class=\"['morph-display-wrapper', 'btn', btnType, 'card-title']\" @click=\"open()\">\r\n                <template v-if=\"altContent\">\r\n                    <div v-html=\"altContent\"></div>\r\n                </template>\r\n                <template v-else>\r\n                    <slot name=\"header\">\r\n                        <div v-html=\"altContent\"></div>\r\n                    </slot>\r\n                </template>\r\n            </button>\r\n        </div>\r\n        <div :class=\"['card', {'expandable-card': isExpandableCard}, borderType]\" v-show=\"!localMinimized\">\r\n            <div :class=\"['card-header',{'header-toggle':isExpandableCard}, cardType, borderType]\"\r\n                 @click.prevent.stop=\"isExpandableCard && toggle()\"\r\n                 @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\r\n                <div class=\"caret-wrapper\">\r\n                    <span :class=\"['glyphicon', localExpanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right']\" v-if=\"showCaret\"></span>\r\n                </div>\r\n                <div class=\"header-wrapper\" ref=\"headerWrapper\">\r\n                    <slot name=\"header\">\r\n                        <div :class=\"['card-title', cardType, {'text-white':!isLightBg}]\" v-html=\"headerContent\"></div>\r\n                    </slot>\r\n                </div>\r\n                <div class=\"button-wrapper\">\r\n                    <slot name=\"button\">\r\n                        <panel-switch v-show=\"isExpandableCard && !noSwitchBool && !showCaret\" :is-open=\"localExpanded\"\r\n                                      @click.native.stop.prevent=\"expand()\"\r\n                                      @is-open-event=\"retrieveOnOpen\" :is-light-bg=\"isLightBg\"></panel-switch>\r\n                        <button type=\"button\" :class=\"['close-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\"\r\n                                v-show=\"isSeamless ? onHeaderHover : (!noCloseBool)\"\r\n                                @click.stop=\"close()\">\r\n                            <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\r\n                        </button>\r\n                        <button type=\"button\" :class=\"['popup-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\"\r\n                                v-show=\"((this.popupUrl !== null) && (!isSeamless || onHeaderHover))\"\r\n                                @click.stop=\"openPopup()\">\r\n                            <span class=\"glyphicon glyphicon-new-window\" aria-hidden=\"true\"></span>\r\n                        </button>\r\n                    </slot>\r\n                </div>\r\n            </div>\r\n            <template v-if=\"preloadBool\">\r\n                <div class=\"card-collapse\"\r\n                     ref=\"panel\"\r\n                     v-show=\"localExpanded\"\r\n                >\r\n                    <div class=\"card-body\">\r\n                        <slot></slot>\r\n                        <retriever v-if=\"hasSrc\" ref=\"retriever\" :src=\"src\" :fragment=\"fragment\" delay></retriever>\r\n                        <panel-switch v-show=\"isExpandableCard && bottomSwitchBool\" :is-open=\"localExpanded\"\r\n                                      @click.native.stop.prevent=\"collapseThenScrollIntoViewIfNeeded()\"\r\n                                      @is-open-event=\"retrieveOnOpen\"></panel-switch>\r\n                    </div>\r\n                    <hr v-show=\"isSeamless\" />\r\n                </div>\r\n            </template>\r\n            <template v-else>\r\n                <div class=\"card-collapse\"\r\n                     ref=\"panel\"\r\n                     v-if=\"localExpanded\"\r\n                >\r\n                    <div class=\"card-body\">\r\n                        <slot></slot>\r\n                        <retriever v-if=\"hasSrc\" ref=\"retriever\" :src=\"src\" :fragment=\"fragment\" delay></retriever>\r\n                        <panel-switch v-show=\"isExpandableCard && bottomSwitchBool\" :is-open=\"localExpanded\"\r\n                                      @click.native.stop.prevent=\"collapseThenScrollIntoViewIfNeeded()\"\r\n                                      @is-open-event=\"retrieveOnOpen\"></panel-switch>\r\n                    </div>\r\n                    <hr v-show=\"isSeamless\" />\r\n                </div>\r\n            </template>\r\n        </div>\r\n    </span>\r\n</template>\r\n\r\n<script>\r\n  import {getFragmentByHash, toBoolean, toNumber} from './utils/utils.js'\r\n  import md from './utils/markdown.js'\r\n  import panelSwitch from './PanelSwitch.vue'\r\n  import retriever from './Retriever.vue'\r\n\r\n  const slugify = require('@sindresorhus/slugify');\r\n\r\n  export default {\r\n    components: {\r\n      panelSwitch,\r\n      retriever\r\n    },\r\n    props: {\r\n      header: {\r\n        type: String,\r\n        default: ''\r\n      },\r\n      alt: {\r\n        type: String,\r\n        default: ''\r\n      },\r\n      type: {\r\n        type: String,\r\n        default: null\r\n      },\r\n      expandable: {\r\n        type: Boolean,\r\n        default: true\r\n      },\r\n      isOpen: {\r\n        type: Boolean,\r\n        default: null\r\n      },\r\n      expanded: {\r\n        type: Boolean,\r\n        default: null\r\n      },\r\n      minimized: {\r\n        type: Boolean,\r\n        default: false\r\n      },\r\n      noSwitch: {\r\n        type: Boolean,\r\n        default: false\r\n      },\r\n      noClose: {\r\n        type: Boolean,\r\n        default: false\r\n      },\r\n      popupUrl: {\r\n        type: String,\r\n        default: null\r\n      },\r\n      src: {\r\n        type: String\r\n      },\r\n      bottomSwitch: {\r\n        type: Boolean,\r\n        default: true\r\n      },\r\n      preload: {\r\n        type: Boolean,\r\n        default: false\r\n      },\r\n      addClass: {\r\n        type: String,\r\n        default: ''\r\n      }\r\n    },\r\n    computed: {\r\n      // Vue 2.0 coerce migration\r\n      expandableBool () {\r\n        return toBoolean(this.expandable);\r\n      },\r\n      isOpenBool () {\r\n        return toBoolean(this.isOpen);\r\n      },\r\n      expandedBool () {\r\n        return toBoolean(this.expanded);\r\n      },\r\n      minimizedBool () {\r\n        return toBoolean(this.minimized);\r\n      },\r\n      noSwitchBool () {\r\n        return toBoolean(this.noSwitch);\r\n      },\r\n      noCloseBool () {\r\n        return toBoolean(this.noClose);\r\n      },\r\n      bottomSwitchBool () {\r\n        return toBoolean(this.bottomSwitch);\r\n      },\r\n      preloadBool () {\r\n        return toBoolean(this.preload);\r\n      },\r\n      // Vue 2.0 coerce migration end\r\n      isExpandableCard () {\r\n        return this.expandableBool;\r\n      },\r\n      showCaret () {\r\n        return this.isSeamless && this.expandableBool;\r\n      },\r\n      isSeamless () {\r\n        return this.type === 'seamless';\r\n      },\r\n      btnType () {\r\n        if (this.isSeamless || this.type === 'light') {\r\n          return 'btn-outline-secondary';\r\n        }\r\n        return 'btn-outline-' + (this.type || 'secondary');\r\n      },\r\n      borderType () {\r\n        if (this.isSeamless) {\r\n          return 'border-0';\r\n        } else if (this.type) {\r\n          if (this.type === 'light') {\r\n            return ''; // Bootstrap 4.x light border is almost invisible on a white page\r\n          }\r\n          return 'border-' + this.type;\r\n        }\r\n        return '';\r\n      },\r\n      cardType () {\r\n        if (this.isSeamless) {\r\n          return 'bg-white';\r\n        }\r\n        return 'bg-' + (this.type || 'light');\r\n      },\r\n      isLightBg () {\r\n        return this.cardType === 'bg-light' || this.cardType === 'bg-white' || this.cardType === 'bg-warning';\r\n      },\r\n      headerContent () {\r\n        return md.render(this.header);\r\n      },\r\n      altContent () {\r\n        return this.alt && md.render(this.alt) || md.render(this.header);\r\n      },\r\n      hasSrc () {\r\n        return this.src && this.src.length > 0;\r\n      },\r\n      showCloseButton () {\r\n        if (!this.isSeamless) {\r\n          return !this.noCloseBool;\r\n        } else {\r\n          return onHeaderHover;\r\n        }\r\n      }\r\n    },\r\n    data () {\r\n      return {\r\n        onHeaderHover: false,\r\n        localExpanded: false,\r\n        localMinimized: false\r\n      }\r\n    },\r\n    methods: {\r\n      toggle() {\r\n        this.localExpanded = !this.localExpanded;\r\n      },\r\n      expand() {\r\n        this.localExpanded = !this.localExpanded;\r\n      },\r\n      close() {\r\n        this.localMinimized = true;\r\n      },\r\n      open() {\r\n        this.localExpanded = true;\r\n        this.localMinimized = false;\r\n      },\r\n      scrollIntoViewIfNeeded() {\r\n        let top = this.$el.getBoundingClientRect().top;\r\n        let isTopInView = (top >= 0) && (top <= window.innerHeight);\r\n        if (!isTopInView) {\r\n          this.$el.scrollIntoView();\r\n        }\r\n      },\r\n      collapseThenScrollIntoViewIfNeeded() {\r\n        this.$once('is-open-event', (el, isOpen) => {\r\n          this.scrollIntoViewIfNeeded();\r\n        });\r\n        this.expand();\r\n      },\r\n      openPopup() {\r\n        window.open(this.popupUrl);\r\n      },\r\n      retrieveOnOpen(el, isOpen) {\r\n        if (isOpen && this.hasSrc) {\r\n          this.$refs.retriever.fetch()\r\n        }\r\n      }\r\n    },\r\n    watch: {\r\n      'localExpanded': function (val, oldVal) {\r\n        this.$nextTick(function () {\r\n          this.retrieveOnOpen(this, val);\r\n        })\r\n      },\r\n    },\r\n    created () {\r\n      if (this.src) {\r\n        let hash = getFragmentByHash(this.src);\r\n        if (hash) {\r\n          this.fragment = hash;\r\n          this.src = this.src.split('#')[0];\r\n        }\r\n      }\r\n      // Edge case where user might want non-expandable card that isn't expanded by default\r\n      const notExpandableNoExpand = !this.expandableBool && this.expanded !== 'false';\r\n      // Set local data to computed prop value\r\n      this.localExpanded =  notExpandableNoExpand || this.expandedBool; // Ensure this expr ordering is maintained\r\n      this.localMinimized = this.minimizedBool;\r\n    },\r\n    mounted() {\r\n      this.$nextTick(function () {\r\n        if (this.hasSrc && (this.preloadBool || this.expandedBool)) {\r\n          this.$refs.retriever.fetch()\r\n        }\r\n      });\r\n\r\n      if (this.headerContent) {\r\n        const panelHeaderText = jQuery(this.headerContent).wrap('<div></div>').parent().find(':header').text();\r\n        if (panelHeaderText) {\r\n          this.$refs.cardContainer.setAttribute('id', slugify(panelHeaderText, { decamelize: false }));\r\n        }\r\n      } else if (this.$refs.headerWrapper.innerHTML) {\r\n        const header = jQuery(this.$refs.headerWrapper.innerHTML).wrap('<div></div>').parent().find(':header');\r\n        if (header.length > 0) {\r\n          this.$refs.cardContainer.setAttribute('id', header[0].id);\r\n        }\r\n      }\r\n    },\r\n  }\r\n</script>\r\n\r\n<style>\r\n    .card-heading {\r\n        width: 100%;\r\n    }\r\n\r\n    .card-title {\r\n        display: inline-block;\r\n        font-size: 1em;\r\n        margin: 0;\r\n        vertical-align: middle;\r\n    }\r\n\r\n    .card-title * {\r\n        margin: 0px !important;\r\n    }\r\n\r\n    .caret-wrapper {\r\n        float: left;\r\n        display: inline-block;\r\n        width: 32px;\r\n    }\r\n\r\n    .header-wrapper {\r\n        display: inline-block;\r\n        width: calc(100% - 32px - 96px);\r\n    }\r\n\r\n    .button-wrapper {\r\n        float: right;\r\n        display: inline-block;\r\n        width: 96px;\r\n    }\r\n\r\n    .header-toggle {\r\n        cursor: pointer;\r\n    }\r\n\r\n    .expandable-card {\r\n        margin-bottom: 0 !important;\r\n        margin-top: 5px;\r\n    }\r\n\r\n    .card-group > .card-container > .expandable-card {\r\n        margin-top: 0!important;\r\n    }\r\n\r\n    .card-seamless {\r\n        padding: 0;\r\n    }\r\n\r\n    .card.card-seamless {\r\n        box-shadow: none;\r\n        border: none;\r\n    }\r\n\r\n    .card-seamless > .card-heading {\r\n        padding: 0;\r\n    }\r\n\r\n    .card-seamless > .card-collapse > hr {\r\n        margin: 0;\r\n        width: calc(100% - 27px);\r\n    }\r\n\r\n    .card-seamless > .card-collapse > .card-body {\r\n        padding: 10px 0;\r\n    }\r\n\r\n    .card-seamless > .card-collapse > .card-body > .collapse-button {\r\n        position: relative;\r\n        top: 22px;\r\n    }\r\n\r\n    .card-body > .collapse-button {\r\n        margin-bottom: 13px;\r\n        margin-top: 5px;\r\n        opacity: 0.2;\r\n    }\r\n\r\n    .card-body > .collapse-button:hover {\r\n        opacity: 1;\r\n    }\r\n\r\n    .close-button {\r\n        font-size: 10px !important;\r\n        float: right;\r\n        padding: 3px 8px !important;\r\n        margin-left: 3px;\r\n        margin-top: 2px;\r\n    }\r\n\r\n    .popup-button {\r\n        font-size: 10px !important;\r\n        float: right;\r\n        margin-top: 2px;\r\n        padding: 3px 8px !important;\r\n    }\r\n\r\n    .morph {\r\n        display: inline-block;\r\n    }\r\n\r\n    .morph-display-wrapper {\r\n        white-space: normal;\r\n    }\r\n\r\n    /* Bootstrap extra small(xs) responsive breakpoint */\r\n    @media (max-width: 575.98px) {\r\n\r\n        .caret-wrapper {\r\n            float: left;\r\n            display: inline-block;\r\n            width: 32px;\r\n        }\r\n\r\n        .header-wrapper {\r\n            display: inline-block;\r\n            width: calc(100% - 32px - 32px);\r\n        }\r\n\r\n        .button-wrapper {\r\n            float: right;\r\n            display: inline-block;\r\n            width: 32px;\r\n        }\r\n\r\n        .card-body {\r\n            padding: 0.5rem;\r\n        }\r\n\r\n        .card-collapse > hr {\r\n            margin-top: 1.5rem;\r\n        }\r\n\r\n        .card-header {\r\n            padding: 0.5rem;\r\n        }\r\n    }\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.card-heading {\n    width: 100%;\n}\n.card-title {\n    display: inline-block;\n    font-size: 1em;\n    margin: 0;\n    vertical-align: middle;\n}\n.card-title * {\n    margin: 0px !important;\n}\n.caret-wrapper {\n    float: left;\n    display: inline-block;\n    width: 32px;\n}\n.header-wrapper {\n    display: inline-block;\n    width: calc(100% - 32px - 96px);\n}\n.button-wrapper {\n    float: right;\n    display: inline-block;\n    width: 96px;\n}\n.header-toggle {\n    cursor: pointer;\n}\n.expandable-card {\n    margin-bottom: 0 !important;\n    margin-top: 5px;\n}\n.card-group > .card-container > .expandable-card {\n    margin-top: 0!important;\n}\n.card-seamless {\n    padding: 0;\n}\n.card.card-seamless {\n    box-shadow: none;\n    border: none;\n}\n.card-seamless > .card-heading {\n    padding: 0;\n}\n.card-seamless > .card-collapse > hr {\n    margin: 0;\n    width: calc(100% - 27px);\n}\n.card-seamless > .card-collapse > .card-body {\n    padding: 10px 0;\n}\n.card-seamless > .card-collapse > .card-body > .collapse-button {\n    position: relative;\n    top: 22px;\n}\n.card-body > .collapse-button {\n    margin-bottom: 13px;\n    margin-top: 5px;\n    opacity: 0.2;\n}\n.card-body > .collapse-button:hover {\n    opacity: 1;\n}\n.close-button {\n    font-size: 10px !important;\n    float: right;\n    padding: 3px 8px !important;\n    margin-left: 3px;\n    margin-top: 2px;\n}\n.popup-button {\n    font-size: 10px !important;\n    float: right;\n    margin-top: 2px;\n    padding: 3px 8px !important;\n}\n.morph {\n    display: inline-block;\n}\n.morph-display-wrapper {\n    white-space: normal;\n}\n\n/* Bootstrap extra small(xs) responsive breakpoint */\n@media (max-width: 575.98px) {\n.caret-wrapper {\n        float: left;\n        display: inline-block;\n        width: 32px;\n}\n.header-wrapper {\n        display: inline-block;\n        width: calc(100% - 32px - 32px);\n}\n.button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 32px;\n}\n.card-body {\n        padding: 0.5rem;\n}\n.card-collapse > hr {\n        margin-top: 1.5rem;\n}\n.card-header {\n        padding: 0.5rem;\n}\n}\n", "", {"version":3,"sources":["/./src/Panel.vue?f4894a3c"],"names":[],"mappings":";AA0TA;IACA,YAAA;CACA;AAEA;IACA,sBAAA;IACA,eAAA;IACA,UAAA;IACA,uBAAA;CACA;AAEA;IACA,uBAAA;CACA;AAEA;IACA,YAAA;IACA,sBAAA;IACA,YAAA;CACA;AAEA;IACA,sBAAA;IACA,gCAAA;CACA;AAEA;IACA,aAAA;IACA,sBAAA;IACA,YAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,4BAAA;IACA,gBAAA;CACA;AAEA;IACA,wBAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,iBAAA;IACA,aAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,UAAA;IACA,yBAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,mBAAA;IACA,UAAA;CACA;AAEA;IACA,oBAAA;IACA,gBAAA;IACA,aAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,2BAAA;IACA,aAAA;IACA,4BAAA;IACA,iBAAA;IACA,gBAAA;CACA;AAEA;IACA,2BAAA;IACA,aAAA;IACA,gBAAA;IACA,4BAAA;CACA;AAEA;IACA,sBAAA;CACA;AAEA;IACA,oBAAA;CACA;;AAEA,qDAAA;AACA;AAEA;QACA,YAAA;QACA,sBAAA;QACA,YAAA;CACA;AAEA;QACA,sBAAA;QACA,gCAAA;CACA;AAEA;QACA,aAAA;QACA,sBAAA;QACA,YAAA;CACA;AAEA;QACA,gBAAA;CACA;AAEA;QACA,mBAAA;CACA;AAEA;QACA,gBAAA;CACA;CACA","file":"Panel.vue","sourcesContent":["<template>\n    <span :class=\"['card-container', addClass]\" ref=\"cardContainer\">\n        <div class=\"morph\" v-show=\"localMinimized\">\n            <button :class=\"['morph-display-wrapper', 'btn', btnType, 'card-title']\" @click=\"open()\">\n                <template v-if=\"altContent\">\n                    <div v-html=\"altContent\"></div>\n                </template>\n                <template v-else>\n                    <slot name=\"header\">\n                        <div v-html=\"altContent\"></div>\n                    </slot>\n                </template>\n            </button>\n        </div>\n        <div :class=\"['card', {'expandable-card': isExpandableCard}, borderType]\" v-show=\"!localMinimized\">\n            <div :class=\"['card-header',{'header-toggle':isExpandableCard}, cardType, borderType]\"\n                 @click.prevent.stop=\"isExpandableCard && toggle()\"\n                 @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\n                <div class=\"caret-wrapper\">\n                    <span :class=\"['glyphicon', localExpanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right']\" v-if=\"showCaret\"></span>\n                </div>\n                <div class=\"header-wrapper\" ref=\"headerWrapper\">\n                    <slot name=\"header\">\n                        <div :class=\"['card-title', cardType, {'text-white':!isLightBg}]\" v-html=\"headerContent\"></div>\n                    </slot>\n                </div>\n                <div class=\"button-wrapper\">\n                    <slot name=\"button\">\n                        <panel-switch v-show=\"isExpandableCard && !noSwitchBool && !showCaret\" :is-open=\"localExpanded\"\n                                      @click.native.stop.prevent=\"expand()\"\n                                      @is-open-event=\"retrieveOnOpen\" :is-light-bg=\"isLightBg\"></panel-switch>\n                        <button type=\"button\" :class=\"['close-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\"\n                                v-show=\"isSeamless ? onHeaderHover : (!noCloseBool)\"\n                                @click.stop=\"close()\">\n                            <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                        </button>\n                        <button type=\"button\" :class=\"['popup-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\"\n                                v-show=\"((this.popupUrl !== null) && (!isSeamless || onHeaderHover))\"\n                                @click.stop=\"openPopup()\">\n                            <span class=\"glyphicon glyphicon-new-window\" aria-hidden=\"true\"></span>\n                        </button>\n                    </slot>\n                </div>\n            </div>\n            <template v-if=\"preloadBool\">\n                <div class=\"card-collapse\"\n                     ref=\"panel\"\n                     v-show=\"localExpanded\"\n                >\n                    <div class=\"card-body\">\n                        <slot></slot>\n                        <retriever v-if=\"hasSrc\" ref=\"retriever\" :src=\"src\" :fragment=\"fragment\" delay></retriever>\n                        <panel-switch v-show=\"isExpandableCard && bottomSwitchBool\" :is-open=\"localExpanded\"\n                                      @click.native.stop.prevent=\"collapseThenScrollIntoViewIfNeeded()\"\n                                      @is-open-event=\"retrieveOnOpen\"></panel-switch>\n                    </div>\n                    <hr v-show=\"isSeamless\" />\n                </div>\n            </template>\n            <template v-else>\n                <div class=\"card-collapse\"\n                     ref=\"panel\"\n                     v-if=\"localExpanded\"\n                >\n                    <div class=\"card-body\">\n                        <slot></slot>\n                        <retriever v-if=\"hasSrc\" ref=\"retriever\" :src=\"src\" :fragment=\"fragment\" delay></retriever>\n                        <panel-switch v-show=\"isExpandableCard && bottomSwitchBool\" :is-open=\"localExpanded\"\n                                      @click.native.stop.prevent=\"collapseThenScrollIntoViewIfNeeded()\"\n                                      @is-open-event=\"retrieveOnOpen\"></panel-switch>\n                    </div>\n                    <hr v-show=\"isSeamless\" />\n                </div>\n            </template>\n        </div>\n    </span>\n</template>\n\n<script>\n  import {getFragmentByHash, toBoolean, toNumber} from './utils/utils.js'\n  import md from './utils/markdown.js'\n  import panelSwitch from './PanelSwitch.vue'\n  import retriever from './Retriever.vue'\n\n  const slugify = require('@sindresorhus/slugify');\n\n  export default {\n    components: {\n      panelSwitch,\n      retriever\n    },\n    props: {\n      header: {\n        type: String,\n        default: ''\n      },\n      alt: {\n        type: String,\n        default: ''\n      },\n      type: {\n        type: String,\n        default: null\n      },\n      expandable: {\n        type: Boolean,\n        default: true\n      },\n      isOpen: {\n        type: Boolean,\n        default: null\n      },\n      expanded: {\n        type: Boolean,\n        default: null\n      },\n      minimized: {\n        type: Boolean,\n        default: false\n      },\n      noSwitch: {\n        type: Boolean,\n        default: false\n      },\n      noClose: {\n        type: Boolean,\n        default: false\n      },\n      popupUrl: {\n        type: String,\n        default: null\n      },\n      src: {\n        type: String\n      },\n      bottomSwitch: {\n        type: Boolean,\n        default: true\n      },\n      preload: {\n        type: Boolean,\n        default: false\n      },\n      addClass: {\n        type: String,\n        default: ''\n      }\n    },\n    computed: {\n      // Vue 2.0 coerce migration\n      expandableBool () {\n        return toBoolean(this.expandable);\n      },\n      isOpenBool () {\n        return toBoolean(this.isOpen);\n      },\n      expandedBool () {\n        return toBoolean(this.expanded);\n      },\n      minimizedBool () {\n        return toBoolean(this.minimized);\n      },\n      noSwitchBool () {\n        return toBoolean(this.noSwitch);\n      },\n      noCloseBool () {\n        return toBoolean(this.noClose);\n      },\n      bottomSwitchBool () {\n        return toBoolean(this.bottomSwitch);\n      },\n      preloadBool () {\n        return toBoolean(this.preload);\n      },\n      // Vue 2.0 coerce migration end\n      isExpandableCard () {\n        return this.expandableBool;\n      },\n      showCaret () {\n        return this.isSeamless && this.expandableBool;\n      },\n      isSeamless () {\n        return this.type === 'seamless';\n      },\n      btnType () {\n        if (this.isSeamless || this.type === 'light') {\n          return 'btn-outline-secondary';\n        }\n        return 'btn-outline-' + (this.type || 'secondary');\n      },\n      borderType () {\n        if (this.isSeamless) {\n          return 'border-0';\n        } else if (this.type) {\n          if (this.type === 'light') {\n            return ''; // Bootstrap 4.x light border is almost invisible on a white page\n          }\n          return 'border-' + this.type;\n        }\n        return '';\n      },\n      cardType () {\n        if (this.isSeamless) {\n          return 'bg-white';\n        }\n        return 'bg-' + (this.type || 'light');\n      },\n      isLightBg () {\n        return this.cardType === 'bg-light' || this.cardType === 'bg-white' || this.cardType === 'bg-warning';\n      },\n      headerContent () {\n        return md.render(this.header);\n      },\n      altContent () {\n        return this.alt && md.render(this.alt) || md.render(this.header);\n      },\n      hasSrc () {\n        return this.src && this.src.length > 0;\n      },\n      showCloseButton () {\n        if (!this.isSeamless) {\n          return !this.noCloseBool;\n        } else {\n          return onHeaderHover;\n        }\n      }\n    },\n    data () {\n      return {\n        onHeaderHover: false,\n        localExpanded: false,\n        localMinimized: false\n      }\n    },\n    methods: {\n      toggle() {\n        this.localExpanded = !this.localExpanded;\n      },\n      expand() {\n        this.localExpanded = !this.localExpanded;\n      },\n      close() {\n        this.localMinimized = true;\n      },\n      open() {\n        this.localExpanded = true;\n        this.localMinimized = false;\n      },\n      scrollIntoViewIfNeeded() {\n        let top = this.$el.getBoundingClientRect().top;\n        let isTopInView = (top >= 0) && (top <= window.innerHeight);\n        if (!isTopInView) {\n          this.$el.scrollIntoView();\n        }\n      },\n      collapseThenScrollIntoViewIfNeeded() {\n        this.$once('is-open-event', (el, isOpen) => {\n          this.scrollIntoViewIfNeeded();\n        });\n        this.expand();\n      },\n      openPopup() {\n        window.open(this.popupUrl);\n      },\n      retrieveOnOpen(el, isOpen) {\n        if (isOpen && this.hasSrc) {\n          this.$refs.retriever.fetch()\n        }\n      }\n    },\n    watch: {\n      'localExpanded': function (val, oldVal) {\n        this.$nextTick(function () {\n          this.retrieveOnOpen(this, val);\n        })\n      },\n    },\n    created () {\n      if (this.src) {\n        let hash = getFragmentByHash(this.src);\n        if (hash) {\n          this.fragment = hash;\n          this.src = this.src.split('#')[0];\n        }\n      }\n      // Edge case where user might want non-expandable card that isn't expanded by default\n      const notExpandableNoExpand = !this.expandableBool && this.expanded !== 'false';\n      // Set local data to computed prop value\n      this.localExpanded =  notExpandableNoExpand || this.expandedBool; // Ensure this expr ordering is maintained\n      this.localMinimized = this.minimizedBool;\n    },\n    mounted() {\n      this.$nextTick(function () {\n        if (this.hasSrc && (this.preloadBool || this.expandedBool)) {\n          this.$refs.retriever.fetch()\n        }\n      });\n\n      if (this.headerContent) {\n        const panelHeaderText = jQuery(this.headerContent).wrap('<div></div>').parent().find(':header').text();\n        if (panelHeaderText) {\n          this.$refs.cardContainer.setAttribute('id', slugify(panelHeaderText, { decamelize: false }));\n        }\n      } else if (this.$refs.headerWrapper.innerHTML) {\n        const header = jQuery(this.$refs.headerWrapper.innerHTML).wrap('<div></div>').parent().find(':header');\n        if (header.length > 0) {\n          this.$refs.cardContainer.setAttribute('id', header[0].id);\n        }\n      }\n    },\n  }\n</script>\n\n<style>\n    .card-heading {\n        width: 100%;\n    }\n\n    .card-title {\n        display: inline-block;\n        font-size: 1em;\n        margin: 0;\n        vertical-align: middle;\n    }\n\n    .card-title * {\n        margin: 0px !important;\n    }\n\n    .caret-wrapper {\n        float: left;\n        display: inline-block;\n        width: 32px;\n    }\n\n    .header-wrapper {\n        display: inline-block;\n        width: calc(100% - 32px - 96px);\n    }\n\n    .button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 96px;\n    }\n\n    .header-toggle {\n        cursor: pointer;\n    }\n\n    .expandable-card {\n        margin-bottom: 0 !important;\n        margin-top: 5px;\n    }\n\n    .card-group > .card-container > .expandable-card {\n        margin-top: 0!important;\n    }\n\n    .card-seamless {\n        padding: 0;\n    }\n\n    .card.card-seamless {\n        box-shadow: none;\n        border: none;\n    }\n\n    .card-seamless > .card-heading {\n        padding: 0;\n    }\n\n    .card-seamless > .card-collapse > hr {\n        margin: 0;\n        width: calc(100% - 27px);\n    }\n\n    .card-seamless > .card-collapse > .card-body {\n        padding: 10px 0;\n    }\n\n    .card-seamless > .card-collapse > .card-body > .collapse-button {\n        position: relative;\n        top: 22px;\n    }\n\n    .card-body > .collapse-button {\n        margin-bottom: 13px;\n        margin-top: 5px;\n        opacity: 0.2;\n    }\n\n    .card-body > .collapse-button:hover {\n        opacity: 1;\n    }\n\n    .close-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n        margin-left: 3px;\n        margin-top: 2px;\n    }\n\n    .popup-button {\n        font-size: 10px !important;\n        float: right;\n        margin-top: 2px;\n        padding: 3px 8px !important;\n    }\n\n    .morph {\n        display: inline-block;\n    }\n\n    .morph-display-wrapper {\n        white-space: normal;\n    }\n\n    /* Bootstrap extra small(xs) responsive breakpoint */\n    @media (max-width: 575.98px) {\n\n        .caret-wrapper {\n            float: left;\n            display: inline-block;\n            width: 32px;\n        }\n\n        .header-wrapper {\n            display: inline-block;\n            width: calc(100% - 32px - 32px);\n        }\n\n        .button-wrapper {\n            float: right;\n            display: inline-block;\n            width: 32px;\n        }\n\n        .card-body {\n            padding: 0.5rem;\n        }\n\n        .card-collapse > hr {\n            margin-top: 1.5rem;\n        }\n\n        .card-header {\n            padding: 0.5rem;\n        }\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -27840,7 +27822,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\GitHub\\yamgent\\vue-strap\\src\\PanelSwitch.vue"
+	__vue_options__.__file = "C:\\Users\\pzy5a\\Documents\\GitHub\\CS3281-2\\vue-strap\\src\\PanelSwitch.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 	
@@ -27851,9 +27833,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-7c37f9b9", __vue_options__)
+	    hotAPI.createRecord("data-v-65ca2652", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-7c37f9b9", __vue_options__)
+	    hotAPI.reload("data-v-65ca2652", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] PanelSwitch.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -27877,8 +27859,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7c37f9b9!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PanelSwitch.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7c37f9b9!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PanelSwitch.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-65ca2652!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PanelSwitch.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-65ca2652!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./PanelSwitch.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -27896,7 +27878,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.collapse-button {\n    font-size: 10px !important;\n    float: right;\n    padding: 3px 8px !important;\n    margin-left: 3px;\n    margin-top: 2px;\n}\n", "", {"version":3,"sources":["/./src/PanelSwitch.vue?28be7224"],"names":[],"mappings":";AAyCA;IACA,2BAAA;IACA,aAAA;IACA,4BAAA;IACA,iBAAA;IACA,gBAAA;CACA","file":"PanelSwitch.vue","sourcesContent":["<template>\r\n    <button type=\"button\" :class=\"['collapse-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\">\r\n        <span :class=\"['glyphicon', {'glyphicon-menu-down': !isOpenBool, 'glyphicon-menu-up': isOpenBool}]\"\r\n              aria-hidden=\"true\"></span>\r\n    </button>\r\n</template>\r\n\r\n<script>\r\n  import {toBoolean} from './utils/utils.js'\r\n\r\n  export default {\r\n    props: {\r\n      isOpen: {\r\n        type: Boolean,\r\n        default: null\r\n      },\r\n      isLightBg: {\r\n        type: Boolean,\r\n        default: true\r\n      }\r\n    },\r\n    computed: {\r\n      isOpenBool () {\r\n        return toBoolean(this.isOpen);\r\n      }\r\n    },\r\n    methods: {\r\n      toggle () {\r\n        this.isOpen = !this.isOpenBool\r\n        this.$emit('is-open-event', this, this.isOpenBool)\r\n      }\r\n    },\r\n    created () {\r\n      if (this.isOpen === null) {\r\n        this.isOpen = false\r\n      }\r\n    }\r\n  }\r\n</script>\r\n\r\n<style>\r\n    .collapse-button {\r\n        font-size: 10px !important;\r\n        float: right;\r\n        padding: 3px 8px !important;\r\n        margin-left: 3px;\r\n        margin-top: 2px;\r\n    }\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.collapse-button {\n    font-size: 10px !important;\n    float: right;\n    padding: 3px 8px !important;\n    margin-left: 3px;\n    margin-top: 2px;\n}\n", "", {"version":3,"sources":["/./src/PanelSwitch.vue?1b0610e1"],"names":[],"mappings":";AAyCA;IACA,2BAAA;IACA,aAAA;IACA,4BAAA;IACA,iBAAA;IACA,gBAAA;CACA","file":"PanelSwitch.vue","sourcesContent":["<template>\n    <button type=\"button\" :class=\"['collapse-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\">\n        <span :class=\"['glyphicon', {'glyphicon-menu-down': !isOpenBool, 'glyphicon-menu-up': isOpenBool}]\"\n              aria-hidden=\"true\"></span>\n    </button>\n</template>\n\n<script>\n  import {toBoolean} from './utils/utils.js'\n\n  export default {\n    props: {\n      isOpen: {\n        type: Boolean,\n        default: null\n      },\n      isLightBg: {\n        type: Boolean,\n        default: true\n      }\n    },\n    computed: {\n      isOpenBool () {\n        return toBoolean(this.isOpen);\n      }\n    },\n    methods: {\n      toggle () {\n        this.isOpen = !this.isOpenBool\n        this.$emit('is-open-event', this, this.isOpenBool)\n      }\n    },\n    created () {\n      if (this.isOpen === null) {\n        this.isOpen = false\n      }\n    }\n  }\n</script>\n\n<style>\n    .collapse-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n        margin-left: 3px;\n        margin-top: 2px;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -27971,7 +27953,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-7c37f9b9", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-65ca2652", module.exports)
 	  }
 	}
 
@@ -27998,7 +27980,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\GitHub\\yamgent\\vue-strap\\src\\Retriever.vue"
+	__vue_options__.__file = "C:\\Users\\pzy5a\\Documents\\GitHub\\CS3281-2\\vue-strap\\src\\Retriever.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 	
@@ -28009,9 +27991,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-5e586657", __vue_options__)
+	    hotAPI.createRecord("data-v-52f988f5", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-5e586657", __vue_options__)
+	    hotAPI.reload("data-v-52f988f5", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Retriever.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -28126,7 +28108,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-5e586657", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-52f988f5", module.exports)
 	  }
 	}
 
@@ -29058,7 +29040,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-6ee6be25", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-154ddfc3", module.exports)
 	  }
 	}
 
@@ -29088,7 +29070,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\GitHub\\yamgent\\vue-strap\\src\\Pic.vue"
+	__vue_options__.__file = "C:\\Users\\pzy5a\\Documents\\GitHub\\CS3281-2\\vue-strap\\src\\Pic.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 	
@@ -29099,9 +29081,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-010afe2a", __vue_options__)
+	    hotAPI.createRecord("data-v-7c4d1bee", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-010afe2a", __vue_options__)
+	    hotAPI.reload("data-v-7c4d1bee", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Pic.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -29125,8 +29107,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-010afe2a!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Pic.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-010afe2a!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Pic.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7c4d1bee!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Pic.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7c4d1bee!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Pic.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -29144,7 +29126,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.image-wrapper {\n    display: inline-block;\n    text-align: center;\n    padding: 4px;\n}\n", "", {"version":3,"sources":["/./src/Pic.vue?32965222"],"names":[],"mappings":";AAmEA;IACA,sBAAA;IACA,mBAAA;IACA,aAAA;CACA","file":"Pic.vue","sourcesContent":["<template>\r\n    <div :class=\"['image-wrapper', addClass]\">\r\n        <img ref=\"pic\" @load.once=\"computeWidth\" :src=\"src\" :alt=\"alt\" :width=\"computedWidth\" class=\"img-fluid rounded\">\r\n        <div class=\"image-caption\">\r\n            <slot></slot>\r\n        </div>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n  import {toNumber} from './utils/utils.js'\r\n\r\n  export default {\r\n    props: {\r\n      src: {\r\n        type: String\r\n      },\r\n      alt: {\r\n        type: String\r\n      },\r\n      height: {\r\n        type: String,\r\n        default: ''\r\n      },\r\n      width: {\r\n        type: String,\r\n        default: ''\r\n      },\r\n      addClass: {\r\n        type: String,\r\n        default: ''\r\n      }\r\n    },\r\n    computed: {\r\n      hasWidth () {\r\n        return this.width !== '';\r\n      },\r\n      hasHeight () {\r\n        return this.height !== '';\r\n      },\r\n      computedWidth () {\r\n        if (this.hasWidth) {\r\n          return this.width;\r\n        }\r\n        return this.widthFromHeight;\r\n      }\r\n    },\r\n    data () {\r\n      return {\r\n        widthFromHeight: '',\r\n      }\r\n    },\r\n    methods: {\r\n      computeWidth() {\r\n        if (!this.hasWidth && this.hasHeight) {\r\n          const renderedImg = this.$refs.pic;\r\n          const imgHeight = renderedImg.naturalHeight;\r\n          const imgWidth = renderedImg.naturalWidth;\r\n          const aspectRatio = imgWidth / imgHeight;\r\n          this.widthFromHeight = Math.round(toNumber(this.height) * aspectRatio).toString();\r\n        }\r\n      }\r\n    }\r\n  }\r\n</script>\r\n\r\n<style>\r\n    .image-wrapper {\r\n        display: inline-block;\r\n        text-align: center;\r\n        padding: 4px;\r\n    }\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.image-wrapper {\n    display: inline-block;\n    text-align: center;\n    padding: 4px;\n}\n", "", {"version":3,"sources":["/./src/Pic.vue?5d04828f"],"names":[],"mappings":";AAmEA;IACA,sBAAA;IACA,mBAAA;IACA,aAAA;CACA","file":"Pic.vue","sourcesContent":["<template>\n    <div :class=\"['image-wrapper', addClass]\">\n        <img ref=\"pic\" @load.once=\"computeWidth\" :src=\"src\" :alt=\"alt\" :width=\"computedWidth\" class=\"img-fluid rounded\">\n        <div class=\"image-caption\">\n            <slot></slot>\n        </div>\n    </div>\n</template>\n\n<script>\n  import {toNumber} from './utils/utils.js'\n\n  export default {\n    props: {\n      src: {\n        type: String\n      },\n      alt: {\n        type: String\n      },\n      height: {\n        type: String,\n        default: ''\n      },\n      width: {\n        type: String,\n        default: ''\n      },\n      addClass: {\n        type: String,\n        default: ''\n      }\n    },\n    computed: {\n      hasWidth () {\n        return this.width !== '';\n      },\n      hasHeight () {\n        return this.height !== '';\n      },\n      computedWidth () {\n        if (this.hasWidth) {\n          return this.width;\n        }\n        return this.widthFromHeight;\n      }\n    },\n    data () {\n      return {\n        widthFromHeight: '',\n      }\n    },\n    methods: {\n      computeWidth() {\n        if (!this.hasWidth && this.hasHeight) {\n          const renderedImg = this.$refs.pic;\n          const imgHeight = renderedImg.naturalHeight;\n          const imgWidth = renderedImg.naturalWidth;\n          const aspectRatio = imgWidth / imgHeight;\n          this.widthFromHeight = Math.round(toNumber(this.height) * aspectRatio).toString();\n        }\n      }\n    }\n  }\n</script>\n\n<style>\n    .image-wrapper {\n        display: inline-block;\n        text-align: center;\n        padding: 4px;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -29250,7 +29232,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-010afe2a", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-7c4d1bee", module.exports)
 	  }
 	}
 
@@ -29280,7 +29262,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\GitHub\\yamgent\\vue-strap\\src\\Popover.vue"
+	__vue_options__.__file = "C:\\Users\\pzy5a\\Documents\\GitHub\\CS3281-2\\vue-strap\\src\\Popover.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 	
@@ -29291,9 +29273,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-52091c06", __vue_options__)
+	    hotAPI.createRecord("data-v-09a363b8", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-52091c06", __vue_options__)
+	    hotAPI.reload("data-v-09a363b8", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Popover.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -29317,8 +29299,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-52091c06!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Popover.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-52091c06!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Popover.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-09a363b8!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Popover.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-09a363b8!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Popover.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -29336,7 +29318,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.fade-enter-active, .fade-leave-active {\r\n  transition: opacity .5s ease;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\r\n  opacity: 0;\n}\n.popover.top,\r\n.popover.left,\r\n.popover.right,\r\n.popover.bottom {\r\n  display: block;\r\n  overflow-wrap: break-word;\n}\n@media (min-width: 768px) {\n.popover.top,\r\n  .popover.left,\r\n  .popover.right,\r\n  .popover.bottom {\r\n    max-width: 600px;\n}\n}\n.scale-enter-active {\r\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\r\n  animation:scale-out 0.15s ease-out;\n}\n@keyframes scale-in {\n0% {\r\n    transform: scale(0);\r\n    opacity: 0;\n}\n100% {\r\n    transform: scale(1);\r\n    opacity: 1;\n}\n}\n@keyframes scale-out {\n0% {\r\n    transform: scale(1);\r\n    opacity: 1;\n}\n100% {\r\n    transform: scale(0);\r\n    opacity: 0;\n}\n}\r\n", "", {"version":3,"sources":["/./src/Popover.vue?3de1ee40"],"names":[],"mappings":";AA4DA;EACA,6BAAA;CACA;AAEA;EACA,WAAA;CACA;AAEA;;;;EAIA,eAAA;EACA,0BAAA;CACA;AAEA;AACA;;;;IAIA,iBAAA;CACA;CACA;AACA;EACA,iCAAA;CACA;AACA;EACA,mCAAA;CACA;AACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;CACA;AACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;CACA","file":"Popover.vue","sourcesContent":["<template>\r\n  <span :class=\"[addClass]\">\r\n    <span ref=\"trigger\" v-if=\"hasSlot\" v-on:click=\"false\"><slot></slot></span><!--\r\n    -->\r\n    <transition :name=\"effect\">\r\n    <div ref=\"popover\" v-if=\"show\"\r\n      :class=\"['popover', popoverPlacementClass]\">\r\n      <div class=\"arrow\" ref=\"arrow\"></div>\r\n      <h3 class=\"popover-header\" v-if=\"title\" v-on:click=\"false\">\r\n        <slot name=\"title\" v-if=\"hasTitleSlot\"></slot>\r\n        <span v-else v-html=\"titleRendered\"></span>\r\n      </h3>\r\n      <div class=\"popover-body\" v-on:click=\"false\">\r\n        <slot name=\"content\" v-if=\"hasContentSlot\"></slot>\r\n        <span v-else v-html=\"contentRendered\"></span>\r\n      </div>\r\n    </div>\r\n    </transition>\r\n  </span>\r\n</template>\r\n\r\n<script>\r\nimport PopoverMixin from './utils/popoverMixins.js'\r\n\r\nexport default {\r\n  mixins: [PopoverMixin],\r\n  props: {\r\n    trigger: {\r\n      type: String,\r\n      default: 'hover'\r\n    },\r\n    addClass: {\r\n      type: String,\r\n      default: ''\r\n    }\r\n  },\r\n  computed: {\r\n    hasSlot () {\r\n      return this.$slots.default;\r\n    },\r\n    hasTitleSlot () {\r\n      return this.$slots.title\r\n    },\r\n    hasContentSlot () {\r\n      return this.$slots.content;\r\n    },\r\n    popoverPlacementClass() {\r\n      return `bs-popover-${this.placement}`;\r\n    }\r\n  },\r\n  mounted () {\r\n    if (this.$refs.trigger) {\r\n      this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dotted'\r\n      this.$refs.trigger.style['text-decoration'] = 'underline dotted'\r\n    }\r\n  }\r\n}\r\n</script>\r\n\r\n<style>\r\n.fade-enter-active, .fade-leave-active {\r\n  transition: opacity .5s ease;\r\n}\r\n\r\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\r\n  opacity: 0;\r\n}\r\n\r\n.popover.top,\r\n.popover.left,\r\n.popover.right,\r\n.popover.bottom {\r\n  display: block;\r\n  overflow-wrap: break-word;\r\n}\r\n\r\n@media (min-width: 768px) {\r\n  .popover.top,\r\n  .popover.left,\r\n  .popover.right,\r\n  .popover.bottom {\r\n    max-width: 600px;\r\n  }\r\n}\r\n.scale-enter-active {\r\n  animation:scale-in 0.15s ease-in;\r\n}\r\n.scale-leave-active {\r\n  animation:scale-out 0.15s ease-out;\r\n}\r\n@keyframes scale-in {\r\n  0% {\r\n    transform: scale(0);\r\n    opacity: 0;\r\n  }\r\n  100% {\r\n    transform: scale(1);\r\n    opacity: 1;\r\n  }\r\n}\r\n@keyframes scale-out {\r\n  0% {\r\n    transform: scale(1);\r\n    opacity: 1;\r\n  }\r\n  100% {\r\n    transform: scale(0);\r\n    opacity: 0;\r\n  }\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.fade-enter-active, .fade-leave-active {\n  transition: opacity .5s ease;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\n  opacity: 0;\n}\n.popover.top,\n.popover.left,\n.popover.right,\n.popover.bottom {\n  display: block;\n  overflow-wrap: break-word;\n}\n@media (min-width: 768px) {\n.popover.top,\n  .popover.left,\n  .popover.right,\n  .popover.bottom {\n    max-width: 600px;\n}\n}\n.scale-enter-active {\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\n  animation:scale-out 0.15s ease-out;\n}\n@keyframes scale-in {\n0% {\n    transform: scale(0);\n    opacity: 0;\n}\n100% {\n    transform: scale(1);\n    opacity: 1;\n}\n}\n@keyframes scale-out {\n0% {\n    transform: scale(1);\n    opacity: 1;\n}\n100% {\n    transform: scale(0);\n    opacity: 0;\n}\n}\n", "", {"version":3,"sources":["/./src/Popover.vue?ecde0026"],"names":[],"mappings":";AA4DA;EACA,6BAAA;CACA;AAEA;EACA,WAAA;CACA;AAEA;;;;EAIA,eAAA;EACA,0BAAA;CACA;AAEA;AACA;;;;IAIA,iBAAA;CACA;CACA;AACA;EACA,iCAAA;CACA;AACA;EACA,mCAAA;CACA;AACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;CACA;AACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;CACA","file":"Popover.vue","sourcesContent":["<template>\n  <span :class=\"[addClass]\">\n    <span ref=\"trigger\" v-if=\"hasSlot\" v-on:click=\"false\"><slot></slot></span><!--\n    -->\n    <transition :name=\"effect\">\n    <div ref=\"popover\" v-if=\"show\"\n      :class=\"['popover', popoverPlacementClass]\">\n      <div class=\"arrow\" ref=\"arrow\"></div>\n      <h3 class=\"popover-header\" v-if=\"title\" v-on:click=\"false\">\n        <slot name=\"title\" v-if=\"hasTitleSlot\"></slot>\n        <span v-else v-html=\"titleRendered\"></span>\n      </h3>\n      <div class=\"popover-body\" v-on:click=\"false\">\n        <slot name=\"content\" v-if=\"hasContentSlot\"></slot>\n        <span v-else v-html=\"contentRendered\"></span>\n      </div>\n    </div>\n    </transition>\n  </span>\n</template>\n\n<script>\nimport PopoverMixin from './utils/popoverMixins.js'\n\nexport default {\n  mixins: [PopoverMixin],\n  props: {\n    trigger: {\n      type: String,\n      default: 'hover'\n    },\n    addClass: {\n      type: String,\n      default: ''\n    }\n  },\n  computed: {\n    hasSlot () {\n      return this.$slots.default;\n    },\n    hasTitleSlot () {\n      return this.$slots.title\n    },\n    hasContentSlot () {\n      return this.$slots.content;\n    },\n    popoverPlacementClass() {\n      return `bs-popover-${this.placement}`;\n    }\n  },\n  mounted () {\n    if (this.$refs.trigger) {\n      this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dotted'\n      this.$refs.trigger.style['text-decoration'] = 'underline dotted'\n    }\n  }\n}\n</script>\n\n<style>\n.fade-enter-active, .fade-leave-active {\n  transition: opacity .5s ease;\n}\n\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\n  opacity: 0;\n}\n\n.popover.top,\n.popover.left,\n.popover.right,\n.popover.bottom {\n  display: block;\n  overflow-wrap: break-word;\n}\n\n@media (min-width: 768px) {\n  .popover.top,\n  .popover.left,\n  .popover.right,\n  .popover.bottom {\n    max-width: 600px;\n  }\n}\n.scale-enter-active {\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\n  animation:scale-out 0.15s ease-out;\n}\n@keyframes scale-in {\n  0% {\n    transform: scale(0);\n    opacity: 0;\n  }\n  100% {\n    transform: scale(1);\n    opacity: 1;\n  }\n}\n@keyframes scale-out {\n  0% {\n    transform: scale(1);\n    opacity: 1;\n  }\n  100% {\n    transform: scale(0);\n    opacity: 0;\n  }\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -29924,7 +29906,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-52091c06", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-09a363b8", module.exports)
 	  }
 	}
 
@@ -29954,7 +29936,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\GitHub\\yamgent\\vue-strap\\src\\Question.vue"
+	__vue_options__.__file = "C:\\Users\\pzy5a\\Documents\\GitHub\\CS3281-2\\vue-strap\\src\\Question.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 	
@@ -29965,9 +29947,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-482f4f55", __vue_options__)
+	    hotAPI.createRecord("data-v-789f3e12", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-482f4f55", __vue_options__)
+	    hotAPI.reload("data-v-789f3e12", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Question.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -29991,8 +29973,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-482f4f55!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Question.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-482f4f55!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Question.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-789f3e12!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Question.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-789f3e12!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Question.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -30010,7 +29992,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.body-wrapper {\n    padding-bottom: 10px;\n}\n.question-wrapper > .panel-group > .panel-container + .panel-container {\n    display: block;\n    margin-top: 5px;\n}\n.textarea-container {\n    margin: 8px 0;\n}\n.textarea-container > textarea {\n    margin: 4px 0;\n}\n", "", {"version":3,"sources":["/./src/Question.vue?17c48014"],"names":[],"mappings":";AAkFA;IACA,qBAAA;CACA;AACA;IACA,eAAA;IACA,gBAAA;CACA;AACA;IACA,cAAA;CACA;AACA;IACA,cAAA;CACA","file":"Question.vue","sourcesContent":["<template>\r\n    <div :class=\"['question-wrapper', addClass]\">\r\n        <div class=\"body-wrapper\">\r\n            <!-- Default slot is question body -->\r\n            <slot></slot>\r\n            <div v-if=\"hasInputBool\" class=\"textarea-container\">\r\n                <textarea class=\"form-control question-input\" rows=\"3\" placeholder=\"write your answer here...\"></textarea>\r\n            </div>\r\n        </div>\r\n        <panel v-show=\"hasHintSlot\" header=\"Hint\" expandable no-close preload>\r\n            <template v-if=\"isEmptyHint\">\r\n                No hint is available for this question.\r\n            </template>\r\n            <template v-else>\r\n                <div ref=\"hintWrapper\">\r\n                    <slot name=\"hint\"></slot>\r\n                </div>\r\n            </template>\r\n        </panel>\r\n        <panel v-show=\"hasAnswerSlot\" header=\"Answer\" expandable no-close preload>\r\n            <template v-if=\"isEmptyAnswer\">\r\n                No answer is provided for this question.\r\n            </template>\r\n            <template v-else>\r\n                <div ref=\"answerWrapper\">\r\n                    <slot name=\"answer\"></slot>\r\n                </div>\r\n            </template>\r\n        </panel>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n  import {toBoolean} from './utils/utils.js'\r\n  import panel from './Panel.vue'\r\n\r\n  export default {\r\n    components: {\r\n      panel,\r\n    },\r\n    props: {\r\n      hasInput: {\r\n        type: Boolean,\r\n        default: false\r\n      },\r\n      addClass: {\r\n        type: String,\r\n        default: ''\r\n      }\r\n    },\r\n    computed: {\r\n      // Vue 2.0 coerce migration\r\n      hasInputBool () {\r\n        return toBoolean(this.hasInput);\r\n      }\r\n      // Vue 2.0 coerce migration end\r\n    },\r\n    data () {\r\n      return {\r\n        hasAnswerSlot: true,\r\n        hasHintSlot: true,\r\n        isEmptyAnswer: false,\r\n        isEmptyHint: false\r\n      }\r\n    },\r\n    mounted() {\r\n      this.$nextTick(function() {\r\n        const emptyDiv = '<div></div>';\r\n        this.hasAnswerSlot = !!this.$slots.answer;\r\n        this.hasHintSlot = !!this.$slots.hint;\r\n        if (this.$refs.answerWrapper) {\r\n          this.isEmptyAnswer = this.$refs.answerWrapper.innerHTML === emptyDiv;\r\n        }\r\n        if (this.$refs.hintWrapper) {\r\n          this.isEmptyHint = this.$refs.hintWrapper.innerHTML === emptyDiv;\r\n        }\r\n      })\r\n    }\r\n  }\r\n</script>\r\n\r\n<style>\r\n    .body-wrapper {\r\n        padding-bottom: 10px;\r\n    }\r\n    .question-wrapper > .panel-group > .panel-container + .panel-container {\r\n        display: block;\r\n        margin-top: 5px;\r\n    }\r\n    .textarea-container {\r\n        margin: 8px 0;\r\n    }\r\n    .textarea-container > textarea {\r\n        margin: 4px 0;\r\n    }\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.body-wrapper {\n    padding-bottom: 10px;\n}\n.question-wrapper > .panel-group > .panel-container + .panel-container {\n    display: block;\n    margin-top: 5px;\n}\n.textarea-container {\n    margin: 8px 0;\n}\n.textarea-container > textarea {\n    margin: 4px 0;\n}\n", "", {"version":3,"sources":["/./src/Question.vue?85f29ee8"],"names":[],"mappings":";AAkFA;IACA,qBAAA;CACA;AACA;IACA,eAAA;IACA,gBAAA;CACA;AACA;IACA,cAAA;CACA;AACA;IACA,cAAA;CACA","file":"Question.vue","sourcesContent":["<template>\n    <div :class=\"['question-wrapper', addClass]\">\n        <div class=\"body-wrapper\">\n            <!-- Default slot is question body -->\n            <slot></slot>\n            <div v-if=\"hasInputBool\" class=\"textarea-container\">\n                <textarea class=\"form-control question-input\" rows=\"3\" placeholder=\"write your answer here...\"></textarea>\n            </div>\n        </div>\n        <panel v-show=\"hasHintSlot\" header=\"Hint\" expandable no-close preload>\n            <template v-if=\"isEmptyHint\">\n                No hint is available for this question.\n            </template>\n            <template v-else>\n                <div ref=\"hintWrapper\">\n                    <slot name=\"hint\"></slot>\n                </div>\n            </template>\n        </panel>\n        <panel v-show=\"hasAnswerSlot\" header=\"Answer\" expandable no-close preload>\n            <template v-if=\"isEmptyAnswer\">\n                No answer is provided for this question.\n            </template>\n            <template v-else>\n                <div ref=\"answerWrapper\">\n                    <slot name=\"answer\"></slot>\n                </div>\n            </template>\n        </panel>\n    </div>\n</template>\n\n<script>\n  import {toBoolean} from './utils/utils.js'\n  import panel from './Panel.vue'\n\n  export default {\n    components: {\n      panel,\n    },\n    props: {\n      hasInput: {\n        type: Boolean,\n        default: false\n      },\n      addClass: {\n        type: String,\n        default: ''\n      }\n    },\n    computed: {\n      // Vue 2.0 coerce migration\n      hasInputBool () {\n        return toBoolean(this.hasInput);\n      }\n      // Vue 2.0 coerce migration end\n    },\n    data () {\n      return {\n        hasAnswerSlot: true,\n        hasHintSlot: true,\n        isEmptyAnswer: false,\n        isEmptyHint: false\n      }\n    },\n    mounted() {\n      this.$nextTick(function() {\n        const emptyDiv = '<div></div>';\n        this.hasAnswerSlot = !!this.$slots.answer;\n        this.hasHintSlot = !!this.$slots.hint;\n        if (this.$refs.answerWrapper) {\n          this.isEmptyAnswer = this.$refs.answerWrapper.innerHTML === emptyDiv;\n        }\n        if (this.$refs.hintWrapper) {\n          this.isEmptyHint = this.$refs.hintWrapper.innerHTML === emptyDiv;\n        }\n      })\n    }\n  }\n</script>\n\n<style>\n    .body-wrapper {\n        padding-bottom: 10px;\n    }\n    .question-wrapper > .panel-group > .panel-container + .panel-container {\n        display: block;\n        margin-top: 5px;\n    }\n    .textarea-container {\n        margin: 8px 0;\n    }\n    .textarea-container > textarea {\n        margin: 4px 0;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -30163,7 +30145,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-482f4f55", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-789f3e12", module.exports)
 	  }
 	}
 
@@ -30190,7 +30172,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\GitHub\\yamgent\\vue-strap\\src\\Searchbar.vue"
+	__vue_options__.__file = "C:\\Users\\pzy5a\\Documents\\GitHub\\CS3281-2\\vue-strap\\src\\Searchbar.vue"
 	
 	/* hot reload */
 	if (false) {(function () {
@@ -30199,9 +30181,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-55c9dce8", __vue_options__)
+	    hotAPI.createRecord("data-v-6c8797ac", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-55c9dce8", __vue_options__)
+	    hotAPI.reload("data-v-6c8797ac", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Searchbar.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -30225,8 +30207,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-55c9dce8!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Searchbar.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-55c9dce8!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Searchbar.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-6c8797ac!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Searchbar.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-6c8797ac!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Searchbar.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -30244,7 +30226,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.search-dropdown-menu {\r\n  max-height: 30em;\r\n  overflow-y: scroll;\n}\r\n", "", {"version":3,"sources":["/./src/Searchbar.vue?729df5a0"],"names":[],"mappings":";AA8IA;EACA,iBAAA;EACA,mBAAA;CACA","file":"Searchbar.vue","sourcesContent":["<script>\r\nimport typeahead from './Typeahead.vue';\r\n\r\nexport default {\r\n  extends: typeahead,\r\n  computed: {\r\n    primitiveData() {\r\n      function getTotalMatches(searchTarget, regexes) {\r\n        return regexes.reduce((total, regex) => (regex.test(searchTarget) ? total + 1 : total), 0);\r\n      }\r\n\r\n      if (this.value.length < 2) {\r\n        return [];\r\n      }\r\n      if (!this.data) {\r\n        return undefined;\r\n      }\r\n      const matches = [];\r\n      const regexes = this.value.split(' ')\r\n        .filter(searchKeyword => searchKeyword !== '')\r\n        .map(searchKeyword => searchKeyword.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&'))\r\n        .map(searchKeyword => new RegExp(searchKeyword, 'i'));\r\n      this.data.forEach((entry) => {\r\n        const { headings, src, title } = entry;\r\n        const keywords = entry.keywords || '';\r\n        let searchTarget = [title].concat(keywords).concat(Object.values(headings)).join(' ');\r\n        let totalMatches = getTotalMatches(searchTarget, regexes);\r\n        if (totalMatches > 0) {\r\n          searchTarget = [title].concat(keywords).join(' ');\r\n          const isMatchingPage = getTotalMatches(searchTarget, regexes) === totalMatches;\r\n          if (isMatchingPage) {\r\n            matches.push(Object.assign(entry, { totalMatches }));\r\n          }\r\n          Object.entries(headings).forEach(([id, text]) => {\r\n            if (regexes.some(regex => regex.test(text))) {\r\n              searchTarget = [title].concat(keywords).concat(text).join(' ');\r\n              totalMatches = getTotalMatches(searchTarget, regexes);\r\n              matches.push({\r\n                heading: { id, text },\r\n                keywords,\r\n                src,\r\n                title,\r\n                totalMatches,\r\n              });\r\n            }\r\n          });\r\n        }\r\n      });\r\n      return matches.sort((a, b) => b.totalMatches - a.totalMatches);\r\n    },\r\n    entryTemplate() {\r\n      return 'searchbarTemplate';\r\n    },\r\n  },\r\n  methods: {\r\n    down() {\r\n      if (this.current < this.items.length - 1) {\r\n        this.current += 1;\r\n        this.scrollListView();\r\n      }\r\n    },\r\n    up() {\r\n      if (this.current > 0) {\r\n        this.current -= 1;\r\n        this.scrollListView();\r\n      }\r\n    },\r\n    scrollListView() {\r\n      const { dropdown } = this.$refs;\r\n      const currentEntry = dropdown.children[this.current];\r\n      const upperBound = dropdown.scrollTop;\r\n      const lowerBound = upperBound + dropdown.clientHeight;\r\n      const currentEntryOffsetBottom = currentEntry.offsetTop + currentEntry.offsetHeight;\r\n      if (currentEntry.offsetTop < upperBound) {\r\n        dropdown.scrollTop = currentEntry.offsetTop;\r\n      } else if (currentEntryOffsetBottom > lowerBound) {\r\n        dropdown.scrollTop = currentEntryOffsetBottom - dropdown.clientHeight;\r\n      }\r\n    },\r\n  },\r\n  components: {\r\n    searchbarTemplate: {\r\n      props: ['item', 'value'],\r\n      template: '<div><span v-html=\"highlight(item.title, value)\"></span>'\r\n      + '<br v-if=\"item.keywords\" />'\r\n      + '<small v-if=\"item.keywords\" v-html=\"highlight(item.keywords, value)\"></small>'\r\n      + '<br v-if=\"item.heading\" />'\r\n      + '<small v-if=\"item.heading\" v-html=\"highlight(item.heading.text, value)\"></small></div>',\r\n      methods: {\r\n        highlight(value, phrase) {\r\n          function getMatchIntervals() {\r\n            const regexes = phrase.split(' ')\r\n              .filter(searchKeyword => searchKeyword !== '')\r\n              .map(searchKeyword => searchKeyword.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&'))\r\n              .map(searchKeyword => new RegExp(`(${searchKeyword})`, 'gi'));\r\n            const matchIntervals = [];\r\n            regexes.forEach((regex) => {\r\n              let match = regex.exec(value);\r\n              while (match !== null) {\r\n                if (match.index === regex.lastIndex) {\r\n                  break;\r\n                }\r\n                matchIntervals.push({ start: match.index, end: regex.lastIndex });\r\n                match = regex.exec(value);\r\n              }\r\n            });\r\n            return matchIntervals;\r\n          }\r\n          // https://www.geeksforgeeks.org/merging-intervals/\r\n          function mergeOverlappingIntervals(intervals) {\r\n            if (intervals.length <= 1) {\r\n              return intervals;\r\n            }\r\n            return intervals\r\n              .sort((a, b) => a.start - b.start)\r\n              .reduce((stack, current) => {\r\n                const top = stack[stack.length - 1];\r\n                if (!top || top.end < current.start) {\r\n                  stack.push(current);\r\n                } else if (top.end < current.end) {\r\n                  top.end = current.end;\r\n                }\r\n                return stack;\r\n              }, []);\r\n          }\r\n          const matchIntervals = mergeOverlappingIntervals(getMatchIntervals());\r\n          let highlightedValue = value;\r\n          // Traverse from back to front to avoid the positioning going out of sync\r\n          for (let i = matchIntervals.length - 1; i >= 0; i -= 1) {\r\n            highlightedValue = `${highlightedValue.slice(0, matchIntervals[i].start)}<mark>`\r\n              + `${highlightedValue.slice(matchIntervals[i].start, matchIntervals[i].end)}</mark>`\r\n              + `${highlightedValue.slice(matchIntervals[i].end)}`;\r\n          }\r\n          return highlightedValue;\r\n        },\r\n      },\r\n    },\r\n  },\r\n};\r\n</script>\r\n\r\n<style>\r\n.search-dropdown-menu {\r\n  max-height: 30em;\r\n  overflow-y: scroll;\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.search-dropdown-menu {\n  max-height: 30em;\n  overflow-y: scroll;\n}\n", "", {"version":3,"sources":["/./src/Searchbar.vue?6215b58d"],"names":[],"mappings":";AA8IA;EACA,iBAAA;EACA,mBAAA;CACA","file":"Searchbar.vue","sourcesContent":["<script>\nimport typeahead from './Typeahead.vue';\n\nexport default {\n  extends: typeahead,\n  computed: {\n    primitiveData() {\n      function getTotalMatches(searchTarget, regexes) {\n        return regexes.reduce((total, regex) => (regex.test(searchTarget) ? total + 1 : total), 0);\n      }\n\n      if (this.value.length < 2) {\n        return [];\n      }\n      if (!this.data) {\n        return undefined;\n      }\n      const matches = [];\n      const regexes = this.value.split(' ')\n        .filter(searchKeyword => searchKeyword !== '')\n        .map(searchKeyword => searchKeyword.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&'))\n        .map(searchKeyword => new RegExp(searchKeyword, 'i'));\n      this.data.forEach((entry) => {\n        const { headings, src, title } = entry;\n        const keywords = entry.keywords || '';\n        let searchTarget = [title].concat(keywords).concat(Object.values(headings)).join(' ');\n        let totalMatches = getTotalMatches(searchTarget, regexes);\n        if (totalMatches > 0) {\n          searchTarget = [title].concat(keywords).join(' ');\n          const isMatchingPage = getTotalMatches(searchTarget, regexes) === totalMatches;\n          if (isMatchingPage) {\n            matches.push(Object.assign(entry, { totalMatches }));\n          }\n          Object.entries(headings).forEach(([id, text]) => {\n            if (regexes.some(regex => regex.test(text))) {\n              searchTarget = [title].concat(keywords).concat(text).join(' ');\n              totalMatches = getTotalMatches(searchTarget, regexes);\n              matches.push({\n                heading: { id, text },\n                keywords,\n                src,\n                title,\n                totalMatches,\n              });\n            }\n          });\n        }\n      });\n      return matches.sort((a, b) => b.totalMatches - a.totalMatches);\n    },\n    entryTemplate() {\n      return 'searchbarTemplate';\n    },\n  },\n  methods: {\n    down() {\n      if (this.current < this.items.length - 1) {\n        this.current += 1;\n        this.scrollListView();\n      }\n    },\n    up() {\n      if (this.current > 0) {\n        this.current -= 1;\n        this.scrollListView();\n      }\n    },\n    scrollListView() {\n      const { dropdown } = this.$refs;\n      const currentEntry = dropdown.children[this.current];\n      const upperBound = dropdown.scrollTop;\n      const lowerBound = upperBound + dropdown.clientHeight;\n      const currentEntryOffsetBottom = currentEntry.offsetTop + currentEntry.offsetHeight;\n      if (currentEntry.offsetTop < upperBound) {\n        dropdown.scrollTop = currentEntry.offsetTop;\n      } else if (currentEntryOffsetBottom > lowerBound) {\n        dropdown.scrollTop = currentEntryOffsetBottom - dropdown.clientHeight;\n      }\n    },\n  },\n  components: {\n    searchbarTemplate: {\n      props: ['item', 'value'],\n      template: '<div><span v-html=\"highlight(item.title, value)\"></span>'\n      + '<br v-if=\"item.keywords\" />'\n      + '<small v-if=\"item.keywords\" v-html=\"highlight(item.keywords, value)\"></small>'\n      + '<br v-if=\"item.heading\" />'\n      + '<small v-if=\"item.heading\" v-html=\"highlight(item.heading.text, value)\"></small></div>',\n      methods: {\n        highlight(value, phrase) {\n          function getMatchIntervals() {\n            const regexes = phrase.split(' ')\n              .filter(searchKeyword => searchKeyword !== '')\n              .map(searchKeyword => searchKeyword.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&'))\n              .map(searchKeyword => new RegExp(`(${searchKeyword})`, 'gi'));\n            const matchIntervals = [];\n            regexes.forEach((regex) => {\n              let match = regex.exec(value);\n              while (match !== null) {\n                if (match.index === regex.lastIndex) {\n                  break;\n                }\n                matchIntervals.push({ start: match.index, end: regex.lastIndex });\n                match = regex.exec(value);\n              }\n            });\n            return matchIntervals;\n          }\n          // https://www.geeksforgeeks.org/merging-intervals/\n          function mergeOverlappingIntervals(intervals) {\n            if (intervals.length <= 1) {\n              return intervals;\n            }\n            return intervals\n              .sort((a, b) => a.start - b.start)\n              .reduce((stack, current) => {\n                const top = stack[stack.length - 1];\n                if (!top || top.end < current.start) {\n                  stack.push(current);\n                } else if (top.end < current.end) {\n                  top.end = current.end;\n                }\n                return stack;\n              }, []);\n          }\n          const matchIntervals = mergeOverlappingIntervals(getMatchIntervals());\n          let highlightedValue = value;\n          // Traverse from back to front to avoid the positioning going out of sync\n          for (let i = matchIntervals.length - 1; i >= 0; i -= 1) {\n            highlightedValue = `${highlightedValue.slice(0, matchIntervals[i].start)}<mark>`\n              + `${highlightedValue.slice(matchIntervals[i].start, matchIntervals[i].end)}</mark>`\n              + `${highlightedValue.slice(matchIntervals[i].end)}`;\n          }\n          return highlightedValue;\n        },\n      },\n    },\n  },\n};\n</script>\n\n<style>\n.search-dropdown-menu {\n  max-height: 30em;\n  overflow-y: scroll;\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -30696,7 +30678,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\GitHub\\yamgent\\vue-strap\\src\\Typeahead.vue"
+	__vue_options__.__file = "C:\\Users\\pzy5a\\Documents\\GitHub\\CS3281-2\\vue-strap\\src\\Typeahead.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 	
@@ -30707,9 +30689,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-248f48e8", __vue_options__)
+	    hotAPI.createRecord("data-v-19306b86", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-248f48e8", __vue_options__)
+	    hotAPI.reload("data-v-19306b86", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Typeahead.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -30733,8 +30715,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-248f48e8!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Typeahead.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-248f48e8!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Typeahead.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-19306b86!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Typeahead.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-19306b86!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Typeahead.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -30752,7 +30734,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.dropdown-menu > li > a {\r\n  cursor: pointer;\n}\r\n", "", {"version":3,"sources":["/./src/Typeahead.vue?7b4be8f6"],"names":[],"mappings":";AAmKA;EACA,gBAAA;CACA","file":"Typeahead.vue","sourcesContent":["<template>\r\n  <div style=\"position: relative\">\r\n    <input type=\"text\" class=\"form-control\"\r\n      :id=\"inputId\"\r\n      :placeholder=\"placeholder\"\r\n      autocomplete=\"off\"\r\n      v-model=\"value\"\r\n      @input=\"update\"\r\n      @keydown.up=\"up\"\r\n      @keydown.down=\"down\"\r\n      @keydown.enter= \"hit\"\r\n      @keydown.esc=\"reset\"\r\n      @blur=\"showDropdown = false\"\r\n    />\r\n    <ul :class=\"dropdownMenuClasses\" ref=\"dropdown\">\r\n      <li v-for=\"(item, index) in items\" v-bind:class=\"{'table-active': isActive(index)}\">\r\n        <a class=\"dropdown-item\" @mousedown.prevent=\"hit\" @mousemove=\"setActive(index)\">\r\n          <component v-bind:is=\"entryTemplate\" :item=\"item\" :value=\"value\"></component>\r\n        </a>\r\n      </li>\r\n    </ul>\r\n  </div>\r\n</template>\r\n\r\n<script>\r\nimport {delayer, getJSON} from './utils/utils.js'\r\n\r\nlet Vue = window.Vue\r\nconst _DELAY_ = 200\r\n\r\nexport default {\r\n  created () {\r\n    this.items = this.primitiveData\r\n  },\r\n  props: {\r\n    value: {\r\n      type: String,\r\n      default: ''\r\n    },\r\n    data: {\r\n      type: Array\r\n    },\r\n    limit: {\r\n      type: Number,\r\n      default: 8\r\n    },\r\n    async: {\r\n      type: String\r\n    },\r\n    key: {\r\n      type: String,\r\n      default: null\r\n    },\r\n    onHit: {\r\n      type: Function,\r\n      default (items) {\r\n        this.reset()\r\n        this.value = items\r\n      }\r\n    },\r\n    placeholder: {\r\n      type: String\r\n    },\r\n    delay: {\r\n      type: Number,\r\n      default: _DELAY_,\r\n    },\r\n    menuAlignRight: {\r\n      type: Boolean,\r\n      default: false\r\n    },\r\n    algolia: {\r\n      type: Boolean,\r\n      default: false\r\n    }\r\n\r\n  },\r\n  data () {\r\n    return {\r\n      showDropdown: false,\r\n      noResults: true,\r\n      current: 0,\r\n      items: []\r\n    }\r\n  },\r\n  computed: {\r\n    inputId () {\r\n      return this.algolia ? \"algolia-search-input\" : null;\r\n    },\r\n    primitiveData () {\r\n      if (this.data) {\r\n        return this.data.filter(value => {\r\n          value = this.matchCase ? value : value.toLowerCase()\r\n          var query = this.matchCase ? this.value : this.value.toLowerCase()\r\n          return this.matchStart ? value.indexOf(query) === 0 : value.indexOf(query) !== -1\r\n        }).slice(0, this.limit)\r\n      }\r\n    },\r\n    entryTemplate () {\r\n      return 'typeaheadTemplate';\r\n    },\r\n    dropdownMenuClasses () {\r\n      return ['dropdown-menu', 'search-dropdown-menu', {show: this.showDropdown},\r\n        {'dropdown-menu-right': this.menuAlignRight}];\r\n    }\r\n  },\r\n  methods: {\r\n    update () {\r\n      if (!this.value) {\r\n        this.reset()\r\n        return false\r\n      }\r\n      if (this.data) {\r\n        this.items = this.primitiveData\r\n        this.showDropdown = this.items.length > 0\r\n      }\r\n      if (this.async) this.query()\r\n    },\r\n    query: delayer(function () {\r\n      getJSON(this.async + this.value).then(data => {\r\n        this.items = (this.key ? data[this.key] : data).slice(0, this.limit)\r\n        this.showDropdown = this.items.length\r\n      })\r\n    }, 'delay', _DELAY_),\r\n    reset () {\r\n      this.items = []\r\n      this.value = ''\r\n      this.loading = false\r\n      this.showDropdown = false\r\n    },\r\n    setActive (index) {\r\n      this.current = index\r\n    },\r\n    isActive (index) {\r\n      return this.current === index\r\n    },\r\n    hit (e) {\r\n      e.preventDefault()\r\n      this.onHit(this.items[this.current], this)\r\n    },\r\n    up () {\r\n      if (this.current > 0) this.current--\r\n    },\r\n    down () {\r\n      if (this.current < this.items.length - 1) this.current++\r\n    }\r\n  },\r\n  components: {\r\n    typeaheadTemplate: {\r\n      props: ['item', 'value'],\r\n      template: '<span v-html=\"highlight(item, value)\"></span>',\r\n      methods: {\r\n        highlight(value, phrase) {\r\n          return value.replace(new RegExp(`(${phrase})`, 'gi'), '<mark>$1</mark>');\r\n        },\r\n      }\r\n    },\r\n\r\n  }\r\n}\r\n</script>\r\n\r\n<style>\r\n.dropdown-menu > li > a {\r\n  cursor: pointer;\r\n}\r\n</style>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.page-front {\n  z-index: 1030;\n}\n.dropdown-menu > li > a {\n  cursor: pointer;\n}\n", "", {"version":3,"sources":["/./src/Typeahead.vue?4678c600"],"names":[],"mappings":";AAmKA;EACA,cAAA;CACA;AACA;EACA,gBAAA;CACA","file":"Typeahead.vue","sourcesContent":["<template>\n  <div style=\"position: relative\">\n    <input type=\"text\" class=\"form-control\"\n      :id=\"inputId\"\n      :placeholder=\"placeholder\"\n      autocomplete=\"off\"\n      v-model=\"value\"\n      @input=\"update\"\n      @keydown.up=\"up\"\n      @keydown.down=\"down\"\n      @keydown.enter= \"hit\"\n      @keydown.esc=\"reset\"\n      @blur=\"showDropdown = false\"\n    />\n    <ul :class=\"dropdownMenuClasses\" ref=\"dropdown\">\n      <li v-for=\"(item, index) in items\" v-bind:class=\"{'table-active': isActive(index)}\">\n        <a class=\"dropdown-item\" @mousedown.prevent=\"hit\" @mousemove=\"setActive(index)\">\n          <component v-bind:is=\"entryTemplate\" :item=\"item\" :value=\"value\"></component>\n        </a>\n      </li>\n    </ul>\n  </div>\n</template>\n\n<script>\nimport {delayer, getJSON} from './utils/utils.js'\n\nlet Vue = window.Vue\nconst _DELAY_ = 200\n\nexport default {\n  created () {\n    this.items = this.primitiveData\n  },\n  props: {\n    value: {\n      type: String,\n      default: ''\n    },\n    data: {\n      type: Array\n    },\n    limit: {\n      type: Number,\n      default: 8\n    },\n    async: {\n      type: String\n    },\n    key: {\n      type: String,\n      default: null\n    },\n    onHit: {\n      type: Function,\n      default (items) {\n        this.reset()\n        this.value = items\n      }\n    },\n    placeholder: {\n      type: String\n    },\n    delay: {\n      type: Number,\n      default: _DELAY_,\n    },\n    menuAlignRight: {\n      type: Boolean,\n      default: false\n    },\n    algolia: {\n      type: Boolean,\n      default: false\n    }\n\n  },\n  data () {\n    return {\n      showDropdown: false,\n      noResults: true,\n      current: 0,\n      items: []\n    }\n  },\n  computed: {\n    inputId () {\n      return this.algolia ? \"algolia-search-input\" : null;\n    },\n    primitiveData () {\n      if (this.data) {\n        return this.data.filter(value => {\n          value = this.matchCase ? value : value.toLowerCase()\n          var query = this.matchCase ? this.value : this.value.toLowerCase()\n          return this.matchStart ? value.indexOf(query) === 0 : value.indexOf(query) !== -1\n        }).slice(0, this.limit)\n      }\n    },\n    entryTemplate () {\n      return 'typeaheadTemplate';\n    },\n    dropdownMenuClasses () {\n      return ['dropdown-menu', 'page-front', 'search-dropdown-menu', {show: this.showDropdown},\n        {'dropdown-menu-right': this.menuAlignRight}];\n    }\n  },\n  methods: {\n    update () {\n      if (!this.value) {\n        this.reset()\n        return false\n      }\n      if (this.data) {\n        this.items = this.primitiveData\n        this.showDropdown = this.items.length > 0\n      }\n      if (this.async) this.query()\n    },\n    query: delayer(function () {\n      getJSON(this.async + this.value).then(data => {\n        this.items = (this.key ? data[this.key] : data).slice(0, this.limit)\n        this.showDropdown = this.items.length\n      })\n    }, 'delay', _DELAY_),\n    reset () {\n      this.items = []\n      this.value = ''\n      this.loading = false\n      this.showDropdown = false\n    },\n    setActive (index) {\n      this.current = index\n    },\n    isActive (index) {\n      return this.current === index\n    },\n    hit (e) {\n      e.preventDefault()\n      this.onHit(this.items[this.current], this)\n    },\n    up () {\n      if (this.current > 0) this.current--\n    },\n    down () {\n      if (this.current < this.items.length - 1) this.current++\n    }\n  },\n  components: {\n    typeaheadTemplate: {\n      props: ['item', 'value'],\n      template: '<span v-html=\"highlight(item, value)\"></span>',\n      methods: {\n        highlight(value, phrase) {\n          return value.replace(new RegExp(`(${phrase})`, 'gi'), '<mark>$1</mark>');\n        },\n      }\n    },\n\n  }\n}\n</script>\n\n<style>\n.page-front {\n  z-index: 1030;\n}\n.dropdown-menu > li > a {\n  cursor: pointer;\n}\n</style>"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -30872,7 +30854,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return 'typeaheadTemplate';
 	    },
 	    dropdownMenuClasses: function dropdownMenuClasses() {
-	      return ['dropdown-menu', 'search-dropdown-menu', { show: this.showDropdown }, { 'dropdown-menu-right': this.menuAlignRight }];
+	      return ['dropdown-menu', 'page-front', 'search-dropdown-menu', { show: this.showDropdown }, { 'dropdown-menu-right': this.menuAlignRight }];
 	    }
 	  },
 	  methods: {
@@ -31012,7 +30994,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-248f48e8", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-19306b86", module.exports)
 	  }
 	}
 
@@ -31042,7 +31024,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\GitHub\\yamgent\\vue-strap\\src\\Tab.vue"
+	__vue_options__.__file = "C:\\Users\\pzy5a\\Documents\\GitHub\\CS3281-2\\vue-strap\\src\\Tab.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 	
@@ -31053,9 +31035,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-7542dd14", __vue_options__)
+	    hotAPI.createRecord("data-v-f084fad8", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-7542dd14", __vue_options__)
+	    hotAPI.reload("data-v-f084fad8", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Tab.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -31079,8 +31061,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7542dd14!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Tab.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7542dd14!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Tab.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-f084fad8!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Tab.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-f084fad8!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Tab.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -31098,7 +31080,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.tab-pane > hr {\n    margin: 0;\n}\n.fade-enter-active {\n  transition: opacity .5s;\n}\n.fade-leave-active {\n  transition: opacity 0s;\n}\n", "", {"version":3,"sources":["/./src/Tab.vue?4c480bb7"],"names":[],"mappings":";AAiFA;IACA,UAAA;CACA;AACA;EACA,wBAAA;CACA;AACA;EACA,uBAAA;CACA","file":"Tab.vue","sourcesContent":["<template>\r\n  <transition name=\"fade\">\r\n    <div role=\"tabpanel\" class=\"tab-pane active\" v-show=\"show\"\r\n      :class=\"{hide:!show}\"\r\n    >\r\n      <slot></slot>\r\n      <hr />\r\n    </div>\r\n  </transition>\r\n</template>\r\n\r\n<script>\r\nimport {toBoolean} from './utils/utils.js'\r\nimport md from './utils/markdown.js'\r\n\r\nexport default {\r\n  props: {\r\n    header: {\r\n      type: String\r\n    },\r\n    disabled: {\r\n      type: Boolean,\r\n      default: false\r\n    }\r\n  },\r\n  computed: {\r\n    headerRendered () {\r\n      return md.renderInline(this.header)\r\n    },\r\n    active () {\r\n      return this._tabset.show === this\r\n    },\r\n    index () {\r\n      return this._tabset.tabs.indexOf(this)\r\n    },\r\n    show () {\r\n      return this._tabset && this._tabset.show === this\r\n    },\r\n    transition () {\r\n      return this._tabset ? this._tabset.effect : null\r\n    },\r\n    disabledBool () {\r\n      return toBoolean(this.disabled)\r\n    }\r\n  },\r\n  created () {\r\n    this._ingroup = this.$parent && this.$parent._tabgroup\r\n    let tabset = this\r\n    while (tabset && tabset._tabset!==true && tabset.$parent) {\r\n      tabset = tabset.$parent\r\n    }\r\n    if (!tabset._tabset) {\r\n      this._tabset = {}\r\n      console.warn('Warning: \"tab\" depend on \"tabset\" to work properly.')\r\n    } else {\r\n      tabset.tabs.push(this)\r\n      if (!this._ingroup) {\r\n        tabset.headers.push(this)\r\n      } else {\r\n        if (!~tabset.headers.indexOf(this.$parent)) {\r\n          tabset.headers.push(this.$parent)\r\n        }\r\n      }\r\n      this._tabset = tabset\r\n    }\r\n    if (this._ingroup) {\r\n      this.$parent.tabs.push(this)\r\n    }\r\n  },\r\n  beforeDestroy () {\r\n    if (this._tabset.active === this.index) { this._tabset.active = 0 }\r\n    if (this._ingroup) {\r\n      var index = parent.tabs.indexOf(this);\r\n      parent.tabs.splice(index, 1)\r\n    }\r\n    var index = this._tabset.tabs.indexOf(this);\r\n    this._tabset.tabs.splice(index, 1)\r\n  }\r\n}\r\n</script>\r\n<style>\r\n    .tab-pane > hr {\r\n        margin: 0;\r\n    }\r\n    .fade-enter-active {\r\n      transition: opacity .5s;\r\n    }\r\n    .fade-leave-active {\r\n      transition: opacity 0s;\r\n    }\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.tab-pane > hr {\n    margin: 0;\n}\n.fade-enter-active {\n  transition: opacity .5s;\n}\n.fade-leave-active {\n  transition: opacity 0s;\n}\n", "", {"version":3,"sources":["/./src/Tab.vue?651d8a00"],"names":[],"mappings":";AAiFA;IACA,UAAA;CACA;AACA;EACA,wBAAA;CACA;AACA;EACA,uBAAA;CACA","file":"Tab.vue","sourcesContent":["<template>\n  <transition name=\"fade\">\n    <div role=\"tabpanel\" class=\"tab-pane active\" v-show=\"show\"\n      :class=\"{hide:!show}\"\n    >\n      <slot></slot>\n      <hr />\n    </div>\n  </transition>\n</template>\n\n<script>\nimport {toBoolean} from './utils/utils.js'\nimport md from './utils/markdown.js'\n\nexport default {\n  props: {\n    header: {\n      type: String\n    },\n    disabled: {\n      type: Boolean,\n      default: false\n    }\n  },\n  computed: {\n    headerRendered () {\n      return md.renderInline(this.header)\n    },\n    active () {\n      return this._tabset.show === this\n    },\n    index () {\n      return this._tabset.tabs.indexOf(this)\n    },\n    show () {\n      return this._tabset && this._tabset.show === this\n    },\n    transition () {\n      return this._tabset ? this._tabset.effect : null\n    },\n    disabledBool () {\n      return toBoolean(this.disabled)\n    }\n  },\n  created () {\n    this._ingroup = this.$parent && this.$parent._tabgroup\n    let tabset = this\n    while (tabset && tabset._tabset!==true && tabset.$parent) {\n      tabset = tabset.$parent\n    }\n    if (!tabset._tabset) {\n      this._tabset = {}\n      console.warn('Warning: \"tab\" depend on \"tabset\" to work properly.')\n    } else {\n      tabset.tabs.push(this)\n      if (!this._ingroup) {\n        tabset.headers.push(this)\n      } else {\n        if (!~tabset.headers.indexOf(this.$parent)) {\n          tabset.headers.push(this.$parent)\n        }\n      }\n      this._tabset = tabset\n    }\n    if (this._ingroup) {\n      this.$parent.tabs.push(this)\n    }\n  },\n  beforeDestroy () {\n    if (this._tabset.active === this.index) { this._tabset.active = 0 }\n    if (this._ingroup) {\n      var index = parent.tabs.indexOf(this);\n      parent.tabs.splice(index, 1)\n    }\n    var index = this._tabset.tabs.indexOf(this);\n    this._tabset.tabs.splice(index, 1)\n  }\n}\n</script>\n<style>\n    .tab-pane > hr {\n        margin: 0;\n    }\n    .fade-enter-active {\n      transition: opacity .5s;\n    }\n    .fade-leave-active {\n      transition: opacity 0s;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -31228,7 +31210,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-7542dd14", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-f084fad8", module.exports)
 	  }
 	}
 
@@ -31258,10 +31240,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\GitHub\\yamgent\\vue-strap\\src\\TabGroup.vue"
+	__vue_options__.__file = "C:\\Users\\pzy5a\\Documents\\GitHub\\CS3281-2\\vue-strap\\src\\TabGroup.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-4679a54e"
+	__vue_options__._scopeId = "data-v-58443efb"
 	
 	/* hot reload */
 	if (false) {(function () {
@@ -31270,9 +31252,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-4679a54e", __vue_options__)
+	    hotAPI.createRecord("data-v-58443efb", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-4679a54e", __vue_options__)
+	    hotAPI.reload("data-v-58443efb", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] TabGroup.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -31296,8 +31278,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4679a54e&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TabGroup.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4679a54e&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TabGroup.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-58443efb&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TabGroup.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-58443efb&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TabGroup.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -31315,7 +31297,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.nav-tabs[data-v-4679a54e] {\r\n  margin-bottom: 15px;\n}\r\n", "", {"version":3,"sources":["/./src/TabGroup.vue?43c920a1"],"names":[],"mappings":";AAkEA;EACA,oBAAA;CACA","file":"TabGroup.vue","sourcesContent":["<template>\r\n  <div>\r\n    <slot></slot>\r\n  </div>\r\n</template>\r\n\r\n<script>\r\nimport {coerce} from './utils/utils.js'\r\nimport md from './utils/markdown.js'\r\n\r\nexport default {\r\n  props: {\r\n    disabled: {\r\n      type: Boolean,\r\n      default: false\r\n    },\r\n    header: {\r\n      type: String\r\n    }\r\n  },\r\n  data () {\r\n    return {\r\n      tabs: [],\r\n      show: false\r\n    }\r\n  },\r\n  computed: {\r\n    active () {\r\n      return ~this.tabs.indexOf(this._tabset.show)\r\n    },\r\n    headerRendered () {\r\n      return md.renderInline(this.header)\r\n    },\r\n    disabledBool () {\r\n      return coerce.boolean(this.disabled)\r\n    }\r\n  },\r\n  created () {\r\n    this._tabgroup = true\r\n    let tabset = (this.$parent && this.$parent._tabset === true) ? this.$parent : {}\r\n    if (this.$parent && this.$parent._tabgroup) {\r\n      console.error('Can\\'t nest tabgroups.')\r\n    }\r\n    while (tabset && !tabset._tabset && tabset.$parent) {\r\n      tabset = tabset.$parent\r\n    }\r\n    if (!tabset._tabset) {\r\n      this._tabset = {}\r\n      this.show = true\r\n      console.warn('Warning: tabgroup depend on tabset to work properly.')\r\n    } else {\r\n      this._tabset = tabset\r\n    }\r\n  },\r\n  methods: {\r\n    blur () {\r\n      this.show = false\r\n    },\r\n    toggle () {\r\n      this.show = !this.show\r\n    }\r\n  }\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n.nav-tabs {\r\n  margin-bottom: 15px;\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.nav-tabs[data-v-58443efb] {\n  margin-bottom: 15px;\n}\n", "", {"version":3,"sources":["/./src/TabGroup.vue?7f153c66"],"names":[],"mappings":";AAkEA;EACA,oBAAA;CACA","file":"TabGroup.vue","sourcesContent":["<template>\n  <div>\n    <slot></slot>\n  </div>\n</template>\n\n<script>\nimport {coerce} from './utils/utils.js'\nimport md from './utils/markdown.js'\n\nexport default {\n  props: {\n    disabled: {\n      type: Boolean,\n      default: false\n    },\n    header: {\n      type: String\n    }\n  },\n  data () {\n    return {\n      tabs: [],\n      show: false\n    }\n  },\n  computed: {\n    active () {\n      return ~this.tabs.indexOf(this._tabset.show)\n    },\n    headerRendered () {\n      return md.renderInline(this.header)\n    },\n    disabledBool () {\n      return coerce.boolean(this.disabled)\n    }\n  },\n  created () {\n    this._tabgroup = true\n    let tabset = (this.$parent && this.$parent._tabset === true) ? this.$parent : {}\n    if (this.$parent && this.$parent._tabgroup) {\n      console.error('Can\\'t nest tabgroups.')\n    }\n    while (tabset && !tabset._tabset && tabset.$parent) {\n      tabset = tabset.$parent\n    }\n    if (!tabset._tabset) {\n      this._tabset = {}\n      this.show = true\n      console.warn('Warning: tabgroup depend on tabset to work properly.')\n    } else {\n      this._tabset = tabset\n    }\n  },\n  methods: {\n    blur () {\n      this.show = false\n    },\n    toggle () {\n      this.show = !this.show\n    }\n  }\n}\n</script>\n\n<style scoped>\n.nav-tabs {\n  margin-bottom: 15px;\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -31411,7 +31393,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-4679a54e", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-58443efb", module.exports)
 	  }
 	}
 
@@ -31441,10 +31423,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\GitHub\\yamgent\\vue-strap\\src\\Tabset.vue"
+	__vue_options__.__file = "C:\\Users\\pzy5a\\Documents\\GitHub\\CS3281-2\\vue-strap\\src\\Tabset.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-3ce7ba5c"
+	__vue_options__._scopeId = "data-v-6364cc7e"
 	
 	/* hot reload */
 	if (false) {(function () {
@@ -31453,9 +31435,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-3ce7ba5c", __vue_options__)
+	    hotAPI.createRecord("data-v-6364cc7e", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-3ce7ba5c", __vue_options__)
+	    hotAPI.reload("data-v-6364cc7e", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Tabset.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -31479,8 +31461,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-3ce7ba5c&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Tabset.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-3ce7ba5c&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Tabset.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-6364cc7e&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Tabset.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-6364cc7e&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Tabset.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -31498,7 +31480,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.nav-tabs[data-v-3ce7ba5c] {\r\n  margin-bottom: 15px;\n}\r\n", "", {"version":3,"sources":["/./src/Tabset.vue?6c1dce40"],"names":[],"mappings":";AA8EA;EACA,oBAAA;CACA","file":"Tabset.vue","sourcesContent":["<template>\r\n  <div :class=\"[addClass]\">\r\n    <!-- Nav tabs -->\r\n    <ul class=\"nav nav-tabs\" :class=\"getNavStyleClass\" role=\"tablist\">\r\n      <template v-for=\"t in headers\">\r\n        <li v-if=\"!t._tabgroup\" class=\"nav-item\" @click.prevent=\"select(t)\">\r\n          <a class=\"nav-link\" :class=\"{active: t.active, disabled:t.disabledBool}\" href=\"#\"><span v-html=\"t.headerRendered\"></span></a>\r\n        </li>\r\n        <dropdown v-else class=\"nav-item nav-link\" :text=\"t.headerRendered\" :class=\"{active:t.active}\" :disabled=\"t.disabled\">\r\n          <li v-for=\"tab in t.tabs\"><a class=\"nav-link\" :class=\"{disabled:tab.disabled}\" href=\"#\" @click.prevent=\"select(tab)\" v-html=\"tab.headerRendered\"></a></li>\r\n        </dropdown>\r\n      </template>\r\n    </ul>\r\n    <div class=\"tab-content\" ref=\"tab-content\">\r\n      <slot></slot>\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<script>\r\nimport {toNumber} from './utils/utils.js'\r\nimport dropdown from './Dropdown.vue'\r\n\r\nexport default {\r\n  components: {\r\n    dropdown\r\n  },\r\n  props: {\r\n    navStyle: {\r\n      type: String,\r\n      default: 'tabs'\r\n    },\r\n    active: {\r\n      type: Number,\r\n      default: 0\r\n    },\r\n    addClass: {\r\n      type: String,\r\n      default: ''\r\n    }\r\n  },\r\n  data () {\r\n    return {\r\n      show: null,\r\n      headers: [],\r\n      tabs: []\r\n    }\r\n  },\r\n  created () {\r\n    this._tabset = true\r\n  },\r\n  computed: {\r\n    getNavStyleClass() {\r\n      return `nav-${this.navStyle}`;\r\n    },\r\n    activeNumber () {\r\n       return toNumber(this.active);\r\n    },\r\n  },\r\n  watch: {\r\n    activeNumber (val) {\r\n      this.show = this.tabs[val]\r\n    }\r\n  },\r\n  mounted () {\r\n    this.show = this.tabs[this.activeNumber]\r\n  },\r\n  methods: {\r\n    select (tab) {\r\n      if (!tab.disabled) {\r\n        this.active = tab.index\r\n      }\r\n    }\r\n  }\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n.nav-tabs {\r\n  margin-bottom: 15px;\r\n}\r\n</style>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.nav-tabs[data-v-6364cc7e] {\n  margin-bottom: 15px;\n}\n", "", {"version":3,"sources":["/./src/Tabset.vue?7a900a92"],"names":[],"mappings":";AA8EA;EACA,oBAAA;CACA","file":"Tabset.vue","sourcesContent":["<template>\n  <div :class=\"[addClass]\">\n    <!-- Nav tabs -->\n    <ul class=\"nav nav-tabs\" :class=\"getNavStyleClass\" role=\"tablist\">\n      <template v-for=\"t in headers\">\n        <li v-if=\"!t._tabgroup\" class=\"nav-item\" @click.prevent=\"select(t)\">\n          <a class=\"nav-link\" :class=\"{active: t.active, disabled:t.disabledBool}\" href=\"#\"><span v-html=\"t.headerRendered\"></span></a>\n        </li>\n        <dropdown v-else class=\"nav-item nav-link\" :text=\"t.headerRendered\" :class=\"{active:t.active}\" :disabled=\"t.disabled\">\n          <li v-for=\"tab in t.tabs\"><a class=\"nav-link\" :class=\"{disabled:tab.disabled}\" href=\"#\" @click.prevent=\"select(tab)\" v-html=\"tab.headerRendered\"></a></li>\n        </dropdown>\n      </template>\n    </ul>\n    <div class=\"tab-content\" ref=\"tab-content\">\n      <slot></slot>\n    </div>\n  </div>\n</template>\n\n<script>\nimport {toNumber} from './utils/utils.js'\nimport dropdown from './Dropdown.vue'\n\nexport default {\n  components: {\n    dropdown\n  },\n  props: {\n    navStyle: {\n      type: String,\n      default: 'tabs'\n    },\n    active: {\n      type: Number,\n      default: 0\n    },\n    addClass: {\n      type: String,\n      default: ''\n    }\n  },\n  data () {\n    return {\n      show: null,\n      headers: [],\n      tabs: []\n    }\n  },\n  created () {\n    this._tabset = true\n  },\n  computed: {\n    getNavStyleClass() {\n      return `nav-${this.navStyle}`;\n    },\n    activeNumber () {\n       return toNumber(this.active);\n    },\n  },\n  watch: {\n    activeNumber (val) {\n      this.show = this.tabs[val]\n    }\n  },\n  mounted () {\n    this.show = this.tabs[this.activeNumber]\n  },\n  methods: {\n    select (tab) {\n      if (!tab.disabled) {\n        this.active = tab.index\n      }\n    }\n  }\n}\n</script>\n\n<style scoped>\n.nav-tabs {\n  margin-bottom: 15px;\n}\n</style>"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -31667,7 +31649,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-3ce7ba5c", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-6364cc7e", module.exports)
 	  }
 	}
 
@@ -31697,10 +31679,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\GitHub\\yamgent\\vue-strap\\src\\TipBox.vue"
+	__vue_options__.__file = "C:\\Users\\pzy5a\\Documents\\GitHub\\CS3281-2\\vue-strap\\src\\TipBox.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-7e93235f"
+	__vue_options__._scopeId = "data-v-b5df94fe"
 	
 	/* hot reload */
 	if (false) {(function () {
@@ -31709,9 +31691,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-7e93235f", __vue_options__)
+	    hotAPI.createRecord("data-v-b5df94fe", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-7e93235f", __vue_options__)
+	    hotAPI.reload("data-v-b5df94fe", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] TipBox.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -31735,8 +31717,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7e93235f&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TipBox.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7e93235f&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TipBox.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-b5df94fe&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TipBox.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-b5df94fe&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./TipBox.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -31754,7 +31736,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.container[data-v-7e93235f] {\n    display: flex;\n    flex-direction: row;\n    width: 100%;\n    border-radius: 6px;\n}\n.icon-wrapper[data-v-7e93235f] {\n    display: flex;\n    margin-right: .5em;\n    width: 22px;\n    height: 22px;\n}\n.contents[data-v-7e93235f] {\n    padding: 0 6px;\n    width: 100%;\n}\n.alert-default[data-v-7e93235f] {\n    color: #24292e;\n    background-color: #f6f8fa;\n    border-color: #e8ebef;\n}\n", "", {"version":3,"sources":["/./src/TipBox.vue?79d1d406"],"names":[],"mappings":";AA8GA;IACA,cAAA;IACA,oBAAA;IACA,YAAA;IACA,mBAAA;CACA;AAEA;IACA,cAAA;IACA,mBAAA;IACA,YAAA;IACA,aAAA;CACA;AAEA;IACA,eAAA;IACA,YAAA;CACA;AAEA;IACA,eAAA;IACA,0BAAA;IACA,sBAAA;CACA","file":"TipBox.vue","sourcesContent":["<template>\r\n    <div class=\"alert container\" :class=\"[boxStyle, addClass]\" :style=\"customStyle\">\r\n        <div class=\"icon-wrapper\" v-if=\"!isDefault\">\r\n            <span v-html=\"iconType\"></span>\r\n        </div>\r\n        <div class=\"contents\">\r\n            <slot></slot>\r\n        </div>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n  import md from './utils/markdown.js'\r\n  export default {\r\n    props: {\r\n      backgroundColor: {\r\n        type: String,\r\n        default: null\r\n      },\r\n      borderColor: {\r\n        type: String,\r\n        default: null\r\n      },\r\n      borderLeftColor: {\r\n        type: String,\r\n        default: null\r\n      },\r\n      color: {\r\n        type: String,\r\n        default: null\r\n      },\r\n      icon: {\r\n        type: String,\r\n        default: null\r\n      },\r\n      type: {\r\n        type: String,\r\n        default: 'none'\r\n      },\r\n      addClass: {\r\n        type: String,\r\n        default: ''\r\n      }\r\n    },\r\n    computed: {\r\n      isDefault() {\r\n        return this.type === 'none'\r\n      },\r\n      boxStyle() {\r\n        switch (this.type) {\r\n          case 'warning':\r\n            return 'alert-warning'\r\n          case 'info':\r\n          case 'definition':\r\n            return 'alert-info'\r\n          case 'success':\r\n          case 'tip':\r\n            return 'alert-success'\r\n          case 'important':\r\n          case 'wrong':\r\n            return 'alert-danger'\r\n          default:\r\n            return 'alert-default'\r\n        }\r\n      },\r\n      customStyle() {\r\n        var style = {};\r\n        if (this.backgroundColor) {\r\n          style.backgroundColor = this.backgroundColor;\r\n          style.borderColor = this.backgroundColor;\r\n        }\r\n        if (this.borderColor) {\r\n          style.borderColor = this.borderColor;\r\n        }\r\n        if (this.borderLeftColor) {\r\n          style.borderLeft = `5px solid ${this.borderLeftColor}`;\r\n        }\r\n        if (this.color) {\r\n          style.color = this.color;\r\n        }\r\n        return style;\r\n      },\r\n      iconType() {\r\n        if (this.icon) {\r\n          return md.renderInline(this.icon);\r\n        }\r\n        switch (this.type) {\r\n          case 'wrong':\r\n            return '<i class=\"fas fa-times\"></i>';\r\n          case 'warning':\r\n            return '<i class=\"fas fa-exclamation\"></i>';\r\n          case 'info':\r\n            return '<i class=\"fas fa-info\"></i>';\r\n          case 'success':\r\n            return '<i class=\"fas fa-check\"></i>';\r\n          case 'important':\r\n            return '<i class=\"fas fa-flag\"></i>';\r\n          case 'tip':\r\n            return '<i class=\"fas fa-lightbulb\"></i>';\r\n          case 'definition':\r\n            return '<i class=\"fas fa-atlas\"></i>';\r\n          default:\r\n            return '<i class=\"fas fa-exclamation\"></i>';\r\n        }\r\n      }\r\n    }\r\n  }\r\n</script>\r\n\r\n<style scoped>\r\n    .container {\r\n        display: flex;\r\n        flex-direction: row;\r\n        width: 100%;\r\n        border-radius: 6px;\r\n    }\r\n\r\n    .icon-wrapper {\r\n        display: flex;\r\n        margin-right: .5em;\r\n        width: 22px;\r\n        height: 22px;\r\n    }\r\n\r\n    .contents {\r\n        padding: 0 6px;\r\n        width: 100%;\r\n    }\r\n\r\n    .alert-default {\r\n        color: #24292e;\r\n        background-color: #f6f8fa;\r\n        border-color: #e8ebef;\r\n    }\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.container[data-v-b5df94fe] {\n    display: flex;\n    flex-direction: row;\n    width: 100%;\n    border-radius: 6px;\n}\n.icon-wrapper[data-v-b5df94fe] {\n    display: flex;\n    margin-right: .5em;\n    width: 22px;\n    height: 22px;\n}\n.contents[data-v-b5df94fe] {\n    padding: 0 6px;\n    width: 100%;\n}\n.alert-default[data-v-b5df94fe] {\n    color: #24292e;\n    background-color: #f6f8fa;\n    border-color: #e8ebef;\n}\n", "", {"version":3,"sources":["/./src/TipBox.vue?1a79ea8c"],"names":[],"mappings":";AA8GA;IACA,cAAA;IACA,oBAAA;IACA,YAAA;IACA,mBAAA;CACA;AAEA;IACA,cAAA;IACA,mBAAA;IACA,YAAA;IACA,aAAA;CACA;AAEA;IACA,eAAA;IACA,YAAA;CACA;AAEA;IACA,eAAA;IACA,0BAAA;IACA,sBAAA;CACA","file":"TipBox.vue","sourcesContent":["<template>\n    <div class=\"alert container\" :class=\"[boxStyle, addClass]\" :style=\"customStyle\">\n        <div class=\"icon-wrapper\" v-if=\"!isDefault\">\n            <span v-html=\"iconType\"></span>\n        </div>\n        <div class=\"contents\">\n            <slot></slot>\n        </div>\n    </div>\n</template>\n\n<script>\n  import md from './utils/markdown.js'\n  export default {\n    props: {\n      backgroundColor: {\n        type: String,\n        default: null\n      },\n      borderColor: {\n        type: String,\n        default: null\n      },\n      borderLeftColor: {\n        type: String,\n        default: null\n      },\n      color: {\n        type: String,\n        default: null\n      },\n      icon: {\n        type: String,\n        default: null\n      },\n      type: {\n        type: String,\n        default: 'none'\n      },\n      addClass: {\n        type: String,\n        default: ''\n      }\n    },\n    computed: {\n      isDefault() {\n        return this.type === 'none'\n      },\n      boxStyle() {\n        switch (this.type) {\n          case 'warning':\n            return 'alert-warning'\n          case 'info':\n          case 'definition':\n            return 'alert-info'\n          case 'success':\n          case 'tip':\n            return 'alert-success'\n          case 'important':\n          case 'wrong':\n            return 'alert-danger'\n          default:\n            return 'alert-default'\n        }\n      },\n      customStyle() {\n        var style = {};\n        if (this.backgroundColor) {\n          style.backgroundColor = this.backgroundColor;\n          style.borderColor = this.backgroundColor;\n        }\n        if (this.borderColor) {\n          style.borderColor = this.borderColor;\n        }\n        if (this.borderLeftColor) {\n          style.borderLeft = `5px solid ${this.borderLeftColor}`;\n        }\n        if (this.color) {\n          style.color = this.color;\n        }\n        return style;\n      },\n      iconType() {\n        if (this.icon) {\n          return md.renderInline(this.icon);\n        }\n        switch (this.type) {\n          case 'wrong':\n            return '<i class=\"fas fa-times\"></i>';\n          case 'warning':\n            return '<i class=\"fas fa-exclamation\"></i>';\n          case 'info':\n            return '<i class=\"fas fa-info\"></i>';\n          case 'success':\n            return '<i class=\"fas fa-check\"></i>';\n          case 'important':\n            return '<i class=\"fas fa-flag\"></i>';\n          case 'tip':\n            return '<i class=\"fas fa-lightbulb\"></i>';\n          case 'definition':\n            return '<i class=\"fas fa-atlas\"></i>';\n          default:\n            return '<i class=\"fas fa-exclamation\"></i>';\n        }\n      }\n    }\n  }\n</script>\n\n<style scoped>\n    .container {\n        display: flex;\n        flex-direction: row;\n        width: 100%;\n        border-radius: 6px;\n    }\n\n    .icon-wrapper {\n        display: flex;\n        margin-right: .5em;\n        width: 22px;\n        height: 22px;\n    }\n\n    .contents {\n        padding: 0 6px;\n        width: 100%;\n    }\n\n    .alert-default {\n        color: #24292e;\n        background-color: #f6f8fa;\n        border-color: #e8ebef;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -31902,7 +31884,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-7e93235f", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-b5df94fe", module.exports)
 	  }
 	}
 
@@ -31932,7 +31914,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\GitHub\\yamgent\\vue-strap\\src\\Tooltip.vue"
+	__vue_options__.__file = "C:\\Users\\pzy5a\\Documents\\GitHub\\CS3281-2\\vue-strap\\src\\Tooltip.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 	
@@ -31943,9 +31925,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-769eae64", __vue_options__)
+	    hotAPI.createRecord("data-v-1fc3e082", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-769eae64", __vue_options__)
+	    hotAPI.reload("data-v-1fc3e082", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] Tooltip.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -31969,8 +31951,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-769eae64!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Tooltip.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-769eae64!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Tooltip.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-1fc3e082!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Tooltip.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-1fc3e082!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Tooltip.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -31988,7 +31970,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.scale-enter-active {\r\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\r\n  animation:scale-out 0.15s ease-out;\n}\n.tooltip.top,\r\n.tooltip.left,\r\n.tooltip.right,\r\n.tooltip.bottom {\r\n  opacity: .9\n}\r\n", "", {"version":3,"sources":["/./src/Tooltip.vue?8cad6f12"],"names":[],"mappings":";AAwDA;EACA,iCAAA;CACA;AACA;EACA,mCAAA;CACA;AAEA;;;;EAIA,WAAA;CACA","file":"Tooltip.vue","sourcesContent":["<template>\r\n  <span :class=\"[addClass]\">\r\n    <span ref=\"trigger\" v-on:click=\"false\"><slot></slot></span><!--\r\n    -->\r\n    <transition :name=\"effect\">\r\n      <div ref=\"popover\" v-if=\"show\" style=\"display:block;\"\r\n        :class=\"['tooltip', tooltipPlacementClass, 'show']\"\r\n      >\r\n        <div class=\"arrow\" ref=\"arrow\"></div>\r\n        <div class=\"tooltip-inner\" v-on:click=\"false\">\r\n          <span name=\"content\" v-html=\"contentRendered\"></span>\r\n       </div>\r\n      </div>\r\n    </transition>\r\n  </span>\r\n</template>\r\n\r\n<script>\r\nimport PopoverMixin from './utils/popoverMixins.js'\r\nimport md from './utils/markdown.js'\r\n\r\nexport default {\r\n  mixins: [PopoverMixin],\r\n  props: {\r\n    trigger: {\r\n      type: String,\r\n      default: 'hover'\r\n    },\r\n    effect: {\r\n      type: String,\r\n      default: 'scale'\r\n    },\r\n    placement: {\r\n      type: String,\r\n      default: 'top'\r\n    },\r\n    addClass: {\r\n      type: String,\r\n      default: ''\r\n    }\r\n  },\r\n  computed: {\r\n    tooltipPlacementClass ()  {\r\n      return `bs-tooltip-${this.placement}`;\r\n    }\r\n  },\r\n  mounted () {\r\n    if (this.$refs.trigger) {\r\n      this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dotted'\r\n      this.$refs.trigger.style['text-decoration'] = 'underline dotted'\r\n    }\r\n  }\r\n}\r\n</script>\r\n\r\n<style>\r\n.scale-enter-active {\r\n  animation:scale-in 0.15s ease-in;\r\n}\r\n.scale-leave-active {\r\n  animation:scale-out 0.15s ease-out;\r\n}\r\n\r\n.tooltip.top,\r\n.tooltip.left,\r\n.tooltip.right,\r\n.tooltip.bottom {\r\n  opacity: .9\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.scale-enter-active {\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\n  animation:scale-out 0.15s ease-out;\n}\n.tooltip.top,\n.tooltip.left,\n.tooltip.right,\n.tooltip.bottom {\n  opacity: .9\n}\n", "", {"version":3,"sources":["/./src/Tooltip.vue?047bcc3d"],"names":[],"mappings":";AAwDA;EACA,iCAAA;CACA;AACA;EACA,mCAAA;CACA;AAEA;;;;EAIA,WAAA;CACA","file":"Tooltip.vue","sourcesContent":["<template>\n  <span :class=\"[addClass]\">\n    <span ref=\"trigger\" v-on:click=\"false\"><slot></slot></span><!--\n    -->\n    <transition :name=\"effect\">\n      <div ref=\"popover\" v-if=\"show\" style=\"display:block;\"\n        :class=\"['tooltip', tooltipPlacementClass, 'show']\"\n      >\n        <div class=\"arrow\" ref=\"arrow\"></div>\n        <div class=\"tooltip-inner\" v-on:click=\"false\">\n          <span name=\"content\" v-html=\"contentRendered\"></span>\n       </div>\n      </div>\n    </transition>\n  </span>\n</template>\n\n<script>\nimport PopoverMixin from './utils/popoverMixins.js'\nimport md from './utils/markdown.js'\n\nexport default {\n  mixins: [PopoverMixin],\n  props: {\n    trigger: {\n      type: String,\n      default: 'hover'\n    },\n    effect: {\n      type: String,\n      default: 'scale'\n    },\n    placement: {\n      type: String,\n      default: 'top'\n    },\n    addClass: {\n      type: String,\n      default: ''\n    }\n  },\n  computed: {\n    tooltipPlacementClass ()  {\n      return `bs-tooltip-${this.placement}`;\n    }\n  },\n  mounted () {\n    if (this.$refs.trigger) {\n      this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dotted'\n      this.$refs.trigger.style['text-decoration'] = 'underline dotted'\n    }\n  }\n}\n</script>\n\n<style>\n.scale-enter-active {\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\n  animation:scale-out 0.15s ease-out;\n}\n\n.tooltip.top,\n.tooltip.left,\n.tooltip.right,\n.tooltip.bottom {\n  opacity: .9\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -32106,7 +32088,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-769eae64", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-1fc3e082", module.exports)
 	  }
 	}
 
@@ -32136,7 +32118,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\GitHub\\yamgent\\vue-strap\\src\\trigger.vue"
+	__vue_options__.__file = "C:\\Users\\pzy5a\\Documents\\GitHub\\CS3281-2\\vue-strap\\src\\trigger.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 	
@@ -32147,9 +32129,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-8eaeac8e", __vue_options__)
+	    hotAPI.createRecord("data-v-61cddbd7", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-8eaeac8e", __vue_options__)
+	    hotAPI.reload("data-v-61cddbd7", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] trigger.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -32173,8 +32155,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-8eaeac8e!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./trigger.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-8eaeac8e!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./trigger.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-61cddbd7!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./trigger.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-61cddbd7!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./trigger.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -32272,7 +32254,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-8eaeac8e", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-61cddbd7", module.exports)
 	  }
 	}
 
