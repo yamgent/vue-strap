@@ -1,11 +1,5 @@
 <template>
-  <nav ref="navbar" :class="['navbar', 'navbar-expand-md',
-  {
-    'navbar-dark':(type === 'inverse'),
-    'navbar-light':(type === 'default'),
-    'bg-dark':(type === 'inverse'),
-    'bg-light':(type === 'default')
-  }, addClass]">
+  <nav ref="navbar" :class="['navbar', 'navbar-expand-md', themeOptions, addClass]">
     <div class="container-fluid">
       <div class="navbar-brand"><slot name="brand"></slot></div>
       <button v-if="!slots.collapse" class="navbar-toggler" type="button" aria-expanded="false" aria-label="Toggle navigation" @click="toggleCollapse">
@@ -32,7 +26,7 @@ export default {
   props: {
     type: {
       type: String,
-      default: 'default'
+      default: 'primary'
     },
     addClass: {
       type: String,
@@ -49,6 +43,19 @@ export default {
   computed: {
     slots () {
       return this.$slots
+    },
+    themeOptions () {
+      switch (this.type) {
+        case 'none':
+          return ''
+        case 'light':
+          return 'navbar-light bg-light'
+        case 'dark':
+          return 'navbar-dark bg-dark'
+        case 'primary':
+        default:
+          return 'navbar-dark bg-primary'
+      }
     }
   },
   methods: {
