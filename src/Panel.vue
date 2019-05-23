@@ -28,7 +28,7 @@
                     <slot name="button">
                         <panel-switch v-show="isExpandableCard && !noSwitchBool && !showCaret" :is-open="localExpanded"
                                       @click.native.stop.prevent="expand()"
-                                      @is-open-event="retrieveOnOpen" :is-light-bg="isLightBg"></panel-switch>
+                                      :is-light-bg="isLightBg"></panel-switch>
                         <button type="button" :class="['close-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']"
                                 v-show="isSeamless ? onHeaderHover : (!noCloseBool)"
                                 @click.stop="close()">
@@ -49,10 +49,10 @@
                 >
                     <div class="card-body">
                         <slot></slot>
-                        <retriever v-if="hasSrc" ref="retriever" :src="src" :fragment="fragment" delay></retriever>
+                        <retriever v-if="hasSrc" ref="retriever" :src="src" :fragment="fragment"></retriever>
                         <panel-switch v-show="isExpandableCard && bottomSwitchBool" :is-open="localExpanded"
                                       @click.native.stop.prevent="collapseThenScrollIntoViewIfNeeded()"
-                                      @is-open-event="retrieveOnOpen"></panel-switch>
+                                      ></panel-switch>
                     </div>
                     <hr v-show="isSeamless" />
                 </div>
@@ -254,22 +254,7 @@
       },
       openPopup() {
         window.open(this.popupUrl);
-      },
-      retrieveOnOpen(el, isOpen) {
-        if (isOpen && this.hasSrc) {
-          this.$refs.retriever.fetch()
-        }
       }
-    },
-    watch: {
-      'localExpanded': function (val, oldVal) {
-        if (this.isCached) {
-        	return;
-        }
-        this.$nextTick(function () {
-          this.retrieveOnOpen(this, val);
-        })
-      },
     },
     created () {
       if (this.src) {
@@ -287,12 +272,6 @@
       this.localMinimized = this.minimizedBool;
     },
     mounted() {
-      this.$nextTick(function () {
-        if (this.hasSrc && (this.preloadBool || this.expandedBool)) {
-          this.$refs.retriever.fetch()
-        }
-      });
-
       if (this.headerContent) {
         const panelHeaderText = jQuery(this.headerContent).wrap('<div></div>').parent().find(':header').text();
         if (panelHeaderText) {
