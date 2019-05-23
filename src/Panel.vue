@@ -221,15 +221,22 @@
     methods: {
       toggle() {
         this.localExpanded = !this.localExpanded;
+        if (this.localExpanded) {
+          this.isCached = true;
+        }
       },
       expand() {
         this.localExpanded = !this.localExpanded;
+        if (this.localExpanded) {
+          this.isCached = true;
+        }
       },
       close() {
         this.localMinimized = true;
       },
       open() {
         this.localExpanded = true;
+        this.isCached = true;
         this.localMinimized = false;
       },
       scrollIntoViewIfNeeded() {
@@ -259,12 +266,6 @@
         if (this.isCached) {
         	return;
         }
-        /* When either one of the values is true,
-         * it means that the data is/will be cached.
-         */
-        if (val || oldVal) {
-          this.isCached = true;
-        }
         this.$nextTick(function () {
           this.retrieveOnOpen(this, val);
         })
@@ -282,6 +283,7 @@
       const notExpandableNoExpand = !this.expandableBool && this.expanded !== 'false';
       // Set local data to computed prop value
       this.localExpanded =  notExpandableNoExpand || this.expandedBool; // Ensure this expr ordering is maintained
+      this.isCached = this.localExpanded; // If it is expanded, it will be cached.
       this.localMinimized = this.minimizedBool;
     },
     mounted() {
