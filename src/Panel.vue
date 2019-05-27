@@ -28,7 +28,7 @@
                     <slot name="button">
                         <panel-switch v-show="isExpandableCard && !noSwitchBool && !showCaret" :is-open="localExpanded"
                                       @click.native.stop.prevent="expand()"
-                                      @is-open-event="retrieveOnOpen" :is-light-bg="isLightBg"></panel-switch>
+                                      :is-light-bg="isLightBg"></panel-switch>
                         <button type="button" :class="['close-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']"
                                 v-show="isSeamless ? onHeaderHover : (!noCloseBool)"
                                 @click.stop="close()">
@@ -49,10 +49,10 @@
                 >
                     <div class="card-body">
                         <slot></slot>
-                        <retriever v-if="hasSrc" ref="retriever" :src="src" :fragment="fragment" delay></retriever>
+                        <retriever v-if="hasSrc" ref="retriever" :src="src" :fragment="fragment"></retriever>
                         <panel-switch v-show="isExpandableCard && bottomSwitchBool" :is-open="localExpanded"
                                       @click.native.stop.prevent="collapseThenScrollIntoViewIfNeeded()"
-                                      @is-open-event="retrieveOnOpen"></panel-switch>
+                                      ></panel-switch>
                     </div>
                     <hr v-show="isSeamless" />
                 </div>
@@ -221,15 +221,22 @@
     methods: {
       toggle() {
         this.localExpanded = !this.localExpanded;
+        if (this.localExpanded) {
+          this.isCached = true;
+        }
       },
       expand() {
         this.localExpanded = !this.localExpanded;
+        if (this.localExpanded) {
+          this.isCached = true;
+        }
       },
       close() {
         this.localMinimized = true;
       },
       open() {
         this.localExpanded = true;
+        this.isCached = true;
         this.localMinimized = false;
       },
       scrollIntoViewIfNeeded() {
@@ -247,28 +254,7 @@
       },
       openPopup() {
         window.open(this.popupUrl);
-      },
-      retrieveOnOpen(el, isOpen) {
-        if (isOpen && this.hasSrc) {
-          this.$refs.retriever.fetch()
-        }
       }
-    },
-    watch: {
-      'localExpanded': function (val, oldVal) {
-        if (this.isCached) {
-        	return;
-        }
-        /* When either one of the values is true,
-         * it means that the data is/will be cached.
-         */
-        if (val || oldVal) {
-          this.isCached = true;
-        }
-        this.$nextTick(function () {
-          this.retrieveOnOpen(this, val);
-        })
-      },
     },
     created () {
       if (this.src) {
@@ -282,15 +268,10 @@
       const notExpandableNoExpand = !this.expandableBool && this.expanded !== 'false';
       // Set local data to computed prop value
       this.localExpanded =  notExpandableNoExpand || this.expandedBool; // Ensure this expr ordering is maintained
+      this.isCached = this.localExpanded; // If it is expanded, it will be cached.
       this.localMinimized = this.minimizedBool;
     },
     mounted() {
-      this.$nextTick(function () {
-        if (this.hasSrc && (this.preloadBool || this.expandedBool)) {
-          this.$refs.retriever.fetch()
-        }
-      });
-
       if (this.headerContent) {
         const panelHeaderText = jQuery(this.headerContent).wrap('<div></div>').parent().find(':header').text();
         if (panelHeaderText) {
