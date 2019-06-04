@@ -116,15 +116,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _Tabset2 = _interopRequireDefault(_Tabset);
 	
-	var _TipBox = __webpack_require__(296);
+	var _Thumbnail = __webpack_require__(296);
+	
+	var _Thumbnail2 = _interopRequireDefault(_Thumbnail);
+	
+	var _TipBox = __webpack_require__(301);
 	
 	var _TipBox2 = _interopRequireDefault(_TipBox);
 	
-	var _Tooltip = __webpack_require__(301);
+	var _Tooltip = __webpack_require__(306);
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 	
-	var _trigger = __webpack_require__(306);
+	var _trigger = __webpack_require__(311);
 	
 	var _trigger2 = _interopRequireDefault(_trigger);
 	
@@ -149,6 +153,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  tab: _Tab2.default,
 	  tabGroup: _TabGroup2.default,
 	  tabs: _Tabset2.default,
+	  thumbnail: _Thumbnail2.default,
 	  tipBox: _TipBox2.default,
 	  tooltip: _Tooltip2.default,
 	  trigger: _trigger2.default,
@@ -13285,7 +13290,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.modal {\r\n  transition: all 0.3s ease;\n}\n.modal.in {\r\n  background-color: rgba(0,0,0,0.5);\n}\n.modal.zoom .modal-dialog {\r\n  -webkit-transform: scale(0.1);\r\n  -moz-transform: scale(0.1);\r\n  -ms-transform: scale(0.1);\r\n  transform: scale(0.1);\r\n  top: 300px;\r\n  opacity: 0;\r\n  -webkit-transition: all 0.3s;\r\n  -moz-transition: all 0.3s;\r\n  transition: all 0.3s;\n}\n.modal.zoom.in .modal-dialog {\r\n  -webkit-transform: scale(1);\r\n  -moz-transform: scale(1);\r\n  -ms-transform: scale(1);\r\n  transform: scale(1);\r\n  -webkit-transform: translate3d(0, -300px, 0);\r\n  transform: translate3d(0, -300px, 0);\r\n  opacity: 1;\n}\r\n", "", {"version":3,"sources":["/./src/Modal.vue?40547714"],"names":[],"mappings":";AAoKA;EACA,0BAAA;CACA;AACA;EACA,kCAAA;CACA;AACA;EACA,8BAAA;EACA,2BAAA;EACA,0BAAA;EACA,sBAAA;EACA,WAAA;EACA,WAAA;EACA,6BAAA;EACA,0BAAA;EACA,qBAAA;CACA;AACA;EACA,4BAAA;EACA,yBAAA;EACA,wBAAA;EACA,oBAAA;EACA,6CAAA;EACA,qCAAA;EACA,WAAA;CACA","file":"Modal.vue","sourcesContent":["<template>\r\n  <div role=\"dialog\"\r\n    :class=\"[\r\n    {\r\n      'modal':true,\r\n      'fade':effect === 'fade',\r\n      'zoom':effect === 'zoom'\r\n    }, addClass]\">\r\n    <div v-bind:class=\"{'modal-dialog':true,'modal-lg':largeBool,'modal-sm':smallBool}\" role=\"document\"\r\n      v-bind:style=\"{width: optionalWidth}\">\r\n      <div class=\"modal-content\">\r\n        <slot name=\"modal-header\">\r\n          <div class=\"modal-header\">\r\n            <h4 class=\"modal-title\">\r\n              <span name=\"title\" v-html=\"titleRendered\">\r\n              </span>\r\n            </h4>\r\n            <button type=\"button\" class=\"close\" @click=\"close\"><span>&times;</span></button>\r\n          </div>\r\n        </slot>\r\n          <div class=\"modal-body\">\r\n              <slot></slot>\r\n          </div>\r\n        <slot name=\"modal-footer\">\r\n          <div class=\"modal-footer\" v-if=\"showOkButton\">\r\n            <button type=\"button\" class=\"btn btn-primary\" v-if=\"showOkButton\" @click=\"close\">{{ okText }}</button>\r\n          </div>\r\n        </slot>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<script>\r\nimport {globalEventBus} from './GlobalEventBus.js'\r\nimport {toBoolean, getScrollBarWidth} from './utils/utils.js'\r\nimport $ from './utils/NodeList.js'\r\nimport md from './utils/markdown.js'\r\n\r\nexport default {\r\n  props: {\r\n    okText: {\r\n      type: String,\r\n      default: ''\r\n    },\r\n    title: {\r\n      type: String,\r\n      default: ''\r\n    },\r\n    width: {\r\n      default: null\r\n    },\r\n    effect: {\r\n      type: String,\r\n      default: 'zoom'\r\n    },\r\n    backdrop: {\r\n      type: Boolean,\r\n      default: true\r\n    },\r\n    large: {\r\n      type: Boolean,\r\n      default: false\r\n    },\r\n    small: {\r\n      type: Boolean,\r\n      default: false\r\n    },\r\n    name: {\r\n      type: String\r\n    },\r\n    id: {\r\n      type: String\r\n    },\r\n    addClass: {\r\n      type: String,\r\n      default: ''\r\n    }\r\n  },\r\n  data() {\r\n    return {\r\n      show: false\r\n    }\r\n  },\r\n  computed: {\r\n    backdropBool () {\r\n      return toBoolean(this.backdrop)\r\n    },\r\n    largeBool () {\r\n      return toBoolean(this.large)\r\n    },\r\n    smallBool () {\r\n      return toBoolean(this.small)\r\n    },\r\n    titleRendered () {\r\n      return md.renderInline(this.title);\r\n    },\r\n    optionalWidth () {\r\n      if (this.width === null) {\r\n        return null\r\n      } else if (Number.isInteger(this.width)) {\r\n        return this.width + 'px'\r\n      }\r\n      return this.width\r\n    },\r\n    showOkButton () {\r\n      return this.okText.length !== 0;\r\n    }\r\n  },\r\n  watch: {\r\n    show (val) {\r\n      const el = this.$el\r\n      const body = document.body\r\n      const scrollBarWidth = getScrollBarWidth()\r\n      if (val) {\r\n        $(el).find('.modal-content').focus()\r\n        el.style.display = 'block'\r\n        setTimeout(() => $(el).addClass('show in'), 0)\r\n        $(body).addClass('modal-open')\r\n        if (scrollBarWidth !== 0) {\r\n          body.style.paddingRight = scrollBarWidth + 'px'\r\n        }\r\n        if (this.backdropBool) {\r\n          $(el).on('click', e => {\r\n            if (e.target === el) this.show = false\r\n          })\r\n        }\r\n      } else {\r\n        body.style.paddingRight = null\r\n        $(body).removeClass('modal-open')\r\n        $(el).removeClass('show in').on('transitionend', () => {\r\n          $(el).off('click transitionend')\r\n          el.style.display = 'none'\r\n        })\r\n      }\r\n    }\r\n  },\r\n  created () {\r\n    globalEventBus.$on('trigger:bind', this.bindTrigger)\r\n  },\r\n  methods: {\r\n    bindTrigger (trigger, popover) {\r\n      if (popover === this.id) {\r\n        trigger.setTriggerBy(this)\r\n      }\r\n    },\r\n    showModal (name) {\r\n      if (name === this.name) {\r\n        this.show = true\r\n      }\r\n    },\r\n    close () {\r\n      this.show = false\r\n    },\r\n    toggle () {\r\n      this.show = true\r\n    }\r\n  },\r\n  beforeDestroy () {\r\n    globalEventBus.$off('trigger:bind', this.bindTrigger)\r\n  }\r\n}\r\n</script>\r\n<style>\r\n.modal {\r\n  transition: all 0.3s ease;\r\n}\r\n.modal.in {\r\n  background-color: rgba(0,0,0,0.5);\r\n}\r\n.modal.zoom .modal-dialog {\r\n  -webkit-transform: scale(0.1);\r\n  -moz-transform: scale(0.1);\r\n  -ms-transform: scale(0.1);\r\n  transform: scale(0.1);\r\n  top: 300px;\r\n  opacity: 0;\r\n  -webkit-transition: all 0.3s;\r\n  -moz-transition: all 0.3s;\r\n  transition: all 0.3s;\r\n}\r\n.modal.zoom.in .modal-dialog {\r\n  -webkit-transform: scale(1);\r\n  -moz-transform: scale(1);\r\n  -ms-transform: scale(1);\r\n  transform: scale(1);\r\n  -webkit-transform: translate3d(0, -300px, 0);\r\n  transform: translate3d(0, -300px, 0);\r\n  opacity: 1;\r\n}\r\n</style>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.modal {\r\n  transition: all 0.3s ease;\n}\n.modal.in {\r\n  background-color: rgba(0,0,0,0.5);\n}\n.modal.zoom .modal-dialog {\r\n  -webkit-transform: scale(0.1);\r\n  -moz-transform: scale(0.1);\r\n  -ms-transform: scale(0.1);\r\n  transform: scale(0.1);\r\n  top: 300px;\r\n  opacity: 0;\r\n  -webkit-transition: all 0.3s;\r\n  -moz-transition: all 0.3s;\r\n  transition: all 0.3s;\n}\n.modal.zoom.in .modal-dialog {\r\n  -webkit-transform: scale(1);\r\n  -moz-transform: scale(1);\r\n  -ms-transform: scale(1);\r\n  transform: scale(1);\r\n  -webkit-transform: translate3d(0, -300px, 0);\r\n  transform: translate3d(0, -300px, 0);\r\n  opacity: 1;\n}\r\n", "", {"version":3,"sources":["/./src/Modal.vue?0b043ff9"],"names":[],"mappings":";AA2KA;EACA,0BAAA;CACA;AACA;EACA,kCAAA;CACA;AACA;EACA,8BAAA;EACA,2BAAA;EACA,0BAAA;EACA,sBAAA;EACA,WAAA;EACA,WAAA;EACA,6BAAA;EACA,0BAAA;EACA,qBAAA;CACA;AACA;EACA,4BAAA;EACA,yBAAA;EACA,wBAAA;EACA,oBAAA;EACA,6CAAA;EACA,qCAAA;EACA,WAAA;CACA","file":"Modal.vue","sourcesContent":["<template>\r\n  <div role=\"dialog\"\r\n    :class=\"[\r\n    {\r\n      'modal':true,\r\n      'fade':effect === 'fade',\r\n      'zoom':effect === 'zoom'\r\n    }, addClass]\">\r\n    <div v-bind:class=\"{'modal-dialog':true,'modal-lg':largeBool,'modal-sm':smallBool,'modal-dialog-centered':centerBool}\" role=\"document\"\r\n      v-bind:style=\"{width: optionalWidth}\">\r\n      <div class=\"modal-content\">\r\n        <slot name=\"modal-header\">\r\n          <div class=\"modal-header\">\r\n            <h4 class=\"modal-title\">\r\n              <span name=\"title\" v-html=\"titleRendered\">\r\n              </span>\r\n            </h4>\r\n            <button type=\"button\" class=\"close\" @click=\"close\"><span>&times;</span></button>\r\n          </div>\r\n        </slot>\r\n          <div class=\"modal-body\">\r\n              <slot></slot>\r\n          </div>\r\n        <slot name=\"modal-footer\">\r\n          <div class=\"modal-footer\" v-if=\"showOkButton\">\r\n            <button type=\"button\" class=\"btn btn-primary\" v-if=\"showOkButton\" @click=\"close\">{{ okText }}</button>\r\n          </div>\r\n        </slot>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<script>\r\nimport {globalEventBus} from './GlobalEventBus.js'\r\nimport {toBoolean, getScrollBarWidth} from './utils/utils.js'\r\nimport $ from './utils/NodeList.js'\r\nimport md from './utils/markdown.js'\r\n\r\nexport default {\r\n  props: {\r\n    okText: {\r\n      type: String,\r\n      default: ''\r\n    },\r\n    title: {\r\n      type: String,\r\n      default: ''\r\n    },\r\n    width: {\r\n      default: null\r\n    },\r\n    effect: {\r\n      type: String,\r\n      default: 'zoom'\r\n    },\r\n    backdrop: {\r\n      type: Boolean,\r\n      default: true\r\n    },\r\n    large: {\r\n      type: Boolean,\r\n      default: false\r\n    },\r\n    small: {\r\n      type: Boolean,\r\n      default: false\r\n    },\r\n    center: {\r\n      type: Boolean,\r\n      default: false\r\n    },\r\n    name: {\r\n      type: String\r\n    },\r\n    id: {\r\n      type: String\r\n    },\r\n    addClass: {\r\n      type: String,\r\n      default: ''\r\n    }\r\n  },\r\n  data() {\r\n    return {\r\n      show: false\r\n    }\r\n  },\r\n  computed: {\r\n    backdropBool () {\r\n      return toBoolean(this.backdrop)\r\n    },\r\n    largeBool () {\r\n      return toBoolean(this.large)\r\n    },\r\n    smallBool () {\r\n      return toBoolean(this.small)\r\n    },\r\n    centerBool () {\r\n      return toBoolean(this.center)\r\n    },\r\n    titleRendered () {\r\n      return md.renderInline(this.title);\r\n    },\r\n    optionalWidth () {\r\n      if (this.width === null) {\r\n        return null\r\n      } else if (Number.isInteger(this.width)) {\r\n        return this.width + 'px'\r\n      }\r\n      return this.width\r\n    },\r\n    showOkButton () {\r\n      return this.okText.length !== 0;\r\n    }\r\n  },\r\n  watch: {\r\n    show (val) {\r\n      const el = this.$el\r\n      const body = document.body\r\n      const scrollBarWidth = getScrollBarWidth()\r\n      if (val) {\r\n        $(el).find('.modal-content').focus()\r\n        el.style.display = 'block'\r\n        setTimeout(() => $(el).addClass('show in'), 0)\r\n        $(body).addClass('modal-open')\r\n        if (scrollBarWidth !== 0) {\r\n          body.style.paddingRight = scrollBarWidth + 'px'\r\n        }\r\n        if (this.backdropBool) {\r\n          $(el).on('click', e => {\r\n            if (e.target === el) this.show = false\r\n          })\r\n        }\r\n      } else {\r\n        body.style.paddingRight = null\r\n        $(body).removeClass('modal-open')\r\n        $(el).removeClass('show in').on('transitionend', () => {\r\n          $(el).off('click transitionend')\r\n          el.style.display = 'none'\r\n        })\r\n      }\r\n    }\r\n  },\r\n  created () {\r\n    globalEventBus.$on('trigger:bind', this.bindTrigger)\r\n  },\r\n  methods: {\r\n    bindTrigger (trigger, popover) {\r\n      if (popover === this.id) {\r\n        trigger.setTriggerBy(this)\r\n      }\r\n    },\r\n    showModal (name) {\r\n      if (name === this.name) {\r\n        this.show = true\r\n      }\r\n    },\r\n    close () {\r\n      this.show = false\r\n    },\r\n    toggle () {\r\n      this.show = true\r\n    }\r\n  },\r\n  beforeDestroy () {\r\n    globalEventBus.$off('trigger:bind', this.bindTrigger)\r\n  }\r\n}\r\n</script>\r\n<style>\r\n.modal {\r\n  transition: all 0.3s ease;\r\n}\r\n.modal.in {\r\n  background-color: rgba(0,0,0,0.5);\r\n}\r\n.modal.zoom .modal-dialog {\r\n  -webkit-transform: scale(0.1);\r\n  -moz-transform: scale(0.1);\r\n  -ms-transform: scale(0.1);\r\n  transform: scale(0.1);\r\n  top: 300px;\r\n  opacity: 0;\r\n  -webkit-transition: all 0.3s;\r\n  -moz-transition: all 0.3s;\r\n  transition: all 0.3s;\r\n}\r\n.modal.zoom.in .modal-dialog {\r\n  -webkit-transform: scale(1);\r\n  -moz-transform: scale(1);\r\n  -ms-transform: scale(1);\r\n  transform: scale(1);\r\n  -webkit-transform: translate3d(0, -300px, 0);\r\n  transform: translate3d(0, -300px, 0);\r\n  opacity: 1;\r\n}\r\n</style>"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -13381,6 +13386,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	      type: Boolean,
 	      default: false
 	    },
+	    center: {
+	      type: Boolean,
+	      default: false
+	    },
 	    name: {
 	      type: String
 	    },
@@ -13407,6 +13416,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	    smallBool: function smallBool() {
 	      return (0, _utils.toBoolean)(this.small);
+	    },
+	    centerBool: function centerBool() {
+	      return (0, _utils.toBoolean)(this.center);
 	    },
 	    titleRendered: function titleRendered() {
 	      return _markdown2.default.renderInline(this.title);
@@ -27072,7 +27084,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  }, [_c('div', {
 	    class: {
-	      'modal-dialog': true, 'modal-lg': _vm.largeBool, 'modal-sm': _vm.smallBool
+	      'modal-dialog': true, 'modal-lg': _vm.largeBool, 'modal-sm': _vm.smallBool, 'modal-dialog-centered': _vm.centerBool
 	    },
 	    style: ({
 	      width: _vm.optionalWidth
@@ -31608,6 +31620,240 @@ return /******/ (function(modules) { // webpackBootstrap
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
+	__vue_options__.__file = "C:\\Users\\Botasky\\WebstormProjects\\vue-strap\\src\\Thumbnail.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-041d3934", __vue_options__)
+	  } else {
+	    hotAPI.reload("data-v-041d3934", __vue_options__)
+	  }
+	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] Thumbnail.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+	
+	module.exports = __vue_exports__
+
+
+/***/ }),
+/* 297 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(298);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(78)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-041d3934!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Thumbnail.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-041d3934!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Thumbnail.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 298 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(77)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "\n.thumb-wrapper {\n  display: inline-block;\n  overflow: hidden;\n  position: relative;\n  text-align: center;\n  vertical-align: middle;\n}\n.thumb-circle {\n  border-radius: 50%;\n  -moz-border-radius: 50%;\n  -webkit-border-radius: 50%;\n}\n.thumb-image {\n  left: 50%;\n  position: absolute;\n  top: 50%;\n  transform: translate(-50%,-50%);\n  -ms-transform: translate(-50%,-50%);\n  -webkit-transform: translate(-50%,-50%);\n}\n", "", {"version":3,"sources":["/./src/Thumbnail.vue?0e3dba87"],"names":[],"mappings":";AA2GA;EACA,sBAAA;EACA,iBAAA;EACA,mBAAA;EACA,mBAAA;EACA,uBAAA;CACA;AAEA;EACA,mBAAA;EACA,wBAAA;EACA,2BAAA;CACA;AAEA;EACA,UAAA;EACA,mBAAA;EACA,SAAA;EACA,gCAAA;EACA,oCAAA;EACA,wCAAA;CACA","file":"Thumbnail.vue","sourcesContent":["<template>\r\n  <div :class=\"['thumb-wrapper', {'thumb-circle': circle}, addClass]\" :style=\"[getBorder, getFontSize, getFontColor, getBgColor]\">\r\n    <img ref=\"pic\" @load.once=\"computeImgSize\" :src=\"src\" class=\"thumb-image\" :width=\"computedWidth\" :height=\"computedHeight\" :alt=\"alt\" v-if=\"hasSrc\">\r\n    <slot></slot>\r\n  </div>\r\n</template>\r\n\r\n<script>\r\n  const DEFAULT_SIZE = 100;\r\n\r\n  export default {\r\n    props: {\r\n      circle: {\r\n        type: Boolean,\r\n        default: false\r\n      },\r\n      addClass: {\r\n        type: String,\r\n        default: ''\r\n      },\r\n      alt: {\r\n        type: String,\r\n        default: ''\r\n      },\r\n      background: {\r\n        type: String,\r\n        default: ''\r\n      },\r\n      border: {\r\n        type: String,\r\n        default: ''\r\n      },\r\n      fontColor: {\r\n        type: String,\r\n        default: ''\r\n      },\r\n      fontSize: {\r\n        type: String,\r\n        default: ''\r\n      },\r\n      size: {\r\n        type: String,\r\n        default: ''\r\n      },\r\n      src: {\r\n        type: String\r\n      },\r\n      text: {\r\n        type: String,\r\n        default: ''\r\n      },\r\n    },\r\n    computed: {\r\n      getBorder() {\r\n        // Default is no border\r\n        return this.border === '' ? {} : {border: this.border};\r\n      },\r\n      getFontSize() {\r\n        const defaultSize = this.size/2;\r\n        const definedSize = this.fontSize;\r\n\r\n        return {'font-size': ((definedSize === undefined || definedSize === '') ? defaultSize : definedSize) + 'px'};\r\n      },\r\n      getFontColor() {\r\n        // Default is no setting (inherit)\r\n        return this.fontColor === '' ? {} : {'color': this.fontColor};\r\n      },\r\n      getBgColor() {\r\n        // Default is no setting (inherit)\r\n        return this.background === '' ? {} : {'background': this.background};\r\n      },\r\n      hasSrc() {\r\n        // Returns true if src is defined and is not an empty string\r\n        return this.src !== undefined && this.src !== '';\r\n      }\r\n    },\r\n    data () {\r\n      return {\r\n        computedWidth:'',\r\n        computedHeight:''\r\n      }\r\n    },\r\n    mounted() {\r\n      this.size = this.size || DEFAULT_SIZE;\r\n      let wrapperElement = this.$el;\r\n      wrapperElement.style.width = this.size + 'px';\r\n      wrapperElement.style.height = this.size + 'px';\r\n      wrapperElement.style.lineHeight = this.size + 'px';\r\n    },\r\n    methods: {\r\n      computeImgSize() {\r\n        // Scale the img within such that the cropped image is the required size\r\n        const renderedImg = this.$refs.pic;\r\n        const imgHeight = renderedImg.naturalHeight;\r\n        const imgWidth = renderedImg.naturalWidth;\r\n        const imgSize = Math.min(imgHeight, imgWidth);\r\n        const expansionFactor = this.size/imgSize;\r\n\r\n        this.computedWidth = imgWidth * expansionFactor;\r\n        this.computedHeight = imgHeight * expansionFactor;\r\n      }\r\n    }\r\n  }\r\n</script>\r\n\r\n\r\n<style>\r\n  .thumb-wrapper {\r\n    display: inline-block;\r\n    overflow: hidden;\r\n    position: relative;\r\n    text-align: center;\r\n    vertical-align: middle;\r\n  }\r\n\r\n  .thumb-circle {\r\n    border-radius: 50%;\r\n    -moz-border-radius: 50%;\r\n    -webkit-border-radius: 50%;\r\n  }\r\n\r\n  .thumb-image {\r\n    left: 50%;\r\n    position: absolute;\r\n    top: 50%;\r\n    transform: translate(-50%,-50%);\r\n    -ms-transform: translate(-50%,-50%);\r\n    -webkit-transform: translate(-50%,-50%);\r\n  }\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	
+	// exports
+
+
+/***/ }),
+/* 299 */
+/***/ (function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	
+	var DEFAULT_SIZE = 100;
+	
+	exports.default = {
+	  props: {
+	    circle: {
+	      type: Boolean,
+	      default: false
+	    },
+	    addClass: {
+	      type: String,
+	      default: ''
+	    },
+	    alt: {
+	      type: String,
+	      default: ''
+	    },
+	    background: {
+	      type: String,
+	      default: ''
+	    },
+	    border: {
+	      type: String,
+	      default: ''
+	    },
+	    fontColor: {
+	      type: String,
+	      default: ''
+	    },
+	    fontSize: {
+	      type: String,
+	      default: ''
+	    },
+	    size: {
+	      type: String,
+	      default: ''
+	    },
+	    src: {
+	      type: String
+	    },
+	    text: {
+	      type: String,
+	      default: ''
+	    }
+	  },
+	  computed: {
+	    getBorder: function getBorder() {
+	      // Default is no border
+	      return this.border === '' ? {} : { border: this.border };
+	    },
+	    getFontSize: function getFontSize() {
+	      var defaultSize = this.size / 2;
+	      var definedSize = this.fontSize;
+	
+	      return { 'font-size': (definedSize === undefined || definedSize === '' ? defaultSize : definedSize) + 'px' };
+	    },
+	    getFontColor: function getFontColor() {
+	      // Default is no setting (inherit)
+	      return this.fontColor === '' ? {} : { 'color': this.fontColor };
+	    },
+	    getBgColor: function getBgColor() {
+	      // Default is no setting (inherit)
+	      return this.background === '' ? {} : { 'background': this.background };
+	    },
+	    hasSrc: function hasSrc() {
+	      // Returns true if src is defined and is not an empty string
+	      return this.src !== undefined && this.src !== '';
+	    }
+	  },
+	  data: function data() {
+	    return {
+	      computedWidth: '',
+	      computedHeight: ''
+	    };
+	  },
+	  mounted: function mounted() {
+	    this.size = this.size || DEFAULT_SIZE;
+	    var wrapperElement = this.$el;
+	    wrapperElement.style.width = this.size + 'px';
+	    wrapperElement.style.height = this.size + 'px';
+	    wrapperElement.style.lineHeight = this.size + 'px';
+	  },
+	
+	  methods: {
+	    computeImgSize: function computeImgSize() {
+	      // Scale the img within such that the cropped image is the required size
+	      var renderedImg = this.$refs.pic;
+	      var imgHeight = renderedImg.naturalHeight;
+	      var imgWidth = renderedImg.naturalWidth;
+	      var imgSize = Math.min(imgHeight, imgWidth);
+	      var expansionFactor = this.size / imgSize;
+	
+	      this.computedWidth = imgWidth * expansionFactor;
+	      this.computedHeight = imgHeight * expansionFactor;
+	    }
+	  }
+	};
+
+/***/ }),
+/* 300 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    class: ['thumb-wrapper', {
+	      'thumb-circle': _vm.circle
+	    }, _vm.addClass],
+	    style: ([_vm.getBorder, _vm.getFontSize, _vm.getFontColor, _vm.getBgColor])
+	  }, [(_vm.hasSrc) ? _c('img', {
+	    ref: "pic",
+	    staticClass: "thumb-image",
+	    attrs: {
+	      "src": _vm.src,
+	      "width": _vm.computedWidth,
+	      "height": _vm.computedHeight,
+	      "alt": _vm.alt
+	    },
+	    on: {
+	      "~load": function($event) {
+	        return _vm.computeImgSize($event)
+	      }
+	    }
+	  }) : _vm._e(), _vm._v(" "), _vm._t("default")], 2)
+	},staticRenderFns: []}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-hot-reload-api").rerender("data-v-041d3934", module.exports)
+	  }
+	}
+
+/***/ }),
+/* 301 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
+	
+	/* styles */
+	__webpack_require__(302)
+	
+	/* script */
+	__vue_exports__ = __webpack_require__(304)
+	
+	/* template */
+	var __vue_template__ = __webpack_require__(305)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
 	__vue_options__.__file = "C:\\Users\\Botasky\\WebstormProjects\\vue-strap\\src\\TipBox.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
@@ -31631,13 +31877,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 297 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(298);
+	var content = __webpack_require__(303);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -31657,7 +31903,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 298 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -31665,13 +31911,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.container[data-v-3273e818] {\n    display: flex;\n    flex-direction: row;\n    width: 100%;\n    border-radius: 6px;\n}\n.icon-wrapper[data-v-3273e818] {\n    display: flex;\n    margin-right: .5em;\n    width: 22px;\n    height: 22px;\n}\n.contents[data-v-3273e818] {\n    padding: 0 6px;\n    width: 100%;\n}\n.alert-default[data-v-3273e818] {\n    color: #24292e;\n    background-color: #f6f8fa;\n    border-color: #e8ebef;\n}\n", "", {"version":3,"sources":["/./src/TipBox.vue?79d1d406"],"names":[],"mappings":";AA8GA;IACA,cAAA;IACA,oBAAA;IACA,YAAA;IACA,mBAAA;CACA;AAEA;IACA,cAAA;IACA,mBAAA;IACA,YAAA;IACA,aAAA;CACA;AAEA;IACA,eAAA;IACA,YAAA;CACA;AAEA;IACA,eAAA;IACA,0BAAA;IACA,sBAAA;CACA","file":"TipBox.vue","sourcesContent":["<template>\r\n    <div class=\"alert container\" :class=\"[boxStyle, addClass]\" :style=\"customStyle\">\r\n        <div class=\"icon-wrapper\" v-if=\"!isDefault\">\r\n            <span v-html=\"iconType\"></span>\r\n        </div>\r\n        <div class=\"contents\">\r\n            <slot></slot>\r\n        </div>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n  import md from './utils/markdown.js'\r\n  export default {\r\n    props: {\r\n      backgroundColor: {\r\n        type: String,\r\n        default: null\r\n      },\r\n      borderColor: {\r\n        type: String,\r\n        default: null\r\n      },\r\n      borderLeftColor: {\r\n        type: String,\r\n        default: null\r\n      },\r\n      color: {\r\n        type: String,\r\n        default: null\r\n      },\r\n      icon: {\r\n        type: String,\r\n        default: null\r\n      },\r\n      type: {\r\n        type: String,\r\n        default: 'none'\r\n      },\r\n      addClass: {\r\n        type: String,\r\n        default: ''\r\n      }\r\n    },\r\n    computed: {\r\n      isDefault() {\r\n        return this.type === 'none'\r\n      },\r\n      boxStyle() {\r\n        switch (this.type) {\r\n          case 'warning':\r\n            return 'alert-warning'\r\n          case 'info':\r\n          case 'definition':\r\n            return 'alert-info'\r\n          case 'success':\r\n          case 'tip':\r\n            return 'alert-success'\r\n          case 'important':\r\n          case 'wrong':\r\n            return 'alert-danger'\r\n          default:\r\n            return 'alert-default'\r\n        }\r\n      },\r\n      customStyle() {\r\n        var style = {};\r\n        if (this.backgroundColor) {\r\n          style.backgroundColor = this.backgroundColor;\r\n          style.borderColor = this.backgroundColor;\r\n        }\r\n        if (this.borderColor) {\r\n          style.borderColor = this.borderColor;\r\n        }\r\n        if (this.borderLeftColor) {\r\n          style.borderLeft = `5px solid ${this.borderLeftColor}`;\r\n        }\r\n        if (this.color) {\r\n          style.color = this.color;\r\n        }\r\n        return style;\r\n      },\r\n      iconType() {\r\n        if (this.icon) {\r\n          return md.renderInline(this.icon);\r\n        }\r\n        switch (this.type) {\r\n          case 'wrong':\r\n            return '<i class=\"fas fa-times\"></i>';\r\n          case 'warning':\r\n            return '<i class=\"fas fa-exclamation\"></i>';\r\n          case 'info':\r\n            return '<i class=\"fas fa-info\"></i>';\r\n          case 'success':\r\n            return '<i class=\"fas fa-check\"></i>';\r\n          case 'important':\r\n            return '<i class=\"fas fa-flag\"></i>';\r\n          case 'tip':\r\n            return '<i class=\"fas fa-lightbulb\"></i>';\r\n          case 'definition':\r\n            return '<i class=\"fas fa-atlas\"></i>';\r\n          default:\r\n            return '<i class=\"fas fa-exclamation\"></i>';\r\n        }\r\n      }\r\n    }\r\n  }\r\n</script>\r\n\r\n<style scoped>\r\n    .container {\r\n        display: flex;\r\n        flex-direction: row;\r\n        width: 100%;\r\n        border-radius: 6px;\r\n    }\r\n\r\n    .icon-wrapper {\r\n        display: flex;\r\n        margin-right: .5em;\r\n        width: 22px;\r\n        height: 22px;\r\n    }\r\n\r\n    .contents {\r\n        padding: 0 6px;\r\n        width: 100%;\r\n    }\r\n\r\n    .alert-default {\r\n        color: #24292e;\r\n        background-color: #f6f8fa;\r\n        border-color: #e8ebef;\r\n    }\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.container[data-v-3273e818] {\n    display: flex;\n    flex-direction: row;\n    width: 100%;\n    border-radius: 6px;\n}\n.icon-wrapper[data-v-3273e818] {\n    display: flex;\n    margin-right: .5em;\n    width: 22px;\n    height: 22px;\n}\n.contents[data-v-3273e818] {\n    padding: 0 6px;\n    width: 100%;\n}\n.alert-default[data-v-3273e818] {\n    color: #24292e;\n    background-color: #f6f8fa;\n    border-color: #e8ebef;\n}\n", "", {"version":3,"sources":["/./src/TipBox.vue?c8f79b42"],"names":[],"mappings":";AAqHA;IACA,cAAA;IACA,oBAAA;IACA,YAAA;IACA,mBAAA;CACA;AAEA;IACA,cAAA;IACA,mBAAA;IACA,YAAA;IACA,aAAA;CACA;AAEA;IACA,eAAA;IACA,YAAA;CACA;AAEA;IACA,eAAA;IACA,0BAAA;IACA,sBAAA;CACA","file":"TipBox.vue","sourcesContent":["<template>\r\n    <div class=\"alert container\" :class=\"[boxStyle, addClass, {'alert-dismissible': dismissible}]\" :style=\"customStyle\">\r\n        <div class=\"icon-wrapper\" v-if=\"!isDefault\">\r\n            <span v-html=\"iconType\"></span>\r\n        </div>\r\n        <div class=\"contents\">\r\n            <slot></slot>\r\n        </div>\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\" v-if=\"dismissible\">\r\n          <span aria-hidden=\"true\">&times;</span>\r\n        </button>\r\n    </div>\r\n</template>\r\n\r\n<script>\r\n  import md from './utils/markdown.js'\r\n  export default {\r\n    props: {\r\n      dismissible: {\r\n        type: Boolean,\r\n        default: false\r\n      },\r\n      backgroundColor: {\r\n        type: String,\r\n        default: null\r\n      },\r\n      borderColor: {\r\n        type: String,\r\n        default: null\r\n      },\r\n      borderLeftColor: {\r\n        type: String,\r\n        default: null\r\n      },\r\n      color: {\r\n        type: String,\r\n        default: null\r\n      },\r\n      icon: {\r\n        type: String,\r\n        default: null\r\n      },\r\n      type: {\r\n        type: String,\r\n        default: 'none'\r\n      },\r\n      addClass: {\r\n        type: String,\r\n        default: ''\r\n      }\r\n    },\r\n    computed: {\r\n      isDefault() {\r\n        return this.type === 'none'\r\n      },\r\n      boxStyle() {\r\n        switch (this.type) {\r\n          case 'warning':\r\n            return 'alert-warning'\r\n          case 'info':\r\n          case 'definition':\r\n            return 'alert-info'\r\n          case 'success':\r\n          case 'tip':\r\n            return 'alert-success'\r\n          case 'important':\r\n          case 'wrong':\r\n            return 'alert-danger'\r\n          default:\r\n            return 'alert-default'\r\n        }\r\n      },\r\n      customStyle() {\r\n        var style = {};\r\n        if (this.backgroundColor) {\r\n          style.backgroundColor = this.backgroundColor;\r\n          style.borderColor = this.backgroundColor;\r\n        }\r\n        if (this.borderColor) {\r\n          style.borderColor = this.borderColor;\r\n        }\r\n        if (this.borderLeftColor) {\r\n          style.borderLeft = `5px solid ${this.borderLeftColor}`;\r\n        }\r\n        if (this.color) {\r\n          style.color = this.color;\r\n        }\r\n        return style;\r\n      },\r\n      iconType() {\r\n        if (this.icon) {\r\n          return md.renderInline(this.icon);\r\n        }\r\n        switch (this.type) {\r\n          case 'wrong':\r\n            return '<i class=\"fas fa-times\"></i>';\r\n          case 'warning':\r\n            return '<i class=\"fas fa-exclamation\"></i>';\r\n          case 'info':\r\n            return '<i class=\"fas fa-info\"></i>';\r\n          case 'success':\r\n            return '<i class=\"fas fa-check\"></i>';\r\n          case 'important':\r\n            return '<i class=\"fas fa-flag\"></i>';\r\n          case 'tip':\r\n            return '<i class=\"fas fa-lightbulb\"></i>';\r\n          case 'definition':\r\n            return '<i class=\"fas fa-atlas\"></i>';\r\n          default:\r\n            return '<i class=\"fas fa-exclamation\"></i>';\r\n        }\r\n      }\r\n    }\r\n  }\r\n</script>\r\n\r\n<style scoped>\r\n    .container {\r\n        display: flex;\r\n        flex-direction: row;\r\n        width: 100%;\r\n        border-radius: 6px;\r\n    }\r\n\r\n    .icon-wrapper {\r\n        display: flex;\r\n        margin-right: .5em;\r\n        width: 22px;\r\n        height: 22px;\r\n    }\r\n\r\n    .contents {\r\n        padding: 0 6px;\r\n        width: 100%;\r\n    }\r\n\r\n    .alert-default {\r\n        color: #24292e;\r\n        background-color: #f6f8fa;\r\n        border-color: #e8ebef;\r\n    }\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
-/* 299 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31688,6 +31934,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	exports.default = {
 	  props: {
+	    dismissible: {
+	      type: Boolean,
+	      default: false
+	    },
 	    backgroundColor: {
 	      type: String,
 	      default: null
@@ -31790,15 +32040,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 	//
 	//
+	//
+	//
+	//
 
 /***/ }),
-/* 300 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticClass: "alert container",
-	    class: [_vm.boxStyle, _vm.addClass],
+	    class: [_vm.boxStyle, _vm.addClass, {
+	      'alert-dismissible': _vm.dismissible
+	    }],
 	    style: (_vm.customStyle)
 	  }, [(!_vm.isDefault) ? _c('div', {
 	    staticClass: "icon-wrapper"
@@ -31808,7 +32063,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  })]) : _vm._e(), _vm._v(" "), _c('div', {
 	    staticClass: "contents"
-	  }, [_vm._t("default")], 2)])
+	  }, [_vm._t("default")], 2), _vm._v(" "), (_vm.dismissible) ? _c('button', {
+	    staticClass: "close",
+	    attrs: {
+	      "type": "button",
+	      "data-dismiss": "alert",
+	      "aria-label": "Close"
+	    }
+	  }, [_c('span', {
+	    attrs: {
+	      "aria-hidden": "true"
+	    }
+	  }, [_vm._v("×")])]) : _vm._e()])
 	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
@@ -31818,20 +32084,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 301 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(302)
+	__webpack_require__(307)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(304)
+	__vue_exports__ = __webpack_require__(309)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(305)
+	var __vue_template__ = __webpack_require__(310)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -31865,13 +32131,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 302 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(303);
+	var content = __webpack_require__(308);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -31891,7 +32157,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 303 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -31905,7 +32171,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 304 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31976,7 +32242,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 305 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -32022,20 +32288,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 306 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(307)
+	__webpack_require__(312)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(309)
+	__vue_exports__ = __webpack_require__(314)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(310)
+	var __vue_template__ = __webpack_require__(315)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -32069,13 +32335,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 307 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(308);
+	var content = __webpack_require__(313);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -32095,7 +32361,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 308 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -32109,7 +32375,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 309 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -32171,7 +32437,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(72)))
 
 /***/ }),
-/* 310 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
