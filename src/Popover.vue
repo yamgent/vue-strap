@@ -1,16 +1,16 @@
 <template>
   <span :class="[addClass]">
-    <span ref="trigger" v-if="hasSlot" v-on:click="false"><slot></slot></span><!--
+    <span ref="trigger" v-if="hasSlot"><slot></slot></span><!--
     -->
     <transition :name="effect">
     <div ref="popover" v-if="show"
       :class="['popover', popoverPlacementClass]">
       <div class="arrow" ref="arrow"></div>
-      <h3 class="popover-header" v-if="title" v-on:click="false">
+      <h3 class="popover-header" v-if="title">
         <slot name="title" v-if="hasTitleSlot"></slot>
         <span v-else v-html="titleRendered"></span>
       </h3>
-      <div class="popover-body" v-on:click="false">
+      <div class="popover-body">
         <slot name="content" v-if="hasContentSlot"></slot>
         <span v-else v-html="contentRendered"></span>
       </div>
