@@ -11,6 +11,8 @@ function getFirstChild(node) {
   return node && (node.children.length ? node.children[0] : node)
 }
 
+const POPOVER_TIMEOUT = 200
+
 export default {
   props: {
     trigger: {
@@ -41,7 +43,8 @@ export default {
         left: 0
       },
       isPopover: false,
-      show: false
+      show: false,
+      delayTimeout: null
     }
   },
   computed: {
@@ -58,11 +61,32 @@ export default {
         trigger.setTriggerBy(this)
       }
     },
+    clearTimeout() {
+      clearTimeout(this.delayTimeout)
+      this.delayTimeout = null
+    },
     toggle (e) {
       let trigger = getFirstChild(this.$refs.trigger)
       if (e && this.trigger === 'contextmenu' && trigger === e.target) e.preventDefault()
-      if (!(this.show = !this.show)) {
+      if (this.show) {
+        if (e.type === 'mouseleave') {
+          // Only delay closing for hover events
+          this.delayTimeout = setTimeout(() => {
+            this.show = false
+            this.clearTimeout()
+          }, POPOVER_TIMEOUT)
+        } else if (e.type === 'mouseenter') {
+          // If user hovers back, cancel the close
+          this.clearTimeout()
+        } else {
+          // Otherwise, it's another trigger and we close it immediately
+          this.clearTimeout()
+          this.show = false;
+        }
         return
+      } else {
+        this.clearTimeout()
+        this.show = true
       }
       if (e) {
         let target = e.target

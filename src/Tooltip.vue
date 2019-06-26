@@ -1,12 +1,12 @@
 <template>
   <span :class="[addClass]">
-    <span ref="trigger" v-on:click="false"><slot></slot></span><!--
+    <span ref="trigger"><slot></slot></span><!--
     --><transition :name="effect">
       <div ref="popover" v-if="show" style="display:block;"
         :class="['tooltip', tooltipPlacementClass, 'show']"
       >
         <div class="arrow" ref="arrow"></div>
-        <div class="tooltip-inner" v-on:click="false">
+        <div class="tooltip-inner">
           <span name="content" v-html="contentRendered"></span>
        </div>
       </div>
