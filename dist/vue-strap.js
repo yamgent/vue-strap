@@ -29259,7 +29259,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.fade-enter-active, .fade-leave-active {\r\n  transition: opacity .5s ease;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\r\n  opacity: 0;\n}\n.popover.top,\r\n.popover.left,\r\n.popover.right,\r\n.popover.bottom {\r\n  display: block;\r\n  overflow-wrap: break-word;\n}\n@media (min-width: 768px) {\n.popover.top,\r\n  .popover.left,\r\n  .popover.right,\r\n  .popover.bottom {\r\n    max-width: 600px;\n}\n}\n.scale-enter-active {\r\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\r\n  animation:scale-out 0.15s ease-out;\n}\n@keyframes scale-in {\n0% {\r\n    transform: scale(0);\r\n    opacity: 0;\n}\n100% {\r\n    transform: scale(1);\r\n    opacity: 1;\n}\n}\n@keyframes scale-out {\n0% {\r\n    transform: scale(1);\r\n    opacity: 1;\n}\n100% {\r\n    transform: scale(0);\r\n    opacity: 0;\n}\n}\r\n", "", {"version":3,"sources":["/./src/Popover.vue?3de1ee40"],"names":[],"mappings":";AA4DA;EACA,6BAAA;CACA;AAEA;EACA,WAAA;CACA;AAEA;;;;EAIA,eAAA;EACA,0BAAA;CACA;AAEA;AACA;;;;IAIA,iBAAA;CACA;CACA;AACA;EACA,iCAAA;CACA;AACA;EACA,mCAAA;CACA;AACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;CACA;AACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;CACA","file":"Popover.vue","sourcesContent":["<template>\r\n  <span :class=\"[addClass]\">\r\n    <span ref=\"trigger\" v-if=\"hasSlot\" v-on:click=\"false\"><slot></slot></span><!--\r\n    -->\r\n    <transition :name=\"effect\">\r\n    <div ref=\"popover\" v-if=\"show\"\r\n      :class=\"['popover', popoverPlacementClass]\">\r\n      <div class=\"arrow\" ref=\"arrow\"></div>\r\n      <h3 class=\"popover-header\" v-if=\"title\" v-on:click=\"false\">\r\n        <slot name=\"title\" v-if=\"hasTitleSlot\"></slot>\r\n        <span v-else v-html=\"titleRendered\"></span>\r\n      </h3>\r\n      <div class=\"popover-body\" v-on:click=\"false\">\r\n        <slot name=\"content\" v-if=\"hasContentSlot\"></slot>\r\n        <span v-else v-html=\"contentRendered\"></span>\r\n      </div>\r\n    </div>\r\n    </transition>\r\n  </span>\r\n</template>\r\n\r\n<script>\r\nimport PopoverMixin from './utils/popoverMixins.js'\r\n\r\nexport default {\r\n  mixins: [PopoverMixin],\r\n  props: {\r\n    trigger: {\r\n      type: String,\r\n      default: 'hover'\r\n    },\r\n    addClass: {\r\n      type: String,\r\n      default: ''\r\n    }\r\n  },\r\n  computed: {\r\n    hasSlot () {\r\n      return this.$slots.default;\r\n    },\r\n    hasTitleSlot () {\r\n      return this.$slots.title\r\n    },\r\n    hasContentSlot () {\r\n      return this.$slots.content;\r\n    },\r\n    popoverPlacementClass() {\r\n      return `bs-popover-${this.placement}`;\r\n    }\r\n  },\r\n  mounted () {\r\n    if (this.$refs.trigger) {\r\n      this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dotted'\r\n      this.$refs.trigger.style['text-decoration'] = 'underline dotted'\r\n    }\r\n  }\r\n}\r\n</script>\r\n\r\n<style>\r\n.fade-enter-active, .fade-leave-active {\r\n  transition: opacity .5s ease;\r\n}\r\n\r\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\r\n  opacity: 0;\r\n}\r\n\r\n.popover.top,\r\n.popover.left,\r\n.popover.right,\r\n.popover.bottom {\r\n  display: block;\r\n  overflow-wrap: break-word;\r\n}\r\n\r\n@media (min-width: 768px) {\r\n  .popover.top,\r\n  .popover.left,\r\n  .popover.right,\r\n  .popover.bottom {\r\n    max-width: 600px;\r\n  }\r\n}\r\n.scale-enter-active {\r\n  animation:scale-in 0.15s ease-in;\r\n}\r\n.scale-leave-active {\r\n  animation:scale-out 0.15s ease-out;\r\n}\r\n@keyframes scale-in {\r\n  0% {\r\n    transform: scale(0);\r\n    opacity: 0;\r\n  }\r\n  100% {\r\n    transform: scale(1);\r\n    opacity: 1;\r\n  }\r\n}\r\n@keyframes scale-out {\r\n  0% {\r\n    transform: scale(1);\r\n    opacity: 1;\r\n  }\r\n  100% {\r\n    transform: scale(0);\r\n    opacity: 0;\r\n  }\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.fade-enter-active, .fade-leave-active {\r\n  transition: opacity .5s ease;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\r\n  opacity: 0;\n}\n.popover.top,\r\n.popover.left,\r\n.popover.right,\r\n.popover.bottom {\r\n  display: block;\r\n  overflow-wrap: break-word;\n}\n@media (min-width: 768px) {\n.popover.top,\r\n  .popover.left,\r\n  .popover.right,\r\n  .popover.bottom {\r\n    max-width: 600px;\n}\n}\n.scale-enter-active {\r\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\r\n  animation:scale-out 0.15s ease-out;\n}\n@keyframes scale-in {\n0% {\r\n    transform: scale(0);\r\n    opacity: 0;\n}\n100% {\r\n    transform: scale(1);\r\n    opacity: 1;\n}\n}\n@keyframes scale-out {\n0% {\r\n    transform: scale(1);\r\n    opacity: 1;\n}\n100% {\r\n    transform: scale(0);\r\n    opacity: 0;\n}\n}\r\n", "", {"version":3,"sources":["/./src/Popover.vue?47928ce6"],"names":[],"mappings":";AA4DA;EACA,6BAAA;CACA;AAEA;EACA,WAAA;CACA;AAEA;;;;EAIA,eAAA;EACA,0BAAA;CACA;AAEA;AACA;;;;IAIA,iBAAA;CACA;CACA;AACA;EACA,iCAAA;CACA;AACA;EACA,mCAAA;CACA;AACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;CACA;AACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;CACA","file":"Popover.vue","sourcesContent":["<template>\r\n  <span :class=\"[addClass]\">\r\n    <span ref=\"trigger\" v-if=\"hasSlot\"><slot></slot></span><!--\r\n    -->\r\n    <transition :name=\"effect\">\r\n    <div ref=\"popover\" v-if=\"show\"\r\n      :class=\"['popover', popoverPlacementClass]\">\r\n      <div class=\"arrow\" ref=\"arrow\"></div>\r\n      <h3 class=\"popover-header\" v-if=\"title\">\r\n        <slot name=\"title\" v-if=\"hasTitleSlot\"></slot>\r\n        <span v-else v-html=\"titleRendered\"></span>\r\n      </h3>\r\n      <div class=\"popover-body\">\r\n        <slot name=\"content\" v-if=\"hasContentSlot\"></slot>\r\n        <span v-else v-html=\"contentRendered\"></span>\r\n      </div>\r\n    </div>\r\n    </transition>\r\n  </span>\r\n</template>\r\n\r\n<script>\r\nimport PopoverMixin from './utils/popoverMixins.js'\r\n\r\nexport default {\r\n  mixins: [PopoverMixin],\r\n  props: {\r\n    trigger: {\r\n      type: String,\r\n      default: 'hover'\r\n    },\r\n    addClass: {\r\n      type: String,\r\n      default: ''\r\n    }\r\n  },\r\n  computed: {\r\n    hasSlot () {\r\n      return this.$slots.default;\r\n    },\r\n    hasTitleSlot () {\r\n      return this.$slots.title\r\n    },\r\n    hasContentSlot () {\r\n      return this.$slots.content;\r\n    },\r\n    popoverPlacementClass() {\r\n      return `bs-popover-${this.placement}`;\r\n    }\r\n  },\r\n  mounted () {\r\n    if (this.$refs.trigger) {\r\n      this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dotted'\r\n      this.$refs.trigger.style['text-decoration'] = 'underline dotted'\r\n    }\r\n  }\r\n}\r\n</script>\r\n\r\n<style>\r\n.fade-enter-active, .fade-leave-active {\r\n  transition: opacity .5s ease;\r\n}\r\n\r\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\r\n  opacity: 0;\r\n}\r\n\r\n.popover.top,\r\n.popover.left,\r\n.popover.right,\r\n.popover.bottom {\r\n  display: block;\r\n  overflow-wrap: break-word;\r\n}\r\n\r\n@media (min-width: 768px) {\r\n  .popover.top,\r\n  .popover.left,\r\n  .popover.right,\r\n  .popover.bottom {\r\n    max-width: 600px;\r\n  }\r\n}\r\n.scale-enter-active {\r\n  animation:scale-in 0.15s ease-in;\r\n}\r\n.scale-leave-active {\r\n  animation:scale-out 0.15s ease-out;\r\n}\r\n@keyframes scale-in {\r\n  0% {\r\n    transform: scale(0);\r\n    opacity: 0;\r\n  }\r\n  100% {\r\n    transform: scale(1);\r\n    opacity: 1;\r\n  }\r\n}\r\n@keyframes scale-out {\r\n  0% {\r\n    transform: scale(1);\r\n    opacity: 1;\r\n  }\r\n  100% {\r\n    transform: scale(0);\r\n    opacity: 0;\r\n  }\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -29374,6 +29374,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return node && (node.children.length ? node.children[0] : node);
 	}
 	
+	var POPOVER_TIMEOUT = 200;
+	
 	exports.default = {
 	  props: {
 	    trigger: {
@@ -29404,7 +29406,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	        left: 0
 	      },
 	      isPopover: false,
-	      show: false
+	      show: false,
+	      delayTimeout: null
 	    };
 	  },
 	
@@ -29422,13 +29425,44 @@ return /******/ (function(modules) { // webpackBootstrap
 	        trigger.setTriggerBy(this);
 	      }
 	    },
+	    clearTimeout: function (_clearTimeout) {
+	      function clearTimeout() {
+	        return _clearTimeout.apply(this, arguments);
+	      }
+	
+	      clearTimeout.toString = function () {
+	        return _clearTimeout.toString();
+	      };
+	
+	      return clearTimeout;
+	    }(function () {
+	      clearTimeout(this.delayTimeout);
+	      this.delayTimeout = null;
+	    }),
 	    toggle: function toggle(e) {
 	      var _this = this;
 	
 	      var trigger = getFirstChild(this.$refs.trigger);
 	      if (e && this.trigger === 'contextmenu' && trigger === e.target) e.preventDefault();
-	      if (!(this.show = !this.show)) {
+	      if (this.show) {
+	        if (e.type === 'mouseleave') {
+	          // Only delay closing for hover events
+	          this.delayTimeout = setTimeout(function () {
+	            _this.show = false;
+	            _this.clearTimeout();
+	          }, POPOVER_TIMEOUT);
+	        } else if (e.type === 'mouseenter') {
+	          // If user hovers back, cancel the close
+	          this.clearTimeout();
+	        } else {
+	          // Otherwise, it's another trigger and we close it immediately
+	          this.clearTimeout();
+	          this.show = false;
+	        }
 	        return;
+	      } else {
+	        this.clearTimeout();
+	        this.show = true;
 	      }
 	      if (e) {
 	        var target = e.target;
@@ -29810,10 +29844,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return _c('span', {
 	    class: [_vm.addClass]
 	  }, [(_vm.hasSlot) ? _c('span', {
-	    ref: "trigger",
-	    on: {
-	      "click": false
-	    }
+	    ref: "trigger"
 	  }, [_vm._t("default")], 2) : _vm._e(), _vm._v(" "), _c('transition', {
 	    attrs: {
 	      "name": _vm.effect
@@ -29825,19 +29856,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    ref: "arrow",
 	    staticClass: "arrow"
 	  }), _vm._v(" "), (_vm.title) ? _c('h3', {
-	    staticClass: "popover-header",
-	    on: {
-	      "click": false
-	    }
+	    staticClass: "popover-header"
 	  }, [(_vm.hasTitleSlot) ? _vm._t("title") : _c('span', {
 	    domProps: {
 	      "innerHTML": _vm._s(_vm.titleRendered)
 	    }
 	  })], 2) : _vm._e(), _vm._v(" "), _c('div', {
-	    staticClass: "popover-body",
-	    on: {
-	      "click": false
-	    }
+	    staticClass: "popover-body"
 	  }, [(_vm.hasContentSlot) ? _vm._t("content") : _c('span', {
 	    domProps: {
 	      "innerHTML": _vm._s(_vm.contentRendered)
@@ -32165,7 +32190,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.scale-enter-active {\r\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\r\n  animation:scale-out 0.15s ease-out;\n}\n.tooltip.top,\r\n.tooltip.left,\r\n.tooltip.right,\r\n.tooltip.bottom {\r\n  opacity: .9\n}\r\n", "", {"version":3,"sources":["/./src/Tooltip.vue?8cad6f12"],"names":[],"mappings":";AAwDA;EACA,iCAAA;CACA;AACA;EACA,mCAAA;CACA;AAEA;;;;EAIA,WAAA;CACA","file":"Tooltip.vue","sourcesContent":["<template>\r\n  <span :class=\"[addClass]\">\r\n    <span ref=\"trigger\" v-on:click=\"false\"><slot></slot></span><!--\r\n    -->\r\n    <transition :name=\"effect\">\r\n      <div ref=\"popover\" v-if=\"show\" style=\"display:block;\"\r\n        :class=\"['tooltip', tooltipPlacementClass, 'show']\"\r\n      >\r\n        <div class=\"arrow\" ref=\"arrow\"></div>\r\n        <div class=\"tooltip-inner\" v-on:click=\"false\">\r\n          <span name=\"content\" v-html=\"contentRendered\"></span>\r\n       </div>\r\n      </div>\r\n    </transition>\r\n  </span>\r\n</template>\r\n\r\n<script>\r\nimport PopoverMixin from './utils/popoverMixins.js'\r\nimport md from './utils/markdown.js'\r\n\r\nexport default {\r\n  mixins: [PopoverMixin],\r\n  props: {\r\n    trigger: {\r\n      type: String,\r\n      default: 'hover'\r\n    },\r\n    effect: {\r\n      type: String,\r\n      default: 'scale'\r\n    },\r\n    placement: {\r\n      type: String,\r\n      default: 'top'\r\n    },\r\n    addClass: {\r\n      type: String,\r\n      default: ''\r\n    }\r\n  },\r\n  computed: {\r\n    tooltipPlacementClass ()  {\r\n      return `bs-tooltip-${this.placement}`;\r\n    }\r\n  },\r\n  mounted () {\r\n    if (this.$refs.trigger) {\r\n      this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dotted'\r\n      this.$refs.trigger.style['text-decoration'] = 'underline dotted'\r\n    }\r\n  }\r\n}\r\n</script>\r\n\r\n<style>\r\n.scale-enter-active {\r\n  animation:scale-in 0.15s ease-in;\r\n}\r\n.scale-leave-active {\r\n  animation:scale-out 0.15s ease-out;\r\n}\r\n\r\n.tooltip.top,\r\n.tooltip.left,\r\n.tooltip.right,\r\n.tooltip.bottom {\r\n  opacity: .9\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.scale-enter-active {\r\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\r\n  animation:scale-out 0.15s ease-out;\n}\n.tooltip.top,\r\n.tooltip.left,\r\n.tooltip.right,\r\n.tooltip.bottom {\r\n  opacity: .9\n}\r\n", "", {"version":3,"sources":["/./src/Tooltip.vue?53a7a3d1"],"names":[],"mappings":";AAuDA;EACA,iCAAA;CACA;AACA;EACA,mCAAA;CACA;AAEA;;;;EAIA,WAAA;CACA","file":"Tooltip.vue","sourcesContent":["<template>\r\n  <span :class=\"[addClass]\">\r\n    <span ref=\"trigger\"><slot></slot></span><!--\r\n    --><transition :name=\"effect\">\r\n      <div ref=\"popover\" v-if=\"show\" style=\"display:block;\"\r\n        :class=\"['tooltip', tooltipPlacementClass, 'show']\"\r\n      >\r\n        <div class=\"arrow\" ref=\"arrow\"></div>\r\n        <div class=\"tooltip-inner\">\r\n          <span name=\"content\" v-html=\"contentRendered\"></span>\r\n       </div>\r\n      </div>\r\n    </transition><!--\r\n  --></span>\r\n</template>\r\n\r\n<script>\r\nimport PopoverMixin from './utils/popoverMixins.js'\r\nimport md from './utils/markdown.js'\r\n\r\nexport default {\r\n  mixins: [PopoverMixin],\r\n  props: {\r\n    trigger: {\r\n      type: String,\r\n      default: 'hover'\r\n    },\r\n    effect: {\r\n      type: String,\r\n      default: 'scale'\r\n    },\r\n    placement: {\r\n      type: String,\r\n      default: 'top'\r\n    },\r\n    addClass: {\r\n      type: String,\r\n      default: ''\r\n    }\r\n  },\r\n  computed: {\r\n    tooltipPlacementClass ()  {\r\n      return `bs-tooltip-${this.placement}`;\r\n    }\r\n  },\r\n  mounted () {\r\n    if (this.$refs.trigger) {\r\n      this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dotted'\r\n      this.$refs.trigger.style['text-decoration'] = 'underline dotted'\r\n    }\r\n  }\r\n}\r\n</script>\r\n\r\n<style>\r\n.scale-enter-active {\r\n  animation:scale-in 0.15s ease-in;\r\n}\r\n.scale-leave-active {\r\n  animation:scale-out 0.15s ease-out;\r\n}\r\n\r\n.tooltip.top,\r\n.tooltip.left,\r\n.tooltip.right,\r\n.tooltip.bottom {\r\n  opacity: .9\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -32190,7 +32215,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	//
 	//
 	//
 	//
@@ -32249,11 +32273,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  return _c('span', {
 	    class: [_vm.addClass]
 	  }, [_c('span', {
-	    ref: "trigger",
-	    on: {
-	      "click": false
-	    }
-	  }, [_vm._t("default")], 2), _vm._v(" "), _c('transition', {
+	    ref: "trigger"
+	  }, [_vm._t("default")], 2), _c('transition', {
 	    attrs: {
 	      "name": _vm.effect
 	    }
@@ -32267,10 +32288,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    ref: "arrow",
 	    staticClass: "arrow"
 	  }), _vm._v(" "), _c('div', {
-	    staticClass: "tooltip-inner",
-	    on: {
-	      "click": false
-	    }
+	    staticClass: "tooltip-inner"
 	  }, [_c('span', {
 	    attrs: {
 	      "name": "content"
