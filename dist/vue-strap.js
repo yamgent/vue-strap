@@ -29507,6 +29507,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	          _this.$refs.arrow.style['display'] = 'none';
 	        }
 	        // temporary fix for popover going off screen - end
+	
+	        // If triggered by mouseenter, we make the popover a trigger for itself
+	        jQuery(popover).on('mouseenter mouseleave', _this.toggle);
 	      }, 20);
 	    },
 	    calculateOffset: function calculateOffset(trigger, popover) {
