@@ -1,14 +1,16 @@
 <template>
-    <div class="alert container" :class="[boxStyle, addClass, {'alert-dismissible': dismissible}]" :style="customStyle">
-        <div class="icon-wrapper" v-if="!isDefault">
+    <div class="alert container" :class="[boxStyle, addClass]" :style="customStyle">
+        <div v-if="!isDefault" class="icon-wrapper">
             <span v-html="iconType"></span>
         </div>
         <div class="contents">
+            <h6 v-if="heading" class="heading">{{ heading }}</h6>
+            <button v-if="dismissible" type="button" class="close dismiss-button" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
             <slot></slot>
         </div>
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close" v-if="dismissible">
-          <span aria-hidden="true">&times;</span>
-        </button>
+
     </div>
 </template>
 
@@ -47,6 +49,10 @@
       addClass: {
         type: String,
         default: ''
+      },
+      heading: {
+        type: String,
+        default: null,
       }
     },
     computed: {
@@ -120,6 +126,29 @@
         flex-direction: row;
         width: 100%;
         border-radius: 6px;
+    }
+
+    .heading {
+        display: inline;
+        float: right;
+        font-weight: normal;
+        color: inherit;
+        background-color: rgba(240, 240, 240, 0.6);
+        width: auto;
+        padding: 3px 5px 4px 5px;
+        border-width: 0;
+        border-radius: 0 6px 0 6px;
+        margin: -13px -27px 0 15px;
+    }
+
+    .dismiss-button {
+        position: relative;
+        top: -2px;
+        clear: right;
+        color: inherit;
+        height: 100%;
+        margin-right: -6px;
+        margin-left: 21px;
     }
 
     .icon-wrapper {
