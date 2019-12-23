@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import {toBoolean} from './utils/utils.js'
+  import {toBoolean} from '../utils/utils.js'
 
   export default {
     props: {
