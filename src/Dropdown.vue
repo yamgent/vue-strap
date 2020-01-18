@@ -2,7 +2,7 @@
   <li v-if="isLi" ref="dropdown" :class="classes">
     <slot name="button">
       <a class="dropdown-toggle" role="button" :class="{disabled: disabled}" @keyup.esc="hideDropdownMenu()">
-        {{ text }}
+        <span v-html="text"></span>
       </a>
     </slot>
     <slot name="dropdown-menu" :class="menuClasses">
@@ -15,7 +15,7 @@
     <slot name="before"></slot>
     <slot name="button">
       <button type="button" class="btn dropdown-toggle" :class="[btnType, btnWithBefore]" @keyup.esc="hideDropdownMenu()" :disabled="disabled">
-        {{ text }}
+        <span v-html="text"></span>
       </button>
     </slot>
     <slot name="dropdown-menu" :class="menuClasses">
