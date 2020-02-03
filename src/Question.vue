@@ -7,7 +7,10 @@
                 <textarea class="form-control question-input" rows="3" placeholder="write your answer here..."></textarea>
             </div>
         </div>
-        <panel v-show="hasHintSlot" header="Hint" expandable no-close preload>
+        <panel v-show="hasHintSlot" expandable no-close preload>
+            <template slot="header">
+                Hint
+            </template>
             <template v-if="isEmptyHint">
                 No hint is available for this question.
             </template>
@@ -17,7 +20,10 @@
                 </div>
             </template>
         </panel>
-        <panel v-show="hasAnswerSlot" header="Answer" expandable no-close preload>
+        <panel v-show="hasAnswerSlot" expandable no-close preload>
+            <template slot="header">
+                Answer
+            </template>
             <template v-if="isEmptyAnswer">
                 No answer is provided for this question.
             </template>

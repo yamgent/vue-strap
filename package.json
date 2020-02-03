@@ -12,17 +12,8 @@
     "src": "src/"
   },
   "dependencies": {
-    "@sindresorhus/slugify": "^0.8.0",
     "bootstrap": "^3.3.7",
     "jquery": "^3.3.1",
-    "markdown-it": "^8.3.1",
-    "markdown-it-emoji": "^1.3.0",
-    "markdown-it-imsize": "^2.0.1",
-    "markdown-it-ins": "^2.0.0",
-    "markdown-it-mark": "^2.0.0",
-    "markdown-it-regexp": "^0.4.0",
-    "markdown-it-sub": "^1.0.0",
-    "markdown-it-sup": "^1.0.0",
     "vue": "^2.0.0"
   },
   "files": [

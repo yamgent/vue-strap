@@ -1,7 +1,6 @@
 import {toBoolean} from './utils.js'
 import $ from './NodeList.js'
 import {globalEventBus} from '../GlobalEventBus.js'
-import md from './markdown.js'
 
 function getFirst(nodeList) {
   return nodeList && (nodeList.length ? nodeList[0] : nodeList)
@@ -22,12 +21,6 @@ export default {
       type: String,
       default: 'fade'
     },
-    title: {
-      type: String
-    },
-    content: {
-      type: String
-    },
     placement: {
       type: String,
       default: 'top'
@@ -45,14 +38,6 @@ export default {
       isPopover: false,
       show: false,
       delayTimeout: null
-    }
-  },
-  computed: {
-    contentRendered () {
-      return md.renderInline(this.content)
-    },
-    titleRendered () {
-      return md.renderInline(this.title)
     }
   },
   methods: {

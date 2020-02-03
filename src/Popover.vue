@@ -1,20 +1,17 @@
 <template>
   <span :class="[addClass]">
-    <span ref="trigger" v-if="hasSlot"><slot></slot></span><!--
-    -->
+    <span ref="trigger" v-if="hasSlot"><slot name="default"></slot></span>
     <transition :name="effect">
-    <div ref="popover" v-if="show"
-      :class="['popover', popoverPlacementClass]">
-      <div class="arrow" ref="arrow"></div>
-      <h3 class="popover-header" v-if="title">
-        <slot name="title" v-if="hasTitleSlot"></slot>
-        <span v-else v-html="titleRendered"></span>
-      </h3>
-      <div class="popover-body">
-        <slot name="content" v-if="hasContentSlot"></slot>
-        <span v-else v-html="contentRendered"></span>
+      <div ref="popover" v-if="show"
+        :class="['popover', popoverPlacementClass]">
+        <div class="arrow" ref="arrow"></div>
+        <h3 class="popover-header" v-if="hasHeaderSlot">
+          <slot name="header"></slot>
+        </h3>
+        <div class="popover-body">
+          <slot name="content"></slot>
+        </div>
       </div>
-    </div>
     </transition>
   </span>
 </template>
@@ -38,11 +35,8 @@ export default {
     hasSlot () {
       return this.$slots.default;
     },
-    hasTitleSlot () {
-      return this.$slots.title
-    },
-    hasContentSlot () {
-      return this.$slots.content;
+    hasHeaderSlot () {
+      return this.$slots.header;
     },
     popoverPlacementClass() {
       return `bs-popover-${this.placement}`;

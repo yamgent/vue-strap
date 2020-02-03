@@ -1,12 +1,14 @@
 <template>
   <div>
     <slot></slot>
+    <div ref="header" class="d-none">
+      <slot name="_header"></slot>
+    </div>
   </div>
 </template>
 
 <script>
 import {coerce} from './utils/utils.js'
-import md from './utils/markdown.js'
 
 export default {
   props: {
@@ -29,7 +31,7 @@ export default {
       return ~this.tabs.indexOf(this._tabset.show)
     },
     headerRendered () {
-      return md.renderInline(this.header)
+      return this.$refs.header.innerHTML
     },
     disabledBool () {
       return coerce.boolean(this.disabled)

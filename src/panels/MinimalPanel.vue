@@ -2,26 +2,22 @@
   <span ref="cardContainer" :class="['card-container', addClass]">
     <div v-show="localMinimized" class="morph">
       <button class="morph-display-wrapper btn card-title morph-title" @click="open()">
-        <template v-if="altContent">
-          <div v-html="altContent"></div>
-        </template>
-        <template v-else>
-          <slot name="header">
-            <div v-html="altContent"></div>
+        <slot name="_alt">
+          <slot name="_header">
+            <slot name="header"></slot>
           </slot>
-        </template>
+        </slot>
       </button>
     </div>
     <div v-show="!localMinimized" class="card card-flex" @mouseover="onHeaderHover = true" @mouseleave="onHeaderHover = false">
       <div :class="['header-wrapper', { 'header-wrapper-bottom': localExpanded, 'header-toggle': isExpandableCard }]"
            @click.prevent.stop="isExpandableCard && toggle()">
-        <span v-show="!localExpanded"
-              :class="['card-title', 'card-title-transparent', { 'card-title-opaque': onHeaderHover, 'ellipses': !header }]">
+        <span v-show="!localExpanded" ref="headerWrapper"
+              :class="['card-title', 'card-title-transparent', { 'card-title-opaque': onHeaderHover, 'ellipses': !hasHeaderBool }]">
           <slot name="header">
-            <span class="card-title-inline" v-html="headerContent"></span>
+            <span class="card-title-inline"><slot name="_header"></slot></span>
             <span v-show="showDownSwitch" aria-hidden="true"
-                  class="minimal-button glyphicon glyphicon-menu-down minimal-menu-down">
-            </span>
+                  class="minimal-button glyphicon glyphicon-menu-down minimal-menu-down"></span>
           </slot>
         </span>
         <div :class="['button-wrapper', { 'button-wrapper-expanded': localExpanded, 'button-wrapper-visible': onHeaderHover }]">
@@ -65,8 +61,8 @@ export default {
   },
   computed: {
     showDownSwitch() {
-      return this.header && this.isExpandableCard && !this.noSwitchBool;
-    }
+      return this.hasHeaderBool && this.isExpandableCard && !this.noSwitchBool;
+    },
   }
 };
 </script>
@@ -83,7 +79,7 @@ export default {
   .morph-title:hover, .morph-title:active, .morph-title:focus {
     color: black;
     border-color: black;
-    background-color: rgba(244, 244, 244, 0.3)
+    background-color: rgba(244, 244, 244, 0.3);
   }
 
   .card-flex {
@@ -156,7 +152,6 @@ export default {
   }
 
   .minimal-button {
-    height: 13px;
     padding: 0 3px;
     border: 0;
     color: rgb(150, 150, 150);

@@ -1,10 +1,12 @@
 <template>
     <div class="alert container" :class="[boxStyle, addClass, lightStyle]" :style="customStyle">
         <div v-if="!isDefault" class="icon-wrapper">
-            <span v-html="iconType"></span>
+            <slot name="_icon">
+                <span v-html="iconType"></span>
+            </slot>
         </div>
         <div class="contents" :class="fontBlack">
-            <h6 v-if="heading" class="heading">{{ heading }}</h6>
+            <h6 v-if="headerContent" class="heading">{{ headerContent }}</h6>
             <button v-if="dismissible" type="button" class="close dismiss-button" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -15,7 +17,6 @@
 </template>
 
 <script>
-  import md from './utils/markdown.js'
 
   export default {
     props: {
@@ -39,10 +40,6 @@
         type: String,
         default: null
       },
-      icon: {
-        type: String,
-        default: null
-      },
       type: {
         type: String,
         default: 'none'
@@ -58,11 +55,18 @@
       light: {
         type: Boolean,
         default: false,
+      },
+      header: {
+        type: String,
+        default: null,
       }
     },
     computed: {
       isDefault() {
         return this.type === 'none'
+      },
+      headerContent() {
+        return this.header || this.heading;
       },
       boxStyle() {
         switch (this.type) {
@@ -125,9 +129,6 @@
         return '';
       },
       iconType() {
-        if (this.icon) {
-          return md.renderInline(this.icon);
-        }
         switch (this.type) {
           case 'wrong':
             return '<i class="fas fa-times"></i>';

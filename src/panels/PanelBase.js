@@ -1,18 +1,7 @@
 import { getFragmentByHash, toBoolean, toNumber } from '../utils/utils';
-import md from '../utils/markdown';
-
-const slugify = require('@sindresorhus/slugify');
 
 export default {
   props: {
-    header: {
-      type: String,
-      default: '',
-    },
-    alt: {
-      type: String,
-      default: '',
-    },
     type: {
       type: String,
       default: null,
@@ -88,14 +77,11 @@ export default {
       return toBoolean(this.preload);
     },
     // Vue 2.0 coerce migration end
+    hasHeaderBool() {
+      return this.$slots._header || this.$slots.header;
+    },
     isExpandableCard() {
       return this.expandableBool;
-    },
-    headerContent() {
-      return md.render(this.header);
-    },
-    altContent() {
-      return (this.alt && md.render(this.alt)) || md.render(this.header);
     },
     hasSrc() {
       return this.src && this.src.length > 0;
@@ -161,19 +147,5 @@ export default {
     this.localExpanded = notExpandableNoExpand || this.expandedBool; // Ensure this expr ordering is maintained
     this.isCached = this.localExpanded; // If it is expanded, it will be cached.
     this.localMinimized = this.minimizedBool;
-  },
-  mounted() {
-    if (this.headerContent) {
-      const panelHeaderText = jQuery(this.headerContent).wrap('<div></div>').parent().find(':header')
-        .text();
-      if (panelHeaderText) {
-        this.$refs.cardContainer.setAttribute('id', slugify(panelHeaderText, { decamelize: false }));
-      }
-    } else if (this.$refs.headerWrapper.innerHTML) {
-      const header = jQuery(this.$refs.headerWrapper.innerHTML).wrap('<div></div>').parent().find(':header');
-      if (header.length > 0) {
-        this.$refs.cardContainer.setAttribute('id', header[0].id);
-      }
-    }
   },
 };

@@ -1,13 +1,13 @@
 <template>
   <span :class="[addClass]">
-    <span ref="trigger"><slot></slot></span><!--
-    --><transition :name="effect">
+    <span ref="trigger"><slot></slot></span>
+    <transition :name="effect">
       <div ref="popover" v-if="show" style="display:block;"
         :class="['tooltip', tooltipPlacementClass, 'show']"
       >
         <div class="arrow" ref="arrow"></div>
         <div class="tooltip-inner">
-          <span name="content" v-html="contentRendered"></span>
+          <slot name="_content"></slot>
        </div>
       </div>
     </transition><!--
@@ -16,7 +16,6 @@
 
 <script>
 import PopoverMixin from './utils/popoverMixins.js'
-import md from './utils/markdown.js'
 
 export default {
   mixins: [PopoverMixin],

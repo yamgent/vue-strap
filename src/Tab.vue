@@ -4,6 +4,9 @@
       :class="{hide:!show}"
     >
       <slot></slot>
+      <div ref="header" class="d-none">
+        <slot name="_header"></slot>
+      </div>
       <hr />
     </div>
   </transition>
@@ -11,7 +14,6 @@
 
 <script>
 import {toBoolean} from './utils/utils.js'
-import md from './utils/markdown.js'
 
 export default {
   props: {
@@ -25,7 +27,7 @@ export default {
   },
   computed: {
     headerRendered () {
-      return md.renderInline(this.header)
+      return this.$refs.header.innerHTML
     },
     active () {
       return this._tabset.show === this

@@ -9,10 +9,11 @@
     <div v-bind:class="{'modal-dialog':true,'modal-lg':largeBool,'modal-sm':smallBool,'modal-dialog-centered':centerBool}" role="document"
       v-bind:style="{width: optionalWidth}">
       <div class="modal-content">
-        <slot name="modal-header">
+        <slot name="header">
           <div class="modal-header">
             <h4 class="modal-title">
-              <span name="title" v-html="titleRendered">
+              <span name="title">
+                <slot name="_header"></slot>
               </span>
             </h4>
             <button type="button" class="close" @click="close"><span>&times;</span></button>
@@ -21,7 +22,7 @@
           <div class="modal-body">
               <slot></slot>
           </div>
-        <slot name="modal-footer">
+        <slot name="footer">
           <div class="modal-footer" v-if="showOkButton">
             <button type="button" class="btn btn-primary" v-if="showOkButton" @click="close">{{ okText }}</button>
           </div>
@@ -35,15 +36,10 @@
 import {globalEventBus} from './GlobalEventBus.js'
 import {toBoolean, getScrollBarWidth} from './utils/utils.js'
 import $ from './utils/NodeList.js'
-import md from './utils/markdown.js'
 
 export default {
   props: {
     okText: {
-      type: String,
-      default: ''
-    },
-    title: {
       type: String,
       default: ''
     },
@@ -98,9 +94,6 @@ export default {
     },
     centerBool () {
       return toBoolean(this.center)
-    },
-    titleRendered () {
-      return md.renderInline(this.title);
     },
     optionalWidth () {
       if (this.width === null) {

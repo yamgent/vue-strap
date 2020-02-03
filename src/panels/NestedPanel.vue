@@ -2,14 +2,11 @@
   <span :class="['card-container', addClass]" ref="cardContainer">
       <div class="morph" v-show="localMinimized">
           <button :class="['morph-display-wrapper', 'btn', btnType, 'card-title']" @click="open()">
-              <template v-if="altContent">
-                  <div v-html="altContent"></div>
-              </template>
-              <template v-else>
-                  <slot name="header">
-                      <div v-html="altContent"></div>
+              <slot name="_alt">
+                  <slot name="_header">
+                      <slot name="header"></slot>
                   </slot>
-              </template>
+              </slot>
           </button>
       </div>
       <div :class="['card', { 'expandable-card': isExpandableCard }, borderType]" v-show="!localMinimized">
@@ -21,7 +18,9 @@
               </div>
               <div class="header-wrapper" ref="headerWrapper">
                   <slot name="header">
-                      <div :class="['card-title', cardType, {'text-white':!isLightBg}]" v-html="headerContent"></div>
+                      <div :class="['card-title', cardType, {'text-white':!isLightBg}]">
+                          <slot name="_header"></slot>
+                      </div>
                   </slot>
               </div>
               <div class="button-wrapper">
