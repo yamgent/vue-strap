@@ -76,63 +76,63 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _Modal2 = _interopRequireDefault(_Modal);
 	
-	var _Navbar = __webpack_require__(203);
+	var _Navbar = __webpack_require__(91);
 	
 	var _Navbar2 = _interopRequireDefault(_Navbar);
 	
-	var _Panel = __webpack_require__(208);
+	var _Panel = __webpack_require__(96);
 	
 	var _Panel2 = _interopRequireDefault(_Panel);
 	
-	var _Pic = __webpack_require__(235);
+	var _Pic = __webpack_require__(118);
 	
 	var _Pic2 = _interopRequireDefault(_Pic);
 	
-	var _Popover = __webpack_require__(240);
+	var _Popover = __webpack_require__(123);
 	
 	var _Popover2 = _interopRequireDefault(_Popover);
 	
-	var _Question = __webpack_require__(260);
+	var _Question = __webpack_require__(143);
 	
 	var _Question2 = _interopRequireDefault(_Question);
 	
-	var _Retriever = __webpack_require__(225);
+	var _Retriever = __webpack_require__(108);
 	
 	var _Retriever2 = _interopRequireDefault(_Retriever);
 	
-	var _Searchbar = __webpack_require__(265);
+	var _Searchbar = __webpack_require__(148);
 	
 	var _Searchbar2 = _interopRequireDefault(_Searchbar);
 	
-	var _Tab = __webpack_require__(290);
+	var _Tab = __webpack_require__(173);
 	
 	var _Tab2 = _interopRequireDefault(_Tab);
 	
-	var _TabGroup = __webpack_require__(295);
+	var _TabGroup = __webpack_require__(178);
 	
 	var _TabGroup2 = _interopRequireDefault(_TabGroup);
 	
-	var _Tabset = __webpack_require__(300);
+	var _Tabset = __webpack_require__(183);
 	
 	var _Tabset2 = _interopRequireDefault(_Tabset);
 	
-	var _Thumbnail = __webpack_require__(305);
+	var _Thumbnail = __webpack_require__(188);
 	
 	var _Thumbnail2 = _interopRequireDefault(_Thumbnail);
 	
-	var _TipBox = __webpack_require__(310);
+	var _TipBox = __webpack_require__(193);
 	
 	var _TipBox2 = _interopRequireDefault(_TipBox);
 	
-	var _Tooltip = __webpack_require__(315);
+	var _Tooltip = __webpack_require__(198);
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 	
-	var _trigger = __webpack_require__(320);
+	var _trigger = __webpack_require__(203);
 	
 	var _trigger2 = _interopRequireDefault(_trigger);
 	
-	var _Typeahead = __webpack_require__(285);
+	var _Typeahead = __webpack_require__(168);
 	
 	var _Typeahead2 = _interopRequireDefault(_Typeahead);
 	
@@ -12700,7 +12700,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.secret[data-v-7ef36c00] {\n  position: absolute;\n  clip: rect(0 0 0 0);\n  overflow: hidden;\n  margin: -1px;\n  height: 1px;\n  width: 1px;\n  padding: 0;\n  border: 0;\n}\n.btn-with-before[data-v-7ef36c00] {\n  padding-left: 0.2rem;\n  padding-right: 0.4rem;\n}\n.dropdown-toggle[data-v-7ef36c00] {\n  cursor: pointer;\n}\n", "", {"version":3,"sources":["/./src/Dropdown.vue?cab24e14"],"names":[],"mappings":";AA+IA;EACA,mBAAA;EACA,oBAAA;EACA,iBAAA;EACA,aAAA;EACA,YAAA;EACA,WAAA;EACA,WAAA;EACA,UAAA;CACA;AAEA;EACA,qBAAA;EACA,sBAAA;CACA;AAEA;EACA,gBAAA;CACA","file":"Dropdown.vue","sourcesContent":["<template>\n  <li v-if=\"isLi\" ref=\"dropdown\" :class=\"classes\">\n    <slot name=\"button\">\n      <a class=\"dropdown-toggle\" role=\"button\" :class=\"{disabled: disabled}\" @keyup.esc=\"hideDropdownMenu()\">\n        <span v-html=\"text\"></span>\n      </a>\n    </slot>\n    <slot name=\"dropdown-menu\" :class=\"menuClasses\">\n      <ul class=\"dropdown-menu\" :class=\"menuClasses\">\n        <slot></slot>\n      </ul>\n    </slot>\n  </li>\n  <div v-else ref=\"dropdown\" :class=\"classes\">\n    <slot name=\"before\"></slot>\n    <slot name=\"button\">\n      <button type=\"button\" class=\"btn dropdown-toggle\" :class=\"[btnType, btnWithBefore]\" @keyup.esc=\"hideDropdownMenu()\" :disabled=\"disabled\">\n        <span v-html=\"text\"></span>\n      </button>\n    </slot>\n    <slot name=\"dropdown-menu\" :class=\"menuClasses\">\n      <ul class=\"dropdown-menu\" :class=\"menuClasses\">\n        <slot></slot>\n      </ul>\n    </slot>\n  </div>\n</template>\n<script>\nimport {toBoolean} from './utils/utils.js'\nimport $ from './utils/NodeList.js'\n\nexport default {\n  props: {\n    show: {\n      type: Boolean,\n      default: false\n    },\n    'class': null,\n    disabled: {\n      type: Boolean,\n      default: false\n    },\n    text: {\n      type: String,\n      default: null\n    },\n    type: {\n      type: String,\n      default: 'light'\n    },\n    menuAlignRight: {\n      type: Boolean,\n      default: false\n    },\n    addClass: {\n      type: String,\n      default: ''\n    }\n  },\n  computed: {\n    btnType () {\n      return `btn-${this.type}`;\n    },\n    classes () {\n      return [{disabled: this.disabledBool}, this.class, this.isLi ? 'dropdown' : 'btn-group', this.addClass]\n    },\n    menuClasses() {\n      return [{show: this.showBool}, {'dropdown-menu-right': this.menuAlignRight}];\n    },\n    disabledBool() {\n      return toBoolean(this.disabled);\n    },\n    isLi () { return this.$parent._navbar || this.$parent.menu || this.$parent._tabset },\n    menu () {\n      return !this.$parent || this.$parent.navbar\n    },\n    showBool() {\n      return toBoolean(this.show);\n    },\n    submenu () {\n      return this.$parent && (this.$parent.menu || this.$parent.submenu)\n    },\n    slots () {\n      return this.$slots.default\n    },\n    btnWithBefore () {\n      if (this.$slots.before) {\n        return 'btn-with-before';\n      }\n      return '';\n    }\n  },\n  methods: {\n    blur () {\n      this.unblur()\n      this._hide = setTimeout(() => {\n        this._hide = null\n        this.hideDropdownMenu();\n      }, 100)\n    },\n    unblur () {\n      if (this._hide) {\n        clearTimeout(this._hide)\n        this._hide = null\n      }\n    },\n    hideDropdownMenu() {\n      this.show = false;\n      $(this.$refs.dropdown).findChildren('ul').each(ul => ul.classList.toggle('show', false));\n    },\n    showDropdownMenu() {\n      this.show = true;\n      $(this.$refs.dropdown).findChildren('ul').each(ul => ul.classList.toggle('show', true));\n    },\n  },\n  mounted () {\n    const $el = $(this.$refs.dropdown)\n    if (this.show) {\n      this.showDropdownMenu();\n    }\n    $el.onBlur((e) => { this.hideDropdownMenu() }, false)\n    $el.findChildren('a,button.dropdown-toggle').on('click', e => {\n      e.preventDefault()\n      if (this.disabledBool) { return false }\n      if (this.showBool) {\n        this.hideDropdownMenu();\n      } else {\n        this.showDropdownMenu();\n      }\n      return false\n    })\n    $el.findChildren('ul').on('click', 'li>a', e => { this.hideDropdownMenu() })\n  },\n  beforeDestroy () {\n    const $el = $(this.$refs.dropdown)\n    $el.offBlur()\n    $el.findChildren('a,button').off()\n    $el.findChildren('ul').off()\n  }\n}\n</script>\n\n<style scoped>\n.secret {\n  position: absolute;\n  clip: rect(0 0 0 0);\n  overflow: hidden;\n  margin: -1px;\n  height: 1px;\n  width: 1px;\n  padding: 0;\n  border: 0;\n}\n\n.btn-with-before {\n  padding-left: 0.2rem;\n  padding-right: 0.4rem;\n}\n\n.dropdown-toggle {\n  cursor: pointer;\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.secret[data-v-7ef36c00] {\n  position: absolute;\n  clip: rect(0 0 0 0);\n  overflow: hidden;\n  margin: -1px;\n  height: 1px;\n  width: 1px;\n  padding: 0;\n  border: 0;\n}\n.btn-with-before[data-v-7ef36c00] {\n  padding-left: 0.2rem;\n  padding-right: 0.4rem;\n}\n.dropdown-toggle[data-v-7ef36c00] {\n  cursor: pointer;\n}\n", "", {"version":3,"sources":["/./src/Dropdown.vue?790d9a76"],"names":[],"mappings":";AAuJA;EACA,mBAAA;EACA,oBAAA;EACA,iBAAA;EACA,aAAA;EACA,YAAA;EACA,WAAA;EACA,WAAA;EACA,UAAA;CACA;AAEA;EACA,qBAAA;EACA,sBAAA;CACA;AAEA;EACA,gBAAA;CACA","file":"Dropdown.vue","sourcesContent":["<template>\n  <li v-if=\"isLi\" ref=\"dropdown\" :class=\"classes\">\n    <slot name=\"button\">\n      <a class=\"dropdown-toggle\" role=\"button\" :class=\"{disabled: disabled}\" @keyup.esc=\"hideDropdownMenu()\">\n        <span v-html=\"textContent\"></span>\n      </a>\n    </slot>\n    <slot name=\"dropdown-menu\" :class=\"menuClasses\">\n      <ul class=\"dropdown-menu\" :class=\"menuClasses\">\n        <slot></slot>\n      </ul>\n    </slot>\n  </li>\n  <div v-else ref=\"dropdown\" :class=\"classes\">\n    <slot name=\"before\"></slot>\n    <slot name=\"button\">\n      <button type=\"button\" class=\"btn dropdown-toggle\" :class=\"[btnType, btnWithBefore]\" @keyup.esc=\"hideDropdownMenu()\" :disabled=\"disabled\">\n        <span v-html=\"textContent\"></span>\n      </button>\n    </slot>\n    <slot name=\"dropdown-menu\" :class=\"menuClasses\">\n      <ul class=\"dropdown-menu\" :class=\"menuClasses\">\n        <slot></slot>\n      </ul>\n    </slot>\n  </div>\n</template>\n\n<script>\nimport {toBoolean} from './utils/utils.js'\nimport $ from './utils/NodeList.js'\n\nexport default {\n  props: {\n    show: {\n      type: Boolean,\n      default: false\n    },\n    'class': null,\n    disabled: {\n      type: Boolean,\n      default: false\n    },\n    text: {\n      type: String,\n      default: null\n    },\n    header: {\n      type: String,\n      default: null\n    },\n    type: {\n      type: String,\n      default: 'light'\n    },\n    menuAlignRight: {\n      type: Boolean,\n      default: false\n    },\n    addClass: {\n      type: String,\n      default: ''\n    }\n  },\n  computed: {\n    btnType () {\n      return `btn-${this.type}`;\n    },\n    classes () {\n      return [{disabled: this.disabledBool}, this.class, this.isLi ? 'dropdown' : 'btn-group', this.addClass]\n    },\n    menuClasses() {\n      return [{show: this.showBool}, {'dropdown-menu-right': this.menuAlignRight}];\n    },\n    disabledBool() {\n      return toBoolean(this.disabled);\n    },\n    isLi () { return this.$parent._navbar || this.$parent.menu || this.$parent._tabset },\n    menu () {\n      return !this.$parent || this.$parent.navbar\n    },\n    showBool() {\n      return toBoolean(this.show);\n    },\n    submenu () {\n      return this.$parent && (this.$parent.menu || this.$parent.submenu)\n    },\n    slots () {\n      return this.$slots.default\n    },\n    btnWithBefore () {\n      if (this.$slots.before) {\n        return 'btn-with-before';\n      }\n      return '';\n    },\n    textContent () {\n      return this.header || this.text;\n    }\n  },\n  methods: {\n    blur () {\n      this.unblur()\n      this._hide = setTimeout(() => {\n        this._hide = null\n        this.hideDropdownMenu();\n      }, 100)\n    },\n    unblur () {\n      if (this._hide) {\n        clearTimeout(this._hide)\n        this._hide = null\n      }\n    },\n    hideDropdownMenu() {\n      this.show = false;\n      $(this.$refs.dropdown).findChildren('ul').each(ul => ul.classList.toggle('show', false));\n    },\n    showDropdownMenu() {\n      this.show = true;\n      $(this.$refs.dropdown).findChildren('ul').each(ul => ul.classList.toggle('show', true));\n    },\n  },\n  mounted () {\n    const $el = $(this.$refs.dropdown)\n    if (this.show) {\n      this.showDropdownMenu();\n    }\n    $el.onBlur((e) => { this.hideDropdownMenu() }, false)\n    $el.findChildren('a,button.dropdown-toggle').on('click', e => {\n      e.preventDefault()\n      if (this.disabledBool) { return false }\n      if (this.showBool) {\n        this.hideDropdownMenu();\n      } else {\n        this.showDropdownMenu();\n      }\n      return false\n    })\n    $el.findChildren('ul').on('click', 'li>a', e => { this.hideDropdownMenu() })\n  },\n  beforeDestroy () {\n    const $el = $(this.$refs.dropdown)\n    $el.offBlur()\n    $el.findChildren('a,button').off()\n    $el.findChildren('ul').off()\n  }\n}\n</script>\n\n<style scoped>\n.secret {\n  position: absolute;\n  clip: rect(0 0 0 0);\n  overflow: hidden;\n  margin: -1px;\n  height: 1px;\n  width: 1px;\n  padding: 0;\n  border: 0;\n}\n\n.btn-with-before {\n  padding-left: 0.2rem;\n  padding-right: 0.4rem;\n}\n\n.dropdown-toggle {\n  cursor: pointer;\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -13028,6 +13028,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 	//
 	//
+	//
 	
 	exports.default = {
 	  props: {
@@ -13041,6 +13042,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	      default: false
 	    },
 	    text: {
+	      type: String,
+	      default: null
+	    },
+	    header: {
 	      type: String,
 	      default: null
 	    },
@@ -13090,6 +13095,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return 'btn-with-before';
 	      }
 	      return '';
+	    },
+	    textContent: function textContent() {
+	      return this.header || this.text;
 	    }
 	  },
 	  methods: {
@@ -13179,7 +13187,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  }, [_c('span', {
 	    domProps: {
-	      "innerHTML": _vm._s(_vm.text)
+	      "innerHTML": _vm._s(_vm.textContent)
 	    }
 	  })])]), _vm._v(" "), _vm._t("dropdown-menu", [_c('ul', {
 	    staticClass: "dropdown-menu",
@@ -13202,7 +13210,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  }, [_c('span', {
 	    domProps: {
-	      "innerHTML": _vm._s(_vm.text)
+	      "innerHTML": _vm._s(_vm.textContent)
 	    }
 	  })])]), _vm._v(" "), _vm._t("dropdown-menu", [_c('ul', {
 	    staticClass: "dropdown-menu",
@@ -13230,7 +13238,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	__vue_exports__ = __webpack_require__(84)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(202)
+	var __vue_template__ = __webpack_require__(90)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -13298,7 +13306,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.modal {\n  transition: all 0.3s ease;\n}\n.modal.in {\n  background-color: rgba(0,0,0,0.5);\n}\n.modal.zoom .modal-dialog {\n  -webkit-transform: scale(0.1);\n  -moz-transform: scale(0.1);\n  -ms-transform: scale(0.1);\n  transform: scale(0.1);\n  top: 300px;\n  opacity: 0;\n  -webkit-transition: all 0.3s;\n  -moz-transition: all 0.3s;\n  transition: all 0.3s;\n}\n.modal.zoom.in .modal-dialog {\n  -webkit-transform: scale(1);\n  -moz-transform: scale(1);\n  -ms-transform: scale(1);\n  transform: scale(1);\n  -webkit-transform: translate3d(0, -300px, 0);\n  transform: translate3d(0, -300px, 0);\n  opacity: 1;\n}\n", "", {"version":3,"sources":["/./src/Modal.vue?9c35f4a8"],"names":[],"mappings":";AA2KA;EACA,0BAAA;CACA;AACA;EACA,kCAAA;CACA;AACA;EACA,8BAAA;EACA,2BAAA;EACA,0BAAA;EACA,sBAAA;EACA,WAAA;EACA,WAAA;EACA,6BAAA;EACA,0BAAA;EACA,qBAAA;CACA;AACA;EACA,4BAAA;EACA,yBAAA;EACA,wBAAA;EACA,oBAAA;EACA,6CAAA;EACA,qCAAA;EACA,WAAA;CACA","file":"Modal.vue","sourcesContent":["<template>\n  <div role=\"dialog\"\n    :class=\"[\n    {\n      'modal':true,\n      'fade':effect === 'fade',\n      'zoom':effect === 'zoom'\n    }, addClass]\">\n    <div v-bind:class=\"{'modal-dialog':true,'modal-lg':largeBool,'modal-sm':smallBool,'modal-dialog-centered':centerBool}\" role=\"document\"\n      v-bind:style=\"{width: optionalWidth}\">\n      <div class=\"modal-content\">\n        <slot name=\"modal-header\">\n          <div class=\"modal-header\">\n            <h4 class=\"modal-title\">\n              <span name=\"title\" v-html=\"titleRendered\">\n              </span>\n            </h4>\n            <button type=\"button\" class=\"close\" @click=\"close\"><span>&times;</span></button>\n          </div>\n        </slot>\n          <div class=\"modal-body\">\n              <slot></slot>\n          </div>\n        <slot name=\"modal-footer\">\n          <div class=\"modal-footer\" v-if=\"showOkButton\">\n            <button type=\"button\" class=\"btn btn-primary\" v-if=\"showOkButton\" @click=\"close\">{{ okText }}</button>\n          </div>\n        </slot>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script>\nimport {globalEventBus} from './GlobalEventBus.js'\nimport {toBoolean, getScrollBarWidth} from './utils/utils.js'\nimport $ from './utils/NodeList.js'\nimport md from './utils/markdown.js'\n\nexport default {\n  props: {\n    okText: {\n      type: String,\n      default: ''\n    },\n    title: {\n      type: String,\n      default: ''\n    },\n    width: {\n      default: null\n    },\n    effect: {\n      type: String,\n      default: 'zoom'\n    },\n    backdrop: {\n      type: Boolean,\n      default: true\n    },\n    large: {\n      type: Boolean,\n      default: false\n    },\n    small: {\n      type: Boolean,\n      default: false\n    },\n    center: {\n      type: Boolean,\n      default: false\n    },\n    name: {\n      type: String\n    },\n    id: {\n      type: String\n    },\n    addClass: {\n      type: String,\n      default: ''\n    }\n  },\n  data() {\n    return {\n      show: false\n    }\n  },\n  computed: {\n    backdropBool () {\n      return toBoolean(this.backdrop)\n    },\n    largeBool () {\n      return toBoolean(this.large)\n    },\n    smallBool () {\n      return toBoolean(this.small)\n    },\n    centerBool () {\n      return toBoolean(this.center)\n    },\n    titleRendered () {\n      return md.renderInline(this.title);\n    },\n    optionalWidth () {\n      if (this.width === null) {\n        return null\n      } else if (Number.isInteger(this.width)) {\n        return this.width + 'px'\n      }\n      return this.width\n    },\n    showOkButton () {\n      return this.okText.length !== 0;\n    }\n  },\n  watch: {\n    show (val) {\n      const el = this.$el\n      const body = document.body\n      const scrollBarWidth = getScrollBarWidth()\n      if (val) {\n        $(el).find('.modal-content').focus()\n        el.style.display = 'block'\n        setTimeout(() => $(el).addClass('show in'), 0)\n        $(body).addClass('modal-open')\n        if (scrollBarWidth !== 0) {\n          body.style.paddingRight = scrollBarWidth + 'px'\n        }\n        if (this.backdropBool) {\n          $(el).on('click', e => {\n            if (e.target === el) this.show = false\n          })\n        }\n      } else {\n        body.style.paddingRight = null\n        $(body).removeClass('modal-open')\n        $(el).removeClass('show in').on('transitionend', () => {\n          $(el).off('click transitionend')\n          el.style.display = 'none'\n        })\n      }\n    }\n  },\n  created () {\n    globalEventBus.$on('trigger:bind', this.bindTrigger)\n  },\n  methods: {\n    bindTrigger (trigger, popover) {\n      if (popover === this.id) {\n        trigger.setTriggerBy(this)\n      }\n    },\n    showModal (name) {\n      if (name === this.name) {\n        this.show = true\n      }\n    },\n    close () {\n      this.show = false\n    },\n    toggle () {\n      this.show = true\n    }\n  },\n  beforeDestroy () {\n    globalEventBus.$off('trigger:bind', this.bindTrigger)\n  }\n}\n</script>\n<style>\n.modal {\n  transition: all 0.3s ease;\n}\n.modal.in {\n  background-color: rgba(0,0,0,0.5);\n}\n.modal.zoom .modal-dialog {\n  -webkit-transform: scale(0.1);\n  -moz-transform: scale(0.1);\n  -ms-transform: scale(0.1);\n  transform: scale(0.1);\n  top: 300px;\n  opacity: 0;\n  -webkit-transition: all 0.3s;\n  -moz-transition: all 0.3s;\n  transition: all 0.3s;\n}\n.modal.zoom.in .modal-dialog {\n  -webkit-transform: scale(1);\n  -moz-transform: scale(1);\n  -ms-transform: scale(1);\n  transform: scale(1);\n  -webkit-transform: translate3d(0, -300px, 0);\n  transform: translate3d(0, -300px, 0);\n  opacity: 1;\n}\n</style>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.modal {\n  transition: all 0.3s ease;\n}\n.modal.in {\n  background-color: rgba(0,0,0,0.5);\n}\n.modal.zoom .modal-dialog {\n  -webkit-transform: scale(0.1);\n  -moz-transform: scale(0.1);\n  -ms-transform: scale(0.1);\n  transform: scale(0.1);\n  top: 300px;\n  opacity: 0;\n  -webkit-transition: all 0.3s;\n  -moz-transition: all 0.3s;\n  transition: all 0.3s;\n}\n.modal.zoom.in .modal-dialog {\n  -webkit-transform: scale(1);\n  -moz-transform: scale(1);\n  -ms-transform: scale(1);\n  transform: scale(1);\n  -webkit-transform: translate3d(0, -300px, 0);\n  transform: translate3d(0, -300px, 0);\n  opacity: 1;\n}\n", "", {"version":3,"sources":["/./src/Modal.vue?755bf6c0"],"names":[],"mappings":";AAoKA;EACA,0BAAA;CACA;AACA;EACA,kCAAA;CACA;AACA;EACA,8BAAA;EACA,2BAAA;EACA,0BAAA;EACA,sBAAA;EACA,WAAA;EACA,WAAA;EACA,6BAAA;EACA,0BAAA;EACA,qBAAA;CACA;AACA;EACA,4BAAA;EACA,yBAAA;EACA,wBAAA;EACA,oBAAA;EACA,6CAAA;EACA,qCAAA;EACA,WAAA;CACA","file":"Modal.vue","sourcesContent":["<template>\n  <div role=\"dialog\"\n    :class=\"[\n    {\n      'modal':true,\n      'fade':effect === 'fade',\n      'zoom':effect === 'zoom'\n    }, addClass]\">\n    <div v-bind:class=\"{'modal-dialog':true,'modal-lg':largeBool,'modal-sm':smallBool,'modal-dialog-centered':centerBool}\" role=\"document\"\n      v-bind:style=\"{width: optionalWidth}\">\n      <div class=\"modal-content\">\n        <slot name=\"header\">\n          <div class=\"modal-header\">\n            <h4 class=\"modal-title\">\n              <span name=\"title\">\n                <slot name=\"_header\"></slot>\n              </span>\n            </h4>\n            <button type=\"button\" class=\"close\" @click=\"close\"><span>&times;</span></button>\n          </div>\n        </slot>\n          <div class=\"modal-body\">\n              <slot></slot>\n          </div>\n        <slot name=\"footer\">\n          <div class=\"modal-footer\" v-if=\"showOkButton\">\n            <button type=\"button\" class=\"btn btn-primary\" v-if=\"showOkButton\" @click=\"close\">{{ okText }}</button>\n          </div>\n        </slot>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script>\nimport {globalEventBus} from './GlobalEventBus.js'\nimport {toBoolean, getScrollBarWidth} from './utils/utils.js'\nimport $ from './utils/NodeList.js'\n\nexport default {\n  props: {\n    okText: {\n      type: String,\n      default: ''\n    },\n    width: {\n      default: null\n    },\n    effect: {\n      type: String,\n      default: 'zoom'\n    },\n    backdrop: {\n      type: Boolean,\n      default: true\n    },\n    large: {\n      type: Boolean,\n      default: false\n    },\n    small: {\n      type: Boolean,\n      default: false\n    },\n    center: {\n      type: Boolean,\n      default: false\n    },\n    name: {\n      type: String\n    },\n    id: {\n      type: String\n    },\n    addClass: {\n      type: String,\n      default: ''\n    }\n  },\n  data() {\n    return {\n      show: false\n    }\n  },\n  computed: {\n    backdropBool () {\n      return toBoolean(this.backdrop)\n    },\n    largeBool () {\n      return toBoolean(this.large)\n    },\n    smallBool () {\n      return toBoolean(this.small)\n    },\n    centerBool () {\n      return toBoolean(this.center)\n    },\n    optionalWidth () {\n      if (this.width === null) {\n        return null\n      } else if (Number.isInteger(this.width)) {\n        return this.width + 'px'\n      }\n      return this.width\n    },\n    showOkButton () {\n      return this.okText.length !== 0;\n    }\n  },\n  watch: {\n    show (val) {\n      const el = this.$el\n      const body = document.body\n      const scrollBarWidth = getScrollBarWidth()\n      if (val) {\n        $(el).find('.modal-content').focus()\n        el.style.display = 'block'\n        setTimeout(() => $(el).addClass('show in'), 0)\n        $(body).addClass('modal-open')\n        if (scrollBarWidth !== 0) {\n          body.style.paddingRight = scrollBarWidth + 'px'\n        }\n        if (this.backdropBool) {\n          $(el).on('click', e => {\n            if (e.target === el) this.show = false\n          })\n        }\n      } else {\n        body.style.paddingRight = null\n        $(body).removeClass('modal-open')\n        $(el).removeClass('show in').on('transitionend', () => {\n          $(el).off('click transitionend')\n          el.style.display = 'none'\n        })\n      }\n    }\n  },\n  created () {\n    globalEventBus.$on('trigger:bind', this.bindTrigger)\n  },\n  methods: {\n    bindTrigger (trigger, popover) {\n      if (popover === this.id) {\n        trigger.setTriggerBy(this)\n      }\n    },\n    showModal (name) {\n      if (name === this.name) {\n        this.show = true\n      }\n    },\n    close () {\n      this.show = false\n    },\n    toggle () {\n      this.show = true\n    }\n  },\n  beforeDestroy () {\n    globalEventBus.$off('trigger:bind', this.bindTrigger)\n  }\n}\n</script>\n<style>\n.modal {\n  transition: all 0.3s ease;\n}\n.modal.in {\n  background-color: rgba(0,0,0,0.5);\n}\n.modal.zoom .modal-dialog {\n  -webkit-transform: scale(0.1);\n  -moz-transform: scale(0.1);\n  -ms-transform: scale(0.1);\n  transform: scale(0.1);\n  top: 300px;\n  opacity: 0;\n  -webkit-transition: all 0.3s;\n  -moz-transition: all 0.3s;\n  transition: all 0.3s;\n}\n.modal.zoom.in .modal-dialog {\n  -webkit-transform: scale(1);\n  -moz-transform: scale(1);\n  -ms-transform: scale(1);\n  transform: scale(1);\n  -webkit-transform: translate3d(0, -300px, 0);\n  transform: translate3d(0, -300px, 0);\n  opacity: 1;\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -13325,53 +13333,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _NodeList2 = _interopRequireDefault(_NodeList);
 	
-	var _markdown = __webpack_require__(90);
-	
-	var _markdown2 = _interopRequireDefault(_markdown);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
 	
 	exports.default = {
 	  props: {
 	    okText: {
-	      type: String,
-	      default: ''
-	    },
-	    title: {
 	      type: String,
 	      default: ''
 	    },
@@ -13427,9 +13393,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	    centerBool: function centerBool() {
 	      return (0, _utils.toBoolean)(this.center);
-	    },
-	    titleRendered: function titleRendered() {
-	      return _markdown2.default.renderInline(this.title);
 	    },
 	    optionalWidth: function optionalWidth() {
 	      if (this.width === null) {
@@ -13500,7 +13463,40 @@ return /******/ (function(modules) { // webpackBootstrap
 	  beforeDestroy: function beforeDestroy() {
 	    _GlobalEventBus.globalEventBus.$off('trigger:bind', this.bindTrigger);
 	  }
-	};
+	}; //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 /***/ }),
 /* 85 */
@@ -13553,13533 +13549,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	var markdownIt = __webpack_require__(91)({
-	  html: true,
-	  linkify: true
-	});
-	
-	markdownIt.use(__webpack_require__(159)).use(__webpack_require__(160)).use(__webpack_require__(161)).use(__webpack_require__(162)).use(__webpack_require__(159)).use(__webpack_require__(163)).use(__webpack_require__(167)).use(__webpack_require__(175), {
-	  autofill: false
-	});
-	
-	// fix emoji numbers
-	var emojiData = __webpack_require__(196);
-	// Extend emoji here
-	emojiData['zero'] = emojiData['0'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0030-20e3.png">';
-	emojiData['one'] = emojiData['1'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0031-20e3.png">';
-	emojiData['two'] = emojiData['2'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0032-20e3.png">';
-	emojiData['three'] = emojiData['3'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0033-20e3.png">';
-	emojiData['four'] = emojiData['4'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0034-20e3.png">';
-	emojiData['five'] = emojiData['5'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0035-20e3.png">';
-	emojiData['six'] = emojiData['6'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0036-20e3.png">';
-	emojiData['seven'] = emojiData['7'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0037-20e3.png">';
-	emojiData['eight'] = emojiData['8'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0038-20e3.png">';
-	emojiData['nine'] = emojiData['9'] = '<img style="height: 1em;width: 1em;margin: 0 .05em 0 .1em;vertical-align: -0.1em;" src="https://assets-cdn.github.com/images/icons/emoji/unicode/0039-20e3.png">';
-	markdownIt.use(__webpack_require__(197), {
-	  defs: emojiData
-	});
-	
-	exports.default = markdownIt;
-
-/***/ }),
-/* 91 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	
-	module.exports = __webpack_require__(92);
-
-
-/***/ }),
-/* 92 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// Main parser class
-	
-	'use strict';
-	
-	
-	var utils        = __webpack_require__(93);
-	var helpers      = __webpack_require__(107);
-	var Renderer     = __webpack_require__(111);
-	var ParserCore   = __webpack_require__(112);
-	var ParserBlock  = __webpack_require__(122);
-	var ParserInline = __webpack_require__(137);
-	var LinkifyIt    = __webpack_require__(152);
-	var mdurl        = __webpack_require__(97);
-	var punycode     = __webpack_require__(154);
-	
-	
-	var config = {
-	  'default': __webpack_require__(156),
-	  zero: __webpack_require__(157),
-	  commonmark: __webpack_require__(158)
-	};
-	
-	////////////////////////////////////////////////////////////////////////////////
-	//
-	// This validator can prohibit more than really needed to prevent XSS. It's a
-	// tradeoff to keep code simple and to be secure by default.
-	//
-	// If you need different setup - override validator method as you wish. Or
-	// replace it with dummy function and use external sanitizer.
-	//
-	
-	var BAD_PROTO_RE = /^(vbscript|javascript|file|data):/;
-	var GOOD_DATA_RE = /^data:image\/(gif|png|jpeg|webp);/;
-	
-	function validateLink(url) {
-	  // url should be normalized at this point, and existing entities are decoded
-	  var str = url.trim().toLowerCase();
-	
-	  return BAD_PROTO_RE.test(str) ? (GOOD_DATA_RE.test(str) ? true : false) : true;
-	}
-	
-	////////////////////////////////////////////////////////////////////////////////
-	
-	
-	var RECODE_HOSTNAME_FOR = [ 'http:', 'https:', 'mailto:' ];
-	
-	function normalizeLink(url) {
-	  var parsed = mdurl.parse(url, true);
-	
-	  if (parsed.hostname) {
-	    // Encode hostnames in urls like:
-	    // `http://host/`, `https://host/`, `mailto:user@host`, `//host/`
-	    //
-	    // We don't encode unknown schemas, because it's likely that we encode
-	    // something we shouldn't (e.g. `skype:name` treated as `skype:host`)
-	    //
-	    if (!parsed.protocol || RECODE_HOSTNAME_FOR.indexOf(parsed.protocol) >= 0) {
-	      try {
-	        parsed.hostname = punycode.toASCII(parsed.hostname);
-	      } catch (er) { /**/ }
-	    }
-	  }
-	
-	  return mdurl.encode(mdurl.format(parsed));
-	}
-	
-	function normalizeLinkText(url) {
-	  var parsed = mdurl.parse(url, true);
-	
-	  if (parsed.hostname) {
-	    // Encode hostnames in urls like:
-	    // `http://host/`, `https://host/`, `mailto:user@host`, `//host/`
-	    //
-	    // We don't encode unknown schemas, because it's likely that we encode
-	    // something we shouldn't (e.g. `skype:name` treated as `skype:host`)
-	    //
-	    if (!parsed.protocol || RECODE_HOSTNAME_FOR.indexOf(parsed.protocol) >= 0) {
-	      try {
-	        parsed.hostname = punycode.toUnicode(parsed.hostname);
-	      } catch (er) { /**/ }
-	    }
-	  }
-	
-	  return mdurl.decode(mdurl.format(parsed));
-	}
-	
-	
-	/**
-	 * class MarkdownIt
-	 *
-	 * Main parser/renderer class.
-	 *
-	 * ##### Usage
-	 *
-	 * ```javascript
-	 * // node.js, "classic" way:
-	 * var MarkdownIt = require('markdown-it'),
-	 *     md = new MarkdownIt();
-	 * var result = md.render('# markdown-it rulezz!');
-	 *
-	 * // node.js, the same, but with sugar:
-	 * var md = require('markdown-it')();
-	 * var result = md.render('# markdown-it rulezz!');
-	 *
-	 * // browser without AMD, added to "window" on script load
-	 * // Note, there are no dash.
-	 * var md = window.markdownit();
-	 * var result = md.render('# markdown-it rulezz!');
-	 * ```
-	 *
-	 * Single line rendering, without paragraph wrap:
-	 *
-	 * ```javascript
-	 * var md = require('markdown-it')();
-	 * var result = md.renderInline('__markdown-it__ rulezz!');
-	 * ```
-	 **/
-	
-	/**
-	 * new MarkdownIt([presetName, options])
-	 * - presetName (String): optional, `commonmark` / `zero`
-	 * - options (Object)
-	 *
-	 * Creates parser instanse with given config. Can be called without `new`.
-	 *
-	 * ##### presetName
-	 *
-	 * MarkdownIt provides named presets as a convenience to quickly
-	 * enable/disable active syntax rules and options for common use cases.
-	 *
-	 * - ["commonmark"](https://github.com/markdown-it/markdown-it/blob/master/lib/presets/commonmark.js) -
-	 *   configures parser to strict [CommonMark](http://commonmark.org/) mode.
-	 * - [default](https://github.com/markdown-it/markdown-it/blob/master/lib/presets/default.js) -
-	 *   similar to GFM, used when no preset name given. Enables all available rules,
-	 *   but still without html, typographer & autolinker.
-	 * - ["zero"](https://github.com/markdown-it/markdown-it/blob/master/lib/presets/zero.js) -
-	 *   all rules disabled. Useful to quickly setup your config via `.enable()`.
-	 *   For example, when you need only `bold` and `italic` markup and nothing else.
-	 *
-	 * ##### options:
-	 *
-	 * - __html__ - `false`. Set `true` to enable HTML tags in source. Be careful!
-	 *   That's not safe! You may need external sanitizer to protect output from XSS.
-	 *   It's better to extend features via plugins, instead of enabling HTML.
-	 * - __xhtmlOut__ - `false`. Set `true` to add '/' when closing single tags
-	 *   (`<br />`). This is needed only for full CommonMark compatibility. In real
-	 *   world you will need HTML output.
-	 * - __breaks__ - `false`. Set `true` to convert `\n` in paragraphs into `<br>`.
-	 * - __langPrefix__ - `language-`. CSS language class prefix for fenced blocks.
-	 *   Can be useful for external highlighters.
-	 * - __linkify__ - `false`. Set `true` to autoconvert URL-like text to links.
-	 * - __typographer__  - `false`. Set `true` to enable [some language-neutral
-	 *   replacement](https://github.com/markdown-it/markdown-it/blob/master/lib/rules_core/replacements.js) +
-	 *   quotes beautification (smartquotes).
-	 * - __quotes__ - `“”‘’`, String or Array. Double + single quotes replacement
-	 *   pairs, when typographer enabled and smartquotes on. For example, you can
-	 *   use `'«»„“'` for Russian, `'„“‚‘'` for German, and
-	 *   `['«\xA0', '\xA0»', '‹\xA0', '\xA0›']` for French (including nbsp).
-	 * - __highlight__ - `null`. Highlighter function for fenced code blocks.
-	 *   Highlighter `function (str, lang)` should return escaped HTML. It can also
-	 *   return empty string if the source was not changed and should be escaped
-	 *   externaly. If result starts with <pre... internal wrapper is skipped.
-	 *
-	 * ##### Example
-	 *
-	 * ```javascript
-	 * // commonmark mode
-	 * var md = require('markdown-it')('commonmark');
-	 *
-	 * // default mode
-	 * var md = require('markdown-it')();
-	 *
-	 * // enable everything
-	 * var md = require('markdown-it')({
-	 *   html: true,
-	 *   linkify: true,
-	 *   typographer: true
-	 * });
-	 * ```
-	 *
-	 * ##### Syntax highlighting
-	 *
-	 * ```js
-	 * var hljs = require('highlight.js') // https://highlightjs.org/
-	 *
-	 * var md = require('markdown-it')({
-	 *   highlight: function (str, lang) {
-	 *     if (lang && hljs.getLanguage(lang)) {
-	 *       try {
-	 *         return hljs.highlight(lang, str, true).value;
-	 *       } catch (__) {}
-	 *     }
-	 *
-	 *     return ''; // use external default escaping
-	 *   }
-	 * });
-	 * ```
-	 *
-	 * Or with full wrapper override (if you need assign class to `<pre>`):
-	 *
-	 * ```javascript
-	 * var hljs = require('highlight.js') // https://highlightjs.org/
-	 *
-	 * // Actual default values
-	 * var md = require('markdown-it')({
-	 *   highlight: function (str, lang) {
-	 *     if (lang && hljs.getLanguage(lang)) {
-	 *       try {
-	 *         return '<pre class="hljs"><code>' +
-	 *                hljs.highlight(lang, str, true).value +
-	 *                '</code></pre>';
-	 *       } catch (__) {}
-	 *     }
-	 *
-	 *     return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
-	 *   }
-	 * });
-	 * ```
-	 *
-	 **/
-	function MarkdownIt(presetName, options) {
-	  if (!(this instanceof MarkdownIt)) {
-	    return new MarkdownIt(presetName, options);
-	  }
-	
-	  if (!options) {
-	    if (!utils.isString(presetName)) {
-	      options = presetName || {};
-	      presetName = 'default';
-	    }
-	  }
-	
-	  /**
-	   * MarkdownIt#inline -> ParserInline
-	   *
-	   * Instance of [[ParserInline]]. You may need it to add new rules when
-	   * writing plugins. For simple rules control use [[MarkdownIt.disable]] and
-	   * [[MarkdownIt.enable]].
-	   **/
-	  this.inline = new ParserInline();
-	
-	  /**
-	   * MarkdownIt#block -> ParserBlock
-	   *
-	   * Instance of [[ParserBlock]]. You may need it to add new rules when
-	   * writing plugins. For simple rules control use [[MarkdownIt.disable]] and
-	   * [[MarkdownIt.enable]].
-	   **/
-	  this.block = new ParserBlock();
-	
-	  /**
-	   * MarkdownIt#core -> Core
-	   *
-	   * Instance of [[Core]] chain executor. You may need it to add new rules when
-	   * writing plugins. For simple rules control use [[MarkdownIt.disable]] and
-	   * [[MarkdownIt.enable]].
-	   **/
-	  this.core = new ParserCore();
-	
-	  /**
-	   * MarkdownIt#renderer -> Renderer
-	   *
-	   * Instance of [[Renderer]]. Use it to modify output look. Or to add rendering
-	   * rules for new token types, generated by plugins.
-	   *
-	   * ##### Example
-	   *
-	   * ```javascript
-	   * var md = require('markdown-it')();
-	   *
-	   * function myToken(tokens, idx, options, env, self) {
-	   *   //...
-	   *   return result;
-	   * };
-	   *
-	   * md.renderer.rules['my_token'] = myToken
-	   * ```
-	   *
-	   * See [[Renderer]] docs and [source code](https://github.com/markdown-it/markdown-it/blob/master/lib/renderer.js).
-	   **/
-	  this.renderer = new Renderer();
-	
-	  /**
-	   * MarkdownIt#linkify -> LinkifyIt
-	   *
-	   * [linkify-it](https://github.com/markdown-it/linkify-it) instance.
-	   * Used by [linkify](https://github.com/markdown-it/markdown-it/blob/master/lib/rules_core/linkify.js)
-	   * rule.
-	   **/
-	  this.linkify = new LinkifyIt();
-	
-	  /**
-	   * MarkdownIt#validateLink(url) -> Boolean
-	   *
-	   * Link validation function. CommonMark allows too much in links. By default
-	   * we disable `javascript:`, `vbscript:`, `file:` schemas, and almost all `data:...` schemas
-	   * except some embedded image types.
-	   *
-	   * You can change this behaviour:
-	   *
-	   * ```javascript
-	   * var md = require('markdown-it')();
-	   * // enable everything
-	   * md.validateLink = function () { return true; }
-	   * ```
-	   **/
-	  this.validateLink = validateLink;
-	
-	  /**
-	   * MarkdownIt#normalizeLink(url) -> String
-	   *
-	   * Function used to encode link url to a machine-readable format,
-	   * which includes url-encoding, punycode, etc.
-	   **/
-	  this.normalizeLink = normalizeLink;
-	
-	  /**
-	   * MarkdownIt#normalizeLinkText(url) -> String
-	   *
-	   * Function used to decode link url to a human-readable format`
-	   **/
-	  this.normalizeLinkText = normalizeLinkText;
-	
-	
-	  // Expose utils & helpers for easy acces from plugins
-	
-	  /**
-	   * MarkdownIt#utils -> utils
-	   *
-	   * Assorted utility functions, useful to write plugins. See details
-	   * [here](https://github.com/markdown-it/markdown-it/blob/master/lib/common/utils.js).
-	   **/
-	  this.utils = utils;
-	
-	  /**
-	   * MarkdownIt#helpers -> helpers
-	   *
-	   * Link components parser functions, useful to write plugins. See details
-	   * [here](https://github.com/markdown-it/markdown-it/blob/master/lib/helpers).
-	   **/
-	  this.helpers = utils.assign({}, helpers);
-	
-	
-	  this.options = {};
-	  this.configure(presetName);
-	
-	  if (options) { this.set(options); }
-	}
-	
-	
-	/** chainable
-	 * MarkdownIt.set(options)
-	 *
-	 * Set parser options (in the same format as in constructor). Probably, you
-	 * will never need it, but you can change options after constructor call.
-	 *
-	 * ##### Example
-	 *
-	 * ```javascript
-	 * var md = require('markdown-it')()
-	 *             .set({ html: true, breaks: true })
-	 *             .set({ typographer, true });
-	 * ```
-	 *
-	 * __Note:__ To achieve the best possible performance, don't modify a
-	 * `markdown-it` instance options on the fly. If you need multiple configurations
-	 * it's best to create multiple instances and initialize each with separate
-	 * config.
-	 **/
-	MarkdownIt.prototype.set = function (options) {
-	  utils.assign(this.options, options);
-	  return this;
-	};
-	
-	
-	/** chainable, internal
-	 * MarkdownIt.configure(presets)
-	 *
-	 * Batch load of all options and compenent settings. This is internal method,
-	 * and you probably will not need it. But if you with - see available presets
-	 * and data structure [here](https://github.com/markdown-it/markdown-it/tree/master/lib/presets)
-	 *
-	 * We strongly recommend to use presets instead of direct config loads. That
-	 * will give better compatibility with next versions.
-	 **/
-	MarkdownIt.prototype.configure = function (presets) {
-	  var self = this, presetName;
-	
-	  if (utils.isString(presets)) {
-	    presetName = presets;
-	    presets = config[presetName];
-	    if (!presets) { throw new Error('Wrong `markdown-it` preset "' + presetName + '", check name'); }
-	  }
-	
-	  if (!presets) { throw new Error('Wrong `markdown-it` preset, can\'t be empty'); }
-	
-	  if (presets.options) { self.set(presets.options); }
-	
-	  if (presets.components) {
-	    Object.keys(presets.components).forEach(function (name) {
-	      if (presets.components[name].rules) {
-	        self[name].ruler.enableOnly(presets.components[name].rules);
-	      }
-	      if (presets.components[name].rules2) {
-	        self[name].ruler2.enableOnly(presets.components[name].rules2);
-	      }
-	    });
-	  }
-	  return this;
-	};
-	
-	
-	/** chainable
-	 * MarkdownIt.enable(list, ignoreInvalid)
-	 * - list (String|Array): rule name or list of rule names to enable
-	 * - ignoreInvalid (Boolean): set `true` to ignore errors when rule not found.
-	 *
-	 * Enable list or rules. It will automatically find appropriate components,
-	 * containing rules with given names. If rule not found, and `ignoreInvalid`
-	 * not set - throws exception.
-	 *
-	 * ##### Example
-	 *
-	 * ```javascript
-	 * var md = require('markdown-it')()
-	 *             .enable(['sub', 'sup'])
-	 *             .disable('smartquotes');
-	 * ```
-	 **/
-	MarkdownIt.prototype.enable = function (list, ignoreInvalid) {
-	  var result = [];
-	
-	  if (!Array.isArray(list)) { list = [ list ]; }
-	
-	  [ 'core', 'block', 'inline' ].forEach(function (chain) {
-	    result = result.concat(this[chain].ruler.enable(list, true));
-	  }, this);
-	
-	  result = result.concat(this.inline.ruler2.enable(list, true));
-	
-	  var missed = list.filter(function (name) { return result.indexOf(name) < 0; });
-	
-	  if (missed.length && !ignoreInvalid) {
-	    throw new Error('MarkdownIt. Failed to enable unknown rule(s): ' + missed);
-	  }
-	
-	  return this;
-	};
-	
-	
-	/** chainable
-	 * MarkdownIt.disable(list, ignoreInvalid)
-	 * - list (String|Array): rule name or list of rule names to disable.
-	 * - ignoreInvalid (Boolean): set `true` to ignore errors when rule not found.
-	 *
-	 * The same as [[MarkdownIt.enable]], but turn specified rules off.
-	 **/
-	MarkdownIt.prototype.disable = function (list, ignoreInvalid) {
-	  var result = [];
-	
-	  if (!Array.isArray(list)) { list = [ list ]; }
-	
-	  [ 'core', 'block', 'inline' ].forEach(function (chain) {
-	    result = result.concat(this[chain].ruler.disable(list, true));
-	  }, this);
-	
-	  result = result.concat(this.inline.ruler2.disable(list, true));
-	
-	  var missed = list.filter(function (name) { return result.indexOf(name) < 0; });
-	
-	  if (missed.length && !ignoreInvalid) {
-	    throw new Error('MarkdownIt. Failed to disable unknown rule(s): ' + missed);
-	  }
-	  return this;
-	};
-	
-	
-	/** chainable
-	 * MarkdownIt.use(plugin, params)
-	 *
-	 * Load specified plugin with given params into current parser instance.
-	 * It's just a sugar to call `plugin(md, params)` with curring.
-	 *
-	 * ##### Example
-	 *
-	 * ```javascript
-	 * var iterator = require('markdown-it-for-inline');
-	 * var md = require('markdown-it')()
-	 *             .use(iterator, 'foo_replace', 'text', function (tokens, idx) {
-	 *               tokens[idx].content = tokens[idx].content.replace(/foo/g, 'bar');
-	 *             });
-	 * ```
-	 **/
-	MarkdownIt.prototype.use = function (plugin /*, params, ... */) {
-	  var args = [ this ].concat(Array.prototype.slice.call(arguments, 1));
-	  plugin.apply(plugin, args);
-	  return this;
-	};
-	
-	
-	/** internal
-	 * MarkdownIt.parse(src, env) -> Array
-	 * - src (String): source string
-	 * - env (Object): environment sandbox
-	 *
-	 * Parse input string and returns list of block tokens (special token type
-	 * "inline" will contain list of inline tokens). You should not call this
-	 * method directly, until you write custom renderer (for example, to produce
-	 * AST).
-	 *
-	 * `env` is used to pass data between "distributed" rules and return additional
-	 * metadata like reference info, needed for the renderer. It also can be used to
-	 * inject data in specific cases. Usually, you will be ok to pass `{}`,
-	 * and then pass updated object to renderer.
-	 **/
-	MarkdownIt.prototype.parse = function (src, env) {
-	  if (typeof src !== 'string') {
-	    throw new Error('Input data should be a String');
-	  }
-	
-	  var state = new this.core.State(src, this, env);
-	
-	  this.core.process(state);
-	
-	  return state.tokens;
-	};
-	
-	
-	/**
-	 * MarkdownIt.render(src [, env]) -> String
-	 * - src (String): source string
-	 * - env (Object): environment sandbox
-	 *
-	 * Render markdown string into html. It does all magic for you :).
-	 *
-	 * `env` can be used to inject additional metadata (`{}` by default).
-	 * But you will not need it with high probability. See also comment
-	 * in [[MarkdownIt.parse]].
-	 **/
-	MarkdownIt.prototype.render = function (src, env) {
-	  env = env || {};
-	
-	  return this.renderer.render(this.parse(src, env), this.options, env);
-	};
-	
-	
-	/** internal
-	 * MarkdownIt.parseInline(src, env) -> Array
-	 * - src (String): source string
-	 * - env (Object): environment sandbox
-	 *
-	 * The same as [[MarkdownIt.parse]] but skip all block rules. It returns the
-	 * block tokens list with the single `inline` element, containing parsed inline
-	 * tokens in `children` property. Also updates `env` object.
-	 **/
-	MarkdownIt.prototype.parseInline = function (src, env) {
-	  var state = new this.core.State(src, this, env);
-	
-	  state.inlineMode = true;
-	  this.core.process(state);
-	
-	  return state.tokens;
-	};
-	
-	
-	/**
-	 * MarkdownIt.renderInline(src [, env]) -> String
-	 * - src (String): source string
-	 * - env (Object): environment sandbox
-	 *
-	 * Similar to [[MarkdownIt.render]] but for single paragraph content. Result
-	 * will NOT be wrapped into `<p>` tags.
-	 **/
-	MarkdownIt.prototype.renderInline = function (src, env) {
-	  env = env || {};
-	
-	  return this.renderer.render(this.parseInline(src, env), this.options, env);
-	};
-	
-	
-	module.exports = MarkdownIt;
-
-
-/***/ }),
-/* 93 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// Utilities
-	//
-	'use strict';
-	
-	
-	function _class(obj) { return Object.prototype.toString.call(obj); }
-	
-	function isString(obj) { return _class(obj) === '[object String]'; }
-	
-	var _hasOwnProperty = Object.prototype.hasOwnProperty;
-	
-	function has(object, key) {
-	  return _hasOwnProperty.call(object, key);
-	}
-	
-	// Merge objects
-	//
-	function assign(obj /*from1, from2, from3, ...*/) {
-	  var sources = Array.prototype.slice.call(arguments, 1);
-	
-	  sources.forEach(function (source) {
-	    if (!source) { return; }
-	
-	    if (typeof source !== 'object') {
-	      throw new TypeError(source + 'must be object');
-	    }
-	
-	    Object.keys(source).forEach(function (key) {
-	      obj[key] = source[key];
-	    });
-	  });
-	
-	  return obj;
-	}
-	
-	// Remove element from array and put another array at those position.
-	// Useful for some operations with tokens
-	function arrayReplaceAt(src, pos, newElements) {
-	  return [].concat(src.slice(0, pos), newElements, src.slice(pos + 1));
-	}
-	
-	////////////////////////////////////////////////////////////////////////////////
-	
-	function isValidEntityCode(c) {
-	  /*eslint no-bitwise:0*/
-	  // broken sequence
-	  if (c >= 0xD800 && c <= 0xDFFF) { return false; }
-	  // never used
-	  if (c >= 0xFDD0 && c <= 0xFDEF) { return false; }
-	  if ((c & 0xFFFF) === 0xFFFF || (c & 0xFFFF) === 0xFFFE) { return false; }
-	  // control codes
-	  if (c >= 0x00 && c <= 0x08) { return false; }
-	  if (c === 0x0B) { return false; }
-	  if (c >= 0x0E && c <= 0x1F) { return false; }
-	  if (c >= 0x7F && c <= 0x9F) { return false; }
-	  // out of range
-	  if (c > 0x10FFFF) { return false; }
-	  return true;
-	}
-	
-	function fromCodePoint(c) {
-	  /*eslint no-bitwise:0*/
-	  if (c > 0xffff) {
-	    c -= 0x10000;
-	    var surrogate1 = 0xd800 + (c >> 10),
-	        surrogate2 = 0xdc00 + (c & 0x3ff);
-	
-	    return String.fromCharCode(surrogate1, surrogate2);
-	  }
-	  return String.fromCharCode(c);
-	}
-	
-	
-	var UNESCAPE_MD_RE  = /\\([!"#$%&'()*+,\-.\/:;<=>?@[\\\]^_`{|}~])/g;
-	var ENTITY_RE       = /&([a-z#][a-z0-9]{1,31});/gi;
-	var UNESCAPE_ALL_RE = new RegExp(UNESCAPE_MD_RE.source + '|' + ENTITY_RE.source, 'gi');
-	
-	var DIGITAL_ENTITY_TEST_RE = /^#((?:x[a-f0-9]{1,8}|[0-9]{1,8}))/i;
-	
-	var entities = __webpack_require__(94);
-	
-	function replaceEntityPattern(match, name) {
-	  var code = 0;
-	
-	  if (has(entities, name)) {
-	    return entities[name];
-	  }
-	
-	  if (name.charCodeAt(0) === 0x23/* # */ && DIGITAL_ENTITY_TEST_RE.test(name)) {
-	    code = name[1].toLowerCase() === 'x' ?
-	      parseInt(name.slice(2), 16)
-	    :
-	      parseInt(name.slice(1), 10);
-	    if (isValidEntityCode(code)) {
-	      return fromCodePoint(code);
-	    }
-	  }
-	
-	  return match;
-	}
-	
-	/*function replaceEntities(str) {
-	  if (str.indexOf('&') < 0) { return str; }
-	
-	  return str.replace(ENTITY_RE, replaceEntityPattern);
-	}*/
-	
-	function unescapeMd(str) {
-	  if (str.indexOf('\\') < 0) { return str; }
-	  return str.replace(UNESCAPE_MD_RE, '$1');
-	}
-	
-	function unescapeAll(str) {
-	  if (str.indexOf('\\') < 0 && str.indexOf('&') < 0) { return str; }
-	
-	  return str.replace(UNESCAPE_ALL_RE, function (match, escaped, entity) {
-	    if (escaped) { return escaped; }
-	    return replaceEntityPattern(match, entity);
-	  });
-	}
-	
-	////////////////////////////////////////////////////////////////////////////////
-	
-	var HTML_ESCAPE_TEST_RE = /[&<>"]/;
-	var HTML_ESCAPE_REPLACE_RE = /[&<>"]/g;
-	var HTML_REPLACEMENTS = {
-	  '&': '&amp;',
-	  '<': '&lt;',
-	  '>': '&gt;',
-	  '"': '&quot;'
-	};
-	
-	function replaceUnsafeChar(ch) {
-	  return HTML_REPLACEMENTS[ch];
-	}
-	
-	function escapeHtml(str) {
-	  if (HTML_ESCAPE_TEST_RE.test(str)) {
-	    return str.replace(HTML_ESCAPE_REPLACE_RE, replaceUnsafeChar);
-	  }
-	  return str;
-	}
-	
-	////////////////////////////////////////////////////////////////////////////////
-	
-	var REGEXP_ESCAPE_RE = /[.?*+^$[\]\\(){}|-]/g;
-	
-	function escapeRE(str) {
-	  return str.replace(REGEXP_ESCAPE_RE, '\\$&');
-	}
-	
-	////////////////////////////////////////////////////////////////////////////////
-	
-	function isSpace(code) {
-	  switch (code) {
-	    case 0x09:
-	    case 0x20:
-	      return true;
-	  }
-	  return false;
-	}
-	
-	// Zs (unicode class) || [\t\f\v\r\n]
-	function isWhiteSpace(code) {
-	  if (code >= 0x2000 && code <= 0x200A) { return true; }
-	  switch (code) {
-	    case 0x09: // \t
-	    case 0x0A: // \n
-	    case 0x0B: // \v
-	    case 0x0C: // \f
-	    case 0x0D: // \r
-	    case 0x20:
-	    case 0xA0:
-	    case 0x1680:
-	    case 0x202F:
-	    case 0x205F:
-	    case 0x3000:
-	      return true;
-	  }
-	  return false;
-	}
-	
-	////////////////////////////////////////////////////////////////////////////////
-	
-	/*eslint-disable max-len*/
-	var UNICODE_PUNCT_RE = __webpack_require__(96);
-	
-	// Currently without astral characters support.
-	function isPunctChar(ch) {
-	  return UNICODE_PUNCT_RE.test(ch);
-	}
-	
-	
-	// Markdown ASCII punctuation characters.
-	//
-	// !, ", #, $, %, &, ', (, ), *, +, ,, -, ., /, :, ;, <, =, >, ?, @, [, \, ], ^, _, `, {, |, }, or ~
-	// http://spec.commonmark.org/0.15/#ascii-punctuation-character
-	//
-	// Don't confuse with unicode punctuation !!! It lacks some chars in ascii range.
-	//
-	function isMdAsciiPunct(ch) {
-	  switch (ch) {
-	    case 0x21/* ! */:
-	    case 0x22/* " */:
-	    case 0x23/* # */:
-	    case 0x24/* $ */:
-	    case 0x25/* % */:
-	    case 0x26/* & */:
-	    case 0x27/* ' */:
-	    case 0x28/* ( */:
-	    case 0x29/* ) */:
-	    case 0x2A/* * */:
-	    case 0x2B/* + */:
-	    case 0x2C/* , */:
-	    case 0x2D/* - */:
-	    case 0x2E/* . */:
-	    case 0x2F/* / */:
-	    case 0x3A/* : */:
-	    case 0x3B/* ; */:
-	    case 0x3C/* < */:
-	    case 0x3D/* = */:
-	    case 0x3E/* > */:
-	    case 0x3F/* ? */:
-	    case 0x40/* @ */:
-	    case 0x5B/* [ */:
-	    case 0x5C/* \ */:
-	    case 0x5D/* ] */:
-	    case 0x5E/* ^ */:
-	    case 0x5F/* _ */:
-	    case 0x60/* ` */:
-	    case 0x7B/* { */:
-	    case 0x7C/* | */:
-	    case 0x7D/* } */:
-	    case 0x7E/* ~ */:
-	      return true;
-	    default:
-	      return false;
-	  }
-	}
-	
-	// Hepler to unify [reference labels].
-	//
-	function normalizeReference(str) {
-	  // use .toUpperCase() instead of .toLowerCase()
-	  // here to avoid a conflict with Object.prototype
-	  // members (most notably, `__proto__`)
-	  return str.trim().replace(/\s+/g, ' ').toUpperCase();
-	}
-	
-	////////////////////////////////////////////////////////////////////////////////
-	
-	// Re-export libraries commonly used in both markdown-it and its plugins,
-	// so plugins won't have to depend on them explicitly, which reduces their
-	// bundled size (e.g. a browser build).
-	//
-	exports.lib                 = {};
-	exports.lib.mdurl           = __webpack_require__(97);
-	exports.lib.ucmicro         = __webpack_require__(102);
-	
-	exports.assign              = assign;
-	exports.isString            = isString;
-	exports.has                 = has;
-	exports.unescapeMd          = unescapeMd;
-	exports.unescapeAll         = unescapeAll;
-	exports.isValidEntityCode   = isValidEntityCode;
-	exports.fromCodePoint       = fromCodePoint;
-	// exports.replaceEntities     = replaceEntities;
-	exports.escapeHtml          = escapeHtml;
-	exports.arrayReplaceAt      = arrayReplaceAt;
-	exports.isSpace             = isSpace;
-	exports.isWhiteSpace        = isWhiteSpace;
-	exports.isMdAsciiPunct      = isMdAsciiPunct;
-	exports.isPunctChar         = isPunctChar;
-	exports.escapeRE            = escapeRE;
-	exports.normalizeReference  = normalizeReference;
-
-
-/***/ }),
-/* 94 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// HTML5 entities map: { name -> utf16string }
-	//
-	'use strict';
-	
-	/*eslint quotes:0*/
-	module.exports = __webpack_require__(95);
-
-
-/***/ }),
-/* 95 */
-/***/ (function(module, exports) {
-
-	module.exports = {"Aacute":"Á","aacute":"á","Abreve":"Ă","abreve":"ă","ac":"∾","acd":"∿","acE":"∾̳","Acirc":"Â","acirc":"â","acute":"´","Acy":"А","acy":"а","AElig":"Æ","aelig":"æ","af":"⁡","Afr":"𝔄","afr":"𝔞","Agrave":"À","agrave":"à","alefsym":"ℵ","aleph":"ℵ","Alpha":"Α","alpha":"α","Amacr":"Ā","amacr":"ā","amalg":"⨿","amp":"&","AMP":"&","andand":"⩕","And":"⩓","and":"∧","andd":"⩜","andslope":"⩘","andv":"⩚","ang":"∠","ange":"⦤","angle":"∠","angmsdaa":"⦨","angmsdab":"⦩","angmsdac":"⦪","angmsdad":"⦫","angmsdae":"⦬","angmsdaf":"⦭","angmsdag":"⦮","angmsdah":"⦯","angmsd":"∡","angrt":"∟","angrtvb":"⊾","angrtvbd":"⦝","angsph":"∢","angst":"Å","angzarr":"⍼","Aogon":"Ą","aogon":"ą","Aopf":"𝔸","aopf":"𝕒","apacir":"⩯","ap":"≈","apE":"⩰","ape":"≊","apid":"≋","apos":"'","ApplyFunction":"⁡","approx":"≈","approxeq":"≊","Aring":"Å","aring":"å","Ascr":"𝒜","ascr":"𝒶","Assign":"≔","ast":"*","asymp":"≈","asympeq":"≍","Atilde":"Ã","atilde":"ã","Auml":"Ä","auml":"ä","awconint":"∳","awint":"⨑","backcong":"≌","backepsilon":"϶","backprime":"‵","backsim":"∽","backsimeq":"⋍","Backslash":"∖","Barv":"⫧","barvee":"⊽","barwed":"⌅","Barwed":"⌆","barwedge":"⌅","bbrk":"⎵","bbrktbrk":"⎶","bcong":"≌","Bcy":"Б","bcy":"б","bdquo":"„","becaus":"∵","because":"∵","Because":"∵","bemptyv":"⦰","bepsi":"϶","bernou":"ℬ","Bernoullis":"ℬ","Beta":"Β","beta":"β","beth":"ℶ","between":"≬","Bfr":"𝔅","bfr":"𝔟","bigcap":"⋂","bigcirc":"◯","bigcup":"⋃","bigodot":"⨀","bigoplus":"⨁","bigotimes":"⨂","bigsqcup":"⨆","bigstar":"★","bigtriangledown":"▽","bigtriangleup":"△","biguplus":"⨄","bigvee":"⋁","bigwedge":"⋀","bkarow":"⤍","blacklozenge":"⧫","blacksquare":"▪","blacktriangle":"▴","blacktriangledown":"▾","blacktriangleleft":"◂","blacktriangleright":"▸","blank":"␣","blk12":"▒","blk14":"░","blk34":"▓","block":"█","bne":"=⃥","bnequiv":"≡⃥","bNot":"⫭","bnot":"⌐","Bopf":"𝔹","bopf":"𝕓","bot":"⊥","bottom":"⊥","bowtie":"⋈","boxbox":"⧉","boxdl":"┐","boxdL":"╕","boxDl":"╖","boxDL":"╗","boxdr":"┌","boxdR":"╒","boxDr":"╓","boxDR":"╔","boxh":"─","boxH":"═","boxhd":"┬","boxHd":"╤","boxhD":"╥","boxHD":"╦","boxhu":"┴","boxHu":"╧","boxhU":"╨","boxHU":"╩","boxminus":"⊟","boxplus":"⊞","boxtimes":"⊠","boxul":"┘","boxuL":"╛","boxUl":"╜","boxUL":"╝","boxur":"└","boxuR":"╘","boxUr":"╙","boxUR":"╚","boxv":"│","boxV":"║","boxvh":"┼","boxvH":"╪","boxVh":"╫","boxVH":"╬","boxvl":"┤","boxvL":"╡","boxVl":"╢","boxVL":"╣","boxvr":"├","boxvR":"╞","boxVr":"╟","boxVR":"╠","bprime":"‵","breve":"˘","Breve":"˘","brvbar":"¦","bscr":"𝒷","Bscr":"ℬ","bsemi":"⁏","bsim":"∽","bsime":"⋍","bsolb":"⧅","bsol":"\\","bsolhsub":"⟈","bull":"•","bullet":"•","bump":"≎","bumpE":"⪮","bumpe":"≏","Bumpeq":"≎","bumpeq":"≏","Cacute":"Ć","cacute":"ć","capand":"⩄","capbrcup":"⩉","capcap":"⩋","cap":"∩","Cap":"⋒","capcup":"⩇","capdot":"⩀","CapitalDifferentialD":"ⅅ","caps":"∩︀","caret":"⁁","caron":"ˇ","Cayleys":"ℭ","ccaps":"⩍","Ccaron":"Č","ccaron":"č","Ccedil":"Ç","ccedil":"ç","Ccirc":"Ĉ","ccirc":"ĉ","Cconint":"∰","ccups":"⩌","ccupssm":"⩐","Cdot":"Ċ","cdot":"ċ","cedil":"¸","Cedilla":"¸","cemptyv":"⦲","cent":"¢","centerdot":"·","CenterDot":"·","cfr":"𝔠","Cfr":"ℭ","CHcy":"Ч","chcy":"ч","check":"✓","checkmark":"✓","Chi":"Χ","chi":"χ","circ":"ˆ","circeq":"≗","circlearrowleft":"↺","circlearrowright":"↻","circledast":"⊛","circledcirc":"⊚","circleddash":"⊝","CircleDot":"⊙","circledR":"®","circledS":"Ⓢ","CircleMinus":"⊖","CirclePlus":"⊕","CircleTimes":"⊗","cir":"○","cirE":"⧃","cire":"≗","cirfnint":"⨐","cirmid":"⫯","cirscir":"⧂","ClockwiseContourIntegral":"∲","CloseCurlyDoubleQuote":"”","CloseCurlyQuote":"’","clubs":"♣","clubsuit":"♣","colon":":","Colon":"∷","Colone":"⩴","colone":"≔","coloneq":"≔","comma":",","commat":"@","comp":"∁","compfn":"∘","complement":"∁","complexes":"ℂ","cong":"≅","congdot":"⩭","Congruent":"≡","conint":"∮","Conint":"∯","ContourIntegral":"∮","copf":"𝕔","Copf":"ℂ","coprod":"∐","Coproduct":"∐","copy":"©","COPY":"©","copysr":"℗","CounterClockwiseContourIntegral":"∳","crarr":"↵","cross":"✗","Cross":"⨯","Cscr":"𝒞","cscr":"𝒸","csub":"⫏","csube":"⫑","csup":"⫐","csupe":"⫒","ctdot":"⋯","cudarrl":"⤸","cudarrr":"⤵","cuepr":"⋞","cuesc":"⋟","cularr":"↶","cularrp":"⤽","cupbrcap":"⩈","cupcap":"⩆","CupCap":"≍","cup":"∪","Cup":"⋓","cupcup":"⩊","cupdot":"⊍","cupor":"⩅","cups":"∪︀","curarr":"↷","curarrm":"⤼","curlyeqprec":"⋞","curlyeqsucc":"⋟","curlyvee":"⋎","curlywedge":"⋏","curren":"¤","curvearrowleft":"↶","curvearrowright":"↷","cuvee":"⋎","cuwed":"⋏","cwconint":"∲","cwint":"∱","cylcty":"⌭","dagger":"†","Dagger":"‡","daleth":"ℸ","darr":"↓","Darr":"↡","dArr":"⇓","dash":"‐","Dashv":"⫤","dashv":"⊣","dbkarow":"⤏","dblac":"˝","Dcaron":"Ď","dcaron":"ď","Dcy":"Д","dcy":"д","ddagger":"‡","ddarr":"⇊","DD":"ⅅ","dd":"ⅆ","DDotrahd":"⤑","ddotseq":"⩷","deg":"°","Del":"∇","Delta":"Δ","delta":"δ","demptyv":"⦱","dfisht":"⥿","Dfr":"𝔇","dfr":"𝔡","dHar":"⥥","dharl":"⇃","dharr":"⇂","DiacriticalAcute":"´","DiacriticalDot":"˙","DiacriticalDoubleAcute":"˝","DiacriticalGrave":"`","DiacriticalTilde":"˜","diam":"⋄","diamond":"⋄","Diamond":"⋄","diamondsuit":"♦","diams":"♦","die":"¨","DifferentialD":"ⅆ","digamma":"ϝ","disin":"⋲","div":"÷","divide":"÷","divideontimes":"⋇","divonx":"⋇","DJcy":"Ђ","djcy":"ђ","dlcorn":"⌞","dlcrop":"⌍","dollar":"$","Dopf":"𝔻","dopf":"𝕕","Dot":"¨","dot":"˙","DotDot":"⃜","doteq":"≐","doteqdot":"≑","DotEqual":"≐","dotminus":"∸","dotplus":"∔","dotsquare":"⊡","doublebarwedge":"⌆","DoubleContourIntegral":"∯","DoubleDot":"¨","DoubleDownArrow":"⇓","DoubleLeftArrow":"⇐","DoubleLeftRightArrow":"⇔","DoubleLeftTee":"⫤","DoubleLongLeftArrow":"⟸","DoubleLongLeftRightArrow":"⟺","DoubleLongRightArrow":"⟹","DoubleRightArrow":"⇒","DoubleRightTee":"⊨","DoubleUpArrow":"⇑","DoubleUpDownArrow":"⇕","DoubleVerticalBar":"∥","DownArrowBar":"⤓","downarrow":"↓","DownArrow":"↓","Downarrow":"⇓","DownArrowUpArrow":"⇵","DownBreve":"̑","downdownarrows":"⇊","downharpoonleft":"⇃","downharpoonright":"⇂","DownLeftRightVector":"⥐","DownLeftTeeVector":"⥞","DownLeftVectorBar":"⥖","DownLeftVector":"↽","DownRightTeeVector":"⥟","DownRightVectorBar":"⥗","DownRightVector":"⇁","DownTeeArrow":"↧","DownTee":"⊤","drbkarow":"⤐","drcorn":"⌟","drcrop":"⌌","Dscr":"𝒟","dscr":"𝒹","DScy":"Ѕ","dscy":"ѕ","dsol":"⧶","Dstrok":"Đ","dstrok":"đ","dtdot":"⋱","dtri":"▿","dtrif":"▾","duarr":"⇵","duhar":"⥯","dwangle":"⦦","DZcy":"Џ","dzcy":"џ","dzigrarr":"⟿","Eacute":"É","eacute":"é","easter":"⩮","Ecaron":"Ě","ecaron":"ě","Ecirc":"Ê","ecirc":"ê","ecir":"≖","ecolon":"≕","Ecy":"Э","ecy":"э","eDDot":"⩷","Edot":"Ė","edot":"ė","eDot":"≑","ee":"ⅇ","efDot":"≒","Efr":"𝔈","efr":"𝔢","eg":"⪚","Egrave":"È","egrave":"è","egs":"⪖","egsdot":"⪘","el":"⪙","Element":"∈","elinters":"⏧","ell":"ℓ","els":"⪕","elsdot":"⪗","Emacr":"Ē","emacr":"ē","empty":"∅","emptyset":"∅","EmptySmallSquare":"◻","emptyv":"∅","EmptyVerySmallSquare":"▫","emsp13":" ","emsp14":" ","emsp":" ","ENG":"Ŋ","eng":"ŋ","ensp":" ","Eogon":"Ę","eogon":"ę","Eopf":"𝔼","eopf":"𝕖","epar":"⋕","eparsl":"⧣","eplus":"⩱","epsi":"ε","Epsilon":"Ε","epsilon":"ε","epsiv":"ϵ","eqcirc":"≖","eqcolon":"≕","eqsim":"≂","eqslantgtr":"⪖","eqslantless":"⪕","Equal":"⩵","equals":"=","EqualTilde":"≂","equest":"≟","Equilibrium":"⇌","equiv":"≡","equivDD":"⩸","eqvparsl":"⧥","erarr":"⥱","erDot":"≓","escr":"ℯ","Escr":"ℰ","esdot":"≐","Esim":"⩳","esim":"≂","Eta":"Η","eta":"η","ETH":"Ð","eth":"ð","Euml":"Ë","euml":"ë","euro":"€","excl":"!","exist":"∃","Exists":"∃","expectation":"ℰ","exponentiale":"ⅇ","ExponentialE":"ⅇ","fallingdotseq":"≒","Fcy":"Ф","fcy":"ф","female":"♀","ffilig":"ﬃ","fflig":"ﬀ","ffllig":"ﬄ","Ffr":"𝔉","ffr":"𝔣","filig":"ﬁ","FilledSmallSquare":"◼","FilledVerySmallSquare":"▪","fjlig":"fj","flat":"♭","fllig":"ﬂ","fltns":"▱","fnof":"ƒ","Fopf":"𝔽","fopf":"𝕗","forall":"∀","ForAll":"∀","fork":"⋔","forkv":"⫙","Fouriertrf":"ℱ","fpartint":"⨍","frac12":"½","frac13":"⅓","frac14":"¼","frac15":"⅕","frac16":"⅙","frac18":"⅛","frac23":"⅔","frac25":"⅖","frac34":"¾","frac35":"⅗","frac38":"⅜","frac45":"⅘","frac56":"⅚","frac58":"⅝","frac78":"⅞","frasl":"⁄","frown":"⌢","fscr":"𝒻","Fscr":"ℱ","gacute":"ǵ","Gamma":"Γ","gamma":"γ","Gammad":"Ϝ","gammad":"ϝ","gap":"⪆","Gbreve":"Ğ","gbreve":"ğ","Gcedil":"Ģ","Gcirc":"Ĝ","gcirc":"ĝ","Gcy":"Г","gcy":"г","Gdot":"Ġ","gdot":"ġ","ge":"≥","gE":"≧","gEl":"⪌","gel":"⋛","geq":"≥","geqq":"≧","geqslant":"⩾","gescc":"⪩","ges":"⩾","gesdot":"⪀","gesdoto":"⪂","gesdotol":"⪄","gesl":"⋛︀","gesles":"⪔","Gfr":"𝔊","gfr":"𝔤","gg":"≫","Gg":"⋙","ggg":"⋙","gimel":"ℷ","GJcy":"Ѓ","gjcy":"ѓ","gla":"⪥","gl":"≷","glE":"⪒","glj":"⪤","gnap":"⪊","gnapprox":"⪊","gne":"⪈","gnE":"≩","gneq":"⪈","gneqq":"≩","gnsim":"⋧","Gopf":"𝔾","gopf":"𝕘","grave":"`","GreaterEqual":"≥","GreaterEqualLess":"⋛","GreaterFullEqual":"≧","GreaterGreater":"⪢","GreaterLess":"≷","GreaterSlantEqual":"⩾","GreaterTilde":"≳","Gscr":"𝒢","gscr":"ℊ","gsim":"≳","gsime":"⪎","gsiml":"⪐","gtcc":"⪧","gtcir":"⩺","gt":">","GT":">","Gt":"≫","gtdot":"⋗","gtlPar":"⦕","gtquest":"⩼","gtrapprox":"⪆","gtrarr":"⥸","gtrdot":"⋗","gtreqless":"⋛","gtreqqless":"⪌","gtrless":"≷","gtrsim":"≳","gvertneqq":"≩︀","gvnE":"≩︀","Hacek":"ˇ","hairsp":" ","half":"½","hamilt":"ℋ","HARDcy":"Ъ","hardcy":"ъ","harrcir":"⥈","harr":"↔","hArr":"⇔","harrw":"↭","Hat":"^","hbar":"ℏ","Hcirc":"Ĥ","hcirc":"ĥ","hearts":"♥","heartsuit":"♥","hellip":"…","hercon":"⊹","hfr":"𝔥","Hfr":"ℌ","HilbertSpace":"ℋ","hksearow":"⤥","hkswarow":"⤦","hoarr":"⇿","homtht":"∻","hookleftarrow":"↩","hookrightarrow":"↪","hopf":"𝕙","Hopf":"ℍ","horbar":"―","HorizontalLine":"─","hscr":"𝒽","Hscr":"ℋ","hslash":"ℏ","Hstrok":"Ħ","hstrok":"ħ","HumpDownHump":"≎","HumpEqual":"≏","hybull":"⁃","hyphen":"‐","Iacute":"Í","iacute":"í","ic":"⁣","Icirc":"Î","icirc":"î","Icy":"И","icy":"и","Idot":"İ","IEcy":"Е","iecy":"е","iexcl":"¡","iff":"⇔","ifr":"𝔦","Ifr":"ℑ","Igrave":"Ì","igrave":"ì","ii":"ⅈ","iiiint":"⨌","iiint":"∭","iinfin":"⧜","iiota":"℩","IJlig":"Ĳ","ijlig":"ĳ","Imacr":"Ī","imacr":"ī","image":"ℑ","ImaginaryI":"ⅈ","imagline":"ℐ","imagpart":"ℑ","imath":"ı","Im":"ℑ","imof":"⊷","imped":"Ƶ","Implies":"⇒","incare":"℅","in":"∈","infin":"∞","infintie":"⧝","inodot":"ı","intcal":"⊺","int":"∫","Int":"∬","integers":"ℤ","Integral":"∫","intercal":"⊺","Intersection":"⋂","intlarhk":"⨗","intprod":"⨼","InvisibleComma":"⁣","InvisibleTimes":"⁢","IOcy":"Ё","iocy":"ё","Iogon":"Į","iogon":"į","Iopf":"𝕀","iopf":"𝕚","Iota":"Ι","iota":"ι","iprod":"⨼","iquest":"¿","iscr":"𝒾","Iscr":"ℐ","isin":"∈","isindot":"⋵","isinE":"⋹","isins":"⋴","isinsv":"⋳","isinv":"∈","it":"⁢","Itilde":"Ĩ","itilde":"ĩ","Iukcy":"І","iukcy":"і","Iuml":"Ï","iuml":"ï","Jcirc":"Ĵ","jcirc":"ĵ","Jcy":"Й","jcy":"й","Jfr":"𝔍","jfr":"𝔧","jmath":"ȷ","Jopf":"𝕁","jopf":"𝕛","Jscr":"𝒥","jscr":"𝒿","Jsercy":"Ј","jsercy":"ј","Jukcy":"Є","jukcy":"є","Kappa":"Κ","kappa":"κ","kappav":"ϰ","Kcedil":"Ķ","kcedil":"ķ","Kcy":"К","kcy":"к","Kfr":"𝔎","kfr":"𝔨","kgreen":"ĸ","KHcy":"Х","khcy":"х","KJcy":"Ќ","kjcy":"ќ","Kopf":"𝕂","kopf":"𝕜","Kscr":"𝒦","kscr":"𝓀","lAarr":"⇚","Lacute":"Ĺ","lacute":"ĺ","laemptyv":"⦴","lagran":"ℒ","Lambda":"Λ","lambda":"λ","lang":"⟨","Lang":"⟪","langd":"⦑","langle":"⟨","lap":"⪅","Laplacetrf":"ℒ","laquo":"«","larrb":"⇤","larrbfs":"⤟","larr":"←","Larr":"↞","lArr":"⇐","larrfs":"⤝","larrhk":"↩","larrlp":"↫","larrpl":"⤹","larrsim":"⥳","larrtl":"↢","latail":"⤙","lAtail":"⤛","lat":"⪫","late":"⪭","lates":"⪭︀","lbarr":"⤌","lBarr":"⤎","lbbrk":"❲","lbrace":"{","lbrack":"[","lbrke":"⦋","lbrksld":"⦏","lbrkslu":"⦍","Lcaron":"Ľ","lcaron":"ľ","Lcedil":"Ļ","lcedil":"ļ","lceil":"⌈","lcub":"{","Lcy":"Л","lcy":"л","ldca":"⤶","ldquo":"“","ldquor":"„","ldrdhar":"⥧","ldrushar":"⥋","ldsh":"↲","le":"≤","lE":"≦","LeftAngleBracket":"⟨","LeftArrowBar":"⇤","leftarrow":"←","LeftArrow":"←","Leftarrow":"⇐","LeftArrowRightArrow":"⇆","leftarrowtail":"↢","LeftCeiling":"⌈","LeftDoubleBracket":"⟦","LeftDownTeeVector":"⥡","LeftDownVectorBar":"⥙","LeftDownVector":"⇃","LeftFloor":"⌊","leftharpoondown":"↽","leftharpoonup":"↼","leftleftarrows":"⇇","leftrightarrow":"↔","LeftRightArrow":"↔","Leftrightarrow":"⇔","leftrightarrows":"⇆","leftrightharpoons":"⇋","leftrightsquigarrow":"↭","LeftRightVector":"⥎","LeftTeeArrow":"↤","LeftTee":"⊣","LeftTeeVector":"⥚","leftthreetimes":"⋋","LeftTriangleBar":"⧏","LeftTriangle":"⊲","LeftTriangleEqual":"⊴","LeftUpDownVector":"⥑","LeftUpTeeVector":"⥠","LeftUpVectorBar":"⥘","LeftUpVector":"↿","LeftVectorBar":"⥒","LeftVector":"↼","lEg":"⪋","leg":"⋚","leq":"≤","leqq":"≦","leqslant":"⩽","lescc":"⪨","les":"⩽","lesdot":"⩿","lesdoto":"⪁","lesdotor":"⪃","lesg":"⋚︀","lesges":"⪓","lessapprox":"⪅","lessdot":"⋖","lesseqgtr":"⋚","lesseqqgtr":"⪋","LessEqualGreater":"⋚","LessFullEqual":"≦","LessGreater":"≶","lessgtr":"≶","LessLess":"⪡","lesssim":"≲","LessSlantEqual":"⩽","LessTilde":"≲","lfisht":"⥼","lfloor":"⌊","Lfr":"𝔏","lfr":"𝔩","lg":"≶","lgE":"⪑","lHar":"⥢","lhard":"↽","lharu":"↼","lharul":"⥪","lhblk":"▄","LJcy":"Љ","ljcy":"љ","llarr":"⇇","ll":"≪","Ll":"⋘","llcorner":"⌞","Lleftarrow":"⇚","llhard":"⥫","lltri":"◺","Lmidot":"Ŀ","lmidot":"ŀ","lmoustache":"⎰","lmoust":"⎰","lnap":"⪉","lnapprox":"⪉","lne":"⪇","lnE":"≨","lneq":"⪇","lneqq":"≨","lnsim":"⋦","loang":"⟬","loarr":"⇽","lobrk":"⟦","longleftarrow":"⟵","LongLeftArrow":"⟵","Longleftarrow":"⟸","longleftrightarrow":"⟷","LongLeftRightArrow":"⟷","Longleftrightarrow":"⟺","longmapsto":"⟼","longrightarrow":"⟶","LongRightArrow":"⟶","Longrightarrow":"⟹","looparrowleft":"↫","looparrowright":"↬","lopar":"⦅","Lopf":"𝕃","lopf":"𝕝","loplus":"⨭","lotimes":"⨴","lowast":"∗","lowbar":"_","LowerLeftArrow":"↙","LowerRightArrow":"↘","loz":"◊","lozenge":"◊","lozf":"⧫","lpar":"(","lparlt":"⦓","lrarr":"⇆","lrcorner":"⌟","lrhar":"⇋","lrhard":"⥭","lrm":"‎","lrtri":"⊿","lsaquo":"‹","lscr":"𝓁","Lscr":"ℒ","lsh":"↰","Lsh":"↰","lsim":"≲","lsime":"⪍","lsimg":"⪏","lsqb":"[","lsquo":"‘","lsquor":"‚","Lstrok":"Ł","lstrok":"ł","ltcc":"⪦","ltcir":"⩹","lt":"<","LT":"<","Lt":"≪","ltdot":"⋖","lthree":"⋋","ltimes":"⋉","ltlarr":"⥶","ltquest":"⩻","ltri":"◃","ltrie":"⊴","ltrif":"◂","ltrPar":"⦖","lurdshar":"⥊","luruhar":"⥦","lvertneqq":"≨︀","lvnE":"≨︀","macr":"¯","male":"♂","malt":"✠","maltese":"✠","Map":"⤅","map":"↦","mapsto":"↦","mapstodown":"↧","mapstoleft":"↤","mapstoup":"↥","marker":"▮","mcomma":"⨩","Mcy":"М","mcy":"м","mdash":"—","mDDot":"∺","measuredangle":"∡","MediumSpace":" ","Mellintrf":"ℳ","Mfr":"𝔐","mfr":"𝔪","mho":"℧","micro":"µ","midast":"*","midcir":"⫰","mid":"∣","middot":"·","minusb":"⊟","minus":"−","minusd":"∸","minusdu":"⨪","MinusPlus":"∓","mlcp":"⫛","mldr":"…","mnplus":"∓","models":"⊧","Mopf":"𝕄","mopf":"𝕞","mp":"∓","mscr":"𝓂","Mscr":"ℳ","mstpos":"∾","Mu":"Μ","mu":"μ","multimap":"⊸","mumap":"⊸","nabla":"∇","Nacute":"Ń","nacute":"ń","nang":"∠⃒","nap":"≉","napE":"⩰̸","napid":"≋̸","napos":"ŉ","napprox":"≉","natural":"♮","naturals":"ℕ","natur":"♮","nbsp":" ","nbump":"≎̸","nbumpe":"≏̸","ncap":"⩃","Ncaron":"Ň","ncaron":"ň","Ncedil":"Ņ","ncedil":"ņ","ncong":"≇","ncongdot":"⩭̸","ncup":"⩂","Ncy":"Н","ncy":"н","ndash":"–","nearhk":"⤤","nearr":"↗","neArr":"⇗","nearrow":"↗","ne":"≠","nedot":"≐̸","NegativeMediumSpace":"​","NegativeThickSpace":"​","NegativeThinSpace":"​","NegativeVeryThinSpace":"​","nequiv":"≢","nesear":"⤨","nesim":"≂̸","NestedGreaterGreater":"≫","NestedLessLess":"≪","NewLine":"\n","nexist":"∄","nexists":"∄","Nfr":"𝔑","nfr":"𝔫","ngE":"≧̸","nge":"≱","ngeq":"≱","ngeqq":"≧̸","ngeqslant":"⩾̸","nges":"⩾̸","nGg":"⋙̸","ngsim":"≵","nGt":"≫⃒","ngt":"≯","ngtr":"≯","nGtv":"≫̸","nharr":"↮","nhArr":"⇎","nhpar":"⫲","ni":"∋","nis":"⋼","nisd":"⋺","niv":"∋","NJcy":"Њ","njcy":"њ","nlarr":"↚","nlArr":"⇍","nldr":"‥","nlE":"≦̸","nle":"≰","nleftarrow":"↚","nLeftarrow":"⇍","nleftrightarrow":"↮","nLeftrightarrow":"⇎","nleq":"≰","nleqq":"≦̸","nleqslant":"⩽̸","nles":"⩽̸","nless":"≮","nLl":"⋘̸","nlsim":"≴","nLt":"≪⃒","nlt":"≮","nltri":"⋪","nltrie":"⋬","nLtv":"≪̸","nmid":"∤","NoBreak":"⁠","NonBreakingSpace":" ","nopf":"𝕟","Nopf":"ℕ","Not":"⫬","not":"¬","NotCongruent":"≢","NotCupCap":"≭","NotDoubleVerticalBar":"∦","NotElement":"∉","NotEqual":"≠","NotEqualTilde":"≂̸","NotExists":"∄","NotGreater":"≯","NotGreaterEqual":"≱","NotGreaterFullEqual":"≧̸","NotGreaterGreater":"≫̸","NotGreaterLess":"≹","NotGreaterSlantEqual":"⩾̸","NotGreaterTilde":"≵","NotHumpDownHump":"≎̸","NotHumpEqual":"≏̸","notin":"∉","notindot":"⋵̸","notinE":"⋹̸","notinva":"∉","notinvb":"⋷","notinvc":"⋶","NotLeftTriangleBar":"⧏̸","NotLeftTriangle":"⋪","NotLeftTriangleEqual":"⋬","NotLess":"≮","NotLessEqual":"≰","NotLessGreater":"≸","NotLessLess":"≪̸","NotLessSlantEqual":"⩽̸","NotLessTilde":"≴","NotNestedGreaterGreater":"⪢̸","NotNestedLessLess":"⪡̸","notni":"∌","notniva":"∌","notnivb":"⋾","notnivc":"⋽","NotPrecedes":"⊀","NotPrecedesEqual":"⪯̸","NotPrecedesSlantEqual":"⋠","NotReverseElement":"∌","NotRightTriangleBar":"⧐̸","NotRightTriangle":"⋫","NotRightTriangleEqual":"⋭","NotSquareSubset":"⊏̸","NotSquareSubsetEqual":"⋢","NotSquareSuperset":"⊐̸","NotSquareSupersetEqual":"⋣","NotSubset":"⊂⃒","NotSubsetEqual":"⊈","NotSucceeds":"⊁","NotSucceedsEqual":"⪰̸","NotSucceedsSlantEqual":"⋡","NotSucceedsTilde":"≿̸","NotSuperset":"⊃⃒","NotSupersetEqual":"⊉","NotTilde":"≁","NotTildeEqual":"≄","NotTildeFullEqual":"≇","NotTildeTilde":"≉","NotVerticalBar":"∤","nparallel":"∦","npar":"∦","nparsl":"⫽⃥","npart":"∂̸","npolint":"⨔","npr":"⊀","nprcue":"⋠","nprec":"⊀","npreceq":"⪯̸","npre":"⪯̸","nrarrc":"⤳̸","nrarr":"↛","nrArr":"⇏","nrarrw":"↝̸","nrightarrow":"↛","nRightarrow":"⇏","nrtri":"⋫","nrtrie":"⋭","nsc":"⊁","nsccue":"⋡","nsce":"⪰̸","Nscr":"𝒩","nscr":"𝓃","nshortmid":"∤","nshortparallel":"∦","nsim":"≁","nsime":"≄","nsimeq":"≄","nsmid":"∤","nspar":"∦","nsqsube":"⋢","nsqsupe":"⋣","nsub":"⊄","nsubE":"⫅̸","nsube":"⊈","nsubset":"⊂⃒","nsubseteq":"⊈","nsubseteqq":"⫅̸","nsucc":"⊁","nsucceq":"⪰̸","nsup":"⊅","nsupE":"⫆̸","nsupe":"⊉","nsupset":"⊃⃒","nsupseteq":"⊉","nsupseteqq":"⫆̸","ntgl":"≹","Ntilde":"Ñ","ntilde":"ñ","ntlg":"≸","ntriangleleft":"⋪","ntrianglelefteq":"⋬","ntriangleright":"⋫","ntrianglerighteq":"⋭","Nu":"Ν","nu":"ν","num":"#","numero":"№","numsp":" ","nvap":"≍⃒","nvdash":"⊬","nvDash":"⊭","nVdash":"⊮","nVDash":"⊯","nvge":"≥⃒","nvgt":">⃒","nvHarr":"⤄","nvinfin":"⧞","nvlArr":"⤂","nvle":"≤⃒","nvlt":"<⃒","nvltrie":"⊴⃒","nvrArr":"⤃","nvrtrie":"⊵⃒","nvsim":"∼⃒","nwarhk":"⤣","nwarr":"↖","nwArr":"⇖","nwarrow":"↖","nwnear":"⤧","Oacute":"Ó","oacute":"ó","oast":"⊛","Ocirc":"Ô","ocirc":"ô","ocir":"⊚","Ocy":"О","ocy":"о","odash":"⊝","Odblac":"Ő","odblac":"ő","odiv":"⨸","odot":"⊙","odsold":"⦼","OElig":"Œ","oelig":"œ","ofcir":"⦿","Ofr":"𝔒","ofr":"𝔬","ogon":"˛","Ograve":"Ò","ograve":"ò","ogt":"⧁","ohbar":"⦵","ohm":"Ω","oint":"∮","olarr":"↺","olcir":"⦾","olcross":"⦻","oline":"‾","olt":"⧀","Omacr":"Ō","omacr":"ō","Omega":"Ω","omega":"ω","Omicron":"Ο","omicron":"ο","omid":"⦶","ominus":"⊖","Oopf":"𝕆","oopf":"𝕠","opar":"⦷","OpenCurlyDoubleQuote":"“","OpenCurlyQuote":"‘","operp":"⦹","oplus":"⊕","orarr":"↻","Or":"⩔","or":"∨","ord":"⩝","order":"ℴ","orderof":"ℴ","ordf":"ª","ordm":"º","origof":"⊶","oror":"⩖","orslope":"⩗","orv":"⩛","oS":"Ⓢ","Oscr":"𝒪","oscr":"ℴ","Oslash":"Ø","oslash":"ø","osol":"⊘","Otilde":"Õ","otilde":"õ","otimesas":"⨶","Otimes":"⨷","otimes":"⊗","Ouml":"Ö","ouml":"ö","ovbar":"⌽","OverBar":"‾","OverBrace":"⏞","OverBracket":"⎴","OverParenthesis":"⏜","para":"¶","parallel":"∥","par":"∥","parsim":"⫳","parsl":"⫽","part":"∂","PartialD":"∂","Pcy":"П","pcy":"п","percnt":"%","period":".","permil":"‰","perp":"⊥","pertenk":"‱","Pfr":"𝔓","pfr":"𝔭","Phi":"Φ","phi":"φ","phiv":"ϕ","phmmat":"ℳ","phone":"☎","Pi":"Π","pi":"π","pitchfork":"⋔","piv":"ϖ","planck":"ℏ","planckh":"ℎ","plankv":"ℏ","plusacir":"⨣","plusb":"⊞","pluscir":"⨢","plus":"+","plusdo":"∔","plusdu":"⨥","pluse":"⩲","PlusMinus":"±","plusmn":"±","plussim":"⨦","plustwo":"⨧","pm":"±","Poincareplane":"ℌ","pointint":"⨕","popf":"𝕡","Popf":"ℙ","pound":"£","prap":"⪷","Pr":"⪻","pr":"≺","prcue":"≼","precapprox":"⪷","prec":"≺","preccurlyeq":"≼","Precedes":"≺","PrecedesEqual":"⪯","PrecedesSlantEqual":"≼","PrecedesTilde":"≾","preceq":"⪯","precnapprox":"⪹","precneqq":"⪵","precnsim":"⋨","pre":"⪯","prE":"⪳","precsim":"≾","prime":"′","Prime":"″","primes":"ℙ","prnap":"⪹","prnE":"⪵","prnsim":"⋨","prod":"∏","Product":"∏","profalar":"⌮","profline":"⌒","profsurf":"⌓","prop":"∝","Proportional":"∝","Proportion":"∷","propto":"∝","prsim":"≾","prurel":"⊰","Pscr":"𝒫","pscr":"𝓅","Psi":"Ψ","psi":"ψ","puncsp":" ","Qfr":"𝔔","qfr":"𝔮","qint":"⨌","qopf":"𝕢","Qopf":"ℚ","qprime":"⁗","Qscr":"𝒬","qscr":"𝓆","quaternions":"ℍ","quatint":"⨖","quest":"?","questeq":"≟","quot":"\"","QUOT":"\"","rAarr":"⇛","race":"∽̱","Racute":"Ŕ","racute":"ŕ","radic":"√","raemptyv":"⦳","rang":"⟩","Rang":"⟫","rangd":"⦒","range":"⦥","rangle":"⟩","raquo":"»","rarrap":"⥵","rarrb":"⇥","rarrbfs":"⤠","rarrc":"⤳","rarr":"→","Rarr":"↠","rArr":"⇒","rarrfs":"⤞","rarrhk":"↪","rarrlp":"↬","rarrpl":"⥅","rarrsim":"⥴","Rarrtl":"⤖","rarrtl":"↣","rarrw":"↝","ratail":"⤚","rAtail":"⤜","ratio":"∶","rationals":"ℚ","rbarr":"⤍","rBarr":"⤏","RBarr":"⤐","rbbrk":"❳","rbrace":"}","rbrack":"]","rbrke":"⦌","rbrksld":"⦎","rbrkslu":"⦐","Rcaron":"Ř","rcaron":"ř","Rcedil":"Ŗ","rcedil":"ŗ","rceil":"⌉","rcub":"}","Rcy":"Р","rcy":"р","rdca":"⤷","rdldhar":"⥩","rdquo":"”","rdquor":"”","rdsh":"↳","real":"ℜ","realine":"ℛ","realpart":"ℜ","reals":"ℝ","Re":"ℜ","rect":"▭","reg":"®","REG":"®","ReverseElement":"∋","ReverseEquilibrium":"⇋","ReverseUpEquilibrium":"⥯","rfisht":"⥽","rfloor":"⌋","rfr":"𝔯","Rfr":"ℜ","rHar":"⥤","rhard":"⇁","rharu":"⇀","rharul":"⥬","Rho":"Ρ","rho":"ρ","rhov":"ϱ","RightAngleBracket":"⟩","RightArrowBar":"⇥","rightarrow":"→","RightArrow":"→","Rightarrow":"⇒","RightArrowLeftArrow":"⇄","rightarrowtail":"↣","RightCeiling":"⌉","RightDoubleBracket":"⟧","RightDownTeeVector":"⥝","RightDownVectorBar":"⥕","RightDownVector":"⇂","RightFloor":"⌋","rightharpoondown":"⇁","rightharpoonup":"⇀","rightleftarrows":"⇄","rightleftharpoons":"⇌","rightrightarrows":"⇉","rightsquigarrow":"↝","RightTeeArrow":"↦","RightTee":"⊢","RightTeeVector":"⥛","rightthreetimes":"⋌","RightTriangleBar":"⧐","RightTriangle":"⊳","RightTriangleEqual":"⊵","RightUpDownVector":"⥏","RightUpTeeVector":"⥜","RightUpVectorBar":"⥔","RightUpVector":"↾","RightVectorBar":"⥓","RightVector":"⇀","ring":"˚","risingdotseq":"≓","rlarr":"⇄","rlhar":"⇌","rlm":"‏","rmoustache":"⎱","rmoust":"⎱","rnmid":"⫮","roang":"⟭","roarr":"⇾","robrk":"⟧","ropar":"⦆","ropf":"𝕣","Ropf":"ℝ","roplus":"⨮","rotimes":"⨵","RoundImplies":"⥰","rpar":")","rpargt":"⦔","rppolint":"⨒","rrarr":"⇉","Rrightarrow":"⇛","rsaquo":"›","rscr":"𝓇","Rscr":"ℛ","rsh":"↱","Rsh":"↱","rsqb":"]","rsquo":"’","rsquor":"’","rthree":"⋌","rtimes":"⋊","rtri":"▹","rtrie":"⊵","rtrif":"▸","rtriltri":"⧎","RuleDelayed":"⧴","ruluhar":"⥨","rx":"℞","Sacute":"Ś","sacute":"ś","sbquo":"‚","scap":"⪸","Scaron":"Š","scaron":"š","Sc":"⪼","sc":"≻","sccue":"≽","sce":"⪰","scE":"⪴","Scedil":"Ş","scedil":"ş","Scirc":"Ŝ","scirc":"ŝ","scnap":"⪺","scnE":"⪶","scnsim":"⋩","scpolint":"⨓","scsim":"≿","Scy":"С","scy":"с","sdotb":"⊡","sdot":"⋅","sdote":"⩦","searhk":"⤥","searr":"↘","seArr":"⇘","searrow":"↘","sect":"§","semi":";","seswar":"⤩","setminus":"∖","setmn":"∖","sext":"✶","Sfr":"𝔖","sfr":"𝔰","sfrown":"⌢","sharp":"♯","SHCHcy":"Щ","shchcy":"щ","SHcy":"Ш","shcy":"ш","ShortDownArrow":"↓","ShortLeftArrow":"←","shortmid":"∣","shortparallel":"∥","ShortRightArrow":"→","ShortUpArrow":"↑","shy":"­","Sigma":"Σ","sigma":"σ","sigmaf":"ς","sigmav":"ς","sim":"∼","simdot":"⩪","sime":"≃","simeq":"≃","simg":"⪞","simgE":"⪠","siml":"⪝","simlE":"⪟","simne":"≆","simplus":"⨤","simrarr":"⥲","slarr":"←","SmallCircle":"∘","smallsetminus":"∖","smashp":"⨳","smeparsl":"⧤","smid":"∣","smile":"⌣","smt":"⪪","smte":"⪬","smtes":"⪬︀","SOFTcy":"Ь","softcy":"ь","solbar":"⌿","solb":"⧄","sol":"/","Sopf":"𝕊","sopf":"𝕤","spades":"♠","spadesuit":"♠","spar":"∥","sqcap":"⊓","sqcaps":"⊓︀","sqcup":"⊔","sqcups":"⊔︀","Sqrt":"√","sqsub":"⊏","sqsube":"⊑","sqsubset":"⊏","sqsubseteq":"⊑","sqsup":"⊐","sqsupe":"⊒","sqsupset":"⊐","sqsupseteq":"⊒","square":"□","Square":"□","SquareIntersection":"⊓","SquareSubset":"⊏","SquareSubsetEqual":"⊑","SquareSuperset":"⊐","SquareSupersetEqual":"⊒","SquareUnion":"⊔","squarf":"▪","squ":"□","squf":"▪","srarr":"→","Sscr":"𝒮","sscr":"𝓈","ssetmn":"∖","ssmile":"⌣","sstarf":"⋆","Star":"⋆","star":"☆","starf":"★","straightepsilon":"ϵ","straightphi":"ϕ","strns":"¯","sub":"⊂","Sub":"⋐","subdot":"⪽","subE":"⫅","sube":"⊆","subedot":"⫃","submult":"⫁","subnE":"⫋","subne":"⊊","subplus":"⪿","subrarr":"⥹","subset":"⊂","Subset":"⋐","subseteq":"⊆","subseteqq":"⫅","SubsetEqual":"⊆","subsetneq":"⊊","subsetneqq":"⫋","subsim":"⫇","subsub":"⫕","subsup":"⫓","succapprox":"⪸","succ":"≻","succcurlyeq":"≽","Succeeds":"≻","SucceedsEqual":"⪰","SucceedsSlantEqual":"≽","SucceedsTilde":"≿","succeq":"⪰","succnapprox":"⪺","succneqq":"⪶","succnsim":"⋩","succsim":"≿","SuchThat":"∋","sum":"∑","Sum":"∑","sung":"♪","sup1":"¹","sup2":"²","sup3":"³","sup":"⊃","Sup":"⋑","supdot":"⪾","supdsub":"⫘","supE":"⫆","supe":"⊇","supedot":"⫄","Superset":"⊃","SupersetEqual":"⊇","suphsol":"⟉","suphsub":"⫗","suplarr":"⥻","supmult":"⫂","supnE":"⫌","supne":"⊋","supplus":"⫀","supset":"⊃","Supset":"⋑","supseteq":"⊇","supseteqq":"⫆","supsetneq":"⊋","supsetneqq":"⫌","supsim":"⫈","supsub":"⫔","supsup":"⫖","swarhk":"⤦","swarr":"↙","swArr":"⇙","swarrow":"↙","swnwar":"⤪","szlig":"ß","Tab":"\t","target":"⌖","Tau":"Τ","tau":"τ","tbrk":"⎴","Tcaron":"Ť","tcaron":"ť","Tcedil":"Ţ","tcedil":"ţ","Tcy":"Т","tcy":"т","tdot":"⃛","telrec":"⌕","Tfr":"𝔗","tfr":"𝔱","there4":"∴","therefore":"∴","Therefore":"∴","Theta":"Θ","theta":"θ","thetasym":"ϑ","thetav":"ϑ","thickapprox":"≈","thicksim":"∼","ThickSpace":"  ","ThinSpace":" ","thinsp":" ","thkap":"≈","thksim":"∼","THORN":"Þ","thorn":"þ","tilde":"˜","Tilde":"∼","TildeEqual":"≃","TildeFullEqual":"≅","TildeTilde":"≈","timesbar":"⨱","timesb":"⊠","times":"×","timesd":"⨰","tint":"∭","toea":"⤨","topbot":"⌶","topcir":"⫱","top":"⊤","Topf":"𝕋","topf":"𝕥","topfork":"⫚","tosa":"⤩","tprime":"‴","trade":"™","TRADE":"™","triangle":"▵","triangledown":"▿","triangleleft":"◃","trianglelefteq":"⊴","triangleq":"≜","triangleright":"▹","trianglerighteq":"⊵","tridot":"◬","trie":"≜","triminus":"⨺","TripleDot":"⃛","triplus":"⨹","trisb":"⧍","tritime":"⨻","trpezium":"⏢","Tscr":"𝒯","tscr":"𝓉","TScy":"Ц","tscy":"ц","TSHcy":"Ћ","tshcy":"ћ","Tstrok":"Ŧ","tstrok":"ŧ","twixt":"≬","twoheadleftarrow":"↞","twoheadrightarrow":"↠","Uacute":"Ú","uacute":"ú","uarr":"↑","Uarr":"↟","uArr":"⇑","Uarrocir":"⥉","Ubrcy":"Ў","ubrcy":"ў","Ubreve":"Ŭ","ubreve":"ŭ","Ucirc":"Û","ucirc":"û","Ucy":"У","ucy":"у","udarr":"⇅","Udblac":"Ű","udblac":"ű","udhar":"⥮","ufisht":"⥾","Ufr":"𝔘","ufr":"𝔲","Ugrave":"Ù","ugrave":"ù","uHar":"⥣","uharl":"↿","uharr":"↾","uhblk":"▀","ulcorn":"⌜","ulcorner":"⌜","ulcrop":"⌏","ultri":"◸","Umacr":"Ū","umacr":"ū","uml":"¨","UnderBar":"_","UnderBrace":"⏟","UnderBracket":"⎵","UnderParenthesis":"⏝","Union":"⋃","UnionPlus":"⊎","Uogon":"Ų","uogon":"ų","Uopf":"𝕌","uopf":"𝕦","UpArrowBar":"⤒","uparrow":"↑","UpArrow":"↑","Uparrow":"⇑","UpArrowDownArrow":"⇅","updownarrow":"↕","UpDownArrow":"↕","Updownarrow":"⇕","UpEquilibrium":"⥮","upharpoonleft":"↿","upharpoonright":"↾","uplus":"⊎","UpperLeftArrow":"↖","UpperRightArrow":"↗","upsi":"υ","Upsi":"ϒ","upsih":"ϒ","Upsilon":"Υ","upsilon":"υ","UpTeeArrow":"↥","UpTee":"⊥","upuparrows":"⇈","urcorn":"⌝","urcorner":"⌝","urcrop":"⌎","Uring":"Ů","uring":"ů","urtri":"◹","Uscr":"𝒰","uscr":"𝓊","utdot":"⋰","Utilde":"Ũ","utilde":"ũ","utri":"▵","utrif":"▴","uuarr":"⇈","Uuml":"Ü","uuml":"ü","uwangle":"⦧","vangrt":"⦜","varepsilon":"ϵ","varkappa":"ϰ","varnothing":"∅","varphi":"ϕ","varpi":"ϖ","varpropto":"∝","varr":"↕","vArr":"⇕","varrho":"ϱ","varsigma":"ς","varsubsetneq":"⊊︀","varsubsetneqq":"⫋︀","varsupsetneq":"⊋︀","varsupsetneqq":"⫌︀","vartheta":"ϑ","vartriangleleft":"⊲","vartriangleright":"⊳","vBar":"⫨","Vbar":"⫫","vBarv":"⫩","Vcy":"В","vcy":"в","vdash":"⊢","vDash":"⊨","Vdash":"⊩","VDash":"⊫","Vdashl":"⫦","veebar":"⊻","vee":"∨","Vee":"⋁","veeeq":"≚","vellip":"⋮","verbar":"|","Verbar":"‖","vert":"|","Vert":"‖","VerticalBar":"∣","VerticalLine":"|","VerticalSeparator":"❘","VerticalTilde":"≀","VeryThinSpace":" ","Vfr":"𝔙","vfr":"𝔳","vltri":"⊲","vnsub":"⊂⃒","vnsup":"⊃⃒","Vopf":"𝕍","vopf":"𝕧","vprop":"∝","vrtri":"⊳","Vscr":"𝒱","vscr":"𝓋","vsubnE":"⫋︀","vsubne":"⊊︀","vsupnE":"⫌︀","vsupne":"⊋︀","Vvdash":"⊪","vzigzag":"⦚","Wcirc":"Ŵ","wcirc":"ŵ","wedbar":"⩟","wedge":"∧","Wedge":"⋀","wedgeq":"≙","weierp":"℘","Wfr":"𝔚","wfr":"𝔴","Wopf":"𝕎","wopf":"𝕨","wp":"℘","wr":"≀","wreath":"≀","Wscr":"𝒲","wscr":"𝓌","xcap":"⋂","xcirc":"◯","xcup":"⋃","xdtri":"▽","Xfr":"𝔛","xfr":"𝔵","xharr":"⟷","xhArr":"⟺","Xi":"Ξ","xi":"ξ","xlarr":"⟵","xlArr":"⟸","xmap":"⟼","xnis":"⋻","xodot":"⨀","Xopf":"𝕏","xopf":"𝕩","xoplus":"⨁","xotime":"⨂","xrarr":"⟶","xrArr":"⟹","Xscr":"𝒳","xscr":"𝓍","xsqcup":"⨆","xuplus":"⨄","xutri":"△","xvee":"⋁","xwedge":"⋀","Yacute":"Ý","yacute":"ý","YAcy":"Я","yacy":"я","Ycirc":"Ŷ","ycirc":"ŷ","Ycy":"Ы","ycy":"ы","yen":"¥","Yfr":"𝔜","yfr":"𝔶","YIcy":"Ї","yicy":"ї","Yopf":"𝕐","yopf":"𝕪","Yscr":"𝒴","yscr":"𝓎","YUcy":"Ю","yucy":"ю","yuml":"ÿ","Yuml":"Ÿ","Zacute":"Ź","zacute":"ź","Zcaron":"Ž","zcaron":"ž","Zcy":"З","zcy":"з","Zdot":"Ż","zdot":"ż","zeetrf":"ℨ","ZeroWidthSpace":"​","Zeta":"Ζ","zeta":"ζ","zfr":"𝔷","Zfr":"ℨ","ZHcy":"Ж","zhcy":"ж","zigrarr":"⇝","zopf":"𝕫","Zopf":"ℤ","Zscr":"𝒵","zscr":"𝓏","zwj":"‍","zwnj":"‌"}
-
-/***/ }),
-/* 96 */
-/***/ (function(module, exports) {
-
-	module.exports=/[!-#%-\*,-/:;\?@\[-\]_\{\}\xA1\xA7\xAB\xB6\xB7\xBB\xBF\u037E\u0387\u055A-\u055F\u0589\u058A\u05BE\u05C0\u05C3\u05C6\u05F3\u05F4\u0609\u060A\u060C\u060D\u061B\u061E\u061F\u066A-\u066D\u06D4\u0700-\u070D\u07F7-\u07F9\u0830-\u083E\u085E\u0964\u0965\u0970\u0AF0\u0DF4\u0E4F\u0E5A\u0E5B\u0F04-\u0F12\u0F14\u0F3A-\u0F3D\u0F85\u0FD0-\u0FD4\u0FD9\u0FDA\u104A-\u104F\u10FB\u1360-\u1368\u1400\u166D\u166E\u169B\u169C\u16EB-\u16ED\u1735\u1736\u17D4-\u17D6\u17D8-\u17DA\u1800-\u180A\u1944\u1945\u1A1E\u1A1F\u1AA0-\u1AA6\u1AA8-\u1AAD\u1B5A-\u1B60\u1BFC-\u1BFF\u1C3B-\u1C3F\u1C7E\u1C7F\u1CC0-\u1CC7\u1CD3\u2010-\u2027\u2030-\u2043\u2045-\u2051\u2053-\u205E\u207D\u207E\u208D\u208E\u2308-\u230B\u2329\u232A\u2768-\u2775\u27C5\u27C6\u27E6-\u27EF\u2983-\u2998\u29D8-\u29DB\u29FC\u29FD\u2CF9-\u2CFC\u2CFE\u2CFF\u2D70\u2E00-\u2E2E\u2E30-\u2E44\u3001-\u3003\u3008-\u3011\u3014-\u301F\u3030\u303D\u30A0\u30FB\uA4FE\uA4FF\uA60D-\uA60F\uA673\uA67E\uA6F2-\uA6F7\uA874-\uA877\uA8CE\uA8CF\uA8F8-\uA8FA\uA8FC\uA92E\uA92F\uA95F\uA9C1-\uA9CD\uA9DE\uA9DF\uAA5C-\uAA5F\uAADE\uAADF\uAAF0\uAAF1\uABEB\uFD3E\uFD3F\uFE10-\uFE19\uFE30-\uFE52\uFE54-\uFE61\uFE63\uFE68\uFE6A\uFE6B\uFF01-\uFF03\uFF05-\uFF0A\uFF0C-\uFF0F\uFF1A\uFF1B\uFF1F\uFF20\uFF3B-\uFF3D\uFF3F\uFF5B\uFF5D\uFF5F-\uFF65]|\uD800[\uDD00-\uDD02\uDF9F\uDFD0]|\uD801\uDD6F|\uD802[\uDC57\uDD1F\uDD3F\uDE50-\uDE58\uDE7F\uDEF0-\uDEF6\uDF39-\uDF3F\uDF99-\uDF9C]|\uD804[\uDC47-\uDC4D\uDCBB\uDCBC\uDCBE-\uDCC1\uDD40-\uDD43\uDD74\uDD75\uDDC5-\uDDC9\uDDCD\uDDDB\uDDDD-\uDDDF\uDE38-\uDE3D\uDEA9]|\uD805[\uDC4B-\uDC4F\uDC5B\uDC5D\uDCC6\uDDC1-\uDDD7\uDE41-\uDE43\uDE60-\uDE6C\uDF3C-\uDF3E]|\uD807[\uDC41-\uDC45\uDC70\uDC71]|\uD809[\uDC70-\uDC74]|\uD81A[\uDE6E\uDE6F\uDEF5\uDF37-\uDF3B\uDF44]|\uD82F\uDC9F|\uD836[\uDE87-\uDE8B]|\uD83A[\uDD5E\uDD5F]/
-
-/***/ }),
-/* 97 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	
-	module.exports.encode = __webpack_require__(98);
-	module.exports.decode = __webpack_require__(99);
-	module.exports.format = __webpack_require__(100);
-	module.exports.parse  = __webpack_require__(101);
-
-
-/***/ }),
-/* 98 */
-/***/ (function(module, exports) {
-
-	
-	'use strict';
-	
-	
-	var encodeCache = {};
-	
-	
-	// Create a lookup array where anything but characters in `chars` string
-	// and alphanumeric chars is percent-encoded.
-	//
-	function getEncodeCache(exclude) {
-	  var i, ch, cache = encodeCache[exclude];
-	  if (cache) { return cache; }
-	
-	  cache = encodeCache[exclude] = [];
-	
-	  for (i = 0; i < 128; i++) {
-	    ch = String.fromCharCode(i);
-	
-	    if (/^[0-9a-z]$/i.test(ch)) {
-	      // always allow unencoded alphanumeric characters
-	      cache.push(ch);
-	    } else {
-	      cache.push('%' + ('0' + i.toString(16).toUpperCase()).slice(-2));
-	    }
-	  }
-	
-	  for (i = 0; i < exclude.length; i++) {
-	    cache[exclude.charCodeAt(i)] = exclude[i];
-	  }
-	
-	  return cache;
-	}
-	
-	
-	// Encode unsafe characters with percent-encoding, skipping already
-	// encoded sequences.
-	//
-	//  - string       - string to encode
-	//  - exclude      - list of characters to ignore (in addition to a-zA-Z0-9)
-	//  - keepEscaped  - don't encode '%' in a correct escape sequence (default: true)
-	//
-	function encode(string, exclude, keepEscaped) {
-	  var i, l, code, nextCode, cache,
-	      result = '';
-	
-	  if (typeof exclude !== 'string') {
-	    // encode(string, keepEscaped)
-	    keepEscaped  = exclude;
-	    exclude = encode.defaultChars;
-	  }
-	
-	  if (typeof keepEscaped === 'undefined') {
-	    keepEscaped = true;
-	  }
-	
-	  cache = getEncodeCache(exclude);
-	
-	  for (i = 0, l = string.length; i < l; i++) {
-	    code = string.charCodeAt(i);
-	
-	    if (keepEscaped && code === 0x25 /* % */ && i + 2 < l) {
-	      if (/^[0-9a-f]{2}$/i.test(string.slice(i + 1, i + 3))) {
-	        result += string.slice(i, i + 3);
-	        i += 2;
-	        continue;
-	      }
-	    }
-	
-	    if (code < 128) {
-	      result += cache[code];
-	      continue;
-	    }
-	
-	    if (code >= 0xD800 && code <= 0xDFFF) {
-	      if (code >= 0xD800 && code <= 0xDBFF && i + 1 < l) {
-	        nextCode = string.charCodeAt(i + 1);
-	        if (nextCode >= 0xDC00 && nextCode <= 0xDFFF) {
-	          result += encodeURIComponent(string[i] + string[i + 1]);
-	          i++;
-	          continue;
-	        }
-	      }
-	      result += '%EF%BF%BD';
-	      continue;
-	    }
-	
-	    result += encodeURIComponent(string[i]);
-	  }
-	
-	  return result;
-	}
-	
-	encode.defaultChars   = ";/?:@&=+$,-_.!~*'()#";
-	encode.componentChars = "-_.!~*'()";
-	
-	
-	module.exports = encode;
-
-
-/***/ }),
-/* 99 */
-/***/ (function(module, exports) {
-
-	
-	'use strict';
-	
-	
-	/* eslint-disable no-bitwise */
-	
-	var decodeCache = {};
-	
-	function getDecodeCache(exclude) {
-	  var i, ch, cache = decodeCache[exclude];
-	  if (cache) { return cache; }
-	
-	  cache = decodeCache[exclude] = [];
-	
-	  for (i = 0; i < 128; i++) {
-	    ch = String.fromCharCode(i);
-	    cache.push(ch);
-	  }
-	
-	  for (i = 0; i < exclude.length; i++) {
-	    ch = exclude.charCodeAt(i);
-	    cache[ch] = '%' + ('0' + ch.toString(16).toUpperCase()).slice(-2);
-	  }
-	
-	  return cache;
-	}
-	
-	
-	// Decode percent-encoded string.
-	//
-	function decode(string, exclude) {
-	  var cache;
-	
-	  if (typeof exclude !== 'string') {
-	    exclude = decode.defaultChars;
-	  }
-	
-	  cache = getDecodeCache(exclude);
-	
-	  return string.replace(/(%[a-f0-9]{2})+/gi, function(seq) {
-	    var i, l, b1, b2, b3, b4, chr,
-	        result = '';
-	
-	    for (i = 0, l = seq.length; i < l; i += 3) {
-	      b1 = parseInt(seq.slice(i + 1, i + 3), 16);
-	
-	      if (b1 < 0x80) {
-	        result += cache[b1];
-	        continue;
-	      }
-	
-	      if ((b1 & 0xE0) === 0xC0 && (i + 3 < l)) {
-	        // 110xxxxx 10xxxxxx
-	        b2 = parseInt(seq.slice(i + 4, i + 6), 16);
-	
-	        if ((b2 & 0xC0) === 0x80) {
-	          chr = ((b1 << 6) & 0x7C0) | (b2 & 0x3F);
-	
-	          if (chr < 0x80) {
-	            result += '\ufffd\ufffd';
-	          } else {
-	            result += String.fromCharCode(chr);
-	          }
-	
-	          i += 3;
-	          continue;
-	        }
-	      }
-	
-	      if ((b1 & 0xF0) === 0xE0 && (i + 6 < l)) {
-	        // 1110xxxx 10xxxxxx 10xxxxxx
-	        b2 = parseInt(seq.slice(i + 4, i + 6), 16);
-	        b3 = parseInt(seq.slice(i + 7, i + 9), 16);
-	
-	        if ((b2 & 0xC0) === 0x80 && (b3 & 0xC0) === 0x80) {
-	          chr = ((b1 << 12) & 0xF000) | ((b2 << 6) & 0xFC0) | (b3 & 0x3F);
-	
-	          if (chr < 0x800 || (chr >= 0xD800 && chr <= 0xDFFF)) {
-	            result += '\ufffd\ufffd\ufffd';
-	          } else {
-	            result += String.fromCharCode(chr);
-	          }
-	
-	          i += 6;
-	          continue;
-	        }
-	      }
-	
-	      if ((b1 & 0xF8) === 0xF0 && (i + 9 < l)) {
-	        // 111110xx 10xxxxxx 10xxxxxx 10xxxxxx
-	        b2 = parseInt(seq.slice(i + 4, i + 6), 16);
-	        b3 = parseInt(seq.slice(i + 7, i + 9), 16);
-	        b4 = parseInt(seq.slice(i + 10, i + 12), 16);
-	
-	        if ((b2 & 0xC0) === 0x80 && (b3 & 0xC0) === 0x80 && (b4 & 0xC0) === 0x80) {
-	          chr = ((b1 << 18) & 0x1C0000) | ((b2 << 12) & 0x3F000) | ((b3 << 6) & 0xFC0) | (b4 & 0x3F);
-	
-	          if (chr < 0x10000 || chr > 0x10FFFF) {
-	            result += '\ufffd\ufffd\ufffd\ufffd';
-	          } else {
-	            chr -= 0x10000;
-	            result += String.fromCharCode(0xD800 + (chr >> 10), 0xDC00 + (chr & 0x3FF));
-	          }
-	
-	          i += 9;
-	          continue;
-	        }
-	      }
-	
-	      result += '\ufffd';
-	    }
-	
-	    return result;
-	  });
-	}
-	
-	
-	decode.defaultChars   = ';/?:@&=+$,#';
-	decode.componentChars = '';
-	
-	
-	module.exports = decode;
-
-
-/***/ }),
-/* 100 */
-/***/ (function(module, exports) {
-
-	
-	'use strict';
-	
-	
-	module.exports = function format(url) {
-	  var result = '';
-	
-	  result += url.protocol || '';
-	  result += url.slashes ? '//' : '';
-	  result += url.auth ? url.auth + '@' : '';
-	
-	  if (url.hostname && url.hostname.indexOf(':') !== -1) {
-	    // ipv6 address
-	    result += '[' + url.hostname + ']';
-	  } else {
-	    result += url.hostname || '';
-	  }
-	
-	  result += url.port ? ':' + url.port : '';
-	  result += url.pathname || '';
-	  result += url.search || '';
-	  result += url.hash || '';
-	
-	  return result;
-	};
-
-
-/***/ }),
-/* 101 */
-/***/ (function(module, exports) {
-
-	// Copyright Joyent, Inc. and other Node contributors.
-	//
-	// Permission is hereby granted, free of charge, to any person obtaining a
-	// copy of this software and associated documentation files (the
-	// "Software"), to deal in the Software without restriction, including
-	// without limitation the rights to use, copy, modify, merge, publish,
-	// distribute, sublicense, and/or sell copies of the Software, and to permit
-	// persons to whom the Software is furnished to do so, subject to the
-	// following conditions:
-	//
-	// The above copyright notice and this permission notice shall be included
-	// in all copies or substantial portions of the Software.
-	//
-	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-	// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-	// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-	// USE OR OTHER DEALINGS IN THE SOFTWARE.
-	
-	'use strict';
-	
-	//
-	// Changes from joyent/node:
-	//
-	// 1. No leading slash in paths,
-	//    e.g. in `url.parse('http://foo?bar')` pathname is ``, not `/`
-	//
-	// 2. Backslashes are not replaced with slashes,
-	//    so `http:\\example.org\` is treated like a relative path
-	//
-	// 3. Trailing colon is treated like a part of the path,
-	//    i.e. in `http://example.org:foo` pathname is `:foo`
-	//
-	// 4. Nothing is URL-encoded in the resulting object,
-	//    (in joyent/node some chars in auth and paths are encoded)
-	//
-	// 5. `url.parse()` does not have `parseQueryString` argument
-	//
-	// 6. Removed extraneous result properties: `host`, `path`, `query`, etc.,
-	//    which can be constructed using other parts of the url.
-	//
-	
-	
-	function Url() {
-	  this.protocol = null;
-	  this.slashes = null;
-	  this.auth = null;
-	  this.port = null;
-	  this.hostname = null;
-	  this.hash = null;
-	  this.search = null;
-	  this.pathname = null;
-	}
-	
-	// Reference: RFC 3986, RFC 1808, RFC 2396
-	
-	// define these here so at least they only have to be
-	// compiled once on the first module load.
-	var protocolPattern = /^([a-z0-9.+-]+:)/i,
-	    portPattern = /:[0-9]*$/,
-	
-	    // Special case for a simple path URL
-	    simplePathPattern = /^(\/\/?(?!\/)[^\?\s]*)(\?[^\s]*)?$/,
-	
-	    // RFC 2396: characters reserved for delimiting URLs.
-	    // We actually just auto-escape these.
-	    delims = [ '<', '>', '"', '`', ' ', '\r', '\n', '\t' ],
-	
-	    // RFC 2396: characters not allowed for various reasons.
-	    unwise = [ '{', '}', '|', '\\', '^', '`' ].concat(delims),
-	
-	    // Allowed by RFCs, but cause of XSS attacks.  Always escape these.
-	    autoEscape = [ '\'' ].concat(unwise),
-	    // Characters that are never ever allowed in a hostname.
-	    // Note that any invalid chars are also handled, but these
-	    // are the ones that are *expected* to be seen, so we fast-path
-	    // them.
-	    nonHostChars = [ '%', '/', '?', ';', '#' ].concat(autoEscape),
-	    hostEndingChars = [ '/', '?', '#' ],
-	    hostnameMaxLen = 255,
-	    hostnamePartPattern = /^[+a-z0-9A-Z_-]{0,63}$/,
-	    hostnamePartStart = /^([+a-z0-9A-Z_-]{0,63})(.*)$/,
-	    // protocols that can allow "unsafe" and "unwise" chars.
-	    /* eslint-disable no-script-url */
-	    // protocols that never have a hostname.
-	    hostlessProtocol = {
-	      'javascript': true,
-	      'javascript:': true
-	    },
-	    // protocols that always contain a // bit.
-	    slashedProtocol = {
-	      'http': true,
-	      'https': true,
-	      'ftp': true,
-	      'gopher': true,
-	      'file': true,
-	      'http:': true,
-	      'https:': true,
-	      'ftp:': true,
-	      'gopher:': true,
-	      'file:': true
-	    };
-	    /* eslint-enable no-script-url */
-	
-	function urlParse(url, slashesDenoteHost) {
-	  if (url && url instanceof Url) { return url; }
-	
-	  var u = new Url();
-	  u.parse(url, slashesDenoteHost);
-	  return u;
-	}
-	
-	Url.prototype.parse = function(url, slashesDenoteHost) {
-	  var i, l, lowerProto, hec, slashes,
-	      rest = url;
-	
-	  // trim before proceeding.
-	  // This is to support parse stuff like "  http://foo.com  \n"
-	  rest = rest.trim();
-	
-	  if (!slashesDenoteHost && url.split('#').length === 1) {
-	    // Try fast path regexp
-	    var simplePath = simplePathPattern.exec(rest);
-	    if (simplePath) {
-	      this.pathname = simplePath[1];
-	      if (simplePath[2]) {
-	        this.search = simplePath[2];
-	      }
-	      return this;
-	    }
-	  }
-	
-	  var proto = protocolPattern.exec(rest);
-	  if (proto) {
-	    proto = proto[0];
-	    lowerProto = proto.toLowerCase();
-	    this.protocol = proto;
-	    rest = rest.substr(proto.length);
-	  }
-	
-	  // figure out if it's got a host
-	  // user@server is *always* interpreted as a hostname, and url
-	  // resolution will treat //foo/bar as host=foo,path=bar because that's
-	  // how the browser resolves relative URLs.
-	  if (slashesDenoteHost || proto || rest.match(/^\/\/[^@\/]+@[^@\/]+/)) {
-	    slashes = rest.substr(0, 2) === '//';
-	    if (slashes && !(proto && hostlessProtocol[proto])) {
-	      rest = rest.substr(2);
-	      this.slashes = true;
-	    }
-	  }
-	
-	  if (!hostlessProtocol[proto] &&
-	      (slashes || (proto && !slashedProtocol[proto]))) {
-	
-	    // there's a hostname.
-	    // the first instance of /, ?, ;, or # ends the host.
-	    //
-	    // If there is an @ in the hostname, then non-host chars *are* allowed
-	    // to the left of the last @ sign, unless some host-ending character
-	    // comes *before* the @-sign.
-	    // URLs are obnoxious.
-	    //
-	    // ex:
-	    // http://a@b@c/ => user:a@b host:c
-	    // http://a@b?@c => user:a host:c path:/?@c
-	
-	    // v0.12 TODO(isaacs): This is not quite how Chrome does things.
-	    // Review our test case against browsers more comprehensively.
-	
-	    // find the first instance of any hostEndingChars
-	    var hostEnd = -1;
-	    for (i = 0; i < hostEndingChars.length; i++) {
-	      hec = rest.indexOf(hostEndingChars[i]);
-	      if (hec !== -1 && (hostEnd === -1 || hec < hostEnd)) {
-	        hostEnd = hec;
-	      }
-	    }
-	
-	    // at this point, either we have an explicit point where the
-	    // auth portion cannot go past, or the last @ char is the decider.
-	    var auth, atSign;
-	    if (hostEnd === -1) {
-	      // atSign can be anywhere.
-	      atSign = rest.lastIndexOf('@');
-	    } else {
-	      // atSign must be in auth portion.
-	      // http://a@b/c@d => host:b auth:a path:/c@d
-	      atSign = rest.lastIndexOf('@', hostEnd);
-	    }
-	
-	    // Now we have a portion which is definitely the auth.
-	    // Pull that off.
-	    if (atSign !== -1) {
-	      auth = rest.slice(0, atSign);
-	      rest = rest.slice(atSign + 1);
-	      this.auth = auth;
-	    }
-	
-	    // the host is the remaining to the left of the first non-host char
-	    hostEnd = -1;
-	    for (i = 0; i < nonHostChars.length; i++) {
-	      hec = rest.indexOf(nonHostChars[i]);
-	      if (hec !== -1 && (hostEnd === -1 || hec < hostEnd)) {
-	        hostEnd = hec;
-	      }
-	    }
-	    // if we still have not hit it, then the entire thing is a host.
-	    if (hostEnd === -1) {
-	      hostEnd = rest.length;
-	    }
-	
-	    if (rest[hostEnd - 1] === ':') { hostEnd--; }
-	    var host = rest.slice(0, hostEnd);
-	    rest = rest.slice(hostEnd);
-	
-	    // pull out port.
-	    this.parseHost(host);
-	
-	    // we've indicated that there is a hostname,
-	    // so even if it's empty, it has to be present.
-	    this.hostname = this.hostname || '';
-	
-	    // if hostname begins with [ and ends with ]
-	    // assume that it's an IPv6 address.
-	    var ipv6Hostname = this.hostname[0] === '[' &&
-	        this.hostname[this.hostname.length - 1] === ']';
-	
-	    // validate a little.
-	    if (!ipv6Hostname) {
-	      var hostparts = this.hostname.split(/\./);
-	      for (i = 0, l = hostparts.length; i < l; i++) {
-	        var part = hostparts[i];
-	        if (!part) { continue; }
-	        if (!part.match(hostnamePartPattern)) {
-	          var newpart = '';
-	          for (var j = 0, k = part.length; j < k; j++) {
-	            if (part.charCodeAt(j) > 127) {
-	              // we replace non-ASCII char with a temporary placeholder
-	              // we need this to make sure size of hostname is not
-	              // broken by replacing non-ASCII by nothing
-	              newpart += 'x';
-	            } else {
-	              newpart += part[j];
-	            }
-	          }
-	          // we test again with ASCII char only
-	          if (!newpart.match(hostnamePartPattern)) {
-	            var validParts = hostparts.slice(0, i);
-	            var notHost = hostparts.slice(i + 1);
-	            var bit = part.match(hostnamePartStart);
-	            if (bit) {
-	              validParts.push(bit[1]);
-	              notHost.unshift(bit[2]);
-	            }
-	            if (notHost.length) {
-	              rest = notHost.join('.') + rest;
-	            }
-	            this.hostname = validParts.join('.');
-	            break;
-	          }
-	        }
-	      }
-	    }
-	
-	    if (this.hostname.length > hostnameMaxLen) {
-	      this.hostname = '';
-	    }
-	
-	    // strip [ and ] from the hostname
-	    // the host field still retains them, though
-	    if (ipv6Hostname) {
-	      this.hostname = this.hostname.substr(1, this.hostname.length - 2);
-	    }
-	  }
-	
-	  // chop off from the tail first.
-	  var hash = rest.indexOf('#');
-	  if (hash !== -1) {
-	    // got a fragment string.
-	    this.hash = rest.substr(hash);
-	    rest = rest.slice(0, hash);
-	  }
-	  var qm = rest.indexOf('?');
-	  if (qm !== -1) {
-	    this.search = rest.substr(qm);
-	    rest = rest.slice(0, qm);
-	  }
-	  if (rest) { this.pathname = rest; }
-	  if (slashedProtocol[lowerProto] &&
-	      this.hostname && !this.pathname) {
-	    this.pathname = '';
-	  }
-	
-	  return this;
-	};
-	
-	Url.prototype.parseHost = function(host) {
-	  var port = portPattern.exec(host);
-	  if (port) {
-	    port = port[0];
-	    if (port !== ':') {
-	      this.port = port.substr(1);
-	    }
-	    host = host.substr(0, host.length - port.length);
-	  }
-	  if (host) { this.hostname = host; }
-	};
-	
-	module.exports = urlParse;
-
-
-/***/ }),
-/* 102 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	exports.Any = __webpack_require__(103);
-	exports.Cc  = __webpack_require__(104);
-	exports.Cf  = __webpack_require__(105);
-	exports.P   = __webpack_require__(96);
-	exports.Z   = __webpack_require__(106);
-
-
-/***/ }),
-/* 103 */
-/***/ (function(module, exports) {
-
-	module.exports=/[\0-\uD7FF\uE000-\uFFFF]|[\uD800-\uDBFF][\uDC00-\uDFFF]|[\uD800-\uDBFF](?![\uDC00-\uDFFF])|(?:[^\uD800-\uDBFF]|^)[\uDC00-\uDFFF]/
-
-/***/ }),
-/* 104 */
-/***/ (function(module, exports) {
-
-	module.exports=/[\0-\x1F\x7F-\x9F]/
-
-/***/ }),
-/* 105 */
-/***/ (function(module, exports) {
-
-	module.exports=/[\xAD\u0600-\u0605\u061C\u06DD\u070F\u08E2\u180E\u200B-\u200F\u202A-\u202E\u2060-\u2064\u2066-\u206F\uFEFF\uFFF9-\uFFFB]|\uD804\uDCBD|\uD82F[\uDCA0-\uDCA3]|\uD834[\uDD73-\uDD7A]|\uDB40[\uDC01\uDC20-\uDC7F]/
-
-/***/ }),
-/* 106 */
-/***/ (function(module, exports) {
-
-	module.exports=/[ \xA0\u1680\u2000-\u200A\u202F\u205F\u3000]/
-
-/***/ }),
-/* 107 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// Just a shortcut for bulk export
-	'use strict';
-	
-	
-	exports.parseLinkLabel       = __webpack_require__(108);
-	exports.parseLinkDestination = __webpack_require__(109);
-	exports.parseLinkTitle       = __webpack_require__(110);
-
-
-/***/ }),
-/* 108 */
-/***/ (function(module, exports) {
-
-	// Parse link label
-	//
-	// this function assumes that first character ("[") already matches;
-	// returns the end of the label
-	//
-	'use strict';
-	
-	module.exports = function parseLinkLabel(state, start, disableNested) {
-	  var level, found, marker, prevPos,
-	      labelEnd = -1,
-	      max = state.posMax,
-	      oldPos = state.pos;
-	
-	  state.pos = start + 1;
-	  level = 1;
-	
-	  while (state.pos < max) {
-	    marker = state.src.charCodeAt(state.pos);
-	    if (marker === 0x5D /* ] */) {
-	      level--;
-	      if (level === 0) {
-	        found = true;
-	        break;
-	      }
-	    }
-	
-	    prevPos = state.pos;
-	    state.md.inline.skipToken(state);
-	    if (marker === 0x5B /* [ */) {
-	      if (prevPos === state.pos - 1) {
-	        // increase level if we find text `[`, which is not a part of any token
-	        level++;
-	      } else if (disableNested) {
-	        state.pos = oldPos;
-	        return -1;
-	      }
-	    }
-	  }
-	
-	  if (found) {
-	    labelEnd = state.pos;
-	  }
-	
-	  // restore old state
-	  state.pos = oldPos;
-	
-	  return labelEnd;
-	};
-
-
-/***/ }),
-/* 109 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// Parse link destination
-	//
-	'use strict';
-	
-	
-	var isSpace     = __webpack_require__(93).isSpace;
-	var unescapeAll = __webpack_require__(93).unescapeAll;
-	
-	
-	module.exports = function parseLinkDestination(str, pos, max) {
-	  var code, level,
-	      lines = 0,
-	      start = pos,
-	      result = {
-	        ok: false,
-	        pos: 0,
-	        lines: 0,
-	        str: ''
-	      };
-	
-	  if (str.charCodeAt(pos) === 0x3C /* < */) {
-	    pos++;
-	    while (pos < max) {
-	      code = str.charCodeAt(pos);
-	      if (code === 0x0A /* \n */ || isSpace(code)) { return result; }
-	      if (code === 0x3E /* > */) {
-	        result.pos = pos + 1;
-	        result.str = unescapeAll(str.slice(start + 1, pos));
-	        result.ok = true;
-	        return result;
-	      }
-	      if (code === 0x5C /* \ */ && pos + 1 < max) {
-	        pos += 2;
-	        continue;
-	      }
-	
-	      pos++;
-	    }
-	
-	    // no closing '>'
-	    return result;
-	  }
-	
-	  // this should be ... } else { ... branch
-	
-	  level = 0;
-	  while (pos < max) {
-	    code = str.charCodeAt(pos);
-	
-	    if (code === 0x20) { break; }
-	
-	    // ascii control characters
-	    if (code < 0x20 || code === 0x7F) { break; }
-	
-	    if (code === 0x5C /* \ */ && pos + 1 < max) {
-	      pos += 2;
-	      continue;
-	    }
-	
-	    if (code === 0x28 /* ( */) {
-	      level++;
-	    }
-	
-	    if (code === 0x29 /* ) */) {
-	      if (level === 0) { break; }
-	      level--;
-	    }
-	
-	    pos++;
-	  }
-	
-	  if (start === pos) { return result; }
-	  if (level !== 0) { return result; }
-	
-	  result.str = unescapeAll(str.slice(start, pos));
-	  result.lines = lines;
-	  result.pos = pos;
-	  result.ok = true;
-	  return result;
-	};
-
-
-/***/ }),
-/* 110 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// Parse link title
-	//
-	'use strict';
-	
-	
-	var unescapeAll = __webpack_require__(93).unescapeAll;
-	
-	
-	module.exports = function parseLinkTitle(str, pos, max) {
-	  var code,
-	      marker,
-	      lines = 0,
-	      start = pos,
-	      result = {
-	        ok: false,
-	        pos: 0,
-	        lines: 0,
-	        str: ''
-	      };
-	
-	  if (pos >= max) { return result; }
-	
-	  marker = str.charCodeAt(pos);
-	
-	  if (marker !== 0x22 /* " */ && marker !== 0x27 /* ' */ && marker !== 0x28 /* ( */) { return result; }
-	
-	  pos++;
-	
-	  // if opening marker is "(", switch it to closing marker ")"
-	  if (marker === 0x28) { marker = 0x29; }
-	
-	  while (pos < max) {
-	    code = str.charCodeAt(pos);
-	    if (code === marker) {
-	      result.pos = pos + 1;
-	      result.lines = lines;
-	      result.str = unescapeAll(str.slice(start + 1, pos));
-	      result.ok = true;
-	      return result;
-	    } else if (code === 0x0A) {
-	      lines++;
-	    } else if (code === 0x5C /* \ */ && pos + 1 < max) {
-	      pos++;
-	      if (str.charCodeAt(pos) === 0x0A) {
-	        lines++;
-	      }
-	    }
-	
-	    pos++;
-	  }
-	
-	  return result;
-	};
-
-
-/***/ }),
-/* 111 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/**
-	 * class Renderer
-	 *
-	 * Generates HTML from parsed token stream. Each instance has independent
-	 * copy of rules. Those can be rewritten with ease. Also, you can add new
-	 * rules if you create plugin and adds new token types.
-	 **/
-	'use strict';
-	
-	
-	var assign          = __webpack_require__(93).assign;
-	var unescapeAll     = __webpack_require__(93).unescapeAll;
-	var escapeHtml      = __webpack_require__(93).escapeHtml;
-	
-	
-	////////////////////////////////////////////////////////////////////////////////
-	
-	var default_rules = {};
-	
-	
-	default_rules.code_inline = function (tokens, idx, options, env, slf) {
-	  var token = tokens[idx];
-	
-	  return  '<code' + slf.renderAttrs(token) + '>' +
-	          escapeHtml(tokens[idx].content) +
-	          '</code>';
-	};
-	
-	
-	default_rules.code_block = function (tokens, idx, options, env, slf) {
-	  var token = tokens[idx];
-	
-	  return  '<pre' + slf.renderAttrs(token) + '><code>' +
-	          escapeHtml(tokens[idx].content) +
-	          '</code></pre>\n';
-	};
-	
-	
-	default_rules.fence = function (tokens, idx, options, env, slf) {
-	  var token = tokens[idx],
-	      info = token.info ? unescapeAll(token.info).trim() : '',
-	      langName = '',
-	      highlighted, i, tmpAttrs, tmpToken;
-	
-	  if (info) {
-	    langName = info.split(/\s+/g)[0];
-	  }
-	
-	  if (options.highlight) {
-	    highlighted = options.highlight(token.content, langName) || escapeHtml(token.content);
-	  } else {
-	    highlighted = escapeHtml(token.content);
-	  }
-	
-	  if (highlighted.indexOf('<pre') === 0) {
-	    return highlighted + '\n';
-	  }
-	
-	  // If language exists, inject class gently, without modifying original token.
-	  // May be, one day we will add .clone() for token and simplify this part, but
-	  // now we prefer to keep things local.
-	  if (info) {
-	    i        = token.attrIndex('class');
-	    tmpAttrs = token.attrs ? token.attrs.slice() : [];
-	
-	    if (i < 0) {
-	      tmpAttrs.push([ 'class', options.langPrefix + langName ]);
-	    } else {
-	      tmpAttrs[i][1] += ' ' + options.langPrefix + langName;
-	    }
-	
-	    // Fake token just to render attributes
-	    tmpToken = {
-	      attrs: tmpAttrs
-	    };
-	
-	    return  '<pre><code' + slf.renderAttrs(tmpToken) + '>'
-	          + highlighted
-	          + '</code></pre>\n';
-	  }
-	
-	
-	  return  '<pre><code' + slf.renderAttrs(token) + '>'
-	        + highlighted
-	        + '</code></pre>\n';
-	};
-	
-	
-	default_rules.image = function (tokens, idx, options, env, slf) {
-	  var token = tokens[idx];
-	
-	  // "alt" attr MUST be set, even if empty. Because it's mandatory and
-	  // should be placed on proper position for tests.
-	  //
-	  // Replace content with actual value
-	
-	  token.attrs[token.attrIndex('alt')][1] =
-	    slf.renderInlineAsText(token.children, options, env);
-	
-	  return slf.renderToken(tokens, idx, options);
-	};
-	
-	
-	default_rules.hardbreak = function (tokens, idx, options /*, env */) {
-	  return options.xhtmlOut ? '<br />\n' : '<br>\n';
-	};
-	default_rules.softbreak = function (tokens, idx, options /*, env */) {
-	  return options.breaks ? (options.xhtmlOut ? '<br />\n' : '<br>\n') : '\n';
-	};
-	
-	
-	default_rules.text = function (tokens, idx /*, options, env */) {
-	  return escapeHtml(tokens[idx].content);
-	};
-	
-	
-	default_rules.html_block = function (tokens, idx /*, options, env */) {
-	  return tokens[idx].content;
-	};
-	default_rules.html_inline = function (tokens, idx /*, options, env */) {
-	  return tokens[idx].content;
-	};
-	
-	
-	/**
-	 * new Renderer()
-	 *
-	 * Creates new [[Renderer]] instance and fill [[Renderer#rules]] with defaults.
-	 **/
-	function Renderer() {
-	
-	  /**
-	   * Renderer#rules -> Object
-	   *
-	   * Contains render rules for tokens. Can be updated and extended.
-	   *
-	   * ##### Example
-	   *
-	   * ```javascript
-	   * var md = require('markdown-it')();
-	   *
-	   * md.renderer.rules.strong_open  = function () { return '<b>'; };
-	   * md.renderer.rules.strong_close = function () { return '</b>'; };
-	   *
-	   * var result = md.renderInline(...);
-	   * ```
-	   *
-	   * Each rule is called as independed static function with fixed signature:
-	   *
-	   * ```javascript
-	   * function my_token_render(tokens, idx, options, env, renderer) {
-	   *   // ...
-	   *   return renderedHTML;
-	   * }
-	   * ```
-	   *
-	   * See [source code](https://github.com/markdown-it/markdown-it/blob/master/lib/renderer.js)
-	   * for more details and examples.
-	   **/
-	  this.rules = assign({}, default_rules);
-	}
-	
-	
-	/**
-	 * Renderer.renderAttrs(token) -> String
-	 *
-	 * Render token attributes to string.
-	 **/
-	Renderer.prototype.renderAttrs = function renderAttrs(token) {
-	  var i, l, result;
-	
-	  if (!token.attrs) { return ''; }
-	
-	  result = '';
-	
-	  for (i = 0, l = token.attrs.length; i < l; i++) {
-	    result += ' ' + escapeHtml(token.attrs[i][0]) + '="' + escapeHtml(token.attrs[i][1]) + '"';
-	  }
-	
-	  return result;
-	};
-	
-	
-	/**
-	 * Renderer.renderToken(tokens, idx, options) -> String
-	 * - tokens (Array): list of tokens
-	 * - idx (Numbed): token index to render
-	 * - options (Object): params of parser instance
-	 *
-	 * Default token renderer. Can be overriden by custom function
-	 * in [[Renderer#rules]].
-	 **/
-	Renderer.prototype.renderToken = function renderToken(tokens, idx, options) {
-	  var nextToken,
-	      result = '',
-	      needLf = false,
-	      token = tokens[idx];
-	
-	  // Tight list paragraphs
-	  if (token.hidden) {
-	    return '';
-	  }
-	
-	  // Insert a newline between hidden paragraph and subsequent opening
-	  // block-level tag.
-	  //
-	  // For example, here we should insert a newline before blockquote:
-	  //  - a
-	  //    >
-	  //
-	  if (token.block && token.nesting !== -1 && idx && tokens[idx - 1].hidden) {
-	    result += '\n';
-	  }
-	
-	  // Add token name, e.g. `<img`
-	  result += (token.nesting === -1 ? '</' : '<') + token.tag;
-	
-	  // Encode attributes, e.g. `<img src="foo"`
-	  result += this.renderAttrs(token);
-	
-	  // Add a slash for self-closing tags, e.g. `<img src="foo" /`
-	  if (token.nesting === 0 && options.xhtmlOut) {
-	    result += ' /';
-	  }
-	
-	  // Check if we need to add a newline after this tag
-	  if (token.block) {
-	    needLf = true;
-	
-	    if (token.nesting === 1) {
-	      if (idx + 1 < tokens.length) {
-	        nextToken = tokens[idx + 1];
-	
-	        if (nextToken.type === 'inline' || nextToken.hidden) {
-	          // Block-level tag containing an inline tag.
-	          //
-	          needLf = false;
-	
-	        } else if (nextToken.nesting === -1 && nextToken.tag === token.tag) {
-	          // Opening tag + closing tag of the same type. E.g. `<li></li>`.
-	          //
-	          needLf = false;
-	        }
-	      }
-	    }
-	  }
-	
-	  result += needLf ? '>\n' : '>';
-	
-	  return result;
-	};
-	
-	
-	/**
-	 * Renderer.renderInline(tokens, options, env) -> String
-	 * - tokens (Array): list on block tokens to renter
-	 * - options (Object): params of parser instance
-	 * - env (Object): additional data from parsed input (references, for example)
-	 *
-	 * The same as [[Renderer.render]], but for single token of `inline` type.
-	 **/
-	Renderer.prototype.renderInline = function (tokens, options, env) {
-	  var type,
-	      result = '',
-	      rules = this.rules;
-	
-	  for (var i = 0, len = tokens.length; i < len; i++) {
-	    type = tokens[i].type;
-	
-	    if (typeof rules[type] !== 'undefined') {
-	      result += rules[type](tokens, i, options, env, this);
-	    } else {
-	      result += this.renderToken(tokens, i, options);
-	    }
-	  }
-	
-	  return result;
-	};
-	
-	
-	/** internal
-	 * Renderer.renderInlineAsText(tokens, options, env) -> String
-	 * - tokens (Array): list on block tokens to renter
-	 * - options (Object): params of parser instance
-	 * - env (Object): additional data from parsed input (references, for example)
-	 *
-	 * Special kludge for image `alt` attributes to conform CommonMark spec.
-	 * Don't try to use it! Spec requires to show `alt` content with stripped markup,
-	 * instead of simple escaping.
-	 **/
-	Renderer.prototype.renderInlineAsText = function (tokens, options, env) {
-	  var result = '';
-	
-	  for (var i = 0, len = tokens.length; i < len; i++) {
-	    if (tokens[i].type === 'text') {
-	      result += tokens[i].content;
-	    } else if (tokens[i].type === 'image') {
-	      result += this.renderInlineAsText(tokens[i].children, options, env);
-	    }
-	  }
-	
-	  return result;
-	};
-	
-	
-	/**
-	 * Renderer.render(tokens, options, env) -> String
-	 * - tokens (Array): list on block tokens to renter
-	 * - options (Object): params of parser instance
-	 * - env (Object): additional data from parsed input (references, for example)
-	 *
-	 * Takes token stream and generates HTML. Probably, you will never need to call
-	 * this method directly.
-	 **/
-	Renderer.prototype.render = function (tokens, options, env) {
-	  var i, len, type,
-	      result = '',
-	      rules = this.rules;
-	
-	  for (i = 0, len = tokens.length; i < len; i++) {
-	    type = tokens[i].type;
-	
-	    if (type === 'inline') {
-	      result += this.renderInline(tokens[i].children, options, env);
-	    } else if (typeof rules[type] !== 'undefined') {
-	      result += rules[tokens[i].type](tokens, i, options, env, this);
-	    } else {
-	      result += this.renderToken(tokens, i, options, env);
-	    }
-	  }
-	
-	  return result;
-	};
-	
-	module.exports = Renderer;
-
-
-/***/ }),
-/* 112 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/** internal
-	 * class Core
-	 *
-	 * Top-level rules executor. Glues block/inline parsers and does intermediate
-	 * transformations.
-	 **/
-	'use strict';
-	
-	
-	var Ruler  = __webpack_require__(113);
-	
-	
-	var _rules = [
-	  [ 'normalize',      __webpack_require__(114)      ],
-	  [ 'block',          __webpack_require__(115)          ],
-	  [ 'inline',         __webpack_require__(116)         ],
-	  [ 'linkify',        __webpack_require__(117)        ],
-	  [ 'replacements',   __webpack_require__(118)   ],
-	  [ 'smartquotes',    __webpack_require__(119)    ]
-	];
-	
-	
-	/**
-	 * new Core()
-	 **/
-	function Core() {
-	  /**
-	   * Core#ruler -> Ruler
-	   *
-	   * [[Ruler]] instance. Keep configuration of core rules.
-	   **/
-	  this.ruler = new Ruler();
-	
-	  for (var i = 0; i < _rules.length; i++) {
-	    this.ruler.push(_rules[i][0], _rules[i][1]);
-	  }
-	}
-	
-	
-	/**
-	 * Core.process(state)
-	 *
-	 * Executes core chain rules.
-	 **/
-	Core.prototype.process = function (state) {
-	  var i, l, rules;
-	
-	  rules = this.ruler.getRules('');
-	
-	  for (i = 0, l = rules.length; i < l; i++) {
-	    rules[i](state);
-	  }
-	};
-	
-	Core.prototype.State = __webpack_require__(120);
-	
-	
-	module.exports = Core;
-
-
-/***/ }),
-/* 113 */
-/***/ (function(module, exports) {
-
-	/**
-	 * class Ruler
-	 *
-	 * Helper class, used by [[MarkdownIt#core]], [[MarkdownIt#block]] and
-	 * [[MarkdownIt#inline]] to manage sequences of functions (rules):
-	 *
-	 * - keep rules in defined order
-	 * - assign the name to each rule
-	 * - enable/disable rules
-	 * - add/replace rules
-	 * - allow assign rules to additional named chains (in the same)
-	 * - cacheing lists of active rules
-	 *
-	 * You will not need use this class directly until write plugins. For simple
-	 * rules control use [[MarkdownIt.disable]], [[MarkdownIt.enable]] and
-	 * [[MarkdownIt.use]].
-	 **/
-	'use strict';
-	
-	
-	/**
-	 * new Ruler()
-	 **/
-	function Ruler() {
-	  // List of added rules. Each element is:
-	  //
-	  // {
-	  //   name: XXX,
-	  //   enabled: Boolean,
-	  //   fn: Function(),
-	  //   alt: [ name2, name3 ]
-	  // }
-	  //
-	  this.__rules__ = [];
-	
-	  // Cached rule chains.
-	  //
-	  // First level - chain name, '' for default.
-	  // Second level - diginal anchor for fast filtering by charcodes.
-	  //
-	  this.__cache__ = null;
-	}
-	
-	////////////////////////////////////////////////////////////////////////////////
-	// Helper methods, should not be used directly
-	
-	
-	// Find rule index by name
-	//
-	Ruler.prototype.__find__ = function (name) {
-	  for (var i = 0; i < this.__rules__.length; i++) {
-	    if (this.__rules__[i].name === name) {
-	      return i;
-	    }
-	  }
-	  return -1;
-	};
-	
-	
-	// Build rules lookup cache
-	//
-	Ruler.prototype.__compile__ = function () {
-	  var self = this;
-	  var chains = [ '' ];
-	
-	  // collect unique names
-	  self.__rules__.forEach(function (rule) {
-	    if (!rule.enabled) { return; }
-	
-	    rule.alt.forEach(function (altName) {
-	      if (chains.indexOf(altName) < 0) {
-	        chains.push(altName);
-	      }
-	    });
-	  });
-	
-	  self.__cache__ = {};
-	
-	  chains.forEach(function (chain) {
-	    self.__cache__[chain] = [];
-	    self.__rules__.forEach(function (rule) {
-	      if (!rule.enabled) { return; }
-	
-	      if (chain && rule.alt.indexOf(chain) < 0) { return; }
-	
-	      self.__cache__[chain].push(rule.fn);
-	    });
-	  });
-	};
-	
-	
-	/**
-	 * Ruler.at(name, fn [, options])
-	 * - name (String): rule name to replace.
-	 * - fn (Function): new rule function.
-	 * - options (Object): new rule options (not mandatory).
-	 *
-	 * Replace rule by name with new function & options. Throws error if name not
-	 * found.
-	 *
-	 * ##### Options:
-	 *
-	 * - __alt__ - array with names of "alternate" chains.
-	 *
-	 * ##### Example
-	 *
-	 * Replace existing typorgapher replacement rule with new one:
-	 *
-	 * ```javascript
-	 * var md = require('markdown-it')();
-	 *
-	 * md.core.ruler.at('replacements', function replace(state) {
-	 *   //...
-	 * });
-	 * ```
-	 **/
-	Ruler.prototype.at = function (name, fn, options) {
-	  var index = this.__find__(name);
-	  var opt = options || {};
-	
-	  if (index === -1) { throw new Error('Parser rule not found: ' + name); }
-	
-	  this.__rules__[index].fn = fn;
-	  this.__rules__[index].alt = opt.alt || [];
-	  this.__cache__ = null;
-	};
-	
-	
-	/**
-	 * Ruler.before(beforeName, ruleName, fn [, options])
-	 * - beforeName (String): new rule will be added before this one.
-	 * - ruleName (String): name of added rule.
-	 * - fn (Function): rule function.
-	 * - options (Object): rule options (not mandatory).
-	 *
-	 * Add new rule to chain before one with given name. See also
-	 * [[Ruler.after]], [[Ruler.push]].
-	 *
-	 * ##### Options:
-	 *
-	 * - __alt__ - array with names of "alternate" chains.
-	 *
-	 * ##### Example
-	 *
-	 * ```javascript
-	 * var md = require('markdown-it')();
-	 *
-	 * md.block.ruler.before('paragraph', 'my_rule', function replace(state) {
-	 *   //...
-	 * });
-	 * ```
-	 **/
-	Ruler.prototype.before = function (beforeName, ruleName, fn, options) {
-	  var index = this.__find__(beforeName);
-	  var opt = options || {};
-	
-	  if (index === -1) { throw new Error('Parser rule not found: ' + beforeName); }
-	
-	  this.__rules__.splice(index, 0, {
-	    name: ruleName,
-	    enabled: true,
-	    fn: fn,
-	    alt: opt.alt || []
-	  });
-	
-	  this.__cache__ = null;
-	};
-	
-	
-	/**
-	 * Ruler.after(afterName, ruleName, fn [, options])
-	 * - afterName (String): new rule will be added after this one.
-	 * - ruleName (String): name of added rule.
-	 * - fn (Function): rule function.
-	 * - options (Object): rule options (not mandatory).
-	 *
-	 * Add new rule to chain after one with given name. See also
-	 * [[Ruler.before]], [[Ruler.push]].
-	 *
-	 * ##### Options:
-	 *
-	 * - __alt__ - array with names of "alternate" chains.
-	 *
-	 * ##### Example
-	 *
-	 * ```javascript
-	 * var md = require('markdown-it')();
-	 *
-	 * md.inline.ruler.after('text', 'my_rule', function replace(state) {
-	 *   //...
-	 * });
-	 * ```
-	 **/
-	Ruler.prototype.after = function (afterName, ruleName, fn, options) {
-	  var index = this.__find__(afterName);
-	  var opt = options || {};
-	
-	  if (index === -1) { throw new Error('Parser rule not found: ' + afterName); }
-	
-	  this.__rules__.splice(index + 1, 0, {
-	    name: ruleName,
-	    enabled: true,
-	    fn: fn,
-	    alt: opt.alt || []
-	  });
-	
-	  this.__cache__ = null;
-	};
-	
-	/**
-	 * Ruler.push(ruleName, fn [, options])
-	 * - ruleName (String): name of added rule.
-	 * - fn (Function): rule function.
-	 * - options (Object): rule options (not mandatory).
-	 *
-	 * Push new rule to the end of chain. See also
-	 * [[Ruler.before]], [[Ruler.after]].
-	 *
-	 * ##### Options:
-	 *
-	 * - __alt__ - array with names of "alternate" chains.
-	 *
-	 * ##### Example
-	 *
-	 * ```javascript
-	 * var md = require('markdown-it')();
-	 *
-	 * md.core.ruler.push('my_rule', function replace(state) {
-	 *   //...
-	 * });
-	 * ```
-	 **/
-	Ruler.prototype.push = function (ruleName, fn, options) {
-	  var opt = options || {};
-	
-	  this.__rules__.push({
-	    name: ruleName,
-	    enabled: true,
-	    fn: fn,
-	    alt: opt.alt || []
-	  });
-	
-	  this.__cache__ = null;
-	};
-	
-	
-	/**
-	 * Ruler.enable(list [, ignoreInvalid]) -> Array
-	 * - list (String|Array): list of rule names to enable.
-	 * - ignoreInvalid (Boolean): set `true` to ignore errors when rule not found.
-	 *
-	 * Enable rules with given names. If any rule name not found - throw Error.
-	 * Errors can be disabled by second param.
-	 *
-	 * Returns list of found rule names (if no exception happened).
-	 *
-	 * See also [[Ruler.disable]], [[Ruler.enableOnly]].
-	 **/
-	Ruler.prototype.enable = function (list, ignoreInvalid) {
-	  if (!Array.isArray(list)) { list = [ list ]; }
-	
-	  var result = [];
-	
-	  // Search by name and enable
-	  list.forEach(function (name) {
-	    var idx = this.__find__(name);
-	
-	    if (idx < 0) {
-	      if (ignoreInvalid) { return; }
-	      throw new Error('Rules manager: invalid rule name ' + name);
-	    }
-	    this.__rules__[idx].enabled = true;
-	    result.push(name);
-	  }, this);
-	
-	  this.__cache__ = null;
-	  return result;
-	};
-	
-	
-	/**
-	 * Ruler.enableOnly(list [, ignoreInvalid])
-	 * - list (String|Array): list of rule names to enable (whitelist).
-	 * - ignoreInvalid (Boolean): set `true` to ignore errors when rule not found.
-	 *
-	 * Enable rules with given names, and disable everything else. If any rule name
-	 * not found - throw Error. Errors can be disabled by second param.
-	 *
-	 * See also [[Ruler.disable]], [[Ruler.enable]].
-	 **/
-	Ruler.prototype.enableOnly = function (list, ignoreInvalid) {
-	  if (!Array.isArray(list)) { list = [ list ]; }
-	
-	  this.__rules__.forEach(function (rule) { rule.enabled = false; });
-	
-	  this.enable(list, ignoreInvalid);
-	};
-	
-	
-	/**
-	 * Ruler.disable(list [, ignoreInvalid]) -> Array
-	 * - list (String|Array): list of rule names to disable.
-	 * - ignoreInvalid (Boolean): set `true` to ignore errors when rule not found.
-	 *
-	 * Disable rules with given names. If any rule name not found - throw Error.
-	 * Errors can be disabled by second param.
-	 *
-	 * Returns list of found rule names (if no exception happened).
-	 *
-	 * See also [[Ruler.enable]], [[Ruler.enableOnly]].
-	 **/
-	Ruler.prototype.disable = function (list, ignoreInvalid) {
-	  if (!Array.isArray(list)) { list = [ list ]; }
-	
-	  var result = [];
-	
-	  // Search by name and disable
-	  list.forEach(function (name) {
-	    var idx = this.__find__(name);
-	
-	    if (idx < 0) {
-	      if (ignoreInvalid) { return; }
-	      throw new Error('Rules manager: invalid rule name ' + name);
-	    }
-	    this.__rules__[idx].enabled = false;
-	    result.push(name);
-	  }, this);
-	
-	  this.__cache__ = null;
-	  return result;
-	};
-	
-	
-	/**
-	 * Ruler.getRules(chainName) -> Array
-	 *
-	 * Return array of active functions (rules) for given chain name. It analyzes
-	 * rules configuration, compiles caches if not exists and returns result.
-	 *
-	 * Default chain name is `''` (empty string). It can't be skipped. That's
-	 * done intentionally, to keep signature monomorphic for high speed.
-	 **/
-	Ruler.prototype.getRules = function (chainName) {
-	  if (this.__cache__ === null) {
-	    this.__compile__();
-	  }
-	
-	  // Chain can be empty, if rules disabled. But we still have to return Array.
-	  return this.__cache__[chainName] || [];
-	};
-	
-	module.exports = Ruler;
-
-
-/***/ }),
-/* 114 */
-/***/ (function(module, exports) {
-
-	// Normalize input string
-	
-	'use strict';
-	
-	
-	var NEWLINES_RE  = /\r[\n\u0085]?|[\u2424\u2028\u0085]/g;
-	var NULL_RE      = /\u0000/g;
-	
-	
-	module.exports = function inline(state) {
-	  var str;
-	
-	  // Normalize newlines
-	  str = state.src.replace(NEWLINES_RE, '\n');
-	
-	  // Replace NULL characters
-	  str = str.replace(NULL_RE, '\uFFFD');
-	
-	  state.src = str;
-	};
-
-
-/***/ }),
-/* 115 */
-/***/ (function(module, exports) {
-
-	'use strict';
-	
-	
-	module.exports = function block(state) {
-	  var token;
-	
-	  if (state.inlineMode) {
-	    token          = new state.Token('inline', '', 0);
-	    token.content  = state.src;
-	    token.map      = [ 0, 1 ];
-	    token.children = [];
-	    state.tokens.push(token);
-	  } else {
-	    state.md.block.parse(state.src, state.md, state.env, state.tokens);
-	  }
-	};
-
-
-/***/ }),
-/* 116 */
-/***/ (function(module, exports) {
-
-	'use strict';
-	
-	module.exports = function inline(state) {
-	  var tokens = state.tokens, tok, i, l;
-	
-	  // Parse inlines
-	  for (i = 0, l = tokens.length; i < l; i++) {
-	    tok = tokens[i];
-	    if (tok.type === 'inline') {
-	      state.md.inline.parse(tok.content, state.md, state.env, tok.children);
-	    }
-	  }
-	};
-
-
-/***/ }),
-/* 117 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// Replace link-like texts with link nodes.
-	//
-	// Currently restricted by `md.validateLink()` to http/https/ftp
-	//
-	'use strict';
-	
-	
-	var arrayReplaceAt = __webpack_require__(93).arrayReplaceAt;
-	
-	
-	function isLinkOpen(str) {
-	  return /^<a[>\s]/i.test(str);
-	}
-	function isLinkClose(str) {
-	  return /^<\/a\s*>/i.test(str);
-	}
-	
-	
-	module.exports = function linkify(state) {
-	  var i, j, l, tokens, token, currentToken, nodes, ln, text, pos, lastPos,
-	      level, htmlLinkLevel, url, fullUrl, urlText,
-	      blockTokens = state.tokens,
-	      links;
-	
-	  if (!state.md.options.linkify) { return; }
-	
-	  for (j = 0, l = blockTokens.length; j < l; j++) {
-	    if (blockTokens[j].type !== 'inline' ||
-	        !state.md.linkify.pretest(blockTokens[j].content)) {
-	      continue;
-	    }
-	
-	    tokens = blockTokens[j].children;
-	
-	    htmlLinkLevel = 0;
-	
-	    // We scan from the end, to keep position when new tags added.
-	    // Use reversed logic in links start/end match
-	    for (i = tokens.length - 1; i >= 0; i--) {
-	      currentToken = tokens[i];
-	
-	      // Skip content of markdown links
-	      if (currentToken.type === 'link_close') {
-	        i--;
-	        while (tokens[i].level !== currentToken.level && tokens[i].type !== 'link_open') {
-	          i--;
-	        }
-	        continue;
-	      }
-	
-	      // Skip content of html tag links
-	      if (currentToken.type === 'html_inline') {
-	        if (isLinkOpen(currentToken.content) && htmlLinkLevel > 0) {
-	          htmlLinkLevel--;
-	        }
-	        if (isLinkClose(currentToken.content)) {
-	          htmlLinkLevel++;
-	        }
-	      }
-	      if (htmlLinkLevel > 0) { continue; }
-	
-	      if (currentToken.type === 'text' && state.md.linkify.test(currentToken.content)) {
-	
-	        text = currentToken.content;
-	        links = state.md.linkify.match(text);
-	
-	        // Now split string to nodes
-	        nodes = [];
-	        level = currentToken.level;
-	        lastPos = 0;
-	
-	        for (ln = 0; ln < links.length; ln++) {
-	
-	          url = links[ln].url;
-	          fullUrl = state.md.normalizeLink(url);
-	          if (!state.md.validateLink(fullUrl)) { continue; }
-	
-	          urlText = links[ln].text;
-	
-	          // Linkifier might send raw hostnames like "example.com", where url
-	          // starts with domain name. So we prepend http:// in those cases,
-	          // and remove it afterwards.
-	          //
-	          if (!links[ln].schema) {
-	            urlText = state.md.normalizeLinkText('http://' + urlText).replace(/^http:\/\//, '');
-	          } else if (links[ln].schema === 'mailto:' && !/^mailto:/i.test(urlText)) {
-	            urlText = state.md.normalizeLinkText('mailto:' + urlText).replace(/^mailto:/, '');
-	          } else {
-	            urlText = state.md.normalizeLinkText(urlText);
-	          }
-	
-	          pos = links[ln].index;
-	
-	          if (pos > lastPos) {
-	            token         = new state.Token('text', '', 0);
-	            token.content = text.slice(lastPos, pos);
-	            token.level   = level;
-	            nodes.push(token);
-	          }
-	
-	          token         = new state.Token('link_open', 'a', 1);
-	          token.attrs   = [ [ 'href', fullUrl ] ];
-	          token.level   = level++;
-	          token.markup  = 'linkify';
-	          token.info    = 'auto';
-	          nodes.push(token);
-	
-	          token         = new state.Token('text', '', 0);
-	          token.content = urlText;
-	          token.level   = level;
-	          nodes.push(token);
-	
-	          token         = new state.Token('link_close', 'a', -1);
-	          token.level   = --level;
-	          token.markup  = 'linkify';
-	          token.info    = 'auto';
-	          nodes.push(token);
-	
-	          lastPos = links[ln].lastIndex;
-	        }
-	        if (lastPos < text.length) {
-	          token         = new state.Token('text', '', 0);
-	          token.content = text.slice(lastPos);
-	          token.level   = level;
-	          nodes.push(token);
-	        }
-	
-	        // replace current node
-	        blockTokens[j].children = tokens = arrayReplaceAt(tokens, i, nodes);
-	      }
-	    }
-	  }
-	};
-
-
-/***/ }),
-/* 118 */
-/***/ (function(module, exports) {
-
-	// Simple typographyc replacements
-	//
-	// (c) (C) → ©
-	// (tm) (TM) → ™
-	// (r) (R) → ®
-	// +- → ±
-	// (p) (P) -> §
-	// ... → … (also ?.... → ?.., !.... → !..)
-	// ???????? → ???, !!!!! → !!!, `,,` → `,`
-	// -- → &ndash;, --- → &mdash;
-	//
-	'use strict';
-	
-	// TODO:
-	// - fractionals 1/2, 1/4, 3/4 -> ½, ¼, ¾
-	// - miltiplication 2 x 4 -> 2 × 4
-	
-	var RARE_RE = /\+-|\.\.|\?\?\?\?|!!!!|,,|--/;
-	
-	// Workaround for phantomjs - need regex without /g flag,
-	// or root check will fail every second time
-	var SCOPED_ABBR_TEST_RE = /\((c|tm|r|p)\)/i;
-	
-	var SCOPED_ABBR_RE = /\((c|tm|r|p)\)/ig;
-	var SCOPED_ABBR = {
-	  c: '©',
-	  r: '®',
-	  p: '§',
-	  tm: '™'
-	};
-	
-	function replaceFn(match, name) {
-	  return SCOPED_ABBR[name.toLowerCase()];
-	}
-	
-	function replace_scoped(inlineTokens) {
-	  var i, token, inside_autolink = 0;
-	
-	  for (i = inlineTokens.length - 1; i >= 0; i--) {
-	    token = inlineTokens[i];
-	
-	    if (token.type === 'text' && !inside_autolink) {
-	      token.content = token.content.replace(SCOPED_ABBR_RE, replaceFn);
-	    }
-	
-	    if (token.type === 'link_open' && token.info === 'auto') {
-	      inside_autolink--;
-	    }
-	
-	    if (token.type === 'link_close' && token.info === 'auto') {
-	      inside_autolink++;
-	    }
-	  }
-	}
-	
-	function replace_rare(inlineTokens) {
-	  var i, token, inside_autolink = 0;
-	
-	  for (i = inlineTokens.length - 1; i >= 0; i--) {
-	    token = inlineTokens[i];
-	
-	    if (token.type === 'text' && !inside_autolink) {
-	      if (RARE_RE.test(token.content)) {
-	        token.content = token.content
-	                    .replace(/\+-/g, '±')
-	                    // .., ..., ....... -> …
-	                    // but ?..... & !..... -> ?.. & !..
-	                    .replace(/\.{2,}/g, '…').replace(/([?!])…/g, '$1..')
-	                    .replace(/([?!]){4,}/g, '$1$1$1').replace(/,{2,}/g, ',')
-	                    // em-dash
-	                    .replace(/(^|[^-])---([^-]|$)/mg, '$1\u2014$2')
-	                    // en-dash
-	                    .replace(/(^|\s)--(\s|$)/mg, '$1\u2013$2')
-	                    .replace(/(^|[^-\s])--([^-\s]|$)/mg, '$1\u2013$2');
-	      }
-	    }
-	
-	    if (token.type === 'link_open' && token.info === 'auto') {
-	      inside_autolink--;
-	    }
-	
-	    if (token.type === 'link_close' && token.info === 'auto') {
-	      inside_autolink++;
-	    }
-	  }
-	}
-	
-	
-	module.exports = function replace(state) {
-	  var blkIdx;
-	
-	  if (!state.md.options.typographer) { return; }
-	
-	  for (blkIdx = state.tokens.length - 1; blkIdx >= 0; blkIdx--) {
-	
-	    if (state.tokens[blkIdx].type !== 'inline') { continue; }
-	
-	    if (SCOPED_ABBR_TEST_RE.test(state.tokens[blkIdx].content)) {
-	      replace_scoped(state.tokens[blkIdx].children);
-	    }
-	
-	    if (RARE_RE.test(state.tokens[blkIdx].content)) {
-	      replace_rare(state.tokens[blkIdx].children);
-	    }
-	
-	  }
-	};
-
-
-/***/ }),
-/* 119 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// Convert straight quotation marks to typographic ones
-	//
-	'use strict';
-	
-	
-	var isWhiteSpace   = __webpack_require__(93).isWhiteSpace;
-	var isPunctChar    = __webpack_require__(93).isPunctChar;
-	var isMdAsciiPunct = __webpack_require__(93).isMdAsciiPunct;
-	
-	var QUOTE_TEST_RE = /['"]/;
-	var QUOTE_RE = /['"]/g;
-	var APOSTROPHE = '\u2019'; /* ’ */
-	
-	
-	function replaceAt(str, index, ch) {
-	  return str.substr(0, index) + ch + str.substr(index + 1);
-	}
-	
-	function process_inlines(tokens, state) {
-	  var i, token, text, t, pos, max, thisLevel, item, lastChar, nextChar,
-	      isLastPunctChar, isNextPunctChar, isLastWhiteSpace, isNextWhiteSpace,
-	      canOpen, canClose, j, isSingle, stack, openQuote, closeQuote;
-	
-	  stack = [];
-	
-	  for (i = 0; i < tokens.length; i++) {
-	    token = tokens[i];
-	
-	    thisLevel = tokens[i].level;
-	
-	    for (j = stack.length - 1; j >= 0; j--) {
-	      if (stack[j].level <= thisLevel) { break; }
-	    }
-	    stack.length = j + 1;
-	
-	    if (token.type !== 'text') { continue; }
-	
-	    text = token.content;
-	    pos = 0;
-	    max = text.length;
-	
-	    /*eslint no-labels:0,block-scoped-var:0*/
-	    OUTER:
-	    while (pos < max) {
-	      QUOTE_RE.lastIndex = pos;
-	      t = QUOTE_RE.exec(text);
-	      if (!t) { break; }
-	
-	      canOpen = canClose = true;
-	      pos = t.index + 1;
-	      isSingle = (t[0] === "'");
-	
-	      // Find previous character,
-	      // default to space if it's the beginning of the line
-	      //
-	      lastChar = 0x20;
-	
-	      if (t.index - 1 >= 0) {
-	        lastChar = text.charCodeAt(t.index - 1);
-	      } else {
-	        for (j = i - 1; j >= 0; j--) {
-	          if (tokens[j].type !== 'text') { continue; }
-	
-	          lastChar = tokens[j].content.charCodeAt(tokens[j].content.length - 1);
-	          break;
-	        }
-	      }
-	
-	      // Find next character,
-	      // default to space if it's the end of the line
-	      //
-	      nextChar = 0x20;
-	
-	      if (pos < max) {
-	        nextChar = text.charCodeAt(pos);
-	      } else {
-	        for (j = i + 1; j < tokens.length; j++) {
-	          if (tokens[j].type !== 'text') { continue; }
-	
-	          nextChar = tokens[j].content.charCodeAt(0);
-	          break;
-	        }
-	      }
-	
-	      isLastPunctChar = isMdAsciiPunct(lastChar) || isPunctChar(String.fromCharCode(lastChar));
-	      isNextPunctChar = isMdAsciiPunct(nextChar) || isPunctChar(String.fromCharCode(nextChar));
-	
-	      isLastWhiteSpace = isWhiteSpace(lastChar);
-	      isNextWhiteSpace = isWhiteSpace(nextChar);
-	
-	      if (isNextWhiteSpace) {
-	        canOpen = false;
-	      } else if (isNextPunctChar) {
-	        if (!(isLastWhiteSpace || isLastPunctChar)) {
-	          canOpen = false;
-	        }
-	      }
-	
-	      if (isLastWhiteSpace) {
-	        canClose = false;
-	      } else if (isLastPunctChar) {
-	        if (!(isNextWhiteSpace || isNextPunctChar)) {
-	          canClose = false;
-	        }
-	      }
-	
-	      if (nextChar === 0x22 /* " */ && t[0] === '"') {
-	        if (lastChar >= 0x30 /* 0 */ && lastChar <= 0x39 /* 9 */) {
-	          // special case: 1"" - count first quote as an inch
-	          canClose = canOpen = false;
-	        }
-	      }
-	
-	      if (canOpen && canClose) {
-	        // treat this as the middle of the word
-	        canOpen = false;
-	        canClose = isNextPunctChar;
-	      }
-	
-	      if (!canOpen && !canClose) {
-	        // middle of word
-	        if (isSingle) {
-	          token.content = replaceAt(token.content, t.index, APOSTROPHE);
-	        }
-	        continue;
-	      }
-	
-	      if (canClose) {
-	        // this could be a closing quote, rewind the stack to get a match
-	        for (j = stack.length - 1; j >= 0; j--) {
-	          item = stack[j];
-	          if (stack[j].level < thisLevel) { break; }
-	          if (item.single === isSingle && stack[j].level === thisLevel) {
-	            item = stack[j];
-	
-	            if (isSingle) {
-	              openQuote = state.md.options.quotes[2];
-	              closeQuote = state.md.options.quotes[3];
-	            } else {
-	              openQuote = state.md.options.quotes[0];
-	              closeQuote = state.md.options.quotes[1];
-	            }
-	
-	            // replace token.content *before* tokens[item.token].content,
-	            // because, if they are pointing at the same token, replaceAt
-	            // could mess up indices when quote length != 1
-	            token.content = replaceAt(token.content, t.index, closeQuote);
-	            tokens[item.token].content = replaceAt(
-	              tokens[item.token].content, item.pos, openQuote);
-	
-	            pos += closeQuote.length - 1;
-	            if (item.token === i) { pos += openQuote.length - 1; }
-	
-	            text = token.content;
-	            max = text.length;
-	
-	            stack.length = j;
-	            continue OUTER;
-	          }
-	        }
-	      }
-	
-	      if (canOpen) {
-	        stack.push({
-	          token: i,
-	          pos: t.index,
-	          single: isSingle,
-	          level: thisLevel
-	        });
-	      } else if (canClose && isSingle) {
-	        token.content = replaceAt(token.content, t.index, APOSTROPHE);
-	      }
-	    }
-	  }
-	}
-	
-	
-	module.exports = function smartquotes(state) {
-	  /*eslint max-depth:0*/
-	  var blkIdx;
-	
-	  if (!state.md.options.typographer) { return; }
-	
-	  for (blkIdx = state.tokens.length - 1; blkIdx >= 0; blkIdx--) {
-	
-	    if (state.tokens[blkIdx].type !== 'inline' ||
-	        !QUOTE_TEST_RE.test(state.tokens[blkIdx].content)) {
-	      continue;
-	    }
-	
-	    process_inlines(state.tokens[blkIdx].children, state);
-	  }
-	};
-
-
-/***/ }),
-/* 120 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// Core state object
-	//
-	'use strict';
-	
-	var Token = __webpack_require__(121);
-	
-	
-	function StateCore(src, md, env) {
-	  this.src = src;
-	  this.env = env;
-	  this.tokens = [];
-	  this.inlineMode = false;
-	  this.md = md; // link to parser instance
-	}
-	
-	// re-export Token class to use in core rules
-	StateCore.prototype.Token = Token;
-	
-	
-	module.exports = StateCore;
-
-
-/***/ }),
-/* 121 */
-/***/ (function(module, exports) {
-
-	// Token class
-	
-	'use strict';
-	
-	
-	/**
-	 * class Token
-	 **/
-	
-	/**
-	 * new Token(type, tag, nesting)
-	 *
-	 * Create new token and fill passed properties.
-	 **/
-	function Token(type, tag, nesting) {
-	  /**
-	   * Token#type -> String
-	   *
-	   * Type of the token (string, e.g. "paragraph_open")
-	   **/
-	  this.type     = type;
-	
-	  /**
-	   * Token#tag -> String
-	   *
-	   * html tag name, e.g. "p"
-	   **/
-	  this.tag      = tag;
-	
-	  /**
-	   * Token#attrs -> Array
-	   *
-	   * Html attributes. Format: `[ [ name1, value1 ], [ name2, value2 ] ]`
-	   **/
-	  this.attrs    = null;
-	
-	  /**
-	   * Token#map -> Array
-	   *
-	   * Source map info. Format: `[ line_begin, line_end ]`
-	   **/
-	  this.map      = null;
-	
-	  /**
-	   * Token#nesting -> Number
-	   *
-	   * Level change (number in {-1, 0, 1} set), where:
-	   *
-	   * -  `1` means the tag is opening
-	   * -  `0` means the tag is self-closing
-	   * - `-1` means the tag is closing
-	   **/
-	  this.nesting  = nesting;
-	
-	  /**
-	   * Token#level -> Number
-	   *
-	   * nesting level, the same as `state.level`
-	   **/
-	  this.level    = 0;
-	
-	  /**
-	   * Token#children -> Array
-	   *
-	   * An array of child nodes (inline and img tokens)
-	   **/
-	  this.children = null;
-	
-	  /**
-	   * Token#content -> String
-	   *
-	   * In a case of self-closing tag (code, html, fence, etc.),
-	   * it has contents of this tag.
-	   **/
-	  this.content  = '';
-	
-	  /**
-	   * Token#markup -> String
-	   *
-	   * '*' or '_' for emphasis, fence string for fence, etc.
-	   **/
-	  this.markup   = '';
-	
-	  /**
-	   * Token#info -> String
-	   *
-	   * fence infostring
-	   **/
-	  this.info     = '';
-	
-	  /**
-	   * Token#meta -> Object
-	   *
-	   * A place for plugins to store an arbitrary data
-	   **/
-	  this.meta     = null;
-	
-	  /**
-	   * Token#block -> Boolean
-	   *
-	   * True for block-level tokens, false for inline tokens.
-	   * Used in renderer to calculate line breaks
-	   **/
-	  this.block    = false;
-	
-	  /**
-	   * Token#hidden -> Boolean
-	   *
-	   * If it's true, ignore this element when rendering. Used for tight lists
-	   * to hide paragraphs.
-	   **/
-	  this.hidden   = false;
-	}
-	
-	
-	/**
-	 * Token.attrIndex(name) -> Number
-	 *
-	 * Search attribute index by name.
-	 **/
-	Token.prototype.attrIndex = function attrIndex(name) {
-	  var attrs, i, len;
-	
-	  if (!this.attrs) { return -1; }
-	
-	  attrs = this.attrs;
-	
-	  for (i = 0, len = attrs.length; i < len; i++) {
-	    if (attrs[i][0] === name) { return i; }
-	  }
-	  return -1;
-	};
-	
-	
-	/**
-	 * Token.attrPush(attrData)
-	 *
-	 * Add `[ name, value ]` attribute to list. Init attrs if necessary
-	 **/
-	Token.prototype.attrPush = function attrPush(attrData) {
-	  if (this.attrs) {
-	    this.attrs.push(attrData);
-	  } else {
-	    this.attrs = [ attrData ];
-	  }
-	};
-	
-	
-	/**
-	 * Token.attrSet(name, value)
-	 *
-	 * Set `name` attribute to `value`. Override old value if exists.
-	 **/
-	Token.prototype.attrSet = function attrSet(name, value) {
-	  var idx = this.attrIndex(name),
-	      attrData = [ name, value ];
-	
-	  if (idx < 0) {
-	    this.attrPush(attrData);
-	  } else {
-	    this.attrs[idx] = attrData;
-	  }
-	};
-	
-	
-	/**
-	 * Token.attrGet(name)
-	 *
-	 * Get the value of attribute `name`, or null if it does not exist.
-	 **/
-	Token.prototype.attrGet = function attrGet(name) {
-	  var idx = this.attrIndex(name), value = null;
-	  if (idx >= 0) {
-	    value = this.attrs[idx][1];
-	  }
-	  return value;
-	};
-	
-	
-	/**
-	 * Token.attrJoin(name, value)
-	 *
-	 * Join value to existing attribute via space. Or create new attribute if not
-	 * exists. Useful to operate with token classes.
-	 **/
-	Token.prototype.attrJoin = function attrJoin(name, value) {
-	  var idx = this.attrIndex(name);
-	
-	  if (idx < 0) {
-	    this.attrPush([ name, value ]);
-	  } else {
-	    this.attrs[idx][1] = this.attrs[idx][1] + ' ' + value;
-	  }
-	};
-	
-	
-	module.exports = Token;
-
-
-/***/ }),
-/* 122 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/** internal
-	 * class ParserBlock
-	 *
-	 * Block-level tokenizer.
-	 **/
-	'use strict';
-	
-	
-	var Ruler           = __webpack_require__(113);
-	
-	
-	var _rules = [
-	  // First 2 params - rule name & source. Secondary array - list of rules,
-	  // which can be terminated by this one.
-	  [ 'table',      __webpack_require__(123),      [ 'paragraph', 'reference' ] ],
-	  [ 'code',       __webpack_require__(124) ],
-	  [ 'fence',      __webpack_require__(125),      [ 'paragraph', 'reference', 'blockquote', 'list' ] ],
-	  [ 'blockquote', __webpack_require__(126), [ 'paragraph', 'reference', 'blockquote', 'list' ] ],
-	  [ 'hr',         __webpack_require__(127),         [ 'paragraph', 'reference', 'blockquote', 'list' ] ],
-	  [ 'list',       __webpack_require__(128),       [ 'paragraph', 'reference', 'blockquote' ] ],
-	  [ 'reference',  __webpack_require__(129) ],
-	  [ 'heading',    __webpack_require__(130),    [ 'paragraph', 'reference', 'blockquote' ] ],
-	  [ 'lheading',   __webpack_require__(131) ],
-	  [ 'html_block', __webpack_require__(132), [ 'paragraph', 'reference', 'blockquote' ] ],
-	  [ 'paragraph',  __webpack_require__(135) ]
-	];
-	
-	
-	/**
-	 * new ParserBlock()
-	 **/
-	function ParserBlock() {
-	  /**
-	   * ParserBlock#ruler -> Ruler
-	   *
-	   * [[Ruler]] instance. Keep configuration of block rules.
-	   **/
-	  this.ruler = new Ruler();
-	
-	  for (var i = 0; i < _rules.length; i++) {
-	    this.ruler.push(_rules[i][0], _rules[i][1], { alt: (_rules[i][2] || []).slice() });
-	  }
-	}
-	
-	
-	// Generate tokens for input range
-	//
-	ParserBlock.prototype.tokenize = function (state, startLine, endLine) {
-	  var ok, i,
-	      rules = this.ruler.getRules(''),
-	      len = rules.length,
-	      line = startLine,
-	      hasEmptyLines = false,
-	      maxNesting = state.md.options.maxNesting;
-	
-	  while (line < endLine) {
-	    state.line = line = state.skipEmptyLines(line);
-	    if (line >= endLine) { break; }
-	
-	    // Termination condition for nested calls.
-	    // Nested calls currently used for blockquotes & lists
-	    if (state.sCount[line] < state.blkIndent) { break; }
-	
-	    // If nesting level exceeded - skip tail to the end. That's not ordinary
-	    // situation and we should not care about content.
-	    if (state.level >= maxNesting) {
-	      state.line = endLine;
-	      break;
-	    }
-	
-	    // Try all possible rules.
-	    // On success, rule should:
-	    //
-	    // - update `state.line`
-	    // - update `state.tokens`
-	    // - return true
-	
-	    for (i = 0; i < len; i++) {
-	      ok = rules[i](state, line, endLine, false);
-	      if (ok) { break; }
-	    }
-	
-	    // set state.tight if we had an empty line before current tag
-	    // i.e. latest empty line should not count
-	    state.tight = !hasEmptyLines;
-	
-	    // paragraph might "eat" one newline after it in nested lists
-	    if (state.isEmpty(state.line - 1)) {
-	      hasEmptyLines = true;
-	    }
-	
-	    line = state.line;
-	
-	    if (line < endLine && state.isEmpty(line)) {
-	      hasEmptyLines = true;
-	      line++;
-	      state.line = line;
-	    }
-	  }
-	};
-	
-	
-	/**
-	 * ParserBlock.parse(str, md, env, outTokens)
-	 *
-	 * Process input string and push block tokens into `outTokens`
-	 **/
-	ParserBlock.prototype.parse = function (src, md, env, outTokens) {
-	  var state;
-	
-	  if (!src) { return; }
-	
-	  state = new this.State(src, md, env, outTokens);
-	
-	  this.tokenize(state, state.line, state.lineMax);
-	};
-	
-	
-	ParserBlock.prototype.State = __webpack_require__(136);
-	
-	
-	module.exports = ParserBlock;
-
-
-/***/ }),
-/* 123 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// GFM table, non-standard
-	
-	'use strict';
-	
-	var isSpace = __webpack_require__(93).isSpace;
-	
-	
-	function getLine(state, line) {
-	  var pos = state.bMarks[line] + state.blkIndent,
-	      max = state.eMarks[line];
-	
-	  return state.src.substr(pos, max - pos);
-	}
-	
-	function escapedSplit(str) {
-	  var result = [],
-	      pos = 0,
-	      max = str.length,
-	      ch,
-	      escapes = 0,
-	      lastPos = 0,
-	      backTicked = false,
-	      lastBackTick = 0;
-	
-	  ch  = str.charCodeAt(pos);
-	
-	  while (pos < max) {
-	    if (ch === 0x60/* ` */) {
-	      if (backTicked) {
-	        // make \` close code sequence, but not open it;
-	        // the reason is: `\` is correct code block
-	        backTicked = false;
-	        lastBackTick = pos;
-	      } else if (escapes % 2 === 0) {
-	        backTicked = true;
-	        lastBackTick = pos;
-	      }
-	    } else if (ch === 0x7c/* | */ && (escapes % 2 === 0) && !backTicked) {
-	      result.push(str.substring(lastPos, pos));
-	      lastPos = pos + 1;
-	    }
-	
-	    if (ch === 0x5c/* \ */) {
-	      escapes++;
-	    } else {
-	      escapes = 0;
-	    }
-	
-	    pos++;
-	
-	    // If there was an un-closed backtick, go back to just after
-	    // the last backtick, but as if it was a normal character
-	    if (pos === max && backTicked) {
-	      backTicked = false;
-	      pos = lastBackTick + 1;
-	    }
-	
-	    ch = str.charCodeAt(pos);
-	  }
-	
-	  result.push(str.substring(lastPos));
-	
-	  return result;
-	}
-	
-	
-	module.exports = function table(state, startLine, endLine, silent) {
-	  var ch, lineText, pos, i, nextLine, columns, columnCount, token,
-	      aligns, t, tableLines, tbodyLines;
-	
-	  // should have at least two lines
-	  if (startLine + 2 > endLine) { return false; }
-	
-	  nextLine = startLine + 1;
-	
-	  if (state.sCount[nextLine] < state.blkIndent) { return false; }
-	
-	  // if it's indented more than 3 spaces, it should be a code block
-	  if (state.sCount[nextLine] - state.blkIndent >= 4) { return false; }
-	
-	  // first character of the second line should be '|', '-', ':',
-	  // and no other characters are allowed but spaces;
-	  // basically, this is the equivalent of /^[-:|][-:|\s]*$/ regexp
-	
-	  pos = state.bMarks[nextLine] + state.tShift[nextLine];
-	  if (pos >= state.eMarks[nextLine]) { return false; }
-	
-	  ch = state.src.charCodeAt(pos++);
-	  if (ch !== 0x7C/* | */ && ch !== 0x2D/* - */ && ch !== 0x3A/* : */) { return false; }
-	
-	  while (pos < state.eMarks[nextLine]) {
-	    ch = state.src.charCodeAt(pos);
-	
-	    if (ch !== 0x7C/* | */ && ch !== 0x2D/* - */ && ch !== 0x3A/* : */ && !isSpace(ch)) { return false; }
-	
-	    pos++;
-	  }
-	
-	  lineText = getLine(state, startLine + 1);
-	
-	  columns = lineText.split('|');
-	  aligns = [];
-	  for (i = 0; i < columns.length; i++) {
-	    t = columns[i].trim();
-	    if (!t) {
-	      // allow empty columns before and after table, but not in between columns;
-	      // e.g. allow ` |---| `, disallow ` ---||--- `
-	      if (i === 0 || i === columns.length - 1) {
-	        continue;
-	      } else {
-	        return false;
-	      }
-	    }
-	
-	    if (!/^:?-+:?$/.test(t)) { return false; }
-	    if (t.charCodeAt(t.length - 1) === 0x3A/* : */) {
-	      aligns.push(t.charCodeAt(0) === 0x3A/* : */ ? 'center' : 'right');
-	    } else if (t.charCodeAt(0) === 0x3A/* : */) {
-	      aligns.push('left');
-	    } else {
-	      aligns.push('');
-	    }
-	  }
-	
-	  lineText = getLine(state, startLine).trim();
-	  if (lineText.indexOf('|') === -1) { return false; }
-	  if (state.sCount[startLine] - state.blkIndent >= 4) { return false; }
-	  columns = escapedSplit(lineText.replace(/^\||\|$/g, ''));
-	
-	  // header row will define an amount of columns in the entire table,
-	  // and align row shouldn't be smaller than that (the rest of the rows can)
-	  columnCount = columns.length;
-	  if (columnCount > aligns.length) { return false; }
-	
-	  if (silent) { return true; }
-	
-	  token     = state.push('table_open', 'table', 1);
-	  token.map = tableLines = [ startLine, 0 ];
-	
-	  token     = state.push('thead_open', 'thead', 1);
-	  token.map = [ startLine, startLine + 1 ];
-	
-	  token     = state.push('tr_open', 'tr', 1);
-	  token.map = [ startLine, startLine + 1 ];
-	
-	  for (i = 0; i < columns.length; i++) {
-	    token          = state.push('th_open', 'th', 1);
-	    token.map      = [ startLine, startLine + 1 ];
-	    if (aligns[i]) {
-	      token.attrs  = [ [ 'style', 'text-align:' + aligns[i] ] ];
-	    }
-	
-	    token          = state.push('inline', '', 0);
-	    token.content  = columns[i].trim();
-	    token.map      = [ startLine, startLine + 1 ];
-	    token.children = [];
-	
-	    token          = state.push('th_close', 'th', -1);
-	  }
-	
-	  token     = state.push('tr_close', 'tr', -1);
-	  token     = state.push('thead_close', 'thead', -1);
-	
-	  token     = state.push('tbody_open', 'tbody', 1);
-	  token.map = tbodyLines = [ startLine + 2, 0 ];
-	
-	  for (nextLine = startLine + 2; nextLine < endLine; nextLine++) {
-	    if (state.sCount[nextLine] < state.blkIndent) { break; }
-	
-	    lineText = getLine(state, nextLine).trim();
-	    if (lineText.indexOf('|') === -1) { break; }
-	    if (state.sCount[nextLine] - state.blkIndent >= 4) { break; }
-	    columns = escapedSplit(lineText.replace(/^\||\|$/g, ''));
-	
-	    token = state.push('tr_open', 'tr', 1);
-	    for (i = 0; i < columnCount; i++) {
-	      token          = state.push('td_open', 'td', 1);
-	      if (aligns[i]) {
-	        token.attrs  = [ [ 'style', 'text-align:' + aligns[i] ] ];
-	      }
-	
-	      token          = state.push('inline', '', 0);
-	      token.content  = columns[i] ? columns[i].trim() : '';
-	      token.children = [];
-	
-	      token          = state.push('td_close', 'td', -1);
-	    }
-	    token = state.push('tr_close', 'tr', -1);
-	  }
-	  token = state.push('tbody_close', 'tbody', -1);
-	  token = state.push('table_close', 'table', -1);
-	
-	  tableLines[1] = tbodyLines[1] = nextLine;
-	  state.line = nextLine;
-	  return true;
-	};
-
-
-/***/ }),
-/* 124 */
-/***/ (function(module, exports) {
-
-	// Code block (4 spaces padded)
-	
-	'use strict';
-	
-	
-	module.exports = function code(state, startLine, endLine/*, silent*/) {
-	  var nextLine, last, token;
-	
-	  if (state.sCount[startLine] - state.blkIndent < 4) { return false; }
-	
-	  last = nextLine = startLine + 1;
-	
-	  while (nextLine < endLine) {
-	    if (state.isEmpty(nextLine)) {
-	      nextLine++;
-	      continue;
-	    }
-	
-	    if (state.sCount[nextLine] - state.blkIndent >= 4) {
-	      nextLine++;
-	      last = nextLine;
-	      continue;
-	    }
-	    break;
-	  }
-	
-	  state.line = last;
-	
-	  token         = state.push('code_block', 'code', 0);
-	  token.content = state.getLines(startLine, last, 4 + state.blkIndent, true);
-	  token.map     = [ startLine, state.line ];
-	
-	  return true;
-	};
-
-
-/***/ }),
-/* 125 */
-/***/ (function(module, exports) {
-
-	// fences (``` lang, ~~~ lang)
-	
-	'use strict';
-	
-	
-	module.exports = function fence(state, startLine, endLine, silent) {
-	  var marker, len, params, nextLine, mem, token, markup,
-	      haveEndMarker = false,
-	      pos = state.bMarks[startLine] + state.tShift[startLine],
-	      max = state.eMarks[startLine];
-	
-	  // if it's indented more than 3 spaces, it should be a code block
-	  if (state.sCount[startLine] - state.blkIndent >= 4) { return false; }
-	
-	  if (pos + 3 > max) { return false; }
-	
-	  marker = state.src.charCodeAt(pos);
-	
-	  if (marker !== 0x7E/* ~ */ && marker !== 0x60 /* ` */) {
-	    return false;
-	  }
-	
-	  // scan marker length
-	  mem = pos;
-	  pos = state.skipChars(pos, marker);
-	
-	  len = pos - mem;
-	
-	  if (len < 3) { return false; }
-	
-	  markup = state.src.slice(mem, pos);
-	  params = state.src.slice(pos, max);
-	
-	  if (params.indexOf(String.fromCharCode(marker)) >= 0) { return false; }
-	
-	  // Since start is found, we can report success here in validation mode
-	  if (silent) { return true; }
-	
-	  // search end of block
-	  nextLine = startLine;
-	
-	  for (;;) {
-	    nextLine++;
-	    if (nextLine >= endLine) {
-	      // unclosed block should be autoclosed by end of document.
-	      // also block seems to be autoclosed by end of parent
-	      break;
-	    }
-	
-	    pos = mem = state.bMarks[nextLine] + state.tShift[nextLine];
-	    max = state.eMarks[nextLine];
-	
-	    if (pos < max && state.sCount[nextLine] < state.blkIndent) {
-	      // non-empty line with negative indent should stop the list:
-	      // - ```
-	      //  test
-	      break;
-	    }
-	
-	    if (state.src.charCodeAt(pos) !== marker) { continue; }
-	
-	    if (state.sCount[nextLine] - state.blkIndent >= 4) {
-	      // closing fence should be indented less than 4 spaces
-	      continue;
-	    }
-	
-	    pos = state.skipChars(pos, marker);
-	
-	    // closing code fence must be at least as long as the opening one
-	    if (pos - mem < len) { continue; }
-	
-	    // make sure tail has spaces only
-	    pos = state.skipSpaces(pos);
-	
-	    if (pos < max) { continue; }
-	
-	    haveEndMarker = true;
-	    // found!
-	    break;
-	  }
-	
-	  // If a fence has heading spaces, they should be removed from its inner block
-	  len = state.sCount[startLine];
-	
-	  state.line = nextLine + (haveEndMarker ? 1 : 0);
-	
-	  token         = state.push('fence', 'code', 0);
-	  token.info    = params;
-	  token.content = state.getLines(startLine + 1, nextLine, len, true);
-	  token.markup  = markup;
-	  token.map     = [ startLine, state.line ];
-	
-	  return true;
-	};
-
-
-/***/ }),
-/* 126 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// Block quotes
-	
-	'use strict';
-	
-	var isSpace = __webpack_require__(93).isSpace;
-	
-	
-	module.exports = function blockquote(state, startLine, endLine, silent) {
-	  var adjustTab,
-	      ch,
-	      i,
-	      initial,
-	      l,
-	      lastLineEmpty,
-	      lines,
-	      nextLine,
-	      offset,
-	      oldBMarks,
-	      oldBSCount,
-	      oldIndent,
-	      oldParentType,
-	      oldSCount,
-	      oldTShift,
-	      spaceAfterMarker,
-	      terminate,
-	      terminatorRules,
-	      token,
-	      wasOutdented,
-	      oldLineMax = state.lineMax,
-	      pos = state.bMarks[startLine] + state.tShift[startLine],
-	      max = state.eMarks[startLine];
-	
-	  // if it's indented more than 3 spaces, it should be a code block
-	  if (state.sCount[startLine] - state.blkIndent >= 4) { return false; }
-	
-	  // check the block quote marker
-	  if (state.src.charCodeAt(pos++) !== 0x3E/* > */) { return false; }
-	
-	  // we know that it's going to be a valid blockquote,
-	  // so no point trying to find the end of it in silent mode
-	  if (silent) { return true; }
-	
-	  // skip spaces after ">" and re-calculate offset
-	  initial = offset = state.sCount[startLine] + pos - (state.bMarks[startLine] + state.tShift[startLine]);
-	
-	  // skip one optional space after '>'
-	  if (state.src.charCodeAt(pos) === 0x20 /* space */) {
-	    // ' >   test '
-	    //     ^ -- position start of line here:
-	    pos++;
-	    initial++;
-	    offset++;
-	    adjustTab = false;
-	    spaceAfterMarker = true;
-	  } else if (state.src.charCodeAt(pos) === 0x09 /* tab */) {
-	    spaceAfterMarker = true;
-	
-	    if ((state.bsCount[startLine] + offset) % 4 === 3) {
-	      // '  >\t  test '
-	      //       ^ -- position start of line here (tab has width===1)
-	      pos++;
-	      initial++;
-	      offset++;
-	      adjustTab = false;
-	    } else {
-	      // ' >\t  test '
-	      //    ^ -- position start of line here + shift bsCount slightly
-	      //         to make extra space appear
-	      adjustTab = true;
-	    }
-	  } else {
-	    spaceAfterMarker = false;
-	  }
-	
-	  oldBMarks = [ state.bMarks[startLine] ];
-	  state.bMarks[startLine] = pos;
-	
-	  while (pos < max) {
-	    ch = state.src.charCodeAt(pos);
-	
-	    if (isSpace(ch)) {
-	      if (ch === 0x09) {
-	        offset += 4 - (offset + state.bsCount[startLine] + (adjustTab ? 1 : 0)) % 4;
-	      } else {
-	        offset++;
-	      }
-	    } else {
-	      break;
-	    }
-	
-	    pos++;
-	  }
-	
-	  oldBSCount = [ state.bsCount[startLine] ];
-	  state.bsCount[startLine] = state.sCount[startLine] + 1 + (spaceAfterMarker ? 1 : 0);
-	
-	  lastLineEmpty = pos >= max;
-	
-	  oldSCount = [ state.sCount[startLine] ];
-	  state.sCount[startLine] = offset - initial;
-	
-	  oldTShift = [ state.tShift[startLine] ];
-	  state.tShift[startLine] = pos - state.bMarks[startLine];
-	
-	  terminatorRules = state.md.block.ruler.getRules('blockquote');
-	
-	  oldParentType = state.parentType;
-	  state.parentType = 'blockquote';
-	  wasOutdented = false;
-	
-	  // Search the end of the block
-	  //
-	  // Block ends with either:
-	  //  1. an empty line outside:
-	  //     ```
-	  //     > test
-	  //
-	  //     ```
-	  //  2. an empty line inside:
-	  //     ```
-	  //     >
-	  //     test
-	  //     ```
-	  //  3. another tag:
-	  //     ```
-	  //     > test
-	  //      - - -
-	  //     ```
-	  for (nextLine = startLine + 1; nextLine < endLine; nextLine++) {
-	    // check if it's outdented, i.e. it's inside list item and indented
-	    // less than said list item:
-	    //
-	    // ```
-	    // 1. anything
-	    //    > current blockquote
-	    // 2. checking this line
-	    // ```
-	    if (state.sCount[nextLine] < state.blkIndent) wasOutdented = true;
-	
-	    pos = state.bMarks[nextLine] + state.tShift[nextLine];
-	    max = state.eMarks[nextLine];
-	
-	    if (pos >= max) {
-	      // Case 1: line is not inside the blockquote, and this line is empty.
-	      break;
-	    }
-	
-	    if (state.src.charCodeAt(pos++) === 0x3E/* > */ && !wasOutdented) {
-	      // This line is inside the blockquote.
-	
-	      // skip spaces after ">" and re-calculate offset
-	      initial = offset = state.sCount[nextLine] + pos - (state.bMarks[nextLine] + state.tShift[nextLine]);
-	
-	      // skip one optional space after '>'
-	      if (state.src.charCodeAt(pos) === 0x20 /* space */) {
-	        // ' >   test '
-	        //     ^ -- position start of line here:
-	        pos++;
-	        initial++;
-	        offset++;
-	        adjustTab = false;
-	        spaceAfterMarker = true;
-	      } else if (state.src.charCodeAt(pos) === 0x09 /* tab */) {
-	        spaceAfterMarker = true;
-	
-	        if ((state.bsCount[nextLine] + offset) % 4 === 3) {
-	          // '  >\t  test '
-	          //       ^ -- position start of line here (tab has width===1)
-	          pos++;
-	          initial++;
-	          offset++;
-	          adjustTab = false;
-	        } else {
-	          // ' >\t  test '
-	          //    ^ -- position start of line here + shift bsCount slightly
-	          //         to make extra space appear
-	          adjustTab = true;
-	        }
-	      } else {
-	        spaceAfterMarker = false;
-	      }
-	
-	      oldBMarks.push(state.bMarks[nextLine]);
-	      state.bMarks[nextLine] = pos;
-	
-	      while (pos < max) {
-	        ch = state.src.charCodeAt(pos);
-	
-	        if (isSpace(ch)) {
-	          if (ch === 0x09) {
-	            offset += 4 - (offset + state.bsCount[nextLine] + (adjustTab ? 1 : 0)) % 4;
-	          } else {
-	            offset++;
-	          }
-	        } else {
-	          break;
-	        }
-	
-	        pos++;
-	      }
-	
-	      lastLineEmpty = pos >= max;
-	
-	      oldBSCount.push(state.bsCount[nextLine]);
-	      state.bsCount[nextLine] = state.sCount[nextLine] + 1 + (spaceAfterMarker ? 1 : 0);
-	
-	      oldSCount.push(state.sCount[nextLine]);
-	      state.sCount[nextLine] = offset - initial;
-	
-	      oldTShift.push(state.tShift[nextLine]);
-	      state.tShift[nextLine] = pos - state.bMarks[nextLine];
-	      continue;
-	    }
-	
-	    // Case 2: line is not inside the blockquote, and the last line was empty.
-	    if (lastLineEmpty) { break; }
-	
-	    // Case 3: another tag found.
-	    terminate = false;
-	    for (i = 0, l = terminatorRules.length; i < l; i++) {
-	      if (terminatorRules[i](state, nextLine, endLine, true)) {
-	        terminate = true;
-	        break;
-	      }
-	    }
-	
-	    if (terminate) {
-	      // Quirk to enforce "hard termination mode" for paragraphs;
-	      // normally if you call `tokenize(state, startLine, nextLine)`,
-	      // paragraphs will look below nextLine for paragraph continuation,
-	      // but if blockquote is terminated by another tag, they shouldn't
-	      state.lineMax = nextLine;
-	
-	      if (state.blkIndent !== 0) {
-	        // state.blkIndent was non-zero, we now set it to zero,
-	        // so we need to re-calculate all offsets to appear as
-	        // if indent wasn't changed
-	        oldBMarks.push(state.bMarks[nextLine]);
-	        oldBSCount.push(state.bsCount[nextLine]);
-	        oldTShift.push(state.tShift[nextLine]);
-	        oldSCount.push(state.sCount[nextLine]);
-	        state.sCount[nextLine] -= state.blkIndent;
-	      }
-	
-	      break;
-	    }
-	
-	    oldBMarks.push(state.bMarks[nextLine]);
-	    oldBSCount.push(state.bsCount[nextLine]);
-	    oldTShift.push(state.tShift[nextLine]);
-	    oldSCount.push(state.sCount[nextLine]);
-	
-	    // A negative indentation means that this is a paragraph continuation
-	    //
-	    state.sCount[nextLine] = -1;
-	  }
-	
-	  oldIndent = state.blkIndent;
-	  state.blkIndent = 0;
-	
-	  token        = state.push('blockquote_open', 'blockquote', 1);
-	  token.markup = '>';
-	  token.map    = lines = [ startLine, 0 ];
-	
-	  state.md.block.tokenize(state, startLine, nextLine);
-	
-	  token        = state.push('blockquote_close', 'blockquote', -1);
-	  token.markup = '>';
-	
-	  state.lineMax = oldLineMax;
-	  state.parentType = oldParentType;
-	  lines[1] = state.line;
-	
-	  // Restore original tShift; this might not be necessary since the parser
-	  // has already been here, but just to make sure we can do that.
-	  for (i = 0; i < oldTShift.length; i++) {
-	    state.bMarks[i + startLine] = oldBMarks[i];
-	    state.tShift[i + startLine] = oldTShift[i];
-	    state.sCount[i + startLine] = oldSCount[i];
-	    state.bsCount[i + startLine] = oldBSCount[i];
-	  }
-	  state.blkIndent = oldIndent;
-	
-	  return true;
-	};
-
-
-/***/ }),
-/* 127 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// Horizontal rule
-	
-	'use strict';
-	
-	var isSpace = __webpack_require__(93).isSpace;
-	
-	
-	module.exports = function hr(state, startLine, endLine, silent) {
-	  var marker, cnt, ch, token,
-	      pos = state.bMarks[startLine] + state.tShift[startLine],
-	      max = state.eMarks[startLine];
-	
-	  // if it's indented more than 3 spaces, it should be a code block
-	  if (state.sCount[startLine] - state.blkIndent >= 4) { return false; }
-	
-	  marker = state.src.charCodeAt(pos++);
-	
-	  // Check hr marker
-	  if (marker !== 0x2A/* * */ &&
-	      marker !== 0x2D/* - */ &&
-	      marker !== 0x5F/* _ */) {
-	    return false;
-	  }
-	
-	  // markers can be mixed with spaces, but there should be at least 3 of them
-	
-	  cnt = 1;
-	  while (pos < max) {
-	    ch = state.src.charCodeAt(pos++);
-	    if (ch !== marker && !isSpace(ch)) { return false; }
-	    if (ch === marker) { cnt++; }
-	  }
-	
-	  if (cnt < 3) { return false; }
-	
-	  if (silent) { return true; }
-	
-	  state.line = startLine + 1;
-	
-	  token        = state.push('hr', 'hr', 0);
-	  token.map    = [ startLine, state.line ];
-	  token.markup = Array(cnt + 1).join(String.fromCharCode(marker));
-	
-	  return true;
-	};
-
-
-/***/ }),
-/* 128 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// Lists
-	
-	'use strict';
-	
-	var isSpace = __webpack_require__(93).isSpace;
-	
-	
-	// Search `[-+*][\n ]`, returns next pos after marker on success
-	// or -1 on fail.
-	function skipBulletListMarker(state, startLine) {
-	  var marker, pos, max, ch;
-	
-	  pos = state.bMarks[startLine] + state.tShift[startLine];
-	  max = state.eMarks[startLine];
-	
-	  marker = state.src.charCodeAt(pos++);
-	  // Check bullet
-	  if (marker !== 0x2A/* * */ &&
-	      marker !== 0x2D/* - */ &&
-	      marker !== 0x2B/* + */) {
-	    return -1;
-	  }
-	
-	  if (pos < max) {
-	    ch = state.src.charCodeAt(pos);
-	
-	    if (!isSpace(ch)) {
-	      // " -test " - is not a list item
-	      return -1;
-	    }
-	  }
-	
-	  return pos;
-	}
-	
-	// Search `\d+[.)][\n ]`, returns next pos after marker on success
-	// or -1 on fail.
-	function skipOrderedListMarker(state, startLine) {
-	  var ch,
-	      start = state.bMarks[startLine] + state.tShift[startLine],
-	      pos = start,
-	      max = state.eMarks[startLine];
-	
-	  // List marker should have at least 2 chars (digit + dot)
-	  if (pos + 1 >= max) { return -1; }
-	
-	  ch = state.src.charCodeAt(pos++);
-	
-	  if (ch < 0x30/* 0 */ || ch > 0x39/* 9 */) { return -1; }
-	
-	  for (;;) {
-	    // EOL -> fail
-	    if (pos >= max) { return -1; }
-	
-	    ch = state.src.charCodeAt(pos++);
-	
-	    if (ch >= 0x30/* 0 */ && ch <= 0x39/* 9 */) {
-	
-	      // List marker should have no more than 9 digits
-	      // (prevents integer overflow in browsers)
-	      if (pos - start >= 10) { return -1; }
-	
-	      continue;
-	    }
-	
-	    // found valid marker
-	    if (ch === 0x29/* ) */ || ch === 0x2e/* . */) {
-	      break;
-	    }
-	
-	    return -1;
-	  }
-	
-	
-	  if (pos < max) {
-	    ch = state.src.charCodeAt(pos);
-	
-	    if (!isSpace(ch)) {
-	      // " 1.test " - is not a list item
-	      return -1;
-	    }
-	  }
-	  return pos;
-	}
-	
-	function markTightParagraphs(state, idx) {
-	  var i, l,
-	      level = state.level + 2;
-	
-	  for (i = idx + 2, l = state.tokens.length - 2; i < l; i++) {
-	    if (state.tokens[i].level === level && state.tokens[i].type === 'paragraph_open') {
-	      state.tokens[i + 2].hidden = true;
-	      state.tokens[i].hidden = true;
-	      i += 2;
-	    }
-	  }
-	}
-	
-	
-	module.exports = function list(state, startLine, endLine, silent) {
-	  var ch,
-	      contentStart,
-	      i,
-	      indent,
-	      indentAfterMarker,
-	      initial,
-	      isOrdered,
-	      itemLines,
-	      l,
-	      listLines,
-	      listTokIdx,
-	      markerCharCode,
-	      markerValue,
-	      max,
-	      nextLine,
-	      offset,
-	      oldIndent,
-	      oldLIndent,
-	      oldParentType,
-	      oldTShift,
-	      oldTight,
-	      pos,
-	      posAfterMarker,
-	      prevEmptyEnd,
-	      start,
-	      terminate,
-	      terminatorRules,
-	      token,
-	      isTerminatingParagraph = false,
-	      tight = true;
-	
-	  // if it's indented more than 3 spaces, it should be a code block
-	  if (state.sCount[startLine] - state.blkIndent >= 4) { return false; }
-	
-	  // limit conditions when list can interrupt
-	  // a paragraph (validation mode only)
-	  if (silent && state.parentType === 'paragraph') {
-	    // Next list item should still terminate previous list item;
-	    //
-	    // This code can fail if plugins use blkIndent as well as lists,
-	    // but I hope the spec gets fixed long before that happens.
-	    //
-	    if (state.tShift[startLine] >= state.blkIndent) {
-	      isTerminatingParagraph = true;
-	    }
-	  }
-	
-	  // Detect list type and position after marker
-	  if ((posAfterMarker = skipOrderedListMarker(state, startLine)) >= 0) {
-	    isOrdered = true;
-	    start = state.bMarks[startLine] + state.tShift[startLine];
-	    markerValue = Number(state.src.substr(start, posAfterMarker - start - 1));
-	
-	    // If we're starting a new ordered list right after
-	    // a paragraph, it should start with 1.
-	    if (isTerminatingParagraph && markerValue !== 1) return false;
-	
-	  } else if ((posAfterMarker = skipBulletListMarker(state, startLine)) >= 0) {
-	    isOrdered = false;
-	
-	  } else {
-	    return false;
-	  }
-	
-	  // If we're starting a new unordered list right after
-	  // a paragraph, first line should not be empty.
-	  if (isTerminatingParagraph) {
-	    if (state.skipSpaces(posAfterMarker) >= state.eMarks[startLine]) return false;
-	  }
-	
-	  // We should terminate list on style change. Remember first one to compare.
-	  markerCharCode = state.src.charCodeAt(posAfterMarker - 1);
-	
-	  // For validation mode we can terminate immediately
-	  if (silent) { return true; }
-	
-	  // Start list
-	  listTokIdx = state.tokens.length;
-	
-	  if (isOrdered) {
-	    token       = state.push('ordered_list_open', 'ol', 1);
-	    if (markerValue !== 1) {
-	      token.attrs = [ [ 'start', markerValue ] ];
-	    }
-	
-	  } else {
-	    token       = state.push('bullet_list_open', 'ul', 1);
-	  }
-	
-	  token.map    = listLines = [ startLine, 0 ];
-	  token.markup = String.fromCharCode(markerCharCode);
-	
-	  //
-	  // Iterate list items
-	  //
-	
-	  nextLine = startLine;
-	  prevEmptyEnd = false;
-	  terminatorRules = state.md.block.ruler.getRules('list');
-	
-	  oldParentType = state.parentType;
-	  state.parentType = 'list';
-	
-	  while (nextLine < endLine) {
-	    pos = posAfterMarker;
-	    max = state.eMarks[nextLine];
-	
-	    initial = offset = state.sCount[nextLine] + posAfterMarker - (state.bMarks[startLine] + state.tShift[startLine]);
-	
-	    while (pos < max) {
-	      ch = state.src.charCodeAt(pos);
-	
-	      if (ch === 0x09) {
-	        offset += 4 - (offset + state.bsCount[nextLine]) % 4;
-	      } else if (ch === 0x20) {
-	        offset++;
-	      } else {
-	        break;
-	      }
-	
-	      pos++;
-	    }
-	
-	    contentStart = pos;
-	
-	    if (contentStart >= max) {
-	      // trimming space in "-    \n  3" case, indent is 1 here
-	      indentAfterMarker = 1;
-	    } else {
-	      indentAfterMarker = offset - initial;
-	    }
-	
-	    // If we have more than 4 spaces, the indent is 1
-	    // (the rest is just indented code block)
-	    if (indentAfterMarker > 4) { indentAfterMarker = 1; }
-	
-	    // "  -  test"
-	    //  ^^^^^ - calculating total length of this thing
-	    indent = initial + indentAfterMarker;
-	
-	    // Run subparser & write tokens
-	    token        = state.push('list_item_open', 'li', 1);
-	    token.markup = String.fromCharCode(markerCharCode);
-	    token.map    = itemLines = [ startLine, 0 ];
-	
-	    oldIndent = state.blkIndent;
-	    oldTight = state.tight;
-	    oldTShift = state.tShift[startLine];
-	    oldLIndent = state.sCount[startLine];
-	    state.blkIndent = indent;
-	    state.tight = true;
-	    state.tShift[startLine] = contentStart - state.bMarks[startLine];
-	    state.sCount[startLine] = offset;
-	
-	    if (contentStart >= max && state.isEmpty(startLine + 1)) {
-	      // workaround for this case
-	      // (list item is empty, list terminates before "foo"):
-	      // ~~~~~~~~
-	      //   -
-	      //
-	      //     foo
-	      // ~~~~~~~~
-	      state.line = Math.min(state.line + 2, endLine);
-	    } else {
-	      state.md.block.tokenize(state, startLine, endLine, true);
-	    }
-	
-	    // If any of list item is tight, mark list as tight
-	    if (!state.tight || prevEmptyEnd) {
-	      tight = false;
-	    }
-	    // Item become loose if finish with empty line,
-	    // but we should filter last element, because it means list finish
-	    prevEmptyEnd = (state.line - startLine) > 1 && state.isEmpty(state.line - 1);
-	
-	    state.blkIndent = oldIndent;
-	    state.tShift[startLine] = oldTShift;
-	    state.sCount[startLine] = oldLIndent;
-	    state.tight = oldTight;
-	
-	    token        = state.push('list_item_close', 'li', -1);
-	    token.markup = String.fromCharCode(markerCharCode);
-	
-	    nextLine = startLine = state.line;
-	    itemLines[1] = nextLine;
-	    contentStart = state.bMarks[startLine];
-	
-	    if (nextLine >= endLine) { break; }
-	
-	    //
-	    // Try to check if list is terminated or continued.
-	    //
-	    if (state.sCount[nextLine] < state.blkIndent) { break; }
-	
-	    // fail if terminating block found
-	    terminate = false;
-	    for (i = 0, l = terminatorRules.length; i < l; i++) {
-	      if (terminatorRules[i](state, nextLine, endLine, true)) {
-	        terminate = true;
-	        break;
-	      }
-	    }
-	    if (terminate) { break; }
-	
-	    // fail if list has another type
-	    if (isOrdered) {
-	      posAfterMarker = skipOrderedListMarker(state, nextLine);
-	      if (posAfterMarker < 0) { break; }
-	    } else {
-	      posAfterMarker = skipBulletListMarker(state, nextLine);
-	      if (posAfterMarker < 0) { break; }
-	    }
-	
-	    if (markerCharCode !== state.src.charCodeAt(posAfterMarker - 1)) { break; }
-	  }
-	
-	  // Finalize list
-	  if (isOrdered) {
-	    token = state.push('ordered_list_close', 'ol', -1);
-	  } else {
-	    token = state.push('bullet_list_close', 'ul', -1);
-	  }
-	  token.markup = String.fromCharCode(markerCharCode);
-	
-	  listLines[1] = nextLine;
-	  state.line = nextLine;
-	
-	  state.parentType = oldParentType;
-	
-	  // mark paragraphs tight if needed
-	  if (tight) {
-	    markTightParagraphs(state, listTokIdx);
-	  }
-	
-	  return true;
-	};
-
-
-/***/ }),
-/* 129 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	
-	var normalizeReference   = __webpack_require__(93).normalizeReference;
-	var isSpace              = __webpack_require__(93).isSpace;
-	
-	
-	module.exports = function reference(state, startLine, _endLine, silent) {
-	  var ch,
-	      destEndPos,
-	      destEndLineNo,
-	      endLine,
-	      href,
-	      i,
-	      l,
-	      label,
-	      labelEnd,
-	      oldParentType,
-	      res,
-	      start,
-	      str,
-	      terminate,
-	      terminatorRules,
-	      title,
-	      lines = 0,
-	      pos = state.bMarks[startLine] + state.tShift[startLine],
-	      max = state.eMarks[startLine],
-	      nextLine = startLine + 1;
-	
-	  // if it's indented more than 3 spaces, it should be a code block
-	  if (state.sCount[startLine] - state.blkIndent >= 4) { return false; }
-	
-	  if (state.src.charCodeAt(pos) !== 0x5B/* [ */) { return false; }
-	
-	  // Simple check to quickly interrupt scan on [link](url) at the start of line.
-	  // Can be useful on practice: https://github.com/markdown-it/markdown-it/issues/54
-	  while (++pos < max) {
-	    if (state.src.charCodeAt(pos) === 0x5D /* ] */ &&
-	        state.src.charCodeAt(pos - 1) !== 0x5C/* \ */) {
-	      if (pos + 1 === max) { return false; }
-	      if (state.src.charCodeAt(pos + 1) !== 0x3A/* : */) { return false; }
-	      break;
-	    }
-	  }
-	
-	  endLine = state.lineMax;
-	
-	  // jump line-by-line until empty one or EOF
-	  terminatorRules = state.md.block.ruler.getRules('reference');
-	
-	  oldParentType = state.parentType;
-	  state.parentType = 'reference';
-	
-	  for (; nextLine < endLine && !state.isEmpty(nextLine); nextLine++) {
-	    // this would be a code block normally, but after paragraph
-	    // it's considered a lazy continuation regardless of what's there
-	    if (state.sCount[nextLine] - state.blkIndent > 3) { continue; }
-	
-	    // quirk for blockquotes, this line should already be checked by that rule
-	    if (state.sCount[nextLine] < 0) { continue; }
-	
-	    // Some tags can terminate paragraph without empty line.
-	    terminate = false;
-	    for (i = 0, l = terminatorRules.length; i < l; i++) {
-	      if (terminatorRules[i](state, nextLine, endLine, true)) {
-	        terminate = true;
-	        break;
-	      }
-	    }
-	    if (terminate) { break; }
-	  }
-	
-	  str = state.getLines(startLine, nextLine, state.blkIndent, false).trim();
-	  max = str.length;
-	
-	  for (pos = 1; pos < max; pos++) {
-	    ch = str.charCodeAt(pos);
-	    if (ch === 0x5B /* [ */) {
-	      return false;
-	    } else if (ch === 0x5D /* ] */) {
-	      labelEnd = pos;
-	      break;
-	    } else if (ch === 0x0A /* \n */) {
-	      lines++;
-	    } else if (ch === 0x5C /* \ */) {
-	      pos++;
-	      if (pos < max && str.charCodeAt(pos) === 0x0A) {
-	        lines++;
-	      }
-	    }
-	  }
-	
-	  if (labelEnd < 0 || str.charCodeAt(labelEnd + 1) !== 0x3A/* : */) { return false; }
-	
-	  // [label]:   destination   'title'
-	  //         ^^^ skip optional whitespace here
-	  for (pos = labelEnd + 2; pos < max; pos++) {
-	    ch = str.charCodeAt(pos);
-	    if (ch === 0x0A) {
-	      lines++;
-	    } else if (isSpace(ch)) {
-	      /*eslint no-empty:0*/
-	    } else {
-	      break;
-	    }
-	  }
-	
-	  // [label]:   destination   'title'
-	  //            ^^^^^^^^^^^ parse this
-	  res = state.md.helpers.parseLinkDestination(str, pos, max);
-	  if (!res.ok) { return false; }
-	
-	  href = state.md.normalizeLink(res.str);
-	  if (!state.md.validateLink(href)) { return false; }
-	
-	  pos = res.pos;
-	  lines += res.lines;
-	
-	  // save cursor state, we could require to rollback later
-	  destEndPos = pos;
-	  destEndLineNo = lines;
-	
-	  // [label]:   destination   'title'
-	  //                       ^^^ skipping those spaces
-	  start = pos;
-	  for (; pos < max; pos++) {
-	    ch = str.charCodeAt(pos);
-	    if (ch === 0x0A) {
-	      lines++;
-	    } else if (isSpace(ch)) {
-	      /*eslint no-empty:0*/
-	    } else {
-	      break;
-	    }
-	  }
-	
-	  // [label]:   destination   'title'
-	  //                          ^^^^^^^ parse this
-	  res = state.md.helpers.parseLinkTitle(str, pos, max);
-	  if (pos < max && start !== pos && res.ok) {
-	    title = res.str;
-	    pos = res.pos;
-	    lines += res.lines;
-	  } else {
-	    title = '';
-	    pos = destEndPos;
-	    lines = destEndLineNo;
-	  }
-	
-	  // skip trailing spaces until the rest of the line
-	  while (pos < max) {
-	    ch = str.charCodeAt(pos);
-	    if (!isSpace(ch)) { break; }
-	    pos++;
-	  }
-	
-	  if (pos < max && str.charCodeAt(pos) !== 0x0A) {
-	    if (title) {
-	      // garbage at the end of the line after title,
-	      // but it could still be a valid reference if we roll back
-	      title = '';
-	      pos = destEndPos;
-	      lines = destEndLineNo;
-	      while (pos < max) {
-	        ch = str.charCodeAt(pos);
-	        if (!isSpace(ch)) { break; }
-	        pos++;
-	      }
-	    }
-	  }
-	
-	  if (pos < max && str.charCodeAt(pos) !== 0x0A) {
-	    // garbage at the end of the line
-	    return false;
-	  }
-	
-	  label = normalizeReference(str.slice(1, labelEnd));
-	  if (!label) {
-	    // CommonMark 0.20 disallows empty labels
-	    return false;
-	  }
-	
-	  // Reference can not terminate anything. This check is for safety only.
-	  /*istanbul ignore if*/
-	  if (silent) { return true; }
-	
-	  if (typeof state.env.references === 'undefined') {
-	    state.env.references = {};
-	  }
-	  if (typeof state.env.references[label] === 'undefined') {
-	    state.env.references[label] = { title: title, href: href };
-	  }
-	
-	  state.parentType = oldParentType;
-	
-	  state.line = startLine + lines + 1;
-	  return true;
-	};
-
-
-/***/ }),
-/* 130 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// heading (#, ##, ...)
-	
-	'use strict';
-	
-	var isSpace = __webpack_require__(93).isSpace;
-	
-	
-	module.exports = function heading(state, startLine, endLine, silent) {
-	  var ch, level, tmp, token,
-	      pos = state.bMarks[startLine] + state.tShift[startLine],
-	      max = state.eMarks[startLine];
-	
-	  // if it's indented more than 3 spaces, it should be a code block
-	  if (state.sCount[startLine] - state.blkIndent >= 4) { return false; }
-	
-	  ch  = state.src.charCodeAt(pos);
-	
-	  if (ch !== 0x23/* # */ || pos >= max) { return false; }
-	
-	  // count heading level
-	  level = 1;
-	  ch = state.src.charCodeAt(++pos);
-	  while (ch === 0x23/* # */ && pos < max && level <= 6) {
-	    level++;
-	    ch = state.src.charCodeAt(++pos);
-	  }
-	
-	  if (level > 6 || (pos < max && !isSpace(ch))) { return false; }
-	
-	  if (silent) { return true; }
-	
-	  // Let's cut tails like '    ###  ' from the end of string
-	
-	  max = state.skipSpacesBack(max, pos);
-	  tmp = state.skipCharsBack(max, 0x23, pos); // #
-	  if (tmp > pos && isSpace(state.src.charCodeAt(tmp - 1))) {
-	    max = tmp;
-	  }
-	
-	  state.line = startLine + 1;
-	
-	  token        = state.push('heading_open', 'h' + String(level), 1);
-	  token.markup = '########'.slice(0, level);
-	  token.map    = [ startLine, state.line ];
-	
-	  token          = state.push('inline', '', 0);
-	  token.content  = state.src.slice(pos, max).trim();
-	  token.map      = [ startLine, state.line ];
-	  token.children = [];
-	
-	  token        = state.push('heading_close', 'h' + String(level), -1);
-	  token.markup = '########'.slice(0, level);
-	
-	  return true;
-	};
-
-
-/***/ }),
-/* 131 */
-/***/ (function(module, exports) {
-
-	// lheading (---, ===)
-	
-	'use strict';
-	
-	
-	module.exports = function lheading(state, startLine, endLine/*, silent*/) {
-	  var content, terminate, i, l, token, pos, max, level, marker,
-	      nextLine = startLine + 1, oldParentType,
-	      terminatorRules = state.md.block.ruler.getRules('paragraph');
-	
-	  // if it's indented more than 3 spaces, it should be a code block
-	  if (state.sCount[startLine] - state.blkIndent >= 4) { return false; }
-	
-	  oldParentType = state.parentType;
-	  state.parentType = 'paragraph'; // use paragraph to match terminatorRules
-	
-	  // jump line-by-line until empty one or EOF
-	  for (; nextLine < endLine && !state.isEmpty(nextLine); nextLine++) {
-	    // this would be a code block normally, but after paragraph
-	    // it's considered a lazy continuation regardless of what's there
-	    if (state.sCount[nextLine] - state.blkIndent > 3) { continue; }
-	
-	    //
-	    // Check for underline in setext header
-	    //
-	    if (state.sCount[nextLine] >= state.blkIndent) {
-	      pos = state.bMarks[nextLine] + state.tShift[nextLine];
-	      max = state.eMarks[nextLine];
-	
-	      if (pos < max) {
-	        marker = state.src.charCodeAt(pos);
-	
-	        if (marker === 0x2D/* - */ || marker === 0x3D/* = */) {
-	          pos = state.skipChars(pos, marker);
-	          pos = state.skipSpaces(pos);
-	
-	          if (pos >= max) {
-	            level = (marker === 0x3D/* = */ ? 1 : 2);
-	            break;
-	          }
-	        }
-	      }
-	    }
-	
-	    // quirk for blockquotes, this line should already be checked by that rule
-	    if (state.sCount[nextLine] < 0) { continue; }
-	
-	    // Some tags can terminate paragraph without empty line.
-	    terminate = false;
-	    for (i = 0, l = terminatorRules.length; i < l; i++) {
-	      if (terminatorRules[i](state, nextLine, endLine, true)) {
-	        terminate = true;
-	        break;
-	      }
-	    }
-	    if (terminate) { break; }
-	  }
-	
-	  if (!level) {
-	    // Didn't find valid underline
-	    return false;
-	  }
-	
-	  content = state.getLines(startLine, nextLine, state.blkIndent, false).trim();
-	
-	  state.line = nextLine + 1;
-	
-	  token          = state.push('heading_open', 'h' + String(level), 1);
-	  token.markup   = String.fromCharCode(marker);
-	  token.map      = [ startLine, state.line ];
-	
-	  token          = state.push('inline', '', 0);
-	  token.content  = content;
-	  token.map      = [ startLine, state.line - 1 ];
-	  token.children = [];
-	
-	  token          = state.push('heading_close', 'h' + String(level), -1);
-	  token.markup   = String.fromCharCode(marker);
-	
-	  state.parentType = oldParentType;
-	
-	  return true;
-	};
-
-
-/***/ }),
-/* 132 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// HTML block
-	
-	'use strict';
-	
-	
-	var block_names = __webpack_require__(133);
-	var HTML_OPEN_CLOSE_TAG_RE = __webpack_require__(134).HTML_OPEN_CLOSE_TAG_RE;
-	
-	// An array of opening and corresponding closing sequences for html tags,
-	// last argument defines whether it can terminate a paragraph or not
-	//
-	var HTML_SEQUENCES = [
-	  [ /^<(script|pre|style)(?=(\s|>|$))/i, /<\/(script|pre|style)>/i, true ],
-	  [ /^<!--/,        /-->/,   true ],
-	  [ /^<\?/,         /\?>/,   true ],
-	  [ /^<![A-Z]/,     />/,     true ],
-	  [ /^<!\[CDATA\[/, /\]\]>/, true ],
-	  [ new RegExp('^</?(' + block_names.join('|') + ')(?=(\\s|/?>|$))', 'i'), /^$/, true ],
-	  [ new RegExp(HTML_OPEN_CLOSE_TAG_RE.source + '\\s*$'),  /^$/, false ]
-	];
-	
-	
-	module.exports = function html_block(state, startLine, endLine, silent) {
-	  var i, nextLine, token, lineText,
-	      pos = state.bMarks[startLine] + state.tShift[startLine],
-	      max = state.eMarks[startLine];
-	
-	  // if it's indented more than 3 spaces, it should be a code block
-	  if (state.sCount[startLine] - state.blkIndent >= 4) { return false; }
-	
-	  if (!state.md.options.html) { return false; }
-	
-	  if (state.src.charCodeAt(pos) !== 0x3C/* < */) { return false; }
-	
-	  lineText = state.src.slice(pos, max);
-	
-	  for (i = 0; i < HTML_SEQUENCES.length; i++) {
-	    if (HTML_SEQUENCES[i][0].test(lineText)) { break; }
-	  }
-	
-	  if (i === HTML_SEQUENCES.length) { return false; }
-	
-	  if (silent) {
-	    // true if this sequence can be a terminator, false otherwise
-	    return HTML_SEQUENCES[i][2];
-	  }
-	
-	  nextLine = startLine + 1;
-	
-	  // If we are here - we detected HTML block.
-	  // Let's roll down till block end.
-	  if (!HTML_SEQUENCES[i][1].test(lineText)) {
-	    for (; nextLine < endLine; nextLine++) {
-	      if (state.sCount[nextLine] < state.blkIndent) { break; }
-	
-	      pos = state.bMarks[nextLine] + state.tShift[nextLine];
-	      max = state.eMarks[nextLine];
-	      lineText = state.src.slice(pos, max);
-	
-	      if (HTML_SEQUENCES[i][1].test(lineText)) {
-	        if (lineText.length !== 0) { nextLine++; }
-	        break;
-	      }
-	    }
-	  }
-	
-	  state.line = nextLine;
-	
-	  token         = state.push('html_block', '', 0);
-	  token.map     = [ startLine, nextLine ];
-	  token.content = state.getLines(startLine, nextLine, state.blkIndent, true);
-	
-	  return true;
-	};
-
-
-/***/ }),
-/* 133 */
-/***/ (function(module, exports) {
-
-	// List of valid html blocks names, accorting to commonmark spec
-	// http://jgm.github.io/CommonMark/spec.html#html-blocks
-	
-	'use strict';
-	
-	
-	module.exports = [
-	  'address',
-	  'article',
-	  'aside',
-	  'base',
-	  'basefont',
-	  'blockquote',
-	  'body',
-	  'caption',
-	  'center',
-	  'col',
-	  'colgroup',
-	  'dd',
-	  'details',
-	  'dialog',
-	  'dir',
-	  'div',
-	  'dl',
-	  'dt',
-	  'fieldset',
-	  'figcaption',
-	  'figure',
-	  'footer',
-	  'form',
-	  'frame',
-	  'frameset',
-	  'h1',
-	  'h2',
-	  'h3',
-	  'h4',
-	  'h5',
-	  'h6',
-	  'head',
-	  'header',
-	  'hr',
-	  'html',
-	  'iframe',
-	  'legend',
-	  'li',
-	  'link',
-	  'main',
-	  'menu',
-	  'menuitem',
-	  'meta',
-	  'nav',
-	  'noframes',
-	  'ol',
-	  'optgroup',
-	  'option',
-	  'p',
-	  'param',
-	  'section',
-	  'source',
-	  'summary',
-	  'table',
-	  'tbody',
-	  'td',
-	  'tfoot',
-	  'th',
-	  'thead',
-	  'title',
-	  'tr',
-	  'track',
-	  'ul'
-	];
-
-
-/***/ }),
-/* 134 */
-/***/ (function(module, exports) {
-
-	// Regexps to match html elements
-	
-	'use strict';
-	
-	var attr_name     = '[a-zA-Z_:][a-zA-Z0-9:._-]*';
-	
-	var unquoted      = '[^"\'=<>`\\x00-\\x20]+';
-	var single_quoted = "'[^']*'";
-	var double_quoted = '"[^"]*"';
-	
-	var attr_value  = '(?:' + unquoted + '|' + single_quoted + '|' + double_quoted + ')';
-	
-	var attribute   = '(?:\\s+' + attr_name + '(?:\\s*=\\s*' + attr_value + ')?)';
-	
-	var open_tag    = '<[A-Za-z][A-Za-z0-9\\-]*' + attribute + '*\\s*\\/?>';
-	
-	var close_tag   = '<\\/[A-Za-z][A-Za-z0-9\\-]*\\s*>';
-	var comment     = '<!---->|<!--(?:-?[^>-])(?:-?[^-])*-->';
-	var processing  = '<[?].*?[?]>';
-	var declaration = '<![A-Z]+\\s+[^>]*>';
-	var cdata       = '<!\\[CDATA\\[[\\s\\S]*?\\]\\]>';
-	
-	var HTML_TAG_RE = new RegExp('^(?:' + open_tag + '|' + close_tag + '|' + comment +
-	                        '|' + processing + '|' + declaration + '|' + cdata + ')');
-	var HTML_OPEN_CLOSE_TAG_RE = new RegExp('^(?:' + open_tag + '|' + close_tag + ')');
-	
-	module.exports.HTML_TAG_RE = HTML_TAG_RE;
-	module.exports.HTML_OPEN_CLOSE_TAG_RE = HTML_OPEN_CLOSE_TAG_RE;
-
-
-/***/ }),
-/* 135 */
-/***/ (function(module, exports) {
-
-	// Paragraph
-	
-	'use strict';
-	
-	
-	module.exports = function paragraph(state, startLine/*, endLine*/) {
-	  var content, terminate, i, l, token, oldParentType,
-	      nextLine = startLine + 1,
-	      terminatorRules = state.md.block.ruler.getRules('paragraph'),
-	      endLine = state.lineMax;
-	
-	  oldParentType = state.parentType;
-	  state.parentType = 'paragraph';
-	
-	  // jump line-by-line until empty one or EOF
-	  for (; nextLine < endLine && !state.isEmpty(nextLine); nextLine++) {
-	    // this would be a code block normally, but after paragraph
-	    // it's considered a lazy continuation regardless of what's there
-	    if (state.sCount[nextLine] - state.blkIndent > 3) { continue; }
-	
-	    // quirk for blockquotes, this line should already be checked by that rule
-	    if (state.sCount[nextLine] < 0) { continue; }
-	
-	    // Some tags can terminate paragraph without empty line.
-	    terminate = false;
-	    for (i = 0, l = terminatorRules.length; i < l; i++) {
-	      if (terminatorRules[i](state, nextLine, endLine, true)) {
-	        terminate = true;
-	        break;
-	      }
-	    }
-	    if (terminate) { break; }
-	  }
-	
-	  content = state.getLines(startLine, nextLine, state.blkIndent, false).trim();
-	
-	  state.line = nextLine;
-	
-	  token          = state.push('paragraph_open', 'p', 1);
-	  token.map      = [ startLine, state.line ];
-	
-	  token          = state.push('inline', '', 0);
-	  token.content  = content;
-	  token.map      = [ startLine, state.line ];
-	  token.children = [];
-	
-	  token          = state.push('paragraph_close', 'p', -1);
-	
-	  state.parentType = oldParentType;
-	
-	  return true;
-	};
-
-
-/***/ }),
-/* 136 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// Parser state class
-	
-	'use strict';
-	
-	var Token = __webpack_require__(121);
-	var isSpace = __webpack_require__(93).isSpace;
-	
-	
-	function StateBlock(src, md, env, tokens) {
-	  var ch, s, start, pos, len, indent, offset, indent_found;
-	
-	  this.src = src;
-	
-	  // link to parser instance
-	  this.md     = md;
-	
-	  this.env = env;
-	
-	  //
-	  // Internal state vartiables
-	  //
-	
-	  this.tokens = tokens;
-	
-	  this.bMarks = [];  // line begin offsets for fast jumps
-	  this.eMarks = [];  // line end offsets for fast jumps
-	  this.tShift = [];  // offsets of the first non-space characters (tabs not expanded)
-	  this.sCount = [];  // indents for each line (tabs expanded)
-	
-	  // An amount of virtual spaces (tabs expanded) between beginning
-	  // of each line (bMarks) and real beginning of that line.
-	  //
-	  // It exists only as a hack because blockquotes override bMarks
-	  // losing information in the process.
-	  //
-	  // It's used only when expanding tabs, you can think about it as
-	  // an initial tab length, e.g. bsCount=21 applied to string `\t123`
-	  // means first tab should be expanded to 4-21%4 === 3 spaces.
-	  //
-	  this.bsCount = [];
-	
-	  // block parser variables
-	  this.blkIndent  = 0; // required block content indent
-	                       // (for example, if we are in list)
-	  this.line       = 0; // line index in src
-	  this.lineMax    = 0; // lines count
-	  this.tight      = false;  // loose/tight mode for lists
-	  this.ddIndent   = -1; // indent of the current dd block (-1 if there isn't any)
-	
-	  // can be 'blockquote', 'list', 'root', 'paragraph' or 'reference'
-	  // used in lists to determine if they interrupt a paragraph
-	  this.parentType = 'root';
-	
-	  this.level = 0;
-	
-	  // renderer
-	  this.result = '';
-	
-	  // Create caches
-	  // Generate markers.
-	  s = this.src;
-	  indent_found = false;
-	
-	  for (start = pos = indent = offset = 0, len = s.length; pos < len; pos++) {
-	    ch = s.charCodeAt(pos);
-	
-	    if (!indent_found) {
-	      if (isSpace(ch)) {
-	        indent++;
-	
-	        if (ch === 0x09) {
-	          offset += 4 - offset % 4;
-	        } else {
-	          offset++;
-	        }
-	        continue;
-	      } else {
-	        indent_found = true;
-	      }
-	    }
-	
-	    if (ch === 0x0A || pos === len - 1) {
-	      if (ch !== 0x0A) { pos++; }
-	      this.bMarks.push(start);
-	      this.eMarks.push(pos);
-	      this.tShift.push(indent);
-	      this.sCount.push(offset);
-	      this.bsCount.push(0);
-	
-	      indent_found = false;
-	      indent = 0;
-	      offset = 0;
-	      start = pos + 1;
-	    }
-	  }
-	
-	  // Push fake entry to simplify cache bounds checks
-	  this.bMarks.push(s.length);
-	  this.eMarks.push(s.length);
-	  this.tShift.push(0);
-	  this.sCount.push(0);
-	  this.bsCount.push(0);
-	
-	  this.lineMax = this.bMarks.length - 1; // don't count last fake line
-	}
-	
-	// Push new token to "stream".
-	//
-	StateBlock.prototype.push = function (type, tag, nesting) {
-	  var token = new Token(type, tag, nesting);
-	  token.block = true;
-	
-	  if (nesting < 0) { this.level--; }
-	  token.level = this.level;
-	  if (nesting > 0) { this.level++; }
-	
-	  this.tokens.push(token);
-	  return token;
-	};
-	
-	StateBlock.prototype.isEmpty = function isEmpty(line) {
-	  return this.bMarks[line] + this.tShift[line] >= this.eMarks[line];
-	};
-	
-	StateBlock.prototype.skipEmptyLines = function skipEmptyLines(from) {
-	  for (var max = this.lineMax; from < max; from++) {
-	    if (this.bMarks[from] + this.tShift[from] < this.eMarks[from]) {
-	      break;
-	    }
-	  }
-	  return from;
-	};
-	
-	// Skip spaces from given position.
-	StateBlock.prototype.skipSpaces = function skipSpaces(pos) {
-	  var ch;
-	
-	  for (var max = this.src.length; pos < max; pos++) {
-	    ch = this.src.charCodeAt(pos);
-	    if (!isSpace(ch)) { break; }
-	  }
-	  return pos;
-	};
-	
-	// Skip spaces from given position in reverse.
-	StateBlock.prototype.skipSpacesBack = function skipSpacesBack(pos, min) {
-	  if (pos <= min) { return pos; }
-	
-	  while (pos > min) {
-	    if (!isSpace(this.src.charCodeAt(--pos))) { return pos + 1; }
-	  }
-	  return pos;
-	};
-	
-	// Skip char codes from given position
-	StateBlock.prototype.skipChars = function skipChars(pos, code) {
-	  for (var max = this.src.length; pos < max; pos++) {
-	    if (this.src.charCodeAt(pos) !== code) { break; }
-	  }
-	  return pos;
-	};
-	
-	// Skip char codes reverse from given position - 1
-	StateBlock.prototype.skipCharsBack = function skipCharsBack(pos, code, min) {
-	  if (pos <= min) { return pos; }
-	
-	  while (pos > min) {
-	    if (code !== this.src.charCodeAt(--pos)) { return pos + 1; }
-	  }
-	  return pos;
-	};
-	
-	// cut lines range from source.
-	StateBlock.prototype.getLines = function getLines(begin, end, indent, keepLastLF) {
-	  var i, lineIndent, ch, first, last, queue, lineStart,
-	      line = begin;
-	
-	  if (begin >= end) {
-	    return '';
-	  }
-	
-	  queue = new Array(end - begin);
-	
-	  for (i = 0; line < end; line++, i++) {
-	    lineIndent = 0;
-	    lineStart = first = this.bMarks[line];
-	
-	    if (line + 1 < end || keepLastLF) {
-	      // No need for bounds check because we have fake entry on tail.
-	      last = this.eMarks[line] + 1;
-	    } else {
-	      last = this.eMarks[line];
-	    }
-	
-	    while (first < last && lineIndent < indent) {
-	      ch = this.src.charCodeAt(first);
-	
-	      if (isSpace(ch)) {
-	        if (ch === 0x09) {
-	          lineIndent += 4 - (lineIndent + this.bsCount[line]) % 4;
-	        } else {
-	          lineIndent++;
-	        }
-	      } else if (first - lineStart < this.tShift[line]) {
-	        // patched tShift masked characters to look like spaces (blockquotes, list markers)
-	        lineIndent++;
-	      } else {
-	        break;
-	      }
-	
-	      first++;
-	    }
-	
-	    if (lineIndent > indent) {
-	      // partially expanding tabs in code blocks, e.g '\t\tfoobar'
-	      // with indent=2 becomes '  \tfoobar'
-	      queue[i] = new Array(lineIndent - indent + 1).join(' ') + this.src.slice(first, last);
-	    } else {
-	      queue[i] = this.src.slice(first, last);
-	    }
-	  }
-	
-	  return queue.join('');
-	};
-	
-	// re-export Token class to use in block rules
-	StateBlock.prototype.Token = Token;
-	
-	
-	module.exports = StateBlock;
-
-
-/***/ }),
-/* 137 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/** internal
-	 * class ParserInline
-	 *
-	 * Tokenizes paragraph content.
-	 **/
-	'use strict';
-	
-	
-	var Ruler           = __webpack_require__(113);
-	
-	
-	////////////////////////////////////////////////////////////////////////////////
-	// Parser rules
-	
-	var _rules = [
-	  [ 'text',            __webpack_require__(138) ],
-	  [ 'newline',         __webpack_require__(139) ],
-	  [ 'escape',          __webpack_require__(140) ],
-	  [ 'backticks',       __webpack_require__(141) ],
-	  [ 'strikethrough',   __webpack_require__(142).tokenize ],
-	  [ 'emphasis',        __webpack_require__(143).tokenize ],
-	  [ 'link',            __webpack_require__(144) ],
-	  [ 'image',           __webpack_require__(145) ],
-	  [ 'autolink',        __webpack_require__(146) ],
-	  [ 'html_inline',     __webpack_require__(147) ],
-	  [ 'entity',          __webpack_require__(148) ]
-	];
-	
-	var _rules2 = [
-	  [ 'balance_pairs',   __webpack_require__(149) ],
-	  [ 'strikethrough',   __webpack_require__(142).postProcess ],
-	  [ 'emphasis',        __webpack_require__(143).postProcess ],
-	  [ 'text_collapse',   __webpack_require__(150) ]
-	];
-	
-	
-	/**
-	 * new ParserInline()
-	 **/
-	function ParserInline() {
-	  var i;
-	
-	  /**
-	   * ParserInline#ruler -> Ruler
-	   *
-	   * [[Ruler]] instance. Keep configuration of inline rules.
-	   **/
-	  this.ruler = new Ruler();
-	
-	  for (i = 0; i < _rules.length; i++) {
-	    this.ruler.push(_rules[i][0], _rules[i][1]);
-	  }
-	
-	  /**
-	   * ParserInline#ruler2 -> Ruler
-	   *
-	   * [[Ruler]] instance. Second ruler used for post-processing
-	   * (e.g. in emphasis-like rules).
-	   **/
-	  this.ruler2 = new Ruler();
-	
-	  for (i = 0; i < _rules2.length; i++) {
-	    this.ruler2.push(_rules2[i][0], _rules2[i][1]);
-	  }
-	}
-	
-	
-	// Skip single token by running all rules in validation mode;
-	// returns `true` if any rule reported success
-	//
-	ParserInline.prototype.skipToken = function (state) {
-	  var ok, i, pos = state.pos,
-	      rules = this.ruler.getRules(''),
-	      len = rules.length,
-	      maxNesting = state.md.options.maxNesting,
-	      cache = state.cache;
-	
-	
-	  if (typeof cache[pos] !== 'undefined') {
-	    state.pos = cache[pos];
-	    return;
-	  }
-	
-	  if (state.level < maxNesting) {
-	    for (i = 0; i < len; i++) {
-	      // Increment state.level and decrement it later to limit recursion.
-	      // It's harmless to do here, because no tokens are created. But ideally,
-	      // we'd need a separate private state variable for this purpose.
-	      //
-	      state.level++;
-	      ok = rules[i](state, true);
-	      state.level--;
-	
-	      if (ok) { break; }
-	    }
-	  } else {
-	    // Too much nesting, just skip until the end of the paragraph.
-	    //
-	    // NOTE: this will cause links to behave incorrectly in the following case,
-	    //       when an amount of `[` is exactly equal to `maxNesting + 1`:
-	    //
-	    //       [[[[[[[[[[[[[[[[[[[[[foo]()
-	    //
-	    // TODO: remove this workaround when CM standard will allow nested links
-	    //       (we can replace it by preventing links from being parsed in
-	    //       validation mode)
-	    //
-	    state.pos = state.posMax;
-	  }
-	
-	  if (!ok) { state.pos++; }
-	  cache[pos] = state.pos;
-	};
-	
-	
-	// Generate tokens for input range
-	//
-	ParserInline.prototype.tokenize = function (state) {
-	  var ok, i,
-	      rules = this.ruler.getRules(''),
-	      len = rules.length,
-	      end = state.posMax,
-	      maxNesting = state.md.options.maxNesting;
-	
-	  while (state.pos < end) {
-	    // Try all possible rules.
-	    // On success, rule should:
-	    //
-	    // - update `state.pos`
-	    // - update `state.tokens`
-	    // - return true
-	
-	    if (state.level < maxNesting) {
-	      for (i = 0; i < len; i++) {
-	        ok = rules[i](state, false);
-	        if (ok) { break; }
-	      }
-	    }
-	
-	    if (ok) {
-	      if (state.pos >= end) { break; }
-	      continue;
-	    }
-	
-	    state.pending += state.src[state.pos++];
-	  }
-	
-	  if (state.pending) {
-	    state.pushPending();
-	  }
-	};
-	
-	
-	/**
-	 * ParserInline.parse(str, md, env, outTokens)
-	 *
-	 * Process input string and push inline tokens into `outTokens`
-	 **/
-	ParserInline.prototype.parse = function (str, md, env, outTokens) {
-	  var i, rules, len;
-	  var state = new this.State(str, md, env, outTokens);
-	
-	  this.tokenize(state);
-	
-	  rules = this.ruler2.getRules('');
-	  len = rules.length;
-	
-	  for (i = 0; i < len; i++) {
-	    rules[i](state);
-	  }
-	};
-	
-	
-	ParserInline.prototype.State = __webpack_require__(151);
-	
-	
-	module.exports = ParserInline;
-
-
-/***/ }),
-/* 138 */
-/***/ (function(module, exports) {
-
-	// Skip text characters for text token, place those to pending buffer
-	// and increment current pos
-	
-	'use strict';
-	
-	
-	// Rule to skip pure text
-	// '{}$%@~+=:' reserved for extentions
-	
-	// !, ", #, $, %, &, ', (, ), *, +, ,, -, ., /, :, ;, <, =, >, ?, @, [, \, ], ^, _, `, {, |, }, or ~
-	
-	// !!!! Don't confuse with "Markdown ASCII Punctuation" chars
-	// http://spec.commonmark.org/0.15/#ascii-punctuation-character
-	function isTerminatorChar(ch) {
-	  switch (ch) {
-	    case 0x0A/* \n */:
-	    case 0x21/* ! */:
-	    case 0x23/* # */:
-	    case 0x24/* $ */:
-	    case 0x25/* % */:
-	    case 0x26/* & */:
-	    case 0x2A/* * */:
-	    case 0x2B/* + */:
-	    case 0x2D/* - */:
-	    case 0x3A/* : */:
-	    case 0x3C/* < */:
-	    case 0x3D/* = */:
-	    case 0x3E/* > */:
-	    case 0x40/* @ */:
-	    case 0x5B/* [ */:
-	    case 0x5C/* \ */:
-	    case 0x5D/* ] */:
-	    case 0x5E/* ^ */:
-	    case 0x5F/* _ */:
-	    case 0x60/* ` */:
-	    case 0x7B/* { */:
-	    case 0x7D/* } */:
-	    case 0x7E/* ~ */:
-	      return true;
-	    default:
-	      return false;
-	  }
-	}
-	
-	module.exports = function text(state, silent) {
-	  var pos = state.pos;
-	
-	  while (pos < state.posMax && !isTerminatorChar(state.src.charCodeAt(pos))) {
-	    pos++;
-	  }
-	
-	  if (pos === state.pos) { return false; }
-	
-	  if (!silent) { state.pending += state.src.slice(state.pos, pos); }
-	
-	  state.pos = pos;
-	
-	  return true;
-	};
-	
-	// Alternative implementation, for memory.
-	//
-	// It costs 10% of performance, but allows extend terminators list, if place it
-	// to `ParcerInline` property. Probably, will switch to it sometime, such
-	// flexibility required.
-	
-	/*
-	var TERMINATOR_RE = /[\n!#$%&*+\-:<=>@[\\\]^_`{}~]/;
-	
-	module.exports = function text(state, silent) {
-	  var pos = state.pos,
-	      idx = state.src.slice(pos).search(TERMINATOR_RE);
-	
-	  // first char is terminator -> empty text
-	  if (idx === 0) { return false; }
-	
-	  // no terminator -> text till end of string
-	  if (idx < 0) {
-	    if (!silent) { state.pending += state.src.slice(pos); }
-	    state.pos = state.src.length;
-	    return true;
-	  }
-	
-	  if (!silent) { state.pending += state.src.slice(pos, pos + idx); }
-	
-	  state.pos += idx;
-	
-	  return true;
-	};*/
-
-
-/***/ }),
-/* 139 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// Proceess '\n'
-	
-	'use strict';
-	
-	var isSpace = __webpack_require__(93).isSpace;
-	
-	
-	module.exports = function newline(state, silent) {
-	  var pmax, max, pos = state.pos;
-	
-	  if (state.src.charCodeAt(pos) !== 0x0A/* \n */) { return false; }
-	
-	  pmax = state.pending.length - 1;
-	  max = state.posMax;
-	
-	  // '  \n' -> hardbreak
-	  // Lookup in pending chars is bad practice! Don't copy to other rules!
-	  // Pending string is stored in concat mode, indexed lookups will cause
-	  // convertion to flat mode.
-	  if (!silent) {
-	    if (pmax >= 0 && state.pending.charCodeAt(pmax) === 0x20) {
-	      if (pmax >= 1 && state.pending.charCodeAt(pmax - 1) === 0x20) {
-	        state.pending = state.pending.replace(/ +$/, '');
-	        state.push('hardbreak', 'br', 0);
-	      } else {
-	        state.pending = state.pending.slice(0, -1);
-	        state.push('softbreak', 'br', 0);
-	      }
-	
-	    } else {
-	      state.push('softbreak', 'br', 0);
-	    }
-	  }
-	
-	  pos++;
-	
-	  // skip heading spaces for next line
-	  while (pos < max && isSpace(state.src.charCodeAt(pos))) { pos++; }
-	
-	  state.pos = pos;
-	  return true;
-	};
-
-
-/***/ }),
-/* 140 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// Process escaped chars and hardbreaks
-	
-	'use strict';
-	
-	var isSpace = __webpack_require__(93).isSpace;
-	
-	var ESCAPED = [];
-	
-	for (var i = 0; i < 256; i++) { ESCAPED.push(0); }
-	
-	'\\!"#$%&\'()*+,./:;<=>?@[]^_`{|}~-'
-	  .split('').forEach(function (ch) { ESCAPED[ch.charCodeAt(0)] = 1; });
-	
-	
-	module.exports = function escape(state, silent) {
-	  var ch, pos = state.pos, max = state.posMax;
-	
-	  if (state.src.charCodeAt(pos) !== 0x5C/* \ */) { return false; }
-	
-	  pos++;
-	
-	  if (pos < max) {
-	    ch = state.src.charCodeAt(pos);
-	
-	    if (ch < 256 && ESCAPED[ch] !== 0) {
-	      if (!silent) { state.pending += state.src[pos]; }
-	      state.pos += 2;
-	      return true;
-	    }
-	
-	    if (ch === 0x0A) {
-	      if (!silent) {
-	        state.push('hardbreak', 'br', 0);
-	      }
-	
-	      pos++;
-	      // skip leading whitespaces from next line
-	      while (pos < max) {
-	        ch = state.src.charCodeAt(pos);
-	        if (!isSpace(ch)) { break; }
-	        pos++;
-	      }
-	
-	      state.pos = pos;
-	      return true;
-	    }
-	  }
-	
-	  if (!silent) { state.pending += '\\'; }
-	  state.pos++;
-	  return true;
-	};
-
-
-/***/ }),
-/* 141 */
-/***/ (function(module, exports) {
-
-	// Parse backticks
-	
-	'use strict';
-	
-	module.exports = function backtick(state, silent) {
-	  var start, max, marker, matchStart, matchEnd, token,
-	      pos = state.pos,
-	      ch = state.src.charCodeAt(pos);
-	
-	  if (ch !== 0x60/* ` */) { return false; }
-	
-	  start = pos;
-	  pos++;
-	  max = state.posMax;
-	
-	  while (pos < max && state.src.charCodeAt(pos) === 0x60/* ` */) { pos++; }
-	
-	  marker = state.src.slice(start, pos);
-	
-	  matchStart = matchEnd = pos;
-	
-	  while ((matchStart = state.src.indexOf('`', matchEnd)) !== -1) {
-	    matchEnd = matchStart + 1;
-	
-	    while (matchEnd < max && state.src.charCodeAt(matchEnd) === 0x60/* ` */) { matchEnd++; }
-	
-	    if (matchEnd - matchStart === marker.length) {
-	      if (!silent) {
-	        token         = state.push('code_inline', 'code', 0);
-	        token.markup  = marker;
-	        token.content = state.src.slice(pos, matchStart)
-	                                 .replace(/[ \n]+/g, ' ')
-	                                 .trim();
-	      }
-	      state.pos = matchEnd;
-	      return true;
-	    }
-	  }
-	
-	  if (!silent) { state.pending += marker; }
-	  state.pos += marker.length;
-	  return true;
-	};
-
-
-/***/ }),
-/* 142 */
-/***/ (function(module, exports) {
-
-	// ~~strike through~~
-	//
-	'use strict';
-	
-	
-	// Insert each marker as a separate text token, and add it to delimiter list
-	//
-	module.exports.tokenize = function strikethrough(state, silent) {
-	  var i, scanned, token, len, ch,
-	      start = state.pos,
-	      marker = state.src.charCodeAt(start);
-	
-	  if (silent) { return false; }
-	
-	  if (marker !== 0x7E/* ~ */) { return false; }
-	
-	  scanned = state.scanDelims(state.pos, true);
-	  len = scanned.length;
-	  ch = String.fromCharCode(marker);
-	
-	  if (len < 2) { return false; }
-	
-	  if (len % 2) {
-	    token         = state.push('text', '', 0);
-	    token.content = ch;
-	    len--;
-	  }
-	
-	  for (i = 0; i < len; i += 2) {
-	    token         = state.push('text', '', 0);
-	    token.content = ch + ch;
-	
-	    state.delimiters.push({
-	      marker: marker,
-	      jump:   i,
-	      token:  state.tokens.length - 1,
-	      level:  state.level,
-	      end:    -1,
-	      open:   scanned.can_open,
-	      close:  scanned.can_close
-	    });
-	  }
-	
-	  state.pos += scanned.length;
-	
-	  return true;
-	};
-	
-	
-	// Walk through delimiter list and replace text tokens with tags
-	//
-	module.exports.postProcess = function strikethrough(state) {
-	  var i, j,
-	      startDelim,
-	      endDelim,
-	      token,
-	      loneMarkers = [],
-	      delimiters = state.delimiters,
-	      max = state.delimiters.length;
-	
-	  for (i = 0; i < max; i++) {
-	    startDelim = delimiters[i];
-	
-	    if (startDelim.marker !== 0x7E/* ~ */) {
-	      continue;
-	    }
-	
-	    if (startDelim.end === -1) {
-	      continue;
-	    }
-	
-	    endDelim = delimiters[startDelim.end];
-	
-	    token         = state.tokens[startDelim.token];
-	    token.type    = 's_open';
-	    token.tag     = 's';
-	    token.nesting = 1;
-	    token.markup  = '~~';
-	    token.content = '';
-	
-	    token         = state.tokens[endDelim.token];
-	    token.type    = 's_close';
-	    token.tag     = 's';
-	    token.nesting = -1;
-	    token.markup  = '~~';
-	    token.content = '';
-	
-	    if (state.tokens[endDelim.token - 1].type === 'text' &&
-	        state.tokens[endDelim.token - 1].content === '~') {
-	
-	      loneMarkers.push(endDelim.token - 1);
-	    }
-	  }
-	
-	  // If a marker sequence has an odd number of characters, it's splitted
-	  // like this: `~~~~~` -> `~` + `~~` + `~~`, leaving one marker at the
-	  // start of the sequence.
-	  //
-	  // So, we have to move all those markers after subsequent s_close tags.
-	  //
-	  while (loneMarkers.length) {
-	    i = loneMarkers.pop();
-	    j = i + 1;
-	
-	    while (j < state.tokens.length && state.tokens[j].type === 's_close') {
-	      j++;
-	    }
-	
-	    j--;
-	
-	    if (i !== j) {
-	      token = state.tokens[j];
-	      state.tokens[j] = state.tokens[i];
-	      state.tokens[i] = token;
-	    }
-	  }
-	};
-
-
-/***/ }),
-/* 143 */
-/***/ (function(module, exports) {
-
-	// Process *this* and _that_
-	//
-	'use strict';
-	
-	
-	// Insert each marker as a separate text token, and add it to delimiter list
-	//
-	module.exports.tokenize = function emphasis(state, silent) {
-	  var i, scanned, token,
-	      start = state.pos,
-	      marker = state.src.charCodeAt(start);
-	
-	  if (silent) { return false; }
-	
-	  if (marker !== 0x5F /* _ */ && marker !== 0x2A /* * */) { return false; }
-	
-	  scanned = state.scanDelims(state.pos, marker === 0x2A);
-	
-	  for (i = 0; i < scanned.length; i++) {
-	    token         = state.push('text', '', 0);
-	    token.content = String.fromCharCode(marker);
-	
-	    state.delimiters.push({
-	      // Char code of the starting marker (number).
-	      //
-	      marker: marker,
-	
-	      // Total length of these series of delimiters.
-	      //
-	      length: scanned.length,
-	
-	      // An amount of characters before this one that's equivalent to
-	      // current one. In plain English: if this delimiter does not open
-	      // an emphasis, neither do previous `jump` characters.
-	      //
-	      // Used to skip sequences like "*****" in one step, for 1st asterisk
-	      // value will be 0, for 2nd it's 1 and so on.
-	      //
-	      jump:   i,
-	
-	      // A position of the token this delimiter corresponds to.
-	      //
-	      token:  state.tokens.length - 1,
-	
-	      // Token level.
-	      //
-	      level:  state.level,
-	
-	      // If this delimiter is matched as a valid opener, `end` will be
-	      // equal to its position, otherwise it's `-1`.
-	      //
-	      end:    -1,
-	
-	      // Boolean flags that determine if this delimiter could open or close
-	      // an emphasis.
-	      //
-	      open:   scanned.can_open,
-	      close:  scanned.can_close
-	    });
-	  }
-	
-	  state.pos += scanned.length;
-	
-	  return true;
-	};
-	
-	
-	// Walk through delimiter list and replace text tokens with tags
-	//
-	module.exports.postProcess = function emphasis(state) {
-	  var i,
-	      startDelim,
-	      endDelim,
-	      token,
-	      ch,
-	      isStrong,
-	      delimiters = state.delimiters,
-	      max = state.delimiters.length;
-	
-	  for (i = max - 1; i >= 0; i--) {
-	    startDelim = delimiters[i];
-	
-	    if (startDelim.marker !== 0x5F/* _ */ && startDelim.marker !== 0x2A/* * */) {
-	      continue;
-	    }
-	
-	    // Process only opening markers
-	    if (startDelim.end === -1) {
-	      continue;
-	    }
-	
-	    endDelim = delimiters[startDelim.end];
-	
-	    // If the previous delimiter has the same marker and is adjacent to this one,
-	    // merge those into one strong delimiter.
-	    //
-	    // `<em><em>whatever</em></em>` -> `<strong>whatever</strong>`
-	    //
-	    isStrong = i > 0 &&
-	               delimiters[i - 1].end === startDelim.end + 1 &&
-	               delimiters[i - 1].token === startDelim.token - 1 &&
-	               delimiters[startDelim.end + 1].token === endDelim.token + 1 &&
-	               delimiters[i - 1].marker === startDelim.marker;
-	
-	    ch = String.fromCharCode(startDelim.marker);
-	
-	    token         = state.tokens[startDelim.token];
-	    token.type    = isStrong ? 'strong_open' : 'em_open';
-	    token.tag     = isStrong ? 'strong' : 'em';
-	    token.nesting = 1;
-	    token.markup  = isStrong ? ch + ch : ch;
-	    token.content = '';
-	
-	    token         = state.tokens[endDelim.token];
-	    token.type    = isStrong ? 'strong_close' : 'em_close';
-	    token.tag     = isStrong ? 'strong' : 'em';
-	    token.nesting = -1;
-	    token.markup  = isStrong ? ch + ch : ch;
-	    token.content = '';
-	
-	    if (isStrong) {
-	      state.tokens[delimiters[i - 1].token].content = '';
-	      state.tokens[delimiters[startDelim.end + 1].token].content = '';
-	      i--;
-	    }
-	  }
-	};
-
-
-/***/ }),
-/* 144 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// Process [link](<to> "stuff")
-	
-	'use strict';
-	
-	var normalizeReference   = __webpack_require__(93).normalizeReference;
-	var isSpace              = __webpack_require__(93).isSpace;
-	
-	
-	module.exports = function link(state, silent) {
-	  var attrs,
-	      code,
-	      label,
-	      labelEnd,
-	      labelStart,
-	      pos,
-	      res,
-	      ref,
-	      title,
-	      token,
-	      href = '',
-	      oldPos = state.pos,
-	      max = state.posMax,
-	      start = state.pos,
-	      parseReference = true;
-	
-	  if (state.src.charCodeAt(state.pos) !== 0x5B/* [ */) { return false; }
-	
-	  labelStart = state.pos + 1;
-	  labelEnd = state.md.helpers.parseLinkLabel(state, state.pos, true);
-	
-	  // parser failed to find ']', so it's not a valid link
-	  if (labelEnd < 0) { return false; }
-	
-	  pos = labelEnd + 1;
-	  if (pos < max && state.src.charCodeAt(pos) === 0x28/* ( */) {
-	    //
-	    // Inline link
-	    //
-	
-	    // might have found a valid shortcut link, disable reference parsing
-	    parseReference = false;
-	
-	    // [link](  <href>  "title"  )
-	    //        ^^ skipping these spaces
-	    pos++;
-	    for (; pos < max; pos++) {
-	      code = state.src.charCodeAt(pos);
-	      if (!isSpace(code) && code !== 0x0A) { break; }
-	    }
-	    if (pos >= max) { return false; }
-	
-	    // [link](  <href>  "title"  )
-	    //          ^^^^^^ parsing link destination
-	    start = pos;
-	    res = state.md.helpers.parseLinkDestination(state.src, pos, state.posMax);
-	    if (res.ok) {
-	      href = state.md.normalizeLink(res.str);
-	      if (state.md.validateLink(href)) {
-	        pos = res.pos;
-	      } else {
-	        href = '';
-	      }
-	    }
-	
-	    // [link](  <href>  "title"  )
-	    //                ^^ skipping these spaces
-	    start = pos;
-	    for (; pos < max; pos++) {
-	      code = state.src.charCodeAt(pos);
-	      if (!isSpace(code) && code !== 0x0A) { break; }
-	    }
-	
-	    // [link](  <href>  "title"  )
-	    //                  ^^^^^^^ parsing link title
-	    res = state.md.helpers.parseLinkTitle(state.src, pos, state.posMax);
-	    if (pos < max && start !== pos && res.ok) {
-	      title = res.str;
-	      pos = res.pos;
-	
-	      // [link](  <href>  "title"  )
-	      //                         ^^ skipping these spaces
-	      for (; pos < max; pos++) {
-	        code = state.src.charCodeAt(pos);
-	        if (!isSpace(code) && code !== 0x0A) { break; }
-	      }
-	    } else {
-	      title = '';
-	    }
-	
-	    if (pos >= max || state.src.charCodeAt(pos) !== 0x29/* ) */) {
-	      // parsing a valid shortcut link failed, fallback to reference
-	      parseReference = true;
-	    }
-	    pos++;
-	  }
-	
-	  if (parseReference) {
-	    //
-	    // Link reference
-	    //
-	    if (typeof state.env.references === 'undefined') { return false; }
-	
-	    if (pos < max && state.src.charCodeAt(pos) === 0x5B/* [ */) {
-	      start = pos + 1;
-	      pos = state.md.helpers.parseLinkLabel(state, pos);
-	      if (pos >= 0) {
-	        label = state.src.slice(start, pos++);
-	      } else {
-	        pos = labelEnd + 1;
-	      }
-	    } else {
-	      pos = labelEnd + 1;
-	    }
-	
-	    // covers label === '' and label === undefined
-	    // (collapsed reference link and shortcut reference link respectively)
-	    if (!label) { label = state.src.slice(labelStart, labelEnd); }
-	
-	    ref = state.env.references[normalizeReference(label)];
-	    if (!ref) {
-	      state.pos = oldPos;
-	      return false;
-	    }
-	    href = ref.href;
-	    title = ref.title;
-	  }
-	
-	  //
-	  // We found the end of the link, and know for a fact it's a valid link;
-	  // so all that's left to do is to call tokenizer.
-	  //
-	  if (!silent) {
-	    state.pos = labelStart;
-	    state.posMax = labelEnd;
-	
-	    token        = state.push('link_open', 'a', 1);
-	    token.attrs  = attrs = [ [ 'href', href ] ];
-	    if (title) {
-	      attrs.push([ 'title', title ]);
-	    }
-	
-	    state.md.inline.tokenize(state);
-	
-	    token        = state.push('link_close', 'a', -1);
-	  }
-	
-	  state.pos = pos;
-	  state.posMax = max;
-	  return true;
-	};
-
-
-/***/ }),
-/* 145 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// Process ![image](<src> "title")
-	
-	'use strict';
-	
-	var normalizeReference   = __webpack_require__(93).normalizeReference;
-	var isSpace              = __webpack_require__(93).isSpace;
-	
-	
-	module.exports = function image(state, silent) {
-	  var attrs,
-	      code,
-	      content,
-	      label,
-	      labelEnd,
-	      labelStart,
-	      pos,
-	      ref,
-	      res,
-	      title,
-	      token,
-	      tokens,
-	      start,
-	      href = '',
-	      oldPos = state.pos,
-	      max = state.posMax;
-	
-	  if (state.src.charCodeAt(state.pos) !== 0x21/* ! */) { return false; }
-	  if (state.src.charCodeAt(state.pos + 1) !== 0x5B/* [ */) { return false; }
-	
-	  labelStart = state.pos + 2;
-	  labelEnd = state.md.helpers.parseLinkLabel(state, state.pos + 1, false);
-	
-	  // parser failed to find ']', so it's not a valid link
-	  if (labelEnd < 0) { return false; }
-	
-	  pos = labelEnd + 1;
-	  if (pos < max && state.src.charCodeAt(pos) === 0x28/* ( */) {
-	    //
-	    // Inline link
-	    //
-	
-	    // [link](  <href>  "title"  )
-	    //        ^^ skipping these spaces
-	    pos++;
-	    for (; pos < max; pos++) {
-	      code = state.src.charCodeAt(pos);
-	      if (!isSpace(code) && code !== 0x0A) { break; }
-	    }
-	    if (pos >= max) { return false; }
-	
-	    // [link](  <href>  "title"  )
-	    //          ^^^^^^ parsing link destination
-	    start = pos;
-	    res = state.md.helpers.parseLinkDestination(state.src, pos, state.posMax);
-	    if (res.ok) {
-	      href = state.md.normalizeLink(res.str);
-	      if (state.md.validateLink(href)) {
-	        pos = res.pos;
-	      } else {
-	        href = '';
-	      }
-	    }
-	
-	    // [link](  <href>  "title"  )
-	    //                ^^ skipping these spaces
-	    start = pos;
-	    for (; pos < max; pos++) {
-	      code = state.src.charCodeAt(pos);
-	      if (!isSpace(code) && code !== 0x0A) { break; }
-	    }
-	
-	    // [link](  <href>  "title"  )
-	    //                  ^^^^^^^ parsing link title
-	    res = state.md.helpers.parseLinkTitle(state.src, pos, state.posMax);
-	    if (pos < max && start !== pos && res.ok) {
-	      title = res.str;
-	      pos = res.pos;
-	
-	      // [link](  <href>  "title"  )
-	      //                         ^^ skipping these spaces
-	      for (; pos < max; pos++) {
-	        code = state.src.charCodeAt(pos);
-	        if (!isSpace(code) && code !== 0x0A) { break; }
-	      }
-	    } else {
-	      title = '';
-	    }
-	
-	    if (pos >= max || state.src.charCodeAt(pos) !== 0x29/* ) */) {
-	      state.pos = oldPos;
-	      return false;
-	    }
-	    pos++;
-	  } else {
-	    //
-	    // Link reference
-	    //
-	    if (typeof state.env.references === 'undefined') { return false; }
-	
-	    if (pos < max && state.src.charCodeAt(pos) === 0x5B/* [ */) {
-	      start = pos + 1;
-	      pos = state.md.helpers.parseLinkLabel(state, pos);
-	      if (pos >= 0) {
-	        label = state.src.slice(start, pos++);
-	      } else {
-	        pos = labelEnd + 1;
-	      }
-	    } else {
-	      pos = labelEnd + 1;
-	    }
-	
-	    // covers label === '' and label === undefined
-	    // (collapsed reference link and shortcut reference link respectively)
-	    if (!label) { label = state.src.slice(labelStart, labelEnd); }
-	
-	    ref = state.env.references[normalizeReference(label)];
-	    if (!ref) {
-	      state.pos = oldPos;
-	      return false;
-	    }
-	    href = ref.href;
-	    title = ref.title;
-	  }
-	
-	  //
-	  // We found the end of the link, and know for a fact it's a valid link;
-	  // so all that's left to do is to call tokenizer.
-	  //
-	  if (!silent) {
-	    content = state.src.slice(labelStart, labelEnd);
-	
-	    state.md.inline.parse(
-	      content,
-	      state.md,
-	      state.env,
-	      tokens = []
-	    );
-	
-	    token          = state.push('image', 'img', 0);
-	    token.attrs    = attrs = [ [ 'src', href ], [ 'alt', '' ] ];
-	    token.children = tokens;
-	    token.content  = content;
-	
-	    if (title) {
-	      attrs.push([ 'title', title ]);
-	    }
-	  }
-	
-	  state.pos = pos;
-	  state.posMax = max;
-	  return true;
-	};
-
-
-/***/ }),
-/* 146 */
-/***/ (function(module, exports) {
-
-	// Process autolinks '<protocol:...>'
-	
-	'use strict';
-	
-	
-	/*eslint max-len:0*/
-	var EMAIL_RE    = /^<([a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*)>/;
-	var AUTOLINK_RE = /^<([a-zA-Z][a-zA-Z0-9+.\-]{1,31}):([^<>\x00-\x20]*)>/;
-	
-	
-	module.exports = function autolink(state, silent) {
-	  var tail, linkMatch, emailMatch, url, fullUrl, token,
-	      pos = state.pos;
-	
-	  if (state.src.charCodeAt(pos) !== 0x3C/* < */) { return false; }
-	
-	  tail = state.src.slice(pos);
-	
-	  if (tail.indexOf('>') < 0) { return false; }
-	
-	  if (AUTOLINK_RE.test(tail)) {
-	    linkMatch = tail.match(AUTOLINK_RE);
-	
-	    url = linkMatch[0].slice(1, -1);
-	    fullUrl = state.md.normalizeLink(url);
-	    if (!state.md.validateLink(fullUrl)) { return false; }
-	
-	    if (!silent) {
-	      token         = state.push('link_open', 'a', 1);
-	      token.attrs   = [ [ 'href', fullUrl ] ];
-	      token.markup  = 'autolink';
-	      token.info    = 'auto';
-	
-	      token         = state.push('text', '', 0);
-	      token.content = state.md.normalizeLinkText(url);
-	
-	      token         = state.push('link_close', 'a', -1);
-	      token.markup  = 'autolink';
-	      token.info    = 'auto';
-	    }
-	
-	    state.pos += linkMatch[0].length;
-	    return true;
-	  }
-	
-	  if (EMAIL_RE.test(tail)) {
-	    emailMatch = tail.match(EMAIL_RE);
-	
-	    url = emailMatch[0].slice(1, -1);
-	    fullUrl = state.md.normalizeLink('mailto:' + url);
-	    if (!state.md.validateLink(fullUrl)) { return false; }
-	
-	    if (!silent) {
-	      token         = state.push('link_open', 'a', 1);
-	      token.attrs   = [ [ 'href', fullUrl ] ];
-	      token.markup  = 'autolink';
-	      token.info    = 'auto';
-	
-	      token         = state.push('text', '', 0);
-	      token.content = state.md.normalizeLinkText(url);
-	
-	      token         = state.push('link_close', 'a', -1);
-	      token.markup  = 'autolink';
-	      token.info    = 'auto';
-	    }
-	
-	    state.pos += emailMatch[0].length;
-	    return true;
-	  }
-	
-	  return false;
-	};
-
-
-/***/ }),
-/* 147 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// Process html tags
-	
-	'use strict';
-	
-	
-	var HTML_TAG_RE = __webpack_require__(134).HTML_TAG_RE;
-	
-	
-	function isLetter(ch) {
-	  /*eslint no-bitwise:0*/
-	  var lc = ch | 0x20; // to lower case
-	  return (lc >= 0x61/* a */) && (lc <= 0x7a/* z */);
-	}
-	
-	
-	module.exports = function html_inline(state, silent) {
-	  var ch, match, max, token,
-	      pos = state.pos;
-	
-	  if (!state.md.options.html) { return false; }
-	
-	  // Check start
-	  max = state.posMax;
-	  if (state.src.charCodeAt(pos) !== 0x3C/* < */ ||
-	      pos + 2 >= max) {
-	    return false;
-	  }
-	
-	  // Quick fail on second char
-	  ch = state.src.charCodeAt(pos + 1);
-	  if (ch !== 0x21/* ! */ &&
-	      ch !== 0x3F/* ? */ &&
-	      ch !== 0x2F/* / */ &&
-	      !isLetter(ch)) {
-	    return false;
-	  }
-	
-	  match = state.src.slice(pos).match(HTML_TAG_RE);
-	  if (!match) { return false; }
-	
-	  if (!silent) {
-	    token         = state.push('html_inline', '', 0);
-	    token.content = state.src.slice(pos, pos + match[0].length);
-	  }
-	  state.pos += match[0].length;
-	  return true;
-	};
-
-
-/***/ }),
-/* 148 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// Process html entity - &#123;, &#xAF;, &quot;, ...
-	
-	'use strict';
-	
-	var entities          = __webpack_require__(94);
-	var has               = __webpack_require__(93).has;
-	var isValidEntityCode = __webpack_require__(93).isValidEntityCode;
-	var fromCodePoint     = __webpack_require__(93).fromCodePoint;
-	
-	
-	var DIGITAL_RE = /^&#((?:x[a-f0-9]{1,8}|[0-9]{1,8}));/i;
-	var NAMED_RE   = /^&([a-z][a-z0-9]{1,31});/i;
-	
-	
-	module.exports = function entity(state, silent) {
-	  var ch, code, match, pos = state.pos, max = state.posMax;
-	
-	  if (state.src.charCodeAt(pos) !== 0x26/* & */) { return false; }
-	
-	  if (pos + 1 < max) {
-	    ch = state.src.charCodeAt(pos + 1);
-	
-	    if (ch === 0x23 /* # */) {
-	      match = state.src.slice(pos).match(DIGITAL_RE);
-	      if (match) {
-	        if (!silent) {
-	          code = match[1][0].toLowerCase() === 'x' ? parseInt(match[1].slice(1), 16) : parseInt(match[1], 10);
-	          state.pending += isValidEntityCode(code) ? fromCodePoint(code) : fromCodePoint(0xFFFD);
-	        }
-	        state.pos += match[0].length;
-	        return true;
-	      }
-	    } else {
-	      match = state.src.slice(pos).match(NAMED_RE);
-	      if (match) {
-	        if (has(entities, match[1])) {
-	          if (!silent) { state.pending += entities[match[1]]; }
-	          state.pos += match[0].length;
-	          return true;
-	        }
-	      }
-	    }
-	  }
-	
-	  if (!silent) { state.pending += '&'; }
-	  state.pos++;
-	  return true;
-	};
-
-
-/***/ }),
-/* 149 */
-/***/ (function(module, exports) {
-
-	// For each opening emphasis-like marker find a matching closing one
-	//
-	'use strict';
-	
-	
-	module.exports = function link_pairs(state) {
-	  var i, j, lastDelim, currDelim,
-	      delimiters = state.delimiters,
-	      max = state.delimiters.length;
-	
-	  for (i = 0; i < max; i++) {
-	    lastDelim = delimiters[i];
-	
-	    if (!lastDelim.close) { continue; }
-	
-	    j = i - lastDelim.jump - 1;
-	
-	    while (j >= 0) {
-	      currDelim = delimiters[j];
-	
-	      if (currDelim.open &&
-	          currDelim.marker === lastDelim.marker &&
-	          currDelim.end < 0 &&
-	          currDelim.level === lastDelim.level) {
-	
-	        // typeofs are for backward compatibility with plugins
-	        var odd_match = (currDelim.close || lastDelim.open) &&
-	                        typeof currDelim.length !== 'undefined' &&
-	                        typeof lastDelim.length !== 'undefined' &&
-	                        (currDelim.length + lastDelim.length) % 3 === 0;
-	
-	        if (!odd_match) {
-	          lastDelim.jump = i - j;
-	          lastDelim.open = false;
-	          currDelim.end  = i;
-	          currDelim.jump = 0;
-	          break;
-	        }
-	      }
-	
-	      j -= currDelim.jump + 1;
-	    }
-	  }
-	};
-
-
-/***/ }),
-/* 150 */
-/***/ (function(module, exports) {
-
-	// Merge adjacent text nodes into one, and re-calculate all token levels
-	//
-	'use strict';
-	
-	
-	module.exports = function text_collapse(state) {
-	  var curr, last,
-	      level = 0,
-	      tokens = state.tokens,
-	      max = state.tokens.length;
-	
-	  for (curr = last = 0; curr < max; curr++) {
-	    // re-calculate levels
-	    level += tokens[curr].nesting;
-	    tokens[curr].level = level;
-	
-	    if (tokens[curr].type === 'text' &&
-	        curr + 1 < max &&
-	        tokens[curr + 1].type === 'text') {
-	
-	      // collapse two adjacent text nodes
-	      tokens[curr + 1].content = tokens[curr].content + tokens[curr + 1].content;
-	    } else {
-	      if (curr !== last) { tokens[last] = tokens[curr]; }
-	
-	      last++;
-	    }
-	  }
-	
-	  if (curr !== last) {
-	    tokens.length = last;
-	  }
-	};
-
-
-/***/ }),
-/* 151 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// Inline parser state
-	
-	'use strict';
-	
-	
-	var Token          = __webpack_require__(121);
-	var isWhiteSpace   = __webpack_require__(93).isWhiteSpace;
-	var isPunctChar    = __webpack_require__(93).isPunctChar;
-	var isMdAsciiPunct = __webpack_require__(93).isMdAsciiPunct;
-	
-	
-	function StateInline(src, md, env, outTokens) {
-	  this.src = src;
-	  this.env = env;
-	  this.md = md;
-	  this.tokens = outTokens;
-	
-	  this.pos = 0;
-	  this.posMax = this.src.length;
-	  this.level = 0;
-	  this.pending = '';
-	  this.pendingLevel = 0;
-	
-	  this.cache = {};        // Stores { start: end } pairs. Useful for backtrack
-	                          // optimization of pairs parse (emphasis, strikes).
-	
-	  this.delimiters = [];   // Emphasis-like delimiters
-	}
-	
-	
-	// Flush pending text
-	//
-	StateInline.prototype.pushPending = function () {
-	  var token = new Token('text', '', 0);
-	  token.content = this.pending;
-	  token.level = this.pendingLevel;
-	  this.tokens.push(token);
-	  this.pending = '';
-	  return token;
-	};
-	
-	
-	// Push new token to "stream".
-	// If pending text exists - flush it as text token
-	//
-	StateInline.prototype.push = function (type, tag, nesting) {
-	  if (this.pending) {
-	    this.pushPending();
-	  }
-	
-	  var token = new Token(type, tag, nesting);
-	
-	  if (nesting < 0) { this.level--; }
-	  token.level = this.level;
-	  if (nesting > 0) { this.level++; }
-	
-	  this.pendingLevel = this.level;
-	  this.tokens.push(token);
-	  return token;
-	};
-	
-	
-	// Scan a sequence of emphasis-like markers, and determine whether
-	// it can start an emphasis sequence or end an emphasis sequence.
-	//
-	//  - start - position to scan from (it should point at a valid marker);
-	//  - canSplitWord - determine if these markers can be found inside a word
-	//
-	StateInline.prototype.scanDelims = function (start, canSplitWord) {
-	  var pos = start, lastChar, nextChar, count, can_open, can_close,
-	      isLastWhiteSpace, isLastPunctChar,
-	      isNextWhiteSpace, isNextPunctChar,
-	      left_flanking = true,
-	      right_flanking = true,
-	      max = this.posMax,
-	      marker = this.src.charCodeAt(start);
-	
-	  // treat beginning of the line as a whitespace
-	  lastChar = start > 0 ? this.src.charCodeAt(start - 1) : 0x20;
-	
-	  while (pos < max && this.src.charCodeAt(pos) === marker) { pos++; }
-	
-	  count = pos - start;
-	
-	  // treat end of the line as a whitespace
-	  nextChar = pos < max ? this.src.charCodeAt(pos) : 0x20;
-	
-	  isLastPunctChar = isMdAsciiPunct(lastChar) || isPunctChar(String.fromCharCode(lastChar));
-	  isNextPunctChar = isMdAsciiPunct(nextChar) || isPunctChar(String.fromCharCode(nextChar));
-	
-	  isLastWhiteSpace = isWhiteSpace(lastChar);
-	  isNextWhiteSpace = isWhiteSpace(nextChar);
-	
-	  if (isNextWhiteSpace) {
-	    left_flanking = false;
-	  } else if (isNextPunctChar) {
-	    if (!(isLastWhiteSpace || isLastPunctChar)) {
-	      left_flanking = false;
-	    }
-	  }
-	
-	  if (isLastWhiteSpace) {
-	    right_flanking = false;
-	  } else if (isLastPunctChar) {
-	    if (!(isNextWhiteSpace || isNextPunctChar)) {
-	      right_flanking = false;
-	    }
-	  }
-	
-	  if (!canSplitWord) {
-	    can_open  = left_flanking  && (!right_flanking || isLastPunctChar);
-	    can_close = right_flanking && (!left_flanking  || isNextPunctChar);
-	  } else {
-	    can_open  = left_flanking;
-	    can_close = right_flanking;
-	  }
-	
-	  return {
-	    can_open:  can_open,
-	    can_close: can_close,
-	    length:    count
-	  };
-	};
-	
-	
-	// re-export Token class to use in block rules
-	StateInline.prototype.Token = Token;
-	
-	
-	module.exports = StateInline;
-
-
-/***/ }),
-/* 152 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	
-	////////////////////////////////////////////////////////////////////////////////
-	// Helpers
-	
-	// Merge objects
-	//
-	function assign(obj /*from1, from2, from3, ...*/) {
-	  var sources = Array.prototype.slice.call(arguments, 1);
-	
-	  sources.forEach(function (source) {
-	    if (!source) { return; }
-	
-	    Object.keys(source).forEach(function (key) {
-	      obj[key] = source[key];
-	    });
-	  });
-	
-	  return obj;
-	}
-	
-	function _class(obj) { return Object.prototype.toString.call(obj); }
-	function isString(obj) { return _class(obj) === '[object String]'; }
-	function isObject(obj) { return _class(obj) === '[object Object]'; }
-	function isRegExp(obj) { return _class(obj) === '[object RegExp]'; }
-	function isFunction(obj) { return _class(obj) === '[object Function]'; }
-	
-	
-	function escapeRE(str) { return str.replace(/[.?*+^$[\]\\(){}|-]/g, '\\$&'); }
-	
-	////////////////////////////////////////////////////////////////////////////////
-	
-	
-	var defaultOptions = {
-	  fuzzyLink: true,
-	  fuzzyEmail: true,
-	  fuzzyIP: false
-	};
-	
-	
-	function isOptionsObj(obj) {
-	  return Object.keys(obj || {}).reduce(function (acc, k) {
-	    return acc || defaultOptions.hasOwnProperty(k);
-	  }, false);
-	}
-	
-	
-	var defaultSchemas = {
-	  'http:': {
-	    validate: function (text, pos, self) {
-	      var tail = text.slice(pos);
-	
-	      if (!self.re.http) {
-	        // compile lazily, because "host"-containing variables can change on tlds update.
-	        self.re.http =  new RegExp(
-	          '^\\/\\/' + self.re.src_auth + self.re.src_host_port_strict + self.re.src_path, 'i'
-	        );
-	      }
-	      if (self.re.http.test(tail)) {
-	        return tail.match(self.re.http)[0].length;
-	      }
-	      return 0;
-	    }
-	  },
-	  'https:':  'http:',
-	  'ftp:':    'http:',
-	  '//':      {
-	    validate: function (text, pos, self) {
-	      var tail = text.slice(pos);
-	
-	      if (!self.re.no_http) {
-	      // compile lazily, because "host"-containing variables can change on tlds update.
-	        self.re.no_http =  new RegExp(
-	          '^' +
-	          self.re.src_auth +
-	          // Don't allow single-level domains, because of false positives like '//test'
-	          // with code comments
-	          '(?:localhost|(?:(?:' + self.re.src_domain + ')\\.)+' + self.re.src_domain_root + ')' +
-	          self.re.src_port +
-	          self.re.src_host_terminator +
-	          self.re.src_path,
-	
-	          'i'
-	        );
-	      }
-	
-	      if (self.re.no_http.test(tail)) {
-	        // should not be `://` & `///`, that protects from errors in protocol name
-	        if (pos >= 3 && text[pos - 3] === ':') { return 0; }
-	        if (pos >= 3 && text[pos - 3] === '/') { return 0; }
-	        return tail.match(self.re.no_http)[0].length;
-	      }
-	      return 0;
-	    }
-	  },
-	  'mailto:': {
-	    validate: function (text, pos, self) {
-	      var tail = text.slice(pos);
-	
-	      if (!self.re.mailto) {
-	        self.re.mailto =  new RegExp(
-	          '^' + self.re.src_email_name + '@' + self.re.src_host_strict, 'i'
-	        );
-	      }
-	      if (self.re.mailto.test(tail)) {
-	        return tail.match(self.re.mailto)[0].length;
-	      }
-	      return 0;
-	    }
-	  }
-	};
-	
-	/*eslint-disable max-len*/
-	
-	// RE pattern for 2-character tlds (autogenerated by ./support/tlds_2char_gen.js)
-	var tlds_2ch_src_re = 'a[cdefgilmnoqrstuwxz]|b[abdefghijmnorstvwyz]|c[acdfghiklmnoruvwxyz]|d[ejkmoz]|e[cegrstu]|f[ijkmor]|g[abdefghilmnpqrstuwy]|h[kmnrtu]|i[delmnoqrst]|j[emop]|k[eghimnprwyz]|l[abcikrstuvy]|m[acdeghklmnopqrstuvwxyz]|n[acefgilopruz]|om|p[aefghklmnrstwy]|qa|r[eosuw]|s[abcdeghijklmnortuvxyz]|t[cdfghjklmnortvwz]|u[agksyz]|v[aceginu]|w[fs]|y[et]|z[amw]';
-	
-	// DON'T try to make PRs with changes. Extend TLDs with LinkifyIt.tlds() instead
-	var tlds_default = 'biz|com|edu|gov|net|org|pro|web|xxx|aero|asia|coop|info|museum|name|shop|рф'.split('|');
-	
-	/*eslint-enable max-len*/
-	
-	////////////////////////////////////////////////////////////////////////////////
-	
-	function resetScanCache(self) {
-	  self.__index__ = -1;
-	  self.__text_cache__   = '';
-	}
-	
-	function createValidator(re) {
-	  return function (text, pos) {
-	    var tail = text.slice(pos);
-	
-	    if (re.test(tail)) {
-	      return tail.match(re)[0].length;
-	    }
-	    return 0;
-	  };
-	}
-	
-	function createNormalizer() {
-	  return function (match, self) {
-	    self.normalize(match);
-	  };
-	}
-	
-	// Schemas compiler. Build regexps.
-	//
-	function compile(self) {
-	
-	  // Load & clone RE patterns.
-	  var re = self.re = __webpack_require__(153)(self.__opts__);
-	
-	  // Define dynamic patterns
-	  var tlds = self.__tlds__.slice();
-	
-	  self.onCompile();
-	
-	  if (!self.__tlds_replaced__) {
-	    tlds.push(tlds_2ch_src_re);
-	  }
-	  tlds.push(re.src_xn);
-	
-	  re.src_tlds = tlds.join('|');
-	
-	  function untpl(tpl) { return tpl.replace('%TLDS%', re.src_tlds); }
-	
-	  re.email_fuzzy      = RegExp(untpl(re.tpl_email_fuzzy), 'i');
-	  re.link_fuzzy       = RegExp(untpl(re.tpl_link_fuzzy), 'i');
-	  re.link_no_ip_fuzzy = RegExp(untpl(re.tpl_link_no_ip_fuzzy), 'i');
-	  re.host_fuzzy_test  = RegExp(untpl(re.tpl_host_fuzzy_test), 'i');
-	
-	  //
-	  // Compile each schema
-	  //
-	
-	  var aliases = [];
-	
-	  self.__compiled__ = {}; // Reset compiled data
-	
-	  function schemaError(name, val) {
-	    throw new Error('(LinkifyIt) Invalid schema "' + name + '": ' + val);
-	  }
-	
-	  Object.keys(self.__schemas__).forEach(function (name) {
-	    var val = self.__schemas__[name];
-	
-	    // skip disabled methods
-	    if (val === null) { return; }
-	
-	    var compiled = { validate: null, link: null };
-	
-	    self.__compiled__[name] = compiled;
-	
-	    if (isObject(val)) {
-	      if (isRegExp(val.validate)) {
-	        compiled.validate = createValidator(val.validate);
-	      } else if (isFunction(val.validate)) {
-	        compiled.validate = val.validate;
-	      } else {
-	        schemaError(name, val);
-	      }
-	
-	      if (isFunction(val.normalize)) {
-	        compiled.normalize = val.normalize;
-	      } else if (!val.normalize) {
-	        compiled.normalize = createNormalizer();
-	      } else {
-	        schemaError(name, val);
-	      }
-	
-	      return;
-	    }
-	
-	    if (isString(val)) {
-	      aliases.push(name);
-	      return;
-	    }
-	
-	    schemaError(name, val);
-	  });
-	
-	  //
-	  // Compile postponed aliases
-	  //
-	
-	  aliases.forEach(function (alias) {
-	    if (!self.__compiled__[self.__schemas__[alias]]) {
-	      // Silently fail on missed schemas to avoid errons on disable.
-	      // schemaError(alias, self.__schemas__[alias]);
-	      return;
-	    }
-	
-	    self.__compiled__[alias].validate =
-	      self.__compiled__[self.__schemas__[alias]].validate;
-	    self.__compiled__[alias].normalize =
-	      self.__compiled__[self.__schemas__[alias]].normalize;
-	  });
-	
-	  //
-	  // Fake record for guessed links
-	  //
-	  self.__compiled__[''] = { validate: null, normalize: createNormalizer() };
-	
-	  //
-	  // Build schema condition
-	  //
-	  var slist = Object.keys(self.__compiled__)
-	                      .filter(function (name) {
-	                        // Filter disabled & fake schemas
-	                        return name.length > 0 && self.__compiled__[name];
-	                      })
-	                      .map(escapeRE)
-	                      .join('|');
-	  // (?!_) cause 1.5x slowdown
-	  self.re.schema_test   = RegExp('(^|(?!_)(?:[><\uff5c]|' + re.src_ZPCc + '))(' + slist + ')', 'i');
-	  self.re.schema_search = RegExp('(^|(?!_)(?:[><\uff5c]|' + re.src_ZPCc + '))(' + slist + ')', 'ig');
-	
-	  self.re.pretest       = RegExp(
-	                            '(' + self.re.schema_test.source + ')|' +
-	                            '(' + self.re.host_fuzzy_test.source + ')|' +
-	                            '@',
-	                            'i');
-	
-	  //
-	  // Cleanup
-	  //
-	
-	  resetScanCache(self);
-	}
-	
-	/**
-	 * class Match
-	 *
-	 * Match result. Single element of array, returned by [[LinkifyIt#match]]
-	 **/
-	function Match(self, shift) {
-	  var start = self.__index__,
-	      end   = self.__last_index__,
-	      text  = self.__text_cache__.slice(start, end);
-	
-	  /**
-	   * Match#schema -> String
-	   *
-	   * Prefix (protocol) for matched string.
-	   **/
-	  this.schema    = self.__schema__.toLowerCase();
-	  /**
-	   * Match#index -> Number
-	   *
-	   * First position of matched string.
-	   **/
-	  this.index     = start + shift;
-	  /**
-	   * Match#lastIndex -> Number
-	   *
-	   * Next position after matched string.
-	   **/
-	  this.lastIndex = end + shift;
-	  /**
-	   * Match#raw -> String
-	   *
-	   * Matched string.
-	   **/
-	  this.raw       = text;
-	  /**
-	   * Match#text -> String
-	   *
-	   * Notmalized text of matched string.
-	   **/
-	  this.text      = text;
-	  /**
-	   * Match#url -> String
-	   *
-	   * Normalized url of matched string.
-	   **/
-	  this.url       = text;
-	}
-	
-	function createMatch(self, shift) {
-	  var match = new Match(self, shift);
-	
-	  self.__compiled__[match.schema].normalize(match, self);
-	
-	  return match;
-	}
-	
-	
-	/**
-	 * class LinkifyIt
-	 **/
-	
-	/**
-	 * new LinkifyIt(schemas, options)
-	 * - schemas (Object): Optional. Additional schemas to validate (prefix/validator)
-	 * - options (Object): { fuzzyLink|fuzzyEmail|fuzzyIP: true|false }
-	 *
-	 * Creates new linkifier instance with optional additional schemas.
-	 * Can be called without `new` keyword for convenience.
-	 *
-	 * By default understands:
-	 *
-	 * - `http(s)://...` , `ftp://...`, `mailto:...` & `//...` links
-	 * - "fuzzy" links and emails (example.com, foo@bar.com).
-	 *
-	 * `schemas` is an object, where each key/value describes protocol/rule:
-	 *
-	 * - __key__ - link prefix (usually, protocol name with `:` at the end, `skype:`
-	 *   for example). `linkify-it` makes shure that prefix is not preceeded with
-	 *   alphanumeric char and symbols. Only whitespaces and punctuation allowed.
-	 * - __value__ - rule to check tail after link prefix
-	 *   - _String_ - just alias to existing rule
-	 *   - _Object_
-	 *     - _validate_ - validator function (should return matched length on success),
-	 *       or `RegExp`.
-	 *     - _normalize_ - optional function to normalize text & url of matched result
-	 *       (for example, for @twitter mentions).
-	 *
-	 * `options`:
-	 *
-	 * - __fuzzyLink__ - recognige URL-s without `http(s):` prefix. Default `true`.
-	 * - __fuzzyIP__ - allow IPs in fuzzy links above. Can conflict with some texts
-	 *   like version numbers. Default `false`.
-	 * - __fuzzyEmail__ - recognize emails without `mailto:` prefix.
-	 *
-	 **/
-	function LinkifyIt(schemas, options) {
-	  if (!(this instanceof LinkifyIt)) {
-	    return new LinkifyIt(schemas, options);
-	  }
-	
-	  if (!options) {
-	    if (isOptionsObj(schemas)) {
-	      options = schemas;
-	      schemas = {};
-	    }
-	  }
-	
-	  this.__opts__           = assign({}, defaultOptions, options);
-	
-	  // Cache last tested result. Used to skip repeating steps on next `match` call.
-	  this.__index__          = -1;
-	  this.__last_index__     = -1; // Next scan position
-	  this.__schema__         = '';
-	  this.__text_cache__     = '';
-	
-	  this.__schemas__        = assign({}, defaultSchemas, schemas);
-	  this.__compiled__       = {};
-	
-	  this.__tlds__           = tlds_default;
-	  this.__tlds_replaced__  = false;
-	
-	  this.re = {};
-	
-	  compile(this);
-	}
-	
-	
-	/** chainable
-	 * LinkifyIt#add(schema, definition)
-	 * - schema (String): rule name (fixed pattern prefix)
-	 * - definition (String|RegExp|Object): schema definition
-	 *
-	 * Add new rule definition. See constructor description for details.
-	 **/
-	LinkifyIt.prototype.add = function add(schema, definition) {
-	  this.__schemas__[schema] = definition;
-	  compile(this);
-	  return this;
-	};
-	
-	
-	/** chainable
-	 * LinkifyIt#set(options)
-	 * - options (Object): { fuzzyLink|fuzzyEmail|fuzzyIP: true|false }
-	 *
-	 * Set recognition options for links without schema.
-	 **/
-	LinkifyIt.prototype.set = function set(options) {
-	  this.__opts__ = assign(this.__opts__, options);
-	  return this;
-	};
-	
-	
-	/**
-	 * LinkifyIt#test(text) -> Boolean
-	 *
-	 * Searches linkifiable pattern and returns `true` on success or `false` on fail.
-	 **/
-	LinkifyIt.prototype.test = function test(text) {
-	  // Reset scan cache
-	  this.__text_cache__ = text;
-	  this.__index__      = -1;
-	
-	  if (!text.length) { return false; }
-	
-	  var m, ml, me, len, shift, next, re, tld_pos, at_pos;
-	
-	  // try to scan for link with schema - that's the most simple rule
-	  if (this.re.schema_test.test(text)) {
-	    re = this.re.schema_search;
-	    re.lastIndex = 0;
-	    while ((m = re.exec(text)) !== null) {
-	      len = this.testSchemaAt(text, m[2], re.lastIndex);
-	      if (len) {
-	        this.__schema__     = m[2];
-	        this.__index__      = m.index + m[1].length;
-	        this.__last_index__ = m.index + m[0].length + len;
-	        break;
-	      }
-	    }
-	  }
-	
-	  if (this.__opts__.fuzzyLink && this.__compiled__['http:']) {
-	    // guess schemaless links
-	    tld_pos = text.search(this.re.host_fuzzy_test);
-	    if (tld_pos >= 0) {
-	      // if tld is located after found link - no need to check fuzzy pattern
-	      if (this.__index__ < 0 || tld_pos < this.__index__) {
-	        if ((ml = text.match(this.__opts__.fuzzyIP ? this.re.link_fuzzy : this.re.link_no_ip_fuzzy)) !== null) {
-	
-	          shift = ml.index + ml[1].length;
-	
-	          if (this.__index__ < 0 || shift < this.__index__) {
-	            this.__schema__     = '';
-	            this.__index__      = shift;
-	            this.__last_index__ = ml.index + ml[0].length;
-	          }
-	        }
-	      }
-	    }
-	  }
-	
-	  if (this.__opts__.fuzzyEmail && this.__compiled__['mailto:']) {
-	    // guess schemaless emails
-	    at_pos = text.indexOf('@');
-	    if (at_pos >= 0) {
-	      // We can't skip this check, because this cases are possible:
-	      // 192.168.1.1@gmail.com, my.in@example.com
-	      if ((me = text.match(this.re.email_fuzzy)) !== null) {
-	
-	        shift = me.index + me[1].length;
-	        next  = me.index + me[0].length;
-	
-	        if (this.__index__ < 0 || shift < this.__index__ ||
-	            (shift === this.__index__ && next > this.__last_index__)) {
-	          this.__schema__     = 'mailto:';
-	          this.__index__      = shift;
-	          this.__last_index__ = next;
-	        }
-	      }
-	    }
-	  }
-	
-	  return this.__index__ >= 0;
-	};
-	
-	
-	/**
-	 * LinkifyIt#pretest(text) -> Boolean
-	 *
-	 * Very quick check, that can give false positives. Returns true if link MAY BE
-	 * can exists. Can be used for speed optimization, when you need to check that
-	 * link NOT exists.
-	 **/
-	LinkifyIt.prototype.pretest = function pretest(text) {
-	  return this.re.pretest.test(text);
-	};
-	
-	
-	/**
-	 * LinkifyIt#testSchemaAt(text, name, position) -> Number
-	 * - text (String): text to scan
-	 * - name (String): rule (schema) name
-	 * - position (Number): text offset to check from
-	 *
-	 * Similar to [[LinkifyIt#test]] but checks only specific protocol tail exactly
-	 * at given position. Returns length of found pattern (0 on fail).
-	 **/
-	LinkifyIt.prototype.testSchemaAt = function testSchemaAt(text, schema, pos) {
-	  // If not supported schema check requested - terminate
-	  if (!this.__compiled__[schema.toLowerCase()]) {
-	    return 0;
-	  }
-	  return this.__compiled__[schema.toLowerCase()].validate(text, pos, this);
-	};
-	
-	
-	/**
-	 * LinkifyIt#match(text) -> Array|null
-	 *
-	 * Returns array of found link descriptions or `null` on fail. We strongly
-	 * recommend to use [[LinkifyIt#test]] first, for best speed.
-	 *
-	 * ##### Result match description
-	 *
-	 * - __schema__ - link schema, can be empty for fuzzy links, or `//` for
-	 *   protocol-neutral  links.
-	 * - __index__ - offset of matched text
-	 * - __lastIndex__ - index of next char after mathch end
-	 * - __raw__ - matched text
-	 * - __text__ - normalized text
-	 * - __url__ - link, generated from matched text
-	 **/
-	LinkifyIt.prototype.match = function match(text) {
-	  var shift = 0, result = [];
-	
-	  // Try to take previous element from cache, if .test() called before
-	  if (this.__index__ >= 0 && this.__text_cache__ === text) {
-	    result.push(createMatch(this, shift));
-	    shift = this.__last_index__;
-	  }
-	
-	  // Cut head if cache was used
-	  var tail = shift ? text.slice(shift) : text;
-	
-	  // Scan string until end reached
-	  while (this.test(tail)) {
-	    result.push(createMatch(this, shift));
-	
-	    tail = tail.slice(this.__last_index__);
-	    shift += this.__last_index__;
-	  }
-	
-	  if (result.length) {
-	    return result;
-	  }
-	
-	  return null;
-	};
-	
-	
-	/** chainable
-	 * LinkifyIt#tlds(list [, keepOld]) -> this
-	 * - list (Array): list of tlds
-	 * - keepOld (Boolean): merge with current list if `true` (`false` by default)
-	 *
-	 * Load (or merge) new tlds list. Those are user for fuzzy links (without prefix)
-	 * to avoid false positives. By default this algorythm used:
-	 *
-	 * - hostname with any 2-letter root zones are ok.
-	 * - biz|com|edu|gov|net|org|pro|web|xxx|aero|asia|coop|info|museum|name|shop|рф
-	 *   are ok.
-	 * - encoded (`xn--...`) root zones are ok.
-	 *
-	 * If list is replaced, then exact match for 2-chars root zones will be checked.
-	 **/
-	LinkifyIt.prototype.tlds = function tlds(list, keepOld) {
-	  list = Array.isArray(list) ? list : [ list ];
-	
-	  if (!keepOld) {
-	    this.__tlds__ = list.slice();
-	    this.__tlds_replaced__ = true;
-	    compile(this);
-	    return this;
-	  }
-	
-	  this.__tlds__ = this.__tlds__.concat(list)
-	                                  .sort()
-	                                  .filter(function (el, idx, arr) {
-	                                    return el !== arr[idx - 1];
-	                                  })
-	                                  .reverse();
-	
-	  compile(this);
-	  return this;
-	};
-	
-	/**
-	 * LinkifyIt#normalize(match)
-	 *
-	 * Default normalizer (if schema does not define it's own).
-	 **/
-	LinkifyIt.prototype.normalize = function normalize(match) {
-	
-	  // Do minimal possible changes by default. Need to collect feedback prior
-	  // to move forward https://github.com/markdown-it/linkify-it/issues/1
-	
-	  if (!match.schema) { match.url = 'http://' + match.url; }
-	
-	  if (match.schema === 'mailto:' && !/^mailto:/i.test(match.url)) {
-	    match.url = 'mailto:' + match.url;
-	  }
-	};
-	
-	
-	/**
-	 * LinkifyIt#onCompile()
-	 *
-	 * Override to modify basic RegExp-s.
-	 **/
-	LinkifyIt.prototype.onCompile = function onCompile() {
-	};
-	
-	
-	module.exports = LinkifyIt;
-
-
-/***/ }),
-/* 153 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	
-	module.exports = function (opts) {
-	  var re = {};
-	
-	  // Use direct extract instead of `regenerate` to reduse browserified size
-	  re.src_Any = __webpack_require__(103).source;
-	  re.src_Cc  = __webpack_require__(104).source;
-	  re.src_Z   = __webpack_require__(106).source;
-	  re.src_P   = __webpack_require__(96).source;
-	
-	  // \p{\Z\P\Cc\CF} (white spaces + control + format + punctuation)
-	  re.src_ZPCc = [ re.src_Z, re.src_P, re.src_Cc ].join('|');
-	
-	  // \p{\Z\Cc} (white spaces + control)
-	  re.src_ZCc = [ re.src_Z, re.src_Cc ].join('|');
-	
-	  // Experimental. List of chars, completely prohibited in links
-	  // because can separate it from other part of text
-	  var text_separators = '[><\uff5c]';
-	
-	  // All possible word characters (everything without punctuation, spaces & controls)
-	  // Defined via punctuation & spaces to save space
-	  // Should be something like \p{\L\N\S\M} (\w but without `_`)
-	  re.src_pseudo_letter       = '(?:(?!' + text_separators + '|' + re.src_ZPCc + ')' + re.src_Any + ')';
-	  // The same as abothe but without [0-9]
-	  // var src_pseudo_letter_non_d = '(?:(?![0-9]|' + src_ZPCc + ')' + src_Any + ')';
-	
-	  ////////////////////////////////////////////////////////////////////////////////
-	
-	  re.src_ip4 =
-	
-	    '(?:(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)';
-	
-	  // Prohibit any of "@/[]()" in user/pass to avoid wrong domain fetch.
-	  re.src_auth    = '(?:(?:(?!' + re.src_ZCc + '|[@/\\[\\]()]).)+@)?';
-	
-	  re.src_port =
-	
-	    '(?::(?:6(?:[0-4]\\d{3}|5(?:[0-4]\\d{2}|5(?:[0-2]\\d|3[0-5])))|[1-5]?\\d{1,4}))?';
-	
-	  re.src_host_terminator =
-	
-	    '(?=$|' + text_separators + '|' + re.src_ZPCc + ')(?!-|_|:\\d|\\.-|\\.(?!$|' + re.src_ZPCc + '))';
-	
-	  re.src_path =
-	
-	    '(?:' +
-	      '[/?#]' +
-	        '(?:' +
-	          '(?!' + re.src_ZCc + '|' + text_separators + '|[()[\\]{}.,"\'?!\\-]).|' +
-	          '\\[(?:(?!' + re.src_ZCc + '|\\]).)*\\]|' +
-	          '\\((?:(?!' + re.src_ZCc + '|[)]).)*\\)|' +
-	          '\\{(?:(?!' + re.src_ZCc + '|[}]).)*\\}|' +
-	          '\\"(?:(?!' + re.src_ZCc + '|["]).)+\\"|' +
-	          "\\'(?:(?!" + re.src_ZCc + "|[']).)+\\'|" +
-	          "\\'(?=" + re.src_pseudo_letter + '|[-]).|' +  // allow `I'm_king` if no pair found
-	          '\\.{2,3}[a-zA-Z0-9%/]|' + // github has ... in commit range links. Restrict to
-	                                     // - english
-	                                     // - percent-encoded
-	                                     // - parts of file path
-	                                     // until more examples found.
-	          '\\.(?!' + re.src_ZCc + '|[.]).|' +
-	          (opts && opts['---'] ?
-	            '\\-(?!--(?:[^-]|$))(?:-*)|' // `---` => long dash, terminate
-	          :
-	            '\\-+|'
-	          ) +
-	          '\\,(?!' + re.src_ZCc + ').|' +      // allow `,,,` in paths
-	          '\\!(?!' + re.src_ZCc + '|[!]).|' +
-	          '\\?(?!' + re.src_ZCc + '|[?]).' +
-	        ')+' +
-	      '|\\/' +
-	    ')?';
-	
-	  re.src_email_name =
-	
-	    '[\\-;:&=\\+\\$,\\"\\.a-zA-Z0-9_]+';
-	
-	  re.src_xn =
-	
-	    'xn--[a-z0-9\\-]{1,59}';
-	
-	  // More to read about domain names
-	  // http://serverfault.com/questions/638260/
-	
-	  re.src_domain_root =
-	
-	    // Allow letters & digits (http://test1)
-	    '(?:' +
-	      re.src_xn +
-	      '|' +
-	      re.src_pseudo_letter + '{1,63}' +
-	    ')';
-	
-	  re.src_domain =
-	
-	    '(?:' +
-	      re.src_xn +
-	      '|' +
-	      '(?:' + re.src_pseudo_letter + ')' +
-	      '|' +
-	      // don't allow `--` in domain names, because:
-	      // - that can conflict with markdown &mdash; / &ndash;
-	      // - nobody use those anyway
-	      '(?:' + re.src_pseudo_letter + '(?:-(?!-)|' + re.src_pseudo_letter + '){0,61}' + re.src_pseudo_letter + ')' +
-	    ')';
-	
-	  re.src_host =
-	
-	    '(?:' +
-	    // Don't need IP check, because digits are already allowed in normal domain names
-	    //   src_ip4 +
-	    // '|' +
-	      '(?:(?:(?:' + re.src_domain + ')\\.)*' + re.src_domain/*_root*/ + ')' +
-	    ')';
-	
-	  re.tpl_host_fuzzy =
-	
-	    '(?:' +
-	      re.src_ip4 +
-	    '|' +
-	      '(?:(?:(?:' + re.src_domain + ')\\.)+(?:%TLDS%))' +
-	    ')';
-	
-	  re.tpl_host_no_ip_fuzzy =
-	
-	    '(?:(?:(?:' + re.src_domain + ')\\.)+(?:%TLDS%))';
-	
-	  re.src_host_strict =
-	
-	    re.src_host + re.src_host_terminator;
-	
-	  re.tpl_host_fuzzy_strict =
-	
-	    re.tpl_host_fuzzy + re.src_host_terminator;
-	
-	  re.src_host_port_strict =
-	
-	    re.src_host + re.src_port + re.src_host_terminator;
-	
-	  re.tpl_host_port_fuzzy_strict =
-	
-	    re.tpl_host_fuzzy + re.src_port + re.src_host_terminator;
-	
-	  re.tpl_host_port_no_ip_fuzzy_strict =
-	
-	    re.tpl_host_no_ip_fuzzy + re.src_port + re.src_host_terminator;
-	
-	
-	  ////////////////////////////////////////////////////////////////////////////////
-	  // Main rules
-	
-	  // Rude test fuzzy links by host, for quick deny
-	  re.tpl_host_fuzzy_test =
-	
-	    'localhost|www\\.|\\.\\d{1,3}\\.|(?:\\.(?:%TLDS%)(?:' + re.src_ZPCc + '|>|$))';
-	
-	  re.tpl_email_fuzzy =
-	
-	      '(^|' + text_separators + '|\\(|' + re.src_ZCc + ')(' + re.src_email_name + '@' + re.tpl_host_fuzzy_strict + ')';
-	
-	  re.tpl_link_fuzzy =
-	      // Fuzzy link can't be prepended with .:/\- and non punctuation.
-	      // but can start with > (markdown blockquote)
-	      '(^|(?![.:/\\-_@])(?:[$+<=>^`|\uff5c]|' + re.src_ZPCc + '))' +
-	      '((?![$+<=>^`|\uff5c])' + re.tpl_host_port_fuzzy_strict + re.src_path + ')';
-	
-	  re.tpl_link_no_ip_fuzzy =
-	      // Fuzzy link can't be prepended with .:/\- and non punctuation.
-	      // but can start with > (markdown blockquote)
-	      '(^|(?![.:/\\-_@])(?:[$+<=>^`|\uff5c]|' + re.src_ZPCc + '))' +
-	      '((?![$+<=>^`|\uff5c])' + re.tpl_host_port_no_ip_fuzzy_strict + re.src_path + ')';
-	
-	  return re;
-	};
-
-
-/***/ }),
-/* 154 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module, global) {/*! https://mths.be/punycode v1.4.1 by @mathias */
-	;(function(root) {
-	
-		/** Detect free variables */
-		var freeExports = typeof exports == 'object' && exports &&
-			!exports.nodeType && exports;
-		var freeModule = typeof module == 'object' && module &&
-			!module.nodeType && module;
-		var freeGlobal = typeof global == 'object' && global;
-		if (
-			freeGlobal.global === freeGlobal ||
-			freeGlobal.window === freeGlobal ||
-			freeGlobal.self === freeGlobal
-		) {
-			root = freeGlobal;
-		}
-	
-		/**
-		 * The `punycode` object.
-		 * @name punycode
-		 * @type Object
-		 */
-		var punycode,
-	
-		/** Highest positive signed 32-bit float value */
-		maxInt = 2147483647, // aka. 0x7FFFFFFF or 2^31-1
-	
-		/** Bootstring parameters */
-		base = 36,
-		tMin = 1,
-		tMax = 26,
-		skew = 38,
-		damp = 700,
-		initialBias = 72,
-		initialN = 128, // 0x80
-		delimiter = '-', // '\x2D'
-	
-		/** Regular expressions */
-		regexPunycode = /^xn--/,
-		regexNonASCII = /[^\x20-\x7E]/, // unprintable ASCII chars + non-ASCII chars
-		regexSeparators = /[\x2E\u3002\uFF0E\uFF61]/g, // RFC 3490 separators
-	
-		/** Error messages */
-		errors = {
-			'overflow': 'Overflow: input needs wider integers to process',
-			'not-basic': 'Illegal input >= 0x80 (not a basic code point)',
-			'invalid-input': 'Invalid input'
-		},
-	
-		/** Convenience shortcuts */
-		baseMinusTMin = base - tMin,
-		floor = Math.floor,
-		stringFromCharCode = String.fromCharCode,
-	
-		/** Temporary variable */
-		key;
-	
-		/*--------------------------------------------------------------------------*/
-	
-		/**
-		 * A generic error utility function.
-		 * @private
-		 * @param {String} type The error type.
-		 * @returns {Error} Throws a `RangeError` with the applicable error message.
-		 */
-		function error(type) {
-			throw new RangeError(errors[type]);
-		}
-	
-		/**
-		 * A generic `Array#map` utility function.
-		 * @private
-		 * @param {Array} array The array to iterate over.
-		 * @param {Function} callback The function that gets called for every array
-		 * item.
-		 * @returns {Array} A new array of values returned by the callback function.
-		 */
-		function map(array, fn) {
-			var length = array.length;
-			var result = [];
-			while (length--) {
-				result[length] = fn(array[length]);
-			}
-			return result;
-		}
-	
-		/**
-		 * A simple `Array#map`-like wrapper to work with domain name strings or email
-		 * addresses.
-		 * @private
-		 * @param {String} domain The domain name or email address.
-		 * @param {Function} callback The function that gets called for every
-		 * character.
-		 * @returns {Array} A new string of characters returned by the callback
-		 * function.
-		 */
-		function mapDomain(string, fn) {
-			var parts = string.split('@');
-			var result = '';
-			if (parts.length > 1) {
-				// In email addresses, only the domain name should be punycoded. Leave
-				// the local part (i.e. everything up to `@`) intact.
-				result = parts[0] + '@';
-				string = parts[1];
-			}
-			// Avoid `split(regex)` for IE8 compatibility. See #17.
-			string = string.replace(regexSeparators, '\x2E');
-			var labels = string.split('.');
-			var encoded = map(labels, fn).join('.');
-			return result + encoded;
-		}
-	
-		/**
-		 * Creates an array containing the numeric code points of each Unicode
-		 * character in the string. While JavaScript uses UCS-2 internally,
-		 * this function will convert a pair of surrogate halves (each of which
-		 * UCS-2 exposes as separate characters) into a single code point,
-		 * matching UTF-16.
-		 * @see `punycode.ucs2.encode`
-		 * @see <https://mathiasbynens.be/notes/javascript-encoding>
-		 * @memberOf punycode.ucs2
-		 * @name decode
-		 * @param {String} string The Unicode input string (UCS-2).
-		 * @returns {Array} The new array of code points.
-		 */
-		function ucs2decode(string) {
-			var output = [],
-			    counter = 0,
-			    length = string.length,
-			    value,
-			    extra;
-			while (counter < length) {
-				value = string.charCodeAt(counter++);
-				if (value >= 0xD800 && value <= 0xDBFF && counter < length) {
-					// high surrogate, and there is a next character
-					extra = string.charCodeAt(counter++);
-					if ((extra & 0xFC00) == 0xDC00) { // low surrogate
-						output.push(((value & 0x3FF) << 10) + (extra & 0x3FF) + 0x10000);
-					} else {
-						// unmatched surrogate; only append this code unit, in case the next
-						// code unit is the high surrogate of a surrogate pair
-						output.push(value);
-						counter--;
-					}
-				} else {
-					output.push(value);
-				}
-			}
-			return output;
-		}
-	
-		/**
-		 * Creates a string based on an array of numeric code points.
-		 * @see `punycode.ucs2.decode`
-		 * @memberOf punycode.ucs2
-		 * @name encode
-		 * @param {Array} codePoints The array of numeric code points.
-		 * @returns {String} The new Unicode string (UCS-2).
-		 */
-		function ucs2encode(array) {
-			return map(array, function(value) {
-				var output = '';
-				if (value > 0xFFFF) {
-					value -= 0x10000;
-					output += stringFromCharCode(value >>> 10 & 0x3FF | 0xD800);
-					value = 0xDC00 | value & 0x3FF;
-				}
-				output += stringFromCharCode(value);
-				return output;
-			}).join('');
-		}
-	
-		/**
-		 * Converts a basic code point into a digit/integer.
-		 * @see `digitToBasic()`
-		 * @private
-		 * @param {Number} codePoint The basic numeric code point value.
-		 * @returns {Number} The numeric value of a basic code point (for use in
-		 * representing integers) in the range `0` to `base - 1`, or `base` if
-		 * the code point does not represent a value.
-		 */
-		function basicToDigit(codePoint) {
-			if (codePoint - 48 < 10) {
-				return codePoint - 22;
-			}
-			if (codePoint - 65 < 26) {
-				return codePoint - 65;
-			}
-			if (codePoint - 97 < 26) {
-				return codePoint - 97;
-			}
-			return base;
-		}
-	
-		/**
-		 * Converts a digit/integer into a basic code point.
-		 * @see `basicToDigit()`
-		 * @private
-		 * @param {Number} digit The numeric value of a basic code point.
-		 * @returns {Number} The basic code point whose value (when used for
-		 * representing integers) is `digit`, which needs to be in the range
-		 * `0` to `base - 1`. If `flag` is non-zero, the uppercase form is
-		 * used; else, the lowercase form is used. The behavior is undefined
-		 * if `flag` is non-zero and `digit` has no uppercase form.
-		 */
-		function digitToBasic(digit, flag) {
-			//  0..25 map to ASCII a..z or A..Z
-			// 26..35 map to ASCII 0..9
-			return digit + 22 + 75 * (digit < 26) - ((flag != 0) << 5);
-		}
-	
-		/**
-		 * Bias adaptation function as per section 3.4 of RFC 3492.
-		 * https://tools.ietf.org/html/rfc3492#section-3.4
-		 * @private
-		 */
-		function adapt(delta, numPoints, firstTime) {
-			var k = 0;
-			delta = firstTime ? floor(delta / damp) : delta >> 1;
-			delta += floor(delta / numPoints);
-			for (/* no initialization */; delta > baseMinusTMin * tMax >> 1; k += base) {
-				delta = floor(delta / baseMinusTMin);
-			}
-			return floor(k + (baseMinusTMin + 1) * delta / (delta + skew));
-		}
-	
-		/**
-		 * Converts a Punycode string of ASCII-only symbols to a string of Unicode
-		 * symbols.
-		 * @memberOf punycode
-		 * @param {String} input The Punycode string of ASCII-only symbols.
-		 * @returns {String} The resulting string of Unicode symbols.
-		 */
-		function decode(input) {
-			// Don't use UCS-2
-			var output = [],
-			    inputLength = input.length,
-			    out,
-			    i = 0,
-			    n = initialN,
-			    bias = initialBias,
-			    basic,
-			    j,
-			    index,
-			    oldi,
-			    w,
-			    k,
-			    digit,
-			    t,
-			    /** Cached calculation results */
-			    baseMinusT;
-	
-			// Handle the basic code points: let `basic` be the number of input code
-			// points before the last delimiter, or `0` if there is none, then copy
-			// the first basic code points to the output.
-	
-			basic = input.lastIndexOf(delimiter);
-			if (basic < 0) {
-				basic = 0;
-			}
-	
-			for (j = 0; j < basic; ++j) {
-				// if it's not a basic code point
-				if (input.charCodeAt(j) >= 0x80) {
-					error('not-basic');
-				}
-				output.push(input.charCodeAt(j));
-			}
-	
-			// Main decoding loop: start just after the last delimiter if any basic code
-			// points were copied; start at the beginning otherwise.
-	
-			for (index = basic > 0 ? basic + 1 : 0; index < inputLength; /* no final expression */) {
-	
-				// `index` is the index of the next character to be consumed.
-				// Decode a generalized variable-length integer into `delta`,
-				// which gets added to `i`. The overflow checking is easier
-				// if we increase `i` as we go, then subtract off its starting
-				// value at the end to obtain `delta`.
-				for (oldi = i, w = 1, k = base; /* no condition */; k += base) {
-	
-					if (index >= inputLength) {
-						error('invalid-input');
-					}
-	
-					digit = basicToDigit(input.charCodeAt(index++));
-	
-					if (digit >= base || digit > floor((maxInt - i) / w)) {
-						error('overflow');
-					}
-	
-					i += digit * w;
-					t = k <= bias ? tMin : (k >= bias + tMax ? tMax : k - bias);
-	
-					if (digit < t) {
-						break;
-					}
-	
-					baseMinusT = base - t;
-					if (w > floor(maxInt / baseMinusT)) {
-						error('overflow');
-					}
-	
-					w *= baseMinusT;
-	
-				}
-	
-				out = output.length + 1;
-				bias = adapt(i - oldi, out, oldi == 0);
-	
-				// `i` was supposed to wrap around from `out` to `0`,
-				// incrementing `n` each time, so we'll fix that now:
-				if (floor(i / out) > maxInt - n) {
-					error('overflow');
-				}
-	
-				n += floor(i / out);
-				i %= out;
-	
-				// Insert `n` at position `i` of the output
-				output.splice(i++, 0, n);
-	
-			}
-	
-			return ucs2encode(output);
-		}
-	
-		/**
-		 * Converts a string of Unicode symbols (e.g. a domain name label) to a
-		 * Punycode string of ASCII-only symbols.
-		 * @memberOf punycode
-		 * @param {String} input The string of Unicode symbols.
-		 * @returns {String} The resulting Punycode string of ASCII-only symbols.
-		 */
-		function encode(input) {
-			var n,
-			    delta,
-			    handledCPCount,
-			    basicLength,
-			    bias,
-			    j,
-			    m,
-			    q,
-			    k,
-			    t,
-			    currentValue,
-			    output = [],
-			    /** `inputLength` will hold the number of code points in `input`. */
-			    inputLength,
-			    /** Cached calculation results */
-			    handledCPCountPlusOne,
-			    baseMinusT,
-			    qMinusT;
-	
-			// Convert the input in UCS-2 to Unicode
-			input = ucs2decode(input);
-	
-			// Cache the length
-			inputLength = input.length;
-	
-			// Initialize the state
-			n = initialN;
-			delta = 0;
-			bias = initialBias;
-	
-			// Handle the basic code points
-			for (j = 0; j < inputLength; ++j) {
-				currentValue = input[j];
-				if (currentValue < 0x80) {
-					output.push(stringFromCharCode(currentValue));
-				}
-			}
-	
-			handledCPCount = basicLength = output.length;
-	
-			// `handledCPCount` is the number of code points that have been handled;
-			// `basicLength` is the number of basic code points.
-	
-			// Finish the basic string - if it is not empty - with a delimiter
-			if (basicLength) {
-				output.push(delimiter);
-			}
-	
-			// Main encoding loop:
-			while (handledCPCount < inputLength) {
-	
-				// All non-basic code points < n have been handled already. Find the next
-				// larger one:
-				for (m = maxInt, j = 0; j < inputLength; ++j) {
-					currentValue = input[j];
-					if (currentValue >= n && currentValue < m) {
-						m = currentValue;
-					}
-				}
-	
-				// Increase `delta` enough to advance the decoder's <n,i> state to <m,0>,
-				// but guard against overflow
-				handledCPCountPlusOne = handledCPCount + 1;
-				if (m - n > floor((maxInt - delta) / handledCPCountPlusOne)) {
-					error('overflow');
-				}
-	
-				delta += (m - n) * handledCPCountPlusOne;
-				n = m;
-	
-				for (j = 0; j < inputLength; ++j) {
-					currentValue = input[j];
-	
-					if (currentValue < n && ++delta > maxInt) {
-						error('overflow');
-					}
-	
-					if (currentValue == n) {
-						// Represent delta as a generalized variable-length integer
-						for (q = delta, k = base; /* no condition */; k += base) {
-							t = k <= bias ? tMin : (k >= bias + tMax ? tMax : k - bias);
-							if (q < t) {
-								break;
-							}
-							qMinusT = q - t;
-							baseMinusT = base - t;
-							output.push(
-								stringFromCharCode(digitToBasic(t + qMinusT % baseMinusT, 0))
-							);
-							q = floor(qMinusT / baseMinusT);
-						}
-	
-						output.push(stringFromCharCode(digitToBasic(q, 0)));
-						bias = adapt(delta, handledCPCountPlusOne, handledCPCount == basicLength);
-						delta = 0;
-						++handledCPCount;
-					}
-				}
-	
-				++delta;
-				++n;
-	
-			}
-			return output.join('');
-		}
-	
-		/**
-		 * Converts a Punycode string representing a domain name or an email address
-		 * to Unicode. Only the Punycoded parts of the input will be converted, i.e.
-		 * it doesn't matter if you call it on a string that has already been
-		 * converted to Unicode.
-		 * @memberOf punycode
-		 * @param {String} input The Punycoded domain name or email address to
-		 * convert to Unicode.
-		 * @returns {String} The Unicode representation of the given Punycode
-		 * string.
-		 */
-		function toUnicode(input) {
-			return mapDomain(input, function(string) {
-				return regexPunycode.test(string)
-					? decode(string.slice(4).toLowerCase())
-					: string;
-			});
-		}
-	
-		/**
-		 * Converts a Unicode string representing a domain name or an email address to
-		 * Punycode. Only the non-ASCII parts of the domain name will be converted,
-		 * i.e. it doesn't matter if you call it with a domain that's already in
-		 * ASCII.
-		 * @memberOf punycode
-		 * @param {String} input The domain name or email address to convert, as a
-		 * Unicode string.
-		 * @returns {String} The Punycode representation of the given domain name or
-		 * email address.
-		 */
-		function toASCII(input) {
-			return mapDomain(input, function(string) {
-				return regexNonASCII.test(string)
-					? 'xn--' + encode(string)
-					: string;
-			});
-		}
-	
-		/*--------------------------------------------------------------------------*/
-	
-		/** Define the public API */
-		punycode = {
-			/**
-			 * A string representing the current Punycode.js version number.
-			 * @memberOf punycode
-			 * @type String
-			 */
-			'version': '1.4.1',
-			/**
-			 * An object of methods to convert from JavaScript's internal character
-			 * representation (UCS-2) to Unicode code points, and back.
-			 * @see <https://mathiasbynens.be/notes/javascript-encoding>
-			 * @memberOf punycode
-			 * @type Object
-			 */
-			'ucs2': {
-				'decode': ucs2decode,
-				'encode': ucs2encode
-			},
-			'decode': decode,
-			'encode': encode,
-			'toASCII': toASCII,
-			'toUnicode': toUnicode
-		};
-	
-		/** Expose `punycode` */
-		// Some AMD build optimizers, like r.js, check for specific condition patterns
-		// like the following:
-		if (
-			true
-		) {
-			!(__WEBPACK_AMD_DEFINE_RESULT__ = function() {
-				return punycode;
-			}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-		} else if (freeExports && freeModule) {
-			if (module.exports == freeExports) {
-				// in Node.js, io.js, or RingoJS v0.8.0+
-				freeModule.exports = punycode;
-			} else {
-				// in Narwhal or RingoJS v0.7.0-
-				for (key in punycode) {
-					punycode.hasOwnProperty(key) && (freeExports[key] = punycode[key]);
-				}
-			}
-		} else {
-			// in Rhino or a web browser
-			root.punycode = punycode;
-		}
-	
-	}(this));
-	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(155)(module), (function() { return this; }())))
-
-/***/ }),
-/* 155 */
-/***/ (function(module, exports) {
-
-	module.exports = function(module) {
-		if(!module.webpackPolyfill) {
-			module.deprecate = function() {};
-			module.paths = [];
-			// module.parent = undefined by default
-			module.children = [];
-			module.webpackPolyfill = 1;
-		}
-		return module;
-	}
-
-
-/***/ }),
-/* 156 */
-/***/ (function(module, exports) {
-
-	// markdown-it default options
-	
-	'use strict';
-	
-	
-	module.exports = {
-	  options: {
-	    html:         false,        // Enable HTML tags in source
-	    xhtmlOut:     false,        // Use '/' to close single tags (<br />)
-	    breaks:       false,        // Convert '\n' in paragraphs into <br>
-	    langPrefix:   'language-',  // CSS language prefix for fenced blocks
-	    linkify:      false,        // autoconvert URL-like texts to links
-	
-	    // Enable some language-neutral replacements + quotes beautification
-	    typographer:  false,
-	
-	    // Double + single quotes replacement pairs, when typographer enabled,
-	    // and smartquotes on. Could be either a String or an Array.
-	    //
-	    // For example, you can use '«»„“' for Russian, '„“‚‘' for German,
-	    // and ['«\xA0', '\xA0»', '‹\xA0', '\xA0›'] for French (including nbsp).
-	    quotes: '\u201c\u201d\u2018\u2019', /* “”‘’ */
-	
-	    // Highlighter function. Should return escaped HTML,
-	    // or '' if the source string is not changed and should be escaped externaly.
-	    // If result starts with <pre... internal wrapper is skipped.
-	    //
-	    // function (/*str, lang*/) { return ''; }
-	    //
-	    highlight: null,
-	
-	    maxNesting:   100            // Internal protection, recursion limit
-	  },
-	
-	  components: {
-	
-	    core: {},
-	    block: {},
-	    inline: {}
-	  }
-	};
-
-
-/***/ }),
-/* 157 */
-/***/ (function(module, exports) {
-
-	// "Zero" preset, with nothing enabled. Useful for manual configuring of simple
-	// modes. For example, to parse bold/italic only.
-	
-	'use strict';
-	
-	
-	module.exports = {
-	  options: {
-	    html:         false,        // Enable HTML tags in source
-	    xhtmlOut:     false,        // Use '/' to close single tags (<br />)
-	    breaks:       false,        // Convert '\n' in paragraphs into <br>
-	    langPrefix:   'language-',  // CSS language prefix for fenced blocks
-	    linkify:      false,        // autoconvert URL-like texts to links
-	
-	    // Enable some language-neutral replacements + quotes beautification
-	    typographer:  false,
-	
-	    // Double + single quotes replacement pairs, when typographer enabled,
-	    // and smartquotes on. Could be either a String or an Array.
-	    //
-	    // For example, you can use '«»„“' for Russian, '„“‚‘' for German,
-	    // and ['«\xA0', '\xA0»', '‹\xA0', '\xA0›'] for French (including nbsp).
-	    quotes: '\u201c\u201d\u2018\u2019', /* “”‘’ */
-	
-	    // Highlighter function. Should return escaped HTML,
-	    // or '' if the source string is not changed and should be escaped externaly.
-	    // If result starts with <pre... internal wrapper is skipped.
-	    //
-	    // function (/*str, lang*/) { return ''; }
-	    //
-	    highlight: null,
-	
-	    maxNesting:   20            // Internal protection, recursion limit
-	  },
-	
-	  components: {
-	
-	    core: {
-	      rules: [
-	        'normalize',
-	        'block',
-	        'inline'
-	      ]
-	    },
-	
-	    block: {
-	      rules: [
-	        'paragraph'
-	      ]
-	    },
-	
-	    inline: {
-	      rules: [
-	        'text'
-	      ],
-	      rules2: [
-	        'balance_pairs',
-	        'text_collapse'
-	      ]
-	    }
-	  }
-	};
-
-
-/***/ }),
-/* 158 */
-/***/ (function(module, exports) {
-
-	// Commonmark default options
-	
-	'use strict';
-	
-	
-	module.exports = {
-	  options: {
-	    html:         true,         // Enable HTML tags in source
-	    xhtmlOut:     true,         // Use '/' to close single tags (<br />)
-	    breaks:       false,        // Convert '\n' in paragraphs into <br>
-	    langPrefix:   'language-',  // CSS language prefix for fenced blocks
-	    linkify:      false,        // autoconvert URL-like texts to links
-	
-	    // Enable some language-neutral replacements + quotes beautification
-	    typographer:  false,
-	
-	    // Double + single quotes replacement pairs, when typographer enabled,
-	    // and smartquotes on. Could be either a String or an Array.
-	    //
-	    // For example, you can use '«»„“' for Russian, '„“‚‘' for German,
-	    // and ['«\xA0', '\xA0»', '‹\xA0', '\xA0›'] for French (including nbsp).
-	    quotes: '\u201c\u201d\u2018\u2019', /* “”‘’ */
-	
-	    // Highlighter function. Should return escaped HTML,
-	    // or '' if the source string is not changed and should be escaped externaly.
-	    // If result starts with <pre... internal wrapper is skipped.
-	    //
-	    // function (/*str, lang*/) { return ''; }
-	    //
-	    highlight: null,
-	
-	    maxNesting:   20            // Internal protection, recursion limit
-	  },
-	
-	  components: {
-	
-	    core: {
-	      rules: [
-	        'normalize',
-	        'block',
-	        'inline'
-	      ]
-	    },
-	
-	    block: {
-	      rules: [
-	        'blockquote',
-	        'code',
-	        'fence',
-	        'heading',
-	        'hr',
-	        'html_block',
-	        'lheading',
-	        'list',
-	        'reference',
-	        'paragraph'
-	      ]
-	    },
-	
-	    inline: {
-	      rules: [
-	        'autolink',
-	        'backticks',
-	        'emphasis',
-	        'entity',
-	        'escape',
-	        'html_inline',
-	        'image',
-	        'link',
-	        'newline',
-	        'text'
-	      ],
-	      rules2: [
-	        'balance_pairs',
-	        'emphasis',
-	        'text_collapse'
-	      ]
-	    }
-	  }
-	};
-
-
-/***/ }),
-/* 159 */
-/***/ (function(module, exports) {
-
-	'use strict';
-	
-	
-	module.exports = function ins_plugin(md) {
-	  // Insert each marker as a separate text token, and add it to delimiter list
-	  //
-	  function tokenize(state, silent) {
-	    var i, scanned, token, len, ch,
-	        start = state.pos,
-	        marker = state.src.charCodeAt(start);
-	
-	    if (silent) { return false; }
-	
-	    if (marker !== 0x3D/* = */) { return false; }
-	
-	    scanned = state.scanDelims(state.pos, true);
-	    len = scanned.length;
-	    ch = String.fromCharCode(marker);
-	
-	    if (len < 2) { return false; }
-	
-	    if (len % 2) {
-	      token         = state.push('text', '', 0);
-	      token.content = ch;
-	      len--;
-	    }
-	
-	    for (i = 0; i < len; i += 2) {
-	      token         = state.push('text', '', 0);
-	      token.content = ch + ch;
-	
-	      state.delimiters.push({
-	        marker: marker,
-	        jump:   i,
-	        token:  state.tokens.length - 1,
-	        level:  state.level,
-	        end:    -1,
-	        open:   scanned.can_open,
-	        close:  scanned.can_close
-	      });
-	    }
-	
-	    state.pos += scanned.length;
-	
-	    return true;
-	  }
-	
-	
-	  // Walk through delimiter list and replace text tokens with tags
-	  //
-	  function postProcess(state) {
-	    var i, j,
-	        startDelim,
-	        endDelim,
-	        token,
-	        loneMarkers = [],
-	        delimiters = state.delimiters,
-	        max = state.delimiters.length;
-	
-	    for (i = 0; i < max; i++) {
-	      startDelim = delimiters[i];
-	
-	      if (startDelim.marker !== 0x3D/* = */) {
-	        continue;
-	      }
-	
-	      if (startDelim.end === -1) {
-	        continue;
-	      }
-	
-	      endDelim = delimiters[startDelim.end];
-	
-	      token         = state.tokens[startDelim.token];
-	      token.type    = 'mark_open';
-	      token.tag     = 'mark';
-	      token.nesting = 1;
-	      token.markup  = '==';
-	      token.content = '';
-	
-	      token         = state.tokens[endDelim.token];
-	      token.type    = 'mark_close';
-	      token.tag     = 'mark';
-	      token.nesting = -1;
-	      token.markup  = '==';
-	      token.content = '';
-	
-	      if (state.tokens[endDelim.token - 1].type === 'text' &&
-	          state.tokens[endDelim.token - 1].content === '=') {
-	
-	        loneMarkers.push(endDelim.token - 1);
-	      }
-	    }
-	
-	    // If a marker sequence has an odd number of characters, it's splitted
-	    // like this: `~~~~~` -> `~` + `~~` + `~~`, leaving one marker at the
-	    // start of the sequence.
-	    //
-	    // So, we have to move all those markers after subsequent s_close tags.
-	    //
-	    while (loneMarkers.length) {
-	      i = loneMarkers.pop();
-	      j = i + 1;
-	
-	      while (j < state.tokens.length && state.tokens[j].type === 'mark_close') {
-	        j++;
-	      }
-	
-	      j--;
-	
-	      if (i !== j) {
-	        token = state.tokens[j];
-	        state.tokens[j] = state.tokens[i];
-	        state.tokens[i] = token;
-	      }
-	    }
-	  }
-	
-	  md.inline.ruler.before('emphasis', 'mark', tokenize);
-	  md.inline.ruler2.before('emphasis', 'mark', postProcess);
-	};
-
-
-/***/ }),
-/* 160 */
-/***/ (function(module, exports) {
-
-	'use strict';
-	
-	
-	module.exports = function ins_plugin(md) {
-	  // Insert each marker as a separate text token, and add it to delimiter list
-	  //
-	  function tokenize(state, silent) {
-	    var i, scanned, token, len, ch,
-	        start = state.pos,
-	        marker = state.src.charCodeAt(start);
-	
-	    if (silent) { return false; }
-	
-	    if (marker !== 0x2B/* + */) { return false; }
-	
-	    scanned = state.scanDelims(state.pos, true);
-	    len = scanned.length;
-	    ch = String.fromCharCode(marker);
-	
-	    if (len < 2) { return false; }
-	
-	    if (len % 2) {
-	      token         = state.push('text', '', 0);
-	      token.content = ch;
-	      len--;
-	    }
-	
-	    for (i = 0; i < len; i += 2) {
-	      token         = state.push('text', '', 0);
-	      token.content = ch + ch;
-	
-	      state.delimiters.push({
-	        marker: marker,
-	        jump:   i,
-	        token:  state.tokens.length - 1,
-	        level:  state.level,
-	        end:    -1,
-	        open:   scanned.can_open,
-	        close:  scanned.can_close
-	      });
-	    }
-	
-	    state.pos += scanned.length;
-	
-	    return true;
-	  }
-	
-	
-	  // Walk through delimiter list and replace text tokens with tags
-	  //
-	  function postProcess(state) {
-	    var i, j,
-	        startDelim,
-	        endDelim,
-	        token,
-	        loneMarkers = [],
-	        delimiters = state.delimiters,
-	        max = state.delimiters.length;
-	
-	    for (i = 0; i < max; i++) {
-	      startDelim = delimiters[i];
-	
-	      if (startDelim.marker !== 0x2B/* + */) {
-	        continue;
-	      }
-	
-	      if (startDelim.end === -1) {
-	        continue;
-	      }
-	
-	      endDelim = delimiters[startDelim.end];
-	
-	      token         = state.tokens[startDelim.token];
-	      token.type    = 'ins_open';
-	      token.tag     = 'ins';
-	      token.nesting = 1;
-	      token.markup  = '++';
-	      token.content = '';
-	
-	      token         = state.tokens[endDelim.token];
-	      token.type    = 'ins_close';
-	      token.tag     = 'ins';
-	      token.nesting = -1;
-	      token.markup  = '++';
-	      token.content = '';
-	
-	      if (state.tokens[endDelim.token - 1].type === 'text' &&
-	          state.tokens[endDelim.token - 1].content === '+') {
-	
-	        loneMarkers.push(endDelim.token - 1);
-	      }
-	    }
-	
-	    // If a marker sequence has an odd number of characters, it's splitted
-	    // like this: `~~~~~` -> `~` + `~~` + `~~`, leaving one marker at the
-	    // start of the sequence.
-	    //
-	    // So, we have to move all those markers after subsequent s_close tags.
-	    //
-	    while (loneMarkers.length) {
-	      i = loneMarkers.pop();
-	      j = i + 1;
-	
-	      while (j < state.tokens.length && state.tokens[j].type === 'ins_close') {
-	        j++;
-	      }
-	
-	      j--;
-	
-	      if (i !== j) {
-	        token = state.tokens[j];
-	        state.tokens[j] = state.tokens[i];
-	        state.tokens[i] = token;
-	      }
-	    }
-	  }
-	
-	  md.inline.ruler.before('emphasis', 'ins', tokenize);
-	  md.inline.ruler2.before('emphasis', 'ins', postProcess);
-	};
-
-
-/***/ }),
-/* 161 */
-/***/ (function(module, exports) {
-
-	// Process ~subscript~
-	
-	'use strict';
-	
-	// same as UNESCAPE_MD_RE plus a space
-	var UNESCAPE_RE = /\\([ \\!"#$%&'()*+,.\/:;<=>?@[\]^_`{|}~-])/g;
-	
-	
-	function subscript(state, silent) {
-	  var found,
-	      content,
-	      token,
-	      max = state.posMax,
-	      start = state.pos;
-	
-	  if (state.src.charCodeAt(start) !== 0x7E/* ~ */) { return false; }
-	  if (silent) { return false; } // don't run any pairs in validation mode
-	  if (start + 2 >= max) { return false; }
-	
-	  state.pos = start + 1;
-	
-	  while (state.pos < max) {
-	    if (state.src.charCodeAt(state.pos) === 0x7E/* ~ */) {
-	      found = true;
-	      break;
-	    }
-	
-	    state.md.inline.skipToken(state);
-	  }
-	
-	  if (!found || start + 1 === state.pos) {
-	    state.pos = start;
-	    return false;
-	  }
-	
-	  content = state.src.slice(start + 1, state.pos);
-	
-	  // don't allow unescaped spaces/newlines inside
-	  if (content.match(/(^|[^\\])(\\\\)*\s/)) {
-	    state.pos = start;
-	    return false;
-	  }
-	
-	  // found!
-	  state.posMax = state.pos;
-	  state.pos = start + 1;
-	
-	  // Earlier we checked !silent, but this implementation does not need it
-	  token         = state.push('sub_open', 'sub', 1);
-	  token.markup  = '~';
-	
-	  token         = state.push('text', '', 0);
-	  token.content = content.replace(UNESCAPE_RE, '$1');
-	
-	  token         = state.push('sub_close', 'sub', -1);
-	  token.markup  = '~';
-	
-	  state.pos = state.posMax + 1;
-	  state.posMax = max;
-	  return true;
-	}
-	
-	
-	module.exports = function sub_plugin(md) {
-	  md.inline.ruler.after('emphasis', 'sub', subscript);
-	};
-
-
-/***/ }),
-/* 162 */
-/***/ (function(module, exports) {
-
-	// Process ^superscript^
-	
-	'use strict';
-	
-	// same as UNESCAPE_MD_RE plus a space
-	var UNESCAPE_RE = /\\([ \\!"#$%&'()*+,.\/:;<=>?@[\]^_`{|}~-])/g;
-	
-	function superscript(state, silent) {
-	  var found,
-	      content,
-	      token,
-	      max = state.posMax,
-	      start = state.pos;
-	
-	  if (state.src.charCodeAt(start) !== 0x5E/* ^ */) { return false; }
-	  if (silent) { return false; } // don't run any pairs in validation mode
-	  if (start + 2 >= max) { return false; }
-	
-	  state.pos = start + 1;
-	
-	  while (state.pos < max) {
-	    if (state.src.charCodeAt(state.pos) === 0x5E/* ^ */) {
-	      found = true;
-	      break;
-	    }
-	
-	    state.md.inline.skipToken(state);
-	  }
-	
-	  if (!found || start + 1 === state.pos) {
-	    state.pos = start;
-	    return false;
-	  }
-	
-	  content = state.src.slice(start + 1, state.pos);
-	
-	  // don't allow unescaped spaces/newlines inside
-	  if (content.match(/(^|[^\\])(\\\\)*\s/)) {
-	    state.pos = start;
-	    return false;
-	  }
-	
-	  // found!
-	  state.posMax = state.pos;
-	  state.pos = start + 1;
-	
-	  // Earlier we checked !silent, but this implementation does not need it
-	  token         = state.push('sup_open', 'sup', 1);
-	  token.markup  = '^';
-	
-	  token         = state.push('text', '', 0);
-	  token.content = content.replace(UNESCAPE_RE, '$1');
-	
-	  token         = state.push('sup_close', 'sup', -1);
-	  token.markup  = '^';
-	
-	  state.pos = state.posMax + 1;
-	  state.posMax = max;
-	  return true;
-	}
-	
-	
-	module.exports = function sup_plugin(md) {
-	  md.inline.ruler.after('emphasis', 'sup', superscript);
-	};
-
-
-/***/ }),
-/* 163 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	__webpack_require__(164);
-	module.exports = function dimmed_plugin(md) {
-	  // Insert each marker as a separate text token, and add it to delimiter list
-	  function tokenize(state, silent) {
-	    var i,
-	        scanned,
-	        token,
-	        len,
-	        ch,
-	        start = state.pos,
-	        marker = state.src.charCodeAt(start);
-	
-	    if (silent) {
-	      return false;
-	    }
-	
-	    if (marker !== 0x25 /* % */) {
-	        return false;
-	      }
-	
-	    scanned = state.scanDelims(state.pos, true);
-	    len = scanned.length;
-	    ch = String.fromCharCode(marker);
-	
-	    if (len < 2) {
-	      return false;
-	    }
-	
-	    if (len % 2) {
-	      token = state.push('text', '', 0);
-	      token.content = ch;
-	      len--;
-	    }
-	
-	    for (i = 0; i < len; i += 2) {
-	      token = state.push('text', '', 0);
-	      token.content = ch + ch;
-	
-	      state.delimiters.push({
-	        marker: marker,
-	        jump: i,
-	        token: state.tokens.length - 1,
-	        level: state.level,
-	        end: -1,
-	        open: scanned.can_open,
-	        close: scanned.can_close
-	      });
-	    }
-	
-	    state.pos += scanned.length;
-	
-	    return true;
-	  }
-	
-	  // Walk through delimiter list and replace text tokens with tags
-	  //
-	  function postProcess(state) {
-	    var i,
-	        j,
-	        startDelim,
-	        endDelim,
-	        token,
-	        loneMarkers = [],
-	        delimiters = state.delimiters,
-	        max = state.delimiters.length;
-	
-	    for (i = 0; i < max; i++) {
-	      startDelim = delimiters[i];
-	
-	      if (startDelim.marker !== 0x25 /* % */) {
-	          continue;
-	        }
-	
-	      if (startDelim.end === -1) {
-	        continue;
-	      }
-	
-	      endDelim = delimiters[startDelim.end];
-	
-	      token = state.tokens[startDelim.token];
-	      token.type = 'dimmed_open';
-	      token.tag = 'span';
-	      token.attrs = [['class', 'dimmed']];
-	      token.nesting = 1;
-	      token.markup = '%%';
-	      token.content = '';
-	
-	      token = state.tokens[endDelim.token];
-	      token.type = 'dimmed_close';
-	      token.tag = 'span';
-	      token.nesting = -1;
-	      token.markup = '%%';
-	      token.content = '';
-	
-	      if (state.tokens[endDelim.token - 1].type === 'text' && state.tokens[endDelim.token - 1].content === '%') {
-	
-	        loneMarkers.push(endDelim.token - 1);
-	      }
-	    }
-	
-	    // If a marker sequence has an odd number of characters, it's splitted
-	    // like this: `~~~~~` -> `~` + `~~` + `~~`, leaving one marker at the
-	    // start of the sequence.
-	    //
-	    // So, we have to move all those markers after subsequent s_close tags.
-	    //
-	    while (loneMarkers.length) {
-	      i = loneMarkers.pop();
-	      j = i + 1;
-	
-	      while (j < state.tokens.length && state.tokens[j].type === 'dimmed_close') {
-	        j++;
-	      }
-	
-	      j--;
-	
-	      if (i !== j) {
-	        token = state.tokens[j];
-	        state.tokens[j] = state.tokens[i];
-	        state.tokens[i] = token;
-	      }
-	    }
-	  }
-	
-	  md.inline.ruler.before('emphasis', 'dimmed', tokenize);
-	  md.inline.ruler2.before('emphasis', 'dimmed', postProcess);
-	};
-
-/***/ }),
-/* 164 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(165);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(166)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!../../node_modules/css-loader/index.js?root=./docs/!./dimmed.css", function() {
-				var newContent = require("!!../../node_modules/css-loader/index.js?root=./docs/!./dimmed.css");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ }),
-/* 165 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(77)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, ".dimmed {\n    color: #777;\n}\n", ""]);
-	
-	// exports
-
-
-/***/ }),
-/* 166 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	var stylesInDom = {},
-		memoize = function(fn) {
-			var memo;
-			return function () {
-				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
-				return memo;
-			};
-		},
-		isOldIE = memoize(function() {
-			return /msie [6-9]\b/.test(self.navigator.userAgent.toLowerCase());
-		}),
-		getHeadElement = memoize(function () {
-			return document.head || document.getElementsByTagName("head")[0];
-		}),
-		singletonElement = null,
-		singletonCounter = 0,
-		styleElementsInsertedAtTop = [];
-	
-	module.exports = function(list, options) {
-		if(false) {
-			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
-		}
-	
-		options = options || {};
-		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-		// tags it will allow on a page
-		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
-	
-		// By default, add <style> tags to the bottom of <head>.
-		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
-	
-		var styles = listToStyles(list);
-		addStylesToDom(styles, options);
-	
-		return function update(newList) {
-			var mayRemove = [];
-			for(var i = 0; i < styles.length; i++) {
-				var item = styles[i];
-				var domStyle = stylesInDom[item.id];
-				domStyle.refs--;
-				mayRemove.push(domStyle);
-			}
-			if(newList) {
-				var newStyles = listToStyles(newList);
-				addStylesToDom(newStyles, options);
-			}
-			for(var i = 0; i < mayRemove.length; i++) {
-				var domStyle = mayRemove[i];
-				if(domStyle.refs === 0) {
-					for(var j = 0; j < domStyle.parts.length; j++)
-						domStyle.parts[j]();
-					delete stylesInDom[domStyle.id];
-				}
-			}
-		};
-	}
-	
-	function addStylesToDom(styles, options) {
-		for(var i = 0; i < styles.length; i++) {
-			var item = styles[i];
-			var domStyle = stylesInDom[item.id];
-			if(domStyle) {
-				domStyle.refs++;
-				for(var j = 0; j < domStyle.parts.length; j++) {
-					domStyle.parts[j](item.parts[j]);
-				}
-				for(; j < item.parts.length; j++) {
-					domStyle.parts.push(addStyle(item.parts[j], options));
-				}
-			} else {
-				var parts = [];
-				for(var j = 0; j < item.parts.length; j++) {
-					parts.push(addStyle(item.parts[j], options));
-				}
-				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
-			}
-		}
-	}
-	
-	function listToStyles(list) {
-		var styles = [];
-		var newStyles = {};
-		for(var i = 0; i < list.length; i++) {
-			var item = list[i];
-			var id = item[0];
-			var css = item[1];
-			var media = item[2];
-			var sourceMap = item[3];
-			var part = {css: css, media: media, sourceMap: sourceMap};
-			if(!newStyles[id])
-				styles.push(newStyles[id] = {id: id, parts: [part]});
-			else
-				newStyles[id].parts.push(part);
-		}
-		return styles;
-	}
-	
-	function insertStyleElement(options, styleElement) {
-		var head = getHeadElement();
-		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
-		if (options.insertAt === "top") {
-			if(!lastStyleElementInsertedAtTop) {
-				head.insertBefore(styleElement, head.firstChild);
-			} else if(lastStyleElementInsertedAtTop.nextSibling) {
-				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
-			} else {
-				head.appendChild(styleElement);
-			}
-			styleElementsInsertedAtTop.push(styleElement);
-		} else if (options.insertAt === "bottom") {
-			head.appendChild(styleElement);
-		} else {
-			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
-		}
-	}
-	
-	function removeStyleElement(styleElement) {
-		styleElement.parentNode.removeChild(styleElement);
-		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
-		if(idx >= 0) {
-			styleElementsInsertedAtTop.splice(idx, 1);
-		}
-	}
-	
-	function createStyleElement(options) {
-		var styleElement = document.createElement("style");
-		styleElement.type = "text/css";
-		insertStyleElement(options, styleElement);
-		return styleElement;
-	}
-	
-	function createLinkElement(options) {
-		var linkElement = document.createElement("link");
-		linkElement.rel = "stylesheet";
-		insertStyleElement(options, linkElement);
-		return linkElement;
-	}
-	
-	function addStyle(obj, options) {
-		var styleElement, update, remove;
-	
-		if (options.singleton) {
-			var styleIndex = singletonCounter++;
-			styleElement = singletonElement || (singletonElement = createStyleElement(options));
-			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
-			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
-		} else if(obj.sourceMap &&
-			typeof URL === "function" &&
-			typeof URL.createObjectURL === "function" &&
-			typeof URL.revokeObjectURL === "function" &&
-			typeof Blob === "function" &&
-			typeof btoa === "function") {
-			styleElement = createLinkElement(options);
-			update = updateLink.bind(null, styleElement);
-			remove = function() {
-				removeStyleElement(styleElement);
-				if(styleElement.href)
-					URL.revokeObjectURL(styleElement.href);
-			};
-		} else {
-			styleElement = createStyleElement(options);
-			update = applyToTag.bind(null, styleElement);
-			remove = function() {
-				removeStyleElement(styleElement);
-			};
-		}
-	
-		update(obj);
-	
-		return function updateStyle(newObj) {
-			if(newObj) {
-				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
-					return;
-				update(obj = newObj);
-			} else {
-				remove();
-			}
-		};
-	}
-	
-	var replaceText = (function () {
-		var textStore = [];
-	
-		return function (index, replacement) {
-			textStore[index] = replacement;
-			return textStore.filter(Boolean).join('\n');
-		};
-	})();
-	
-	function applyToSingletonTag(styleElement, index, remove, obj) {
-		var css = remove ? "" : obj.css;
-	
-		if (styleElement.styleSheet) {
-			styleElement.styleSheet.cssText = replaceText(index, css);
-		} else {
-			var cssNode = document.createTextNode(css);
-			var childNodes = styleElement.childNodes;
-			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
-			if (childNodes.length) {
-				styleElement.insertBefore(cssNode, childNodes[index]);
-			} else {
-				styleElement.appendChild(cssNode);
-			}
-		}
-	}
-	
-	function applyToTag(styleElement, obj) {
-		var css = obj.css;
-		var media = obj.media;
-	
-		if(media) {
-			styleElement.setAttribute("media", media)
-		}
-	
-		if(styleElement.styleSheet) {
-			styleElement.styleSheet.cssText = css;
-		} else {
-			while(styleElement.firstChild) {
-				styleElement.removeChild(styleElement.firstChild);
-			}
-			styleElement.appendChild(document.createTextNode(css));
-		}
-	}
-	
-	function updateLink(linkElement, obj) {
-		var css = obj.css;
-		var sourceMap = obj.sourceMap;
-	
-		if(sourceMap) {
-			// http://stackoverflow.com/a/26603875
-			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
-		}
-	
-		var blob = new Blob([css], { type: "text/css" });
-	
-		var oldSrc = linkElement.href;
-	
-		linkElement.href = URL.createObjectURL(blob);
-	
-		if(oldSrc)
-			URL.revokeObjectURL(oldSrc);
-	}
-
-
-/***/ }),
-/* 167 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	module.exports = __webpack_require__(168)(/:(fa[brs]|glyphicon)-([a-z-]+):/m, function (match, utils) {
-	    var iconFontType = match[1];
-	    var iconFontName = match[2];
-	
-	    if (iconFontType === 'glyphicon') {
-	        return '<span aria-hidden="true" class="glyphicon glyphicon-' + iconFontName + '"></span>';
-	    } else {
-	        // If icon is a Font Awesome icon
-	        return '<span aria-hidden="true" class="' + iconFontType + ' fa-' + iconFontName + '"></span>';
-	    }
-	});
-
-/***/ }),
-/* 168 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(169)
-
-
-/***/ }),
-/* 169 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/*!
-	 * markdown-it-regexp
-	 * Copyright (c) 2014 Alex Kocharin
-	 * MIT Licensed
-	 */
-	
-	/**
-	 * Module dependencies.
-	 */
-	
-	var util  = __webpack_require__(170)
-	var stuff = __webpack_require__(174)
-	
-	/**
-	 * Counter for multi usage.
-	 */
-	var counter = 0
-	
-	/**
-	 * Expose `Plugin`
-	 */
-	
-	module.exports = Plugin
-	
-	/**
-	 * Constructor function
-	 */
-	
-	function Plugin(regexp, replacer) {
-	  // return value should be a callable function
-	  // with strictly defined options passed by markdown-it
-	  var self = function (md, options) {
-	    self.options = options
-	    self.init(md)
-	  }
-	
-	  // initialize plugin object
-	  self.__proto__ = Plugin.prototype
-	
-	  // clone regexp with all the flags
-	  var flags = (regexp.global     ? 'g' : '')
-	            + (regexp.multiline  ? 'm' : '')
-	            + (regexp.ignoreCase ? 'i' : '')
-	
-	  self.regexp = RegExp('^' + regexp.source, flags)
-	
-	  // copy init options
-	  self.replacer = replacer
-	
-	  // this plugin can be inserted multiple times,
-	  // so we're generating unique name for it
-	  self.id = 'regexp-' + counter
-	  counter++
-	
-	  return self
-	}
-	
-	util.inherits(Plugin, Function)
-	
-	// function that registers plugin with markdown-it
-	Plugin.prototype.init = function (md) {
-	  md.inline.ruler.push(this.id, this.parse.bind(this))
-	
-	  md.renderer.rules[this.id] = this.render.bind(this)
-	}
-	
-	Plugin.prototype.parse = function (state, silent) {
-	  // slowwww... maybe use an advanced regexp engine for this
-	  var match = this.regexp.exec(state.src.slice(state.pos))
-	  if (!match) return false
-	
-	  // valid match found, now we need to advance cursor
-	  state.pos += match[0].length
-	
-	  // don't insert any tokens in silent mode
-	  if (silent) return true
-	
-	  var token = state.push(this.id, '', 0)
-	  token.meta = { match: match }
-	
-	  return true
-	}
-	
-	Plugin.prototype.render = function (tokens, id, options, env) {
-	  return this.replacer(tokens[id].meta.match, stuff)
-	}
-	
-
-
-/***/ }),
-/* 170 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(global, process) {// Copyright Joyent, Inc. and other Node contributors.
-	//
-	// Permission is hereby granted, free of charge, to any person obtaining a
-	// copy of this software and associated documentation files (the
-	// "Software"), to deal in the Software without restriction, including
-	// without limitation the rights to use, copy, modify, merge, publish,
-	// distribute, sublicense, and/or sell copies of the Software, and to permit
-	// persons to whom the Software is furnished to do so, subject to the
-	// following conditions:
-	//
-	// The above copyright notice and this permission notice shall be included
-	// in all copies or substantial portions of the Software.
-	//
-	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-	// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-	// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-	// USE OR OTHER DEALINGS IN THE SOFTWARE.
-	
-	var formatRegExp = /%[sdj%]/g;
-	exports.format = function(f) {
-	  if (!isString(f)) {
-	    var objects = [];
-	    for (var i = 0; i < arguments.length; i++) {
-	      objects.push(inspect(arguments[i]));
-	    }
-	    return objects.join(' ');
-	  }
-	
-	  var i = 1;
-	  var args = arguments;
-	  var len = args.length;
-	  var str = String(f).replace(formatRegExp, function(x) {
-	    if (x === '%%') return '%';
-	    if (i >= len) return x;
-	    switch (x) {
-	      case '%s': return String(args[i++]);
-	      case '%d': return Number(args[i++]);
-	      case '%j':
-	        try {
-	          return JSON.stringify(args[i++]);
-	        } catch (_) {
-	          return '[Circular]';
-	        }
-	      default:
-	        return x;
-	    }
-	  });
-	  for (var x = args[i]; i < len; x = args[++i]) {
-	    if (isNull(x) || !isObject(x)) {
-	      str += ' ' + x;
-	    } else {
-	      str += ' ' + inspect(x);
-	    }
-	  }
-	  return str;
-	};
-	
-	
-	// Mark that a method should not be used.
-	// Returns a modified function which warns once by default.
-	// If --no-deprecation is set, then it is a no-op.
-	exports.deprecate = function(fn, msg) {
-	  // Allow for deprecating things in the process of starting up.
-	  if (isUndefined(global.process)) {
-	    return function() {
-	      return exports.deprecate(fn, msg).apply(this, arguments);
-	    };
-	  }
-	
-	  if (process.noDeprecation === true) {
-	    return fn;
-	  }
-	
-	  var warned = false;
-	  function deprecated() {
-	    if (!warned) {
-	      if (process.throwDeprecation) {
-	        throw new Error(msg);
-	      } else if (process.traceDeprecation) {
-	        console.trace(msg);
-	      } else {
-	        console.error(msg);
-	      }
-	      warned = true;
-	    }
-	    return fn.apply(this, arguments);
-	  }
-	
-	  return deprecated;
-	};
-	
-	
-	var debugs = {};
-	var debugEnviron;
-	exports.debuglog = function(set) {
-	  if (isUndefined(debugEnviron))
-	    debugEnviron = process.env.NODE_DEBUG || '';
-	  set = set.toUpperCase();
-	  if (!debugs[set]) {
-	    if (new RegExp('\\b' + set + '\\b', 'i').test(debugEnviron)) {
-	      var pid = process.pid;
-	      debugs[set] = function() {
-	        var msg = exports.format.apply(exports, arguments);
-	        console.error('%s %d: %s', set, pid, msg);
-	      };
-	    } else {
-	      debugs[set] = function() {};
-	    }
-	  }
-	  return debugs[set];
-	};
-	
-	
-	/**
-	 * Echos the value of a value. Trys to print the value out
-	 * in the best way possible given the different types.
-	 *
-	 * @param {Object} obj The object to print out.
-	 * @param {Object} opts Optional options object that alters the output.
-	 */
-	/* legacy: obj, showHidden, depth, colors*/
-	function inspect(obj, opts) {
-	  // default options
-	  var ctx = {
-	    seen: [],
-	    stylize: stylizeNoColor
-	  };
-	  // legacy...
-	  if (arguments.length >= 3) ctx.depth = arguments[2];
-	  if (arguments.length >= 4) ctx.colors = arguments[3];
-	  if (isBoolean(opts)) {
-	    // legacy...
-	    ctx.showHidden = opts;
-	  } else if (opts) {
-	    // got an "options" object
-	    exports._extend(ctx, opts);
-	  }
-	  // set default options
-	  if (isUndefined(ctx.showHidden)) ctx.showHidden = false;
-	  if (isUndefined(ctx.depth)) ctx.depth = 2;
-	  if (isUndefined(ctx.colors)) ctx.colors = false;
-	  if (isUndefined(ctx.customInspect)) ctx.customInspect = true;
-	  if (ctx.colors) ctx.stylize = stylizeWithColor;
-	  return formatValue(ctx, obj, ctx.depth);
-	}
-	exports.inspect = inspect;
-	
-	
-	// http://en.wikipedia.org/wiki/ANSI_escape_code#graphics
-	inspect.colors = {
-	  'bold' : [1, 22],
-	  'italic' : [3, 23],
-	  'underline' : [4, 24],
-	  'inverse' : [7, 27],
-	  'white' : [37, 39],
-	  'grey' : [90, 39],
-	  'black' : [30, 39],
-	  'blue' : [34, 39],
-	  'cyan' : [36, 39],
-	  'green' : [32, 39],
-	  'magenta' : [35, 39],
-	  'red' : [31, 39],
-	  'yellow' : [33, 39]
-	};
-	
-	// Don't use 'blue' not visible on cmd.exe
-	inspect.styles = {
-	  'special': 'cyan',
-	  'number': 'yellow',
-	  'boolean': 'yellow',
-	  'undefined': 'grey',
-	  'null': 'bold',
-	  'string': 'green',
-	  'date': 'magenta',
-	  // "name": intentionally not styling
-	  'regexp': 'red'
-	};
-	
-	
-	function stylizeWithColor(str, styleType) {
-	  var style = inspect.styles[styleType];
-	
-	  if (style) {
-	    return '\u001b[' + inspect.colors[style][0] + 'm' + str +
-	           '\u001b[' + inspect.colors[style][1] + 'm';
-	  } else {
-	    return str;
-	  }
-	}
-	
-	
-	function stylizeNoColor(str, styleType) {
-	  return str;
-	}
-	
-	
-	function arrayToHash(array) {
-	  var hash = {};
-	
-	  array.forEach(function(val, idx) {
-	    hash[val] = true;
-	  });
-	
-	  return hash;
-	}
-	
-	
-	function formatValue(ctx, value, recurseTimes) {
-	  // Provide a hook for user-specified inspect functions.
-	  // Check that value is an object with an inspect function on it
-	  if (ctx.customInspect &&
-	      value &&
-	      isFunction(value.inspect) &&
-	      // Filter out the util module, it's inspect function is special
-	      value.inspect !== exports.inspect &&
-	      // Also filter out any prototype objects using the circular check.
-	      !(value.constructor && value.constructor.prototype === value)) {
-	    var ret = value.inspect(recurseTimes, ctx);
-	    if (!isString(ret)) {
-	      ret = formatValue(ctx, ret, recurseTimes);
-	    }
-	    return ret;
-	  }
-	
-	  // Primitive types cannot have properties
-	  var primitive = formatPrimitive(ctx, value);
-	  if (primitive) {
-	    return primitive;
-	  }
-	
-	  // Look up the keys of the object.
-	  var keys = Object.keys(value);
-	  var visibleKeys = arrayToHash(keys);
-	
-	  if (ctx.showHidden) {
-	    keys = Object.getOwnPropertyNames(value);
-	  }
-	
-	  // IE doesn't make error fields non-enumerable
-	  // http://msdn.microsoft.com/en-us/library/ie/dww52sbt(v=vs.94).aspx
-	  if (isError(value)
-	      && (keys.indexOf('message') >= 0 || keys.indexOf('description') >= 0)) {
-	    return formatError(value);
-	  }
-	
-	  // Some type of object without properties can be shortcutted.
-	  if (keys.length === 0) {
-	    if (isFunction(value)) {
-	      var name = value.name ? ': ' + value.name : '';
-	      return ctx.stylize('[Function' + name + ']', 'special');
-	    }
-	    if (isRegExp(value)) {
-	      return ctx.stylize(RegExp.prototype.toString.call(value), 'regexp');
-	    }
-	    if (isDate(value)) {
-	      return ctx.stylize(Date.prototype.toString.call(value), 'date');
-	    }
-	    if (isError(value)) {
-	      return formatError(value);
-	    }
-	  }
-	
-	  var base = '', array = false, braces = ['{', '}'];
-	
-	  // Make Array say that they are Array
-	  if (isArray(value)) {
-	    array = true;
-	    braces = ['[', ']'];
-	  }
-	
-	  // Make functions say that they are functions
-	  if (isFunction(value)) {
-	    var n = value.name ? ': ' + value.name : '';
-	    base = ' [Function' + n + ']';
-	  }
-	
-	  // Make RegExps say that they are RegExps
-	  if (isRegExp(value)) {
-	    base = ' ' + RegExp.prototype.toString.call(value);
-	  }
-	
-	  // Make dates with properties first say the date
-	  if (isDate(value)) {
-	    base = ' ' + Date.prototype.toUTCString.call(value);
-	  }
-	
-	  // Make error with message first say the error
-	  if (isError(value)) {
-	    base = ' ' + formatError(value);
-	  }
-	
-	  if (keys.length === 0 && (!array || value.length == 0)) {
-	    return braces[0] + base + braces[1];
-	  }
-	
-	  if (recurseTimes < 0) {
-	    if (isRegExp(value)) {
-	      return ctx.stylize(RegExp.prototype.toString.call(value), 'regexp');
-	    } else {
-	      return ctx.stylize('[Object]', 'special');
-	    }
-	  }
-	
-	  ctx.seen.push(value);
-	
-	  var output;
-	  if (array) {
-	    output = formatArray(ctx, value, recurseTimes, visibleKeys, keys);
-	  } else {
-	    output = keys.map(function(key) {
-	      return formatProperty(ctx, value, recurseTimes, visibleKeys, key, array);
-	    });
-	  }
-	
-	  ctx.seen.pop();
-	
-	  return reduceToSingleString(output, base, braces);
-	}
-	
-	
-	function formatPrimitive(ctx, value) {
-	  if (isUndefined(value))
-	    return ctx.stylize('undefined', 'undefined');
-	  if (isString(value)) {
-	    var simple = '\'' + JSON.stringify(value).replace(/^"|"$/g, '')
-	                                             .replace(/'/g, "\\'")
-	                                             .replace(/\\"/g, '"') + '\'';
-	    return ctx.stylize(simple, 'string');
-	  }
-	  if (isNumber(value))
-	    return ctx.stylize('' + value, 'number');
-	  if (isBoolean(value))
-	    return ctx.stylize('' + value, 'boolean');
-	  // For some reason typeof null is "object", so special case here.
-	  if (isNull(value))
-	    return ctx.stylize('null', 'null');
-	}
-	
-	
-	function formatError(value) {
-	  return '[' + Error.prototype.toString.call(value) + ']';
-	}
-	
-	
-	function formatArray(ctx, value, recurseTimes, visibleKeys, keys) {
-	  var output = [];
-	  for (var i = 0, l = value.length; i < l; ++i) {
-	    if (hasOwnProperty(value, String(i))) {
-	      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
-	          String(i), true));
-	    } else {
-	      output.push('');
-	    }
-	  }
-	  keys.forEach(function(key) {
-	    if (!key.match(/^\d+$/)) {
-	      output.push(formatProperty(ctx, value, recurseTimes, visibleKeys,
-	          key, true));
-	    }
-	  });
-	  return output;
-	}
-	
-	
-	function formatProperty(ctx, value, recurseTimes, visibleKeys, key, array) {
-	  var name, str, desc;
-	  desc = Object.getOwnPropertyDescriptor(value, key) || { value: value[key] };
-	  if (desc.get) {
-	    if (desc.set) {
-	      str = ctx.stylize('[Getter/Setter]', 'special');
-	    } else {
-	      str = ctx.stylize('[Getter]', 'special');
-	    }
-	  } else {
-	    if (desc.set) {
-	      str = ctx.stylize('[Setter]', 'special');
-	    }
-	  }
-	  if (!hasOwnProperty(visibleKeys, key)) {
-	    name = '[' + key + ']';
-	  }
-	  if (!str) {
-	    if (ctx.seen.indexOf(desc.value) < 0) {
-	      if (isNull(recurseTimes)) {
-	        str = formatValue(ctx, desc.value, null);
-	      } else {
-	        str = formatValue(ctx, desc.value, recurseTimes - 1);
-	      }
-	      if (str.indexOf('\n') > -1) {
-	        if (array) {
-	          str = str.split('\n').map(function(line) {
-	            return '  ' + line;
-	          }).join('\n').substr(2);
-	        } else {
-	          str = '\n' + str.split('\n').map(function(line) {
-	            return '   ' + line;
-	          }).join('\n');
-	        }
-	      }
-	    } else {
-	      str = ctx.stylize('[Circular]', 'special');
-	    }
-	  }
-	  if (isUndefined(name)) {
-	    if (array && key.match(/^\d+$/)) {
-	      return str;
-	    }
-	    name = JSON.stringify('' + key);
-	    if (name.match(/^"([a-zA-Z_][a-zA-Z_0-9]*)"$/)) {
-	      name = name.substr(1, name.length - 2);
-	      name = ctx.stylize(name, 'name');
-	    } else {
-	      name = name.replace(/'/g, "\\'")
-	                 .replace(/\\"/g, '"')
-	                 .replace(/(^"|"$)/g, "'");
-	      name = ctx.stylize(name, 'string');
-	    }
-	  }
-	
-	  return name + ': ' + str;
-	}
-	
-	
-	function reduceToSingleString(output, base, braces) {
-	  var numLinesEst = 0;
-	  var length = output.reduce(function(prev, cur) {
-	    numLinesEst++;
-	    if (cur.indexOf('\n') >= 0) numLinesEst++;
-	    return prev + cur.replace(/\u001b\[\d\d?m/g, '').length + 1;
-	  }, 0);
-	
-	  if (length > 60) {
-	    return braces[0] +
-	           (base === '' ? '' : base + '\n ') +
-	           ' ' +
-	           output.join(',\n  ') +
-	           ' ' +
-	           braces[1];
-	  }
-	
-	  return braces[0] + base + ' ' + output.join(', ') + ' ' + braces[1];
-	}
-	
-	
-	// NOTE: These type checking functions intentionally don't use `instanceof`
-	// because it is fragile and can be easily faked with `Object.create()`.
-	function isArray(ar) {
-	  return Array.isArray(ar);
-	}
-	exports.isArray = isArray;
-	
-	function isBoolean(arg) {
-	  return typeof arg === 'boolean';
-	}
-	exports.isBoolean = isBoolean;
-	
-	function isNull(arg) {
-	  return arg === null;
-	}
-	exports.isNull = isNull;
-	
-	function isNullOrUndefined(arg) {
-	  return arg == null;
-	}
-	exports.isNullOrUndefined = isNullOrUndefined;
-	
-	function isNumber(arg) {
-	  return typeof arg === 'number';
-	}
-	exports.isNumber = isNumber;
-	
-	function isString(arg) {
-	  return typeof arg === 'string';
-	}
-	exports.isString = isString;
-	
-	function isSymbol(arg) {
-	  return typeof arg === 'symbol';
-	}
-	exports.isSymbol = isSymbol;
-	
-	function isUndefined(arg) {
-	  return arg === void 0;
-	}
-	exports.isUndefined = isUndefined;
-	
-	function isRegExp(re) {
-	  return isObject(re) && objectToString(re) === '[object RegExp]';
-	}
-	exports.isRegExp = isRegExp;
-	
-	function isObject(arg) {
-	  return typeof arg === 'object' && arg !== null;
-	}
-	exports.isObject = isObject;
-	
-	function isDate(d) {
-	  return isObject(d) && objectToString(d) === '[object Date]';
-	}
-	exports.isDate = isDate;
-	
-	function isError(e) {
-	  return isObject(e) &&
-	      (objectToString(e) === '[object Error]' || e instanceof Error);
-	}
-	exports.isError = isError;
-	
-	function isFunction(arg) {
-	  return typeof arg === 'function';
-	}
-	exports.isFunction = isFunction;
-	
-	function isPrimitive(arg) {
-	  return arg === null ||
-	         typeof arg === 'boolean' ||
-	         typeof arg === 'number' ||
-	         typeof arg === 'string' ||
-	         typeof arg === 'symbol' ||  // ES6 symbol
-	         typeof arg === 'undefined';
-	}
-	exports.isPrimitive = isPrimitive;
-	
-	exports.isBuffer = __webpack_require__(172);
-	
-	function objectToString(o) {
-	  return Object.prototype.toString.call(o);
-	}
-	
-	
-	function pad(n) {
-	  return n < 10 ? '0' + n.toString(10) : n.toString(10);
-	}
-	
-	
-	var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
-	              'Oct', 'Nov', 'Dec'];
-	
-	// 26 Feb 16:19:34
-	function timestamp() {
-	  var d = new Date();
-	  var time = [pad(d.getHours()),
-	              pad(d.getMinutes()),
-	              pad(d.getSeconds())].join(':');
-	  return [d.getDate(), months[d.getMonth()], time].join(' ');
-	}
-	
-	
-	// log is just a thin wrapper to console.log that prepends a timestamp
-	exports.log = function() {
-	  console.log('%s - %s', timestamp(), exports.format.apply(exports, arguments));
-	};
-	
-	
-	/**
-	 * Inherit the prototype methods from one constructor into another.
-	 *
-	 * The Function.prototype.inherits from lang.js rewritten as a standalone
-	 * function (not on Function.prototype). NOTE: If this file is to be loaded
-	 * during bootstrapping this function needs to be rewritten using some native
-	 * functions as prototype setup using normal JavaScript does not work as
-	 * expected during bootstrapping (see mirror.js in r114903).
-	 *
-	 * @param {function} ctor Constructor function which needs to inherit the
-	 *     prototype.
-	 * @param {function} superCtor Constructor function to inherit prototype from.
-	 */
-	exports.inherits = __webpack_require__(173);
-	
-	exports._extend = function(origin, add) {
-	  // Don't do anything if add isn't an object
-	  if (!add || !isObject(add)) return origin;
-	
-	  var keys = Object.keys(add);
-	  var i = keys.length;
-	  while (i--) {
-	    origin[keys[i]] = add[keys[i]];
-	  }
-	  return origin;
-	};
-	
-	function hasOwnProperty(obj, prop) {
-	  return Object.prototype.hasOwnProperty.call(obj, prop);
-	}
-	
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(171)))
-
-/***/ }),
-/* 171 */
-/***/ (function(module, exports) {
-
-	// shim for using process in browser
-	var process = module.exports = {};
-	
-	// cached from whatever global is present so that test runners that stub it
-	// don't break things.  But we need to wrap it in a try catch in case it is
-	// wrapped in strict mode code which doesn't define any globals.  It's inside a
-	// function because try/catches deoptimize in certain engines.
-	
-	var cachedSetTimeout;
-	var cachedClearTimeout;
-	
-	function defaultSetTimout() {
-	    throw new Error('setTimeout has not been defined');
-	}
-	function defaultClearTimeout () {
-	    throw new Error('clearTimeout has not been defined');
-	}
-	(function () {
-	    try {
-	        if (typeof setTimeout === 'function') {
-	            cachedSetTimeout = setTimeout;
-	        } else {
-	            cachedSetTimeout = defaultSetTimout;
-	        }
-	    } catch (e) {
-	        cachedSetTimeout = defaultSetTimout;
-	    }
-	    try {
-	        if (typeof clearTimeout === 'function') {
-	            cachedClearTimeout = clearTimeout;
-	        } else {
-	            cachedClearTimeout = defaultClearTimeout;
-	        }
-	    } catch (e) {
-	        cachedClearTimeout = defaultClearTimeout;
-	    }
-	} ())
-	function runTimeout(fun) {
-	    if (cachedSetTimeout === setTimeout) {
-	        //normal enviroments in sane situations
-	        return setTimeout(fun, 0);
-	    }
-	    // if setTimeout wasn't available but was latter defined
-	    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-	        cachedSetTimeout = setTimeout;
-	        return setTimeout(fun, 0);
-	    }
-	    try {
-	        // when when somebody has screwed with setTimeout but no I.E. maddness
-	        return cachedSetTimeout(fun, 0);
-	    } catch(e){
-	        try {
-	            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-	            return cachedSetTimeout.call(null, fun, 0);
-	        } catch(e){
-	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-	            return cachedSetTimeout.call(this, fun, 0);
-	        }
-	    }
-	
-	
-	}
-	function runClearTimeout(marker) {
-	    if (cachedClearTimeout === clearTimeout) {
-	        //normal enviroments in sane situations
-	        return clearTimeout(marker);
-	    }
-	    // if clearTimeout wasn't available but was latter defined
-	    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-	        cachedClearTimeout = clearTimeout;
-	        return clearTimeout(marker);
-	    }
-	    try {
-	        // when when somebody has screwed with setTimeout but no I.E. maddness
-	        return cachedClearTimeout(marker);
-	    } catch (e){
-	        try {
-	            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-	            return cachedClearTimeout.call(null, marker);
-	        } catch (e){
-	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-	            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-	            return cachedClearTimeout.call(this, marker);
-	        }
-	    }
-	
-	
-	
-	}
-	var queue = [];
-	var draining = false;
-	var currentQueue;
-	var queueIndex = -1;
-	
-	function cleanUpNextTick() {
-	    if (!draining || !currentQueue) {
-	        return;
-	    }
-	    draining = false;
-	    if (currentQueue.length) {
-	        queue = currentQueue.concat(queue);
-	    } else {
-	        queueIndex = -1;
-	    }
-	    if (queue.length) {
-	        drainQueue();
-	    }
-	}
-	
-	function drainQueue() {
-	    if (draining) {
-	        return;
-	    }
-	    var timeout = runTimeout(cleanUpNextTick);
-	    draining = true;
-	
-	    var len = queue.length;
-	    while(len) {
-	        currentQueue = queue;
-	        queue = [];
-	        while (++queueIndex < len) {
-	            if (currentQueue) {
-	                currentQueue[queueIndex].run();
-	            }
-	        }
-	        queueIndex = -1;
-	        len = queue.length;
-	    }
-	    currentQueue = null;
-	    draining = false;
-	    runClearTimeout(timeout);
-	}
-	
-	process.nextTick = function (fun) {
-	    var args = new Array(arguments.length - 1);
-	    if (arguments.length > 1) {
-	        for (var i = 1; i < arguments.length; i++) {
-	            args[i - 1] = arguments[i];
-	        }
-	    }
-	    queue.push(new Item(fun, args));
-	    if (queue.length === 1 && !draining) {
-	        runTimeout(drainQueue);
-	    }
-	};
-	
-	// v8 likes predictible objects
-	function Item(fun, array) {
-	    this.fun = fun;
-	    this.array = array;
-	}
-	Item.prototype.run = function () {
-	    this.fun.apply(null, this.array);
-	};
-	process.title = 'browser';
-	process.browser = true;
-	process.env = {};
-	process.argv = [];
-	process.version = ''; // empty string to avoid regexp issues
-	process.versions = {};
-	
-	function noop() {}
-	
-	process.on = noop;
-	process.addListener = noop;
-	process.once = noop;
-	process.off = noop;
-	process.removeListener = noop;
-	process.removeAllListeners = noop;
-	process.emit = noop;
-	process.prependListener = noop;
-	process.prependOnceListener = noop;
-	
-	process.listeners = function (name) { return [] }
-	
-	process.binding = function (name) {
-	    throw new Error('process.binding is not supported');
-	};
-	
-	process.cwd = function () { return '/' };
-	process.chdir = function (dir) {
-	    throw new Error('process.chdir is not supported');
-	};
-	process.umask = function() { return 0; };
-
-
-/***/ }),
-/* 172 */
-/***/ (function(module, exports) {
-
-	module.exports = function isBuffer(arg) {
-	  return arg && typeof arg === 'object'
-	    && typeof arg.copy === 'function'
-	    && typeof arg.fill === 'function'
-	    && typeof arg.readUInt8 === 'function';
-	}
-
-/***/ }),
-/* 173 */
-/***/ (function(module, exports) {
-
-	if (typeof Object.create === 'function') {
-	  // implementation from standard node.js 'util' module
-	  module.exports = function inherits(ctor, superCtor) {
-	    ctor.super_ = superCtor
-	    ctor.prototype = Object.create(superCtor.prototype, {
-	      constructor: {
-	        value: ctor,
-	        enumerable: false,
-	        writable: true,
-	        configurable: true
-	      }
-	    });
-	  };
-	} else {
-	  // old school shim for old browsers
-	  module.exports = function inherits(ctor, superCtor) {
-	    ctor.super_ = superCtor
-	    var TempCtor = function () {}
-	    TempCtor.prototype = superCtor.prototype
-	    ctor.prototype = new TempCtor()
-	    ctor.prototype.constructor = ctor
-	  }
-	}
-
-
-/***/ }),
-/* 174 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/*!
-	 * markdown-it-regexp
-	 * Copyright (c) 2014 Alex Kocharin
-	 * MIT Licensed
-	 */
-	
-	/**
-	 * Module dependencies.
-	 */
-	
-	var util = __webpack_require__(170)
-	
-	/**
-	 * Escape special characters in the given string of html.
-	 *
-	 * Borrowed from escape-html component, MIT-licensed
-	 */
-	exports.escape = function(html) {
-	  return String(html)
-	    .replace(/&/g, '&amp;')
-	    .replace(/"/g, '&quot;')
-	    .replace(/'/g, '&#39;')
-	    .replace(/</g, '&lt;')
-	    .replace(/>/g, '&gt;')
-	}
-	
-
-
-/***/ }),
-/* 175 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// Process ![test]( x =100x200)
-	//                    ^^^^^^^^ this size specification
-	
-	'use strict';
-	
-	var sizeOf = __webpack_require__(176);
-	
-	var parseImageSize = __webpack_require__(195);
-	
-	function image_with_size(md, options) {
-	  return function(state, silent) {
-	    var attrs,
-	        code,
-	        label,
-	        labelEnd,
-	        labelStart,
-	        pos,
-	        ref,
-	        res,
-	        title,
-	        width = '',
-	        height = '',
-	        token,
-	        tokens,
-	        start,
-	        href = '',
-	        oldPos = state.pos,
-	        max = state.posMax;
-	
-	    if (state.src.charCodeAt(state.pos) !== 0x21/* ! */) { return false; }
-	    if (state.src.charCodeAt(state.pos + 1) !== 0x5B/* [ */) { return false; }
-	
-	    labelStart = state.pos + 2;
-	    labelEnd = md.helpers.parseLinkLabel(state, state.pos + 1, false);
-	
-	    // parser failed to find ']', so it's not a valid link
-	    if (labelEnd < 0) { return false; }
-	
-	    pos = labelEnd + 1;
-	    if (pos < max && state.src.charCodeAt(pos) === 0x28/* ( */) {
-	
-	      //
-	      // Inline link
-	      //
-	
-	      // [link](  <href>  "title"  )
-	      //        ^^ skipping these spaces
-	      pos++;
-	      for (; pos < max; pos++) {
-	        code = state.src.charCodeAt(pos);
-	        if (code !== 0x20 && code !== 0x0A) { break; }
-	      }
-	      if (pos >= max) { return false; }
-	
-	      // [link](  <href>  "title"  )
-	      //          ^^^^^^ parsing link destination
-	      start = pos;
-	      res = md.helpers.parseLinkDestination(state.src, pos, state.posMax);
-	      if (res.ok) {
-	        href = state.md.normalizeLink(res.str);
-	        if (state.md.validateLink(href)) {
-	          pos = res.pos;
-	        } else {
-	          href = '';
-	        }
-	      }
-	
-	      // [link](  <href>  "title"  )
-	      //                ^^ skipping these spaces
-	      start = pos;
-	      for (; pos < max; pos++) {
-	        code = state.src.charCodeAt(pos);
-	        if (code !== 0x20 && code !== 0x0A) { break; }
-	      }
-	
-	      // [link](  <href>  "title"  )
-	      //                  ^^^^^^^ parsing link title
-	      res = md.helpers.parseLinkTitle(state.src, pos, state.posMax);
-	      if (pos < max && start !== pos && res.ok) {
-	        title = res.str;
-	        pos = res.pos;
-	
-	        // [link](  <href>  "title"  )
-	        //                         ^^ skipping these spaces
-	        for (; pos < max; pos++) {
-	          code = state.src.charCodeAt(pos);
-	          if (code !== 0x20 && code !== 0x0A) { break; }
-	        }
-	      } else {
-	        title = '';
-	      }
-	
-	      // [link](  <href>  "title" =WxH  )
-	      //                          ^^^^ parsing image size
-	      if (pos - 1 >= 0) {
-	        code = state.src.charCodeAt(pos - 1);
-	
-	        // there must be at least one white spaces
-	        // between previous field and the size
-	        if (code === 0x20) {
-	          res = parseImageSize(state.src, pos, state.posMax);
-	          if (res.ok) {
-	            width = res.width;
-	            height = res.height;
-	            pos = res.pos;
-	
-	            // [link](  <href>  "title" =WxH  )
-	            //                              ^^ skipping these spaces
-	            for (; pos < max; pos++) {
-	              code = state.src.charCodeAt(pos);
-	              if (code !== 0x20 && code !== 0x0A) { break; }
-	            }
-	          }
-	        }
-	      }
-	
-	      if (pos >= max || state.src.charCodeAt(pos) !== 0x29/* ) */) {
-	        state.pos = oldPos;
-	        return false;
-	      }
-	      pos++;
-	
-	    } else {
-	      //
-	      // Link reference
-	      //
-	      if (typeof state.env.references === 'undefined') { return false; }
-	
-	      // [foo]  [bar]
-	      //      ^^ optional whitespace (can include newlines)
-	      for (; pos < max; pos++) {
-	        code = state.src.charCodeAt(pos);
-	        if (code !== 0x20 && code !== 0x0A) { break; }
-	      }
-	
-	      if (pos < max && state.src.charCodeAt(pos) === 0x5B/* [ */) {
-	        start = pos + 1;
-	        pos = md.helpers.parseLinkLabel(state, pos);
-	        if (pos >= 0) {
-	          label = state.src.slice(start, pos++);
-	        } else {
-	          pos = labelEnd + 1;
-	        }
-	      } else {
-	        pos = labelEnd + 1;
-	      }
-	
-	      // covers label === '' and label === undefined
-	      // (collapsed reference link and shortcut reference link respectively)
-	      if (!label) { label = state.src.slice(labelStart, labelEnd); }
-	
-	      ref = state.env.references[md.utils.normalizeReference(label)];
-	      if (!ref) {
-	        state.pos = oldPos;
-	        return false;
-	      }
-	      href = ref.href;
-	      title = ref.title;
-	    }
-	
-	    //
-	    // We found the end of the link, and know for a fact it's a valid link;
-	    // so all that's left to do is to call tokenizer.
-	    //
-	    if (!silent) {
-	      state.pos = labelStart;
-	      state.posMax = labelEnd;
-	
-	      var newState = new state.md.inline.State(
-	        state.src.slice(labelStart, labelEnd),
-	        state.md,
-	        state.env,
-	        tokens = []
-	      );
-	      newState.md.inline.tokenize(newState);
-	
-	      // if 'autofill' option is specified
-	      // and width/height are both blank,
-	      // they are filled automatically
-	      if (options) {
-	        if (options.autofill && width === '' && height === '') {
-	          try {
-	            var dimensions = sizeOf(href);
-	            width = dimensions.width;
-	            height = dimensions.height;
-	          } catch (e) { }
-	        }
-	      }
-	
-	      token          = state.push('image', 'img', 0);
-	      token.attrs    = attrs = [ [ 'src', href ],
-	                                 [ 'alt', '' ] ];
-	      token.children = tokens;
-	      if (title) {
-	        attrs.push([ 'title', title ]);
-	      }
-	
-	      if (width !== '') {
-	        attrs.push([ 'width', width ]);
-	      }
-	
-	      if (height !== '') {
-	        attrs.push([ 'height', height ]);
-	      }
-	    }
-	
-	    state.pos = pos;
-	    state.posMax = max;
-	    return true;
-	  };
-	}
-	
-	module.exports = function imsize_plugin(md, options) {
-	  md.inline.ruler.before('emphasis', 'image', image_with_size(md, options));
-	};
-
-
-/***/ }),
-/* 176 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(Buffer) {'use strict';
-	
-	var fs   = __webpack_require__(181);
-	var path = __webpack_require__(182);
-	
-	var detector = __webpack_require__(183);
-	var handlers = {};
-	var types = __webpack_require__(184);
-	
-	types.forEach(function(type) {
-	  handlers[type] = __webpack_require__(185)("./" + type);
-	});
-	
-	var MaxBufferSize = 128 * 1024;
-	
-	function lookup(buffer, filepath) {
-	  var type = detector(buffer, filepath);
-	
-	  if (type in handlers) {
-	    var size = handlers[type].calculate(buffer, filepath);
-	    if (size !== false) {
-	      size.type = type;
-	      return size;
-	    }
-	  }
-	
-	  throw new TypeError('Unsupported file type');
-	}
-	
-	function asyncFileToBuffer(filepath, callback) {
-	  fs.open(filepath, 'r', function(err0, descriptor) {
-	    if (err0) {
-	      return callback(err0);
-	    }
-	
-	    var size = fs.fstatSync(descriptor).size;
-	    var bufferSize = Math.min(size, MaxBufferSize);
-	    var buffer = new Buffer(bufferSize);
-	    fs.read(descriptor, buffer, 0, bufferSize, 0, function(err1) {
-	      if (err1) {
-	        return callback(err1);
-	      }
-	
-	      fs.close(descriptor, function(err2) {
-	        callback(err2, buffer);
-	      });
-	    });
-	  });
-	}
-	
-	function syncFileToBuffer(filepath) {
-	  var descriptor = fs.openSync(filepath, 'r');
-	  var size = fs.fstatSync(descriptor).size;
-	  var bufferSize = Math.min(size, MaxBufferSize);
-	  var buffer = new Buffer(bufferSize);
-	  fs.readSync(descriptor, buffer, 0, bufferSize, 0);
-	  fs.closeSync(descriptor);
-	  return buffer;
-	}
-	
-	/**
-	 * Returns the dimensions of the image file
-	 * @param[in] input: input image path
-	 * @param[in] callback(option): if specified, gets size async.
-	 */
-	module.exports = function(input, callback) {
-	  if (typeof input !== 'string') {
-	    throw new TypeError('Input must be file name');
-	  }
-	
-	  var filepath = path.resolve(input);
-	
-	  if (typeof callback === 'function') {
-	    asyncFileToBuffer(filepath, function(err, buffer) {
-	      if (err) {
-	        return callback(err);
-	      }
-	
-	      var dimensions;
-	      try {
-	        dimensions = lookup(buffer, filepath);
-	      } catch (e) {
-	        err = e;
-	      }
-	      callback(err, dimensions);
-	    });
-	  } else {
-	    var buffer = syncFileToBuffer(filepath);
-	    return lookup(buffer, filepath);
-	  }
-	};
-	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(177).Buffer))
-
-/***/ }),
-/* 177 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(global) {/*!
-	 * The buffer module from node.js, for the browser.
-	 *
-	 * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
-	 * @license  MIT
-	 */
-	/* eslint-disable no-proto */
-	
-	'use strict'
-	
-	var base64 = __webpack_require__(178)
-	var ieee754 = __webpack_require__(179)
-	var isArray = __webpack_require__(180)
-	
-	exports.Buffer = Buffer
-	exports.SlowBuffer = SlowBuffer
-	exports.INSPECT_MAX_BYTES = 50
-	
-	/**
-	 * If `Buffer.TYPED_ARRAY_SUPPORT`:
-	 *   === true    Use Uint8Array implementation (fastest)
-	 *   === false   Use Object implementation (most compatible, even IE6)
-	 *
-	 * Browsers that support typed arrays are IE 10+, Firefox 4+, Chrome 7+, Safari 5.1+,
-	 * Opera 11.6+, iOS 4.2+.
-	 *
-	 * Due to various browser bugs, sometimes the Object implementation will be used even
-	 * when the browser supports typed arrays.
-	 *
-	 * Note:
-	 *
-	 *   - Firefox 4-29 lacks support for adding new properties to `Uint8Array` instances,
-	 *     See: https://bugzilla.mozilla.org/show_bug.cgi?id=695438.
-	 *
-	 *   - Chrome 9-10 is missing the `TypedArray.prototype.subarray` function.
-	 *
-	 *   - IE10 has a broken `TypedArray.prototype.subarray` function which returns arrays of
-	 *     incorrect length in some situations.
-	
-	 * We detect these buggy browsers and set `Buffer.TYPED_ARRAY_SUPPORT` to `false` so they
-	 * get the Object implementation, which is slower but behaves correctly.
-	 */
-	Buffer.TYPED_ARRAY_SUPPORT = global.TYPED_ARRAY_SUPPORT !== undefined
-	  ? global.TYPED_ARRAY_SUPPORT
-	  : typedArraySupport()
-	
-	/*
-	 * Export kMaxLength after typed array support is determined.
-	 */
-	exports.kMaxLength = kMaxLength()
-	
-	function typedArraySupport () {
-	  try {
-	    var arr = new Uint8Array(1)
-	    arr.__proto__ = {__proto__: Uint8Array.prototype, foo: function () { return 42 }}
-	    return arr.foo() === 42 && // typed array instances can be augmented
-	        typeof arr.subarray === 'function' && // chrome 9-10 lack `subarray`
-	        arr.subarray(1, 1).byteLength === 0 // ie10 has broken `subarray`
-	  } catch (e) {
-	    return false
-	  }
-	}
-	
-	function kMaxLength () {
-	  return Buffer.TYPED_ARRAY_SUPPORT
-	    ? 0x7fffffff
-	    : 0x3fffffff
-	}
-	
-	function createBuffer (that, length) {
-	  if (kMaxLength() < length) {
-	    throw new RangeError('Invalid typed array length')
-	  }
-	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    // Return an augmented `Uint8Array` instance, for best performance
-	    that = new Uint8Array(length)
-	    that.__proto__ = Buffer.prototype
-	  } else {
-	    // Fallback: Return an object instance of the Buffer class
-	    if (that === null) {
-	      that = new Buffer(length)
-	    }
-	    that.length = length
-	  }
-	
-	  return that
-	}
-	
-	/**
-	 * The Buffer constructor returns instances of `Uint8Array` that have their
-	 * prototype changed to `Buffer.prototype`. Furthermore, `Buffer` is a subclass of
-	 * `Uint8Array`, so the returned instances will have all the node `Buffer` methods
-	 * and the `Uint8Array` methods. Square bracket notation works as expected -- it
-	 * returns a single octet.
-	 *
-	 * The `Uint8Array` prototype remains unmodified.
-	 */
-	
-	function Buffer (arg, encodingOrOffset, length) {
-	  if (!Buffer.TYPED_ARRAY_SUPPORT && !(this instanceof Buffer)) {
-	    return new Buffer(arg, encodingOrOffset, length)
-	  }
-	
-	  // Common case.
-	  if (typeof arg === 'number') {
-	    if (typeof encodingOrOffset === 'string') {
-	      throw new Error(
-	        'If encoding is specified then the first argument must be a string'
-	      )
-	    }
-	    return allocUnsafe(this, arg)
-	  }
-	  return from(this, arg, encodingOrOffset, length)
-	}
-	
-	Buffer.poolSize = 8192 // not used by this implementation
-	
-	// TODO: Legacy, not needed anymore. Remove in next major version.
-	Buffer._augment = function (arr) {
-	  arr.__proto__ = Buffer.prototype
-	  return arr
-	}
-	
-	function from (that, value, encodingOrOffset, length) {
-	  if (typeof value === 'number') {
-	    throw new TypeError('"value" argument must not be a number')
-	  }
-	
-	  if (typeof ArrayBuffer !== 'undefined' && value instanceof ArrayBuffer) {
-	    return fromArrayBuffer(that, value, encodingOrOffset, length)
-	  }
-	
-	  if (typeof value === 'string') {
-	    return fromString(that, value, encodingOrOffset)
-	  }
-	
-	  return fromObject(that, value)
-	}
-	
-	/**
-	 * Functionally equivalent to Buffer(arg, encoding) but throws a TypeError
-	 * if value is a number.
-	 * Buffer.from(str[, encoding])
-	 * Buffer.from(array)
-	 * Buffer.from(buffer)
-	 * Buffer.from(arrayBuffer[, byteOffset[, length]])
-	 **/
-	Buffer.from = function (value, encodingOrOffset, length) {
-	  return from(null, value, encodingOrOffset, length)
-	}
-	
-	if (Buffer.TYPED_ARRAY_SUPPORT) {
-	  Buffer.prototype.__proto__ = Uint8Array.prototype
-	  Buffer.__proto__ = Uint8Array
-	  if (typeof Symbol !== 'undefined' && Symbol.species &&
-	      Buffer[Symbol.species] === Buffer) {
-	    // Fix subarray() in ES2016. See: https://github.com/feross/buffer/pull/97
-	    Object.defineProperty(Buffer, Symbol.species, {
-	      value: null,
-	      configurable: true
-	    })
-	  }
-	}
-	
-	function assertSize (size) {
-	  if (typeof size !== 'number') {
-	    throw new TypeError('"size" argument must be a number')
-	  } else if (size < 0) {
-	    throw new RangeError('"size" argument must not be negative')
-	  }
-	}
-	
-	function alloc (that, size, fill, encoding) {
-	  assertSize(size)
-	  if (size <= 0) {
-	    return createBuffer(that, size)
-	  }
-	  if (fill !== undefined) {
-	    // Only pay attention to encoding if it's a string. This
-	    // prevents accidentally sending in a number that would
-	    // be interpretted as a start offset.
-	    return typeof encoding === 'string'
-	      ? createBuffer(that, size).fill(fill, encoding)
-	      : createBuffer(that, size).fill(fill)
-	  }
-	  return createBuffer(that, size)
-	}
-	
-	/**
-	 * Creates a new filled Buffer instance.
-	 * alloc(size[, fill[, encoding]])
-	 **/
-	Buffer.alloc = function (size, fill, encoding) {
-	  return alloc(null, size, fill, encoding)
-	}
-	
-	function allocUnsafe (that, size) {
-	  assertSize(size)
-	  that = createBuffer(that, size < 0 ? 0 : checked(size) | 0)
-	  if (!Buffer.TYPED_ARRAY_SUPPORT) {
-	    for (var i = 0; i < size; ++i) {
-	      that[i] = 0
-	    }
-	  }
-	  return that
-	}
-	
-	/**
-	 * Equivalent to Buffer(num), by default creates a non-zero-filled Buffer instance.
-	 * */
-	Buffer.allocUnsafe = function (size) {
-	  return allocUnsafe(null, size)
-	}
-	/**
-	 * Equivalent to SlowBuffer(num), by default creates a non-zero-filled Buffer instance.
-	 */
-	Buffer.allocUnsafeSlow = function (size) {
-	  return allocUnsafe(null, size)
-	}
-	
-	function fromString (that, string, encoding) {
-	  if (typeof encoding !== 'string' || encoding === '') {
-	    encoding = 'utf8'
-	  }
-	
-	  if (!Buffer.isEncoding(encoding)) {
-	    throw new TypeError('"encoding" must be a valid string encoding')
-	  }
-	
-	  var length = byteLength(string, encoding) | 0
-	  that = createBuffer(that, length)
-	
-	  var actual = that.write(string, encoding)
-	
-	  if (actual !== length) {
-	    // Writing a hex string, for example, that contains invalid characters will
-	    // cause everything after the first invalid character to be ignored. (e.g.
-	    // 'abxxcd' will be treated as 'ab')
-	    that = that.slice(0, actual)
-	  }
-	
-	  return that
-	}
-	
-	function fromArrayLike (that, array) {
-	  var length = array.length < 0 ? 0 : checked(array.length) | 0
-	  that = createBuffer(that, length)
-	  for (var i = 0; i < length; i += 1) {
-	    that[i] = array[i] & 255
-	  }
-	  return that
-	}
-	
-	function fromArrayBuffer (that, array, byteOffset, length) {
-	  array.byteLength // this throws if `array` is not a valid ArrayBuffer
-	
-	  if (byteOffset < 0 || array.byteLength < byteOffset) {
-	    throw new RangeError('\'offset\' is out of bounds')
-	  }
-	
-	  if (array.byteLength < byteOffset + (length || 0)) {
-	    throw new RangeError('\'length\' is out of bounds')
-	  }
-	
-	  if (byteOffset === undefined && length === undefined) {
-	    array = new Uint8Array(array)
-	  } else if (length === undefined) {
-	    array = new Uint8Array(array, byteOffset)
-	  } else {
-	    array = new Uint8Array(array, byteOffset, length)
-	  }
-	
-	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    // Return an augmented `Uint8Array` instance, for best performance
-	    that = array
-	    that.__proto__ = Buffer.prototype
-	  } else {
-	    // Fallback: Return an object instance of the Buffer class
-	    that = fromArrayLike(that, array)
-	  }
-	  return that
-	}
-	
-	function fromObject (that, obj) {
-	  if (Buffer.isBuffer(obj)) {
-	    var len = checked(obj.length) | 0
-	    that = createBuffer(that, len)
-	
-	    if (that.length === 0) {
-	      return that
-	    }
-	
-	    obj.copy(that, 0, 0, len)
-	    return that
-	  }
-	
-	  if (obj) {
-	    if ((typeof ArrayBuffer !== 'undefined' &&
-	        obj.buffer instanceof ArrayBuffer) || 'length' in obj) {
-	      if (typeof obj.length !== 'number' || isnan(obj.length)) {
-	        return createBuffer(that, 0)
-	      }
-	      return fromArrayLike(that, obj)
-	    }
-	
-	    if (obj.type === 'Buffer' && isArray(obj.data)) {
-	      return fromArrayLike(that, obj.data)
-	    }
-	  }
-	
-	  throw new TypeError('First argument must be a string, Buffer, ArrayBuffer, Array, or array-like object.')
-	}
-	
-	function checked (length) {
-	  // Note: cannot use `length < kMaxLength()` here because that fails when
-	  // length is NaN (which is otherwise coerced to zero.)
-	  if (length >= kMaxLength()) {
-	    throw new RangeError('Attempt to allocate Buffer larger than maximum ' +
-	                         'size: 0x' + kMaxLength().toString(16) + ' bytes')
-	  }
-	  return length | 0
-	}
-	
-	function SlowBuffer (length) {
-	  if (+length != length) { // eslint-disable-line eqeqeq
-	    length = 0
-	  }
-	  return Buffer.alloc(+length)
-	}
-	
-	Buffer.isBuffer = function isBuffer (b) {
-	  return !!(b != null && b._isBuffer)
-	}
-	
-	Buffer.compare = function compare (a, b) {
-	  if (!Buffer.isBuffer(a) || !Buffer.isBuffer(b)) {
-	    throw new TypeError('Arguments must be Buffers')
-	  }
-	
-	  if (a === b) return 0
-	
-	  var x = a.length
-	  var y = b.length
-	
-	  for (var i = 0, len = Math.min(x, y); i < len; ++i) {
-	    if (a[i] !== b[i]) {
-	      x = a[i]
-	      y = b[i]
-	      break
-	    }
-	  }
-	
-	  if (x < y) return -1
-	  if (y < x) return 1
-	  return 0
-	}
-	
-	Buffer.isEncoding = function isEncoding (encoding) {
-	  switch (String(encoding).toLowerCase()) {
-	    case 'hex':
-	    case 'utf8':
-	    case 'utf-8':
-	    case 'ascii':
-	    case 'latin1':
-	    case 'binary':
-	    case 'base64':
-	    case 'ucs2':
-	    case 'ucs-2':
-	    case 'utf16le':
-	    case 'utf-16le':
-	      return true
-	    default:
-	      return false
-	  }
-	}
-	
-	Buffer.concat = function concat (list, length) {
-	  if (!isArray(list)) {
-	    throw new TypeError('"list" argument must be an Array of Buffers')
-	  }
-	
-	  if (list.length === 0) {
-	    return Buffer.alloc(0)
-	  }
-	
-	  var i
-	  if (length === undefined) {
-	    length = 0
-	    for (i = 0; i < list.length; ++i) {
-	      length += list[i].length
-	    }
-	  }
-	
-	  var buffer = Buffer.allocUnsafe(length)
-	  var pos = 0
-	  for (i = 0; i < list.length; ++i) {
-	    var buf = list[i]
-	    if (!Buffer.isBuffer(buf)) {
-	      throw new TypeError('"list" argument must be an Array of Buffers')
-	    }
-	    buf.copy(buffer, pos)
-	    pos += buf.length
-	  }
-	  return buffer
-	}
-	
-	function byteLength (string, encoding) {
-	  if (Buffer.isBuffer(string)) {
-	    return string.length
-	  }
-	  if (typeof ArrayBuffer !== 'undefined' && typeof ArrayBuffer.isView === 'function' &&
-	      (ArrayBuffer.isView(string) || string instanceof ArrayBuffer)) {
-	    return string.byteLength
-	  }
-	  if (typeof string !== 'string') {
-	    string = '' + string
-	  }
-	
-	  var len = string.length
-	  if (len === 0) return 0
-	
-	  // Use a for loop to avoid recursion
-	  var loweredCase = false
-	  for (;;) {
-	    switch (encoding) {
-	      case 'ascii':
-	      case 'latin1':
-	      case 'binary':
-	        return len
-	      case 'utf8':
-	      case 'utf-8':
-	      case undefined:
-	        return utf8ToBytes(string).length
-	      case 'ucs2':
-	      case 'ucs-2':
-	      case 'utf16le':
-	      case 'utf-16le':
-	        return len * 2
-	      case 'hex':
-	        return len >>> 1
-	      case 'base64':
-	        return base64ToBytes(string).length
-	      default:
-	        if (loweredCase) return utf8ToBytes(string).length // assume utf8
-	        encoding = ('' + encoding).toLowerCase()
-	        loweredCase = true
-	    }
-	  }
-	}
-	Buffer.byteLength = byteLength
-	
-	function slowToString (encoding, start, end) {
-	  var loweredCase = false
-	
-	  // No need to verify that "this.length <= MAX_UINT32" since it's a read-only
-	  // property of a typed array.
-	
-	  // This behaves neither like String nor Uint8Array in that we set start/end
-	  // to their upper/lower bounds if the value passed is out of range.
-	  // undefined is handled specially as per ECMA-262 6th Edition,
-	  // Section 13.3.3.7 Runtime Semantics: KeyedBindingInitialization.
-	  if (start === undefined || start < 0) {
-	    start = 0
-	  }
-	  // Return early if start > this.length. Done here to prevent potential uint32
-	  // coercion fail below.
-	  if (start > this.length) {
-	    return ''
-	  }
-	
-	  if (end === undefined || end > this.length) {
-	    end = this.length
-	  }
-	
-	  if (end <= 0) {
-	    return ''
-	  }
-	
-	  // Force coersion to uint32. This will also coerce falsey/NaN values to 0.
-	  end >>>= 0
-	  start >>>= 0
-	
-	  if (end <= start) {
-	    return ''
-	  }
-	
-	  if (!encoding) encoding = 'utf8'
-	
-	  while (true) {
-	    switch (encoding) {
-	      case 'hex':
-	        return hexSlice(this, start, end)
-	
-	      case 'utf8':
-	      case 'utf-8':
-	        return utf8Slice(this, start, end)
-	
-	      case 'ascii':
-	        return asciiSlice(this, start, end)
-	
-	      case 'latin1':
-	      case 'binary':
-	        return latin1Slice(this, start, end)
-	
-	      case 'base64':
-	        return base64Slice(this, start, end)
-	
-	      case 'ucs2':
-	      case 'ucs-2':
-	      case 'utf16le':
-	      case 'utf-16le':
-	        return utf16leSlice(this, start, end)
-	
-	      default:
-	        if (loweredCase) throw new TypeError('Unknown encoding: ' + encoding)
-	        encoding = (encoding + '').toLowerCase()
-	        loweredCase = true
-	    }
-	  }
-	}
-	
-	// The property is used by `Buffer.isBuffer` and `is-buffer` (in Safari 5-7) to detect
-	// Buffer instances.
-	Buffer.prototype._isBuffer = true
-	
-	function swap (b, n, m) {
-	  var i = b[n]
-	  b[n] = b[m]
-	  b[m] = i
-	}
-	
-	Buffer.prototype.swap16 = function swap16 () {
-	  var len = this.length
-	  if (len % 2 !== 0) {
-	    throw new RangeError('Buffer size must be a multiple of 16-bits')
-	  }
-	  for (var i = 0; i < len; i += 2) {
-	    swap(this, i, i + 1)
-	  }
-	  return this
-	}
-	
-	Buffer.prototype.swap32 = function swap32 () {
-	  var len = this.length
-	  if (len % 4 !== 0) {
-	    throw new RangeError('Buffer size must be a multiple of 32-bits')
-	  }
-	  for (var i = 0; i < len; i += 4) {
-	    swap(this, i, i + 3)
-	    swap(this, i + 1, i + 2)
-	  }
-	  return this
-	}
-	
-	Buffer.prototype.swap64 = function swap64 () {
-	  var len = this.length
-	  if (len % 8 !== 0) {
-	    throw new RangeError('Buffer size must be a multiple of 64-bits')
-	  }
-	  for (var i = 0; i < len; i += 8) {
-	    swap(this, i, i + 7)
-	    swap(this, i + 1, i + 6)
-	    swap(this, i + 2, i + 5)
-	    swap(this, i + 3, i + 4)
-	  }
-	  return this
-	}
-	
-	Buffer.prototype.toString = function toString () {
-	  var length = this.length | 0
-	  if (length === 0) return ''
-	  if (arguments.length === 0) return utf8Slice(this, 0, length)
-	  return slowToString.apply(this, arguments)
-	}
-	
-	Buffer.prototype.equals = function equals (b) {
-	  if (!Buffer.isBuffer(b)) throw new TypeError('Argument must be a Buffer')
-	  if (this === b) return true
-	  return Buffer.compare(this, b) === 0
-	}
-	
-	Buffer.prototype.inspect = function inspect () {
-	  var str = ''
-	  var max = exports.INSPECT_MAX_BYTES
-	  if (this.length > 0) {
-	    str = this.toString('hex', 0, max).match(/.{2}/g).join(' ')
-	    if (this.length > max) str += ' ... '
-	  }
-	  return '<Buffer ' + str + '>'
-	}
-	
-	Buffer.prototype.compare = function compare (target, start, end, thisStart, thisEnd) {
-	  if (!Buffer.isBuffer(target)) {
-	    throw new TypeError('Argument must be a Buffer')
-	  }
-	
-	  if (start === undefined) {
-	    start = 0
-	  }
-	  if (end === undefined) {
-	    end = target ? target.length : 0
-	  }
-	  if (thisStart === undefined) {
-	    thisStart = 0
-	  }
-	  if (thisEnd === undefined) {
-	    thisEnd = this.length
-	  }
-	
-	  if (start < 0 || end > target.length || thisStart < 0 || thisEnd > this.length) {
-	    throw new RangeError('out of range index')
-	  }
-	
-	  if (thisStart >= thisEnd && start >= end) {
-	    return 0
-	  }
-	  if (thisStart >= thisEnd) {
-	    return -1
-	  }
-	  if (start >= end) {
-	    return 1
-	  }
-	
-	  start >>>= 0
-	  end >>>= 0
-	  thisStart >>>= 0
-	  thisEnd >>>= 0
-	
-	  if (this === target) return 0
-	
-	  var x = thisEnd - thisStart
-	  var y = end - start
-	  var len = Math.min(x, y)
-	
-	  var thisCopy = this.slice(thisStart, thisEnd)
-	  var targetCopy = target.slice(start, end)
-	
-	  for (var i = 0; i < len; ++i) {
-	    if (thisCopy[i] !== targetCopy[i]) {
-	      x = thisCopy[i]
-	      y = targetCopy[i]
-	      break
-	    }
-	  }
-	
-	  if (x < y) return -1
-	  if (y < x) return 1
-	  return 0
-	}
-	
-	// Finds either the first index of `val` in `buffer` at offset >= `byteOffset`,
-	// OR the last index of `val` in `buffer` at offset <= `byteOffset`.
-	//
-	// Arguments:
-	// - buffer - a Buffer to search
-	// - val - a string, Buffer, or number
-	// - byteOffset - an index into `buffer`; will be clamped to an int32
-	// - encoding - an optional encoding, relevant is val is a string
-	// - dir - true for indexOf, false for lastIndexOf
-	function bidirectionalIndexOf (buffer, val, byteOffset, encoding, dir) {
-	  // Empty buffer means no match
-	  if (buffer.length === 0) return -1
-	
-	  // Normalize byteOffset
-	  if (typeof byteOffset === 'string') {
-	    encoding = byteOffset
-	    byteOffset = 0
-	  } else if (byteOffset > 0x7fffffff) {
-	    byteOffset = 0x7fffffff
-	  } else if (byteOffset < -0x80000000) {
-	    byteOffset = -0x80000000
-	  }
-	  byteOffset = +byteOffset  // Coerce to Number.
-	  if (isNaN(byteOffset)) {
-	    // byteOffset: it it's undefined, null, NaN, "foo", etc, search whole buffer
-	    byteOffset = dir ? 0 : (buffer.length - 1)
-	  }
-	
-	  // Normalize byteOffset: negative offsets start from the end of the buffer
-	  if (byteOffset < 0) byteOffset = buffer.length + byteOffset
-	  if (byteOffset >= buffer.length) {
-	    if (dir) return -1
-	    else byteOffset = buffer.length - 1
-	  } else if (byteOffset < 0) {
-	    if (dir) byteOffset = 0
-	    else return -1
-	  }
-	
-	  // Normalize val
-	  if (typeof val === 'string') {
-	    val = Buffer.from(val, encoding)
-	  }
-	
-	  // Finally, search either indexOf (if dir is true) or lastIndexOf
-	  if (Buffer.isBuffer(val)) {
-	    // Special case: looking for empty string/buffer always fails
-	    if (val.length === 0) {
-	      return -1
-	    }
-	    return arrayIndexOf(buffer, val, byteOffset, encoding, dir)
-	  } else if (typeof val === 'number') {
-	    val = val & 0xFF // Search for a byte value [0-255]
-	    if (Buffer.TYPED_ARRAY_SUPPORT &&
-	        typeof Uint8Array.prototype.indexOf === 'function') {
-	      if (dir) {
-	        return Uint8Array.prototype.indexOf.call(buffer, val, byteOffset)
-	      } else {
-	        return Uint8Array.prototype.lastIndexOf.call(buffer, val, byteOffset)
-	      }
-	    }
-	    return arrayIndexOf(buffer, [ val ], byteOffset, encoding, dir)
-	  }
-	
-	  throw new TypeError('val must be string, number or Buffer')
-	}
-	
-	function arrayIndexOf (arr, val, byteOffset, encoding, dir) {
-	  var indexSize = 1
-	  var arrLength = arr.length
-	  var valLength = val.length
-	
-	  if (encoding !== undefined) {
-	    encoding = String(encoding).toLowerCase()
-	    if (encoding === 'ucs2' || encoding === 'ucs-2' ||
-	        encoding === 'utf16le' || encoding === 'utf-16le') {
-	      if (arr.length < 2 || val.length < 2) {
-	        return -1
-	      }
-	      indexSize = 2
-	      arrLength /= 2
-	      valLength /= 2
-	      byteOffset /= 2
-	    }
-	  }
-	
-	  function read (buf, i) {
-	    if (indexSize === 1) {
-	      return buf[i]
-	    } else {
-	      return buf.readUInt16BE(i * indexSize)
-	    }
-	  }
-	
-	  var i
-	  if (dir) {
-	    var foundIndex = -1
-	    for (i = byteOffset; i < arrLength; i++) {
-	      if (read(arr, i) === read(val, foundIndex === -1 ? 0 : i - foundIndex)) {
-	        if (foundIndex === -1) foundIndex = i
-	        if (i - foundIndex + 1 === valLength) return foundIndex * indexSize
-	      } else {
-	        if (foundIndex !== -1) i -= i - foundIndex
-	        foundIndex = -1
-	      }
-	    }
-	  } else {
-	    if (byteOffset + valLength > arrLength) byteOffset = arrLength - valLength
-	    for (i = byteOffset; i >= 0; i--) {
-	      var found = true
-	      for (var j = 0; j < valLength; j++) {
-	        if (read(arr, i + j) !== read(val, j)) {
-	          found = false
-	          break
-	        }
-	      }
-	      if (found) return i
-	    }
-	  }
-	
-	  return -1
-	}
-	
-	Buffer.prototype.includes = function includes (val, byteOffset, encoding) {
-	  return this.indexOf(val, byteOffset, encoding) !== -1
-	}
-	
-	Buffer.prototype.indexOf = function indexOf (val, byteOffset, encoding) {
-	  return bidirectionalIndexOf(this, val, byteOffset, encoding, true)
-	}
-	
-	Buffer.prototype.lastIndexOf = function lastIndexOf (val, byteOffset, encoding) {
-	  return bidirectionalIndexOf(this, val, byteOffset, encoding, false)
-	}
-	
-	function hexWrite (buf, string, offset, length) {
-	  offset = Number(offset) || 0
-	  var remaining = buf.length - offset
-	  if (!length) {
-	    length = remaining
-	  } else {
-	    length = Number(length)
-	    if (length > remaining) {
-	      length = remaining
-	    }
-	  }
-	
-	  // must be an even number of digits
-	  var strLen = string.length
-	  if (strLen % 2 !== 0) throw new TypeError('Invalid hex string')
-	
-	  if (length > strLen / 2) {
-	    length = strLen / 2
-	  }
-	  for (var i = 0; i < length; ++i) {
-	    var parsed = parseInt(string.substr(i * 2, 2), 16)
-	    if (isNaN(parsed)) return i
-	    buf[offset + i] = parsed
-	  }
-	  return i
-	}
-	
-	function utf8Write (buf, string, offset, length) {
-	  return blitBuffer(utf8ToBytes(string, buf.length - offset), buf, offset, length)
-	}
-	
-	function asciiWrite (buf, string, offset, length) {
-	  return blitBuffer(asciiToBytes(string), buf, offset, length)
-	}
-	
-	function latin1Write (buf, string, offset, length) {
-	  return asciiWrite(buf, string, offset, length)
-	}
-	
-	function base64Write (buf, string, offset, length) {
-	  return blitBuffer(base64ToBytes(string), buf, offset, length)
-	}
-	
-	function ucs2Write (buf, string, offset, length) {
-	  return blitBuffer(utf16leToBytes(string, buf.length - offset), buf, offset, length)
-	}
-	
-	Buffer.prototype.write = function write (string, offset, length, encoding) {
-	  // Buffer#write(string)
-	  if (offset === undefined) {
-	    encoding = 'utf8'
-	    length = this.length
-	    offset = 0
-	  // Buffer#write(string, encoding)
-	  } else if (length === undefined && typeof offset === 'string') {
-	    encoding = offset
-	    length = this.length
-	    offset = 0
-	  // Buffer#write(string, offset[, length][, encoding])
-	  } else if (isFinite(offset)) {
-	    offset = offset | 0
-	    if (isFinite(length)) {
-	      length = length | 0
-	      if (encoding === undefined) encoding = 'utf8'
-	    } else {
-	      encoding = length
-	      length = undefined
-	    }
-	  // legacy write(string, encoding, offset, length) - remove in v0.13
-	  } else {
-	    throw new Error(
-	      'Buffer.write(string, encoding, offset[, length]) is no longer supported'
-	    )
-	  }
-	
-	  var remaining = this.length - offset
-	  if (length === undefined || length > remaining) length = remaining
-	
-	  if ((string.length > 0 && (length < 0 || offset < 0)) || offset > this.length) {
-	    throw new RangeError('Attempt to write outside buffer bounds')
-	  }
-	
-	  if (!encoding) encoding = 'utf8'
-	
-	  var loweredCase = false
-	  for (;;) {
-	    switch (encoding) {
-	      case 'hex':
-	        return hexWrite(this, string, offset, length)
-	
-	      case 'utf8':
-	      case 'utf-8':
-	        return utf8Write(this, string, offset, length)
-	
-	      case 'ascii':
-	        return asciiWrite(this, string, offset, length)
-	
-	      case 'latin1':
-	      case 'binary':
-	        return latin1Write(this, string, offset, length)
-	
-	      case 'base64':
-	        // Warning: maxLength not taken into account in base64Write
-	        return base64Write(this, string, offset, length)
-	
-	      case 'ucs2':
-	      case 'ucs-2':
-	      case 'utf16le':
-	      case 'utf-16le':
-	        return ucs2Write(this, string, offset, length)
-	
-	      default:
-	        if (loweredCase) throw new TypeError('Unknown encoding: ' + encoding)
-	        encoding = ('' + encoding).toLowerCase()
-	        loweredCase = true
-	    }
-	  }
-	}
-	
-	Buffer.prototype.toJSON = function toJSON () {
-	  return {
-	    type: 'Buffer',
-	    data: Array.prototype.slice.call(this._arr || this, 0)
-	  }
-	}
-	
-	function base64Slice (buf, start, end) {
-	  if (start === 0 && end === buf.length) {
-	    return base64.fromByteArray(buf)
-	  } else {
-	    return base64.fromByteArray(buf.slice(start, end))
-	  }
-	}
-	
-	function utf8Slice (buf, start, end) {
-	  end = Math.min(buf.length, end)
-	  var res = []
-	
-	  var i = start
-	  while (i < end) {
-	    var firstByte = buf[i]
-	    var codePoint = null
-	    var bytesPerSequence = (firstByte > 0xEF) ? 4
-	      : (firstByte > 0xDF) ? 3
-	      : (firstByte > 0xBF) ? 2
-	      : 1
-	
-	    if (i + bytesPerSequence <= end) {
-	      var secondByte, thirdByte, fourthByte, tempCodePoint
-	
-	      switch (bytesPerSequence) {
-	        case 1:
-	          if (firstByte < 0x80) {
-	            codePoint = firstByte
-	          }
-	          break
-	        case 2:
-	          secondByte = buf[i + 1]
-	          if ((secondByte & 0xC0) === 0x80) {
-	            tempCodePoint = (firstByte & 0x1F) << 0x6 | (secondByte & 0x3F)
-	            if (tempCodePoint > 0x7F) {
-	              codePoint = tempCodePoint
-	            }
-	          }
-	          break
-	        case 3:
-	          secondByte = buf[i + 1]
-	          thirdByte = buf[i + 2]
-	          if ((secondByte & 0xC0) === 0x80 && (thirdByte & 0xC0) === 0x80) {
-	            tempCodePoint = (firstByte & 0xF) << 0xC | (secondByte & 0x3F) << 0x6 | (thirdByte & 0x3F)
-	            if (tempCodePoint > 0x7FF && (tempCodePoint < 0xD800 || tempCodePoint > 0xDFFF)) {
-	              codePoint = tempCodePoint
-	            }
-	          }
-	          break
-	        case 4:
-	          secondByte = buf[i + 1]
-	          thirdByte = buf[i + 2]
-	          fourthByte = buf[i + 3]
-	          if ((secondByte & 0xC0) === 0x80 && (thirdByte & 0xC0) === 0x80 && (fourthByte & 0xC0) === 0x80) {
-	            tempCodePoint = (firstByte & 0xF) << 0x12 | (secondByte & 0x3F) << 0xC | (thirdByte & 0x3F) << 0x6 | (fourthByte & 0x3F)
-	            if (tempCodePoint > 0xFFFF && tempCodePoint < 0x110000) {
-	              codePoint = tempCodePoint
-	            }
-	          }
-	      }
-	    }
-	
-	    if (codePoint === null) {
-	      // we did not generate a valid codePoint so insert a
-	      // replacement char (U+FFFD) and advance only 1 byte
-	      codePoint = 0xFFFD
-	      bytesPerSequence = 1
-	    } else if (codePoint > 0xFFFF) {
-	      // encode to utf16 (surrogate pair dance)
-	      codePoint -= 0x10000
-	      res.push(codePoint >>> 10 & 0x3FF | 0xD800)
-	      codePoint = 0xDC00 | codePoint & 0x3FF
-	    }
-	
-	    res.push(codePoint)
-	    i += bytesPerSequence
-	  }
-	
-	  return decodeCodePointsArray(res)
-	}
-	
-	// Based on http://stackoverflow.com/a/22747272/680742, the browser with
-	// the lowest limit is Chrome, with 0x10000 args.
-	// We go 1 magnitude less, for safety
-	var MAX_ARGUMENTS_LENGTH = 0x1000
-	
-	function decodeCodePointsArray (codePoints) {
-	  var len = codePoints.length
-	  if (len <= MAX_ARGUMENTS_LENGTH) {
-	    return String.fromCharCode.apply(String, codePoints) // avoid extra slice()
-	  }
-	
-	  // Decode in chunks to avoid "call stack size exceeded".
-	  var res = ''
-	  var i = 0
-	  while (i < len) {
-	    res += String.fromCharCode.apply(
-	      String,
-	      codePoints.slice(i, i += MAX_ARGUMENTS_LENGTH)
-	    )
-	  }
-	  return res
-	}
-	
-	function asciiSlice (buf, start, end) {
-	  var ret = ''
-	  end = Math.min(buf.length, end)
-	
-	  for (var i = start; i < end; ++i) {
-	    ret += String.fromCharCode(buf[i] & 0x7F)
-	  }
-	  return ret
-	}
-	
-	function latin1Slice (buf, start, end) {
-	  var ret = ''
-	  end = Math.min(buf.length, end)
-	
-	  for (var i = start; i < end; ++i) {
-	    ret += String.fromCharCode(buf[i])
-	  }
-	  return ret
-	}
-	
-	function hexSlice (buf, start, end) {
-	  var len = buf.length
-	
-	  if (!start || start < 0) start = 0
-	  if (!end || end < 0 || end > len) end = len
-	
-	  var out = ''
-	  for (var i = start; i < end; ++i) {
-	    out += toHex(buf[i])
-	  }
-	  return out
-	}
-	
-	function utf16leSlice (buf, start, end) {
-	  var bytes = buf.slice(start, end)
-	  var res = ''
-	  for (var i = 0; i < bytes.length; i += 2) {
-	    res += String.fromCharCode(bytes[i] + bytes[i + 1] * 256)
-	  }
-	  return res
-	}
-	
-	Buffer.prototype.slice = function slice (start, end) {
-	  var len = this.length
-	  start = ~~start
-	  end = end === undefined ? len : ~~end
-	
-	  if (start < 0) {
-	    start += len
-	    if (start < 0) start = 0
-	  } else if (start > len) {
-	    start = len
-	  }
-	
-	  if (end < 0) {
-	    end += len
-	    if (end < 0) end = 0
-	  } else if (end > len) {
-	    end = len
-	  }
-	
-	  if (end < start) end = start
-	
-	  var newBuf
-	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    newBuf = this.subarray(start, end)
-	    newBuf.__proto__ = Buffer.prototype
-	  } else {
-	    var sliceLen = end - start
-	    newBuf = new Buffer(sliceLen, undefined)
-	    for (var i = 0; i < sliceLen; ++i) {
-	      newBuf[i] = this[i + start]
-	    }
-	  }
-	
-	  return newBuf
-	}
-	
-	/*
-	 * Need to make sure that buffer isn't trying to write out of bounds.
-	 */
-	function checkOffset (offset, ext, length) {
-	  if ((offset % 1) !== 0 || offset < 0) throw new RangeError('offset is not uint')
-	  if (offset + ext > length) throw new RangeError('Trying to access beyond buffer length')
-	}
-	
-	Buffer.prototype.readUIntLE = function readUIntLE (offset, byteLength, noAssert) {
-	  offset = offset | 0
-	  byteLength = byteLength | 0
-	  if (!noAssert) checkOffset(offset, byteLength, this.length)
-	
-	  var val = this[offset]
-	  var mul = 1
-	  var i = 0
-	  while (++i < byteLength && (mul *= 0x100)) {
-	    val += this[offset + i] * mul
-	  }
-	
-	  return val
-	}
-	
-	Buffer.prototype.readUIntBE = function readUIntBE (offset, byteLength, noAssert) {
-	  offset = offset | 0
-	  byteLength = byteLength | 0
-	  if (!noAssert) {
-	    checkOffset(offset, byteLength, this.length)
-	  }
-	
-	  var val = this[offset + --byteLength]
-	  var mul = 1
-	  while (byteLength > 0 && (mul *= 0x100)) {
-	    val += this[offset + --byteLength] * mul
-	  }
-	
-	  return val
-	}
-	
-	Buffer.prototype.readUInt8 = function readUInt8 (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 1, this.length)
-	  return this[offset]
-	}
-	
-	Buffer.prototype.readUInt16LE = function readUInt16LE (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 2, this.length)
-	  return this[offset] | (this[offset + 1] << 8)
-	}
-	
-	Buffer.prototype.readUInt16BE = function readUInt16BE (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 2, this.length)
-	  return (this[offset] << 8) | this[offset + 1]
-	}
-	
-	Buffer.prototype.readUInt32LE = function readUInt32LE (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 4, this.length)
-	
-	  return ((this[offset]) |
-	      (this[offset + 1] << 8) |
-	      (this[offset + 2] << 16)) +
-	      (this[offset + 3] * 0x1000000)
-	}
-	
-	Buffer.prototype.readUInt32BE = function readUInt32BE (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 4, this.length)
-	
-	  return (this[offset] * 0x1000000) +
-	    ((this[offset + 1] << 16) |
-	    (this[offset + 2] << 8) |
-	    this[offset + 3])
-	}
-	
-	Buffer.prototype.readIntLE = function readIntLE (offset, byteLength, noAssert) {
-	  offset = offset | 0
-	  byteLength = byteLength | 0
-	  if (!noAssert) checkOffset(offset, byteLength, this.length)
-	
-	  var val = this[offset]
-	  var mul = 1
-	  var i = 0
-	  while (++i < byteLength && (mul *= 0x100)) {
-	    val += this[offset + i] * mul
-	  }
-	  mul *= 0x80
-	
-	  if (val >= mul) val -= Math.pow(2, 8 * byteLength)
-	
-	  return val
-	}
-	
-	Buffer.prototype.readIntBE = function readIntBE (offset, byteLength, noAssert) {
-	  offset = offset | 0
-	  byteLength = byteLength | 0
-	  if (!noAssert) checkOffset(offset, byteLength, this.length)
-	
-	  var i = byteLength
-	  var mul = 1
-	  var val = this[offset + --i]
-	  while (i > 0 && (mul *= 0x100)) {
-	    val += this[offset + --i] * mul
-	  }
-	  mul *= 0x80
-	
-	  if (val >= mul) val -= Math.pow(2, 8 * byteLength)
-	
-	  return val
-	}
-	
-	Buffer.prototype.readInt8 = function readInt8 (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 1, this.length)
-	  if (!(this[offset] & 0x80)) return (this[offset])
-	  return ((0xff - this[offset] + 1) * -1)
-	}
-	
-	Buffer.prototype.readInt16LE = function readInt16LE (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 2, this.length)
-	  var val = this[offset] | (this[offset + 1] << 8)
-	  return (val & 0x8000) ? val | 0xFFFF0000 : val
-	}
-	
-	Buffer.prototype.readInt16BE = function readInt16BE (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 2, this.length)
-	  var val = this[offset + 1] | (this[offset] << 8)
-	  return (val & 0x8000) ? val | 0xFFFF0000 : val
-	}
-	
-	Buffer.prototype.readInt32LE = function readInt32LE (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 4, this.length)
-	
-	  return (this[offset]) |
-	    (this[offset + 1] << 8) |
-	    (this[offset + 2] << 16) |
-	    (this[offset + 3] << 24)
-	}
-	
-	Buffer.prototype.readInt32BE = function readInt32BE (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 4, this.length)
-	
-	  return (this[offset] << 24) |
-	    (this[offset + 1] << 16) |
-	    (this[offset + 2] << 8) |
-	    (this[offset + 3])
-	}
-	
-	Buffer.prototype.readFloatLE = function readFloatLE (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 4, this.length)
-	  return ieee754.read(this, offset, true, 23, 4)
-	}
-	
-	Buffer.prototype.readFloatBE = function readFloatBE (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 4, this.length)
-	  return ieee754.read(this, offset, false, 23, 4)
-	}
-	
-	Buffer.prototype.readDoubleLE = function readDoubleLE (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 8, this.length)
-	  return ieee754.read(this, offset, true, 52, 8)
-	}
-	
-	Buffer.prototype.readDoubleBE = function readDoubleBE (offset, noAssert) {
-	  if (!noAssert) checkOffset(offset, 8, this.length)
-	  return ieee754.read(this, offset, false, 52, 8)
-	}
-	
-	function checkInt (buf, value, offset, ext, max, min) {
-	  if (!Buffer.isBuffer(buf)) throw new TypeError('"buffer" argument must be a Buffer instance')
-	  if (value > max || value < min) throw new RangeError('"value" argument is out of bounds')
-	  if (offset + ext > buf.length) throw new RangeError('Index out of range')
-	}
-	
-	Buffer.prototype.writeUIntLE = function writeUIntLE (value, offset, byteLength, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  byteLength = byteLength | 0
-	  if (!noAssert) {
-	    var maxBytes = Math.pow(2, 8 * byteLength) - 1
-	    checkInt(this, value, offset, byteLength, maxBytes, 0)
-	  }
-	
-	  var mul = 1
-	  var i = 0
-	  this[offset] = value & 0xFF
-	  while (++i < byteLength && (mul *= 0x100)) {
-	    this[offset + i] = (value / mul) & 0xFF
-	  }
-	
-	  return offset + byteLength
-	}
-	
-	Buffer.prototype.writeUIntBE = function writeUIntBE (value, offset, byteLength, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  byteLength = byteLength | 0
-	  if (!noAssert) {
-	    var maxBytes = Math.pow(2, 8 * byteLength) - 1
-	    checkInt(this, value, offset, byteLength, maxBytes, 0)
-	  }
-	
-	  var i = byteLength - 1
-	  var mul = 1
-	  this[offset + i] = value & 0xFF
-	  while (--i >= 0 && (mul *= 0x100)) {
-	    this[offset + i] = (value / mul) & 0xFF
-	  }
-	
-	  return offset + byteLength
-	}
-	
-	Buffer.prototype.writeUInt8 = function writeUInt8 (value, offset, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  if (!noAssert) checkInt(this, value, offset, 1, 0xff, 0)
-	  if (!Buffer.TYPED_ARRAY_SUPPORT) value = Math.floor(value)
-	  this[offset] = (value & 0xff)
-	  return offset + 1
-	}
-	
-	function objectWriteUInt16 (buf, value, offset, littleEndian) {
-	  if (value < 0) value = 0xffff + value + 1
-	  for (var i = 0, j = Math.min(buf.length - offset, 2); i < j; ++i) {
-	    buf[offset + i] = (value & (0xff << (8 * (littleEndian ? i : 1 - i)))) >>>
-	      (littleEndian ? i : 1 - i) * 8
-	  }
-	}
-	
-	Buffer.prototype.writeUInt16LE = function writeUInt16LE (value, offset, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  if (!noAssert) checkInt(this, value, offset, 2, 0xffff, 0)
-	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    this[offset] = (value & 0xff)
-	    this[offset + 1] = (value >>> 8)
-	  } else {
-	    objectWriteUInt16(this, value, offset, true)
-	  }
-	  return offset + 2
-	}
-	
-	Buffer.prototype.writeUInt16BE = function writeUInt16BE (value, offset, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  if (!noAssert) checkInt(this, value, offset, 2, 0xffff, 0)
-	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    this[offset] = (value >>> 8)
-	    this[offset + 1] = (value & 0xff)
-	  } else {
-	    objectWriteUInt16(this, value, offset, false)
-	  }
-	  return offset + 2
-	}
-	
-	function objectWriteUInt32 (buf, value, offset, littleEndian) {
-	  if (value < 0) value = 0xffffffff + value + 1
-	  for (var i = 0, j = Math.min(buf.length - offset, 4); i < j; ++i) {
-	    buf[offset + i] = (value >>> (littleEndian ? i : 3 - i) * 8) & 0xff
-	  }
-	}
-	
-	Buffer.prototype.writeUInt32LE = function writeUInt32LE (value, offset, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  if (!noAssert) checkInt(this, value, offset, 4, 0xffffffff, 0)
-	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    this[offset + 3] = (value >>> 24)
-	    this[offset + 2] = (value >>> 16)
-	    this[offset + 1] = (value >>> 8)
-	    this[offset] = (value & 0xff)
-	  } else {
-	    objectWriteUInt32(this, value, offset, true)
-	  }
-	  return offset + 4
-	}
-	
-	Buffer.prototype.writeUInt32BE = function writeUInt32BE (value, offset, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  if (!noAssert) checkInt(this, value, offset, 4, 0xffffffff, 0)
-	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    this[offset] = (value >>> 24)
-	    this[offset + 1] = (value >>> 16)
-	    this[offset + 2] = (value >>> 8)
-	    this[offset + 3] = (value & 0xff)
-	  } else {
-	    objectWriteUInt32(this, value, offset, false)
-	  }
-	  return offset + 4
-	}
-	
-	Buffer.prototype.writeIntLE = function writeIntLE (value, offset, byteLength, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  if (!noAssert) {
-	    var limit = Math.pow(2, 8 * byteLength - 1)
-	
-	    checkInt(this, value, offset, byteLength, limit - 1, -limit)
-	  }
-	
-	  var i = 0
-	  var mul = 1
-	  var sub = 0
-	  this[offset] = value & 0xFF
-	  while (++i < byteLength && (mul *= 0x100)) {
-	    if (value < 0 && sub === 0 && this[offset + i - 1] !== 0) {
-	      sub = 1
-	    }
-	    this[offset + i] = ((value / mul) >> 0) - sub & 0xFF
-	  }
-	
-	  return offset + byteLength
-	}
-	
-	Buffer.prototype.writeIntBE = function writeIntBE (value, offset, byteLength, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  if (!noAssert) {
-	    var limit = Math.pow(2, 8 * byteLength - 1)
-	
-	    checkInt(this, value, offset, byteLength, limit - 1, -limit)
-	  }
-	
-	  var i = byteLength - 1
-	  var mul = 1
-	  var sub = 0
-	  this[offset + i] = value & 0xFF
-	  while (--i >= 0 && (mul *= 0x100)) {
-	    if (value < 0 && sub === 0 && this[offset + i + 1] !== 0) {
-	      sub = 1
-	    }
-	    this[offset + i] = ((value / mul) >> 0) - sub & 0xFF
-	  }
-	
-	  return offset + byteLength
-	}
-	
-	Buffer.prototype.writeInt8 = function writeInt8 (value, offset, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  if (!noAssert) checkInt(this, value, offset, 1, 0x7f, -0x80)
-	  if (!Buffer.TYPED_ARRAY_SUPPORT) value = Math.floor(value)
-	  if (value < 0) value = 0xff + value + 1
-	  this[offset] = (value & 0xff)
-	  return offset + 1
-	}
-	
-	Buffer.prototype.writeInt16LE = function writeInt16LE (value, offset, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  if (!noAssert) checkInt(this, value, offset, 2, 0x7fff, -0x8000)
-	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    this[offset] = (value & 0xff)
-	    this[offset + 1] = (value >>> 8)
-	  } else {
-	    objectWriteUInt16(this, value, offset, true)
-	  }
-	  return offset + 2
-	}
-	
-	Buffer.prototype.writeInt16BE = function writeInt16BE (value, offset, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  if (!noAssert) checkInt(this, value, offset, 2, 0x7fff, -0x8000)
-	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    this[offset] = (value >>> 8)
-	    this[offset + 1] = (value & 0xff)
-	  } else {
-	    objectWriteUInt16(this, value, offset, false)
-	  }
-	  return offset + 2
-	}
-	
-	Buffer.prototype.writeInt32LE = function writeInt32LE (value, offset, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  if (!noAssert) checkInt(this, value, offset, 4, 0x7fffffff, -0x80000000)
-	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    this[offset] = (value & 0xff)
-	    this[offset + 1] = (value >>> 8)
-	    this[offset + 2] = (value >>> 16)
-	    this[offset + 3] = (value >>> 24)
-	  } else {
-	    objectWriteUInt32(this, value, offset, true)
-	  }
-	  return offset + 4
-	}
-	
-	Buffer.prototype.writeInt32BE = function writeInt32BE (value, offset, noAssert) {
-	  value = +value
-	  offset = offset | 0
-	  if (!noAssert) checkInt(this, value, offset, 4, 0x7fffffff, -0x80000000)
-	  if (value < 0) value = 0xffffffff + value + 1
-	  if (Buffer.TYPED_ARRAY_SUPPORT) {
-	    this[offset] = (value >>> 24)
-	    this[offset + 1] = (value >>> 16)
-	    this[offset + 2] = (value >>> 8)
-	    this[offset + 3] = (value & 0xff)
-	  } else {
-	    objectWriteUInt32(this, value, offset, false)
-	  }
-	  return offset + 4
-	}
-	
-	function checkIEEE754 (buf, value, offset, ext, max, min) {
-	  if (offset + ext > buf.length) throw new RangeError('Index out of range')
-	  if (offset < 0) throw new RangeError('Index out of range')
-	}
-	
-	function writeFloat (buf, value, offset, littleEndian, noAssert) {
-	  if (!noAssert) {
-	    checkIEEE754(buf, value, offset, 4, 3.4028234663852886e+38, -3.4028234663852886e+38)
-	  }
-	  ieee754.write(buf, value, offset, littleEndian, 23, 4)
-	  return offset + 4
-	}
-	
-	Buffer.prototype.writeFloatLE = function writeFloatLE (value, offset, noAssert) {
-	  return writeFloat(this, value, offset, true, noAssert)
-	}
-	
-	Buffer.prototype.writeFloatBE = function writeFloatBE (value, offset, noAssert) {
-	  return writeFloat(this, value, offset, false, noAssert)
-	}
-	
-	function writeDouble (buf, value, offset, littleEndian, noAssert) {
-	  if (!noAssert) {
-	    checkIEEE754(buf, value, offset, 8, 1.7976931348623157E+308, -1.7976931348623157E+308)
-	  }
-	  ieee754.write(buf, value, offset, littleEndian, 52, 8)
-	  return offset + 8
-	}
-	
-	Buffer.prototype.writeDoubleLE = function writeDoubleLE (value, offset, noAssert) {
-	  return writeDouble(this, value, offset, true, noAssert)
-	}
-	
-	Buffer.prototype.writeDoubleBE = function writeDoubleBE (value, offset, noAssert) {
-	  return writeDouble(this, value, offset, false, noAssert)
-	}
-	
-	// copy(targetBuffer, targetStart=0, sourceStart=0, sourceEnd=buffer.length)
-	Buffer.prototype.copy = function copy (target, targetStart, start, end) {
-	  if (!start) start = 0
-	  if (!end && end !== 0) end = this.length
-	  if (targetStart >= target.length) targetStart = target.length
-	  if (!targetStart) targetStart = 0
-	  if (end > 0 && end < start) end = start
-	
-	  // Copy 0 bytes; we're done
-	  if (end === start) return 0
-	  if (target.length === 0 || this.length === 0) return 0
-	
-	  // Fatal error conditions
-	  if (targetStart < 0) {
-	    throw new RangeError('targetStart out of bounds')
-	  }
-	  if (start < 0 || start >= this.length) throw new RangeError('sourceStart out of bounds')
-	  if (end < 0) throw new RangeError('sourceEnd out of bounds')
-	
-	  // Are we oob?
-	  if (end > this.length) end = this.length
-	  if (target.length - targetStart < end - start) {
-	    end = target.length - targetStart + start
-	  }
-	
-	  var len = end - start
-	  var i
-	
-	  if (this === target && start < targetStart && targetStart < end) {
-	    // descending copy from end
-	    for (i = len - 1; i >= 0; --i) {
-	      target[i + targetStart] = this[i + start]
-	    }
-	  } else if (len < 1000 || !Buffer.TYPED_ARRAY_SUPPORT) {
-	    // ascending copy from start
-	    for (i = 0; i < len; ++i) {
-	      target[i + targetStart] = this[i + start]
-	    }
-	  } else {
-	    Uint8Array.prototype.set.call(
-	      target,
-	      this.subarray(start, start + len),
-	      targetStart
-	    )
-	  }
-	
-	  return len
-	}
-	
-	// Usage:
-	//    buffer.fill(number[, offset[, end]])
-	//    buffer.fill(buffer[, offset[, end]])
-	//    buffer.fill(string[, offset[, end]][, encoding])
-	Buffer.prototype.fill = function fill (val, start, end, encoding) {
-	  // Handle string cases:
-	  if (typeof val === 'string') {
-	    if (typeof start === 'string') {
-	      encoding = start
-	      start = 0
-	      end = this.length
-	    } else if (typeof end === 'string') {
-	      encoding = end
-	      end = this.length
-	    }
-	    if (val.length === 1) {
-	      var code = val.charCodeAt(0)
-	      if (code < 256) {
-	        val = code
-	      }
-	    }
-	    if (encoding !== undefined && typeof encoding !== 'string') {
-	      throw new TypeError('encoding must be a string')
-	    }
-	    if (typeof encoding === 'string' && !Buffer.isEncoding(encoding)) {
-	      throw new TypeError('Unknown encoding: ' + encoding)
-	    }
-	  } else if (typeof val === 'number') {
-	    val = val & 255
-	  }
-	
-	  // Invalid ranges are not set to a default, so can range check early.
-	  if (start < 0 || this.length < start || this.length < end) {
-	    throw new RangeError('Out of range index')
-	  }
-	
-	  if (end <= start) {
-	    return this
-	  }
-	
-	  start = start >>> 0
-	  end = end === undefined ? this.length : end >>> 0
-	
-	  if (!val) val = 0
-	
-	  var i
-	  if (typeof val === 'number') {
-	    for (i = start; i < end; ++i) {
-	      this[i] = val
-	    }
-	  } else {
-	    var bytes = Buffer.isBuffer(val)
-	      ? val
-	      : utf8ToBytes(new Buffer(val, encoding).toString())
-	    var len = bytes.length
-	    for (i = 0; i < end - start; ++i) {
-	      this[i + start] = bytes[i % len]
-	    }
-	  }
-	
-	  return this
-	}
-	
-	// HELPER FUNCTIONS
-	// ================
-	
-	var INVALID_BASE64_RE = /[^+\/0-9A-Za-z-_]/g
-	
-	function base64clean (str) {
-	  // Node strips out invalid characters like \n and \t from the string, base64-js does not
-	  str = stringtrim(str).replace(INVALID_BASE64_RE, '')
-	  // Node converts strings with length < 2 to ''
-	  if (str.length < 2) return ''
-	  // Node allows for non-padded base64 strings (missing trailing ===), base64-js does not
-	  while (str.length % 4 !== 0) {
-	    str = str + '='
-	  }
-	  return str
-	}
-	
-	function stringtrim (str) {
-	  if (str.trim) return str.trim()
-	  return str.replace(/^\s+|\s+$/g, '')
-	}
-	
-	function toHex (n) {
-	  if (n < 16) return '0' + n.toString(16)
-	  return n.toString(16)
-	}
-	
-	function utf8ToBytes (string, units) {
-	  units = units || Infinity
-	  var codePoint
-	  var length = string.length
-	  var leadSurrogate = null
-	  var bytes = []
-	
-	  for (var i = 0; i < length; ++i) {
-	    codePoint = string.charCodeAt(i)
-	
-	    // is surrogate component
-	    if (codePoint > 0xD7FF && codePoint < 0xE000) {
-	      // last char was a lead
-	      if (!leadSurrogate) {
-	        // no lead yet
-	        if (codePoint > 0xDBFF) {
-	          // unexpected trail
-	          if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
-	          continue
-	        } else if (i + 1 === length) {
-	          // unpaired lead
-	          if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
-	          continue
-	        }
-	
-	        // valid lead
-	        leadSurrogate = codePoint
-	
-	        continue
-	      }
-	
-	      // 2 leads in a row
-	      if (codePoint < 0xDC00) {
-	        if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
-	        leadSurrogate = codePoint
-	        continue
-	      }
-	
-	      // valid surrogate pair
-	      codePoint = (leadSurrogate - 0xD800 << 10 | codePoint - 0xDC00) + 0x10000
-	    } else if (leadSurrogate) {
-	      // valid bmp char, but last char was a lead
-	      if ((units -= 3) > -1) bytes.push(0xEF, 0xBF, 0xBD)
-	    }
-	
-	    leadSurrogate = null
-	
-	    // encode utf8
-	    if (codePoint < 0x80) {
-	      if ((units -= 1) < 0) break
-	      bytes.push(codePoint)
-	    } else if (codePoint < 0x800) {
-	      if ((units -= 2) < 0) break
-	      bytes.push(
-	        codePoint >> 0x6 | 0xC0,
-	        codePoint & 0x3F | 0x80
-	      )
-	    } else if (codePoint < 0x10000) {
-	      if ((units -= 3) < 0) break
-	      bytes.push(
-	        codePoint >> 0xC | 0xE0,
-	        codePoint >> 0x6 & 0x3F | 0x80,
-	        codePoint & 0x3F | 0x80
-	      )
-	    } else if (codePoint < 0x110000) {
-	      if ((units -= 4) < 0) break
-	      bytes.push(
-	        codePoint >> 0x12 | 0xF0,
-	        codePoint >> 0xC & 0x3F | 0x80,
-	        codePoint >> 0x6 & 0x3F | 0x80,
-	        codePoint & 0x3F | 0x80
-	      )
-	    } else {
-	      throw new Error('Invalid code point')
-	    }
-	  }
-	
-	  return bytes
-	}
-	
-	function asciiToBytes (str) {
-	  var byteArray = []
-	  for (var i = 0; i < str.length; ++i) {
-	    // Node's code seems to be doing this and not & 0x7F..
-	    byteArray.push(str.charCodeAt(i) & 0xFF)
-	  }
-	  return byteArray
-	}
-	
-	function utf16leToBytes (str, units) {
-	  var c, hi, lo
-	  var byteArray = []
-	  for (var i = 0; i < str.length; ++i) {
-	    if ((units -= 2) < 0) break
-	
-	    c = str.charCodeAt(i)
-	    hi = c >> 8
-	    lo = c % 256
-	    byteArray.push(lo)
-	    byteArray.push(hi)
-	  }
-	
-	  return byteArray
-	}
-	
-	function base64ToBytes (str) {
-	  return base64.toByteArray(base64clean(str))
-	}
-	
-	function blitBuffer (src, dst, offset, length) {
-	  for (var i = 0; i < length; ++i) {
-	    if ((i + offset >= dst.length) || (i >= src.length)) break
-	    dst[i + offset] = src[i]
-	  }
-	  return i
-	}
-	
-	function isnan (val) {
-	  return val !== val // eslint-disable-line no-self-compare
-	}
-	
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
-
-/***/ }),
-/* 178 */
-/***/ (function(module, exports) {
-
-	'use strict'
-	
-	exports.byteLength = byteLength
-	exports.toByteArray = toByteArray
-	exports.fromByteArray = fromByteArray
-	
-	var lookup = []
-	var revLookup = []
-	var Arr = typeof Uint8Array !== 'undefined' ? Uint8Array : Array
-	
-	var code = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
-	for (var i = 0, len = code.length; i < len; ++i) {
-	  lookup[i] = code[i]
-	  revLookup[code.charCodeAt(i)] = i
-	}
-	
-	revLookup['-'.charCodeAt(0)] = 62
-	revLookup['_'.charCodeAt(0)] = 63
-	
-	function placeHoldersCount (b64) {
-	  var len = b64.length
-	  if (len % 4 > 0) {
-	    throw new Error('Invalid string. Length must be a multiple of 4')
-	  }
-	
-	  // the number of equal signs (place holders)
-	  // if there are two placeholders, than the two characters before it
-	  // represent one byte
-	  // if there is only one, then the three characters before it represent 2 bytes
-	  // this is just a cheap hack to not do indexOf twice
-	  return b64[len - 2] === '=' ? 2 : b64[len - 1] === '=' ? 1 : 0
-	}
-	
-	function byteLength (b64) {
-	  // base64 is 4/3 + up to two characters of the original data
-	  return (b64.length * 3 / 4) - placeHoldersCount(b64)
-	}
-	
-	function toByteArray (b64) {
-	  var i, l, tmp, placeHolders, arr
-	  var len = b64.length
-	  placeHolders = placeHoldersCount(b64)
-	
-	  arr = new Arr((len * 3 / 4) - placeHolders)
-	
-	  // if there are placeholders, only get up to the last complete 4 chars
-	  l = placeHolders > 0 ? len - 4 : len
-	
-	  var L = 0
-	
-	  for (i = 0; i < l; i += 4) {
-	    tmp = (revLookup[b64.charCodeAt(i)] << 18) | (revLookup[b64.charCodeAt(i + 1)] << 12) | (revLookup[b64.charCodeAt(i + 2)] << 6) | revLookup[b64.charCodeAt(i + 3)]
-	    arr[L++] = (tmp >> 16) & 0xFF
-	    arr[L++] = (tmp >> 8) & 0xFF
-	    arr[L++] = tmp & 0xFF
-	  }
-	
-	  if (placeHolders === 2) {
-	    tmp = (revLookup[b64.charCodeAt(i)] << 2) | (revLookup[b64.charCodeAt(i + 1)] >> 4)
-	    arr[L++] = tmp & 0xFF
-	  } else if (placeHolders === 1) {
-	    tmp = (revLookup[b64.charCodeAt(i)] << 10) | (revLookup[b64.charCodeAt(i + 1)] << 4) | (revLookup[b64.charCodeAt(i + 2)] >> 2)
-	    arr[L++] = (tmp >> 8) & 0xFF
-	    arr[L++] = tmp & 0xFF
-	  }
-	
-	  return arr
-	}
-	
-	function tripletToBase64 (num) {
-	  return lookup[num >> 18 & 0x3F] + lookup[num >> 12 & 0x3F] + lookup[num >> 6 & 0x3F] + lookup[num & 0x3F]
-	}
-	
-	function encodeChunk (uint8, start, end) {
-	  var tmp
-	  var output = []
-	  for (var i = start; i < end; i += 3) {
-	    tmp = (uint8[i] << 16) + (uint8[i + 1] << 8) + (uint8[i + 2])
-	    output.push(tripletToBase64(tmp))
-	  }
-	  return output.join('')
-	}
-	
-	function fromByteArray (uint8) {
-	  var tmp
-	  var len = uint8.length
-	  var extraBytes = len % 3 // if we have 1 byte left, pad 2 bytes
-	  var output = ''
-	  var parts = []
-	  var maxChunkLength = 16383 // must be multiple of 3
-	
-	  // go through the array every three bytes, we'll deal with trailing stuff later
-	  for (var i = 0, len2 = len - extraBytes; i < len2; i += maxChunkLength) {
-	    parts.push(encodeChunk(uint8, i, (i + maxChunkLength) > len2 ? len2 : (i + maxChunkLength)))
-	  }
-	
-	  // pad the end with zeros, but make sure to not forget the extra bytes
-	  if (extraBytes === 1) {
-	    tmp = uint8[len - 1]
-	    output += lookup[tmp >> 2]
-	    output += lookup[(tmp << 4) & 0x3F]
-	    output += '=='
-	  } else if (extraBytes === 2) {
-	    tmp = (uint8[len - 2] << 8) + (uint8[len - 1])
-	    output += lookup[tmp >> 10]
-	    output += lookup[(tmp >> 4) & 0x3F]
-	    output += lookup[(tmp << 2) & 0x3F]
-	    output += '='
-	  }
-	
-	  parts.push(output)
-	
-	  return parts.join('')
-	}
-
-
-/***/ }),
-/* 179 */
-/***/ (function(module, exports) {
-
-	exports.read = function (buffer, offset, isLE, mLen, nBytes) {
-	  var e, m
-	  var eLen = nBytes * 8 - mLen - 1
-	  var eMax = (1 << eLen) - 1
-	  var eBias = eMax >> 1
-	  var nBits = -7
-	  var i = isLE ? (nBytes - 1) : 0
-	  var d = isLE ? -1 : 1
-	  var s = buffer[offset + i]
-	
-	  i += d
-	
-	  e = s & ((1 << (-nBits)) - 1)
-	  s >>= (-nBits)
-	  nBits += eLen
-	  for (; nBits > 0; e = e * 256 + buffer[offset + i], i += d, nBits -= 8) {}
-	
-	  m = e & ((1 << (-nBits)) - 1)
-	  e >>= (-nBits)
-	  nBits += mLen
-	  for (; nBits > 0; m = m * 256 + buffer[offset + i], i += d, nBits -= 8) {}
-	
-	  if (e === 0) {
-	    e = 1 - eBias
-	  } else if (e === eMax) {
-	    return m ? NaN : ((s ? -1 : 1) * Infinity)
-	  } else {
-	    m = m + Math.pow(2, mLen)
-	    e = e - eBias
-	  }
-	  return (s ? -1 : 1) * m * Math.pow(2, e - mLen)
-	}
-	
-	exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
-	  var e, m, c
-	  var eLen = nBytes * 8 - mLen - 1
-	  var eMax = (1 << eLen) - 1
-	  var eBias = eMax >> 1
-	  var rt = (mLen === 23 ? Math.pow(2, -24) - Math.pow(2, -77) : 0)
-	  var i = isLE ? 0 : (nBytes - 1)
-	  var d = isLE ? 1 : -1
-	  var s = value < 0 || (value === 0 && 1 / value < 0) ? 1 : 0
-	
-	  value = Math.abs(value)
-	
-	  if (isNaN(value) || value === Infinity) {
-	    m = isNaN(value) ? 1 : 0
-	    e = eMax
-	  } else {
-	    e = Math.floor(Math.log(value) / Math.LN2)
-	    if (value * (c = Math.pow(2, -e)) < 1) {
-	      e--
-	      c *= 2
-	    }
-	    if (e + eBias >= 1) {
-	      value += rt / c
-	    } else {
-	      value += rt * Math.pow(2, 1 - eBias)
-	    }
-	    if (value * c >= 2) {
-	      e++
-	      c /= 2
-	    }
-	
-	    if (e + eBias >= eMax) {
-	      m = 0
-	      e = eMax
-	    } else if (e + eBias >= 1) {
-	      m = (value * c - 1) * Math.pow(2, mLen)
-	      e = e + eBias
-	    } else {
-	      m = value * Math.pow(2, eBias - 1) * Math.pow(2, mLen)
-	      e = 0
-	    }
-	  }
-	
-	  for (; mLen >= 8; buffer[offset + i] = m & 0xff, i += d, m /= 256, mLen -= 8) {}
-	
-	  e = (e << mLen) | m
-	  eLen += mLen
-	  for (; eLen > 0; buffer[offset + i] = e & 0xff, i += d, e /= 256, eLen -= 8) {}
-	
-	  buffer[offset + i - d] |= s * 128
-	}
-
-
-/***/ }),
-/* 180 */
-/***/ (function(module, exports) {
-
-	var toString = {}.toString;
-	
-	module.exports = Array.isArray || function (arr) {
-	  return toString.call(arr) == '[object Array]';
-	};
-
-
-/***/ }),
-/* 181 */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-/* 182 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(process) {// Copyright Joyent, Inc. and other Node contributors.
-	//
-	// Permission is hereby granted, free of charge, to any person obtaining a
-	// copy of this software and associated documentation files (the
-	// "Software"), to deal in the Software without restriction, including
-	// without limitation the rights to use, copy, modify, merge, publish,
-	// distribute, sublicense, and/or sell copies of the Software, and to permit
-	// persons to whom the Software is furnished to do so, subject to the
-	// following conditions:
-	//
-	// The above copyright notice and this permission notice shall be included
-	// in all copies or substantial portions of the Software.
-	//
-	// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-	// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-	// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-	// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-	// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-	// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-	// USE OR OTHER DEALINGS IN THE SOFTWARE.
-	
-	// resolves . and .. elements in a path array with directory names there
-	// must be no slashes, empty elements, or device names (c:\) in the array
-	// (so also no leading and trailing slashes - it does not distinguish
-	// relative and absolute paths)
-	function normalizeArray(parts, allowAboveRoot) {
-	  // if the path tries to go above the root, `up` ends up > 0
-	  var up = 0;
-	  for (var i = parts.length - 1; i >= 0; i--) {
-	    var last = parts[i];
-	    if (last === '.') {
-	      parts.splice(i, 1);
-	    } else if (last === '..') {
-	      parts.splice(i, 1);
-	      up++;
-	    } else if (up) {
-	      parts.splice(i, 1);
-	      up--;
-	    }
-	  }
-	
-	  // if the path is allowed to go above the root, restore leading ..s
-	  if (allowAboveRoot) {
-	    for (; up--; up) {
-	      parts.unshift('..');
-	    }
-	  }
-	
-	  return parts;
-	}
-	
-	// Split a filename into [root, dir, basename, ext], unix version
-	// 'root' is just a slash, or nothing.
-	var splitPathRe =
-	    /^(\/?|)([\s\S]*?)((?:\.{1,2}|[^\/]+?|)(\.[^.\/]*|))(?:[\/]*)$/;
-	var splitPath = function(filename) {
-	  return splitPathRe.exec(filename).slice(1);
-	};
-	
-	// path.resolve([from ...], to)
-	// posix version
-	exports.resolve = function() {
-	  var resolvedPath = '',
-	      resolvedAbsolute = false;
-	
-	  for (var i = arguments.length - 1; i >= -1 && !resolvedAbsolute; i--) {
-	    var path = (i >= 0) ? arguments[i] : process.cwd();
-	
-	    // Skip empty and invalid entries
-	    if (typeof path !== 'string') {
-	      throw new TypeError('Arguments to path.resolve must be strings');
-	    } else if (!path) {
-	      continue;
-	    }
-	
-	    resolvedPath = path + '/' + resolvedPath;
-	    resolvedAbsolute = path.charAt(0) === '/';
-	  }
-	
-	  // At this point the path should be resolved to a full absolute path, but
-	  // handle relative paths to be safe (might happen when process.cwd() fails)
-	
-	  // Normalize the path
-	  resolvedPath = normalizeArray(filter(resolvedPath.split('/'), function(p) {
-	    return !!p;
-	  }), !resolvedAbsolute).join('/');
-	
-	  return ((resolvedAbsolute ? '/' : '') + resolvedPath) || '.';
-	};
-	
-	// path.normalize(path)
-	// posix version
-	exports.normalize = function(path) {
-	  var isAbsolute = exports.isAbsolute(path),
-	      trailingSlash = substr(path, -1) === '/';
-	
-	  // Normalize the path
-	  path = normalizeArray(filter(path.split('/'), function(p) {
-	    return !!p;
-	  }), !isAbsolute).join('/');
-	
-	  if (!path && !isAbsolute) {
-	    path = '.';
-	  }
-	  if (path && trailingSlash) {
-	    path += '/';
-	  }
-	
-	  return (isAbsolute ? '/' : '') + path;
-	};
-	
-	// posix version
-	exports.isAbsolute = function(path) {
-	  return path.charAt(0) === '/';
-	};
-	
-	// posix version
-	exports.join = function() {
-	  var paths = Array.prototype.slice.call(arguments, 0);
-	  return exports.normalize(filter(paths, function(p, index) {
-	    if (typeof p !== 'string') {
-	      throw new TypeError('Arguments to path.join must be strings');
-	    }
-	    return p;
-	  }).join('/'));
-	};
-	
-	
-	// path.relative(from, to)
-	// posix version
-	exports.relative = function(from, to) {
-	  from = exports.resolve(from).substr(1);
-	  to = exports.resolve(to).substr(1);
-	
-	  function trim(arr) {
-	    var start = 0;
-	    for (; start < arr.length; start++) {
-	      if (arr[start] !== '') break;
-	    }
-	
-	    var end = arr.length - 1;
-	    for (; end >= 0; end--) {
-	      if (arr[end] !== '') break;
-	    }
-	
-	    if (start > end) return [];
-	    return arr.slice(start, end - start + 1);
-	  }
-	
-	  var fromParts = trim(from.split('/'));
-	  var toParts = trim(to.split('/'));
-	
-	  var length = Math.min(fromParts.length, toParts.length);
-	  var samePartsLength = length;
-	  for (var i = 0; i < length; i++) {
-	    if (fromParts[i] !== toParts[i]) {
-	      samePartsLength = i;
-	      break;
-	    }
-	  }
-	
-	  var outputParts = [];
-	  for (var i = samePartsLength; i < fromParts.length; i++) {
-	    outputParts.push('..');
-	  }
-	
-	  outputParts = outputParts.concat(toParts.slice(samePartsLength));
-	
-	  return outputParts.join('/');
-	};
-	
-	exports.sep = '/';
-	exports.delimiter = ':';
-	
-	exports.dirname = function(path) {
-	  var result = splitPath(path),
-	      root = result[0],
-	      dir = result[1];
-	
-	  if (!root && !dir) {
-	    // No dirname whatsoever
-	    return '.';
-	  }
-	
-	  if (dir) {
-	    // It has a dirname, strip trailing slash
-	    dir = dir.substr(0, dir.length - 1);
-	  }
-	
-	  return root + dir;
-	};
-	
-	
-	exports.basename = function(path, ext) {
-	  var f = splitPath(path)[2];
-	  // TODO: make this comparison case-insensitive on windows?
-	  if (ext && f.substr(-1 * ext.length) === ext) {
-	    f = f.substr(0, f.length - ext.length);
-	  }
-	  return f;
-	};
-	
-	
-	exports.extname = function(path) {
-	  return splitPath(path)[3];
-	};
-	
-	function filter (xs, f) {
-	    if (xs.filter) return xs.filter(f);
-	    var res = [];
-	    for (var i = 0; i < xs.length; i++) {
-	        if (f(xs[i], i, xs)) res.push(xs[i]);
-	    }
-	    return res;
-	}
-	
-	// String.prototype.substr - negative index don't work in IE8
-	var substr = 'ab'.substr(-1) === 'b'
-	    ? function (str, start, len) { return str.substr(start, len) }
-	    : function (str, start, len) {
-	        if (start < 0) start = str.length + start;
-	        return str.substr(start, len);
-	    }
-	;
-	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(171)))
-
-/***/ }),
-/* 183 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	var typeMap = {};
-	var types = __webpack_require__(184);
-	
-	types.forEach(function(type) {
-	  typeMap[type] = __webpack_require__(185)("./" + type).detect;
-	});
-	
-	module.exports = function(buffer, filepath) {
-	  var type, result;
-	  for (type in typeMap) {
-	    if (type in typeMap) {
-	      result = typeMap[type](buffer, filepath);
-	      if (result) {
-	        return type;
-	      }
-	    }
-	  }
-	  throw new TypeError('Unsupported type');
-	};
-
-
-/***/ }),
-/* 184 */
-/***/ (function(module, exports) {
-
-	'use strict';
-	
-	module.exports = [
-	  'bmp',
-	  'gif',
-	  'jpg',
-	  'png',
-	  'tiff',
-	];
-
-
-/***/ }),
-/* 185 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	var map = {
-		"./bmp": 186,
-		"./bmp.js": 186,
-		"./gif": 187,
-		"./gif.js": 187,
-		"./jpg": 188,
-		"./jpg.js": 188,
-		"./png": 189,
-		"./png.js": 189,
-		"./psd": 190,
-		"./psd.js": 190,
-		"./svg": 191,
-		"./svg.js": 191,
-		"./tiff": 192,
-		"./tiff.js": 192,
-		"./webp": 194,
-		"./webp.js": 194
-	};
-	function webpackContext(req) {
-		return __webpack_require__(webpackContextResolve(req));
-	};
-	function webpackContextResolve(req) {
-		return map[req] || (function() { throw new Error("Cannot find module '" + req + "'.") }());
-	};
-	webpackContext.keys = function webpackContextKeys() {
-		return Object.keys(map);
-	};
-	webpackContext.resolve = webpackContextResolve;
-	module.exports = webpackContext;
-	webpackContext.id = 185;
-
-
-/***/ }),
-/* 186 */
-/***/ (function(module, exports) {
-
-	'use strict';
-	
-	function isBMP (buffer) {
-	  return ('BM' === buffer.toString('ascii', 0, 2));
-	}
-	
-	function calculate (buffer) {
-	  return {
-	    'width': buffer.readUInt32LE(18),
-	    'height': buffer.readUInt32LE(22)
-	  };
-	}
-	
-	module.exports = {
-	  'detect': isBMP,
-	  'calculate': calculate
-	};
-
-
-/***/ }),
-/* 187 */
-/***/ (function(module, exports) {
-
-	'use strict';
-	
-	var gifRegexp = /^GIF8[7,9]a/;
-	function isGIF (buffer) {
-	  var signature = buffer.toString('ascii', 0, 6);
-	  return (gifRegexp.test(signature));
-	}
-	
-	function calculate(buffer) {
-	  return {
-	    'width': buffer.readUInt16LE(6),
-	    'height': buffer.readUInt16LE(8)
-	  };
-	}
-	
-	module.exports = {
-	  'detect': isGIF,
-	  'calculate': calculate
-	};
-
-/***/ }),
-/* 188 */
-/***/ (function(module, exports) {
-
-	'use strict';
-	
-	// NOTE: we only support baseline and progressive JPGs here
-	// due to the structure of the loader class, we only get a buffer
-	// with a maximum size of 4096 bytes. so if the SOF marker is outside
-	// if this range we can't detect the file size correctly.
-	
-	// TO-DO: handle all JFIFs
-	var validJFIFMarkers = {
-	  'ffdb': '0001010101', // Samsung D807 JPEG
-	  'ffe0': '4a46494600', // Standard JPEG
-	  'ffe1': '4578696600', // Camera JPEG, with EXIF data
-	  'ffe2': '4943435f50', // Canon EOS-1D JPEG
-	  'ffe3': '',           // Samsung D500 JPEG
-	  'ffe8': '5350494646', // SPIFF JPEG
-	  'ffec': '4475636b79', // Photoshop JPEG
-	  'ffed': '50686f746f', // Adobe JPEG, Photoshop CMYK buffer
-	  'ffee': '41646f6265'  // Adobe JPEG, Unrecognised (Lightroom??)
-	};
-	
-	var red = ['\x1B[31m', '\x1B[39m'];
-	function isJPG (buffer) { //, filepath
-	  var SOIMarker = buffer.toString('hex', 0, 2);
-	  var JFIFMarker = buffer.toString('hex', 2, 4);
-	
-	  // not a valid jpeg
-	  if ('ffd8' !== SOIMarker) {
-	    return false;
-	  }
-	
-	  // TO-DO: validate the end-bytes of a jpeg file
-	  // use filepath, get the last bytes, check for ffd9
-	  var got = buffer.toString('hex', 6, 11);
-	  var expected = JFIFMarker && validJFIFMarkers[JFIFMarker];
-	  if (expected === '') {
-	    console.warn(
-	      red[0] +
-	      'this looks like a unrecognised jpeg\n' +
-	      'please report the issue here\n' +
-	      red[1],
-	      '\thttps://github.com/netroy/image-size/issues/new\n'
-	    );
-	    return false;
-	  }
-	  return (got === expected) || (JFIFMarker === 'ffdb');
-	}
-	
-	function extractSize (buffer, i) {
-	  return {
-	    'height' : buffer.readUInt16BE(i),
-	    'width' : buffer.readUInt16BE(i + 2)
-	  };
-	}
-	
-	function validateBuffer (buffer, i) {
-	  // index should be within buffer limits
-	  if (i > buffer.length) {
-	    throw new TypeError('Corrupt JPG, exceeded buffer limits');
-	  }
-	  // Every JPEG block must begin with a 0xFF
-	  if (buffer[i] !== 0xFF) {
-	    throw new TypeError('Invalid JPG, marker table corrupted');
-	  }
-	}
-	
-	function calculate (buffer) {
-	
-	  // Skip 5 chars, they are for signature
-	  buffer = buffer.slice(4);
-	
-	  var i, next;
-	  while (buffer.length) {
-	    // read length of the next block
-	    i = buffer.readUInt16BE(0);
-	
-	    // ensure correct format
-	    validateBuffer(buffer, i);
-	
-	    // 0xFFC0 is baseline(SOF)
-	    // 0xFFC2 is progressive(SOF2)
-	    next = buffer[i + 1];
-	    if (next === 0xC0 || next === 0xC2) {
-	      return extractSize(buffer, i + 5);
-	    }
-	
-	    // move to the next block
-	    buffer = buffer.slice(i + 2);
-	  }
-	
-	  throw new TypeError('Invalid JPG, no size found');
-	}
-	
-	module.exports = {
-	  'detect': isJPG,
-	  'calculate': calculate
-	};
-
-
-/***/ }),
-/* 189 */
-/***/ (function(module, exports) {
-
-	'use strict';
-	
-	var pngSignature = 'PNG\r\n\x1a\n';
-	function isPNG (buffer) {
-	  if (pngSignature === buffer.toString('ascii', 1, 8)) {
-	    if ('IHDR' !== buffer.toString('ascii', 12, 16)) {
-	      throw new TypeError('invalid png');
-	    }
-	    return true;
-	  }
-	}
-	
-	function calculate (buffer) {
-	  return {
-	    'width': buffer.readUInt32BE(16),
-	    'height': buffer.readUInt32BE(20)
-	  };
-	}
-	
-	module.exports = {
-	  'detect': isPNG,
-	  'calculate': calculate
-	};
-
-
-/***/ }),
-/* 190 */
-/***/ (function(module, exports) {
-
-	'use strict';
-	
-	function isPSD (buffer) {
-	  return ('8BPS' === buffer.toString('ascii', 0, 4));
-	}
-	
-	function calculate (buffer) {
-	  return {
-	    'width': buffer.readUInt32BE(18),
-	    'height': buffer.readUInt32BE(14)
-	  };
-	}
-	
-	module.exports = {
-	  'detect': isPSD,
-	  'calculate': calculate
-	};
-
-
-/***/ }),
-/* 191 */
-/***/ (function(module, exports) {
-
-	'use strict';
-	
-	var svgReg = /<svg[^>]+[^>]*>/;
-	function isSVG (buffer) {
-	  return svgReg.test(buffer);
-	}
-	
-	var extractorRegExps = {
-	  'root': /<svg [^>]+>/,
-	  'width': /(^|\s)width\s*=\s*"(.+?)"/i,
-	  'height': /(^|\s)height\s*=\s*"(.+?)"/i,
-	  'viewbox': /(^|\s)viewbox\s*=\s*"(.+?)"/i
-	};
-	
-	function getRatio (viewbox) {
-	  var ratio = 1;
-	  if (viewbox && viewbox[2]) {
-	    var dim = viewbox[2].split(/\s/g);
-	    if (dim.length === 4) {
-	      dim = dim.map(function (i) {
-	        return parseInt(i, 10);
-	      });
-	      ratio = (dim[2] - dim[0]) / (dim[3] - dim[1]);
-	    }
-	  }
-	  return ratio;
-	}
-	
-	function parse (buffer) {
-	  var body = buffer.toString().replace(/[\r\n\s]+/g, ' ');
-	  var section = body.match(extractorRegExps.root);
-	  var root = section && section[0];
-	  if (root) {
-	    var width = root.match(extractorRegExps.width);
-	    var height = root.match(extractorRegExps.height);
-	    var viewbox = root.match(extractorRegExps.viewbox);
-	    var ratio = getRatio(viewbox);
-	    return {
-	      'width': parseInt(width && width[2], 10) || 0,
-	      'height': parseInt(height && height[2], 10) || 0,
-	      'ratio': ratio
-	    };
-	  }
-	}
-	
-	function calculate (buffer) {
-	
-	  var parsed = parse(buffer);
-	  var width = parsed.width;
-	  var height = parsed.height;
-	  var ratio = parsed.ratio;
-	
-	  if (width && height) {
-	    return { 'width': width, 'height': height };
-	  } else {
-	    if (width) {
-	      return { 'width': width, 'height': Math.floor(width / ratio) };
-	    } else if (height) {
-	      return { 'width': Math.floor(height * ratio), 'height': height };
-	    } else {
-	      throw new TypeError('invalid svg');
-	    }
-	  }
-	}
-	
-	module.exports = {
-	  'detect': isSVG,
-	  'calculate': calculate
-	};
-
-
-/***/ }),
-/* 192 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/* WEBPACK VAR INJECTION */(function(Buffer) {'use strict';
-	
-	// based on http://www.compix.com/fileformattif.htm
-	// TO-DO: support big-endian as well
-	
-	var fs = __webpack_require__(181);
-	var readUInt = __webpack_require__(193);
-	
-	function isTIFF (buffer) {
-	  var hex4 = buffer.toString('hex', 0, 4);
-	  return ('49492a00' === hex4 || '4d4d002a' === hex4);
-	}
-	
-	// Read IFD (image-file-directory) into a buffer
-	function readIFD (buffer, filepath, isBigEndian) {
-	
-	  var ifdOffset = readUInt(buffer, 32, 4, isBigEndian);
-	
-	  // read only till the end of the file
-	  var bufferSize = 1024;
-	  var fileSize = fs.statSync(filepath).size;
-	  if (ifdOffset + bufferSize > fileSize) {
-	    bufferSize = fileSize - ifdOffset - 10;
-	  }
-	
-	  // populate the buffer
-	  var endBuffer = new Buffer(bufferSize);
-	  var descriptor = fs.openSync(filepath, 'r');
-	  fs.readSync(descriptor, endBuffer, 0, bufferSize, ifdOffset);
-	
-	  // var ifdLength = readUInt(endBuffer, 16, 0, isBigEndian);
-	  var ifdBuffer = endBuffer.slice(2); //, 2 + 12 * ifdLength);
-	  return ifdBuffer;
-	}
-	
-	// TIFF values seem to be messed up on Big-Endian, this helps
-	function readValue (buffer, isBigEndian) {
-	  var low = readUInt(buffer, 16, 8, isBigEndian);
-	  var high = readUInt(buffer, 16, 10, isBigEndian);
-	  return (high << 16) + low;
-	}
-	
-	// move to the next tag
-	function nextTag (buffer) {
-	  if (buffer.length > 24) {
-	    return buffer.slice(12);
-	  }
-	}
-	
-	// Extract IFD tags from TIFF metadata
-	function extractTags (buffer, isBigEndian) {
-	  var tags = {};
-	  var code, type, length;
-	
-	  while (buffer && buffer.length) {
-	    code = readUInt(buffer, 16, 0, isBigEndian);
-	    type = readUInt(buffer, 16, 2, isBigEndian);
-	    length = readUInt(buffer, 32, 4, isBigEndian);
-	
-	    // 0 means end of IFD
-	    if (code === 0) {
-	      break;
-	    } else {
-	      // 256 is width, 257 is height
-	      // if (code === 256 || code === 257) {
-	      if (length === 1 && type === 3) {
-	        tags[code] = readValue(buffer, isBigEndian);
-	      }
-	
-	      // move to the next tag
-	      buffer = nextTag(buffer);
-	    }
-	  }
-	  return tags;
-	}
-	
-	// Test if the TIFF is Big Endian or Little Endian
-	function determineEndianness (buffer) {
-	  var signature = buffer.toString('ascii', 0, 2);
-	  if ('II' === signature) {
-	    return 'LE';
-	  } else if ('MM' === signature) {
-	    return 'BE';
-	  }
-	}
-	
-	function calculate (buffer, filepath) {
-	
-	  if (!filepath) {
-	    throw new TypeError('Tiff doesn\'t support buffer');
-	  }
-	
-	  // Determine BE/LE
-	  var isBigEndian = determineEndianness(buffer) === 'BE';
-	
-	  // read the IFD
-	  var ifdBuffer = readIFD(buffer, filepath, isBigEndian);
-	
-	  // extract the tags from the IFD
-	  var tags = extractTags(ifdBuffer, isBigEndian);
-	
-	  var width = tags[256];
-	  var height = tags[257];
-	
-	  if (!width || !height) {
-	    throw new TypeError('Invalid Tiff, missing tags');
-	  }
-	
-	  return {
-	    'width': width,
-	    'height': height
-	  };
-	}
-	
-	module.exports = {
-	  'detect': isTIFF,
-	  'calculate': calculate
-	};
-	
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(177).Buffer))
-
-/***/ }),
-/* 193 */
-/***/ (function(module, exports) {
-
-	'use strict';
-	
-	module.exports = function(buffer, bits, offset, isBigEndian) {
-	  offset = offset || 0;
-	  var endian = !!isBigEndian ? 'BE' : 'LE';
-	  var method = buffer['readUInt' + bits + endian];
-	  return method.call(buffer, offset);
-	}
-
-
-/***/ }),
-/* 194 */
-/***/ (function(module, exports) {
-
-	'use strict';
-	
-	// based on https://developers.google.com/speed/webp/docs/riff_container
-	
-	function isWebP (buffer) {
-	  var riffHeader = 'RIFF' === buffer.toString('ascii', 0, 4);
-	  var webpHeader = 'WEBP' === buffer.toString('ascii', 8, 12);
-	  var vp8Header  = 'VP8'  === buffer.toString('ascii', 12, 15);
-	  return (riffHeader && webpHeader && vp8Header);
-	}
-	
-	function calculate (buffer) {
-	
-	  var chunkHeader = buffer.toString('ascii', 12, 16);
-	  buffer = buffer.slice(20, 30);
-	
-	  // Lossless webp stream signature
-	  if (chunkHeader === 'VP8 ' && buffer[0] !== 0x2f) {
-	    return calculateLossy(buffer);
-	  }
-	
-	  // Lossy webp stream signature
-	  var signature = buffer.toString('hex', 3, 6);
-	  if (chunkHeader === 'VP8L' && signature !== '9d012a') {
-	    return calculateLossless(buffer);
-	  }
-	
-	  return false;
-	}
-	
-	function calculateLossless (buffer) {
-	  return {
-	    'width': 1 + (((buffer[2] & 0x3F) << 8) | buffer[1]),
-	    'height': 1 + (((buffer[4] & 0xF) << 10) | (buffer[3] << 2) |
-	                  ((buffer[2] & 0xC0) >> 6))
-	  };
-	}
-	
-	function calculateLossy (buffer) {
-	  // `& 0x3fff` returns the last 14 bits
-	  // TO-DO: include webp scaling in the calculations
-	  return {
-	    'width': buffer.readInt16LE(6) & 0x3fff,
-	    'height': buffer.readInt16LE(8) & 0x3fff
-	  };
-	}
-	
-	module.exports = {
-	  'detect': isWebP,
-	  'calculate': calculate
-	};
-
-
-/***/ }),
-/* 195 */
-/***/ (function(module, exports) {
-
-	// Parse image size
-	//
-	'use strict';
-	
-	function parseNextNumber(str, pos, max) {
-	  var code,
-	  start = pos,
-	  result = {
-	    ok: false,
-	    pos: pos,
-	    value: ''
-	  };
-	
-	  code = str.charCodeAt(pos);
-	
-	  while (pos < max && (code >= 0x30 /* 0 */ && code <= 0x39 /* 9 */) || code === 0x25 /* % */) {
-	    code = str.charCodeAt(++pos);
-	  }
-	
-	  result.ok = true;
-	  result.pos = pos;
-	  result.value = str.slice(start, pos);
-	
-	  return result;
-	}
-	
-	module.exports = function parseImageSize(str, pos, max) {
-	  var code,
-	  result = {
-	    ok: false,
-	    pos: 0,
-	    width: '',
-	    height: ''
-	  };
-	
-	  if (pos >= max) { return result; }
-	
-	  code = str.charCodeAt(pos);
-	
-	  if (code !== 0x3d /* = */) { return result; }
-	
-	  pos++;
-	
-	  // size must follow = without any white spaces as follows
-	  // (1) =300x200
-	  // (2) =300x
-	  // (3) =x200
-	  code = str.charCodeAt(pos);
-	  if (code !== 0x78 /* x */ && (code < 0x30 || code  > 0x39) /* [0-9] */) {
-	    return result;
-	  }
-	
-	  // parse width
-	  var resultW = parseNextNumber(str, pos, max);
-	  pos = resultW.pos;
-	
-	  // next charactor must be 'x'
-	  code = str.charCodeAt(pos);
-	  if (code !== 0x78 /* x */) { return result; }
-	
-	  pos++;
-	
-	  // parse height
-	  var resultH = parseNextNumber(str, pos, max);
-	  pos = resultH.pos;
-	
-	  result.width = resultW.value;
-	  result.height = resultH.value;
-	  result.pos = pos;
-	  result.ok = true;
-	  return result;
-	};
-
-
-/***/ }),
-/* 196 */
-/***/ (function(module, exports) {
-
-	module.exports = {"100":"💯","1234":"🔢","grinning":"😀","smiley":"😃","smile":"😄","grin":"😁","laughing":"😆","satisfied":"😆","sweat_smile":"😅","joy":"😂","rofl":"🤣","relaxed":"☺️","blush":"😊","innocent":"😇","slightly_smiling_face":"🙂","upside_down_face":"🙃","wink":"😉","relieved":"😌","heart_eyes":"😍","kissing_heart":"😘","kissing":"😗","kissing_smiling_eyes":"😙","kissing_closed_eyes":"😚","yum":"😋","stuck_out_tongue_winking_eye":"😜","stuck_out_tongue_closed_eyes":"😝","stuck_out_tongue":"😛","money_mouth_face":"🤑","hugs":"🤗","nerd_face":"🤓","sunglasses":"😎","clown_face":"🤡","cowboy_hat_face":"🤠","smirk":"😏","unamused":"😒","disappointed":"😞","pensive":"😔","worried":"😟","confused":"😕","slightly_frowning_face":"🙁","frowning_face":"☹️","persevere":"😣","confounded":"😖","tired_face":"😫","weary":"😩","triumph":"😤","angry":"😠","rage":"😡","pout":"😡","no_mouth":"😶","neutral_face":"😐","expressionless":"😑","hushed":"😯","frowning":"😦","anguished":"😧","open_mouth":"😮","astonished":"😲","dizzy_face":"😵","flushed":"😳","scream":"😱","fearful":"😨","cold_sweat":"😰","cry":"😢","disappointed_relieved":"😥","drooling_face":"🤤","sob":"😭","sweat":"😓","sleepy":"😪","sleeping":"😴","roll_eyes":"🙄","thinking":"🤔","lying_face":"🤥","grimacing":"😬","zipper_mouth_face":"🤐","nauseated_face":"🤢","sneezing_face":"🤧","mask":"😷","face_with_thermometer":"🤒","face_with_head_bandage":"🤕","smiling_imp":"😈","imp":"👿","japanese_ogre":"👹","japanese_goblin":"👺","hankey":"💩","poop":"💩","shit":"💩","ghost":"👻","skull":"💀","skull_and_crossbones":"☠️","alien":"👽","space_invader":"👾","robot":"🤖","jack_o_lantern":"🎃","smiley_cat":"😺","smile_cat":"😸","joy_cat":"😹","heart_eyes_cat":"😻","smirk_cat":"😼","kissing_cat":"😽","scream_cat":"🙀","crying_cat_face":"😿","pouting_cat":"😾","open_hands":"👐","raised_hands":"🙌","clap":"👏","pray":"🙏","handshake":"🤝","+1":"👍","thumbsup":"👍","-1":"👎","thumbsdown":"👎","fist_oncoming":"👊","facepunch":"👊","punch":"👊","fist_raised":"✊","fist":"✊","fist_left":"🤛","fist_right":"🤜","crossed_fingers":"🤞","v":"✌️","metal":"🤘","ok_hand":"👌","point_left":"👈","point_right":"👉","point_up_2":"👆","point_down":"👇","point_up":"☝️","hand":"✋","raised_hand":"✋","raised_back_of_hand":"🤚","raised_hand_with_fingers_splayed":"🖐","vulcan_salute":"🖖","wave":"👋","call_me_hand":"🤙","muscle":"💪","middle_finger":"🖕","fu":"🖕","writing_hand":"✍️","selfie":"🤳","nail_care":"💅","ring":"💍","lipstick":"💄","kiss":"💋","lips":"👄","tongue":"👅","ear":"👂","nose":"👃","footprints":"👣","eye":"👁","eyes":"👀","speaking_head":"🗣","bust_in_silhouette":"👤","busts_in_silhouette":"👥","baby":"👶","boy":"👦","girl":"👧","man":"👨","woman":"👩","blonde_woman":"👱‍♀","blonde_man":"👱","person_with_blond_hair":"👱","older_man":"👴","older_woman":"👵","man_with_gua_pi_mao":"👲","woman_with_turban":"👳‍♀","man_with_turban":"👳","policewoman":"👮‍♀","policeman":"👮","cop":"👮","construction_worker_woman":"👷‍♀","construction_worker_man":"👷","construction_worker":"👷","guardswoman":"💂‍♀","guardsman":"💂","female_detective":"🕵️‍♀️","male_detective":"🕵","detective":"🕵","woman_health_worker":"👩‍⚕","man_health_worker":"👨‍⚕","woman_farmer":"👩‍🌾","man_farmer":"👨‍🌾","woman_cook":"👩‍🍳","man_cook":"👨‍🍳","woman_student":"👩‍🎓","man_student":"👨‍🎓","woman_singer":"👩‍🎤","man_singer":"👨‍🎤","woman_teacher":"👩‍🏫","man_teacher":"👨‍🏫","woman_factory_worker":"👩‍🏭","man_factory_worker":"👨‍🏭","woman_technologist":"👩‍💻","man_technologist":"👨‍💻","woman_office_worker":"👩‍💼","man_office_worker":"👨‍💼","woman_mechanic":"👩‍🔧","man_mechanic":"👨‍🔧","woman_scientist":"👩‍🔬","man_scientist":"👨‍🔬","woman_artist":"👩‍🎨","man_artist":"👨‍🎨","woman_firefighter":"👩‍🚒","man_firefighter":"👨‍🚒","woman_pilot":"👩‍✈","man_pilot":"👨‍✈","woman_astronaut":"👩‍🚀","man_astronaut":"👨‍🚀","woman_judge":"👩‍⚖","man_judge":"👨‍⚖","mrs_claus":"🤶","santa":"🎅","princess":"👸","prince":"🤴","bride_with_veil":"👰","man_in_tuxedo":"🤵","angel":"👼","pregnant_woman":"🤰","bowing_woman":"🙇‍♀","bowing_man":"🙇","bow":"🙇","tipping_hand_woman":"💁","information_desk_person":"💁","sassy_woman":"💁","tipping_hand_man":"💁‍♂","sassy_man":"💁‍♂","no_good_woman":"🙅","no_good":"🙅","ng_woman":"🙅","no_good_man":"🙅‍♂","ng_man":"🙅‍♂","ok_woman":"🙆","ok_man":"🙆‍♂","raising_hand_woman":"🙋","raising_hand":"🙋","raising_hand_man":"🙋‍♂","woman_facepalming":"🤦‍♀","man_facepalming":"🤦‍♂","woman_shrugging":"🤷‍♀","man_shrugging":"🤷‍♂","pouting_woman":"🙎","person_with_pouting_face":"🙎","pouting_man":"🙎‍♂","frowning_woman":"🙍","person_frowning":"🙍","frowning_man":"🙍‍♂","haircut_woman":"💇","haircut":"💇","haircut_man":"💇‍♂","massage_woman":"💆","massage":"💆","massage_man":"💆‍♂","business_suit_levitating":"🕴","dancer":"💃","man_dancing":"🕺","dancing_women":"👯","dancers":"👯","dancing_men":"👯‍♂","walking_woman":"🚶‍♀","walking_man":"🚶","walking":"🚶","running_woman":"🏃‍♀","running_man":"🏃","runner":"🏃","running":"🏃","couple":"👫","two_women_holding_hands":"👭","two_men_holding_hands":"👬","couple_with_heart_woman_man":"💑","couple_with_heart":"💑","couple_with_heart_woman_woman":"👩‍❤️‍👩","couple_with_heart_man_man":"👨‍❤️‍👨","couplekiss_man_woman":"💏","couplekiss_woman_woman":"👩‍❤️‍💋‍👩","couplekiss_man_man":"👨‍❤️‍💋‍👨","family_man_woman_boy":"👪","family":"👪","family_man_woman_girl":"👨‍👩‍👧","family_man_woman_girl_boy":"👨‍👩‍👧‍👦","family_man_woman_boy_boy":"👨‍👩‍👦‍👦","family_man_woman_girl_girl":"👨‍👩‍👧‍👧","family_woman_woman_boy":"👩‍👩‍👦","family_woman_woman_girl":"👩‍👩‍👧","family_woman_woman_girl_boy":"👩‍👩‍👧‍👦","family_woman_woman_boy_boy":"👩‍👩‍👦‍👦","family_woman_woman_girl_girl":"👩‍👩‍👧‍👧","family_man_man_boy":"👨‍👨‍👦","family_man_man_girl":"👨‍👨‍👧","family_man_man_girl_boy":"👨‍👨‍👧‍👦","family_man_man_boy_boy":"👨‍👨‍👦‍👦","family_man_man_girl_girl":"👨‍👨‍👧‍👧","family_woman_boy":"👩‍👦","family_woman_girl":"👩‍👧","family_woman_girl_boy":"👩‍👧‍👦","family_woman_boy_boy":"👩‍👦‍👦","family_woman_girl_girl":"👩‍👧‍👧","family_man_boy":"👨‍👦","family_man_girl":"👨‍👧","family_man_girl_boy":"👨‍👧‍👦","family_man_boy_boy":"👨‍👦‍👦","family_man_girl_girl":"👨‍👧‍👧","womans_clothes":"👚","shirt":"👕","tshirt":"👕","jeans":"👖","necktie":"👔","dress":"👗","bikini":"👙","kimono":"👘","high_heel":"👠","sandal":"👡","boot":"👢","mans_shoe":"👞","shoe":"👞","athletic_shoe":"👟","womans_hat":"👒","tophat":"🎩","mortar_board":"🎓","crown":"👑","rescue_worker_helmet":"⛑","school_satchel":"🎒","pouch":"👝","purse":"👛","handbag":"👜","briefcase":"💼","eyeglasses":"👓","dark_sunglasses":"🕶","closed_umbrella":"🌂","open_umbrella":"☂️","dog":"🐶","cat":"🐱","mouse":"🐭","hamster":"🐹","rabbit":"🐰","fox_face":"🦊","bear":"🐻","panda_face":"🐼","koala":"🐨","tiger":"🐯","lion":"🦁","cow":"🐮","pig":"🐷","pig_nose":"🐽","frog":"🐸","monkey_face":"🐵","see_no_evil":"🙈","hear_no_evil":"🙉","speak_no_evil":"🙊","monkey":"🐒","chicken":"🐔","penguin":"🐧","bird":"🐦","baby_chick":"🐤","hatching_chick":"🐣","hatched_chick":"🐥","duck":"🦆","eagle":"🦅","owl":"🦉","bat":"🦇","wolf":"🐺","boar":"🐗","horse":"🐴","unicorn":"🦄","bee":"🐝","honeybee":"🐝","bug":"🐛","butterfly":"🦋","snail":"🐌","shell":"🐚","beetle":"🐞","ant":"🐜","spider":"🕷","spider_web":"🕸","turtle":"🐢","snake":"🐍","lizard":"🦎","scorpion":"🦂","crab":"🦀","squid":"🦑","octopus":"🐙","shrimp":"🦐","tropical_fish":"🐠","fish":"🐟","blowfish":"🐡","dolphin":"🐬","flipper":"🐬","shark":"🦈","whale":"🐳","whale2":"🐋","crocodile":"🐊","leopard":"🐆","tiger2":"🐅","water_buffalo":"🐃","ox":"🐂","cow2":"🐄","deer":"🦌","dromedary_camel":"🐪","camel":"🐫","elephant":"🐘","rhinoceros":"🦏","gorilla":"🦍","racehorse":"🐎","pig2":"🐖","goat":"🐐","ram":"🐏","sheep":"🐑","dog2":"🐕","poodle":"🐩","cat2":"🐈","rooster":"🐓","turkey":"🦃","dove":"🕊","rabbit2":"🐇","mouse2":"🐁","rat":"🐀","chipmunk":"🐿","feet":"🐾","paw_prints":"🐾","dragon":"🐉","dragon_face":"🐲","cactus":"🌵","christmas_tree":"🎄","evergreen_tree":"🌲","deciduous_tree":"🌳","palm_tree":"🌴","seedling":"🌱","herb":"🌿","shamrock":"☘️","four_leaf_clover":"🍀","bamboo":"🎍","tanabata_tree":"🎋","leaves":"🍃","fallen_leaf":"🍂","maple_leaf":"🍁","mushroom":"🍄","ear_of_rice":"🌾","bouquet":"💐","tulip":"🌷","rose":"🌹","wilted_flower":"🥀","sunflower":"🌻","blossom":"🌼","cherry_blossom":"🌸","hibiscus":"🌺","earth_americas":"🌎","earth_africa":"🌍","earth_asia":"🌏","full_moon":"🌕","waning_gibbous_moon":"🌖","last_quarter_moon":"🌗","waning_crescent_moon":"🌘","new_moon":"🌑","waxing_crescent_moon":"🌒","first_quarter_moon":"🌓","moon":"🌔","waxing_gibbous_moon":"🌔","new_moon_with_face":"🌚","full_moon_with_face":"🌝","sun_with_face":"🌞","first_quarter_moon_with_face":"🌛","last_quarter_moon_with_face":"🌜","crescent_moon":"🌙","dizzy":"💫","star":"⭐️","star2":"🌟","sparkles":"✨","zap":"⚡️","fire":"🔥","boom":"💥","collision":"💥","comet":"☄","sunny":"☀️","sun_behind_small_cloud":"🌤","partly_sunny":"⛅️","sun_behind_large_cloud":"🌥","sun_behind_rain_cloud":"🌦","rainbow":"🌈","cloud":"☁️","cloud_with_rain":"🌧","cloud_with_lightning_and_rain":"⛈","cloud_with_lightning":"🌩","cloud_with_snow":"🌨","snowman_with_snow":"☃️","snowman":"⛄️","snowflake":"❄️","wind_face":"🌬","dash":"💨","tornado":"🌪","fog":"🌫","ocean":"🌊","droplet":"💧","sweat_drops":"💦","umbrella":"☔️","green_apple":"🍏","apple":"🍎","pear":"🍐","tangerine":"🍊","orange":"🍊","mandarin":"🍊","lemon":"🍋","banana":"🍌","watermelon":"🍉","grapes":"🍇","strawberry":"🍓","melon":"🍈","cherries":"🍒","peach":"🍑","pineapple":"🍍","kiwi_fruit":"🥝","avocado":"🥑","tomato":"🍅","eggplant":"🍆","cucumber":"🥒","carrot":"🥕","corn":"🌽","hot_pepper":"🌶","potato":"🥔","sweet_potato":"🍠","chestnut":"🌰","peanuts":"🥜","honey_pot":"🍯","croissant":"🥐","bread":"🍞","baguette_bread":"🥖","cheese":"🧀","egg":"🥚","fried_egg":"🍳","bacon":"🥓","pancakes":"🥞","fried_shrimp":"🍤","poultry_leg":"🍗","meat_on_bone":"🍖","pizza":"🍕","hotdog":"🌭","hamburger":"🍔","fries":"🍟","stuffed_flatbread":"🥙","taco":"🌮","burrito":"🌯","green_salad":"🥗","shallow_pan_of_food":"🥘","spaghetti":"🍝","ramen":"🍜","stew":"🍲","fish_cake":"🍥","sushi":"🍣","bento":"🍱","curry":"🍛","rice":"🍚","rice_ball":"🍙","rice_cracker":"🍘","oden":"🍢","dango":"🍡","shaved_ice":"🍧","ice_cream":"🍨","icecream":"🍦","cake":"🍰","birthday":"🎂","custard":"🍮","lollipop":"🍭","candy":"🍬","chocolate_bar":"🍫","popcorn":"🍿","doughnut":"🍩","cookie":"🍪","milk_glass":"🥛","baby_bottle":"🍼","coffee":"☕️","tea":"🍵","sake":"🍶","beer":"🍺","beers":"🍻","clinking_glasses":"🥂","wine_glass":"🍷","tumbler_glass":"🥃","cocktail":"🍸","tropical_drink":"🍹","champagne":"🍾","spoon":"🥄","fork_and_knife":"🍴","plate_with_cutlery":"🍽","soccer":"⚽️","basketball":"🏀","football":"🏈","baseball":"⚾️","tennis":"🎾","volleyball":"🏐","rugby_football":"🏉","8ball":"🎱","ping_pong":"🏓","badminton":"🏸","goal_net":"🥅","ice_hockey":"🏒","field_hockey":"🏑","cricket":"🏏","golf":"⛳️","bow_and_arrow":"🏹","fishing_pole_and_fish":"🎣","boxing_glove":"🥊","martial_arts_uniform":"🥋","ice_skate":"⛸","ski":"🎿","skier":"⛷","snowboarder":"🏂","weight_lifting_woman":"🏋️‍♀️","weight_lifting_man":"🏋","person_fencing":"🤺","women_wrestling":"🤼‍♀","men_wrestling":"🤼‍♂","woman_cartwheeling":"🤸‍♀","man_cartwheeling":"🤸‍♂","basketball_woman":"⛹️‍♀️","basketball_man":"⛹","woman_playing_handball":"🤾‍♀","man_playing_handball":"🤾‍♂","golfing_woman":"🏌️‍♀️","golfing_man":"🏌","surfing_woman":"🏄‍♀","surfing_man":"🏄","surfer":"🏄","swimming_woman":"🏊‍♀","swimming_man":"🏊","swimmer":"🏊","woman_playing_water_polo":"🤽‍♀","man_playing_water_polo":"🤽‍♂","rowing_woman":"🚣‍♀","rowing_man":"🚣","rowboat":"🚣","horse_racing":"🏇","biking_woman":"🚴‍♀","biking_man":"🚴","bicyclist":"🚴","mountain_biking_woman":"🚵‍♀","mountain_biking_man":"🚵","mountain_bicyclist":"🚵","running_shirt_with_sash":"🎽","medal_sports":"🏅","medal_military":"🎖","1st_place_medal":"🥇","2nd_place_medal":"🥈","3rd_place_medal":"🥉","trophy":"🏆","rosette":"🏵","reminder_ribbon":"🎗","ticket":"🎫","tickets":"🎟","circus_tent":"🎪","woman_juggling":"🤹‍♀","man_juggling":"🤹‍♂","performing_arts":"🎭","art":"🎨","clapper":"🎬","microphone":"🎤","headphones":"🎧","musical_score":"🎼","musical_keyboard":"🎹","drum":"🥁","saxophone":"🎷","trumpet":"🎺","guitar":"🎸","violin":"🎻","game_die":"🎲","dart":"🎯","bowling":"🎳","video_game":"🎮","slot_machine":"🎰","car":"🚗","red_car":"🚗","taxi":"🚕","blue_car":"🚙","bus":"🚌","trolleybus":"🚎","racing_car":"🏎","police_car":"🚓","ambulance":"🚑","fire_engine":"🚒","minibus":"🚐","truck":"🚚","articulated_lorry":"🚛","tractor":"🚜","kick_scooter":"🛴","bike":"🚲","motor_scooter":"🛵","motorcycle":"🏍","rotating_light":"🚨","oncoming_police_car":"🚔","oncoming_bus":"🚍","oncoming_automobile":"🚘","oncoming_taxi":"🚖","aerial_tramway":"🚡","mountain_cableway":"🚠","suspension_railway":"🚟","railway_car":"🚃","train":"🚋","mountain_railway":"🚞","monorail":"🚝","bullettrain_side":"🚄","bullettrain_front":"🚅","light_rail":"🚈","steam_locomotive":"🚂","train2":"🚆","metro":"🚇","tram":"🚊","station":"🚉","helicopter":"🚁","small_airplane":"🛩","airplane":"✈️","flight_departure":"🛫","flight_arrival":"🛬","rocket":"🚀","artificial_satellite":"🛰","seat":"💺","canoe":"🛶","boat":"⛵️","sailboat":"⛵️","motor_boat":"🛥","speedboat":"🚤","passenger_ship":"🛳","ferry":"⛴","ship":"🚢","anchor":"⚓️","construction":"🚧","fuelpump":"⛽️","busstop":"🚏","vertical_traffic_light":"🚦","traffic_light":"🚥","world_map":"🗺","moyai":"🗿","statue_of_liberty":"🗽","fountain":"⛲️","tokyo_tower":"🗼","european_castle":"🏰","japanese_castle":"🏯","stadium":"🏟","ferris_wheel":"🎡","roller_coaster":"🎢","carousel_horse":"🎠","parasol_on_ground":"⛱","beach_umbrella":"🏖","desert_island":"🏝","mountain":"⛰","mountain_snow":"🏔","mount_fuji":"🗻","volcano":"🌋","desert":"🏜","camping":"🏕","tent":"⛺️","railway_track":"🛤","motorway":"🛣","building_construction":"🏗","factory":"🏭","house":"🏠","house_with_garden":"🏡","houses":"🏘","derelict_house":"🏚","office":"🏢","department_store":"🏬","post_office":"🏣","european_post_office":"🏤","hospital":"🏥","bank":"🏦","hotel":"🏨","convenience_store":"🏪","school":"🏫","love_hotel":"🏩","wedding":"💒","classical_building":"🏛","church":"⛪️","mosque":"🕌","synagogue":"🕍","kaaba":"🕋","shinto_shrine":"⛩","japan":"🗾","rice_scene":"🎑","national_park":"🏞","sunrise":"🌅","sunrise_over_mountains":"🌄","stars":"🌠","sparkler":"🎇","fireworks":"🎆","city_sunrise":"🌇","city_sunset":"🌆","cityscape":"🏙","night_with_stars":"🌃","milky_way":"🌌","bridge_at_night":"🌉","foggy":"🌁","watch":"⌚️","iphone":"📱","calling":"📲","computer":"💻","keyboard":"⌨️","desktop_computer":"🖥","printer":"🖨","computer_mouse":"🖱","trackball":"🖲","joystick":"🕹","clamp":"🗜","minidisc":"💽","floppy_disk":"💾","cd":"💿","dvd":"📀","vhs":"📼","camera":"📷","camera_flash":"📸","video_camera":"📹","movie_camera":"🎥","film_projector":"📽","film_strip":"🎞","telephone_receiver":"📞","phone":"☎️","telephone":"☎️","pager":"📟","fax":"📠","tv":"📺","radio":"📻","studio_microphone":"🎙","level_slider":"🎚","control_knobs":"🎛","stopwatch":"⏱","timer_clock":"⏲","alarm_clock":"⏰","mantelpiece_clock":"🕰","hourglass":"⌛️","hourglass_flowing_sand":"⏳","satellite":"📡","battery":"🔋","electric_plug":"🔌","bulb":"💡","flashlight":"🔦","candle":"🕯","wastebasket":"🗑","oil_drum":"🛢","money_with_wings":"💸","dollar":"💵","yen":"💴","euro":"💶","pound":"💷","moneybag":"💰","credit_card":"💳","gem":"💎","balance_scale":"⚖️","wrench":"🔧","hammer":"🔨","hammer_and_pick":"⚒","hammer_and_wrench":"🛠","pick":"⛏","nut_and_bolt":"🔩","gear":"⚙️","chains":"⛓","gun":"🔫","bomb":"💣","hocho":"🔪","knife":"🔪","dagger":"🗡","crossed_swords":"⚔️","shield":"🛡","smoking":"🚬","coffin":"⚰️","funeral_urn":"⚱️","amphora":"🏺","crystal_ball":"🔮","prayer_beads":"📿","barber":"💈","alembic":"⚗️","telescope":"🔭","microscope":"🔬","hole":"🕳","pill":"💊","syringe":"💉","thermometer":"🌡","toilet":"🚽","potable_water":"🚰","shower":"🚿","bathtub":"🛁","bath":"🛀","bellhop_bell":"🛎","key":"🔑","old_key":"🗝","door":"🚪","couch_and_lamp":"🛋","bed":"🛏","sleeping_bed":"🛌","framed_picture":"🖼","shopping":"🛍","shopping_cart":"🛒","gift":"🎁","balloon":"🎈","flags":"🎏","ribbon":"🎀","confetti_ball":"🎊","tada":"🎉","dolls":"🎎","izakaya_lantern":"🏮","lantern":"🏮","wind_chime":"🎐","email":"✉️","envelope":"✉️","envelope_with_arrow":"📩","incoming_envelope":"📨","e-mail":"📧","love_letter":"💌","inbox_tray":"📥","outbox_tray":"📤","package":"📦","label":"🏷","mailbox_closed":"📪","mailbox":"📫","mailbox_with_mail":"📬","mailbox_with_no_mail":"📭","postbox":"📮","postal_horn":"📯","scroll":"📜","page_with_curl":"📃","page_facing_up":"📄","bookmark_tabs":"📑","bar_chart":"📊","chart_with_upwards_trend":"📈","chart_with_downwards_trend":"📉","spiral_notepad":"🗒","spiral_calendar":"🗓","calendar":"📆","date":"📅","card_index":"📇","card_file_box":"🗃","ballot_box":"🗳","file_cabinet":"🗄","clipboard":"📋","file_folder":"📁","open_file_folder":"📂","card_index_dividers":"🗂","newspaper_roll":"🗞","newspaper":"📰","notebook":"📓","notebook_with_decorative_cover":"📔","ledger":"📒","closed_book":"📕","green_book":"📗","blue_book":"📘","orange_book":"📙","books":"📚","book":"📖","open_book":"📖","bookmark":"🔖","link":"🔗","paperclip":"📎","paperclips":"🖇","triangular_ruler":"📐","straight_ruler":"📏","pushpin":"📌","round_pushpin":"📍","scissors":"✂️","pen":"🖊","fountain_pen":"🖋","black_nib":"✒️","paintbrush":"🖌","crayon":"🖍","memo":"📝","pencil":"📝","pencil2":"✏️","mag":"🔍","mag_right":"🔎","lock_with_ink_pen":"🔏","closed_lock_with_key":"🔐","lock":"🔒","unlock":"🔓","heart":"❤️","yellow_heart":"💛","green_heart":"💚","blue_heart":"💙","purple_heart":"💜","black_heart":"🖤","broken_heart":"💔","heavy_heart_exclamation":"❣️","two_hearts":"💕","revolving_hearts":"💞","heartbeat":"💓","heartpulse":"💗","sparkling_heart":"💖","cupid":"💘","gift_heart":"💝","heart_decoration":"💟","peace_symbol":"☮️","latin_cross":"✝️","star_and_crescent":"☪️","om":"🕉","wheel_of_dharma":"☸️","star_of_david":"✡️","six_pointed_star":"🔯","menorah":"🕎","yin_yang":"☯️","orthodox_cross":"☦️","place_of_worship":"🛐","ophiuchus":"⛎","aries":"♈️","taurus":"♉️","gemini":"♊️","cancer":"♋️","leo":"♌️","virgo":"♍️","libra":"♎️","scorpius":"♏️","sagittarius":"♐️","capricorn":"♑️","aquarius":"♒️","pisces":"♓️","id":"🆔","atom_symbol":"⚛️","accept":"🉑","radioactive":"☢️","biohazard":"☣️","mobile_phone_off":"📴","vibration_mode":"📳","eight_pointed_black_star":"✴️","vs":"🆚","white_flower":"💮","ideograph_advantage":"🉐","secret":"㊙️","congratulations":"㊗️","u6e80":"🈵","a":"🅰️","b":"🅱️","ab":"🆎","cl":"🆑","o2":"🅾️","sos":"🆘","x":"❌","o":"⭕️","stop_sign":"🛑","no_entry":"⛔️","name_badge":"📛","no_entry_sign":"🚫","anger":"💢","hotsprings":"♨️","no_pedestrians":"🚷","do_not_litter":"🚯","no_bicycles":"🚳","non-potable_water":"🚱","underage":"🔞","no_mobile_phones":"📵","no_smoking":"🚭","exclamation":"❗️","heavy_exclamation_mark":"❗️","grey_exclamation":"❕","question":"❓","grey_question":"❔","bangbang":"‼️","interrobang":"⁉️","low_brightness":"🔅","high_brightness":"🔆","part_alternation_mark":"〽️","warning":"⚠️","children_crossing":"🚸","trident":"🔱","fleur_de_lis":"⚜️","beginner":"🔰","recycle":"♻️","white_check_mark":"✅","chart":"💹","sparkle":"❇️","eight_spoked_asterisk":"✳️","negative_squared_cross_mark":"❎","globe_with_meridians":"🌐","diamond_shape_with_a_dot_inside":"💠","m":"Ⓜ️","cyclone":"🌀","zzz":"💤","atm":"🏧","wc":"🚾","wheelchair":"♿️","parking":"🅿️","sa":"🈂️","passport_control":"🛂","customs":"🛃","baggage_claim":"🛄","left_luggage":"🛅","mens":"🚹","womens":"🚺","baby_symbol":"🚼","restroom":"🚻","put_litter_in_its_place":"🚮","cinema":"🎦","signal_strength":"📶","koko":"🈁","symbols":"🔣","information_source":"ℹ️","abc":"🔤","abcd":"🔡","capital_abcd":"🔠","ng":"🆖","ok":"🆗","up":"🆙","cool":"🆒","new":"🆕","free":"🆓","zero":"0️⃣","one":"1️⃣","two":"2️⃣","three":"3️⃣","four":"4️⃣","five":"5️⃣","six":"6️⃣","seven":"7️⃣","eight":"8️⃣","nine":"9️⃣","keycap_ten":"🔟","hash":"#️⃣","asterisk":"*️⃣","arrow_forward":"▶️","pause_button":"⏸","play_or_pause_button":"⏯","stop_button":"⏹","record_button":"⏺","next_track_button":"⏭","previous_track_button":"⏮","fast_forward":"⏩","rewind":"⏪","arrow_double_up":"⏫","arrow_double_down":"⏬","arrow_backward":"◀️","arrow_up_small":"🔼","arrow_down_small":"🔽","arrow_right":"➡️","arrow_left":"⬅️","arrow_up":"⬆️","arrow_down":"⬇️","arrow_upper_right":"↗️","arrow_lower_right":"↘️","arrow_lower_left":"↙️","arrow_upper_left":"↖️","arrow_up_down":"↕️","left_right_arrow":"↔️","arrow_right_hook":"↪️","leftwards_arrow_with_hook":"↩️","arrow_heading_up":"⤴️","arrow_heading_down":"⤵️","twisted_rightwards_arrows":"🔀","repeat":"🔁","repeat_one":"🔂","arrows_counterclockwise":"🔄","arrows_clockwise":"🔃","musical_note":"🎵","notes":"🎶","heavy_plus_sign":"➕","heavy_minus_sign":"➖","heavy_division_sign":"➗","heavy_multiplication_x":"✖️","heavy_dollar_sign":"💲","currency_exchange":"💱","tm":"™️","copyright":"©️","registered":"®️","wavy_dash":"〰️","curly_loop":"➰","loop":"➿","end":"🔚","back":"🔙","on":"🔛","top":"🔝","soon":"🔜","heavy_check_mark":"✔️","ballot_box_with_check":"☑️","radio_button":"🔘","white_circle":"⚪️","black_circle":"⚫️","red_circle":"🔴","large_blue_circle":"🔵","small_red_triangle":"🔺","small_red_triangle_down":"🔻","small_orange_diamond":"🔸","small_blue_diamond":"🔹","large_orange_diamond":"🔶","large_blue_diamond":"🔷","white_square_button":"🔳","black_square_button":"🔲","black_small_square":"▪️","white_small_square":"▫️","black_medium_small_square":"◾️","white_medium_small_square":"◽️","black_medium_square":"◼️","white_medium_square":"◻️","black_large_square":"⬛️","white_large_square":"⬜️","speaker":"🔈","mute":"🔇","sound":"🔉","loud_sound":"🔊","bell":"🔔","no_bell":"🔕","mega":"📣","loudspeaker":"📢","eye_speech_bubble":"👁‍🗨","speech_balloon":"💬","thought_balloon":"💭","right_anger_bubble":"🗯","spades":"♠️","clubs":"♣️","hearts":"♥️","diamonds":"♦️","black_joker":"🃏","flower_playing_cards":"🎴","mahjong":"🀄️","clock1":"🕐","clock2":"🕑","clock3":"🕒","clock4":"🕓","clock5":"🕔","clock6":"🕕","clock7":"🕖","clock8":"🕗","clock9":"🕘","clock10":"🕙","clock11":"🕚","clock12":"🕛","clock130":"🕜","clock230":"🕝","clock330":"🕞","clock430":"🕟","clock530":"🕠","clock630":"🕡","clock730":"🕢","clock830":"🕣","clock930":"🕤","clock1030":"🕥","clock1130":"🕦","clock1230":"🕧","white_flag":"🏳️","black_flag":"🏴","checkered_flag":"🏁","triangular_flag_on_post":"🚩","rainbow_flag":"🏳️‍🌈","afghanistan":"🇦🇫","aland_islands":"🇦🇽","albania":"🇦🇱","algeria":"🇩🇿","american_samoa":"🇦🇸","andorra":"🇦🇩","angola":"🇦🇴","anguilla":"🇦🇮","antarctica":"🇦🇶","antigua_barbuda":"🇦🇬","argentina":"🇦🇷","armenia":"🇦🇲","aruba":"🇦🇼","australia":"🇦🇺","austria":"🇦🇹","azerbaijan":"🇦🇿","bahamas":"🇧🇸","bahrain":"🇧🇭","bangladesh":"🇧🇩","barbados":"🇧🇧","belarus":"🇧🇾","belgium":"🇧🇪","belize":"🇧🇿","benin":"🇧🇯","bermuda":"🇧🇲","bhutan":"🇧🇹","bolivia":"🇧🇴","caribbean_netherlands":"🇧🇶","bosnia_herzegovina":"🇧🇦","botswana":"🇧🇼","brazil":"🇧🇷","british_indian_ocean_territory":"🇮🇴","british_virgin_islands":"🇻🇬","brunei":"🇧🇳","bulgaria":"🇧🇬","burkina_faso":"🇧🇫","burundi":"🇧🇮","cape_verde":"🇨🇻","cambodia":"🇰🇭","cameroon":"🇨🇲","canada":"🇨🇦","canary_islands":"🇮🇨","cayman_islands":"🇰🇾","central_african_republic":"🇨🇫","chad":"🇹🇩","chile":"🇨🇱","cn":"🇨🇳","christmas_island":"🇨🇽","cocos_islands":"🇨🇨","colombia":"🇨🇴","comoros":"🇰🇲","congo_brazzaville":"🇨🇬","congo_kinshasa":"🇨🇩","cook_islands":"🇨🇰","costa_rica":"🇨🇷","cote_divoire":"🇨🇮","croatia":"🇭🇷","cuba":"🇨🇺","curacao":"🇨🇼","cyprus":"🇨🇾","czech_republic":"🇨🇿","denmark":"🇩🇰","djibouti":"🇩🇯","dominica":"🇩🇲","dominican_republic":"🇩🇴","ecuador":"🇪🇨","egypt":"🇪🇬","el_salvador":"🇸🇻","equatorial_guinea":"🇬🇶","eritrea":"🇪🇷","estonia":"🇪🇪","ethiopia":"🇪🇹","eu":"🇪🇺","european_union":"🇪🇺","falkland_islands":"🇫🇰","faroe_islands":"🇫🇴","fiji":"🇫🇯","finland":"🇫🇮","fr":"🇫🇷","french_guiana":"🇬🇫","french_polynesia":"🇵🇫","french_southern_territories":"🇹🇫","gabon":"🇬🇦","gambia":"🇬🇲","georgia":"🇬🇪","de":"🇩🇪","ghana":"🇬🇭","gibraltar":"🇬🇮","greece":"🇬🇷","greenland":"🇬🇱","grenada":"🇬🇩","guadeloupe":"🇬🇵","guam":"🇬🇺","guatemala":"🇬🇹","guernsey":"🇬🇬","guinea":"🇬🇳","guinea_bissau":"🇬🇼","guyana":"🇬🇾","haiti":"🇭🇹","honduras":"🇭🇳","hong_kong":"🇭🇰","hungary":"🇭🇺","iceland":"🇮🇸","india":"🇮🇳","indonesia":"🇮🇩","iran":"🇮🇷","iraq":"🇮🇶","ireland":"🇮🇪","isle_of_man":"🇮🇲","israel":"🇮🇱","it":"🇮🇹","jamaica":"🇯🇲","jp":"🇯🇵","crossed_flags":"🎌","jersey":"🇯🇪","jordan":"🇯🇴","kazakhstan":"🇰🇿","kenya":"🇰🇪","kiribati":"🇰🇮","kosovo":"🇽🇰","kuwait":"🇰🇼","kyrgyzstan":"🇰🇬","laos":"🇱🇦","latvia":"🇱🇻","lebanon":"🇱🇧","lesotho":"🇱🇸","liberia":"🇱🇷","libya":"🇱🇾","liechtenstein":"🇱🇮","lithuania":"🇱🇹","luxembourg":"🇱🇺","macau":"🇲🇴","macedonia":"🇲🇰","madagascar":"🇲🇬","malawi":"🇲🇼","malaysia":"🇲🇾","maldives":"🇲🇻","mali":"🇲🇱","malta":"🇲🇹","marshall_islands":"🇲🇭","martinique":"🇲🇶","mauritania":"🇲🇷","mauritius":"🇲🇺","mayotte":"🇾🇹","mexico":"🇲🇽","micronesia":"🇫🇲","moldova":"🇲🇩","monaco":"🇲🇨","mongolia":"🇲🇳","montenegro":"🇲🇪","montserrat":"🇲🇸","morocco":"🇲🇦","mozambique":"🇲🇿","myanmar":"🇲🇲","namibia":"🇳🇦","nauru":"🇳🇷","nepal":"🇳🇵","netherlands":"🇳🇱","new_caledonia":"🇳🇨","new_zealand":"🇳🇿","nicaragua":"🇳🇮","niger":"🇳🇪","nigeria":"🇳🇬","niue":"🇳🇺","norfolk_island":"🇳🇫","northern_mariana_islands":"🇲🇵","north_korea":"🇰🇵","norway":"🇳🇴","oman":"🇴🇲","pakistan":"🇵🇰","palau":"🇵🇼","palestinian_territories":"🇵🇸","panama":"🇵🇦","papua_new_guinea":"🇵🇬","paraguay":"🇵🇾","peru":"🇵🇪","philippines":"🇵🇭","pitcairn_islands":"🇵🇳","poland":"🇵🇱","portugal":"🇵🇹","puerto_rico":"🇵🇷","qatar":"🇶🇦","reunion":"🇷🇪","romania":"🇷🇴","ru":"🇷🇺","rwanda":"🇷🇼","st_barthelemy":"🇧🇱","st_helena":"🇸🇭","st_kitts_nevis":"🇰🇳","st_lucia":"🇱🇨","st_pierre_miquelon":"🇵🇲","st_vincent_grenadines":"🇻🇨","samoa":"🇼🇸","san_marino":"🇸🇲","sao_tome_principe":"🇸🇹","saudi_arabia":"🇸🇦","senegal":"🇸🇳","serbia":"🇷🇸","seychelles":"🇸🇨","sierra_leone":"🇸🇱","singapore":"🇸🇬","sint_maarten":"🇸🇽","slovakia":"🇸🇰","slovenia":"🇸🇮","solomon_islands":"🇸🇧","somalia":"🇸🇴","south_africa":"🇿🇦","south_georgia_south_sandwich_islands":"🇬🇸","kr":"🇰🇷","south_sudan":"🇸🇸","es":"🇪🇸","sri_lanka":"🇱🇰","sudan":"🇸🇩","suriname":"🇸🇷","swaziland":"🇸🇿","sweden":"🇸🇪","switzerland":"🇨🇭","syria":"🇸🇾","taiwan":"🇹🇼","tajikistan":"🇹🇯","tanzania":"🇹🇿","thailand":"🇹🇭","timor_leste":"🇹🇱","togo":"🇹🇬","tokelau":"🇹🇰","tonga":"🇹🇴","trinidad_tobago":"🇹🇹","tunisia":"🇹🇳","tr":"🇹🇷","turkmenistan":"🇹🇲","turks_caicos_islands":"🇹🇨","tuvalu":"🇹🇻","uganda":"🇺🇬","ukraine":"🇺🇦","united_arab_emirates":"🇦🇪","gb":"🇬🇧","uk":"🇬🇧","us":"🇺🇸","us_virgin_islands":"🇻🇮","uruguay":"🇺🇾","uzbekistan":"🇺🇿","vanuatu":"🇻🇺","vatican_city":"🇻🇦","venezuela":"🇻🇪","vietnam":"🇻🇳","wallis_futuna":"🇼🇫","western_sahara":"🇪🇭","yemen":"🇾🇪","zambia":"🇿🇲","zimbabwe":"🇿🇼"}
-
-/***/ }),
-/* 197 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	
-	
-	var emojies_defs      = __webpack_require__(196);
-	var emojies_shortcuts = __webpack_require__(198);
-	var emoji_html        = __webpack_require__(199);
-	var emoji_replace     = __webpack_require__(200);
-	var normalize_opts    = __webpack_require__(201);
-	
-	
-	module.exports = function emoji_plugin(md, options) {
-	  var defaults = {
-	    defs: emojies_defs,
-	    shortcuts: emojies_shortcuts,
-	    enabled: []
-	  };
-	
-	  var opts = normalize_opts(md.utils.assign({}, defaults, options || {}));
-	
-	  md.renderer.rules.emoji = emoji_html;
-	
-	  md.core.ruler.push('emoji', emoji_replace(md, opts.defs, opts.shortcuts, opts.scanRE, opts.replaceRE));
-	};
-
-
-/***/ }),
-/* 198 */
-/***/ (function(module, exports) {
-
-	// Emoticons -> Emoji mapping.
-	//
-	// (!) Some patterns skipped, to avoid collisions
-	// without increase matcher complicity. Than can change in future.
-	//
-	// Places to look for more emoticons info:
-	//
-	// - http://en.wikipedia.org/wiki/List_of_emoticons#Western
-	// - https://github.com/wooorm/emoticon/blob/master/Support.md
-	// - http://factoryjoe.com/projects/emoticons/
-	//
-	'use strict';
-	
-	module.exports = {
-	  angry:            [ '>:(', '>:-(' ],
-	  blush:            [ ':")', ':-")' ],
-	  broken_heart:     [ '</3', '<\\3' ],
-	  // :\ and :-\ not used because of conflict with markdown escaping
-	  confused:         [ ':/', ':-/' ], // twemoji shows question
-	  cry:              [ ":'(", ":'-(", ':,(', ':,-(' ],
-	  frowning:         [ ':(', ':-(' ],
-	  heart:            [ '<3' ],
-	  imp:              [ ']:(', ']:-(' ],
-	  innocent:         [ 'o:)', 'O:)', 'o:-)', 'O:-)', '0:)', '0:-)' ],
-	  joy:              [ ":')", ":'-)", ':,)', ':,-)', ":'D", ":'-D", ':,D', ':,-D' ],
-	  kissing:          [ ':*', ':-*' ],
-	  laughing:         [ 'x-)', 'X-)' ],
-	  neutral_face:     [ ':|', ':-|' ],
-	  open_mouth:       [ ':o', ':-o', ':O', ':-O' ],
-	  rage:             [ ':@', ':-@' ],
-	  smile:            [ ':D', ':-D' ],
-	  smiley:           [ ':)', ':-)' ],
-	  smiling_imp:      [ ']:)', ']:-)' ],
-	  sob:              [ ":,'(", ":,'-(", ';(', ';-(' ],
-	  stuck_out_tongue: [ ':P', ':-P' ],
-	  sunglasses:       [ '8-)', 'B-)' ],
-	  sweat:            [ ',:(', ',:-(' ],
-	  sweat_smile:      [ ',:)', ',:-)' ],
-	  unamused:         [ ':s', ':-S', ':z', ':-Z', ':$', ':-$' ],
-	  wink:             [ ';)', ';-)' ]
-	};
-
-
-/***/ }),
-/* 199 */
-/***/ (function(module, exports) {
-
-	'use strict';
-	
-	module.exports = function emoji_html(tokens, idx /*, options, env */) {
-	  return tokens[idx].content;
-	};
-
-
-/***/ }),
-/* 200 */
-/***/ (function(module, exports) {
-
-	// Emojies & shortcuts replacement logic.
-	//
-	// Note: In theory, it could be faster to parse :smile: in inline chain and
-	// leave only shortcuts here. But, who care...
-	//
-	
-	'use strict';
-	
-	
-	module.exports = function create_rule(md, emojies, shortcuts, scanRE, replaceRE) {
-	  var arrayReplaceAt = md.utils.arrayReplaceAt,
-	      ucm = md.utils.lib.ucmicro,
-	      ZPCc = new RegExp([ ucm.Z.source, ucm.P.source, ucm.Cc.source ].join('|'));
-	
-	  function splitTextToken(text, level, Token) {
-	    var token, last_pos = 0, nodes = [];
-	
-	    text.replace(replaceRE, function (match, offset, src) {
-	      var emoji_name;
-	      // Validate emoji name
-	      if (shortcuts.hasOwnProperty(match)) {
-	        // replace shortcut with full name
-	        emoji_name = shortcuts[match];
-	
-	        // Don't allow letters before any shortcut (as in no ":/" in http://)
-	        if (offset > 0 && !ZPCc.test(src[offset - 1])) {
-	          return;
-	        }
-	
-	        // Don't allow letters after any shortcut
-	        if (offset + match.length < src.length && !ZPCc.test(src[offset + match.length])) {
-	          return;
-	        }
-	      } else {
-	        emoji_name = match.slice(1, -1);
-	      }
-	
-	      // Add new tokens to pending list
-	      if (offset > last_pos) {
-	        token         = new Token('text', '', 0);
-	        token.content = text.slice(last_pos, offset);
-	        nodes.push(token);
-	      }
-	
-	      token         = new Token('emoji', '', 0);
-	      token.markup  = emoji_name;
-	      token.content = emojies[emoji_name];
-	      nodes.push(token);
-	
-	      last_pos = offset + match.length;
-	    });
-	
-	    if (last_pos < text.length) {
-	      token         = new Token('text', '', 0);
-	      token.content = text.slice(last_pos);
-	      nodes.push(token);
-	    }
-	
-	    return nodes;
-	  }
-	
-	  return function emoji_replace(state) {
-	    var i, j, l, tokens, token,
-	        blockTokens = state.tokens,
-	        autolinkLevel = 0;
-	
-	    for (j = 0, l = blockTokens.length; j < l; j++) {
-	      if (blockTokens[j].type !== 'inline') { continue; }
-	      tokens = blockTokens[j].children;
-	
-	      // We scan from the end, to keep position when new tags added.
-	      // Use reversed logic in links start/end match
-	      for (i = tokens.length - 1; i >= 0; i--) {
-	        token = tokens[i];
-	
-	        if (token.type === 'link_open' || token.type === 'link_close') {
-	          if (token.info === 'auto') { autolinkLevel -= token.nesting; }
-	        }
-	
-	        if (token.type === 'text' && autolinkLevel === 0 && scanRE.test(token.content)) {
-	          // replace current node
-	          blockTokens[j].children = tokens = arrayReplaceAt(
-	            tokens, i, splitTextToken(token.content, token.level, state.Token)
-	          );
-	        }
-	      }
-	    }
-	  };
-	};
-
-
-/***/ }),
-/* 201 */
-/***/ (function(module, exports) {
-
-	// Convert input options to more useable format
-	// and compile search regexp
-	
-	'use strict';
-	
-	
-	function quoteRE(str) {
-	  return str.replace(/[.?*+^$[\]\\(){}|-]/g, '\\$&');
-	}
-	
-	
-	module.exports = function normalize_opts(options) {
-	  var emojies = options.defs,
-	      shortcuts;
-	
-	  // Filter emojies by whitelist, if needed
-	  if (options.enabled.length) {
-	    emojies = Object.keys(emojies).reduce(function (acc, key) {
-	      if (options.enabled.indexOf(key) >= 0) {
-	        acc[key] = emojies[key];
-	      }
-	      return acc;
-	    }, {});
-	  }
-	
-	  // Flatten shortcuts to simple object: { alias: emoji_name }
-	  shortcuts = Object.keys(options.shortcuts).reduce(function (acc, key) {
-	    // Skip aliases for filtered emojies, to reduce regexp
-	    if (!emojies[key]) { return acc; }
-	
-	    if (Array.isArray(options.shortcuts[key])) {
-	      options.shortcuts[key].forEach(function (alias) {
-	        acc[alias] = key;
-	      });
-	      return acc;
-	    }
-	
-	    acc[options.shortcuts[key]] = key;
-	    return acc;
-	  }, {});
-	
-	  // Compile regexp
-	  var names = Object.keys(emojies)
-	                .map(function (name) { return ':' + name + ':'; })
-	                .concat(Object.keys(shortcuts))
-	                .sort()
-	                .reverse()
-	                .map(function (name) { return quoteRE(name); })
-	                .join('|');
-	  var scanRE = RegExp(names);
-	  var replaceRE = RegExp(names, 'g');
-	
-	  return {
-	    defs: emojies,
-	    shortcuts: shortcuts,
-	    scanRE: scanRE,
-	    replaceRE: replaceRE
-	  };
-	};
-
-
-/***/ }),
-/* 202 */
-/***/ (function(module, exports, __webpack_require__) {
-
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    class: [{
@@ -27102,18 +13571,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  }, [_c('div', {
 	    staticClass: "modal-content"
-	  }, [_vm._t("modal-header", [_c('div', {
+	  }, [_vm._t("header", [_c('div', {
 	    staticClass: "modal-header"
 	  }, [_c('h4', {
 	    staticClass: "modal-title"
 	  }, [_c('span', {
 	    attrs: {
 	      "name": "title"
-	    },
-	    domProps: {
-	      "innerHTML": _vm._s(_vm.titleRendered)
 	    }
-	  })]), _vm._v(" "), _c('button', {
+	  }, [_vm._t("_header")], 2)]), _vm._v(" "), _c('button', {
 	    staticClass: "close",
 	    attrs: {
 	      "type": "button"
@@ -27123,7 +13589,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  }, [_c('span', [_vm._v("×")])])])]), _vm._v(" "), _c('div', {
 	    staticClass: "modal-body"
-	  }, [_vm._t("default")], 2), _vm._v(" "), _vm._t("modal-footer", [(_vm.showOkButton) ? _c('div', {
+	  }, [_vm._t("default")], 2), _vm._v(" "), _vm._t("footer", [(_vm.showOkButton) ? _c('div', {
 	    staticClass: "modal-footer"
 	  }, [(_vm.showOkButton) ? _c('button', {
 	    staticClass: "btn btn-primary",
@@ -27143,20 +13609,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 203 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(204)
+	__webpack_require__(92)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(206)
+	__vue_exports__ = __webpack_require__(94)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(207)
+	var __vue_template__ = __webpack_require__(95)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -27191,13 +13657,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 204 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(205);
+	var content = __webpack_require__(93);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -27217,7 +13683,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 205 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -27231,7 +13697,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 206 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27350,7 +13816,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 
 /***/ }),
-/* 207 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -27391,17 +13857,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 208 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(209)
+	__vue_exports__ = __webpack_require__(97)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(234)
+	var __vue_template__ = __webpack_require__(117)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -27435,7 +13901,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 209 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -27444,11 +13910,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _NestedPanel = __webpack_require__(210);
+	var _NestedPanel = __webpack_require__(98);
 	
 	var _NestedPanel2 = _interopRequireDefault(_NestedPanel);
 	
-	var _MinimalPanel = __webpack_require__(229);
+	var _MinimalPanel = __webpack_require__(112);
 	
 	var _MinimalPanel2 = _interopRequireDefault(_MinimalPanel);
 	
@@ -27487,20 +13953,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 210 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(211)
+	__webpack_require__(99)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(213)
+	__vue_exports__ = __webpack_require__(101)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(228)
+	var __vue_template__ = __webpack_require__(111)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -27534,13 +14000,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 211 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(212);
+	var content = __webpack_require__(100);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -27560,7 +14026,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 212 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -27568,13 +14034,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.card-heading {\n    width: 100%;\n}\n.card-title {\n    display: inline-block;\n    font-size: 1em;\n    margin: 0;\n    vertical-align: middle;\n}\n.card-title * {\n    margin: 0px !important;\n}\n.caret-wrapper {\n    float: left;\n    display: inline-block;\n    width: 32px;\n}\n.header-wrapper {\n    display: inline-block;\n    width: calc(100% - 32px - 96px);\n}\n.button-wrapper {\n    float: right;\n    display: inline-block;\n    width: 96px;\n}\n.header-toggle {\n    cursor: pointer;\n}\n.expandable-card {\n    margin-bottom: 0 !important;\n    margin-top: 5px;\n}\n.card-group > .card-container > .expandable-card {\n    margin-top: 0!important;\n}\n.card-seamless {\n    padding: 0;\n}\n.card.card-seamless {\n    box-shadow: none;\n    border: none;\n}\n.card-seamless > .card-heading {\n    padding: 0;\n}\n.card-seamless > .card-collapse > hr {\n    margin: 0;\n    width: calc(100% - 27px);\n}\n.card-seamless > .card-collapse > .card-body {\n    padding: 10px 0;\n}\n.card-seamless > .card-collapse > .card-body > .collapse-button {\n    position: relative;\n    top: 22px;\n}\n.card-body > .collapse-button {\n    margin-bottom: 13px;\n    margin-top: 5px;\n    opacity: 0.2;\n}\n.card-body > .collapse-button:hover {\n    opacity: 1;\n}\n.close-button {\n    font-size: 10px !important;\n    float: right;\n    padding: 3px 8px !important;\n    margin-left: 3px;\n    margin-top: 2px;\n}\n.popup-button {\n    font-size: 10px !important;\n    float: right;\n    margin-top: 2px;\n    padding: 3px 8px !important;\n}\n.morph {\n    display: inline-block;\n}\n.morph-display-wrapper {\n    white-space: normal;\n}\n\n/* Bootstrap extra small(xs) responsive breakpoint */\n@media (max-width: 575.98px) {\n.caret-wrapper {\n        float: left;\n        display: inline-block;\n        width: 32px;\n}\n.header-wrapper {\n        display: inline-block;\n        width: calc(100% - 32px - 32px);\n}\n.button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 32px;\n}\n.card-body {\n        padding: 0.5rem;\n}\n.card-collapse > hr {\n        margin-top: 1.5rem;\n}\n.card-header {\n        padding: 0.5rem;\n}\n}\n", "", {"version":3,"sources":["/./src/panels/NestedPanel.vue?6fa0ed0c"],"names":[],"mappings":";AAsHA;IACA,YAAA;CACA;AAEA;IACA,sBAAA;IACA,eAAA;IACA,UAAA;IACA,uBAAA;CACA;AAEA;IACA,uBAAA;CACA;AAEA;IACA,YAAA;IACA,sBAAA;IACA,YAAA;CACA;AAEA;IACA,sBAAA;IACA,gCAAA;CACA;AAEA;IACA,aAAA;IACA,sBAAA;IACA,YAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,4BAAA;IACA,gBAAA;CACA;AAEA;IACA,wBAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,iBAAA;IACA,aAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,UAAA;IACA,yBAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,mBAAA;IACA,UAAA;CACA;AAEA;IACA,oBAAA;IACA,gBAAA;IACA,aAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,2BAAA;IACA,aAAA;IACA,4BAAA;IACA,iBAAA;IACA,gBAAA;CACA;AAEA;IACA,2BAAA;IACA,aAAA;IACA,gBAAA;IACA,4BAAA;CACA;AAEA;IACA,sBAAA;CACA;AAEA;IACA,oBAAA;CACA;;AAEA,qDAAA;AACA;AAEA;QACA,YAAA;QACA,sBAAA;QACA,YAAA;CACA;AAEA;QACA,sBAAA;QACA,gCAAA;CACA;AAEA;QACA,aAAA;QACA,sBAAA;QACA,YAAA;CACA;AAEA;QACA,gBAAA;CACA;AAEA;QACA,mBAAA;CACA;AAEA;QACA,gBAAA;CACA;CACA","file":"NestedPanel.vue","sourcesContent":["<template>\n  <span :class=\"['card-container', addClass]\" ref=\"cardContainer\">\n      <div class=\"morph\" v-show=\"localMinimized\">\n          <button :class=\"['morph-display-wrapper', 'btn', btnType, 'card-title']\" @click=\"open()\">\n              <template v-if=\"altContent\">\n                  <div v-html=\"altContent\"></div>\n              </template>\n              <template v-else>\n                  <slot name=\"header\">\n                      <div v-html=\"altContent\"></div>\n                  </slot>\n              </template>\n          </button>\n      </div>\n      <div :class=\"['card', { 'expandable-card': isExpandableCard }, borderType]\" v-show=\"!localMinimized\">\n          <div :class=\"['card-header',{'header-toggle':isExpandableCard}, cardType, borderType]\"\n               @click.prevent.stop=\"isExpandableCard && toggle()\"\n               @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\n              <div class=\"caret-wrapper\">\n                  <span :class=\"['glyphicon', localExpanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right']\" v-if=\"showCaret\"></span>\n              </div>\n              <div class=\"header-wrapper\" ref=\"headerWrapper\">\n                  <slot name=\"header\">\n                      <div :class=\"['card-title', cardType, {'text-white':!isLightBg}]\" v-html=\"headerContent\"></div>\n                  </slot>\n              </div>\n              <div class=\"button-wrapper\">\n                  <slot name=\"button\">\n                      <panel-switch v-show=\"isExpandableCard && !noSwitchBool && !showCaret\" :is-open=\"localExpanded\"\n                                    @click.native.stop.prevent=\"expand()\"\n                                    :is-light-bg=\"isLightBg\"></panel-switch>\n                      <button type=\"button\" :class=\"['close-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\"\n                              v-show=\"isSeamless ? onHeaderHover : (!noCloseBool)\"\n                              @click.stop=\"close()\">\n                          <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                      </button>\n                      <button type=\"button\" :class=\"['popup-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\"\n                              v-show=\"((this.popupUrl !== null) && (!isSeamless || onHeaderHover))\"\n                              @click.stop=\"openPopup()\">\n                          <span class=\"glyphicon glyphicon-new-window\" aria-hidden=\"true\"></span>\n                      </button>\n                  </slot>\n              </div>\n          </div>\n          <template v-if=\"preloadBool || isCached\">\n              <div class=\"card-collapse\"\n                   ref=\"panel\"\n                   v-show=\"localExpanded\"\n              >\n                  <div class=\"card-body\">\n                      <slot></slot>\n                      <retriever v-if=\"hasSrc\" ref=\"retriever\" :src=\"src\" :fragment=\"fragment\"></retriever>\n                      <panel-switch v-show=\"isExpandableCard && bottomSwitchBool\" :is-open=\"localExpanded\"\n                                    @click.native.stop.prevent=\"collapseThenScrollIntoViewIfNeeded()\"\n                      ></panel-switch>\n                  </div>\n                  <hr v-show=\"isSeamless\" />\n              </div>\n          </template>\n      </div>\n  </span>\n</template>\n\n<script>\nimport panelBase from './PanelBase';\nimport panelSwitch from './PanelSwitch.vue';\nimport retriever from '../Retriever.vue';\n\nexport default {\n  mixins: [panelBase],\n  components: {\n    panelSwitch,\n    retriever,\n  },\n  computed: {\n    showCaret() {\n      return this.isSeamless && this.expandableBool;\n    },\n    isSeamless() {\n      return this.type === 'seamless';\n    },\n    btnType() {\n      if (this.isSeamless || this.type === 'light') {\n        return 'btn-outline-secondary';\n      }\n      return `btn-outline-${this.type || 'secondary'}`;\n    },\n    borderType() {\n      if (this.isSeamless) {\n        return 'border-0';\n      } else if (this.type) {\n        if (this.type === 'light') {\n          return ''; // Bootstrap 4.x light border is almost invisible on a white page\n        }\n        return `border-${this.type}`;\n      }\n      return '';\n    },\n    cardType() {\n      if (this.isSeamless) {\n        return 'bg-white';\n      }\n      return `bg-${this.type || 'light'}`;\n    },\n    isLightBg() {\n      return this.cardType === 'bg-light' || this.cardType === 'bg-white' || this.cardType === 'bg-warning';\n    },\n    showCloseButton() {\n      if (!this.isSeamless) {\n        return !this.noCloseBool;\n      }\n      return this.onHeaderHover;\n    },\n  },\n};\n</script>\n\n<style>\n    .card-heading {\n        width: 100%;\n    }\n\n    .card-title {\n        display: inline-block;\n        font-size: 1em;\n        margin: 0;\n        vertical-align: middle;\n    }\n\n    .card-title * {\n        margin: 0px !important;\n    }\n\n    .caret-wrapper {\n        float: left;\n        display: inline-block;\n        width: 32px;\n    }\n\n    .header-wrapper {\n        display: inline-block;\n        width: calc(100% - 32px - 96px);\n    }\n\n    .button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 96px;\n    }\n\n    .header-toggle {\n        cursor: pointer;\n    }\n\n    .expandable-card {\n        margin-bottom: 0 !important;\n        margin-top: 5px;\n    }\n\n    .card-group > .card-container > .expandable-card {\n        margin-top: 0!important;\n    }\n\n    .card-seamless {\n        padding: 0;\n    }\n\n    .card.card-seamless {\n        box-shadow: none;\n        border: none;\n    }\n\n    .card-seamless > .card-heading {\n        padding: 0;\n    }\n\n    .card-seamless > .card-collapse > hr {\n        margin: 0;\n        width: calc(100% - 27px);\n    }\n\n    .card-seamless > .card-collapse > .card-body {\n        padding: 10px 0;\n    }\n\n    .card-seamless > .card-collapse > .card-body > .collapse-button {\n        position: relative;\n        top: 22px;\n    }\n\n    .card-body > .collapse-button {\n        margin-bottom: 13px;\n        margin-top: 5px;\n        opacity: 0.2;\n    }\n\n    .card-body > .collapse-button:hover {\n        opacity: 1;\n    }\n\n    .close-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n        margin-left: 3px;\n        margin-top: 2px;\n    }\n\n    .popup-button {\n        font-size: 10px !important;\n        float: right;\n        margin-top: 2px;\n        padding: 3px 8px !important;\n    }\n\n    .morph {\n        display: inline-block;\n    }\n\n    .morph-display-wrapper {\n        white-space: normal;\n    }\n\n    /* Bootstrap extra small(xs) responsive breakpoint */\n    @media (max-width: 575.98px) {\n\n        .caret-wrapper {\n            float: left;\n            display: inline-block;\n            width: 32px;\n        }\n\n        .header-wrapper {\n            display: inline-block;\n            width: calc(100% - 32px - 32px);\n        }\n\n        .button-wrapper {\n            float: right;\n            display: inline-block;\n            width: 32px;\n        }\n\n        .card-body {\n            padding: 0.5rem;\n        }\n\n        .card-collapse > hr {\n            margin-top: 1.5rem;\n        }\n\n        .card-header {\n            padding: 0.5rem;\n        }\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.card-heading {\n    width: 100%;\n}\n.card-title {\n    display: inline-block;\n    font-size: 1em;\n    margin: 0;\n    vertical-align: middle;\n}\n.card-title * {\n    margin: 0px !important;\n}\n.caret-wrapper {\n    float: left;\n    display: inline-block;\n    width: 32px;\n}\n.header-wrapper {\n    display: inline-block;\n    width: calc(100% - 32px - 96px);\n}\n.button-wrapper {\n    float: right;\n    display: inline-block;\n    width: 96px;\n}\n.header-toggle {\n    cursor: pointer;\n}\n.expandable-card {\n    margin-bottom: 0 !important;\n    margin-top: 5px;\n}\n.card-group > .card-container > .expandable-card {\n    margin-top: 0!important;\n}\n.card-seamless {\n    padding: 0;\n}\n.card.card-seamless {\n    box-shadow: none;\n    border: none;\n}\n.card-seamless > .card-heading {\n    padding: 0;\n}\n.card-seamless > .card-collapse > hr {\n    margin: 0;\n    width: calc(100% - 27px);\n}\n.card-seamless > .card-collapse > .card-body {\n    padding: 10px 0;\n}\n.card-seamless > .card-collapse > .card-body > .collapse-button {\n    position: relative;\n    top: 22px;\n}\n.card-body > .collapse-button {\n    margin-bottom: 13px;\n    margin-top: 5px;\n    opacity: 0.2;\n}\n.card-body > .collapse-button:hover {\n    opacity: 1;\n}\n.close-button {\n    font-size: 10px !important;\n    float: right;\n    padding: 3px 8px !important;\n    margin-left: 3px;\n    margin-top: 2px;\n}\n.popup-button {\n    font-size: 10px !important;\n    float: right;\n    margin-top: 2px;\n    padding: 3px 8px !important;\n}\n.morph {\n    display: inline-block;\n}\n.morph-display-wrapper {\n    white-space: normal;\n}\n\n/* Bootstrap extra small(xs) responsive breakpoint */\n@media (max-width: 575.98px) {\n.caret-wrapper {\n        float: left;\n        display: inline-block;\n        width: 32px;\n}\n.header-wrapper {\n        display: inline-block;\n        width: calc(100% - 32px - 32px);\n}\n.button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 32px;\n}\n.card-body {\n        padding: 0.5rem;\n}\n.card-collapse > hr {\n        margin-top: 1.5rem;\n}\n.card-header {\n        padding: 0.5rem;\n}\n}\n", "", {"version":3,"sources":["/./src/panels/NestedPanel.vue?0e3c4abb"],"names":[],"mappings":";AAqHA;IACA,YAAA;CACA;AAEA;IACA,sBAAA;IACA,eAAA;IACA,UAAA;IACA,uBAAA;CACA;AAEA;IACA,uBAAA;CACA;AAEA;IACA,YAAA;IACA,sBAAA;IACA,YAAA;CACA;AAEA;IACA,sBAAA;IACA,gCAAA;CACA;AAEA;IACA,aAAA;IACA,sBAAA;IACA,YAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,4BAAA;IACA,gBAAA;CACA;AAEA;IACA,wBAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,iBAAA;IACA,aAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,UAAA;IACA,yBAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,mBAAA;IACA,UAAA;CACA;AAEA;IACA,oBAAA;IACA,gBAAA;IACA,aAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,2BAAA;IACA,aAAA;IACA,4BAAA;IACA,iBAAA;IACA,gBAAA;CACA;AAEA;IACA,2BAAA;IACA,aAAA;IACA,gBAAA;IACA,4BAAA;CACA;AAEA;IACA,sBAAA;CACA;AAEA;IACA,oBAAA;CACA;;AAEA,qDAAA;AACA;AAEA;QACA,YAAA;QACA,sBAAA;QACA,YAAA;CACA;AAEA;QACA,sBAAA;QACA,gCAAA;CACA;AAEA;QACA,aAAA;QACA,sBAAA;QACA,YAAA;CACA;AAEA;QACA,gBAAA;CACA;AAEA;QACA,mBAAA;CACA;AAEA;QACA,gBAAA;CACA;CACA","file":"NestedPanel.vue","sourcesContent":["<template>\n  <span :class=\"['card-container', addClass]\" ref=\"cardContainer\">\n      <div class=\"morph\" v-show=\"localMinimized\">\n          <button :class=\"['morph-display-wrapper', 'btn', btnType, 'card-title']\" @click=\"open()\">\n              <slot name=\"_alt\">\n                  <slot name=\"_header\">\n                      <slot name=\"header\"></slot>\n                  </slot>\n              </slot>\n          </button>\n      </div>\n      <div :class=\"['card', { 'expandable-card': isExpandableCard }, borderType]\" v-show=\"!localMinimized\">\n          <div :class=\"['card-header',{'header-toggle':isExpandableCard}, cardType, borderType]\"\n               @click.prevent.stop=\"isExpandableCard && toggle()\"\n               @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\n              <div class=\"caret-wrapper\">\n                  <span :class=\"['glyphicon', localExpanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right']\" v-if=\"showCaret\"></span>\n              </div>\n              <div class=\"header-wrapper\" ref=\"headerWrapper\">\n                  <slot name=\"header\">\n                      <div :class=\"['card-title', cardType, {'text-white':!isLightBg}]\">\n                          <slot name=\"_header\"></slot>\n                      </div>\n                  </slot>\n              </div>\n              <div class=\"button-wrapper\">\n                  <slot name=\"button\">\n                      <panel-switch v-show=\"isExpandableCard && !noSwitchBool && !showCaret\" :is-open=\"localExpanded\"\n                                    @click.native.stop.prevent=\"expand()\"\n                                    :is-light-bg=\"isLightBg\"></panel-switch>\n                      <button type=\"button\" :class=\"['close-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\"\n                              v-show=\"isSeamless ? onHeaderHover : (!noCloseBool)\"\n                              @click.stop=\"close()\">\n                          <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                      </button>\n                      <button type=\"button\" :class=\"['popup-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\"\n                              v-show=\"((this.popupUrl !== null) && (!isSeamless || onHeaderHover))\"\n                              @click.stop=\"openPopup()\">\n                          <span class=\"glyphicon glyphicon-new-window\" aria-hidden=\"true\"></span>\n                      </button>\n                  </slot>\n              </div>\n          </div>\n          <template v-if=\"preloadBool || isCached\">\n              <div class=\"card-collapse\"\n                   ref=\"panel\"\n                   v-show=\"localExpanded\"\n              >\n                  <div class=\"card-body\">\n                      <slot></slot>\n                      <retriever v-if=\"hasSrc\" ref=\"retriever\" :src=\"src\" :fragment=\"fragment\"></retriever>\n                      <panel-switch v-show=\"isExpandableCard && bottomSwitchBool\" :is-open=\"localExpanded\"\n                                    @click.native.stop.prevent=\"collapseThenScrollIntoViewIfNeeded()\"\n                      ></panel-switch>\n                  </div>\n                  <hr v-show=\"isSeamless\" />\n              </div>\n          </template>\n      </div>\n  </span>\n</template>\n\n<script>\nimport panelBase from './PanelBase';\nimport panelSwitch from './PanelSwitch.vue';\nimport retriever from '../Retriever.vue';\n\nexport default {\n  mixins: [panelBase],\n  components: {\n    panelSwitch,\n    retriever,\n  },\n  computed: {\n    showCaret() {\n      return this.isSeamless && this.expandableBool;\n    },\n    isSeamless() {\n      return this.type === 'seamless';\n    },\n    btnType() {\n      if (this.isSeamless || this.type === 'light') {\n        return 'btn-outline-secondary';\n      }\n      return `btn-outline-${this.type || 'secondary'}`;\n    },\n    borderType() {\n      if (this.isSeamless) {\n        return 'border-0';\n      } else if (this.type) {\n        if (this.type === 'light') {\n          return ''; // Bootstrap 4.x light border is almost invisible on a white page\n        }\n        return `border-${this.type}`;\n      }\n      return '';\n    },\n    cardType() {\n      if (this.isSeamless) {\n        return 'bg-white';\n      }\n      return `bg-${this.type || 'light'}`;\n    },\n    isLightBg() {\n      return this.cardType === 'bg-light' || this.cardType === 'bg-white' || this.cardType === 'bg-warning';\n    },\n    showCloseButton() {\n      if (!this.isSeamless) {\n        return !this.noCloseBool;\n      }\n      return this.onHeaderHover;\n    },\n  },\n};\n</script>\n\n<style>\n    .card-heading {\n        width: 100%;\n    }\n\n    .card-title {\n        display: inline-block;\n        font-size: 1em;\n        margin: 0;\n        vertical-align: middle;\n    }\n\n    .card-title * {\n        margin: 0px !important;\n    }\n\n    .caret-wrapper {\n        float: left;\n        display: inline-block;\n        width: 32px;\n    }\n\n    .header-wrapper {\n        display: inline-block;\n        width: calc(100% - 32px - 96px);\n    }\n\n    .button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 96px;\n    }\n\n    .header-toggle {\n        cursor: pointer;\n    }\n\n    .expandable-card {\n        margin-bottom: 0 !important;\n        margin-top: 5px;\n    }\n\n    .card-group > .card-container > .expandable-card {\n        margin-top: 0!important;\n    }\n\n    .card-seamless {\n        padding: 0;\n    }\n\n    .card.card-seamless {\n        box-shadow: none;\n        border: none;\n    }\n\n    .card-seamless > .card-heading {\n        padding: 0;\n    }\n\n    .card-seamless > .card-collapse > hr {\n        margin: 0;\n        width: calc(100% - 27px);\n    }\n\n    .card-seamless > .card-collapse > .card-body {\n        padding: 10px 0;\n    }\n\n    .card-seamless > .card-collapse > .card-body > .collapse-button {\n        position: relative;\n        top: 22px;\n    }\n\n    .card-body > .collapse-button {\n        margin-bottom: 13px;\n        margin-top: 5px;\n        opacity: 0.2;\n    }\n\n    .card-body > .collapse-button:hover {\n        opacity: 1;\n    }\n\n    .close-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n        margin-left: 3px;\n        margin-top: 2px;\n    }\n\n    .popup-button {\n        font-size: 10px !important;\n        float: right;\n        margin-top: 2px;\n        padding: 3px 8px !important;\n    }\n\n    .morph {\n        display: inline-block;\n    }\n\n    .morph-display-wrapper {\n        white-space: normal;\n    }\n\n    /* Bootstrap extra small(xs) responsive breakpoint */\n    @media (max-width: 575.98px) {\n\n        .caret-wrapper {\n            float: left;\n            display: inline-block;\n            width: 32px;\n        }\n\n        .header-wrapper {\n            display: inline-block;\n            width: calc(100% - 32px - 32px);\n        }\n\n        .button-wrapper {\n            float: right;\n            display: inline-block;\n            width: 32px;\n        }\n\n        .card-body {\n            padding: 0.5rem;\n        }\n\n        .card-collapse > hr {\n            margin-top: 1.5rem;\n        }\n\n        .card-header {\n            padding: 0.5rem;\n        }\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
-/* 213 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -27583,15 +14049,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _PanelBase = __webpack_require__(214);
+	var _PanelBase = __webpack_require__(102);
 	
 	var _PanelBase2 = _interopRequireDefault(_PanelBase);
 	
-	var _PanelSwitch = __webpack_require__(220);
+	var _PanelSwitch = __webpack_require__(103);
 	
 	var _PanelSwitch2 = _interopRequireDefault(_PanelSwitch);
 	
-	var _Retriever = __webpack_require__(225);
+	var _Retriever = __webpack_require__(108);
 	
 	var _Retriever2 = _interopRequireDefault(_Retriever);
 	
@@ -27705,13 +14171,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 	//
 	//
-	//
 
 /***/ }),
-/* 214 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -27719,24 +14184,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _utils = __webpack_require__(38);
 	
-	var _markdown = __webpack_require__(90);
-	
-	var _markdown2 = _interopRequireDefault(_markdown);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var slugify = __webpack_require__(215);
-	
 	exports.default = {
 	  props: {
-	    header: {
-	      type: String,
-	      default: ''
-	    },
-	    alt: {
-	      type: String,
-	      default: ''
-	    },
 	    type: {
 	      type: String,
 	      default: null
@@ -27813,14 +14262,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    },
 	
 	    // Vue 2.0 coerce migration end
+	    hasHeaderBool: function hasHeaderBool() {
+	      return this.$slots._header || this.$slots.header;
+	    },
 	    isExpandableCard: function isExpandableCard() {
 	      return this.expandableBool;
-	    },
-	    headerContent: function headerContent() {
-	      return _markdown2.default.render(this.header);
-	    },
-	    altContent: function altContent() {
-	      return this.alt && _markdown2.default.render(this.alt) || _markdown2.default.render(this.header);
 	    },
 	    hasSrc: function hasSrc() {
 	      return this.src && this.src.length > 0;
@@ -27889,738 +14335,24 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.localExpanded = notExpandableNoExpand || this.expandedBool; // Ensure this expr ordering is maintained
 	    this.isCached = this.localExpanded; // If it is expanded, it will be cached.
 	    this.localMinimized = this.minimizedBool;
-	  },
-	  mounted: function mounted() {
-	    if (this.headerContent) {
-	      var panelHeaderText = jQuery(this.headerContent).wrap('<div></div>').parent().find(':header').text();
-	      if (panelHeaderText) {
-	        this.$refs.cardContainer.setAttribute('id', slugify(panelHeaderText, { decamelize: false }));
-	      }
-	    } else if (this.$refs.headerWrapper.innerHTML) {
-	      var header = jQuery(this.$refs.headerWrapper.innerHTML).wrap('<div></div>').parent().find(':header');
-	      if (header.length > 0) {
-	        this.$refs.cardContainer.setAttribute('id', header[0].id);
-	      }
-	    }
 	  }
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(72)))
 
 /***/ }),
-/* 215 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-	const deburr = __webpack_require__(216);
-	const escapeStringRegexp = __webpack_require__(217);
-	const builtinReplacements = __webpack_require__(218);
-	const builtinOverridableReplacements = __webpack_require__(219);
-	
-	const decamelize = string => {
-		return string
-			.replace(/([a-z\d])([A-Z])/g, '$1 $2')
-			.replace(/([A-Z]+)([A-Z][a-z\d]+)/g, '$1 $2');
-	};
-	
-	const doCustomReplacements = (string, replacements) => {
-		for (const [key, value] of replacements) {
-			string = string.replace(new RegExp(escapeStringRegexp(key), 'g'), value);
-		}
-	
-		return string;
-	};
-	
-	const removeMootSeparators = (string, separator) => {
-		return string
-			.replace(new RegExp(`${separator}{2,}`, 'g'), separator)
-			.replace(new RegExp(`^${separator}|${separator}$`, 'g'), '');
-	};
-	
-	module.exports = (string, options) => {
-		if (typeof string !== 'string') {
-			throw new TypeError(`Expected a string, got \`${typeof string}\``);
-		}
-	
-		options = Object.assign({
-			separator: '-',
-			lowercase: true,
-			decamelize: true,
-			customReplacements: []
-		}, options);
-	
-		const separator = escapeStringRegexp(options.separator);
-		const customReplacements = new Map([
-			...builtinOverridableReplacements,
-			...options.customReplacements,
-			...builtinReplacements
-		]);
-	
-		string = doCustomReplacements(string, customReplacements);
-		string = deburr(string);
-		string = string.normalize('NFKD');
-	
-		if (options.decamelize) {
-			string = decamelize(string);
-		}
-	
-		let patternSlug = /[^a-zA-Z\d]+/g;
-	
-		if (options.lowercase) {
-			string = string.toLowerCase();
-			patternSlug = /[^a-z\d]+/g;
-		}
-	
-		string = string.replace(patternSlug, separator);
-		string = string.replace(/\\/g, '');
-		string = removeMootSeparators(string, separator);
-	
-		return string;
-	};
-
-
-/***/ }),
-/* 216 */
-/***/ (function(module, exports) {
-
-	/* WEBPACK VAR INJECTION */(function(global) {/**
-	 * lodash (Custom Build) <https://lodash.com/>
-	 * Build: `lodash modularize exports="npm" -o ./`
-	 * Copyright jQuery Foundation and other contributors <https://jquery.org/>
-	 * Released under MIT license <https://lodash.com/license>
-	 * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
-	 * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-	 */
-	
-	/** Used as references for various `Number` constants. */
-	var INFINITY = 1 / 0;
-	
-	/** `Object#toString` result references. */
-	var symbolTag = '[object Symbol]';
-	
-	/** Used to match Latin Unicode letters (excluding mathematical operators). */
-	var reLatin = /[\xc0-\xd6\xd8-\xf6\xf8-\xff\u0100-\u017f]/g;
-	
-	/** Used to compose unicode character classes. */
-	var rsComboMarksRange = '\\u0300-\\u036f\\ufe20-\\ufe23',
-	    rsComboSymbolsRange = '\\u20d0-\\u20f0';
-	
-	/** Used to compose unicode capture groups. */
-	var rsCombo = '[' + rsComboMarksRange + rsComboSymbolsRange + ']';
-	
-	/**
-	 * Used to match [combining diacritical marks](https://en.wikipedia.org/wiki/Combining_Diacritical_Marks) and
-	 * [combining diacritical marks for symbols](https://en.wikipedia.org/wiki/Combining_Diacritical_Marks_for_Symbols).
-	 */
-	var reComboMark = RegExp(rsCombo, 'g');
-	
-	/** Used to map Latin Unicode letters to basic Latin letters. */
-	var deburredLetters = {
-	  // Latin-1 Supplement block.
-	  '\xc0': 'A',  '\xc1': 'A', '\xc2': 'A', '\xc3': 'A', '\xc4': 'A', '\xc5': 'A',
-	  '\xe0': 'a',  '\xe1': 'a', '\xe2': 'a', '\xe3': 'a', '\xe4': 'a', '\xe5': 'a',
-	  '\xc7': 'C',  '\xe7': 'c',
-	  '\xd0': 'D',  '\xf0': 'd',
-	  '\xc8': 'E',  '\xc9': 'E', '\xca': 'E', '\xcb': 'E',
-	  '\xe8': 'e',  '\xe9': 'e', '\xea': 'e', '\xeb': 'e',
-	  '\xcc': 'I',  '\xcd': 'I', '\xce': 'I', '\xcf': 'I',
-	  '\xec': 'i',  '\xed': 'i', '\xee': 'i', '\xef': 'i',
-	  '\xd1': 'N',  '\xf1': 'n',
-	  '\xd2': 'O',  '\xd3': 'O', '\xd4': 'O', '\xd5': 'O', '\xd6': 'O', '\xd8': 'O',
-	  '\xf2': 'o',  '\xf3': 'o', '\xf4': 'o', '\xf5': 'o', '\xf6': 'o', '\xf8': 'o',
-	  '\xd9': 'U',  '\xda': 'U', '\xdb': 'U', '\xdc': 'U',
-	  '\xf9': 'u',  '\xfa': 'u', '\xfb': 'u', '\xfc': 'u',
-	  '\xdd': 'Y',  '\xfd': 'y', '\xff': 'y',
-	  '\xc6': 'Ae', '\xe6': 'ae',
-	  '\xde': 'Th', '\xfe': 'th',
-	  '\xdf': 'ss',
-	  // Latin Extended-A block.
-	  '\u0100': 'A',  '\u0102': 'A', '\u0104': 'A',
-	  '\u0101': 'a',  '\u0103': 'a', '\u0105': 'a',
-	  '\u0106': 'C',  '\u0108': 'C', '\u010a': 'C', '\u010c': 'C',
-	  '\u0107': 'c',  '\u0109': 'c', '\u010b': 'c', '\u010d': 'c',
-	  '\u010e': 'D',  '\u0110': 'D', '\u010f': 'd', '\u0111': 'd',
-	  '\u0112': 'E',  '\u0114': 'E', '\u0116': 'E', '\u0118': 'E', '\u011a': 'E',
-	  '\u0113': 'e',  '\u0115': 'e', '\u0117': 'e', '\u0119': 'e', '\u011b': 'e',
-	  '\u011c': 'G',  '\u011e': 'G', '\u0120': 'G', '\u0122': 'G',
-	  '\u011d': 'g',  '\u011f': 'g', '\u0121': 'g', '\u0123': 'g',
-	  '\u0124': 'H',  '\u0126': 'H', '\u0125': 'h', '\u0127': 'h',
-	  '\u0128': 'I',  '\u012a': 'I', '\u012c': 'I', '\u012e': 'I', '\u0130': 'I',
-	  '\u0129': 'i',  '\u012b': 'i', '\u012d': 'i', '\u012f': 'i', '\u0131': 'i',
-	  '\u0134': 'J',  '\u0135': 'j',
-	  '\u0136': 'K',  '\u0137': 'k', '\u0138': 'k',
-	  '\u0139': 'L',  '\u013b': 'L', '\u013d': 'L', '\u013f': 'L', '\u0141': 'L',
-	  '\u013a': 'l',  '\u013c': 'l', '\u013e': 'l', '\u0140': 'l', '\u0142': 'l',
-	  '\u0143': 'N',  '\u0145': 'N', '\u0147': 'N', '\u014a': 'N',
-	  '\u0144': 'n',  '\u0146': 'n', '\u0148': 'n', '\u014b': 'n',
-	  '\u014c': 'O',  '\u014e': 'O', '\u0150': 'O',
-	  '\u014d': 'o',  '\u014f': 'o', '\u0151': 'o',
-	  '\u0154': 'R',  '\u0156': 'R', '\u0158': 'R',
-	  '\u0155': 'r',  '\u0157': 'r', '\u0159': 'r',
-	  '\u015a': 'S',  '\u015c': 'S', '\u015e': 'S', '\u0160': 'S',
-	  '\u015b': 's',  '\u015d': 's', '\u015f': 's', '\u0161': 's',
-	  '\u0162': 'T',  '\u0164': 'T', '\u0166': 'T',
-	  '\u0163': 't',  '\u0165': 't', '\u0167': 't',
-	  '\u0168': 'U',  '\u016a': 'U', '\u016c': 'U', '\u016e': 'U', '\u0170': 'U', '\u0172': 'U',
-	  '\u0169': 'u',  '\u016b': 'u', '\u016d': 'u', '\u016f': 'u', '\u0171': 'u', '\u0173': 'u',
-	  '\u0174': 'W',  '\u0175': 'w',
-	  '\u0176': 'Y',  '\u0177': 'y', '\u0178': 'Y',
-	  '\u0179': 'Z',  '\u017b': 'Z', '\u017d': 'Z',
-	  '\u017a': 'z',  '\u017c': 'z', '\u017e': 'z',
-	  '\u0132': 'IJ', '\u0133': 'ij',
-	  '\u0152': 'Oe', '\u0153': 'oe',
-	  '\u0149': "'n", '\u017f': 'ss'
-	};
-	
-	/** Detect free variable `global` from Node.js. */
-	var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
-	
-	/** Detect free variable `self`. */
-	var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
-	
-	/** Used as a reference to the global object. */
-	var root = freeGlobal || freeSelf || Function('return this')();
-	
-	/**
-	 * The base implementation of `_.propertyOf` without support for deep paths.
-	 *
-	 * @private
-	 * @param {Object} object The object to query.
-	 * @returns {Function} Returns the new accessor function.
-	 */
-	function basePropertyOf(object) {
-	  return function(key) {
-	    return object == null ? undefined : object[key];
-	  };
-	}
-	
-	/**
-	 * Used by `_.deburr` to convert Latin-1 Supplement and Latin Extended-A
-	 * letters to basic Latin letters.
-	 *
-	 * @private
-	 * @param {string} letter The matched letter to deburr.
-	 * @returns {string} Returns the deburred letter.
-	 */
-	var deburrLetter = basePropertyOf(deburredLetters);
-	
-	/** Used for built-in method references. */
-	var objectProto = Object.prototype;
-	
-	/**
-	 * Used to resolve the
-	 * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
-	 * of values.
-	 */
-	var objectToString = objectProto.toString;
-	
-	/** Built-in value references. */
-	var Symbol = root.Symbol;
-	
-	/** Used to convert symbols to primitives and strings. */
-	var symbolProto = Symbol ? Symbol.prototype : undefined,
-	    symbolToString = symbolProto ? symbolProto.toString : undefined;
-	
-	/**
-	 * The base implementation of `_.toString` which doesn't convert nullish
-	 * values to empty strings.
-	 *
-	 * @private
-	 * @param {*} value The value to process.
-	 * @returns {string} Returns the string.
-	 */
-	function baseToString(value) {
-	  // Exit early for strings to avoid a performance hit in some environments.
-	  if (typeof value == 'string') {
-	    return value;
-	  }
-	  if (isSymbol(value)) {
-	    return symbolToString ? symbolToString.call(value) : '';
-	  }
-	  var result = (value + '');
-	  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
-	}
-	
-	/**
-	 * Checks if `value` is object-like. A value is object-like if it's not `null`
-	 * and has a `typeof` result of "object".
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.0.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
-	 * @example
-	 *
-	 * _.isObjectLike({});
-	 * // => true
-	 *
-	 * _.isObjectLike([1, 2, 3]);
-	 * // => true
-	 *
-	 * _.isObjectLike(_.noop);
-	 * // => false
-	 *
-	 * _.isObjectLike(null);
-	 * // => false
-	 */
-	function isObjectLike(value) {
-	  return !!value && typeof value == 'object';
-	}
-	
-	/**
-	 * Checks if `value` is classified as a `Symbol` primitive or object.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.0.0
-	 * @category Lang
-	 * @param {*} value The value to check.
-	 * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
-	 * @example
-	 *
-	 * _.isSymbol(Symbol.iterator);
-	 * // => true
-	 *
-	 * _.isSymbol('abc');
-	 * // => false
-	 */
-	function isSymbol(value) {
-	  return typeof value == 'symbol' ||
-	    (isObjectLike(value) && objectToString.call(value) == symbolTag);
-	}
-	
-	/**
-	 * Converts `value` to a string. An empty string is returned for `null`
-	 * and `undefined` values. The sign of `-0` is preserved.
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 4.0.0
-	 * @category Lang
-	 * @param {*} value The value to process.
-	 * @returns {string} Returns the string.
-	 * @example
-	 *
-	 * _.toString(null);
-	 * // => ''
-	 *
-	 * _.toString(-0);
-	 * // => '-0'
-	 *
-	 * _.toString([1, 2, 3]);
-	 * // => '1,2,3'
-	 */
-	function toString(value) {
-	  return value == null ? '' : baseToString(value);
-	}
-	
-	/**
-	 * Deburrs `string` by converting
-	 * [Latin-1 Supplement](https://en.wikipedia.org/wiki/Latin-1_Supplement_(Unicode_block)#Character_table)
-	 * and [Latin Extended-A](https://en.wikipedia.org/wiki/Latin_Extended-A)
-	 * letters to basic Latin letters and removing
-	 * [combining diacritical marks](https://en.wikipedia.org/wiki/Combining_Diacritical_Marks).
-	 *
-	 * @static
-	 * @memberOf _
-	 * @since 3.0.0
-	 * @category String
-	 * @param {string} [string=''] The string to deburr.
-	 * @returns {string} Returns the deburred string.
-	 * @example
-	 *
-	 * _.deburr('déjà vu');
-	 * // => 'deja vu'
-	 */
-	function deburr(string) {
-	  string = toString(string);
-	  return string && string.replace(reLatin, deburrLetter).replace(reComboMark, '');
-	}
-	
-	module.exports = deburr;
-	
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
-
-/***/ }),
-/* 217 */
-/***/ (function(module, exports) {
-
-	'use strict';
-	
-	var matchOperatorsRe = /[|\\{}()[\]^$+*?.]/g;
-	
-	module.exports = function (str) {
-		if (typeof str !== 'string') {
-			throw new TypeError('Expected a string');
-		}
-	
-		return str.replace(matchOperatorsRe, '\\$&');
-	};
-
-
-/***/ }),
-/* 218 */
-/***/ (function(module, exports) {
-
-	'use strict';
-	
-	module.exports = [
-		// German umlauts
-		['ß', 'ss'],
-		['ä', 'ae'],
-		['Ä', 'Ae'],
-		['ö', 'oe'],
-		['Ö', 'Oe'],
-		['ü', 'ue'],
-		['Ü', 'Ue'],
-	
-		// Vietnamese
-		['à', 'a'],
-		['À', 'A'],
-		['á', 'a'],
-		['Á', 'A'],
-		['â', 'a'],
-		['Â', 'A'],
-		['ã', 'a'],
-		['Ã', 'A'],
-		['è', 'e'],
-		['È', 'E'],
-		['é', 'e'],
-		['É', 'E'],
-		['ê', 'e'],
-		['Ê', 'E'],
-		['ì', 'i'],
-		['Ì', 'I'],
-		['í', 'i'],
-		['Í', 'I'],
-		['ò', 'o'],
-		['Ò', 'O'],
-		['ó', 'o'],
-		['Ó', 'O'],
-		['ô', 'o'],
-		['Ô', 'O'],
-		['õ', 'o'],
-		['Õ', 'O'],
-		['ù', 'u'],
-		['Ù', 'U'],
-		['ú', 'u'],
-		['Ú', 'U'],
-		['ý', 'y'],
-		['Ý', 'Y'],
-		['ă', 'a'],
-		['Ă', 'A'],
-		['Đ', 'D'],
-		['đ', 'd'],
-		['ĩ', 'i'],
-		['Ĩ', 'I'],
-		['ũ', 'u'],
-		['Ũ', 'U'],
-		['ơ', 'o'],
-		['Ơ', 'O'],
-		['ư', 'u'],
-		['Ư', 'U'],
-		['ạ', 'a'],
-		['Ạ', 'A'],
-		['ả', 'a'],
-		['Ả', 'A'],
-		['ấ', 'a'],
-		['Ấ', 'A'],
-		['ầ', 'a'],
-		['Ầ', 'A'],
-		['ẩ', 'a'],
-		['Ẩ', 'A'],
-		['ẫ', 'a'],
-		['Ẫ', 'A'],
-		['ậ', 'a'],
-		['Ậ', 'A'],
-		['ắ', 'a'],
-		['Ắ', 'A'],
-		['ằ', 'a'],
-		['Ằ', 'A'],
-		['ẳ', 'a'],
-		['Ẳ', 'A'],
-		['ẵ', 'a'],
-		['Ẵ', 'A'],
-		['ặ', 'a'],
-		['Ặ', 'A'],
-		['ẹ', 'e'],
-		['Ẹ', 'E'],
-		['ẻ', 'e'],
-		['Ẻ', 'E'],
-		['ẽ', 'e'],
-		['Ẽ', 'E'],
-		['ế', 'e'],
-		['Ế', 'E'],
-		['ề', 'e'],
-		['Ề', 'E'],
-		['ể', 'e'],
-		['Ể', 'E'],
-		['ễ', 'e'],
-		['Ễ', 'E'],
-		['ệ', 'e'],
-		['Ệ', 'E'],
-		['ỉ', 'i'],
-		['Ỉ', 'I'],
-		['ị', 'i'],
-		['Ị', 'I'],
-		['ọ', 'o'],
-		['Ọ', 'O'],
-		['ỏ', 'o'],
-		['Ỏ', 'O'],
-		['ố', 'o'],
-		['Ố', 'O'],
-		['ồ', 'o'],
-		['Ồ', 'O'],
-		['ổ', 'o'],
-		['Ổ', 'O'],
-		['ỗ', 'o'],
-		['Ỗ', 'O'],
-		['ộ', 'o'],
-		['Ộ', 'O'],
-		['ớ', 'o'],
-		['Ớ', 'O'],
-		['ờ', 'o'],
-		['Ờ', 'O'],
-		['ở', 'o'],
-		['Ở', 'O'],
-		['ỡ', 'o'],
-		['Ỡ', 'O'],
-		['ợ', 'o'],
-		['Ợ', 'O'],
-		['ụ', 'u'],
-		['Ụ', 'U'],
-		['ủ', 'u'],
-		['Ủ', 'U'],
-		['ứ', 'u'],
-		['Ứ', 'U'],
-		['ừ', 'u'],
-		['Ừ', 'U'],
-		['ử', 'u'],
-		['Ử', 'U'],
-		['ữ', 'u'],
-		['Ữ', 'U'],
-		['ự', 'u'],
-		['Ự', 'U'],
-		['ỳ', 'y'],
-		['Ỳ', 'Y'],
-		['ỵ', 'y'],
-		['Ỵ', 'Y'],
-		['ỷ', 'y'],
-		['Ỷ', 'Y'],
-		['ỹ', 'y'],
-		['Ỹ', 'Y'],
-	
-		// Arabic
-		['ء', 'e'],
-		['آ', 'a'],
-		['أ', 'a'],
-		['ؤ', 'w'],
-		['إ', 'i'],
-		['ئ', 'y'],
-		['ا', 'a'],
-		['ب', 'b'],
-		['ة', 't'],
-		['ت', 't'],
-		['ث', 'th'],
-		['ج', 'j'],
-		['ح', 'h'],
-		['خ', 'kh'],
-		['د', 'd'],
-		['ذ', 'dh'],
-		['ر', 'r'],
-		['ز', 'z'],
-		['س', 's'],
-		['ش', 'sh'],
-		['ص', 's'],
-		['ض', 'd'],
-		['ط', 't'],
-		['ظ', 'z'],
-		['ع', 'e'],
-		['غ', 'gh'],
-		['ـ', '_'],
-		['ف', 'f'],
-		['ق', 'q'],
-		['ك', 'k'],
-		['ل', 'l'],
-		['م', 'm'],
-		['ن', 'n'],
-		['ه', 'h'],
-		['و', 'w'],
-		['ى', 'a'],
-		['ي', 'y'],
-		['َ‎', 'a'],
-		['ُ', 'u'],
-		['ِ‎', 'i'],
-		['٠', '0'],
-		['١', '1'],
-		['٢', '2'],
-		['٣', '3'],
-		['٤', '4'],
-		['٥', '5'],
-		['٦', '6'],
-		['٧', '7'],
-		['٨', '8'],
-		['٩', '9'],
-	
-		// Persian / Farsi
-		['چ', 'ch'],
-		['ک', 'k'],
-		['گ', 'g'],
-		['پ', 'p'],
-		['ژ', 'zh'],
-		['ی', 'y'],
-		['۰', '0'],
-		['۱', '1'],
-		['۲', '2'],
-		['۳', '3'],
-		['۴', '4'],
-		['۵', '5'],
-		['۶', '6'],
-		['۷', '7'],
-		['۸', '8'],
-		['۹', '9'],
-	
-		// Pashto
-		['ټ', 'p'],
-		['ځ', 'z'],
-		['څ', 'c'],
-		['ډ', 'd'],
-		['ﺫ', 'd'],
-		['ﺭ', 'r'],
-		['ړ', 'r'],
-		['ﺯ', 'z'],
-		['ږ', 'g'],
-		['ښ', 'x'],
-		['ګ', 'g'],
-		['ڼ', 'n'],
-		['ۀ', 'e'],
-		['ې', 'e'],
-		['ۍ', 'ai'],
-	
-		// Urdu
-		['ٹ', 't'],
-		['ڈ', 'd'],
-		['ڑ', 'r'],
-		['ں', 'n'],
-		['ہ', 'h'],
-		['ھ', 'h'],
-		['ے', 'e'],
-	
-		// Russian
-		['А', 'A'],
-		['а', 'a'],
-		['Б', 'B'],
-		['б', 'b'],
-		['В', 'V'],
-		['в', 'v'],
-		['Г', 'G'],
-		['г', 'g'],
-		['Д', 'D'],
-		['д', 'd'],
-		['Е', 'E'],
-		['е', 'e'],
-		['Ж', 'Zh'],
-		['ж', 'zh'],
-		['З', 'Z'],
-		['з', 'z'],
-		['И', 'I'],
-		['и', 'i'],
-		['Й', 'J'],
-		['й', 'j'],
-		['К', 'K'],
-		['к', 'k'],
-		['Л', 'L'],
-		['л', 'l'],
-		['М', 'M'],
-		['м', 'm'],
-		['Н', 'N'],
-		['н', 'n'],
-		['О', 'O'],
-		['о', 'o'],
-		['П', 'P'],
-		['п', 'p'],
-		['Р', 'R'],
-		['р', 'r'],
-		['С', 'S'],
-		['с', 's'],
-		['Т', 'T'],
-		['т', 't'],
-		['У', 'U'],
-		['у', 'u'],
-		['Ф', 'F'],
-		['ф', 'f'],
-		['Х', 'H'],
-		['х', 'h'],
-		['Ц', 'Cz'],
-		['ц', 'cz'],
-		['Ч', 'Ch'],
-		['ч', 'ch'],
-		['Ш', 'Sh'],
-		['ш', 'sh'],
-		['Щ', 'Shh'],
-		['щ', 'shh'],
-		['Ъ', ''],
-		['ъ', ''],
-		['Ы', 'Y'],
-		['ы', 'y'],
-		['Ь', ''],
-		['ь', ''],
-		['Э', 'E'],
-		['э', 'e'],
-		['Ю', 'Yu'],
-		['ю', 'yu'],
-		['Я', 'Ya'],
-		['я', 'ya'],
-		['Ё', 'Yo'],
-		['ё', 'yo'],
-	
-		// Romanian
-		['ș', 's'],
-		['Ș', 's'],
-		['ț', 't'],
-		['Ț', 't'],
-	
-		// Turkish
-		['ş', 's'],
-		['Ş', 's'],
-		['ç', 'c'],
-		['Ç', 'c'],
-		['ğ', 'g'],
-		['Ğ', 'g'],
-		['ı', 'i'],
-		['İ', 'i']
-	];
-
-
-/***/ }),
-/* 219 */
-/***/ (function(module, exports) {
-
-	'use strict';
-	
-	module.exports = [
-		['&', ' and '],
-		['🦄', ' unicorn '],
-		['♥', ' love ']
-	];
-
-
-/***/ }),
-/* 220 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(221)
+	__webpack_require__(104)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(223)
+	__vue_exports__ = __webpack_require__(106)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(224)
+	var __vue_template__ = __webpack_require__(107)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -28654,13 +14386,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 221 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(222);
+	var content = __webpack_require__(105);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -28680,7 +14412,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 222 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -28694,7 +14426,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 223 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -28741,7 +14473,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 
 /***/ }),
-/* 224 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -28768,17 +14500,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 225 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(226)
+	__vue_exports__ = __webpack_require__(109)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(227)
+	var __vue_template__ = __webpack_require__(110)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -28812,7 +14544,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 226 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -28909,7 +14641,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(72)))
 
 /***/ }),
-/* 227 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -28923,7 +14655,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 228 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -28945,15 +14677,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        _vm.open()
 	      }
 	    }
-	  }, [(_vm.altContent) ? [_c('div', {
-	    domProps: {
-	      "innerHTML": _vm._s(_vm.altContent)
-	    }
-	  })] : [_vm._t("header", [_c('div', {
-	    domProps: {
-	      "innerHTML": _vm._s(_vm.altContent)
-	    }
-	  })])]], 2)]), _vm._v(" "), _c('div', {
+	  }, [_vm._t("_alt", [_vm._t("_header", [_vm._t("header")])])], 2)]), _vm._v(" "), _c('div', {
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
@@ -28990,11 +14714,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }, [_vm._t("header", [_c('div', {
 	    class: ['card-title', _vm.cardType, {
 	      'text-white': !_vm.isLightBg
-	    }],
-	    domProps: {
-	      "innerHTML": _vm._s(_vm.headerContent)
-	    }
-	  })])], 2), _vm._v(" "), _c('div', {
+	    }]
+	  }, [_vm._t("_header")], 2)])], 2), _vm._v(" "), _c('div', {
 	    staticClass: "button-wrapper"
 	  }, [_vm._t("button", [_c('panel-switch', {
 	    directives: [{
@@ -29109,20 +14830,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 229 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(230)
+	__webpack_require__(113)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(232)
+	__vue_exports__ = __webpack_require__(115)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(233)
+	var __vue_template__ = __webpack_require__(116)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -29157,13 +14878,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 230 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(231);
+	var content = __webpack_require__(114);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -29183,7 +14904,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 231 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -29191,13 +14912,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.morph-title[data-v-33358b51] {\n  padding: 0 0.3em;\n  color: rgba(0, 0, 0, 0.5);\n  border-color: rgba(0, 0, 0, 0.5);\n  background-color: transparent;\n  vertical-align: top;\n}\n.morph-title[data-v-33358b51]:hover, .morph-title[data-v-33358b51]:active, .morph-title[data-v-33358b51]:focus {\n  color: black;\n  border-color: black;\n  background-color: rgba(244, 244, 244, 0.3)\n}\n.card-flex[data-v-33358b51] {\n  display: flex;\n  flex-direction: column;\n  border: 0;\n  margin: 0;\n}\n.card-title-transparent[data-v-33358b51] {\n  opacity: 0.5;\n  transition: opacity 0.5s;\n}\n.card-title-opaque[data-v-33358b51] {\n  opacity: 1;\n}\n.card-title-inline[data-v-33358b51] {\n  display: inline-block;\n}\n.card-body[data-v-33358b51] {\n  padding: 0;\n}\n.header-wrapper[data-v-33358b51] {\n  width: 100%;\n  display: inline-block;\n  background-color: white;\n}\n.header-wrapper-bottom[data-v-33358b51] {\n  order: 1;\n}\n.ellipses[data-v-33358b51]::before {\n  position: relative;\n  bottom: 3px;\n  content: '...';\n  font-weight: 900;\n  margin-right: 4px;\n}\n.button-wrapper[data-v-33358b51] {\n  padding-left: 2px;\n  border-width: 0 0 0 1px;\n  border-color: rgba(150, 150, 150, 0.2);\n  border-style: solid;\n  margin-left: 2px;\n  width: auto;\n  float: none;\n  opacity: 0;\n  transition: opacity 0.5s;\n  vertical-align: text-top;\n}\n.button-wrapper-visible[data-v-33358b51] {\n  opacity: 1;\n}\n.button-wrapper-expanded[data-v-33358b51] {\n  padding-left: 0;\n  border: 0;\n  margin-left: 0;\n}\n.header-toggle[data-v-33358b51] {\n  cursor: pointer;\n}\n.minimal-button[data-v-33358b51] {\n  height: 13px;\n  padding: 0 3px;\n  border: 0;\n  color: rgb(150, 150, 150);\n  background-color: transparent;\n  cursor: pointer;\n}\n.minimal-button[data-v-33358b51]:hover, .minimal-button[data-v-33358b51]:active, .minimal-button[data-v-33358b51]:focus {\n  color: rgb(30, 30, 30);\n}\n.minimal-popup-button[data-v-33358b51] {\n  top: 1px;\n  font-size: 9px;\n}\n.minimal-menu-up[data-v-33358b51] {\n  top: 3px;\n  font-size: 13px;\n}\n.minimal-menu-down[data-v-33358b51] {\n  top: 1px;\n  font-size: 13px;\n}\n.minimal-close-button[data-v-33358b51] {\n  top: 2px;\n  font-size: 11px;\n}\n\n/* Bootstrap extra small(xs) responsive breakpoint */\n@media (max-width: 575.98px) {\n.button-wrapper-expanded[data-v-33358b51] {\n    padding-left: 0;\n    border: 0;\n    margin-left: 0;\n    opacity: 0.15;\n}\n.button-wrapper-visible[data-v-33358b51] {\n    opacity: 1;\n}\n}\n", "", {"version":3,"sources":["/./src/panels/MinimalPanel.vue?6efe3d0c"],"names":[],"mappings":";AA0EA;EACA,iBAAA;EACA,0BAAA;EACA,iCAAA;EACA,8BAAA;EACA,oBAAA;CACA;AAEA;EACA,aAAA;EACA,oBAAA;EACA,0CAAA;CACA;AAEA;EACA,cAAA;EACA,uBAAA;EACA,UAAA;EACA,UAAA;CACA;AAEA;EACA,aAAA;EACA,yBAAA;CACA;AAEA;EACA,WAAA;CACA;AAEA;EACA,sBAAA;CACA;AAEA;EACA,WAAA;CACA;AAEA;EACA,YAAA;EACA,sBAAA;EACA,wBAAA;CACA;AAEA;EACA,SAAA;CACA;AAEA;EACA,mBAAA;EACA,YAAA;EACA,eAAA;EACA,iBAAA;EACA,kBAAA;CACA;AAEA;EACA,kBAAA;EACA,wBAAA;EACA,uCAAA;EACA,oBAAA;EACA,iBAAA;EACA,YAAA;EACA,YAAA;EACA,WAAA;EACA,yBAAA;EACA,yBAAA;CACA;AAEA;EACA,WAAA;CACA;AAEA;EACA,gBAAA;EACA,UAAA;EACA,eAAA;CACA;AAEA;EACA,gBAAA;CACA;AAEA;EACA,aAAA;EACA,eAAA;EACA,UAAA;EACA,0BAAA;EACA,8BAAA;EACA,gBAAA;CACA;AAEA;EACA,uBAAA;CACA;AAEA;EACA,SAAA;EACA,eAAA;CACA;AAEA;EACA,SAAA;EACA,gBAAA;CACA;AAEA;EACA,SAAA;EACA,gBAAA;CACA;AAEA;EACA,SAAA;EACA,gBAAA;CACA;;AAEA,qDAAA;AACA;AACA;IACA,gBAAA;IACA,UAAA;IACA,eAAA;IACA,cAAA;CACA;AAEA;IACA,WAAA;CACA;CACA","file":"MinimalPanel.vue","sourcesContent":["<template>\n  <span ref=\"cardContainer\" :class=\"['card-container', addClass]\">\n    <div v-show=\"localMinimized\" class=\"morph\">\n      <button class=\"morph-display-wrapper btn card-title morph-title\" @click=\"open()\">\n        <template v-if=\"altContent\">\n          <div v-html=\"altContent\"></div>\n        </template>\n        <template v-else>\n          <slot name=\"header\">\n            <div v-html=\"altContent\"></div>\n          </slot>\n        </template>\n      </button>\n    </div>\n    <div v-show=\"!localMinimized\" class=\"card card-flex\" @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\n      <div :class=\"['header-wrapper', { 'header-wrapper-bottom': localExpanded, 'header-toggle': isExpandableCard }]\"\n           @click.prevent.stop=\"isExpandableCard && toggle()\">\n        <span v-show=\"!localExpanded\"\n              :class=\"['card-title', 'card-title-transparent', { 'card-title-opaque': onHeaderHover, 'ellipses': !header }]\">\n          <slot name=\"header\">\n            <span class=\"card-title-inline\" v-html=\"headerContent\"></span>\n            <span v-show=\"showDownSwitch\" aria-hidden=\"true\"\n                  class=\"minimal-button glyphicon glyphicon-menu-down minimal-menu-down\">\n            </span>\n          </slot>\n        </span>\n        <div :class=\"['button-wrapper', { 'button-wrapper-expanded': localExpanded, 'button-wrapper-visible': onHeaderHover }]\">\n          <slot name=\"button\">\n            <button v-show=\"!noCloseBool\" class=\"minimal-button\" type=\"button\" @click.stop=\"close()\">\n              <span class=\"glyphicon glyphicon-remove minimal-close-button\" aria-hidden=\"true\"></span>\n            </button>\n            <button v-show=\"popupUrl !== null\" class=\"minimal-button\" type=\"button\" @click.stop=\"openPopup()\">\n              <span class=\"glyphicon glyphicon-new-window minimal-popup-button\" aria-hidden=\"true\"></span>\n            </button>\n            <button v-show=\"localExpanded && isExpandableCard && bottomSwitchBool\" class=\"minimal-button\" type=\"button\"\n                    @click.prevent.stop=\"collapseThenScrollIntoViewIfNeeded()\">\n              <span class=\"glyphicon glyphicon-menu-up minimal-menu-up\" aria-hidden=\"true\"></span>\n            </button>\n          </slot>\n        </div>\n      </div>\n      <template v-if=\"preloadBool || isCached\">\n        <div class=\"card-collapse\"\n             ref=\"panel\"\n             v-show=\"localExpanded\"\n        >\n          <div class=\"card-body\">\n            <slot></slot>\n            <retriever v-if=\"hasSrc\" ref=\"retriever\" :src=\"src\" :fragment=\"fragment\"/>\n          </div>\n        </div>\n      </template>\n    </div>\n  </span>\n</template>\n\n<script>\nimport retriever from '../Retriever.vue';\nimport panelBase from './PanelBase';\n\nexport default {\n  mixins: [panelBase],\n  components: {\n    retriever,\n  },\n  computed: {\n    showDownSwitch() {\n      return this.header && this.isExpandableCard && !this.noSwitchBool;\n    }\n  }\n};\n</script>\n\n<style scoped>\n  .morph-title {\n    padding: 0 0.3em;\n    color: rgba(0, 0, 0, 0.5);\n    border-color: rgba(0, 0, 0, 0.5);\n    background-color: transparent;\n    vertical-align: top;\n  }\n\n  .morph-title:hover, .morph-title:active, .morph-title:focus {\n    color: black;\n    border-color: black;\n    background-color: rgba(244, 244, 244, 0.3)\n  }\n\n  .card-flex {\n    display: flex;\n    flex-direction: column;\n    border: 0;\n    margin: 0;\n  }\n\n  .card-title-transparent {\n    opacity: 0.5;\n    transition: opacity 0.5s;\n  }\n\n  .card-title-opaque {\n    opacity: 1;\n  }\n\n  .card-title-inline {\n    display: inline-block;\n  }\n\n  .card-body {\n    padding: 0;\n  }\n\n  .header-wrapper {\n    width: 100%;\n    display: inline-block;\n    background-color: white;\n  }\n\n  .header-wrapper-bottom {\n    order: 1;\n  }\n\n  .ellipses::before {\n    position: relative;\n    bottom: 3px;\n    content: '...';\n    font-weight: 900;\n    margin-right: 4px;\n  }\n\n  .button-wrapper {\n    padding-left: 2px;\n    border-width: 0 0 0 1px;\n    border-color: rgba(150, 150, 150, 0.2);\n    border-style: solid;\n    margin-left: 2px;\n    width: auto;\n    float: none;\n    opacity: 0;\n    transition: opacity 0.5s;\n    vertical-align: text-top;\n  }\n\n  .button-wrapper-visible {\n    opacity: 1;\n  }\n\n  .button-wrapper-expanded {\n    padding-left: 0;\n    border: 0;\n    margin-left: 0;\n  }\n\n  .header-toggle {\n    cursor: pointer;\n  }\n\n  .minimal-button {\n    height: 13px;\n    padding: 0 3px;\n    border: 0;\n    color: rgb(150, 150, 150);\n    background-color: transparent;\n    cursor: pointer;\n  }\n\n  .minimal-button:hover, .minimal-button:active, .minimal-button:focus {\n    color: rgb(30, 30, 30);\n  }\n\n  .minimal-popup-button {\n    top: 1px;\n    font-size: 9px;\n  }\n\n  .minimal-menu-up {\n    top: 3px;\n    font-size: 13px;\n  }\n\n  .minimal-menu-down {\n    top: 1px;\n    font-size: 13px;\n  }\n\n  .minimal-close-button {\n    top: 2px;\n    font-size: 11px;\n  }\n\n  /* Bootstrap extra small(xs) responsive breakpoint */\n  @media (max-width: 575.98px) {\n    .button-wrapper-expanded {\n      padding-left: 0;\n      border: 0;\n      margin-left: 0;\n      opacity: 0.15;\n    }\n\n    .button-wrapper-visible {\n      opacity: 1;\n    }\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.morph-title[data-v-33358b51] {\n  padding: 0 0.3em;\n  color: rgba(0, 0, 0, 0.5);\n  border-color: rgba(0, 0, 0, 0.5);\n  background-color: transparent;\n  vertical-align: top;\n}\n.morph-title[data-v-33358b51]:hover, .morph-title[data-v-33358b51]:active, .morph-title[data-v-33358b51]:focus {\n  color: black;\n  border-color: black;\n  background-color: rgba(244, 244, 244, 0.3);\n}\n.card-flex[data-v-33358b51] {\n  display: flex;\n  flex-direction: column;\n  border: 0;\n  margin: 0;\n}\n.card-title-transparent[data-v-33358b51] {\n  opacity: 0.5;\n  transition: opacity 0.5s;\n}\n.card-title-opaque[data-v-33358b51] {\n  opacity: 1;\n}\n.card-title-inline[data-v-33358b51] {\n  display: inline-block;\n}\n.card-body[data-v-33358b51] {\n  padding: 0;\n}\n.header-wrapper[data-v-33358b51] {\n  width: 100%;\n  display: inline-block;\n  background-color: white;\n}\n.header-wrapper-bottom[data-v-33358b51] {\n  order: 1;\n}\n.ellipses[data-v-33358b51]::before {\n  position: relative;\n  bottom: 3px;\n  content: '...';\n  font-weight: 900;\n  margin-right: 4px;\n}\n.button-wrapper[data-v-33358b51] {\n  padding-left: 2px;\n  border-width: 0 0 0 1px;\n  border-color: rgba(150, 150, 150, 0.2);\n  border-style: solid;\n  margin-left: 2px;\n  width: auto;\n  float: none;\n  opacity: 0;\n  transition: opacity 0.5s;\n  vertical-align: text-top;\n}\n.button-wrapper-visible[data-v-33358b51] {\n  opacity: 1;\n}\n.button-wrapper-expanded[data-v-33358b51] {\n  padding-left: 0;\n  border: 0;\n  margin-left: 0;\n}\n.header-toggle[data-v-33358b51] {\n  cursor: pointer;\n}\n.minimal-button[data-v-33358b51] {\n  padding: 0 3px;\n  border: 0;\n  color: rgb(150, 150, 150);\n  background-color: transparent;\n  cursor: pointer;\n}\n.minimal-button[data-v-33358b51]:hover, .minimal-button[data-v-33358b51]:active, .minimal-button[data-v-33358b51]:focus {\n  color: rgb(30, 30, 30);\n}\n.minimal-popup-button[data-v-33358b51] {\n  top: 1px;\n  font-size: 9px;\n}\n.minimal-menu-up[data-v-33358b51] {\n  top: 3px;\n  font-size: 13px;\n}\n.minimal-menu-down[data-v-33358b51] {\n  top: 1px;\n  font-size: 13px;\n}\n.minimal-close-button[data-v-33358b51] {\n  top: 2px;\n  font-size: 11px;\n}\n\n/* Bootstrap extra small(xs) responsive breakpoint */\n@media (max-width: 575.98px) {\n.button-wrapper-expanded[data-v-33358b51] {\n    padding-left: 0;\n    border: 0;\n    margin-left: 0;\n    opacity: 0.15;\n}\n.button-wrapper-visible[data-v-33358b51] {\n    opacity: 1;\n}\n}\n", "", {"version":3,"sources":["/./src/panels/MinimalPanel.vue?2a72ffd4"],"names":[],"mappings":";AAsEA;EACA,iBAAA;EACA,0BAAA;EACA,iCAAA;EACA,8BAAA;EACA,oBAAA;CACA;AAEA;EACA,aAAA;EACA,oBAAA;EACA,2CAAA;CACA;AAEA;EACA,cAAA;EACA,uBAAA;EACA,UAAA;EACA,UAAA;CACA;AAEA;EACA,aAAA;EACA,yBAAA;CACA;AAEA;EACA,WAAA;CACA;AAEA;EACA,sBAAA;CACA;AAEA;EACA,WAAA;CACA;AAEA;EACA,YAAA;EACA,sBAAA;EACA,wBAAA;CACA;AAEA;EACA,SAAA;CACA;AAEA;EACA,mBAAA;EACA,YAAA;EACA,eAAA;EACA,iBAAA;EACA,kBAAA;CACA;AAEA;EACA,kBAAA;EACA,wBAAA;EACA,uCAAA;EACA,oBAAA;EACA,iBAAA;EACA,YAAA;EACA,YAAA;EACA,WAAA;EACA,yBAAA;EACA,yBAAA;CACA;AAEA;EACA,WAAA;CACA;AAEA;EACA,gBAAA;EACA,UAAA;EACA,eAAA;CACA;AAEA;EACA,gBAAA;CACA;AAEA;EACA,eAAA;EACA,UAAA;EACA,0BAAA;EACA,8BAAA;EACA,gBAAA;CACA;AAEA;EACA,uBAAA;CACA;AAEA;EACA,SAAA;EACA,eAAA;CACA;AAEA;EACA,SAAA;EACA,gBAAA;CACA;AAEA;EACA,SAAA;EACA,gBAAA;CACA;AAEA;EACA,SAAA;EACA,gBAAA;CACA;;AAEA,qDAAA;AACA;AACA;IACA,gBAAA;IACA,UAAA;IACA,eAAA;IACA,cAAA;CACA;AAEA;IACA,WAAA;CACA;CACA","file":"MinimalPanel.vue","sourcesContent":["<template>\n  <span ref=\"cardContainer\" :class=\"['card-container', addClass]\">\n    <div v-show=\"localMinimized\" class=\"morph\">\n      <button class=\"morph-display-wrapper btn card-title morph-title\" @click=\"open()\">\n        <slot name=\"_alt\">\n          <slot name=\"_header\">\n            <slot name=\"header\"></slot>\n          </slot>\n        </slot>\n      </button>\n    </div>\n    <div v-show=\"!localMinimized\" class=\"card card-flex\" @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\n      <div :class=\"['header-wrapper', { 'header-wrapper-bottom': localExpanded, 'header-toggle': isExpandableCard }]\"\n           @click.prevent.stop=\"isExpandableCard && toggle()\">\n        <span v-show=\"!localExpanded\" ref=\"headerWrapper\"\n              :class=\"['card-title', 'card-title-transparent', { 'card-title-opaque': onHeaderHover, 'ellipses': !hasHeaderBool }]\">\n          <slot name=\"header\">\n            <span class=\"card-title-inline\"><slot name=\"_header\"></slot></span>\n            <span v-show=\"showDownSwitch\" aria-hidden=\"true\"\n                  class=\"minimal-button glyphicon glyphicon-menu-down minimal-menu-down\"></span>\n          </slot>\n        </span>\n        <div :class=\"['button-wrapper', { 'button-wrapper-expanded': localExpanded, 'button-wrapper-visible': onHeaderHover }]\">\n          <slot name=\"button\">\n            <button v-show=\"!noCloseBool\" class=\"minimal-button\" type=\"button\" @click.stop=\"close()\">\n              <span class=\"glyphicon glyphicon-remove minimal-close-button\" aria-hidden=\"true\"></span>\n            </button>\n            <button v-show=\"popupUrl !== null\" class=\"minimal-button\" type=\"button\" @click.stop=\"openPopup()\">\n              <span class=\"glyphicon glyphicon-new-window minimal-popup-button\" aria-hidden=\"true\"></span>\n            </button>\n            <button v-show=\"localExpanded && isExpandableCard && bottomSwitchBool\" class=\"minimal-button\" type=\"button\"\n                    @click.prevent.stop=\"collapseThenScrollIntoViewIfNeeded()\">\n              <span class=\"glyphicon glyphicon-menu-up minimal-menu-up\" aria-hidden=\"true\"></span>\n            </button>\n          </slot>\n        </div>\n      </div>\n      <template v-if=\"preloadBool || isCached\">\n        <div class=\"card-collapse\"\n             ref=\"panel\"\n             v-show=\"localExpanded\"\n        >\n          <div class=\"card-body\">\n            <slot></slot>\n            <retriever v-if=\"hasSrc\" ref=\"retriever\" :src=\"src\" :fragment=\"fragment\"/>\n          </div>\n        </div>\n      </template>\n    </div>\n  </span>\n</template>\n\n<script>\nimport retriever from '../Retriever.vue';\nimport panelBase from './PanelBase';\n\nexport default {\n  mixins: [panelBase],\n  components: {\n    retriever,\n  },\n  computed: {\n    showDownSwitch() {\n      return this.hasHeaderBool && this.isExpandableCard && !this.noSwitchBool;\n    },\n  }\n};\n</script>\n\n<style scoped>\n  .morph-title {\n    padding: 0 0.3em;\n    color: rgba(0, 0, 0, 0.5);\n    border-color: rgba(0, 0, 0, 0.5);\n    background-color: transparent;\n    vertical-align: top;\n  }\n\n  .morph-title:hover, .morph-title:active, .morph-title:focus {\n    color: black;\n    border-color: black;\n    background-color: rgba(244, 244, 244, 0.3);\n  }\n\n  .card-flex {\n    display: flex;\n    flex-direction: column;\n    border: 0;\n    margin: 0;\n  }\n\n  .card-title-transparent {\n    opacity: 0.5;\n    transition: opacity 0.5s;\n  }\n\n  .card-title-opaque {\n    opacity: 1;\n  }\n\n  .card-title-inline {\n    display: inline-block;\n  }\n\n  .card-body {\n    padding: 0;\n  }\n\n  .header-wrapper {\n    width: 100%;\n    display: inline-block;\n    background-color: white;\n  }\n\n  .header-wrapper-bottom {\n    order: 1;\n  }\n\n  .ellipses::before {\n    position: relative;\n    bottom: 3px;\n    content: '...';\n    font-weight: 900;\n    margin-right: 4px;\n  }\n\n  .button-wrapper {\n    padding-left: 2px;\n    border-width: 0 0 0 1px;\n    border-color: rgba(150, 150, 150, 0.2);\n    border-style: solid;\n    margin-left: 2px;\n    width: auto;\n    float: none;\n    opacity: 0;\n    transition: opacity 0.5s;\n    vertical-align: text-top;\n  }\n\n  .button-wrapper-visible {\n    opacity: 1;\n  }\n\n  .button-wrapper-expanded {\n    padding-left: 0;\n    border: 0;\n    margin-left: 0;\n  }\n\n  .header-toggle {\n    cursor: pointer;\n  }\n\n  .minimal-button {\n    padding: 0 3px;\n    border: 0;\n    color: rgb(150, 150, 150);\n    background-color: transparent;\n    cursor: pointer;\n  }\n\n  .minimal-button:hover, .minimal-button:active, .minimal-button:focus {\n    color: rgb(30, 30, 30);\n  }\n\n  .minimal-popup-button {\n    top: 1px;\n    font-size: 9px;\n  }\n\n  .minimal-menu-up {\n    top: 3px;\n    font-size: 13px;\n  }\n\n  .minimal-menu-down {\n    top: 1px;\n    font-size: 13px;\n  }\n\n  .minimal-close-button {\n    top: 2px;\n    font-size: 11px;\n  }\n\n  /* Bootstrap extra small(xs) responsive breakpoint */\n  @media (max-width: 575.98px) {\n    .button-wrapper-expanded {\n      padding-left: 0;\n      border: 0;\n      margin-left: 0;\n      opacity: 0.15;\n    }\n\n    .button-wrapper-visible {\n      opacity: 1;\n    }\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
-/* 232 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29206,20 +14927,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _Retriever = __webpack_require__(225);
+	var _Retriever = __webpack_require__(108);
 	
 	var _Retriever2 = _interopRequireDefault(_Retriever);
 	
-	var _PanelBase = __webpack_require__(214);
+	var _PanelBase = __webpack_require__(102);
 	
 	var _PanelBase2 = _interopRequireDefault(_PanelBase);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	//
-	//
-	//
-	//
 	//
 	//
 	//
@@ -29280,13 +14997,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  computed: {
 	    showDownSwitch: function showDownSwitch() {
-	      return this.header && this.isExpandableCard && !this.noSwitchBool;
+	      return this.hasHeaderBool && this.isExpandableCard && !this.noSwitchBool;
 	    }
 	  }
 	};
 
 /***/ }),
-/* 233 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -29308,15 +15025,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        _vm.open()
 	      }
 	    }
-	  }, [(_vm.altContent) ? [_c('div', {
-	    domProps: {
-	      "innerHTML": _vm._s(_vm.altContent)
-	    }
-	  })] : [_vm._t("header", [_c('div', {
-	    domProps: {
-	      "innerHTML": _vm._s(_vm.altContent)
-	    }
-	  })])]], 2)]), _vm._v(" "), _c('div', {
+	  }, [_vm._t("_alt", [_vm._t("_header", [_vm._t("header")])])], 2)]), _vm._v(" "), _c('div', {
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
@@ -29351,16 +15060,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	      value: (!_vm.localExpanded),
 	      expression: "!localExpanded"
 	    }],
+	    ref: "headerWrapper",
 	    class: ['card-title', 'card-title-transparent', {
 	      'card-title-opaque': _vm.onHeaderHover,
-	      'ellipses': !_vm.header
+	      'ellipses': !_vm.hasHeaderBool
 	    }]
 	  }, [_vm._t("header", [_c('span', {
-	    staticClass: "card-title-inline",
-	    domProps: {
-	      "innerHTML": _vm._s(_vm.headerContent)
-	    }
-	  }), _vm._v(" "), _c('span', {
+	    staticClass: "card-title-inline"
+	  }, [_vm._t("_header")], 2), _vm._v(" "), _c('span', {
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
@@ -29470,7 +15177,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 234 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -29496,20 +15203,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 235 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(236)
+	__webpack_require__(119)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(238)
+	__vue_exports__ = __webpack_require__(121)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(239)
+	var __vue_template__ = __webpack_require__(122)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -29543,13 +15250,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 236 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(237);
+	var content = __webpack_require__(120);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -29569,7 +15276,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 237 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -29583,7 +15290,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 238 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29657,7 +15364,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 
 /***/ }),
-/* 239 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -29688,20 +15395,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 240 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(241)
+	__webpack_require__(124)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(243)
+	__vue_exports__ = __webpack_require__(126)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(259)
+	var __vue_template__ = __webpack_require__(142)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -29735,13 +15442,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 241 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(242);
+	var content = __webpack_require__(125);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -29761,7 +15468,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 242 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -29769,13 +15476,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.fade-enter-active, .fade-leave-active {\n  transition: opacity .5s ease;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\n  opacity: 0;\n}\n.popover.top,\n.popover.left,\n.popover.right,\n.popover.bottom {\n  display: block;\n  overflow-wrap: break-word;\n}\n@media (min-width: 768px) {\n.popover.top,\n  .popover.left,\n  .popover.right,\n  .popover.bottom {\n    max-width: 600px;\n}\n}\n.scale-enter-active {\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\n  animation:scale-out 0.15s ease-out;\n}\n@keyframes scale-in {\n0% {\n    transform: scale(0);\n    opacity: 0;\n}\n100% {\n    transform: scale(1);\n    opacity: 1;\n}\n}\n@keyframes scale-out {\n0% {\n    transform: scale(1);\n    opacity: 1;\n}\n100% {\n    transform: scale(0);\n    opacity: 0;\n}\n}\n", "", {"version":3,"sources":["/./src/Popover.vue?bae2fab2"],"names":[],"mappings":";AA4DA;EACA,6BAAA;CACA;AAEA;EACA,WAAA;CACA;AAEA;;;;EAIA,eAAA;EACA,0BAAA;CACA;AAEA;AACA;;;;IAIA,iBAAA;CACA;CACA;AACA;EACA,iCAAA;CACA;AACA;EACA,mCAAA;CACA;AACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;CACA;AACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;CACA","file":"Popover.vue","sourcesContent":["<template>\n  <span :class=\"[addClass]\">\n    <span ref=\"trigger\" v-if=\"hasSlot\"><slot></slot></span><!--\n    -->\n    <transition :name=\"effect\">\n    <div ref=\"popover\" v-if=\"show\"\n      :class=\"['popover', popoverPlacementClass]\">\n      <div class=\"arrow\" ref=\"arrow\"></div>\n      <h3 class=\"popover-header\" v-if=\"title\">\n        <slot name=\"title\" v-if=\"hasTitleSlot\"></slot>\n        <span v-else v-html=\"titleRendered\"></span>\n      </h3>\n      <div class=\"popover-body\">\n        <slot name=\"content\" v-if=\"hasContentSlot\"></slot>\n        <span v-else v-html=\"contentRendered\"></span>\n      </div>\n    </div>\n    </transition>\n  </span>\n</template>\n\n<script>\nimport PopoverMixin from './utils/popoverMixins.js'\n\nexport default {\n  mixins: [PopoverMixin],\n  props: {\n    trigger: {\n      type: String,\n      default: 'hover'\n    },\n    addClass: {\n      type: String,\n      default: ''\n    }\n  },\n  computed: {\n    hasSlot () {\n      return this.$slots.default;\n    },\n    hasTitleSlot () {\n      return this.$slots.title\n    },\n    hasContentSlot () {\n      return this.$slots.content;\n    },\n    popoverPlacementClass() {\n      return `bs-popover-${this.placement}`;\n    }\n  },\n  mounted () {\n    if (this.$refs.trigger) {\n      this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dotted'\n      this.$refs.trigger.style['text-decoration'] = 'underline dotted'\n    }\n  }\n}\n</script>\n\n<style>\n.fade-enter-active, .fade-leave-active {\n  transition: opacity .5s ease;\n}\n\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\n  opacity: 0;\n}\n\n.popover.top,\n.popover.left,\n.popover.right,\n.popover.bottom {\n  display: block;\n  overflow-wrap: break-word;\n}\n\n@media (min-width: 768px) {\n  .popover.top,\n  .popover.left,\n  .popover.right,\n  .popover.bottom {\n    max-width: 600px;\n  }\n}\n.scale-enter-active {\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\n  animation:scale-out 0.15s ease-out;\n}\n@keyframes scale-in {\n  0% {\n    transform: scale(0);\n    opacity: 0;\n  }\n  100% {\n    transform: scale(1);\n    opacity: 1;\n  }\n}\n@keyframes scale-out {\n  0% {\n    transform: scale(1);\n    opacity: 1;\n  }\n  100% {\n    transform: scale(0);\n    opacity: 0;\n  }\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.fade-enter-active, .fade-leave-active {\n  transition: opacity .5s ease;\n}\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\n  opacity: 0;\n}\n.popover.top,\n.popover.left,\n.popover.right,\n.popover.bottom {\n  display: block;\n  overflow-wrap: break-word;\n}\n@media (min-width: 768px) {\n.popover.top,\n  .popover.left,\n  .popover.right,\n  .popover.bottom {\n    max-width: 600px;\n}\n}\n.scale-enter-active {\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\n  animation:scale-out 0.15s ease-out;\n}\n@keyframes scale-in {\n0% {\n    transform: scale(0);\n    opacity: 0;\n}\n100% {\n    transform: scale(1);\n    opacity: 1;\n}\n}\n@keyframes scale-out {\n0% {\n    transform: scale(1);\n    opacity: 1;\n}\n100% {\n    transform: scale(0);\n    opacity: 0;\n}\n}\n", "", {"version":3,"sources":["/./src/Popover.vue?a15373c2"],"names":[],"mappings":";AAsDA;EACA,6BAAA;CACA;AAEA;EACA,WAAA;CACA;AAEA;;;;EAIA,eAAA;EACA,0BAAA;CACA;AAEA;AACA;;;;IAIA,iBAAA;CACA;CACA;AACA;EACA,iCAAA;CACA;AACA;EACA,mCAAA;CACA;AACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;CACA;AACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;AACA;IACA,oBAAA;IACA,WAAA;CACA;CACA","file":"Popover.vue","sourcesContent":["<template>\n  <span :class=\"[addClass]\">\n    <span ref=\"trigger\" v-if=\"hasSlot\"><slot name=\"default\"></slot></span>\n    <transition :name=\"effect\">\n      <div ref=\"popover\" v-if=\"show\"\n        :class=\"['popover', popoverPlacementClass]\">\n        <div class=\"arrow\" ref=\"arrow\"></div>\n        <h3 class=\"popover-header\" v-if=\"hasHeaderSlot\">\n          <slot name=\"header\"></slot>\n        </h3>\n        <div class=\"popover-body\">\n          <slot name=\"content\"></slot>\n        </div>\n      </div>\n    </transition>\n  </span>\n</template>\n\n<script>\nimport PopoverMixin from './utils/popoverMixins.js'\n\nexport default {\n  mixins: [PopoverMixin],\n  props: {\n    trigger: {\n      type: String,\n      default: 'hover'\n    },\n    addClass: {\n      type: String,\n      default: ''\n    }\n  },\n  computed: {\n    hasSlot () {\n      return this.$slots.default;\n    },\n    hasHeaderSlot () {\n      return this.$slots.header;\n    },\n    popoverPlacementClass() {\n      return `bs-popover-${this.placement}`;\n    }\n  },\n  mounted () {\n    if (this.$refs.trigger) {\n      this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dotted'\n      this.$refs.trigger.style['text-decoration'] = 'underline dotted'\n    }\n  }\n}\n</script>\n\n<style>\n.fade-enter-active, .fade-leave-active {\n  transition: opacity .5s ease;\n}\n\n.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {\n  opacity: 0;\n}\n\n.popover.top,\n.popover.left,\n.popover.right,\n.popover.bottom {\n  display: block;\n  overflow-wrap: break-word;\n}\n\n@media (min-width: 768px) {\n  .popover.top,\n  .popover.left,\n  .popover.right,\n  .popover.bottom {\n    max-width: 600px;\n  }\n}\n.scale-enter-active {\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\n  animation:scale-out 0.15s ease-out;\n}\n@keyframes scale-in {\n  0% {\n    transform: scale(0);\n    opacity: 0;\n  }\n  100% {\n    transform: scale(1);\n    opacity: 1;\n  }\n}\n@keyframes scale-out {\n  0% {\n    transform: scale(1);\n    opacity: 1;\n  }\n  100% {\n    transform: scale(0);\n    opacity: 0;\n  }\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
-/* 243 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29784,7 +15491,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _popoverMixins = __webpack_require__(244);
+	var _popoverMixins = __webpack_require__(127);
 	
 	var _popoverMixins2 = _interopRequireDefault(_popoverMixins);
 	
@@ -29806,11 +15513,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    hasSlot: function hasSlot() {
 	      return this.$slots.default;
 	    },
-	    hasTitleSlot: function hasTitleSlot() {
-	      return this.$slots.title;
-	    },
-	    hasContentSlot: function hasContentSlot() {
-	      return this.$slots.content;
+	    hasHeaderSlot: function hasHeaderSlot() {
+	      return this.$slots.header;
 	    },
 	    popoverPlacementClass: function popoverPlacementClass() {
 	      return 'bs-popover-' + this.placement;
@@ -29840,12 +15544,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 	//
 	//
-	//
-	//
-	//
 
 /***/ }),
-/* 244 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -29854,11 +15555,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _assign = __webpack_require__(245);
+	var _assign = __webpack_require__(128);
 	
 	var _assign2 = _interopRequireDefault(_assign);
 	
-	var _some = __webpack_require__(251);
+	var _some = __webpack_require__(134);
 	
 	var _some2 = _interopRequireDefault(_some);
 	
@@ -29869,10 +15570,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _NodeList2 = _interopRequireDefault(_NodeList);
 	
 	var _GlobalEventBus = __webpack_require__(89);
-	
-	var _markdown = __webpack_require__(90);
-	
-	var _markdown2 = _interopRequireDefault(_markdown);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -29895,12 +15592,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	      type: String,
 	      default: 'fade'
 	    },
-	    title: {
-	      type: String
-	    },
-	    content: {
-	      type: String
-	    },
 	    placement: {
 	      type: String,
 	      default: 'top'
@@ -29921,14 +15612,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 	  },
 	
-	  computed: {
-	    contentRendered: function contentRendered() {
-	      return _markdown2.default.renderInline(this.content);
-	    },
-	    titleRendered: function titleRendered() {
-	      return _markdown2.default.renderInline(this.title);
-	    }
-	  },
 	  methods: {
 	    bindTrigger: function bindTrigger(trigger, popover) {
 	      if (popover === this.id) {
@@ -30132,38 +15815,38 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(72)))
 
 /***/ }),
-/* 245 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(246), __esModule: true };
+	module.exports = { "default": __webpack_require__(129), __esModule: true };
 
 /***/ }),
-/* 246 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(247);
+	__webpack_require__(130);
 	module.exports = __webpack_require__(23).Object.assign;
 
 
 /***/ }),
-/* 247 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 19.1.3.1 Object.assign(target, source)
 	var $export = __webpack_require__(22);
 	
-	$export($export.S + $export.F, 'Object', { assign: __webpack_require__(248) });
+	$export($export.S + $export.F, 'Object', { assign: __webpack_require__(131) });
 
 
 /***/ }),
-/* 248 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	// 19.1.2.1 Object.assign(target, source, ...)
 	var getKeys = __webpack_require__(6);
-	var gOPS = __webpack_require__(249);
-	var pIE = __webpack_require__(250);
+	var gOPS = __webpack_require__(132);
+	var pIE = __webpack_require__(133);
 	var toObject = __webpack_require__(4);
 	var IObject = __webpack_require__(10);
 	var $assign = Object.assign;
@@ -30196,42 +15879,42 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 249 */
+/* 132 */
 /***/ (function(module, exports) {
 
 	exports.f = Object.getOwnPropertySymbols;
 
 
 /***/ }),
-/* 250 */
+/* 133 */
 /***/ (function(module, exports) {
 
 	exports.f = {}.propertyIsEnumerable;
 
 
 /***/ }),
-/* 251 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(252), __esModule: true };
+	module.exports = { "default": __webpack_require__(135), __esModule: true };
 
 /***/ }),
-/* 252 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(253);
+	__webpack_require__(136);
 	module.exports = __webpack_require__(23).Array.some;
 
 
 /***/ }),
-/* 253 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	var $export = __webpack_require__(22);
-	var $some = __webpack_require__(254)(3);
+	var $some = __webpack_require__(137)(3);
 	
-	$export($export.P + $export.F * !__webpack_require__(258)([].some, true), 'Array', {
+	$export($export.P + $export.F * !__webpack_require__(141)([].some, true), 'Array', {
 	  // 22.1.3.23 / 15.4.4.17 Array.prototype.some(callbackfn [, thisArg])
 	  some: function some(callbackfn /* , thisArg */) {
 	    return $some(this, callbackfn, arguments[1]);
@@ -30240,7 +15923,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 254 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 0 -> Array#forEach
@@ -30254,7 +15937,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var IObject = __webpack_require__(10);
 	var toObject = __webpack_require__(4);
 	var toLength = __webpack_require__(13);
-	var asc = __webpack_require__(255);
+	var asc = __webpack_require__(138);
 	module.exports = function (TYPE, $create) {
 	  var IS_MAP = TYPE == 1;
 	  var IS_FILTER = TYPE == 2;
@@ -30290,11 +15973,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 255 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 9.4.2.3 ArraySpeciesCreate(originalArray, length)
-	var speciesConstructor = __webpack_require__(256);
+	var speciesConstructor = __webpack_require__(139);
 	
 	module.exports = function (original, length) {
 	  return new (speciesConstructor(original))(length);
@@ -30302,11 +15985,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 256 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var isObject = __webpack_require__(29);
-	var isArray = __webpack_require__(257);
+	var isArray = __webpack_require__(140);
 	var SPECIES = __webpack_require__(56)('species');
 	
 	module.exports = function (original) {
@@ -30324,7 +16007,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 257 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 7.2.2 IsArray(argument)
@@ -30335,7 +16018,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 258 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30350,7 +16033,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 259 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -30368,19 +16051,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }, [_c('div', {
 	    ref: "arrow",
 	    staticClass: "arrow"
-	  }), _vm._v(" "), (_vm.title) ? _c('h3', {
+	  }), _vm._v(" "), (_vm.hasHeaderSlot) ? _c('h3', {
 	    staticClass: "popover-header"
-	  }, [(_vm.hasTitleSlot) ? _vm._t("title") : _c('span', {
-	    domProps: {
-	      "innerHTML": _vm._s(_vm.titleRendered)
-	    }
-	  })], 2) : _vm._e(), _vm._v(" "), _c('div', {
+	  }, [_vm._t("header")], 2) : _vm._e(), _vm._v(" "), _c('div', {
 	    staticClass: "popover-body"
-	  }, [(_vm.hasContentSlot) ? _vm._t("content") : _c('span', {
-	    domProps: {
-	      "innerHTML": _vm._s(_vm.contentRendered)
-	    }
-	  })], 2)]) : _vm._e()])], 1)
+	  }, [_vm._t("content")], 2)]) : _vm._e()])], 1)
 	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
@@ -30390,20 +16065,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 260 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(261)
+	__webpack_require__(144)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(263)
+	__vue_exports__ = __webpack_require__(146)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(264)
+	var __vue_template__ = __webpack_require__(147)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -30437,13 +16112,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 261 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(262);
+	var content = __webpack_require__(145);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -30463,7 +16138,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 262 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -30471,13 +16146,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.body-wrapper {\n    padding-bottom: 10px;\n}\n.question-wrapper > .panel-group > .panel-container + .panel-container {\n    display: block;\n    margin-top: 5px;\n}\n.textarea-container {\n    margin: 8px 0;\n}\n.textarea-container > textarea {\n    margin: 4px 0;\n}\n", "", {"version":3,"sources":["/./src/Question.vue?85f29ee8"],"names":[],"mappings":";AAkFA;IACA,qBAAA;CACA;AACA;IACA,eAAA;IACA,gBAAA;CACA;AACA;IACA,cAAA;CACA;AACA;IACA,cAAA;CACA","file":"Question.vue","sourcesContent":["<template>\n    <div :class=\"['question-wrapper', addClass]\">\n        <div class=\"body-wrapper\">\n            <!-- Default slot is question body -->\n            <slot></slot>\n            <div v-if=\"hasInputBool\" class=\"textarea-container\">\n                <textarea class=\"form-control question-input\" rows=\"3\" placeholder=\"write your answer here...\"></textarea>\n            </div>\n        </div>\n        <panel v-show=\"hasHintSlot\" header=\"Hint\" expandable no-close preload>\n            <template v-if=\"isEmptyHint\">\n                No hint is available for this question.\n            </template>\n            <template v-else>\n                <div ref=\"hintWrapper\">\n                    <slot name=\"hint\"></slot>\n                </div>\n            </template>\n        </panel>\n        <panel v-show=\"hasAnswerSlot\" header=\"Answer\" expandable no-close preload>\n            <template v-if=\"isEmptyAnswer\">\n                No answer is provided for this question.\n            </template>\n            <template v-else>\n                <div ref=\"answerWrapper\">\n                    <slot name=\"answer\"></slot>\n                </div>\n            </template>\n        </panel>\n    </div>\n</template>\n\n<script>\n  import {toBoolean} from './utils/utils.js'\n  import panel from './Panel.vue'\n\n  export default {\n    components: {\n      panel,\n    },\n    props: {\n      hasInput: {\n        type: Boolean,\n        default: false\n      },\n      addClass: {\n        type: String,\n        default: ''\n      }\n    },\n    computed: {\n      // Vue 2.0 coerce migration\n      hasInputBool () {\n        return toBoolean(this.hasInput);\n      }\n      // Vue 2.0 coerce migration end\n    },\n    data () {\n      return {\n        hasAnswerSlot: true,\n        hasHintSlot: true,\n        isEmptyAnswer: false,\n        isEmptyHint: false\n      }\n    },\n    mounted() {\n      this.$nextTick(function() {\n        const emptyDiv = '<div></div>';\n        this.hasAnswerSlot = !!this.$slots.answer;\n        this.hasHintSlot = !!this.$slots.hint;\n        if (this.$refs.answerWrapper) {\n          this.isEmptyAnswer = this.$refs.answerWrapper.innerHTML === emptyDiv;\n        }\n        if (this.$refs.hintWrapper) {\n          this.isEmptyHint = this.$refs.hintWrapper.innerHTML === emptyDiv;\n        }\n      })\n    }\n  }\n</script>\n\n<style>\n    .body-wrapper {\n        padding-bottom: 10px;\n    }\n    .question-wrapper > .panel-group > .panel-container + .panel-container {\n        display: block;\n        margin-top: 5px;\n    }\n    .textarea-container {\n        margin: 8px 0;\n    }\n    .textarea-container > textarea {\n        margin: 4px 0;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.body-wrapper {\n    padding-bottom: 10px;\n}\n.question-wrapper > .panel-group > .panel-container + .panel-container {\n    display: block;\n    margin-top: 5px;\n}\n.textarea-container {\n    margin: 8px 0;\n}\n.textarea-container > textarea {\n    margin: 4px 0;\n}\n", "", {"version":3,"sources":["/./src/Question.vue?1d446a2c"],"names":[],"mappings":";AAwFA;IACA,qBAAA;CACA;AACA;IACA,eAAA;IACA,gBAAA;CACA;AACA;IACA,cAAA;CACA;AACA;IACA,cAAA;CACA","file":"Question.vue","sourcesContent":["<template>\n    <div :class=\"['question-wrapper', addClass]\">\n        <div class=\"body-wrapper\">\n            <!-- Default slot is question body -->\n            <slot></slot>\n            <div v-if=\"hasInputBool\" class=\"textarea-container\">\n                <textarea class=\"form-control question-input\" rows=\"3\" placeholder=\"write your answer here...\"></textarea>\n            </div>\n        </div>\n        <panel v-show=\"hasHintSlot\" expandable no-close preload>\n            <template slot=\"header\">\n                Hint\n            </template>\n            <template v-if=\"isEmptyHint\">\n                No hint is available for this question.\n            </template>\n            <template v-else>\n                <div ref=\"hintWrapper\">\n                    <slot name=\"hint\"></slot>\n                </div>\n            </template>\n        </panel>\n        <panel v-show=\"hasAnswerSlot\" expandable no-close preload>\n            <template slot=\"header\">\n                Answer\n            </template>\n            <template v-if=\"isEmptyAnswer\">\n                No answer is provided for this question.\n            </template>\n            <template v-else>\n                <div ref=\"answerWrapper\">\n                    <slot name=\"answer\"></slot>\n                </div>\n            </template>\n        </panel>\n    </div>\n</template>\n\n<script>\n  import {toBoolean} from './utils/utils.js'\n  import panel from './Panel.vue'\n\n  export default {\n    components: {\n      panel,\n    },\n    props: {\n      hasInput: {\n        type: Boolean,\n        default: false\n      },\n      addClass: {\n        type: String,\n        default: ''\n      }\n    },\n    computed: {\n      // Vue 2.0 coerce migration\n      hasInputBool () {\n        return toBoolean(this.hasInput);\n      }\n      // Vue 2.0 coerce migration end\n    },\n    data () {\n      return {\n        hasAnswerSlot: true,\n        hasHintSlot: true,\n        isEmptyAnswer: false,\n        isEmptyHint: false\n      }\n    },\n    mounted() {\n      this.$nextTick(function() {\n        const emptyDiv = '<div></div>';\n        this.hasAnswerSlot = !!this.$slots.answer;\n        this.hasHintSlot = !!this.$slots.hint;\n        if (this.$refs.answerWrapper) {\n          this.isEmptyAnswer = this.$refs.answerWrapper.innerHTML === emptyDiv;\n        }\n        if (this.$refs.hintWrapper) {\n          this.isEmptyHint = this.$refs.hintWrapper.innerHTML === emptyDiv;\n        }\n      })\n    }\n  }\n</script>\n\n<style>\n    .body-wrapper {\n        padding-bottom: 10px;\n    }\n    .question-wrapper > .panel-group > .panel-container + .panel-container {\n        display: block;\n        margin-top: 5px;\n    }\n    .textarea-container {\n        margin: 8px 0;\n    }\n    .textarea-container > textarea {\n        margin: 4px 0;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
-/* 263 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30488,12 +16163,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _utils = __webpack_require__(38);
 	
-	var _Panel = __webpack_require__(208);
+	var _Panel = __webpack_require__(96);
 	
 	var _Panel2 = _interopRequireDefault(_Panel);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	//
+	//
+	//
+	//
+	//
+	//
 	//
 	//
 	//
@@ -30573,7 +16254,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 264 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -30597,12 +16278,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	      expression: "hasHintSlot"
 	    }],
 	    attrs: {
-	      "header": "Hint",
 	      "expandable": "",
 	      "no-close": "",
 	      "preload": ""
 	    }
-	  }, [(_vm.isEmptyHint) ? [_vm._v("\n            No hint is available for this question.\n        ")] : [_c('div', {
+	  }, [_c('template', {
+	    slot: "header"
+	  }, [_vm._v("\n            Hint\n        ")]), _vm._v(" "), (_vm.isEmptyHint) ? [_vm._v("\n            No hint is available for this question.\n        ")] : [_c('div', {
 	    ref: "hintWrapper"
 	  }, [_vm._t("hint")], 2)]], 2), _vm._v(" "), _c('panel', {
 	    directives: [{
@@ -30612,12 +16294,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	      expression: "hasAnswerSlot"
 	    }],
 	    attrs: {
-	      "header": "Answer",
 	      "expandable": "",
 	      "no-close": "",
 	      "preload": ""
 	    }
-	  }, [(_vm.isEmptyAnswer) ? [_vm._v("\n            No answer is provided for this question.\n        ")] : [_c('div', {
+	  }, [_c('template', {
+	    slot: "header"
+	  }, [_vm._v("\n            Answer\n        ")]), _vm._v(" "), (_vm.isEmptyAnswer) ? [_vm._v("\n            No answer is provided for this question.\n        ")] : [_c('div', {
 	    ref: "answerWrapper"
 	  }, [_vm._t("answer")], 2)]], 2)], 1)
 	},staticRenderFns: []}
@@ -30629,17 +16312,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 265 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(266)
+	__webpack_require__(149)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(268)
+	__vue_exports__ = __webpack_require__(151)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -30671,13 +16354,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 266 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(267);
+	var content = __webpack_require__(150);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -30697,7 +16380,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 267 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -30711,7 +16394,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 268 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30720,23 +16403,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _slicedToArray2 = __webpack_require__(269);
+	var _slicedToArray2 = __webpack_require__(152);
 	
 	var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 	
-	var _entries = __webpack_require__(278);
+	var _entries = __webpack_require__(161);
 	
 	var _entries2 = _interopRequireDefault(_entries);
 	
-	var _assign = __webpack_require__(245);
+	var _assign = __webpack_require__(128);
 	
 	var _assign2 = _interopRequireDefault(_assign);
 	
-	var _values = __webpack_require__(282);
+	var _values = __webpack_require__(165);
 	
 	var _values2 = _interopRequireDefault(_values);
 	
-	var _Typeahead = __webpack_require__(285);
+	var _Typeahead = __webpack_require__(168);
 	
 	var _Typeahead2 = _interopRequireDefault(_Typeahead);
 	
@@ -30894,18 +16577,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 269 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	exports.__esModule = true;
 	
-	var _isIterable2 = __webpack_require__(270);
+	var _isIterable2 = __webpack_require__(153);
 	
 	var _isIterable3 = _interopRequireDefault(_isIterable2);
 	
-	var _getIterator2 = __webpack_require__(274);
+	var _getIterator2 = __webpack_require__(157);
 	
 	var _getIterator3 = _interopRequireDefault(_getIterator2);
 	
@@ -30950,25 +16633,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	}();
 
 /***/ }),
-/* 270 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(271), __esModule: true };
+	module.exports = { "default": __webpack_require__(154), __esModule: true };
 
 /***/ }),
-/* 271 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	__webpack_require__(58);
 	__webpack_require__(45);
-	module.exports = __webpack_require__(272);
+	module.exports = __webpack_require__(155);
 
 
 /***/ }),
-/* 272 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var classof = __webpack_require__(273);
+	var classof = __webpack_require__(156);
 	var ITERATOR = __webpack_require__(56)('iterator');
 	var Iterators = __webpack_require__(50);
 	module.exports = __webpack_require__(23).isIterable = function (it) {
@@ -30981,7 +16664,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 273 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// getting tag from 19.1.3.6 Object.prototype.toString()
@@ -31010,26 +16693,26 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 274 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(275), __esModule: true };
+	module.exports = { "default": __webpack_require__(158), __esModule: true };
 
 /***/ }),
-/* 275 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	__webpack_require__(58);
 	__webpack_require__(45);
-	module.exports = __webpack_require__(276);
+	module.exports = __webpack_require__(159);
 
 
 /***/ }),
-/* 276 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var anObject = __webpack_require__(28);
-	var get = __webpack_require__(277);
+	var get = __webpack_require__(160);
 	module.exports = __webpack_require__(23).getIterator = function (it) {
 	  var iterFn = get(it);
 	  if (typeof iterFn != 'function') throw TypeError(it + ' is not iterable!');
@@ -31038,10 +16721,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 277 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var classof = __webpack_require__(273);
+	var classof = __webpack_require__(156);
 	var ITERATOR = __webpack_require__(56)('iterator');
 	var Iterators = __webpack_require__(50);
 	module.exports = __webpack_require__(23).getIteratorMethod = function (it) {
@@ -31052,26 +16735,26 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 278 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(279), __esModule: true };
+	module.exports = { "default": __webpack_require__(162), __esModule: true };
 
 /***/ }),
-/* 279 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(280);
+	__webpack_require__(163);
 	module.exports = __webpack_require__(23).Object.entries;
 
 
 /***/ }),
-/* 280 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// https://github.com/tc39/proposal-object-values-entries
 	var $export = __webpack_require__(22);
-	var $entries = __webpack_require__(281)(true);
+	var $entries = __webpack_require__(164)(true);
 	
 	$export($export.S, 'Object', {
 	  entries: function entries(it) {
@@ -31081,12 +16764,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 281 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var getKeys = __webpack_require__(6);
 	var toIObject = __webpack_require__(9);
-	var isEnum = __webpack_require__(250).f;
+	var isEnum = __webpack_require__(133).f;
 	module.exports = function (isEntries) {
 	  return function (it) {
 	    var O = toIObject(it);
@@ -31103,26 +16786,26 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 282 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(283), __esModule: true };
+	module.exports = { "default": __webpack_require__(166), __esModule: true };
 
 /***/ }),
-/* 283 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(284);
+	__webpack_require__(167);
 	module.exports = __webpack_require__(23).Object.values;
 
 
 /***/ }),
-/* 284 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// https://github.com/tc39/proposal-object-values-entries
 	var $export = __webpack_require__(22);
-	var $values = __webpack_require__(281)(false);
+	var $values = __webpack_require__(164)(false);
 	
 	$export($export.S, 'Object', {
 	  values: function values(it) {
@@ -31132,20 +16815,20 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 285 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(286)
+	__webpack_require__(169)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(288)
+	__vue_exports__ = __webpack_require__(171)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(289)
+	var __vue_template__ = __webpack_require__(172)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -31179,13 +16862,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 286 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(287);
+	var content = __webpack_require__(170);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -31205,7 +16888,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 287 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -31219,7 +16902,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 288 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31395,7 +17078,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 289 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -31478,20 +17161,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 290 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(291)
+	__webpack_require__(174)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(293)
+	__vue_exports__ = __webpack_require__(176)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(294)
+	var __vue_template__ = __webpack_require__(177)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -31525,13 +17208,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 291 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(292);
+	var content = __webpack_require__(175);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -31551,7 +17234,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 292 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -31559,13 +17242,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.tab-pane > hr {\n    margin: 0;\n}\n.fade-enter-active {\n  transition: opacity .5s;\n}\n.fade-leave-active {\n  transition: opacity 0s;\n}\n", "", {"version":3,"sources":["/./src/Tab.vue?651d8a00"],"names":[],"mappings":";AAiFA;IACA,UAAA;CACA;AACA;EACA,wBAAA;CACA;AACA;EACA,uBAAA;CACA","file":"Tab.vue","sourcesContent":["<template>\n  <transition name=\"fade\">\n    <div role=\"tabpanel\" class=\"tab-pane active\" v-show=\"show\"\n      :class=\"{hide:!show}\"\n    >\n      <slot></slot>\n      <hr />\n    </div>\n  </transition>\n</template>\n\n<script>\nimport {toBoolean} from './utils/utils.js'\nimport md from './utils/markdown.js'\n\nexport default {\n  props: {\n    header: {\n      type: String\n    },\n    disabled: {\n      type: Boolean,\n      default: false\n    }\n  },\n  computed: {\n    headerRendered () {\n      return md.renderInline(this.header)\n    },\n    active () {\n      return this._tabset.show === this\n    },\n    index () {\n      return this._tabset.tabs.indexOf(this)\n    },\n    show () {\n      return this._tabset && this._tabset.show === this\n    },\n    transition () {\n      return this._tabset ? this._tabset.effect : null\n    },\n    disabledBool () {\n      return toBoolean(this.disabled)\n    }\n  },\n  created () {\n    this._ingroup = this.$parent && this.$parent._tabgroup\n    let tabset = this\n    while (tabset && tabset._tabset!==true && tabset.$parent) {\n      tabset = tabset.$parent\n    }\n    if (!tabset._tabset) {\n      this._tabset = {}\n      console.warn('Warning: \"tab\" depend on \"tabset\" to work properly.')\n    } else {\n      tabset.tabs.push(this)\n      if (!this._ingroup) {\n        tabset.headers.push(this)\n      } else {\n        if (!~tabset.headers.indexOf(this.$parent)) {\n          tabset.headers.push(this.$parent)\n        }\n      }\n      this._tabset = tabset\n    }\n    if (this._ingroup) {\n      this.$parent.tabs.push(this)\n    }\n  },\n  beforeDestroy () {\n    if (this._tabset.active === this.index) { this._tabset.active = 0 }\n    if (this._ingroup) {\n      var index = parent.tabs.indexOf(this);\n      parent.tabs.splice(index, 1)\n    }\n    var index = this._tabset.tabs.indexOf(this);\n    this._tabset.tabs.splice(index, 1)\n  }\n}\n</script>\n<style>\n    .tab-pane > hr {\n        margin: 0;\n    }\n    .fade-enter-active {\n      transition: opacity .5s;\n    }\n    .fade-leave-active {\n      transition: opacity 0s;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.tab-pane > hr {\n    margin: 0;\n}\n.fade-enter-active {\n  transition: opacity .5s;\n}\n.fade-leave-active {\n  transition: opacity 0s;\n}\n", "", {"version":3,"sources":["/./src/Tab.vue?5bda4c0e"],"names":[],"mappings":";AAmFA;IACA,UAAA;CACA;AACA;EACA,wBAAA;CACA;AACA;EACA,uBAAA;CACA","file":"Tab.vue","sourcesContent":["<template>\n  <transition name=\"fade\">\n    <div role=\"tabpanel\" class=\"tab-pane active\" v-show=\"show\"\n      :class=\"{hide:!show}\"\n    >\n      <slot></slot>\n      <div ref=\"header\" class=\"d-none\">\n        <slot name=\"_header\"></slot>\n      </div>\n      <hr />\n    </div>\n  </transition>\n</template>\n\n<script>\nimport {toBoolean} from './utils/utils.js'\n\nexport default {\n  props: {\n    header: {\n      type: String\n    },\n    disabled: {\n      type: Boolean,\n      default: false\n    }\n  },\n  computed: {\n    headerRendered () {\n      return this.$refs.header.innerHTML\n    },\n    active () {\n      return this._tabset.show === this\n    },\n    index () {\n      return this._tabset.tabs.indexOf(this)\n    },\n    show () {\n      return this._tabset && this._tabset.show === this\n    },\n    transition () {\n      return this._tabset ? this._tabset.effect : null\n    },\n    disabledBool () {\n      return toBoolean(this.disabled)\n    }\n  },\n  created () {\n    this._ingroup = this.$parent && this.$parent._tabgroup\n    let tabset = this\n    while (tabset && tabset._tabset!==true && tabset.$parent) {\n      tabset = tabset.$parent\n    }\n    if (!tabset._tabset) {\n      this._tabset = {}\n      console.warn('Warning: \"tab\" depend on \"tabset\" to work properly.')\n    } else {\n      tabset.tabs.push(this)\n      if (!this._ingroup) {\n        tabset.headers.push(this)\n      } else {\n        if (!~tabset.headers.indexOf(this.$parent)) {\n          tabset.headers.push(this.$parent)\n        }\n      }\n      this._tabset = tabset\n    }\n    if (this._ingroup) {\n      this.$parent.tabs.push(this)\n    }\n  },\n  beforeDestroy () {\n    if (this._tabset.active === this.index) { this._tabset.active = 0 }\n    if (this._ingroup) {\n      var index = parent.tabs.indexOf(this);\n      parent.tabs.splice(index, 1)\n    }\n    var index = this._tabset.tabs.indexOf(this);\n    this._tabset.tabs.splice(index, 1)\n  }\n}\n</script>\n<style>\n    .tab-pane > hr {\n        margin: 0;\n    }\n    .fade-enter-active {\n      transition: opacity .5s;\n    }\n    .fade-leave-active {\n      transition: opacity 0s;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
-/* 293 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31575,24 +17258,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	
 	var _utils = __webpack_require__(38);
-	
-	var _markdown = __webpack_require__(90);
-	
-	var _markdown2 = _interopRequireDefault(_markdown);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
 	
 	exports.default = {
 	  props: {
@@ -31606,7 +17271,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  computed: {
 	    headerRendered: function headerRendered() {
-	      return _markdown2.default.renderInline(this.header);
+	      return this.$refs.header.innerHTML;
 	    },
 	    active: function active() {
 	      return this._tabset.show === this;
@@ -31659,10 +17324,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var index = this._tabset.tabs.indexOf(this);
 	    this._tabset.tabs.splice(index, 1);
 	  }
-	};
+	}; //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 /***/ }),
-/* 294 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -31684,7 +17362,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    attrs: {
 	      "role": "tabpanel"
 	    }
-	  }, [_vm._t("default"), _vm._v(" "), _c('hr')], 2)])
+	  }, [_vm._t("default"), _vm._v(" "), _c('div', {
+	    ref: "header",
+	    staticClass: "d-none"
+	  }, [_vm._t("_header")], 2), _vm._v(" "), _c('hr')], 2)])
 	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
@@ -31694,20 +17375,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 295 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(296)
+	__webpack_require__(179)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(298)
+	__vue_exports__ = __webpack_require__(181)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(299)
+	var __vue_template__ = __webpack_require__(182)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -31742,13 +17423,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 296 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(297);
+	var content = __webpack_require__(180);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -31768,7 +17449,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 297 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -31776,13 +17457,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.nav-tabs[data-v-4679a54e] {\n  margin-bottom: 15px;\n}\n", "", {"version":3,"sources":["/./src/TabGroup.vue?7f153c66"],"names":[],"mappings":";AAkEA;EACA,oBAAA;CACA","file":"TabGroup.vue","sourcesContent":["<template>\n  <div>\n    <slot></slot>\n  </div>\n</template>\n\n<script>\nimport {coerce} from './utils/utils.js'\nimport md from './utils/markdown.js'\n\nexport default {\n  props: {\n    disabled: {\n      type: Boolean,\n      default: false\n    },\n    header: {\n      type: String\n    }\n  },\n  data () {\n    return {\n      tabs: [],\n      show: false\n    }\n  },\n  computed: {\n    active () {\n      return ~this.tabs.indexOf(this._tabset.show)\n    },\n    headerRendered () {\n      return md.renderInline(this.header)\n    },\n    disabledBool () {\n      return coerce.boolean(this.disabled)\n    }\n  },\n  created () {\n    this._tabgroup = true\n    let tabset = (this.$parent && this.$parent._tabset === true) ? this.$parent : {}\n    if (this.$parent && this.$parent._tabgroup) {\n      console.error('Can\\'t nest tabgroups.')\n    }\n    while (tabset && !tabset._tabset && tabset.$parent) {\n      tabset = tabset.$parent\n    }\n    if (!tabset._tabset) {\n      this._tabset = {}\n      this.show = true\n      console.warn('Warning: tabgroup depend on tabset to work properly.')\n    } else {\n      this._tabset = tabset\n    }\n  },\n  methods: {\n    blur () {\n      this.show = false\n    },\n    toggle () {\n      this.show = !this.show\n    }\n  }\n}\n</script>\n\n<style scoped>\n.nav-tabs {\n  margin-bottom: 15px;\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.nav-tabs[data-v-4679a54e] {\n  margin-bottom: 15px;\n}\n", "", {"version":3,"sources":["/./src/TabGroup.vue?3975db79"],"names":[],"mappings":";AAoEA;EACA,oBAAA;CACA","file":"TabGroup.vue","sourcesContent":["<template>\n  <div>\n    <slot></slot>\n    <div ref=\"header\" class=\"d-none\">\n      <slot name=\"_header\"></slot>\n    </div>\n  </div>\n</template>\n\n<script>\nimport {coerce} from './utils/utils.js'\n\nexport default {\n  props: {\n    disabled: {\n      type: Boolean,\n      default: false\n    },\n    header: {\n      type: String\n    }\n  },\n  data () {\n    return {\n      tabs: [],\n      show: false\n    }\n  },\n  computed: {\n    active () {\n      return ~this.tabs.indexOf(this._tabset.show)\n    },\n    headerRendered () {\n      return this.$refs.header.innerHTML\n    },\n    disabledBool () {\n      return coerce.boolean(this.disabled)\n    }\n  },\n  created () {\n    this._tabgroup = true\n    let tabset = (this.$parent && this.$parent._tabset === true) ? this.$parent : {}\n    if (this.$parent && this.$parent._tabgroup) {\n      console.error('Can\\'t nest tabgroups.')\n    }\n    while (tabset && !tabset._tabset && tabset.$parent) {\n      tabset = tabset.$parent\n    }\n    if (!tabset._tabset) {\n      this._tabset = {}\n      this.show = true\n      console.warn('Warning: tabgroup depend on tabset to work properly.')\n    } else {\n      this._tabset = tabset\n    }\n  },\n  methods: {\n    blur () {\n      this.show = false\n    },\n    toggle () {\n      this.show = !this.show\n    }\n  }\n}\n</script>\n\n<style scoped>\n.nav-tabs {\n  margin-bottom: 15px;\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
-/* 298 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31792,19 +17473,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	
 	var _utils = __webpack_require__(38);
-	
-	var _markdown = __webpack_require__(90);
-	
-	var _markdown2 = _interopRequireDefault(_markdown);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	//
-	//
-	//
-	//
-	//
-	//
 	
 	exports.default = {
 	  props: {
@@ -31828,7 +17496,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return ~this.tabs.indexOf(this._tabset.show);
 	    },
 	    headerRendered: function headerRendered() {
-	      return _markdown2.default.renderInline(this.header);
+	      return this.$refs.header.innerHTML;
 	    },
 	    disabledBool: function disabledBool() {
 	      return _utils.coerce.boolean(this.disabled);
@@ -31860,14 +17528,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	      this.show = !this.show;
 	    }
 	  }
-	};
+	}; //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 /***/ }),
-/* 299 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', [_vm._t("default")], 2)
+	  return _c('div', [_vm._t("default"), _vm._v(" "), _c('div', {
+	    ref: "header",
+	    staticClass: "d-none"
+	  }, [_vm._t("_header")], 2)], 2)
 	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
@@ -31877,20 +17556,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 300 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(301)
+	__webpack_require__(184)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(303)
+	__vue_exports__ = __webpack_require__(186)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(304)
+	var __vue_template__ = __webpack_require__(187)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -31925,13 +17604,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 301 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(302);
+	var content = __webpack_require__(185);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -31951,7 +17630,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 302 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -31959,13 +17638,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.nav-tabs[data-v-3ce7ba5c] {\n  margin-bottom: 15px;\n}\n", "", {"version":3,"sources":["/./src/Tabset.vue?7a900a92"],"names":[],"mappings":";AA8EA;EACA,oBAAA;CACA","file":"Tabset.vue","sourcesContent":["<template>\n  <div :class=\"[addClass]\">\n    <!-- Nav tabs -->\n    <ul class=\"nav nav-tabs\" :class=\"getNavStyleClass\" role=\"tablist\">\n      <template v-for=\"t in headers\">\n        <li v-if=\"!t._tabgroup\" class=\"nav-item\" @click.prevent=\"select(t)\">\n          <a class=\"nav-link\" :class=\"{active: t.active, disabled:t.disabledBool}\" href=\"#\"><span v-html=\"t.headerRendered\"></span></a>\n        </li>\n        <dropdown v-else class=\"nav-item nav-link\" :text=\"t.headerRendered\" :class=\"{active:t.active}\" :disabled=\"t.disabled\">\n          <li v-for=\"tab in t.tabs\"><a class=\"nav-link\" :class=\"{disabled:tab.disabled}\" href=\"#\" @click.prevent=\"select(tab)\" v-html=\"tab.headerRendered\"></a></li>\n        </dropdown>\n      </template>\n    </ul>\n    <div class=\"tab-content\" ref=\"tab-content\">\n      <slot></slot>\n    </div>\n  </div>\n</template>\n\n<script>\nimport {toNumber} from './utils/utils.js'\nimport dropdown from './Dropdown.vue'\n\nexport default {\n  components: {\n    dropdown\n  },\n  props: {\n    navStyle: {\n      type: String,\n      default: 'tabs'\n    },\n    active: {\n      type: Number,\n      default: 0\n    },\n    addClass: {\n      type: String,\n      default: ''\n    }\n  },\n  data () {\n    return {\n      show: null,\n      headers: [],\n      tabs: []\n    }\n  },\n  created () {\n    this._tabset = true\n  },\n  computed: {\n    getNavStyleClass() {\n      return `nav-${this.navStyle}`;\n    },\n    activeNumber () {\n       return toNumber(this.active);\n    },\n  },\n  watch: {\n    activeNumber (val) {\n      this.show = this.tabs[val]\n    }\n  },\n  mounted () {\n    this.show = this.tabs[this.activeNumber]\n  },\n  methods: {\n    select (tab) {\n      if (!tab.disabled) {\n        this.active = tab.index\n      }\n    }\n  }\n}\n</script>\n\n<style scoped>\n.nav-tabs {\n  margin-bottom: 15px;\n}\n</style>"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.nav-tabs[data-v-3ce7ba5c] {\n  margin-bottom: 15px;\n}\n", "", {"version":3,"sources":["/./src/Tabset.vue?8c4d84da"],"names":[],"mappings":";AA8EA;EACA,oBAAA;CACA","file":"Tabset.vue","sourcesContent":["<template>\n  <div :class=\"[addClass]\">\n    <!-- Nav tabs -->\n    <ul class=\"nav nav-tabs\" :class=\"getNavStyleClass\" role=\"tablist\">\n      <template v-for=\"t in headers\">\n        <li v-if=\"!t._tabgroup\" class=\"nav-item\" @click.prevent=\"select(t)\">\n          <a class=\"nav-link\" :class=\"{active: t.active, disabled:t.disabledBool}\" href=\"#\"><span v-html=\"t.headerRendered\"></span></a>\n        </li>\n        <dropdown v-else class=\"nav-item nav-link\" :header=\"t.headerRendered\" :class=\"{active:t.active}\" :disabled=\"t.disabled\">\n          <li v-for=\"tab in t.tabs\"><a class=\"nav-link\" :class=\"{disabled:tab.disabled}\" href=\"#\" @click.prevent=\"select(tab)\" v-html=\"tab.headerRendered\"></a></li>\n        </dropdown>\n      </template>\n    </ul>\n    <div class=\"tab-content\" ref=\"tab-content\">\n      <slot></slot>\n    </div>\n  </div>\n</template>\n\n<script>\nimport {toNumber} from './utils/utils.js'\nimport dropdown from './Dropdown.vue'\n\nexport default {\n  components: {\n    dropdown\n  },\n  props: {\n    navStyle: {\n      type: String,\n      default: 'tabs'\n    },\n    active: {\n      type: Number,\n      default: 0\n    },\n    addClass: {\n      type: String,\n      default: ''\n    }\n  },\n  data () {\n    return {\n      show: null,\n      headers: [],\n      tabs: []\n    }\n  },\n  created () {\n    this._tabset = true\n  },\n  computed: {\n    getNavStyleClass() {\n      return `nav-${this.navStyle}`;\n    },\n    activeNumber () {\n       return toNumber(this.active);\n    },\n  },\n  watch: {\n    activeNumber (val) {\n      this.show = this.tabs[val]\n    }\n  },\n  mounted () {\n    this.show = this.tabs[this.activeNumber]\n  },\n  methods: {\n    select (tab) {\n      if (!tab.disabled) {\n        this.active = tab.index\n      }\n    }\n  }\n}\n</script>\n\n<style scoped>\n.nav-tabs {\n  margin-bottom: 15px;\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
-/* 303 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32058,7 +17737,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 304 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -32097,7 +17776,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        active: t.active
 	      },
 	      attrs: {
-	        "text": t.headerRendered,
+	        "header": t.headerRendered,
 	        "disabled": t.disabled
 	      }
 	    }, _vm._l((t.tabs), function(tab) {
@@ -32133,20 +17812,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 305 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(306)
+	__webpack_require__(189)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(308)
+	__vue_exports__ = __webpack_require__(191)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(309)
+	var __vue_template__ = __webpack_require__(192)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -32180,13 +17859,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 306 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(307);
+	var content = __webpack_require__(190);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -32206,7 +17885,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 307 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -32220,7 +17899,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 308 */
+/* 191 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -32334,7 +18013,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 309 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -32367,20 +18046,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 310 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(311)
+	__webpack_require__(194)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(313)
+	__vue_exports__ = __webpack_require__(196)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(314)
+	var __vue_template__ = __webpack_require__(197)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -32415,13 +18094,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 311 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(312);
+	var content = __webpack_require__(195);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -32441,7 +18120,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 312 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -32449,26 +18128,39 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.container[data-v-7e93235f] {\n    display: flex;\n    flex-direction: row;\n    width: 100%;\n    border-radius: 6px;\n}\n.heading[data-v-7e93235f] {\n    display: inline;\n    float: right;\n    font-weight: normal;\n    color: inherit;\n    background-color: rgba(240, 240, 240, 0.6);\n    width: auto;\n    padding: 3px 5px 4px 5px;\n    border-width: 0;\n    border-radius: 0 6px 0 6px;\n    margin: -13px -27px 0 15px;\n}\n.dismiss-button[data-v-7e93235f] {\n    position: relative;\n    top: -2px;\n    clear: right;\n    color: inherit;\n    height: 100%;\n    margin-right: -6px;\n    margin-left: 21px;\n}\n.icon-wrapper[data-v-7e93235f] {\n    display: flex;\n    margin-right: .5em;\n    width: 22px;\n    height: 22px;\n}\n.contents[data-v-7e93235f] {\n    padding: 0 6px;\n    width: 100%;\n}\n.alert-default[data-v-7e93235f] {\n    color: #24292e;\n    background-color: #f6f8fa;\n    border-color: #e8ebef;\n}\n.alert-border-left[data-v-7e93235f] {\n    background-color: #f9f8f8;\n    border-left: solid;\n    border-width: 0px 0px 0px 5px;\n}\n.font-black[data-v-7e93235f] {\n    color: #24292e;\n}\n", "", {"version":3,"sources":["/./src/TipBox.vue?22d5d6c0"],"names":[],"mappings":";AA0JA;IACA,cAAA;IACA,oBAAA;IACA,YAAA;IACA,mBAAA;CACA;AAEA;IACA,gBAAA;IACA,aAAA;IACA,oBAAA;IACA,eAAA;IACA,2CAAA;IACA,YAAA;IACA,yBAAA;IACA,gBAAA;IACA,2BAAA;IACA,2BAAA;CACA;AAEA;IACA,mBAAA;IACA,UAAA;IACA,aAAA;IACA,eAAA;IACA,aAAA;IACA,mBAAA;IACA,kBAAA;CACA;AAEA;IACA,cAAA;IACA,mBAAA;IACA,YAAA;IACA,aAAA;CACA;AAEA;IACA,eAAA;IACA,YAAA;CACA;AAEA;IACA,eAAA;IACA,0BAAA;IACA,sBAAA;CACA;AAEA;IACA,0BAAA;IACA,mBAAA;IACA,8BAAA;CACA;AAEA;IACA,eAAA;CACA","file":"TipBox.vue","sourcesContent":["<template>\n    <div class=\"alert container\" :class=\"[boxStyle, addClass, lightStyle]\" :style=\"customStyle\">\n        <div v-if=\"!isDefault\" class=\"icon-wrapper\">\n            <span v-html=\"iconType\"></span>\n        </div>\n        <div class=\"contents\" :class=\"fontBlack\">\n            <h6 v-if=\"heading\" class=\"heading\">{{ heading }}</h6>\n            <button v-if=\"dismissible\" type=\"button\" class=\"close dismiss-button\" data-dismiss=\"alert\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n            <slot></slot>\n        </div>\n\n    </div>\n</template>\n\n<script>\n  import md from './utils/markdown.js'\n\n  export default {\n    props: {\n      dismissible: {\n        type: Boolean,\n        default: false\n      },\n      backgroundColor: {\n        type: String,\n        default: null\n      },\n      borderColor: {\n        type: String,\n        default: null\n      },\n      borderLeftColor: {\n        type: String,\n        default: null\n      },\n      color: {\n        type: String,\n        default: null\n      },\n      icon: {\n        type: String,\n        default: null\n      },\n      type: {\n        type: String,\n        default: 'none'\n      },\n      addClass: {\n        type: String,\n        default: ''\n      },\n      heading: {\n        type: String,\n        default: null,\n      }, \n      light: {\n        type: Boolean,\n        default: false,\n      }\n    },\n    computed: {\n      isDefault() {\n        return this.type === 'none'\n      },\n      boxStyle() {\n        switch (this.type) {\n          case 'warning':\n            return 'alert-warning'\n          case 'info':\n          case 'definition':\n            return 'alert-info'\n          case 'success':\n          case 'tip':\n            return 'alert-success'\n          case 'important':\n          case 'wrong':\n            return 'alert-danger'\n          default:\n            return 'alert-default'\n        }\n      },\n      lightStyle() {\n        if (this.light) {\n            switch (this.type) {\n            case 'warning':\n                return 'border-warning text-warning alert-border-left';\n            case 'info':\n            case 'definition':\n                return 'border-info text-info alert-border-left';\n            case 'success':\n            case 'tip':\n                return 'border-sucess text-success alert-border-left';\n            case 'important':\n            case 'wrong':\n                return 'border-danger text-danger alert-border-left';\n            default:\n                return '';\n            }\n        }\n        return '';\n      },\n      customStyle() {\n        var style = {};\n        if (this.backgroundColor) {\n          style.backgroundColor = this.backgroundColor;\n          style.borderColor = this.backgroundColor;\n        }\n        if (this.borderColor) {\n          style.borderColor = this.borderColor;\n        }\n        if (this.borderLeftColor) {\n          style.borderLeft = `5px solid ${this.borderLeftColor}`;\n        }\n        if (this.color) {\n          style.color = this.color;\n        }\n        return style;\n      },\n      fontBlack() {\n        if (this.light) {\n          return 'font-black';\n        }\n        return '';\n      },\n      iconType() {\n        if (this.icon) {\n          return md.renderInline(this.icon);\n        }\n        switch (this.type) {\n          case 'wrong':\n            return '<i class=\"fas fa-times\"></i>';\n          case 'warning':\n            return '<i class=\"fas fa-exclamation\"></i>';\n          case 'info':\n            return '<i class=\"fas fa-info\"></i>';\n          case 'success':\n            return '<i class=\"fas fa-check\"></i>';\n          case 'important':\n            return '<i class=\"fas fa-flag\"></i>';\n          case 'tip':\n            return '<i class=\"fas fa-lightbulb\"></i>';\n          case 'definition':\n            return '<i class=\"fas fa-atlas\"></i>';\n          default:\n            return '<i class=\"fas fa-exclamation\"></i>';\n        }\n      }\n    }\n  }\n</script>\n\n<style scoped>\n    .container {\n        display: flex;\n        flex-direction: row;\n        width: 100%;\n        border-radius: 6px;\n    }\n\n    .heading {\n        display: inline;\n        float: right;\n        font-weight: normal;\n        color: inherit;\n        background-color: rgba(240, 240, 240, 0.6);\n        width: auto;\n        padding: 3px 5px 4px 5px;\n        border-width: 0;\n        border-radius: 0 6px 0 6px;\n        margin: -13px -27px 0 15px;\n    }\n\n    .dismiss-button {\n        position: relative;\n        top: -2px;\n        clear: right;\n        color: inherit;\n        height: 100%;\n        margin-right: -6px;\n        margin-left: 21px;\n    }\n\n    .icon-wrapper {\n        display: flex;\n        margin-right: .5em;\n        width: 22px;\n        height: 22px;\n    }\n\n    .contents {\n        padding: 0 6px;\n        width: 100%;\n    }\n\n    .alert-default {\n        color: #24292e;\n        background-color: #f6f8fa;\n        border-color: #e8ebef;\n    }\n    \n    .alert-border-left {\n        background-color: #f9f8f8;\n        border-left: solid;\n        border-width: 0px 0px 0px 5px;\n    }\n        \n    .font-black {\n        color: #24292e;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.container[data-v-7e93235f] {\n    display: flex;\n    flex-direction: row;\n    width: 100%;\n    border-radius: 6px;\n}\n.heading[data-v-7e93235f] {\n    display: inline;\n    float: right;\n    font-weight: normal;\n    color: inherit;\n    background-color: rgba(240, 240, 240, 0.6);\n    width: auto;\n    padding: 3px 5px 4px 5px;\n    border-width: 0;\n    border-radius: 0 6px 0 6px;\n    margin: -13px -27px 0 15px;\n}\n.dismiss-button[data-v-7e93235f] {\n    position: relative;\n    top: -2px;\n    clear: right;\n    color: inherit;\n    height: 100%;\n    margin-right: -6px;\n    margin-left: 21px;\n}\n.icon-wrapper[data-v-7e93235f] {\n    display: flex;\n    margin-right: .5em;\n    width: 22px;\n    height: 22px;\n}\n.contents[data-v-7e93235f] {\n    padding: 0 6px;\n    width: 100%;\n}\n.alert-default[data-v-7e93235f] {\n    color: #24292e;\n    background-color: #f6f8fa;\n    border-color: #e8ebef;\n}\n.alert-border-left[data-v-7e93235f] {\n    background-color: #f9f8f8;\n    border-left: solid;\n    border-width: 0px 0px 0px 5px;\n}\n.font-black[data-v-7e93235f] {\n    color: #24292e;\n}\n", "", {"version":3,"sources":["/./src/TipBox.vue?14baf73a"],"names":[],"mappings":";AA2JA;IACA,cAAA;IACA,oBAAA;IACA,YAAA;IACA,mBAAA;CACA;AAEA;IACA,gBAAA;IACA,aAAA;IACA,oBAAA;IACA,eAAA;IACA,2CAAA;IACA,YAAA;IACA,yBAAA;IACA,gBAAA;IACA,2BAAA;IACA,2BAAA;CACA;AAEA;IACA,mBAAA;IACA,UAAA;IACA,aAAA;IACA,eAAA;IACA,aAAA;IACA,mBAAA;IACA,kBAAA;CACA;AAEA;IACA,cAAA;IACA,mBAAA;IACA,YAAA;IACA,aAAA;CACA;AAEA;IACA,eAAA;IACA,YAAA;CACA;AAEA;IACA,eAAA;IACA,0BAAA;IACA,sBAAA;CACA;AAEA;IACA,0BAAA;IACA,mBAAA;IACA,8BAAA;CACA;AAEA;IACA,eAAA;CACA","file":"TipBox.vue","sourcesContent":["<template>\n    <div class=\"alert container\" :class=\"[boxStyle, addClass, lightStyle]\" :style=\"customStyle\">\n        <div v-if=\"!isDefault\" class=\"icon-wrapper\">\n            <slot name=\"_icon\">\n                <span v-html=\"iconType\"></span>\n            </slot>\n        </div>\n        <div class=\"contents\" :class=\"fontBlack\">\n            <h6 v-if=\"headerContent\" class=\"heading\">{{ headerContent }}</h6>\n            <button v-if=\"dismissible\" type=\"button\" class=\"close dismiss-button\" data-dismiss=\"alert\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n            <slot></slot>\n        </div>\n\n    </div>\n</template>\n\n<script>\n\n  export default {\n    props: {\n      dismissible: {\n        type: Boolean,\n        default: false\n      },\n      backgroundColor: {\n        type: String,\n        default: null\n      },\n      borderColor: {\n        type: String,\n        default: null\n      },\n      borderLeftColor: {\n        type: String,\n        default: null\n      },\n      color: {\n        type: String,\n        default: null\n      },\n      type: {\n        type: String,\n        default: 'none'\n      },\n      addClass: {\n        type: String,\n        default: ''\n      },\n      heading: {\n        type: String,\n        default: null,\n      }, \n      light: {\n        type: Boolean,\n        default: false,\n      },\n      header: {\n        type: String,\n        default: null,\n      }\n    },\n    computed: {\n      isDefault() {\n        return this.type === 'none'\n      },\n      headerContent() {\n        return this.header || this.heading;\n      },\n      boxStyle() {\n        switch (this.type) {\n          case 'warning':\n            return 'alert-warning'\n          case 'info':\n          case 'definition':\n            return 'alert-info'\n          case 'success':\n          case 'tip':\n            return 'alert-success'\n          case 'important':\n          case 'wrong':\n            return 'alert-danger'\n          default:\n            return 'alert-default'\n        }\n      },\n      lightStyle() {\n        if (this.light) {\n            switch (this.type) {\n            case 'warning':\n                return 'border-warning text-warning alert-border-left';\n            case 'info':\n            case 'definition':\n                return 'border-info text-info alert-border-left';\n            case 'success':\n            case 'tip':\n                return 'border-sucess text-success alert-border-left';\n            case 'important':\n            case 'wrong':\n                return 'border-danger text-danger alert-border-left';\n            default:\n                return '';\n            }\n        }\n        return '';\n      },\n      customStyle() {\n        var style = {};\n        if (this.backgroundColor) {\n          style.backgroundColor = this.backgroundColor;\n          style.borderColor = this.backgroundColor;\n        }\n        if (this.borderColor) {\n          style.borderColor = this.borderColor;\n        }\n        if (this.borderLeftColor) {\n          style.borderLeft = `5px solid ${this.borderLeftColor}`;\n        }\n        if (this.color) {\n          style.color = this.color;\n        }\n        return style;\n      },\n      fontBlack() {\n        if (this.light) {\n          return 'font-black';\n        }\n        return '';\n      },\n      iconType() {\n        switch (this.type) {\n          case 'wrong':\n            return '<i class=\"fas fa-times\"></i>';\n          case 'warning':\n            return '<i class=\"fas fa-exclamation\"></i>';\n          case 'info':\n            return '<i class=\"fas fa-info\"></i>';\n          case 'success':\n            return '<i class=\"fas fa-check\"></i>';\n          case 'important':\n            return '<i class=\"fas fa-flag\"></i>';\n          case 'tip':\n            return '<i class=\"fas fa-lightbulb\"></i>';\n          case 'definition':\n            return '<i class=\"fas fa-atlas\"></i>';\n          default:\n            return '<i class=\"fas fa-exclamation\"></i>';\n        }\n      }\n    }\n  }\n</script>\n\n<style scoped>\n    .container {\n        display: flex;\n        flex-direction: row;\n        width: 100%;\n        border-radius: 6px;\n    }\n\n    .heading {\n        display: inline;\n        float: right;\n        font-weight: normal;\n        color: inherit;\n        background-color: rgba(240, 240, 240, 0.6);\n        width: auto;\n        padding: 3px 5px 4px 5px;\n        border-width: 0;\n        border-radius: 0 6px 0 6px;\n        margin: -13px -27px 0 15px;\n    }\n\n    .dismiss-button {\n        position: relative;\n        top: -2px;\n        clear: right;\n        color: inherit;\n        height: 100%;\n        margin-right: -6px;\n        margin-left: 21px;\n    }\n\n    .icon-wrapper {\n        display: flex;\n        margin-right: .5em;\n        width: 22px;\n        height: 22px;\n    }\n\n    .contents {\n        padding: 0 6px;\n        width: 100%;\n    }\n\n    .alert-default {\n        color: #24292e;\n        background-color: #f6f8fa;\n        border-color: #e8ebef;\n    }\n    \n    .alert-border-left {\n        background-color: #f9f8f8;\n        border-left: solid;\n        border-width: 0px 0px 0px 5px;\n    }\n        \n    .font-black {\n        color: #24292e;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
-/* 313 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 196 */
+/***/ (function(module, exports) {
 
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 	
-	var _markdown = __webpack_require__(90);
-	
-	var _markdown2 = _interopRequireDefault(_markdown);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	exports.default = {
 	  props: {
@@ -32492,10 +18184,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	      type: String,
 	      default: null
 	    },
-	    icon: {
-	      type: String,
-	      default: null
-	    },
 	    type: {
 	      type: String,
 	      default: 'none'
@@ -32511,11 +18199,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	    light: {
 	      type: Boolean,
 	      default: false
+	    },
+	    header: {
+	      type: String,
+	      default: null
 	    }
 	  },
 	  computed: {
 	    isDefault: function isDefault() {
 	      return this.type === 'none';
+	    },
+	    headerContent: function headerContent() {
+	      return this.header || this.heading;
 	    },
 	    boxStyle: function boxStyle() {
 	      switch (this.type) {
@@ -32578,9 +18273,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return '';
 	    },
 	    iconType: function iconType() {
-	      if (this.icon) {
-	        return _markdown2.default.renderInline(this.icon);
-	      }
 	      switch (this.type) {
 	        case 'wrong':
 	          return '<i class="fas fa-times"></i>';
@@ -32601,25 +18293,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 	    }
 	  }
-	}; //
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
+	};
 
 /***/ }),
-/* 314 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -32629,16 +18306,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	    style: (_vm.customStyle)
 	  }, [(!_vm.isDefault) ? _c('div', {
 	    staticClass: "icon-wrapper"
-	  }, [_c('span', {
+	  }, [_vm._t("_icon", [_c('span', {
 	    domProps: {
 	      "innerHTML": _vm._s(_vm.iconType)
 	    }
-	  })]) : _vm._e(), _vm._v(" "), _c('div', {
+	  })])], 2) : _vm._e(), _vm._v(" "), _c('div', {
 	    staticClass: "contents",
 	    class: _vm.fontBlack
-	  }, [(_vm.heading) ? _c('h6', {
+	  }, [(_vm.headerContent) ? _c('h6', {
 	    staticClass: "heading"
-	  }, [_vm._v(_vm._s(_vm.heading))]) : _vm._e(), _vm._v(" "), (_vm.dismissible) ? _c('button', {
+	  }, [_vm._v(_vm._s(_vm.headerContent))]) : _vm._e(), _vm._v(" "), (_vm.dismissible) ? _c('button', {
 	    staticClass: "close dismiss-button",
 	    attrs: {
 	      "type": "button",
@@ -32659,20 +18336,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 315 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(316)
+	__webpack_require__(199)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(318)
+	__vue_exports__ = __webpack_require__(201)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(319)
+	var __vue_template__ = __webpack_require__(202)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -32706,13 +18383,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 316 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(317);
+	var content = __webpack_require__(200);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -32732,7 +18409,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 317 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -32740,13 +18417,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.scale-enter-active {\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\n  animation:scale-out 0.15s ease-out;\n}\n.tooltip.top,\n.tooltip.left,\n.tooltip.right,\n.tooltip.bottom {\n  opacity: .9\n}\n", "", {"version":3,"sources":["/./src/Tooltip.vue?1e02e2bc"],"names":[],"mappings":";AAuDA;EACA,iCAAA;CACA;AACA;EACA,mCAAA;CACA;AAEA;;;;EAIA,WAAA;CACA","file":"Tooltip.vue","sourcesContent":["<template>\n  <span :class=\"[addClass]\">\n    <span ref=\"trigger\"><slot></slot></span><!--\n    --><transition :name=\"effect\">\n      <div ref=\"popover\" v-if=\"show\" style=\"display:block;\"\n        :class=\"['tooltip', tooltipPlacementClass, 'show']\"\n      >\n        <div class=\"arrow\" ref=\"arrow\"></div>\n        <div class=\"tooltip-inner\">\n          <span name=\"content\" v-html=\"contentRendered\"></span>\n       </div>\n      </div>\n    </transition><!--\n  --></span>\n</template>\n\n<script>\nimport PopoverMixin from './utils/popoverMixins.js'\nimport md from './utils/markdown.js'\n\nexport default {\n  mixins: [PopoverMixin],\n  props: {\n    trigger: {\n      type: String,\n      default: 'hover'\n    },\n    effect: {\n      type: String,\n      default: 'scale'\n    },\n    placement: {\n      type: String,\n      default: 'top'\n    },\n    addClass: {\n      type: String,\n      default: ''\n    }\n  },\n  computed: {\n    tooltipPlacementClass ()  {\n      return `bs-tooltip-${this.placement}`;\n    }\n  },\n  mounted () {\n    if (this.$refs.trigger) {\n      this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dotted'\n      this.$refs.trigger.style['text-decoration'] = 'underline dotted'\n    }\n  }\n}\n</script>\n\n<style>\n.scale-enter-active {\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\n  animation:scale-out 0.15s ease-out;\n}\n\n.tooltip.top,\n.tooltip.left,\n.tooltip.right,\n.tooltip.bottom {\n  opacity: .9\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.scale-enter-active {\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\n  animation:scale-out 0.15s ease-out;\n}\n.tooltip.top,\n.tooltip.left,\n.tooltip.right,\n.tooltip.bottom {\n  opacity: .9\n}\n", "", {"version":3,"sources":["/./src/Tooltip.vue?1e69e552"],"names":[],"mappings":";AAsDA;EACA,iCAAA;CACA;AACA;EACA,mCAAA;CACA;AAEA;;;;EAIA,WAAA;CACA","file":"Tooltip.vue","sourcesContent":["<template>\n  <span :class=\"[addClass]\">\n    <span ref=\"trigger\"><slot></slot></span>\n    <transition :name=\"effect\">\n      <div ref=\"popover\" v-if=\"show\" style=\"display:block;\"\n        :class=\"['tooltip', tooltipPlacementClass, 'show']\"\n      >\n        <div class=\"arrow\" ref=\"arrow\"></div>\n        <div class=\"tooltip-inner\">\n          <slot name=\"_content\"></slot>\n       </div>\n      </div>\n    </transition><!--\n  --></span>\n</template>\n\n<script>\nimport PopoverMixin from './utils/popoverMixins.js'\n\nexport default {\n  mixins: [PopoverMixin],\n  props: {\n    trigger: {\n      type: String,\n      default: 'hover'\n    },\n    effect: {\n      type: String,\n      default: 'scale'\n    },\n    placement: {\n      type: String,\n      default: 'top'\n    },\n    addClass: {\n      type: String,\n      default: ''\n    }\n  },\n  computed: {\n    tooltipPlacementClass ()  {\n      return `bs-tooltip-${this.placement}`;\n    }\n  },\n  mounted () {\n    if (this.$refs.trigger) {\n      this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dotted'\n      this.$refs.trigger.style['text-decoration'] = 'underline dotted'\n    }\n  }\n}\n</script>\n\n<style>\n.scale-enter-active {\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\n  animation:scale-out 0.15s ease-out;\n}\n\n.tooltip.top,\n.tooltip.left,\n.tooltip.right,\n.tooltip.bottom {\n  opacity: .9\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
-/* 318 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -32755,32 +18432,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _popoverMixins = __webpack_require__(244);
+	var _popoverMixins = __webpack_require__(127);
 	
 	var _popoverMixins2 = _interopRequireDefault(_popoverMixins);
 	
-	var _markdown = __webpack_require__(90);
-	
-	var _markdown2 = _interopRequireDefault(_markdown);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
 	
 	exports.default = {
 	  mixins: [_popoverMixins2.default],
@@ -32813,10 +18469,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	      this.$refs.trigger.style['text-decoration'] = 'underline dotted';
 	    }
 	  }
-	};
+	}; //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 /***/ }),
-/* 319 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -32824,7 +18495,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    class: [_vm.addClass]
 	  }, [_c('span', {
 	    ref: "trigger"
-	  }, [_vm._t("default")], 2), _c('transition', {
+	  }, [_vm._t("default")], 2), _vm._v(" "), _c('transition', {
 	    attrs: {
 	      "name": _vm.effect
 	    }
@@ -32839,14 +18510,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    staticClass: "arrow"
 	  }), _vm._v(" "), _c('div', {
 	    staticClass: "tooltip-inner"
-	  }, [_c('span', {
-	    attrs: {
-	      "name": "content"
-	    },
-	    domProps: {
-	      "innerHTML": _vm._s(_vm.contentRendered)
-	    }
-	  })])]) : _vm._e()])], 1)
+	  }, [_vm._t("_content")], 2)]) : _vm._e()])], 1)
 	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
@@ -32856,20 +18520,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 320 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(321)
+	__webpack_require__(204)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(323)
+	__vue_exports__ = __webpack_require__(206)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(324)
+	var __vue_template__ = __webpack_require__(207)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -32903,13 +18567,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 321 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(322);
+	var content = __webpack_require__(205);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -32929,7 +18593,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 322 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -32943,7 +18607,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 323 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -33005,7 +18669,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(72)))
 
 /***/ }),
-/* 324 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
