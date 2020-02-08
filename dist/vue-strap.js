@@ -18128,39 +18128,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.container[data-v-7e93235f] {\n    display: flex;\n    flex-direction: row;\n    width: 100%;\n    border-radius: 6px;\n}\n.heading[data-v-7e93235f] {\n    display: inline;\n    float: right;\n    font-weight: normal;\n    color: inherit;\n    background-color: rgba(240, 240, 240, 0.6);\n    width: auto;\n    padding: 3px 5px 4px 5px;\n    border-width: 0;\n    border-radius: 0 6px 0 6px;\n    margin: -13px -27px 0 15px;\n}\n.dismiss-button[data-v-7e93235f] {\n    position: relative;\n    top: -2px;\n    clear: right;\n    color: inherit;\n    height: 100%;\n    margin-right: -6px;\n    margin-left: 21px;\n}\n.icon-wrapper[data-v-7e93235f] {\n    display: flex;\n    margin-right: .5em;\n    width: 22px;\n    height: 22px;\n}\n.contents[data-v-7e93235f] {\n    padding: 0 6px;\n    width: 100%;\n}\n.alert-default[data-v-7e93235f] {\n    color: #24292e;\n    background-color: #f6f8fa;\n    border-color: #e8ebef;\n}\n.alert-border-left[data-v-7e93235f] {\n    background-color: #f9f8f8;\n    border-left: solid;\n    border-width: 0px 0px 0px 5px;\n}\n.font-black[data-v-7e93235f] {\n    color: #24292e;\n}\n", "", {"version":3,"sources":["/./src/TipBox.vue?14baf73a"],"names":[],"mappings":";AA2JA;IACA,cAAA;IACA,oBAAA;IACA,YAAA;IACA,mBAAA;CACA;AAEA;IACA,gBAAA;IACA,aAAA;IACA,oBAAA;IACA,eAAA;IACA,2CAAA;IACA,YAAA;IACA,yBAAA;IACA,gBAAA;IACA,2BAAA;IACA,2BAAA;CACA;AAEA;IACA,mBAAA;IACA,UAAA;IACA,aAAA;IACA,eAAA;IACA,aAAA;IACA,mBAAA;IACA,kBAAA;CACA;AAEA;IACA,cAAA;IACA,mBAAA;IACA,YAAA;IACA,aAAA;CACA;AAEA;IACA,eAAA;IACA,YAAA;CACA;AAEA;IACA,eAAA;IACA,0BAAA;IACA,sBAAA;CACA;AAEA;IACA,0BAAA;IACA,mBAAA;IACA,8BAAA;CACA;AAEA;IACA,eAAA;CACA","file":"TipBox.vue","sourcesContent":["<template>\n    <div class=\"alert container\" :class=\"[boxStyle, addClass, lightStyle]\" :style=\"customStyle\">\n        <div v-if=\"!isDefault\" class=\"icon-wrapper\">\n            <slot name=\"_icon\">\n                <span v-html=\"iconType\"></span>\n            </slot>\n        </div>\n        <div class=\"contents\" :class=\"fontBlack\">\n            <h6 v-if=\"headerContent\" class=\"heading\">{{ headerContent }}</h6>\n            <button v-if=\"dismissible\" type=\"button\" class=\"close dismiss-button\" data-dismiss=\"alert\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n            <slot></slot>\n        </div>\n\n    </div>\n</template>\n\n<script>\n\n  export default {\n    props: {\n      dismissible: {\n        type: Boolean,\n        default: false\n      },\n      backgroundColor: {\n        type: String,\n        default: null\n      },\n      borderColor: {\n        type: String,\n        default: null\n      },\n      borderLeftColor: {\n        type: String,\n        default: null\n      },\n      color: {\n        type: String,\n        default: null\n      },\n      type: {\n        type: String,\n        default: 'none'\n      },\n      addClass: {\n        type: String,\n        default: ''\n      },\n      heading: {\n        type: String,\n        default: null,\n      }, \n      light: {\n        type: Boolean,\n        default: false,\n      },\n      header: {\n        type: String,\n        default: null,\n      }\n    },\n    computed: {\n      isDefault() {\n        return this.type === 'none'\n      },\n      headerContent() {\n        return this.header || this.heading;\n      },\n      boxStyle() {\n        switch (this.type) {\n          case 'warning':\n            return 'alert-warning'\n          case 'info':\n          case 'definition':\n            return 'alert-info'\n          case 'success':\n          case 'tip':\n            return 'alert-success'\n          case 'important':\n          case 'wrong':\n            return 'alert-danger'\n          default:\n            return 'alert-default'\n        }\n      },\n      lightStyle() {\n        if (this.light) {\n            switch (this.type) {\n            case 'warning':\n                return 'border-warning text-warning alert-border-left';\n            case 'info':\n            case 'definition':\n                return 'border-info text-info alert-border-left';\n            case 'success':\n            case 'tip':\n                return 'border-sucess text-success alert-border-left';\n            case 'important':\n            case 'wrong':\n                return 'border-danger text-danger alert-border-left';\n            default:\n                return '';\n            }\n        }\n        return '';\n      },\n      customStyle() {\n        var style = {};\n        if (this.backgroundColor) {\n          style.backgroundColor = this.backgroundColor;\n          style.borderColor = this.backgroundColor;\n        }\n        if (this.borderColor) {\n          style.borderColor = this.borderColor;\n        }\n        if (this.borderLeftColor) {\n          style.borderLeft = `5px solid ${this.borderLeftColor}`;\n        }\n        if (this.color) {\n          style.color = this.color;\n        }\n        return style;\n      },\n      fontBlack() {\n        if (this.light) {\n          return 'font-black';\n        }\n        return '';\n      },\n      iconType() {\n        switch (this.type) {\n          case 'wrong':\n            return '<i class=\"fas fa-times\"></i>';\n          case 'warning':\n            return '<i class=\"fas fa-exclamation\"></i>';\n          case 'info':\n            return '<i class=\"fas fa-info\"></i>';\n          case 'success':\n            return '<i class=\"fas fa-check\"></i>';\n          case 'important':\n            return '<i class=\"fas fa-flag\"></i>';\n          case 'tip':\n            return '<i class=\"fas fa-lightbulb\"></i>';\n          case 'definition':\n            return '<i class=\"fas fa-atlas\"></i>';\n          default:\n            return '<i class=\"fas fa-exclamation\"></i>';\n        }\n      }\n    }\n  }\n</script>\n\n<style scoped>\n    .container {\n        display: flex;\n        flex-direction: row;\n        width: 100%;\n        border-radius: 6px;\n    }\n\n    .heading {\n        display: inline;\n        float: right;\n        font-weight: normal;\n        color: inherit;\n        background-color: rgba(240, 240, 240, 0.6);\n        width: auto;\n        padding: 3px 5px 4px 5px;\n        border-width: 0;\n        border-radius: 0 6px 0 6px;\n        margin: -13px -27px 0 15px;\n    }\n\n    .dismiss-button {\n        position: relative;\n        top: -2px;\n        clear: right;\n        color: inherit;\n        height: 100%;\n        margin-right: -6px;\n        margin-left: 21px;\n    }\n\n    .icon-wrapper {\n        display: flex;\n        margin-right: .5em;\n        width: 22px;\n        height: 22px;\n    }\n\n    .contents {\n        padding: 0 6px;\n        width: 100%;\n    }\n\n    .alert-default {\n        color: #24292e;\n        background-color: #f6f8fa;\n        border-color: #e8ebef;\n    }\n    \n    .alert-border-left {\n        background-color: #f9f8f8;\n        border-left: solid;\n        border-width: 0px 0px 0px 5px;\n    }\n        \n    .font-black {\n        color: #24292e;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.container[data-v-7e93235f] {\n    display: flex;\n    flex-direction: row;\n    width: 100%;\n    border-radius: 6px;\n}\n.container.seamless[data-v-7e93235f] {\n    background-color: transparent;\n    border-color: transparent;\n}\n.heading[data-v-7e93235f] {\n    display: inline;\n    float: right;\n    font-weight: normal;\n    color: inherit;\n    background-color: rgba(240, 240, 240, 0.6);\n    width: auto;\n    padding: 3px 5px 4px 5px;\n    border-width: 0;\n    border-radius: 0 6px 0 6px;\n    margin: -13px -27px 0 15px;\n}\n.dismiss-button[data-v-7e93235f] {\n    position: relative;\n    top: -2px;\n    clear: right;\n    color: inherit;\n    height: 100%;\n    margin-right: -6px;\n    margin-left: 21px;\n}\n.icon-wrapper[data-v-7e93235f] {\n    display: flex;\n    margin-right: .5em;\n}\n.contents[data-v-7e93235f] {\n    padding: 0 6px;\n    width: 100%;\n}\n.contents.seamless[data-v-7e93235f] {\n    padding-left: 12px;\n}\n.alert-default[data-v-7e93235f] {\n    color: #24292e;\n    background-color: #f6f8fa;\n    border-color: #e8ebef;\n}\n.alert-border-left[data-v-7e93235f] {\n    background-color: #f9f8f8;\n    border-left: solid;\n    border-width: 0px 0px 0px 5px;\n}\n.font-black[data-v-7e93235f] {\n    color: #24292e;\n}\n.vertical-divider[data-v-7e93235f] {\n    width: 4px;\n}\n", "", {"version":3,"sources":["/./src/TipBox.vue?3af1f828"],"names":[],"mappings":";AAwLA;IACA,cAAA;IACA,oBAAA;IACA,YAAA;IACA,mBAAA;CACA;AAEA;IACA,8BAAA;IACA,0BAAA;CACA;AAEA;IACA,gBAAA;IACA,aAAA;IACA,oBAAA;IACA,eAAA;IACA,2CAAA;IACA,YAAA;IACA,yBAAA;IACA,gBAAA;IACA,2BAAA;IACA,2BAAA;CACA;AAEA;IACA,mBAAA;IACA,UAAA;IACA,aAAA;IACA,eAAA;IACA,aAAA;IACA,mBAAA;IACA,kBAAA;CACA;AAEA;IACA,cAAA;IACA,mBAAA;CACA;AAEA;IACA,eAAA;IACA,YAAA;CACA;AAEA;IACA,mBAAA;CACA;AAEA;IACA,eAAA;IACA,0BAAA;IACA,sBAAA;CACA;AAEA;IACA,0BAAA;IACA,mBAAA;IACA,8BAAA;CACA;AAEA;IACA,eAAA;CACA;AAEA;IACA,WAAA;CACA","file":"TipBox.vue","sourcesContent":["<template>\n    <div class=\"alert container\" :class=\"[boxStyle, addClass, lightStyle, seamlessStyle]\" :style=\"customStyle\">\n        <div v-if=\"!isDefault\" class=\"icon-wrapper\" :class=\"[iconStyle]\">\n            <slot name=\"_icon\">\n                <span v-html=\"iconType\"></span>\n            </slot>\n        </div>\n        <div v-if=\"isSeamless\" class=\"vertical-divider\" :class=\"[boxStyle]\"></div>\n        <div class=\"contents\" :class=\"[fontBlack, seamlessStyle]\">\n            <h6 v-if=\"headerContent\" class=\"heading\">{{ headerContent }}</h6>\n            <button v-if=\"dismissible\" type=\"button\" class=\"close dismiss-button\" data-dismiss=\"alert\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n            <slot></slot>\n        </div>\n    </div>\n</template>\n\n<script>\n\n  import { toBoolean } from './utils/utils';\n\n  export default {\n    props: {\n      dismissible: {\n        type: Boolean,\n        default: false\n      },\n      backgroundColor: {\n        type: String,\n        default: null\n      },\n      borderColor: {\n        type: String,\n        default: null\n      },\n      borderLeftColor: {\n        type: String,\n        default: null\n      },\n      color: {\n        type: String,\n        default: null\n      },\n      icon: {\n        type: String,\n        default: null\n      },\n      iconSize: {\n        type: String,\n        default: null\n      },\n      type: {\n        type: String,\n        default: 'none'\n      },\n      addClass: {\n        type: String,\n        default: ''\n      },\n      heading: {\n        type: String,\n        default: null,\n      },\n      light: {\n        type: Boolean,\n        default: false,\n      },\n      header: {\n        type: String,\n        default: null,\n      },\n      seamless: {\n        type: Boolean,\n        default: false,\n      },\n    },\n    computed: {\n      isDefault() {\n        return this.type === 'none'\n      },\n      isSeamless() {\n        return toBoolean(this.seamless);\n      },\n      headerContent() {\n        return this.header || this.heading;\n      },\n      boxStyle() {\n        switch (this.type) {\n          case 'warning':\n            return 'alert-warning'\n          case 'info':\n          case 'definition':\n            return 'alert-info'\n          case 'success':\n          case 'tip':\n            return 'alert-success'\n          case 'important':\n          case 'wrong':\n            return 'alert-danger'\n          default:\n            return 'alert-default'\n        }\n      },\n      lightStyle() {\n        if (this.light) {\n            switch (this.type) {\n            case 'warning':\n                return 'border-warning text-warning alert-border-left';\n            case 'info':\n            case 'definition':\n                return 'border-info text-info alert-border-left';\n            case 'success':\n            case 'tip':\n                return 'border-sucess text-success alert-border-left';\n            case 'important':\n            case 'wrong':\n                return 'border-danger text-danger alert-border-left';\n            default:\n                return '';\n            }\n        }\n        return '';\n      },\n      customStyle() {\n        var style = {};\n        if (this.backgroundColor) {\n          style.backgroundColor = this.backgroundColor;\n          style.borderColor = this.backgroundColor;\n        }\n        if (this.borderColor) {\n          style.borderColor = this.borderColor;\n        }\n        if (this.borderLeftColor) {\n          style.borderLeft = `5px solid ${this.borderLeftColor}`;\n        }\n        if (this.color) {\n          style.color = this.color;\n        }\n        return style;\n      },\n      seamlessStyle() {\n        if (this.seamless) {\n          return 'seamless';\n        }\n        return '';\n      },\n      fontBlack() {\n        if (this.light) {\n          return 'font-black';\n        }\n        return '';\n      },\n      iconType() {\n        switch (this.type) {\n          case 'wrong':\n            return '<i class=\"fas fa-times\"></i>';\n          case 'warning':\n            return '<i class=\"fas fa-exclamation\"></i>';\n          case 'info':\n            return '<i class=\"fas fa-info\"></i>';\n          case 'success':\n            return '<i class=\"fas fa-check\"></i>';\n          case 'important':\n            return '<i class=\"fas fa-flag\"></i>';\n          case 'tip':\n            return '<i class=\"fas fa-lightbulb\"></i>';\n          case 'definition':\n            return '<i class=\"fas fa-atlas\"></i>';\n          default:\n            return '<i class=\"fas fa-exclamation\"></i>';\n        }\n      },\n      iconStyle() {\n        if (this.iconSize) {\n          return `fa-${this.iconSize}`;\n        }\n        return '';\n      }\n    }\n  }\n</script>\n\n<style scoped>\n    .container {\n        display: flex;\n        flex-direction: row;\n        width: 100%;\n        border-radius: 6px;\n    }\n\n    .container.seamless {\n        background-color: transparent;\n        border-color: transparent;\n    }\n\n    .heading {\n        display: inline;\n        float: right;\n        font-weight: normal;\n        color: inherit;\n        background-color: rgba(240, 240, 240, 0.6);\n        width: auto;\n        padding: 3px 5px 4px 5px;\n        border-width: 0;\n        border-radius: 0 6px 0 6px;\n        margin: -13px -27px 0 15px;\n    }\n\n    .dismiss-button {\n        position: relative;\n        top: -2px;\n        clear: right;\n        color: inherit;\n        height: 100%;\n        margin-right: -6px;\n        margin-left: 21px;\n    }\n\n    .icon-wrapper {\n        display: flex;\n        margin-right: .5em;\n    }\n\n    .contents {\n        padding: 0 6px;\n        width: 100%;\n    }\n\n    .contents.seamless {\n        padding-left: 12px;\n    }\n\n    .alert-default {\n        color: #24292e;\n        background-color: #f6f8fa;\n        border-color: #e8ebef;\n    }\n\n    .alert-border-left {\n        background-color: #f9f8f8;\n        border-left: solid;\n        border-width: 0px 0px 0px 5px;\n    }\n\n    .font-black {\n        color: #24292e;\n    }\n\n    .vertical-divider {\n        width: 4px;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
 /* 196 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
 	
+	var _utils = __webpack_require__(38);
 	
 	exports.default = {
 	  props: {
@@ -18184,6 +18167,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	      type: String,
 	      default: null
 	    },
+	    icon: {
+	      type: String,
+	      default: null
+	    },
+	    iconSize: {
+	      type: String,
+	      default: null
+	    },
 	    type: {
 	      type: String,
 	      default: 'none'
@@ -18203,11 +18194,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	    header: {
 	      type: String,
 	      default: null
+	    },
+	    seamless: {
+	      type: Boolean,
+	      default: false
 	    }
 	  },
 	  computed: {
 	    isDefault: function isDefault() {
 	      return this.type === 'none';
+	    },
+	    isSeamless: function isSeamless() {
+	      return (0, _utils.toBoolean)(this.seamless);
 	    },
 	    headerContent: function headerContent() {
 	      return this.header || this.heading;
@@ -18266,6 +18264,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 	      return style;
 	    },
+	    seamlessStyle: function seamlessStyle() {
+	      if (this.seamless) {
+	        return 'seamless';
+	      }
+	      return '';
+	    },
 	    fontBlack: function fontBlack() {
 	      if (this.light) {
 	        return 'font-black';
@@ -18291,9 +18295,32 @@ return /******/ (function(modules) { // webpackBootstrap
 	        default:
 	          return '<i class="fas fa-exclamation"></i>';
 	      }
+	    },
+	    iconStyle: function iconStyle() {
+	      if (this.iconSize) {
+	        return 'fa-' + this.iconSize;
+	      }
+	      return '';
 	    }
 	  }
-	};
+	}; //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 /***/ }),
 /* 197 */
@@ -18302,17 +18329,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticClass: "alert container",
-	    class: [_vm.boxStyle, _vm.addClass, _vm.lightStyle],
+	    class: [_vm.boxStyle, _vm.addClass, _vm.lightStyle, _vm.seamlessStyle],
 	    style: (_vm.customStyle)
 	  }, [(!_vm.isDefault) ? _c('div', {
-	    staticClass: "icon-wrapper"
+	    staticClass: "icon-wrapper",
+	    class: [_vm.iconStyle]
 	  }, [_vm._t("_icon", [_c('span', {
 	    domProps: {
 	      "innerHTML": _vm._s(_vm.iconType)
 	    }
-	  })])], 2) : _vm._e(), _vm._v(" "), _c('div', {
+	  })])], 2) : _vm._e(), _vm._v(" "), (_vm.isSeamless) ? _c('div', {
+	    staticClass: "vertical-divider",
+	    class: [_vm.boxStyle]
+	  }) : _vm._e(), _vm._v(" "), _c('div', {
 	    staticClass: "contents",
-	    class: _vm.fontBlack
+	    class: [_vm.fontBlack, _vm.seamlessStyle]
 	  }, [(_vm.headerContent) ? _c('h6', {
 	    staticClass: "heading"
 	  }, [_vm._v(_vm._s(_vm.headerContent))]) : _vm._e(), _vm._v(" "), (_vm.dismissible) ? _c('button', {
