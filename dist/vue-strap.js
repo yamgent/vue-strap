@@ -104,35 +104,35 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _Searchbar2 = _interopRequireDefault(_Searchbar);
 	
-	var _Tab = __webpack_require__(173);
+	var _Tab = __webpack_require__(186);
 	
 	var _Tab2 = _interopRequireDefault(_Tab);
 	
-	var _TabGroup = __webpack_require__(178);
+	var _TabGroup = __webpack_require__(191);
 	
 	var _TabGroup2 = _interopRequireDefault(_TabGroup);
 	
-	var _Tabset = __webpack_require__(183);
+	var _Tabset = __webpack_require__(196);
 	
 	var _Tabset2 = _interopRequireDefault(_Tabset);
 	
-	var _Thumbnail = __webpack_require__(188);
+	var _Thumbnail = __webpack_require__(201);
 	
 	var _Thumbnail2 = _interopRequireDefault(_Thumbnail);
 	
-	var _TipBox = __webpack_require__(193);
+	var _TipBox = __webpack_require__(206);
 	
 	var _TipBox2 = _interopRequireDefault(_TipBox);
 	
-	var _Tooltip = __webpack_require__(198);
+	var _Tooltip = __webpack_require__(211);
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 	
-	var _trigger = __webpack_require__(203);
+	var _trigger = __webpack_require__(216);
 	
 	var _trigger2 = _interopRequireDefault(_trigger);
 	
-	var _Typeahead = __webpack_require__(168);
+	var _Typeahead = __webpack_require__(176);
 	
 	var _Typeahead2 = _interopRequireDefault(_Typeahead);
 	
@@ -16388,7 +16388,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.search-dropdown-menu {\r\n  max-height: 30em;\r\n  overflow-y: scroll;\n}\r\n", "", {"version":3,"sources":["/./src/Searchbar.vue?729df5a0"],"names":[],"mappings":";AA8IA;EACA,iBAAA;EACA,mBAAA;CACA","file":"Searchbar.vue","sourcesContent":["<script>\r\nimport typeahead from './Typeahead.vue';\r\n\r\nexport default {\r\n  extends: typeahead,\r\n  computed: {\r\n    primitiveData() {\r\n      function getTotalMatches(searchTarget, regexes) {\r\n        return regexes.reduce((total, regex) => (regex.test(searchTarget) ? total + 1 : total), 0);\r\n      }\r\n\r\n      if (this.value.length < 2) {\r\n        return [];\r\n      }\r\n      if (!this.data) {\r\n        return undefined;\r\n      }\r\n      const matches = [];\r\n      const regexes = this.value.split(' ')\r\n        .filter(searchKeyword => searchKeyword !== '')\r\n        .map(searchKeyword => searchKeyword.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&'))\r\n        .map(searchKeyword => new RegExp(searchKeyword, 'i'));\r\n      this.data.forEach((entry) => {\r\n        const { headings, src, title } = entry;\r\n        const keywords = entry.keywords || '';\r\n        let searchTarget = [title].concat(keywords).concat(Object.values(headings)).join(' ');\r\n        let totalMatches = getTotalMatches(searchTarget, regexes);\r\n        if (totalMatches > 0) {\r\n          searchTarget = [title].concat(keywords).join(' ');\r\n          const isMatchingPage = getTotalMatches(searchTarget, regexes) === totalMatches;\r\n          if (isMatchingPage) {\r\n            matches.push(Object.assign(entry, { totalMatches }));\r\n          }\r\n          Object.entries(headings).forEach(([id, text]) => {\r\n            if (regexes.some(regex => regex.test(text))) {\r\n              searchTarget = [title].concat(keywords).concat(text).join(' ');\r\n              totalMatches = getTotalMatches(searchTarget, regexes);\r\n              matches.push({\r\n                heading: { id, text },\r\n                keywords,\r\n                src,\r\n                title,\r\n                totalMatches,\r\n              });\r\n            }\r\n          });\r\n        }\r\n      });\r\n      return matches.sort((a, b) => b.totalMatches - a.totalMatches);\r\n    },\r\n    entryTemplate() {\r\n      return 'searchbarTemplate';\r\n    },\r\n  },\r\n  methods: {\r\n    down() {\r\n      if (this.current < this.items.length - 1) {\r\n        this.current += 1;\r\n        this.scrollListView();\r\n      }\r\n    },\r\n    up() {\r\n      if (this.current > 0) {\r\n        this.current -= 1;\r\n        this.scrollListView();\r\n      }\r\n    },\r\n    scrollListView() {\r\n      const { dropdown } = this.$refs;\r\n      const currentEntry = dropdown.children[this.current];\r\n      const upperBound = dropdown.scrollTop;\r\n      const lowerBound = upperBound + dropdown.clientHeight;\r\n      const currentEntryOffsetBottom = currentEntry.offsetTop + currentEntry.offsetHeight;\r\n      if (currentEntry.offsetTop < upperBound) {\r\n        dropdown.scrollTop = currentEntry.offsetTop;\r\n      } else if (currentEntryOffsetBottom > lowerBound) {\r\n        dropdown.scrollTop = currentEntryOffsetBottom - dropdown.clientHeight;\r\n      }\r\n    },\r\n  },\r\n  components: {\r\n    searchbarTemplate: {\r\n      props: ['item', 'value'],\r\n      template: '<div><span v-html=\"highlight(item.title, value)\"></span>'\r\n      + '<br v-if=\"item.keywords\" />'\r\n      + '<small v-if=\"item.keywords\" v-html=\"highlight(item.keywords, value)\"></small>'\r\n      + '<br v-if=\"item.heading\" />'\r\n      + '<small v-if=\"item.heading\" v-html=\"highlight(item.heading.text, value)\"></small></div>',\r\n      methods: {\r\n        highlight(value, phrase) {\r\n          function getMatchIntervals() {\r\n            const regexes = phrase.split(' ')\r\n              .filter(searchKeyword => searchKeyword !== '')\r\n              .map(searchKeyword => searchKeyword.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&'))\r\n              .map(searchKeyword => new RegExp(`(${searchKeyword})`, 'gi'));\r\n            const matchIntervals = [];\r\n            regexes.forEach((regex) => {\r\n              let match = regex.exec(value);\r\n              while (match !== null) {\r\n                if (match.index === regex.lastIndex) {\r\n                  break;\r\n                }\r\n                matchIntervals.push({ start: match.index, end: regex.lastIndex });\r\n                match = regex.exec(value);\r\n              }\r\n            });\r\n            return matchIntervals;\r\n          }\r\n          // https://www.geeksforgeeks.org/merging-intervals/\r\n          function mergeOverlappingIntervals(intervals) {\r\n            if (intervals.length <= 1) {\r\n              return intervals;\r\n            }\r\n            return intervals\r\n              .sort((a, b) => a.start - b.start)\r\n              .reduce((stack, current) => {\r\n                const top = stack[stack.length - 1];\r\n                if (!top || top.end < current.start) {\r\n                  stack.push(current);\r\n                } else if (top.end < current.end) {\r\n                  top.end = current.end;\r\n                }\r\n                return stack;\r\n              }, []);\r\n          }\r\n          const matchIntervals = mergeOverlappingIntervals(getMatchIntervals());\r\n          let highlightedValue = value;\r\n          // Traverse from back to front to avoid the positioning going out of sync\r\n          for (let i = matchIntervals.length - 1; i >= 0; i -= 1) {\r\n            highlightedValue = `${highlightedValue.slice(0, matchIntervals[i].start)}<mark>`\r\n              + `${highlightedValue.slice(matchIntervals[i].start, matchIntervals[i].end)}</mark>`\r\n              + `${highlightedValue.slice(matchIntervals[i].end)}`;\r\n          }\r\n          return highlightedValue;\r\n        },\r\n      },\r\n    },\r\n  },\r\n};\r\n</script>\r\n\r\n<style>\r\n.search-dropdown-menu {\r\n  max-height: 30em;\r\n  overflow-y: scroll;\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.search-dropdown-menu {\n  min-width: 30em;\n  max-height: 30em;\n  overflow-y: scroll;\n}\n@media screen and (max-width: 768px) {\n.search-dropdown-menu {\n    min-width: auto;\n    max-height: 30em;\n    overflow-y: scroll;\n}\n}\n", "", {"version":3,"sources":["/./src/Searchbar.vue?32a46f04"],"names":[],"mappings":";AA4HA;EACA,gBAAA;EACA,iBAAA;EACA,mBAAA;CACA;AAEA;AACA;IACA,gBAAA;IACA,iBAAA;IACA,mBAAA;CACA;CACA","file":"Searchbar.vue","sourcesContent":["<script>\nimport typeahead from './Typeahead.vue';\nimport searchbarPageItem from './SearchbarPageItem.vue';\n\nexport default {\n  extends: typeahead,\n  computed: {\n    primitiveData() {\n      // Returns the total number of matches between an array of regex patterns and string search targets.\n      function getTotalMatches(searchTargets, regexes) {\n        const searchTarget = searchTargets.join(' ');\n\n        return regexes.reduce((total, regex) => {\n          const matches = searchTarget.match(regex);\n          return total + (matches ? matches.length : 0);\n        }, 0);\n      }\n\n      if (this.value.length < 2 || !this.data) {\n        return [];\n      }\n      const pages = [];\n      const regexes = this.value.split(' ')\n        .filter(searchKeyword => searchKeyword !== '')\n        .map(searchKeyword => searchKeyword.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&'))\n        .map(searchKeyword => new RegExp(searchKeyword, 'ig'));\n      this.data.forEach((entry) => {\n        const {\n          headings,\n          src,\n          title,\n          headingKeywords,\n        } = entry;\n        const keywords = entry.keywords || '';\n        const displayTitle = title || src;\n\n        const pageSearchTargets = [\n          displayTitle,\n          keywords,\n          ...Object.values(headings),\n          ...Object.values(headingKeywords),\n        ];\n        const totalPageMatches = getTotalMatches(pageSearchTargets, regexes);\n\n        if (totalPageMatches > 0) {\n          const pageHeadings = [];\n          Object.entries(headings).forEach(([id, text]) => {\n            const matchesHeading = regexes.some(regex => regex.test(text));\n            const matchesKeywords = headingKeywords[id] && headingKeywords[id].some(keyword =>\n              regexes.some(regex => regex.test(keyword)));\n\n            if (matchesHeading || matchesKeywords) {\n              const headingSearchTargets = [\n                text,\n                ...(headingKeywords[id] || []),\n              ];\n              const totalHeadingMatches = getTotalMatches(headingSearchTargets, regexes);\n\n              pageHeadings.push({\n                heading: { id, text },\n                keywords: headingKeywords[id],\n                src,\n                totalMatches: totalHeadingMatches,\n              });\n            }\n          });\n          pageHeadings.sort((a, b) => b.totalMatches - a.totalMatches);\n\n          pages.push({\n            headings: pageHeadings,\n            keywords,\n            src,\n            title: displayTitle,\n            totalMatches: totalPageMatches,\n          });\n        }\n      });\n\n      return pages\n        .sort((a, b) => b.totalMatches - a.totalMatches)\n        .flatMap((page) => {\n          if (page.headings) {\n            return [page, ...page.headings];\n          }\n          return page;\n        });\n    },\n    entryTemplate() {\n      return 'searchbarPageItem';\n    },\n  },\n  methods: {\n    down() {\n      if (this.current < this.items.length - 1) {\n        this.current += 1;\n        this.scrollListView();\n      }\n    },\n    up() {\n      if (this.current > 0) {\n        this.current -= 1;\n        this.scrollListView();\n      }\n    },\n    scrollListView() {\n      const { dropdown } = this.$refs;\n      const currentEntry = dropdown.children[this.current];\n      const upperBound = dropdown.scrollTop;\n      const lowerBound = upperBound + dropdown.clientHeight;\n      const currentEntryOffsetBottom = currentEntry.offsetTop + currentEntry.offsetHeight;\n      if (currentEntry.offsetTop < upperBound) {\n        dropdown.scrollTop = currentEntry.offsetTop;\n      } else if (currentEntryOffsetBottom > lowerBound) {\n        dropdown.scrollTop = currentEntryOffsetBottom - dropdown.clientHeight;\n      }\n    },\n  },\n  components: {\n    searchbarPageItem,\n  },\n};\n</script>\n\n<style>\n.search-dropdown-menu {\n  min-width: 30em;\n  max-height: 30em;\n  overflow-y: scroll;\n}\n\n@media screen and (max-width: 768px) {\n  .search-dropdown-menu {\n    min-width: auto;\n    max-height: 30em;\n    overflow-y: scroll;\n  }\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -16411,17 +16411,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _entries2 = _interopRequireDefault(_entries);
 	
-	var _assign = __webpack_require__(128);
-	
-	var _assign2 = _interopRequireDefault(_assign);
-	
 	var _values = __webpack_require__(165);
 	
 	var _values2 = _interopRequireDefault(_values);
 	
-	var _Typeahead = __webpack_require__(168);
+	var _toConsumableArray2 = __webpack_require__(168);
+	
+	var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+	
+	var _Typeahead = __webpack_require__(176);
 	
 	var _Typeahead2 = _interopRequireDefault(_Typeahead);
+	
+	var _SearchbarPageItem = __webpack_require__(181);
+	
+	var _SearchbarPageItem2 = _interopRequireDefault(_SearchbarPageItem);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -16429,67 +16433,92 @@ return /******/ (function(modules) { // webpackBootstrap
 	  extends: _Typeahead2.default,
 	  computed: {
 	    primitiveData: function primitiveData() {
-	      function getTotalMatches(searchTarget, regexes) {
+	      // Returns the total number of matches between an array of regex patterns and string search targets.
+	      function getTotalMatches(searchTargets, regexes) {
+	        var searchTarget = searchTargets.join(' ');
+	
 	        return regexes.reduce(function (total, regex) {
-	          return regex.test(searchTarget) ? total + 1 : total;
+	          var matches = searchTarget.match(regex);
+	          return total + (matches ? matches.length : 0);
 	        }, 0);
 	      }
 	
-	      if (this.value.length < 2) {
+	      if (this.value.length < 2 || !this.data) {
 	        return [];
 	      }
-	      if (!this.data) {
-	        return undefined;
-	      }
-	      var matches = [];
+	      var pages = [];
 	      var regexes = this.value.split(' ').filter(function (searchKeyword) {
 	        return searchKeyword !== '';
 	      }).map(function (searchKeyword) {
 	        return searchKeyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 	      }).map(function (searchKeyword) {
-	        return new RegExp(searchKeyword, 'i');
+	        return new RegExp(searchKeyword, 'ig');
 	      });
 	      this.data.forEach(function (entry) {
 	        var headings = entry.headings,
 	            src = entry.src,
-	            title = entry.title;
+	            title = entry.title,
+	            headingKeywords = entry.headingKeywords;
 	
 	        var keywords = entry.keywords || '';
-	        var searchTarget = [title].concat(keywords).concat((0, _values2.default)(headings)).join(' ');
-	        var totalMatches = getTotalMatches(searchTarget, regexes);
-	        if (totalMatches > 0) {
-	          searchTarget = [title].concat(keywords).join(' ');
-	          var isMatchingPage = getTotalMatches(searchTarget, regexes) === totalMatches;
-	          if (isMatchingPage) {
-	            matches.push((0, _assign2.default)(entry, { totalMatches: totalMatches }));
-	          }
+	        var displayTitle = title || src;
+	
+	        var pageSearchTargets = [displayTitle, keywords].concat((0, _toConsumableArray3.default)((0, _values2.default)(headings)), (0, _toConsumableArray3.default)((0, _values2.default)(headingKeywords)));
+	        var totalPageMatches = getTotalMatches(pageSearchTargets, regexes);
+	
+	        if (totalPageMatches > 0) {
+	          var pageHeadings = [];
 	          (0, _entries2.default)(headings).forEach(function (_ref) {
 	            var _ref2 = (0, _slicedToArray3.default)(_ref, 2),
 	                id = _ref2[0],
 	                text = _ref2[1];
 	
-	            if (regexes.some(function (regex) {
+	            var matchesHeading = regexes.some(function (regex) {
 	              return regex.test(text);
-	            })) {
-	              searchTarget = [title].concat(keywords).concat(text).join(' ');
-	              totalMatches = getTotalMatches(searchTarget, regexes);
-	              matches.push({
+	            });
+	            var matchesKeywords = headingKeywords[id] && headingKeywords[id].some(function (keyword) {
+	              return regexes.some(function (regex) {
+	                return regex.test(keyword);
+	              });
+	            });
+	
+	            if (matchesHeading || matchesKeywords) {
+	              var headingSearchTargets = [text].concat((0, _toConsumableArray3.default)(headingKeywords[id] || []));
+	              var totalHeadingMatches = getTotalMatches(headingSearchTargets, regexes);
+	
+	              pageHeadings.push({
 	                heading: { id: id, text: text },
-	                keywords: keywords,
+	                keywords: headingKeywords[id],
 	                src: src,
-	                title: title,
-	                totalMatches: totalMatches
+	                totalMatches: totalHeadingMatches
 	              });
 	            }
 	          });
+	          pageHeadings.sort(function (a, b) {
+	            return b.totalMatches - a.totalMatches;
+	          });
+	
+	          pages.push({
+	            headings: pageHeadings,
+	            keywords: keywords,
+	            src: src,
+	            title: displayTitle,
+	            totalMatches: totalPageMatches
+	          });
 	        }
 	      });
-	      return matches.sort(function (a, b) {
+	
+	      return pages.sort(function (a, b) {
 	        return b.totalMatches - a.totalMatches;
+	      }).flatMap(function (page) {
+	        if (page.headings) {
+	          return [page].concat((0, _toConsumableArray3.default)(page.headings));
+	        }
+	        return page;
 	      });
 	    },
 	    entryTemplate: function entryTemplate() {
-	      return 'searchbarTemplate';
+	      return 'searchbarPageItem';
 	    }
 	  },
 	  methods: {
@@ -16520,59 +16549,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  },
 	  components: {
-	    searchbarTemplate: {
-	      props: ['item', 'value'],
-	      template: '<div><span v-html="highlight(item.title, value)"></span>' + '<br v-if="item.keywords" />' + '<small v-if="item.keywords" v-html="highlight(item.keywords, value)"></small>' + '<br v-if="item.heading" />' + '<small v-if="item.heading" v-html="highlight(item.heading.text, value)"></small></div>',
-	      methods: {
-	        highlight: function highlight(value, phrase) {
-	          function getMatchIntervals() {
-	            var regexes = phrase.split(' ').filter(function (searchKeyword) {
-	              return searchKeyword !== '';
-	            }).map(function (searchKeyword) {
-	              return searchKeyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-	            }).map(function (searchKeyword) {
-	              return new RegExp('(' + searchKeyword + ')', 'gi');
-	            });
-	            var matchIntervals = [];
-	            regexes.forEach(function (regex) {
-	              var match = regex.exec(value);
-	              while (match !== null) {
-	                if (match.index === regex.lastIndex) {
-	                  break;
-	                }
-	                matchIntervals.push({ start: match.index, end: regex.lastIndex });
-	                match = regex.exec(value);
-	              }
-	            });
-	            return matchIntervals;
-	          }
-	          // https://www.geeksforgeeks.org/merging-intervals/
-	          function mergeOverlappingIntervals(intervals) {
-	            if (intervals.length <= 1) {
-	              return intervals;
-	            }
-	            return intervals.sort(function (a, b) {
-	              return a.start - b.start;
-	            }).reduce(function (stack, current) {
-	              var top = stack[stack.length - 1];
-	              if (!top || top.end < current.start) {
-	                stack.push(current);
-	              } else if (top.end < current.end) {
-	                top.end = current.end;
-	              }
-	              return stack;
-	            }, []);
-	          }
-	          var matchIntervals = mergeOverlappingIntervals(getMatchIntervals());
-	          var highlightedValue = value;
-	          // Traverse from back to front to avoid the positioning going out of sync
-	          for (var i = matchIntervals.length - 1; i >= 0; i -= 1) {
-	            highlightedValue = highlightedValue.slice(0, matchIntervals[i].start) + '<mark>' + (highlightedValue.slice(matchIntervals[i].start, matchIntervals[i].end) + '</mark>') + ('' + highlightedValue.slice(matchIntervals[i].end));
-	          }
-	          return highlightedValue;
-	        }
-	      }
-	    }
+	    searchbarPageItem: _SearchbarPageItem2.default
 	  }
 	};
 
@@ -16818,17 +16795,175 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	"use strict";
+	
+	exports.__esModule = true;
+	
+	var _from = __webpack_require__(169);
+	
+	var _from2 = _interopRequireDefault(_from);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	exports.default = function (arr) {
+	  if (Array.isArray(arr)) {
+	    for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) {
+	      arr2[i] = arr[i];
+	    }
+	
+	    return arr2;
+	  } else {
+	    return (0, _from2.default)(arr);
+	  }
+	};
+
+/***/ }),
+/* 169 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(170), __esModule: true };
+
+/***/ }),
+/* 170 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	__webpack_require__(45);
+	__webpack_require__(171);
+	module.exports = __webpack_require__(23).Array.from;
+
+
+/***/ }),
+/* 171 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var ctx = __webpack_require__(24);
+	var $export = __webpack_require__(22);
+	var toObject = __webpack_require__(4);
+	var call = __webpack_require__(172);
+	var isArrayIter = __webpack_require__(173);
+	var toLength = __webpack_require__(13);
+	var createProperty = __webpack_require__(174);
+	var getIterFn = __webpack_require__(160);
+	
+	$export($export.S + $export.F * !__webpack_require__(175)(function (iter) { Array.from(iter); }), 'Array', {
+	  // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
+	  from: function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
+	    var O = toObject(arrayLike);
+	    var C = typeof this == 'function' ? this : Array;
+	    var aLen = arguments.length;
+	    var mapfn = aLen > 1 ? arguments[1] : undefined;
+	    var mapping = mapfn !== undefined;
+	    var index = 0;
+	    var iterFn = getIterFn(O);
+	    var length, result, step, iterator;
+	    if (mapping) mapfn = ctx(mapfn, aLen > 2 ? arguments[2] : undefined, 2);
+	    // if object isn't iterable or it's array with default iterator - use simple case
+	    if (iterFn != undefined && !(C == Array && isArrayIter(iterFn))) {
+	      for (iterator = iterFn.call(O), result = new C(); !(step = iterator.next()).done; index++) {
+	        createProperty(result, index, mapping ? call(iterator, mapfn, [step.value, index], true) : step.value);
+	      }
+	    } else {
+	      length = toLength(O.length);
+	      for (result = new C(length); length > index; index++) {
+	        createProperty(result, index, mapping ? mapfn(O[index], index) : O[index]);
+	      }
+	    }
+	    result.length = index;
+	    return result;
+	  }
+	});
+
+
+/***/ }),
+/* 172 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// call something on iterator step with safe closing on error
+	var anObject = __webpack_require__(28);
+	module.exports = function (iterator, fn, value, entries) {
+	  try {
+	    return entries ? fn(anObject(value)[0], value[1]) : fn(value);
+	  // 7.4.6 IteratorClose(iterator, completion)
+	  } catch (e) {
+	    var ret = iterator['return'];
+	    if (ret !== undefined) anObject(ret.call(iterator));
+	    throw e;
+	  }
+	};
+
+
+/***/ }),
+/* 173 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// check on default Array iterator
+	var Iterators = __webpack_require__(50);
+	var ITERATOR = __webpack_require__(56)('iterator');
+	var ArrayProto = Array.prototype;
+	
+	module.exports = function (it) {
+	  return it !== undefined && (Iterators.Array === it || ArrayProto[ITERATOR] === it);
+	};
+
+
+/***/ }),
+/* 174 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var $defineProperty = __webpack_require__(27);
+	var createDesc = __webpack_require__(35);
+	
+	module.exports = function (object, index, value) {
+	  if (index in object) $defineProperty.f(object, index, createDesc(0, value));
+	  else object[index] = value;
+	};
+
+
+/***/ }),
+/* 175 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var ITERATOR = __webpack_require__(56)('iterator');
+	var SAFE_CLOSING = false;
+	
+	try {
+	  var riter = [7][ITERATOR]();
+	  riter['return'] = function () { SAFE_CLOSING = true; };
+	  // eslint-disable-next-line no-throw-literal
+	  Array.from(riter, function () { throw 2; });
+	} catch (e) { /* empty */ }
+	
+	module.exports = function (exec, skipClosing) {
+	  if (!skipClosing && !SAFE_CLOSING) return false;
+	  var safe = false;
+	  try {
+	    var arr = [7];
+	    var iter = arr[ITERATOR]();
+	    iter.next = function () { return { done: safe = true }; };
+	    arr[ITERATOR] = function () { return iter; };
+	    exec(arr);
+	  } catch (e) { /* empty */ }
+	  return safe;
+	};
+
+
+/***/ }),
+/* 176 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(169)
+	__webpack_require__(177)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(171)
+	__vue_exports__ = __webpack_require__(179)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(172)
+	var __vue_template__ = __webpack_require__(180)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -16862,13 +16997,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 169 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(170);
+	var content = __webpack_require__(178);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -16888,7 +17023,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 170 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -16902,7 +17037,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 171 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17078,7 +17213,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 172 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -17161,20 +17296,243 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 173 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(174)
+	__webpack_require__(182)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(176)
+	__vue_exports__ = __webpack_require__(184)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(177)
+	var __vue_template__ = __webpack_require__(185)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "D:\\GitHub\\yamgent\\vue-strap\\src\\SearchbarPageItem.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	__vue_options__._scopeId = "data-v-309e9a24"
+	
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-309e9a24", __vue_options__)
+	  } else {
+	    hotAPI.reload("data-v-309e9a24", __vue_options__)
+	  }
+	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] SearchbarPageItem.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+	
+	module.exports = __vue_exports__
+
+
+/***/ }),
+/* 182 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(183);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(78)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-309e9a24&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SearchbarPageItem.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-309e9a24&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./SearchbarPageItem.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 183 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(77)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "\n.mark[data-v-309e9a24] {\n  padding: 0 !important;\n}\n.heading[data-v-309e9a24] {\n  padding: 0 0 0.1rem 0.2rem;\n}\n.heading-text[data-v-309e9a24] {\n  display: inline-block;\n  width: 40%;\n  white-space: normal;\n  vertical-align: top;\n}\n.heading-text-items[data-v-309e9a24] {\n  display: inline-block;\n  width: calc(60% - 0.7rem);\n  white-space: normal;\n  border-left: 1px solid #ddd;\n  padding-left: 0.5rem;\n}\n.page-title[data-v-309e9a24] {\n  font-size: 1.05rem;\n  font-weight: bold;\n}\n.page-headings-separator[data-v-309e9a24] {\n  margin: 0.2rem 0;\n}\n", "", {"version":3,"sources":["/./src/SearchbarPageItem.vue?5efc56b8"],"names":[],"mappings":";AAoFA;EACA,sBAAA;CACA;AAEA;EACA,2BAAA;CACA;AAEA;EACA,sBAAA;EACA,WAAA;EACA,oBAAA;EACA,oBAAA;CACA;AAEA;EACA,sBAAA;EACA,0BAAA;EACA,oBAAA;EACA,4BAAA;EACA,qBAAA;CACA;AAEA;EACA,mBAAA;EACA,kBAAA;CACA;AAEA;EACA,iBAAA;CACA","file":"SearchbarPageItem.vue","sourcesContent":["<template>\n  <div v-if=\"item.heading\" class=\"heading\">\n    <div class=\"heading-text\">{{ item.heading.text }}</div>\n    <div class=\"heading-text-items\">\n      <small v-html=\"highlight(item.heading.text, value)\"></small>\n      <br />\n      <small v-for=\"(keyword, index) in item.keywords\" :key=\"index\">\n        <span v-html=\"highlight(keyword, value)\"></span>\n        <br />\n      </small>\n    </div>\n  </div>\n  <div v-else>\n    <span class=\"page-title\" v-html=\"highlight(item.title, value)\"></span>\n    <br v-if=\"item.keywords\" />\n    <small v-if=\"item.keywords\" v-html=\"highlight(item.keywords, value)\"></small>\n    <hr class=\"page-headings-separator\" />\n  </div>\n</template>\n\n<script>\nexport default {\n  props: {\n    item: {\n      type: Object,\n      default: null,\n    },\n    value: {\n      type: String,\n      default: '',\n    },\n  },\n  methods: {\n    highlight(value, phrase) {\n      function getMatchIntervals() {\n        const regexes = phrase.split(' ')\n          .filter(searchKeyword => searchKeyword !== '')\n          .map(searchKeyword => searchKeyword.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&'))\n          .map(searchKeyword => new RegExp(`(${searchKeyword})`, 'gi'));\n        const matchIntervals = [];\n        regexes.forEach((regex) => {\n          let match = regex.exec(value);\n          while (match !== null) {\n            if (match.index === regex.lastIndex) {\n              break;\n            }\n            matchIntervals.push({ start: match.index, end: regex.lastIndex });\n            match = regex.exec(value);\n          }\n        });\n        return matchIntervals;\n      }\n      // https://www.geeksforgeeks.org/merging-intervals/\n      function mergeOverlappingIntervals(intervals) {\n        if (intervals.length <= 1) {\n          return intervals;\n        }\n        return intervals\n          .sort((a, b) => a.start - b.start)\n          .reduce((stack, current) => {\n            const top = stack[stack.length - 1];\n            if (!top || top.end < current.start) {\n              stack.push(current);\n            } else if (top.end < current.end) {\n              top.end = current.end;\n            }\n            return stack;\n          }, []);\n      }\n      const matchIntervals = mergeOverlappingIntervals(getMatchIntervals());\n      let highlightedValue = value;\n      // Traverse from back to front to avoid the positioning going out of sync\n      for (let i = matchIntervals.length - 1; i >= 0; i -= 1) {\n        highlightedValue = `${highlightedValue.slice(0, matchIntervals[i].start)}<mark>`\n          + `${highlightedValue.slice(matchIntervals[i].start, matchIntervals[i].end)}</mark>`\n          + `${highlightedValue.slice(matchIntervals[i].end)}`;\n      }\n      return highlightedValue;\n    },\n  },\n};\n</script>\n\n<style scoped>\n  .mark {\n    padding: 0 !important;\n  }\n\n  .heading {\n    padding: 0 0 0.1rem 0.2rem;\n  }\n\n  .heading-text {\n    display: inline-block;\n    width: 40%;\n    white-space: normal;\n    vertical-align: top;\n  }\n\n  .heading-text-items {\n    display: inline-block;\n    width: calc(60% - 0.7rem);\n    white-space: normal;\n    border-left: 1px solid #ddd;\n    padding-left: 0.5rem;\n  }\n\n  .page-title {\n    font-size: 1.05rem;\n    font-weight: bold;\n  }\n\n  .page-headings-separator {\n    margin: 0.2rem 0;\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	
+	// exports
+
+
+/***/ }),
+/* 184 */
+/***/ (function(module, exports) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	
+	exports.default = {
+	  props: {
+	    item: {
+	      type: Object,
+	      default: null
+	    },
+	    value: {
+	      type: String,
+	      default: ''
+	    }
+	  },
+	  methods: {
+	    highlight: function highlight(value, phrase) {
+	      function getMatchIntervals() {
+	        var regexes = phrase.split(' ').filter(function (searchKeyword) {
+	          return searchKeyword !== '';
+	        }).map(function (searchKeyword) {
+	          return searchKeyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+	        }).map(function (searchKeyword) {
+	          return new RegExp('(' + searchKeyword + ')', 'gi');
+	        });
+	        var matchIntervals = [];
+	        regexes.forEach(function (regex) {
+	          var match = regex.exec(value);
+	          while (match !== null) {
+	            if (match.index === regex.lastIndex) {
+	              break;
+	            }
+	            matchIntervals.push({ start: match.index, end: regex.lastIndex });
+	            match = regex.exec(value);
+	          }
+	        });
+	        return matchIntervals;
+	      }
+	      // https://www.geeksforgeeks.org/merging-intervals/
+	      function mergeOverlappingIntervals(intervals) {
+	        if (intervals.length <= 1) {
+	          return intervals;
+	        }
+	        return intervals.sort(function (a, b) {
+	          return a.start - b.start;
+	        }).reduce(function (stack, current) {
+	          var top = stack[stack.length - 1];
+	          if (!top || top.end < current.start) {
+	            stack.push(current);
+	          } else if (top.end < current.end) {
+	            top.end = current.end;
+	          }
+	          return stack;
+	        }, []);
+	      }
+	      var matchIntervals = mergeOverlappingIntervals(getMatchIntervals());
+	      var highlightedValue = value;
+	      // Traverse from back to front to avoid the positioning going out of sync
+	      for (var i = matchIntervals.length - 1; i >= 0; i -= 1) {
+	        highlightedValue = highlightedValue.slice(0, matchIntervals[i].start) + '<mark>' + (highlightedValue.slice(matchIntervals[i].start, matchIntervals[i].end) + '</mark>') + ('' + highlightedValue.slice(matchIntervals[i].end));
+	      }
+	      return highlightedValue;
+	    }
+	  }
+	};
+
+/***/ }),
+/* 185 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return (_vm.item.heading) ? _c('div', {
+	    staticClass: "heading"
+	  }, [_c('div', {
+	    staticClass: "heading-text"
+	  }, [_vm._v(_vm._s(_vm.item.heading.text))]), _vm._v(" "), _c('div', {
+	    staticClass: "heading-text-items"
+	  }, [_c('small', {
+	    domProps: {
+	      "innerHTML": _vm._s(_vm.highlight(_vm.item.heading.text, _vm.value))
+	    }
+	  }), _vm._v(" "), _c('br'), _vm._v(" "), _vm._l((_vm.item.keywords), function(keyword, index) {
+	    return _c('small', {
+	      key: index
+	    }, [_c('span', {
+	      domProps: {
+	        "innerHTML": _vm._s(_vm.highlight(keyword, _vm.value))
+	      }
+	    }), _vm._v(" "), _c('br')])
+	  })], 2)]) : _c('div', [_c('span', {
+	    staticClass: "page-title",
+	    domProps: {
+	      "innerHTML": _vm._s(_vm.highlight(_vm.item.title, _vm.value))
+	    }
+	  }), _vm._v(" "), (_vm.item.keywords) ? _c('br') : _vm._e(), _vm._v(" "), (_vm.item.keywords) ? _c('small', {
+	    domProps: {
+	      "innerHTML": _vm._s(_vm.highlight(_vm.item.keywords, _vm.value))
+	    }
+	  }) : _vm._e(), _vm._v(" "), _c('hr', {
+	    staticClass: "page-headings-separator"
+	  })])
+	},staticRenderFns: []}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-hot-reload-api").rerender("data-v-309e9a24", module.exports)
+	  }
+	}
+
+/***/ }),
+/* 186 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
+	
+	/* styles */
+	__webpack_require__(187)
+	
+	/* script */
+	__vue_exports__ = __webpack_require__(189)
+	
+	/* template */
+	var __vue_template__ = __webpack_require__(190)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -17208,13 +17566,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 174 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(175);
+	var content = __webpack_require__(188);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -17234,7 +17592,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 175 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -17248,7 +17606,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 176 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17340,7 +17698,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 
 /***/ }),
-/* 177 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -17375,20 +17733,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 178 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(179)
+	__webpack_require__(192)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(181)
+	__vue_exports__ = __webpack_require__(194)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(182)
+	var __vue_template__ = __webpack_require__(195)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -17423,13 +17781,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 179 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(180);
+	var content = __webpack_require__(193);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -17449,7 +17807,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 180 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -17463,7 +17821,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 181 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17539,7 +17897,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 
 /***/ }),
-/* 182 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -17556,20 +17914,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 183 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(184)
+	__webpack_require__(197)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(186)
+	__vue_exports__ = __webpack_require__(199)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(187)
+	var __vue_template__ = __webpack_require__(200)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -17604,13 +17962,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 184 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(185);
+	var content = __webpack_require__(198);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -17630,7 +17988,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 185 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -17644,7 +18002,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 186 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17737,7 +18095,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 187 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -17812,20 +18170,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 188 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(189)
+	__webpack_require__(202)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(191)
+	__vue_exports__ = __webpack_require__(204)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(192)
+	var __vue_template__ = __webpack_require__(205)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -17859,13 +18217,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 189 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(190);
+	var content = __webpack_require__(203);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -17885,7 +18243,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 190 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -17899,7 +18257,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 191 */
+/* 204 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -18013,7 +18371,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 192 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -18046,20 +18404,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 193 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(194)
+	__webpack_require__(207)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(196)
+	__vue_exports__ = __webpack_require__(209)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(197)
+	var __vue_template__ = __webpack_require__(210)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -18094,13 +18452,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 194 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(195);
+	var content = __webpack_require__(208);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -18120,7 +18478,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 195 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -18134,7 +18492,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 196 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -18323,7 +18681,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 
 /***/ }),
-/* 197 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -18367,20 +18725,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 198 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(199)
+	__webpack_require__(212)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(201)
+	__vue_exports__ = __webpack_require__(214)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(202)
+	var __vue_template__ = __webpack_require__(215)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -18414,13 +18772,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 199 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(200);
+	var content = __webpack_require__(213);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -18440,7 +18798,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 200 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -18448,13 +18806,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.scale-enter-active {\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\n  animation:scale-out 0.15s ease-out;\n}\n.tooltip.top,\n.tooltip.left,\n.tooltip.right,\n.tooltip.bottom {\n  opacity: .9\n}\n", "", {"version":3,"sources":["/./src/Tooltip.vue?1e69e552"],"names":[],"mappings":";AAsDA;EACA,iCAAA;CACA;AACA;EACA,mCAAA;CACA;AAEA;;;;EAIA,WAAA;CACA","file":"Tooltip.vue","sourcesContent":["<template>\n  <span :class=\"[addClass]\">\n    <span ref=\"trigger\"><slot></slot></span>\n    <transition :name=\"effect\">\n      <div ref=\"popover\" v-if=\"show\" style=\"display:block;\"\n        :class=\"['tooltip', tooltipPlacementClass, 'show']\"\n      >\n        <div class=\"arrow\" ref=\"arrow\"></div>\n        <div class=\"tooltip-inner\">\n          <slot name=\"_content\"></slot>\n       </div>\n      </div>\n    </transition><!--\n  --></span>\n</template>\n\n<script>\nimport PopoverMixin from './utils/popoverMixins.js'\n\nexport default {\n  mixins: [PopoverMixin],\n  props: {\n    trigger: {\n      type: String,\n      default: 'hover'\n    },\n    effect: {\n      type: String,\n      default: 'scale'\n    },\n    placement: {\n      type: String,\n      default: 'top'\n    },\n    addClass: {\n      type: String,\n      default: ''\n    }\n  },\n  computed: {\n    tooltipPlacementClass ()  {\n      return `bs-tooltip-${this.placement}`;\n    }\n  },\n  mounted () {\n    if (this.$refs.trigger) {\n      this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dotted'\n      this.$refs.trigger.style['text-decoration'] = 'underline dotted'\n    }\n  }\n}\n</script>\n\n<style>\n.scale-enter-active {\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\n  animation:scale-out 0.15s ease-out;\n}\n\n.tooltip.top,\n.tooltip.left,\n.tooltip.right,\n.tooltip.bottom {\n  opacity: .9\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.scale-enter-active {\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\n  animation:scale-out 0.15s ease-out;\n}\n.tooltip.top,\n.tooltip.left,\n.tooltip.right,\n.tooltip.bottom {\n  opacity: .9\n}\n", "", {"version":3,"sources":["/./src/Tooltip.vue?9c62e220"],"names":[],"mappings":";AAqDA;EACA,iCAAA;CACA;AACA;EACA,mCAAA;CACA;AAEA;;;;EAIA,WAAA;CACA","file":"Tooltip.vue","sourcesContent":["<template>\n  <span :class=\"[addClass]\">\n    <span ref=\"trigger\"><slot></slot></span>\n    <transition :name=\"effect\">\n      <div ref=\"popover\" v-if=\"show\" style=\"display:block;\"\n        :class=\"['tooltip', tooltipPlacementClass, 'show']\"\n      >\n        <div class=\"arrow\" ref=\"arrow\"></div>\n        <div class=\"tooltip-inner\">\n          <slot name=\"_content\"></slot>\n       </div>\n      </div>\n    </transition><!--\n  --></span>\n</template>\n\n<script>\nimport PopoverMixin from './utils/popoverMixins.js'\n\nexport default {\n  mixins: [PopoverMixin],\n  props: {\n    trigger: {\n      type: String,\n      default: 'hover'\n    },\n    effect: {\n      type: String,\n      default: 'scale'\n    },\n    placement: {\n      type: String,\n      default: 'top'\n    },\n    addClass: {\n      type: String,\n      default: ''\n    }\n  },\n  computed: {\n    tooltipPlacementClass ()  {\n      return `bs-tooltip-${this.placement}`;\n    }\n  },\n  mounted () {\n    if (this.$refs.trigger) {\n      this.$refs.trigger.style['border-bottom'] = '1px dashed currentColor'\n    }\n  }\n}\n</script>\n\n<style>\n.scale-enter-active {\n  animation:scale-in 0.15s ease-in;\n}\n.scale-leave-active {\n  animation:scale-out 0.15s ease-out;\n}\n\n.tooltip.top,\n.tooltip.left,\n.tooltip.right,\n.tooltip.bottom {\n  opacity: .9\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
-/* 201 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -18496,8 +18854,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	  mounted: function mounted() {
 	    if (this.$refs.trigger) {
-	      this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dotted';
-	      this.$refs.trigger.style['text-decoration'] = 'underline dotted';
+	      this.$refs.trigger.style['border-bottom'] = '1px dashed currentColor';
 	    }
 	  }
 	}; //
@@ -18518,7 +18875,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 
 /***/ }),
-/* 202 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -18551,20 +18908,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 203 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(204)
+	__webpack_require__(217)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(206)
+	__vue_exports__ = __webpack_require__(219)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(207)
+	var __vue_template__ = __webpack_require__(220)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -18598,13 +18955,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 204 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(205);
+	var content = __webpack_require__(218);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -18624,7 +18981,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 205 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -18632,13 +18989,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"trigger.vue","sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"trigger.vue","sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
-/* 206 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -18680,11 +19037,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	    if (this.trigger === 'click') {
 	      this.$refs.trigger.style['cursor'] = 'pointer';
-	      this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dashed';
-	      this.$refs.trigger.style['text-decoration'] = 'underline dashed';
+	      this.$refs.trigger.style['border-bottom'] = '1px dashed currentColor';
 	    } else {
-	      this.$refs.trigger.style['-webkit-text-decoration'] = 'underline dotted';
-	      this.$refs.trigger.style['text-decoration'] = 'underline dotted';
+	      this.$refs.trigger.style['border-bottom'] = '1px dashed currentColor';
 	    }
 	  },
 	
@@ -18700,7 +19055,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(72)))
 
 /***/ }),
-/* 207 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
