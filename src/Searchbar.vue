@@ -1,55 +1,92 @@
 <script>
 import typeahead from './Typeahead.vue';
+import searchbarPageItem from './SearchbarPageItem.vue';
 
 export default {
   extends: typeahead,
   computed: {
     primitiveData() {
-      function getTotalMatches(searchTarget, regexes) {
-        return regexes.reduce((total, regex) => (regex.test(searchTarget) ? total + 1 : total), 0);
+      // Returns the total number of matches between an array of regex patterns and string search targets.
+      function getTotalMatches(searchTargets, regexes) {
+        const searchTarget = searchTargets.join(' ');
+
+        return regexes.reduce((total, regex) => {
+          const matches = searchTarget.match(regex);
+          return total + (matches ? matches.length : 0);
+        }, 0);
       }
 
-      if (this.value.length < 2) {
+      if (this.value.length < 2 || !this.data) {
         return [];
       }
-      if (!this.data) {
-        return undefined;
-      }
-      const matches = [];
+      const pages = [];
       const regexes = this.value.split(' ')
         .filter(searchKeyword => searchKeyword !== '')
         .map(searchKeyword => searchKeyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
-        .map(searchKeyword => new RegExp(searchKeyword, 'i'));
+        .map(searchKeyword => new RegExp(searchKeyword, 'ig'));
       this.data.forEach((entry) => {
-        const { headings, src, title } = entry;
+        const {
+          headings,
+          src,
+          title,
+          headingKeywords,
+        } = entry;
         const keywords = entry.keywords || '';
-        let searchTarget = [title].concat(keywords).concat(Object.values(headings)).join(' ');
-        let totalMatches = getTotalMatches(searchTarget, regexes);
-        if (totalMatches > 0) {
-          searchTarget = [title].concat(keywords).join(' ');
-          const isMatchingPage = getTotalMatches(searchTarget, regexes) === totalMatches;
-          if (isMatchingPage) {
-            matches.push(Object.assign(entry, { totalMatches }));
-          }
+        const displayTitle = title || src;
+
+        const pageSearchTargets = [
+          displayTitle,
+          keywords,
+          ...Object.values(headings),
+          ...Object.values(headingKeywords),
+        ];
+        const totalPageMatches = getTotalMatches(pageSearchTargets, regexes);
+
+        if (totalPageMatches > 0) {
+          const pageHeadings = [];
           Object.entries(headings).forEach(([id, text]) => {
-            if (regexes.some(regex => regex.test(text))) {
-              searchTarget = [title].concat(keywords).concat(text).join(' ');
-              totalMatches = getTotalMatches(searchTarget, regexes);
-              matches.push({
+            const matchesHeading = regexes.some(regex => regex.test(text));
+            const matchesKeywords = headingKeywords[id] && headingKeywords[id].some(keyword =>
+              regexes.some(regex => regex.test(keyword)));
+
+            if (matchesHeading || matchesKeywords) {
+              const headingSearchTargets = [
+                text,
+                ...(headingKeywords[id] || []),
+              ];
+              const totalHeadingMatches = getTotalMatches(headingSearchTargets, regexes);
+
+              pageHeadings.push({
                 heading: { id, text },
-                keywords,
+                keywords: headingKeywords[id],
                 src,
-                title,
-                totalMatches,
+                totalMatches: totalHeadingMatches,
               });
             }
           });
+          pageHeadings.sort((a, b) => b.totalMatches - a.totalMatches);
+
+          pages.push({
+            headings: pageHeadings,
+            keywords,
+            src,
+            title: displayTitle,
+            totalMatches: totalPageMatches,
+          });
         }
       });
-      return matches.sort((a, b) => b.totalMatches - a.totalMatches);
+
+      return pages
+        .sort((a, b) => b.totalMatches - a.totalMatches)
+        .flatMap((page) => {
+          if (page.headings) {
+            return [page, ...page.headings];
+          }
+          return page;
+        });
     },
     entryTemplate() {
-      return 'searchbarTemplate';
+      return 'searchbarPageItem';
     },
   },
   methods: {
@@ -79,69 +116,23 @@ export default {
     },
   },
   components: {
-    searchbarTemplate: {
-      props: ['item', 'value'],
-      template: '<div><span v-html="highlight(item.title, value)"></span>'
-      + '<br v-if="item.keywords" />'
-      + '<small v-if="item.keywords" v-html="highlight(item.keywords, value)"></small>'
-      + '<br v-if="item.heading" />'
-      + '<small v-if="item.heading" v-html="highlight(item.heading.text, value)"></small></div>',
-      methods: {
-        highlight(value, phrase) {
-          function getMatchIntervals() {
-            const regexes = phrase.split(' ')
-              .filter(searchKeyword => searchKeyword !== '')
-              .map(searchKeyword => searchKeyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
-              .map(searchKeyword => new RegExp(`(${searchKeyword})`, 'gi'));
-            const matchIntervals = [];
-            regexes.forEach((regex) => {
-              let match = regex.exec(value);
-              while (match !== null) {
-                if (match.index === regex.lastIndex) {
-                  break;
-                }
-                matchIntervals.push({ start: match.index, end: regex.lastIndex });
-                match = regex.exec(value);
-              }
-            });
-            return matchIntervals;
-          }
-          // https://www.geeksforgeeks.org/merging-intervals/
-          function mergeOverlappingIntervals(intervals) {
-            if (intervals.length <= 1) {
-              return intervals;
-            }
-            return intervals
-              .sort((a, b) => a.start - b.start)
-              .reduce((stack, current) => {
-                const top = stack[stack.length - 1];
-                if (!top || top.end < current.start) {
-                  stack.push(current);
-                } else if (top.end < current.end) {
-                  top.end = current.end;
-                }
-                return stack;
-              }, []);
-          }
-          const matchIntervals = mergeOverlappingIntervals(getMatchIntervals());
-          let highlightedValue = value;
-          // Traverse from back to front to avoid the positioning going out of sync
-          for (let i = matchIntervals.length - 1; i >= 0; i -= 1) {
-            highlightedValue = `${highlightedValue.slice(0, matchIntervals[i].start)}<mark>`
-              + `${highlightedValue.slice(matchIntervals[i].start, matchIntervals[i].end)}</mark>`
-              + `${highlightedValue.slice(matchIntervals[i].end)}`;
-          }
-          return highlightedValue;
-        },
-      },
-    },
+    searchbarPageItem,
   },
 };
 </script>
 
 <style>
 .search-dropdown-menu {
+  min-width: 30em;
   max-height: 30em;
   overflow-y: scroll;
+}
+
+@media screen and (max-width: 768px) {
+  .search-dropdown-menu {
+    min-width: auto;
+    max-height: 30em;
+    overflow-y: scroll;
+  }
 }
 </style>
