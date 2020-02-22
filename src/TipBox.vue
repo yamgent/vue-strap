@@ -1,24 +1,37 @@
 <template>
-    <div class="alert container" :class="[boxStyle, addClass, lightStyle, seamlessStyle]" :style="customStyle">
-        <div v-if="!isDefault" class="icon-wrapper" :class="[iconStyle]">
-            <slot name="_icon">
-                <span v-html="iconType"></span>
-            </slot>
-        </div>
-        <div v-if="isSeamless" class="vertical-divider" :class="[boxStyle]"></div>
-        <div class="contents" :class="[fontBlack, seamlessStyle]">
-            <h6 v-if="headerContent" class="heading">{{ headerContent }}</h6>
-            <button v-if="dismissible" type="button" class="close dismiss-button" data-dismiss="alert" aria-label="Close">
+    <div class="alert box-container" :class="[boxStyle, addClass, lightStyle, seamlessStyle]" :style="customStyle">
+        <div v-if="headerBool" :class="['box-header-wrapper', { 'alert-dismissible': dismissible }]">
+            <div v-show="!isDefault" class="icon-wrapper" :class="[iconStyle]">
+                <slot name="_icon">
+                    <span v-html="iconType"></span>
+                </slot>
+            </div>
+            <div class="box-header">
+                <slot name="_header"></slot>
+            </div>
+            <button v-show="dismissible" type="button" class="close close-with-heading" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
-            <slot></slot>
+        </div>
+        <div v-if="horizontalDividerBool" class="horizontal-divider" :class="boxStyle" aria-hidden="true"></div>
+        <div :class="['box-body-wrapper', { 'alert-dismissible': dismissible && !headerBool, 'box-body-wrapper-with-heading': headerBool }]">
+            <div v-show="!isDefault && !headerBool" class="icon-wrapper" :class="[iconStyle]">
+                <slot name="_icon">
+                    <span v-html="iconType"></span>
+                </slot>
+            </div>
+            <div v-if="verticalDividerBool" class="vertical-divider" :class="boxStyle" aria-hidden="true"></div>
+            <div class="contents" :class="[fontBlack, seamlessStyle]">
+                <slot></slot>
+            </div>
+            <button v-show="dismissible && !headerBool" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
     </div>
 </template>
 
 <script>
-
-  import { toBoolean } from './utils/utils';
 
   export default {
     props: {
@@ -58,17 +71,9 @@
         type: String,
         default: ''
       },
-      heading: {
-        type: String,
-        default: null,
-      },
       light: {
         type: Boolean,
         default: false,
-      },
-      header: {
-        type: String,
-        default: null,
       },
       seamless: {
         type: Boolean,
@@ -80,10 +85,16 @@
         return this.type === 'none'
       },
       isSeamless() {
-        return toBoolean(this.seamless);
+        return !this.light && this.seamless;
       },
-      headerContent() {
-        return this.header || this.heading;
+      verticalDividerBool() {
+        return this.isSeamless && !this.headerBool;
+      },
+      horizontalDividerBool() {
+          return this.isSeamless && this.headerBool;
+      },
+      headerBool() {
+        return !!this.$slots._header;
       },
       boxStyle() {
         switch (this.type) {
@@ -104,21 +115,21 @@
       },
       lightStyle() {
         if (this.light) {
-            switch (this.type) {
+          switch (this.type) {
             case 'warning':
-                return 'border-warning text-warning alert-border-left';
+              return 'border-warning text-warning alert-border-left';
             case 'info':
             case 'definition':
-                return 'border-info text-info alert-border-left';
+              return 'border-info text-info alert-border-left';
             case 'success':
             case 'tip':
-                return 'border-sucess text-success alert-border-left';
+              return 'border-success text-success alert-border-left';
             case 'important':
             case 'wrong':
-                return 'border-danger text-danger alert-border-left';
+              return 'border-danger text-danger alert-border-left';
             default:
-                return '';
-            }
+              return 'alert-border-left';
+          }
         }
         return '';
       },
@@ -140,7 +151,7 @@
         return style;
       },
       seamlessStyle() {
-        if (this.seamless) {
+        if (this.isSeamless) {
           return 'seamless';
         }
         return '';
@@ -182,14 +193,33 @@
 </script>
 
 <style scoped>
-    .container {
-        display: flex;
-        flex-direction: row;
+    .box-container {
         width: 100%;
+        padding: 0;
         border-radius: 6px;
     }
 
-    .container.seamless {
+    .box-header-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        padding: 0.28em 1.25rem;
+        border-radius: 6px 6px 0 0;
+    }
+
+    .box-body-wrapper {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding: 0.75rem 1.25rem;
+    }
+
+    .box-container.seamless > .box-body-wrapper {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .box-container.seamless {
         background-color: transparent;
         border-color: transparent;
     }
@@ -207,19 +237,30 @@
         margin: -13px -27px 0 15px;
     }
 
-    .dismiss-button {
-        position: relative;
-        top: -2px;
-        clear: right;
-        color: inherit;
-        height: 100%;
-        margin-right: -6px;
-        margin-left: 21px;
+    .box-body-wrapper-with-heading {
+        padding-top: 0.5rem;
+    }
+
+    .alert-dismissible {
+        padding-right: 4rem;
+    }
+
+    .box-header {
+        font-weight: 500;
     }
 
     .icon-wrapper {
         display: flex;
         margin-right: .5em;
+    }
+
+    .close-with-heading {
+        top: auto;
+        padding: 0 1.25rem;
+    }
+
+    .close-with-heading > span {
+        vertical-align: text-top;
     }
 
     .contents {
@@ -249,5 +290,18 @@
 
     .vertical-divider {
         width: 4px;
+    }
+
+    .horizontal-divider {
+        margin: 0 auto;
+        width: calc(100% - 2.5rem);
+        height: 3px;
+    }
+</style>
+
+<!-- TODO move this once we upgrade vue-loader version for scoped deep selectors -->
+<style>
+    div.box-header > * {
+        margin-bottom: 0;
     }
 </style>
