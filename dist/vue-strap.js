@@ -124,11 +124,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _TipBox2 = _interopRequireDefault(_TipBox);
 	
-	var _Tooltip = __webpack_require__(211);
+	var _Tooltip = __webpack_require__(213);
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 	
-	var _trigger = __webpack_require__(216);
+	var _trigger = __webpack_require__(218);
 	
 	var _trigger2 = _interopRequireDefault(_trigger);
 	
@@ -12700,7 +12700,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.secret[data-v-7ef36c00] {\n  position: absolute;\n  clip: rect(0 0 0 0);\n  overflow: hidden;\n  margin: -1px;\n  height: 1px;\n  width: 1px;\n  padding: 0;\n  border: 0;\n}\n.btn-with-before[data-v-7ef36c00] {\n  padding-left: 0.2rem;\n  padding-right: 0.4rem;\n}\n.dropdown-toggle[data-v-7ef36c00] {\n  cursor: pointer;\n}\n", "", {"version":3,"sources":["/./src/Dropdown.vue?790d9a76"],"names":[],"mappings":";AAuJA;EACA,mBAAA;EACA,oBAAA;EACA,iBAAA;EACA,aAAA;EACA,YAAA;EACA,WAAA;EACA,WAAA;EACA,UAAA;CACA;AAEA;EACA,qBAAA;EACA,sBAAA;CACA;AAEA;EACA,gBAAA;CACA","file":"Dropdown.vue","sourcesContent":["<template>\n  <li v-if=\"isLi\" ref=\"dropdown\" :class=\"classes\">\n    <slot name=\"button\">\n      <a class=\"dropdown-toggle\" role=\"button\" :class=\"{disabled: disabled}\" @keyup.esc=\"hideDropdownMenu()\">\n        <span v-html=\"textContent\"></span>\n      </a>\n    </slot>\n    <slot name=\"dropdown-menu\" :class=\"menuClasses\">\n      <ul class=\"dropdown-menu\" :class=\"menuClasses\">\n        <slot></slot>\n      </ul>\n    </slot>\n  </li>\n  <div v-else ref=\"dropdown\" :class=\"classes\">\n    <slot name=\"before\"></slot>\n    <slot name=\"button\">\n      <button type=\"button\" class=\"btn dropdown-toggle\" :class=\"[btnType, btnWithBefore]\" @keyup.esc=\"hideDropdownMenu()\" :disabled=\"disabled\">\n        <span v-html=\"textContent\"></span>\n      </button>\n    </slot>\n    <slot name=\"dropdown-menu\" :class=\"menuClasses\">\n      <ul class=\"dropdown-menu\" :class=\"menuClasses\">\n        <slot></slot>\n      </ul>\n    </slot>\n  </div>\n</template>\n\n<script>\nimport {toBoolean} from './utils/utils.js'\nimport $ from './utils/NodeList.js'\n\nexport default {\n  props: {\n    show: {\n      type: Boolean,\n      default: false\n    },\n    'class': null,\n    disabled: {\n      type: Boolean,\n      default: false\n    },\n    text: {\n      type: String,\n      default: null\n    },\n    header: {\n      type: String,\n      default: null\n    },\n    type: {\n      type: String,\n      default: 'light'\n    },\n    menuAlignRight: {\n      type: Boolean,\n      default: false\n    },\n    addClass: {\n      type: String,\n      default: ''\n    }\n  },\n  computed: {\n    btnType () {\n      return `btn-${this.type}`;\n    },\n    classes () {\n      return [{disabled: this.disabledBool}, this.class, this.isLi ? 'dropdown' : 'btn-group', this.addClass]\n    },\n    menuClasses() {\n      return [{show: this.showBool}, {'dropdown-menu-right': this.menuAlignRight}];\n    },\n    disabledBool() {\n      return toBoolean(this.disabled);\n    },\n    isLi () { return this.$parent._navbar || this.$parent.menu || this.$parent._tabset },\n    menu () {\n      return !this.$parent || this.$parent.navbar\n    },\n    showBool() {\n      return toBoolean(this.show);\n    },\n    submenu () {\n      return this.$parent && (this.$parent.menu || this.$parent.submenu)\n    },\n    slots () {\n      return this.$slots.default\n    },\n    btnWithBefore () {\n      if (this.$slots.before) {\n        return 'btn-with-before';\n      }\n      return '';\n    },\n    textContent () {\n      return this.header || this.text;\n    }\n  },\n  methods: {\n    blur () {\n      this.unblur()\n      this._hide = setTimeout(() => {\n        this._hide = null\n        this.hideDropdownMenu();\n      }, 100)\n    },\n    unblur () {\n      if (this._hide) {\n        clearTimeout(this._hide)\n        this._hide = null\n      }\n    },\n    hideDropdownMenu() {\n      this.show = false;\n      $(this.$refs.dropdown).findChildren('ul').each(ul => ul.classList.toggle('show', false));\n    },\n    showDropdownMenu() {\n      this.show = true;\n      $(this.$refs.dropdown).findChildren('ul').each(ul => ul.classList.toggle('show', true));\n    },\n  },\n  mounted () {\n    const $el = $(this.$refs.dropdown)\n    if (this.show) {\n      this.showDropdownMenu();\n    }\n    $el.onBlur((e) => { this.hideDropdownMenu() }, false)\n    $el.findChildren('a,button.dropdown-toggle').on('click', e => {\n      e.preventDefault()\n      if (this.disabledBool) { return false }\n      if (this.showBool) {\n        this.hideDropdownMenu();\n      } else {\n        this.showDropdownMenu();\n      }\n      return false\n    })\n    $el.findChildren('ul').on('click', 'li>a', e => { this.hideDropdownMenu() })\n  },\n  beforeDestroy () {\n    const $el = $(this.$refs.dropdown)\n    $el.offBlur()\n    $el.findChildren('a,button').off()\n    $el.findChildren('ul').off()\n  }\n}\n</script>\n\n<style scoped>\n.secret {\n  position: absolute;\n  clip: rect(0 0 0 0);\n  overflow: hidden;\n  margin: -1px;\n  height: 1px;\n  width: 1px;\n  padding: 0;\n  border: 0;\n}\n\n.btn-with-before {\n  padding-left: 0.2rem;\n  padding-right: 0.4rem;\n}\n\n.dropdown-toggle {\n  cursor: pointer;\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.secret[data-v-7ef36c00] {\n  position: absolute;\n  clip: rect(0 0 0 0);\n  overflow: hidden;\n  margin: -1px;\n  height: 1px;\n  width: 1px;\n  padding: 0;\n  border: 0;\n}\n.btn-with-before[data-v-7ef36c00] {\n  padding-left: 0.2rem;\n  padding-right: 0.4rem;\n}\n.dropdown-toggle[data-v-7ef36c00] {\n  cursor: pointer;\n}\n", "", {"version":3,"sources":["/./src/Dropdown.vue?407f4d2a"],"names":[],"mappings":";AAgJA;EACA,mBAAA;EACA,oBAAA;EACA,iBAAA;EACA,aAAA;EACA,YAAA;EACA,WAAA;EACA,WAAA;EACA,UAAA;CACA;AAEA;EACA,qBAAA;EACA,sBAAA;CACA;AAEA;EACA,gBAAA;CACA","file":"Dropdown.vue","sourcesContent":["<template>\n  <li v-if=\"isLi\" ref=\"dropdown\" :class=\"classes\">\n    <slot name=\"button\">\n      <a class=\"dropdown-toggle\" role=\"button\" :class=\"{disabled: disabled}\" @keyup.esc=\"hideDropdownMenu()\">\n        <slot name=\"_header\">\n          <slot name=\"header\"></slot>\n        </slot>\n      </a>\n    </slot>\n    <slot name=\"dropdown-menu\" :class=\"menuClasses\">\n      <ul class=\"dropdown-menu\" :class=\"menuClasses\">\n        <slot></slot>\n      </ul>\n    </slot>\n  </li>\n  <div v-else ref=\"dropdown\" :class=\"classes\">\n    <slot name=\"before\"></slot>\n    <slot name=\"button\">\n      <button type=\"button\" class=\"btn dropdown-toggle\" :class=\"[btnType, btnWithBefore]\" @keyup.esc=\"hideDropdownMenu()\" :disabled=\"disabled\">\n        <slot name=\"_header\">\n          <slot name=\"header\"></slot>\n        </slot>\n      </button>\n    </slot>\n    <slot name=\"dropdown-menu\" :class=\"menuClasses\">\n      <ul class=\"dropdown-menu\" :class=\"menuClasses\">\n        <slot></slot>\n      </ul>\n    </slot>\n  </div>\n</template>\n\n<script>\nimport {toBoolean} from './utils/utils.js'\nimport $ from './utils/NodeList.js'\n\nexport default {\n  props: {\n    show: {\n      type: Boolean,\n      default: false\n    },\n    'class': null,\n    disabled: {\n      type: Boolean,\n      default: false\n    },\n    type: {\n      type: String,\n      default: 'light'\n    },\n    menuAlignRight: {\n      type: Boolean,\n      default: false\n    },\n    addClass: {\n      type: String,\n      default: ''\n    }\n  },\n  computed: {\n    btnType () {\n      return `btn-${this.type}`;\n    },\n    classes () {\n      return [{disabled: this.disabledBool}, this.class, this.isLi ? 'dropdown' : 'btn-group', this.addClass]\n    },\n    menuClasses() {\n      return [{show: this.showBool}, {'dropdown-menu-right': this.menuAlignRight}];\n    },\n    disabledBool() {\n      return toBoolean(this.disabled);\n    },\n    isLi () { return this.$parent._navbar || this.$parent.menu || this.$parent._tabset },\n    menu () {\n      return !this.$parent || this.$parent.navbar\n    },\n    showBool() {\n      return toBoolean(this.show);\n    },\n    submenu () {\n      return this.$parent && (this.$parent.menu || this.$parent.submenu)\n    },\n    slots () {\n      return this.$slots.default\n    },\n    btnWithBefore () {\n      if (this.$slots.before) {\n        return 'btn-with-before';\n      }\n      return '';\n    },\n  },\n  methods: {\n    blur () {\n      this.unblur()\n      this._hide = setTimeout(() => {\n        this._hide = null\n        this.hideDropdownMenu();\n      }, 100)\n    },\n    unblur () {\n      if (this._hide) {\n        clearTimeout(this._hide)\n        this._hide = null\n      }\n    },\n    hideDropdownMenu() {\n      this.show = false;\n      $(this.$refs.dropdown).findChildren('ul').each(ul => ul.classList.toggle('show', false));\n    },\n    showDropdownMenu() {\n      this.show = true;\n      $(this.$refs.dropdown).findChildren('ul').each(ul => ul.classList.toggle('show', true));\n    },\n  },\n  mounted () {\n    const $el = $(this.$refs.dropdown)\n    if (this.show) {\n      this.showDropdownMenu();\n    }\n    $el.onBlur((e) => { this.hideDropdownMenu() }, false)\n    $el.findChildren('a,button.dropdown-toggle').on('click', e => {\n      e.preventDefault()\n      if (this.disabledBool) { return false }\n      if (this.showBool) {\n        this.hideDropdownMenu();\n      } else {\n        this.showDropdownMenu();\n      }\n      return false\n    })\n    $el.findChildren('ul').on('click', 'li>a', e => { this.hideDropdownMenu() })\n  },\n  beforeDestroy () {\n    const $el = $(this.$refs.dropdown)\n    $el.offBlur()\n    $el.findChildren('a,button').off()\n    $el.findChildren('ul').off()\n  }\n}\n</script>\n\n<style scoped>\n.secret {\n  position: absolute;\n  clip: rect(0 0 0 0);\n  overflow: hidden;\n  margin: -1px;\n  height: 1px;\n  width: 1px;\n  padding: 0;\n  border: 0;\n}\n\n.btn-with-before {\n  padding-left: 0.2rem;\n  padding-right: 0.4rem;\n}\n\n.dropdown-toggle {\n  cursor: pointer;\n}\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -13029,6 +13029,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 	//
 	//
+	//
+	//
+	//
+	//
 	
 	exports.default = {
 	  props: {
@@ -13040,14 +13044,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    disabled: {
 	      type: Boolean,
 	      default: false
-	    },
-	    text: {
-	      type: String,
-	      default: null
-	    },
-	    header: {
-	      type: String,
-	      default: null
 	    },
 	    type: {
 	      type: String,
@@ -13095,9 +13091,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	        return 'btn-with-before';
 	      }
 	      return '';
-	    },
-	    textContent: function textContent() {
-	      return this.header || this.text;
 	    }
 	  },
 	  methods: {
@@ -13185,11 +13178,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        _vm.hideDropdownMenu()
 	      }
 	    }
-	  }, [_c('span', {
-	    domProps: {
-	      "innerHTML": _vm._s(_vm.textContent)
-	    }
-	  })])]), _vm._v(" "), _vm._t("dropdown-menu", [_c('ul', {
+	  }, [_vm._t("_header", [_vm._t("header")])], 2)]), _vm._v(" "), _vm._t("dropdown-menu", [_c('ul', {
 	    staticClass: "dropdown-menu",
 	    class: _vm.menuClasses
 	  }, [_vm._t("default")], 2)])], 2) : _c('div', {
@@ -13208,11 +13197,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        _vm.hideDropdownMenu()
 	      }
 	    }
-	  }, [_c('span', {
-	    domProps: {
-	      "innerHTML": _vm._s(_vm.textContent)
-	    }
-	  })])]), _vm._v(" "), _vm._t("dropdown-menu", [_c('ul', {
+	  }, [_vm._t("_header", [_vm._t("header")])], 2)]), _vm._v(" "), _vm._t("dropdown-menu", [_c('ul', {
 	    staticClass: "dropdown-menu",
 	    class: _vm.menuClasses
 	  }, [_vm._t("default")], 2)])], 2)
@@ -13691,7 +13676,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n@media (max-width: 767px) {\n.navbar-collapse[data-v-168d143f] {\r\n    max-height: 80vh !important;\r\n    overflow-x: hidden !important;\r\n    overflow-y: scroll !important;\n}\n}\r\n", "", {"version":3,"sources":["/./src/Navbar.vue?42591872"],"names":[],"mappings":";AAoGA;AACA;IACA,4BAAA;IACA,8BAAA;IACA,8BAAA;CACA;CACA","file":"Navbar.vue","sourcesContent":["<template>\r\n  <nav ref=\"navbar\" :class=\"['navbar', 'navbar-expand-md', themeOptions, addClass]\">\r\n    <div class=\"container-fluid\">\r\n      <div class=\"navbar-brand\"><slot name=\"brand\"></slot></div>\r\n      <button v-if=\"!slots.collapse\" class=\"navbar-toggler\" type=\"button\" aria-expanded=\"false\" aria-label=\"Toggle navigation\" @click=\"toggleCollapse\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n        <slot name=\"collapse\"></slot>\r\n      </button>\r\n\r\n      <div :class=\"['navbar-collapse',{collapse:collapsed}]\">\r\n        <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">\r\n          <slot></slot>\r\n        </ul>\r\n        <ul v-if=\"slots.right\" class=\"navbar-nav navbar-right\">\r\n          <slot name=\"right\"></slot>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n  </nav>\r\n</template>\r\n\r\n<script>\r\nimport $ from './utils/NodeList.js'\r\n\r\nexport default {\r\n  props: {\r\n    type: {\r\n      type: String,\r\n      default: 'primary'\r\n    },\r\n    addClass: {\r\n      type: String,\r\n      default: ''\r\n    }\r\n  },\r\n  data () {\r\n    return {\r\n      id: 'bs-example-navbar-collapse-1',\r\n      collapsed: true,\r\n      styles: {}\r\n    }\r\n  },\r\n  computed: {\r\n    slots () {\r\n      return this.$slots\r\n    },\r\n    themeOptions () {\r\n      switch (this.type) {\r\n        case 'none':\r\n          return ''\r\n        case 'light':\r\n          return 'navbar-light bg-light'\r\n        case 'dark':\r\n          return 'navbar-dark bg-dark'\r\n        case 'primary':\r\n        default:\r\n          return 'navbar-dark bg-primary'\r\n      }\r\n    }\r\n  },\r\n  methods: {\r\n    toggleCollapse (e) {\r\n      e && e.preventDefault()\r\n      this.collapsed = !this.collapsed\r\n    }\r\n  },\r\n  created () {\r\n    this._navbar = true\r\n  },\r\n  mounted () {\r\n    let $dropdown = $('.dropdown>[data-toggle=\"dropdown\"]',this.$el).parent()\r\n    $dropdown.on('click', '.dropdown-toggle', (e) => {\r\n      e.preventDefault()\r\n      $dropdown.each((content) => {\r\n        if (content.contains(e.target)) content.classList.toggle('open')\r\n      })\r\n    }).on('click', '.dropdown-menu>li>a', (e) => {\r\n      $dropdown.each((content) => {\r\n        if (content.contains(e.target)) content.classList.remove('open')\r\n      })\r\n    }).onBlur((e) => {\r\n      $dropdown.each((content) => {\r\n        if (!content.contains(e.target)) content.classList.remove('open')\r\n      })\r\n    })\r\n    $(this.$el).on('click','li:not(.dropdown)>a', e => {\r\n      setTimeout(() => { this.collapsed = true }, 200)\r\n    }).onBlur(e => {\r\n      if (!this.$el.contains(e.target)) { this.collapsed = true }\r\n    })\r\n    if (this.slots.collapse) $('[data-toggle=\"collapse\"]',this.$el).on('click', (e) => this.toggleCollapse(e))\r\n  },\r\n  beforeDestroy () {\r\n    $('.dropdown',this.$el).off('click').offBlur()\r\n    if (this.slots.collapse) $('[data-toggle=\"collapse\"]',this.$el).off('click')\r\n  }\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n@media (max-width: 767px) {\r\n  .navbar-collapse {\r\n    max-height: 80vh !important;\r\n    overflow-x: hidden !important;\r\n    overflow-y: scroll !important;\r\n  }\r\n}\r\n</style>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n@media (max-width: 767px) {\n.navbar-collapse[data-v-168d143f] {\n    max-height: 80vh !important;\n    overflow-x: hidden !important;\n    overflow-y: scroll !important;\n}\n}\n.navbar-fixed[data-v-168d143f] {\n  position: fixed;\n  width: 100%;\n  z-index: 1000;\n}\n", "", {"version":3,"sources":["/./src/Navbar.vue?6a3e9233"],"names":[],"mappings":";AAmHA;AACA;IACA,4BAAA;IACA,8BAAA;IACA,8BAAA;CACA;CACA;AAEA;EACA,gBAAA;EACA,YAAA;EACA,cAAA;CACA","file":"Navbar.vue","sourcesContent":["<template>\n  <nav ref=\"navbar\" :class=\"['navbar', 'navbar-expand-md', themeOptions, addClass, fixedOptions]\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-brand\">\n        <slot name=\"brand\"/>\n      </div>\n      <button v-if=\"!slots.collapse\" class=\"navbar-toggler\" type=\"button\" aria-expanded=\"false\" aria-label=\"Toggle navigation\" @click=\"toggleCollapse\">\n        <span class=\"navbar-toggler-icon\"/>\n        <slot name=\"collapse\"/>\n      </button>\n\n      <div :class=\"['navbar-collapse',{collapse:collapsed}]\">\n        <ul class=\"navbar-nav mr-auto mt-2 mt-lg-0\">\n          <slot/>\n        </ul>\n        <ul v-if=\"slots.right\" class=\"navbar-nav navbar-right\">\n          <slot name=\"right\"/>\n        </ul>\n      </div>\n    </div>\n  </nav>\n</template>\n\n<script>\n  import $ from './utils/NodeList.js'\n  import { toBoolean } from './utils/utils';\n  export default {\n    props: {\n      type: {\n        type: String,\n        default: 'primary'\n      },\n      addClass: {\n        type: String,\n        default: ''\n      },\n      fixed: {\n        type: Boolean,\n        default: false\n      }\n    },\n    data () {\n      return {\n        id: 'bs-example-navbar-collapse-1',\n        collapsed: true,\n        styles: {}\n      }\n    },\n    computed: {\n      fixedBool() {\n        return toBoolean(this.fixed);\n      },\n      fixedOptions() {\n        if (this.fixedBool) {\n          return 'navbar-fixed';\n        }\n        return '';\n      },\n      slots () {\n        return this.$slots\n      },\n      themeOptions () {\n        switch (this.type) {\n        case 'none':\n          return ''\n        case 'light':\n          return 'navbar-light bg-light'\n        case 'dark':\n          return 'navbar-dark bg-dark'\n        case 'primary':\n        default:\n          return 'navbar-dark bg-primary'\n        }\n      }\n    },\n    methods: {\n      toggleCollapse (e) {\n        e && e.preventDefault()\n        this.collapsed = !this.collapsed\n      }\n    },\n    created () {\n      this._navbar = true\n    },\n    mounted () {\n      let $dropdown = $('.dropdown>[data-toggle=\"dropdown\"]',this.$el).parent()\n      $dropdown.on('click', '.dropdown-toggle', (e) => {\n        e.preventDefault()\n        $dropdown.each((content) => {\n          if (content.contains(e.target)) content.classList.toggle('open')\n        })\n      }).on('click', '.dropdown-menu>li>a', (e) => {\n        $dropdown.each((content) => {\n          if (content.contains(e.target)) content.classList.remove('open')\n        })\n      }).onBlur((e) => {\n        $dropdown.each((content) => {\n          if (!content.contains(e.target)) content.classList.remove('open')\n        })\n      })\n      $(this.$el).on('click','li:not(.dropdown)>a', e => {\n        setTimeout(() => { this.collapsed = true }, 200)\n      }).onBlur(e => {\n        if (!this.$el.contains(e.target)) { this.collapsed = true }\n      })\n      if (this.slots.collapse) $('[data-toggle=\"collapse\"]',this.$el).on('click', (e) => this.toggleCollapse(e))\n    },\n    beforeDestroy () {\n      $('.dropdown',this.$el).off('click').offBlur()\n      if (this.slots.collapse) $('[data-toggle=\"collapse\"]',this.$el).off('click')\n    }\n  }\n</script>\n\n<style scoped>\n  @media (max-width: 767px) {\n    .navbar-collapse {\n      max-height: 80vh !important;\n      overflow-x: hidden !important;\n      overflow-y: scroll !important;\n    }\n  }\n\n  .navbar-fixed {\n    position: fixed;\n    width: 100%;\n    z-index: 1000;\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -13710,7 +13695,33 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _NodeList2 = _interopRequireDefault(_NodeList);
 	
+	var _utils = __webpack_require__(38);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 	
 	exports.default = {
 	  props: {
@@ -13721,6 +13732,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	    addClass: {
 	      type: String,
 	      default: ''
+	    },
+	    fixed: {
+	      type: Boolean,
+	      default: false
 	    }
 	  },
 	  data: function data() {
@@ -13732,6 +13747,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	  },
 	
 	  computed: {
+	    fixedBool: function fixedBool() {
+	      return (0, _utils.toBoolean)(this.fixed);
+	    },
+	    fixedOptions: function fixedOptions() {
+	      if (this.fixedBool) {
+	        return 'navbar-fixed';
+	      }
+	      return '';
+	    },
 	    slots: function slots() {
 	      return this.$slots;
 	    },
@@ -13793,27 +13817,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    (0, _NodeList2.default)('.dropdown', this.$el).off('click').offBlur();
 	    if (this.slots.collapse) (0, _NodeList2.default)('[data-toggle="collapse"]', this.$el).off('click');
 	  }
-	}; //
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
+	};
 
 /***/ }),
 /* 95 */
@@ -13822,7 +13826,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('nav', {
 	    ref: "navbar",
-	    class: ['navbar', 'navbar-expand-md', _vm.themeOptions, _vm.addClass]
+	    class: ['navbar', 'navbar-expand-md', _vm.themeOptions, _vm.addClass, _vm.fixedOptions]
 	  }, [_c('div', {
 	    staticClass: "container-fluid"
 	  }, [_c('div', {
@@ -18412,12 +18416,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	/* styles */
 	__webpack_require__(207)
+	__webpack_require__(209)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(209)
+	__vue_exports__ = __webpack_require__(211)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(210)
+	var __vue_template__ = __webpack_require__(212)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -18486,7 +18491,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.container[data-v-7e93235f] {\n    display: flex;\n    flex-direction: row;\n    width: 100%;\n    border-radius: 6px;\n}\n.container.seamless[data-v-7e93235f] {\n    background-color: transparent;\n    border-color: transparent;\n}\n.heading[data-v-7e93235f] {\n    display: inline;\n    float: right;\n    font-weight: normal;\n    color: inherit;\n    background-color: rgba(240, 240, 240, 0.6);\n    width: auto;\n    padding: 3px 5px 4px 5px;\n    border-width: 0;\n    border-radius: 0 6px 0 6px;\n    margin: -13px -27px 0 15px;\n}\n.dismiss-button[data-v-7e93235f] {\n    position: relative;\n    top: -2px;\n    clear: right;\n    color: inherit;\n    height: 100%;\n    margin-right: -6px;\n    margin-left: 21px;\n}\n.icon-wrapper[data-v-7e93235f] {\n    display: flex;\n    margin-right: .5em;\n}\n.contents[data-v-7e93235f] {\n    padding: 0 6px;\n    width: 100%;\n}\n.contents.seamless[data-v-7e93235f] {\n    padding-left: 12px;\n}\n.alert-default[data-v-7e93235f] {\n    color: #24292e;\n    background-color: #f6f8fa;\n    border-color: #e8ebef;\n}\n.alert-border-left[data-v-7e93235f] {\n    background-color: #f9f8f8;\n    border-left: solid;\n    border-width: 0px 0px 0px 5px;\n}\n.font-black[data-v-7e93235f] {\n    color: #24292e;\n}\n.vertical-divider[data-v-7e93235f] {\n    width: 4px;\n}\n", "", {"version":3,"sources":["/./src/TipBox.vue?3af1f828"],"names":[],"mappings":";AAwLA;IACA,cAAA;IACA,oBAAA;IACA,YAAA;IACA,mBAAA;CACA;AAEA;IACA,8BAAA;IACA,0BAAA;CACA;AAEA;IACA,gBAAA;IACA,aAAA;IACA,oBAAA;IACA,eAAA;IACA,2CAAA;IACA,YAAA;IACA,yBAAA;IACA,gBAAA;IACA,2BAAA;IACA,2BAAA;CACA;AAEA;IACA,mBAAA;IACA,UAAA;IACA,aAAA;IACA,eAAA;IACA,aAAA;IACA,mBAAA;IACA,kBAAA;CACA;AAEA;IACA,cAAA;IACA,mBAAA;CACA;AAEA;IACA,eAAA;IACA,YAAA;CACA;AAEA;IACA,mBAAA;CACA;AAEA;IACA,eAAA;IACA,0BAAA;IACA,sBAAA;CACA;AAEA;IACA,0BAAA;IACA,mBAAA;IACA,8BAAA;CACA;AAEA;IACA,eAAA;CACA;AAEA;IACA,WAAA;CACA","file":"TipBox.vue","sourcesContent":["<template>\n    <div class=\"alert container\" :class=\"[boxStyle, addClass, lightStyle, seamlessStyle]\" :style=\"customStyle\">\n        <div v-if=\"!isDefault\" class=\"icon-wrapper\" :class=\"[iconStyle]\">\n            <slot name=\"_icon\">\n                <span v-html=\"iconType\"></span>\n            </slot>\n        </div>\n        <div v-if=\"isSeamless\" class=\"vertical-divider\" :class=\"[boxStyle]\"></div>\n        <div class=\"contents\" :class=\"[fontBlack, seamlessStyle]\">\n            <h6 v-if=\"headerContent\" class=\"heading\">{{ headerContent }}</h6>\n            <button v-if=\"dismissible\" type=\"button\" class=\"close dismiss-button\" data-dismiss=\"alert\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n            <slot></slot>\n        </div>\n    </div>\n</template>\n\n<script>\n\n  import { toBoolean } from './utils/utils';\n\n  export default {\n    props: {\n      dismissible: {\n        type: Boolean,\n        default: false\n      },\n      backgroundColor: {\n        type: String,\n        default: null\n      },\n      borderColor: {\n        type: String,\n        default: null\n      },\n      borderLeftColor: {\n        type: String,\n        default: null\n      },\n      color: {\n        type: String,\n        default: null\n      },\n      icon: {\n        type: String,\n        default: null\n      },\n      iconSize: {\n        type: String,\n        default: null\n      },\n      type: {\n        type: String,\n        default: 'none'\n      },\n      addClass: {\n        type: String,\n        default: ''\n      },\n      heading: {\n        type: String,\n        default: null,\n      },\n      light: {\n        type: Boolean,\n        default: false,\n      },\n      header: {\n        type: String,\n        default: null,\n      },\n      seamless: {\n        type: Boolean,\n        default: false,\n      },\n    },\n    computed: {\n      isDefault() {\n        return this.type === 'none'\n      },\n      isSeamless() {\n        return toBoolean(this.seamless);\n      },\n      headerContent() {\n        return this.header || this.heading;\n      },\n      boxStyle() {\n        switch (this.type) {\n          case 'warning':\n            return 'alert-warning'\n          case 'info':\n          case 'definition':\n            return 'alert-info'\n          case 'success':\n          case 'tip':\n            return 'alert-success'\n          case 'important':\n          case 'wrong':\n            return 'alert-danger'\n          default:\n            return 'alert-default'\n        }\n      },\n      lightStyle() {\n        if (this.light) {\n            switch (this.type) {\n            case 'warning':\n                return 'border-warning text-warning alert-border-left';\n            case 'info':\n            case 'definition':\n                return 'border-info text-info alert-border-left';\n            case 'success':\n            case 'tip':\n                return 'border-sucess text-success alert-border-left';\n            case 'important':\n            case 'wrong':\n                return 'border-danger text-danger alert-border-left';\n            default:\n                return '';\n            }\n        }\n        return '';\n      },\n      customStyle() {\n        var style = {};\n        if (this.backgroundColor) {\n          style.backgroundColor = this.backgroundColor;\n          style.borderColor = this.backgroundColor;\n        }\n        if (this.borderColor) {\n          style.borderColor = this.borderColor;\n        }\n        if (this.borderLeftColor) {\n          style.borderLeft = `5px solid ${this.borderLeftColor}`;\n        }\n        if (this.color) {\n          style.color = this.color;\n        }\n        return style;\n      },\n      seamlessStyle() {\n        if (this.seamless) {\n          return 'seamless';\n        }\n        return '';\n      },\n      fontBlack() {\n        if (this.light) {\n          return 'font-black';\n        }\n        return '';\n      },\n      iconType() {\n        switch (this.type) {\n          case 'wrong':\n            return '<i class=\"fas fa-times\"></i>';\n          case 'warning':\n            return '<i class=\"fas fa-exclamation\"></i>';\n          case 'info':\n            return '<i class=\"fas fa-info\"></i>';\n          case 'success':\n            return '<i class=\"fas fa-check\"></i>';\n          case 'important':\n            return '<i class=\"fas fa-flag\"></i>';\n          case 'tip':\n            return '<i class=\"fas fa-lightbulb\"></i>';\n          case 'definition':\n            return '<i class=\"fas fa-atlas\"></i>';\n          default:\n            return '<i class=\"fas fa-exclamation\"></i>';\n        }\n      },\n      iconStyle() {\n        if (this.iconSize) {\n          return `fa-${this.iconSize}`;\n        }\n        return '';\n      }\n    }\n  }\n</script>\n\n<style scoped>\n    .container {\n        display: flex;\n        flex-direction: row;\n        width: 100%;\n        border-radius: 6px;\n    }\n\n    .container.seamless {\n        background-color: transparent;\n        border-color: transparent;\n    }\n\n    .heading {\n        display: inline;\n        float: right;\n        font-weight: normal;\n        color: inherit;\n        background-color: rgba(240, 240, 240, 0.6);\n        width: auto;\n        padding: 3px 5px 4px 5px;\n        border-width: 0;\n        border-radius: 0 6px 0 6px;\n        margin: -13px -27px 0 15px;\n    }\n\n    .dismiss-button {\n        position: relative;\n        top: -2px;\n        clear: right;\n        color: inherit;\n        height: 100%;\n        margin-right: -6px;\n        margin-left: 21px;\n    }\n\n    .icon-wrapper {\n        display: flex;\n        margin-right: .5em;\n    }\n\n    .contents {\n        padding: 0 6px;\n        width: 100%;\n    }\n\n    .contents.seamless {\n        padding-left: 12px;\n    }\n\n    .alert-default {\n        color: #24292e;\n        background-color: #f6f8fa;\n        border-color: #e8ebef;\n    }\n\n    .alert-border-left {\n        background-color: #f9f8f8;\n        border-left: solid;\n        border-width: 0px 0px 0px 5px;\n    }\n\n    .font-black {\n        color: #24292e;\n    }\n\n    .vertical-divider {\n        width: 4px;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.box-container[data-v-7e93235f] {\n    width: 100%;\n    padding: 0;\n    border-radius: 6px;\n}\n.box-header-wrapper[data-v-7e93235f] {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    width: 100%;\n    padding: 0.28em 1.25rem;\n    border-radius: 6px 6px 0 0;\n}\n.box-body-wrapper[data-v-7e93235f] {\n    display: flex;\n    flex-direction: row;\n    width: 100%;\n    padding: 0.75rem 1.25rem;\n}\n.box-container.seamless > .box-body-wrapper[data-v-7e93235f] {\n    padding: 0.75rem 0.5rem;\n}\n.box-container.seamless[data-v-7e93235f] {\n    background-color: transparent;\n    border-color: transparent;\n}\n.heading[data-v-7e93235f] {\n    display: inline;\n    float: right;\n    font-weight: normal;\n    color: inherit;\n    background-color: rgba(240, 240, 240, 0.6);\n    width: auto;\n    padding: 3px 5px 4px 5px;\n    border-width: 0;\n    border-radius: 0 6px 0 6px;\n    margin: -13px -27px 0 15px;\n}\n.box-body-wrapper-with-heading[data-v-7e93235f] {\n    padding-top: 0.5rem;\n}\n.alert-dismissible[data-v-7e93235f] {\n    padding-right: 4rem;\n}\n.box-header[data-v-7e93235f] {\n    font-weight: 500;\n}\n.icon-wrapper[data-v-7e93235f] {\n    display: flex;\n    margin-right: .5em;\n}\n.close-with-heading[data-v-7e93235f] {\n    top: auto;\n    padding: 0 1.25rem;\n}\n.close-with-heading > span[data-v-7e93235f] {\n    vertical-align: text-top;\n}\n.contents[data-v-7e93235f] {\n    padding: 0 6px;\n    width: 100%;\n}\n.contents.seamless[data-v-7e93235f] {\n    padding-left: 12px;\n}\n.alert-default[data-v-7e93235f] {\n    color: #24292e;\n    background-color: #f6f8fa;\n    border-color: #e8ebef;\n}\n.alert-border-left[data-v-7e93235f] {\n    background-color: #f9f8f8;\n    border-left: solid;\n    border-width: 0px 0px 0px 5px;\n}\n.font-black[data-v-7e93235f] {\n    color: #24292e;\n}\n.vertical-divider[data-v-7e93235f] {\n    width: 4px;\n}\n.horizontal-divider[data-v-7e93235f] {\n    margin: 0 auto;\n    width: calc(100% - 2.5rem);\n    height: 3px;\n}\n", "", {"version":3,"sources":["/./src/TipBox.vue?65399d64"],"names":[],"mappings":";AAmMA;IACA,YAAA;IACA,WAAA;IACA,mBAAA;CACA;AAEA;IACA,cAAA;IACA,oBAAA;IACA,oBAAA;IACA,YAAA;IACA,wBAAA;IACA,2BAAA;CACA;AAEA;IACA,cAAA;IACA,oBAAA;IACA,YAAA;IACA,yBAAA;CACA;AAEA;IACA,wBAAA;CACA;AAEA;IACA,8BAAA;IACA,0BAAA;CACA;AAEA;IACA,gBAAA;IACA,aAAA;IACA,oBAAA;IACA,eAAA;IACA,2CAAA;IACA,YAAA;IACA,yBAAA;IACA,gBAAA;IACA,2BAAA;IACA,2BAAA;CACA;AAEA;IACA,oBAAA;CACA;AAEA;IACA,oBAAA;CACA;AAEA;IACA,iBAAA;CACA;AAEA;IACA,cAAA;IACA,mBAAA;CACA;AAEA;IACA,UAAA;IACA,mBAAA;CACA;AAEA;IACA,yBAAA;CACA;AAEA;IACA,eAAA;IACA,YAAA;CACA;AAEA;IACA,mBAAA;CACA;AAEA;IACA,eAAA;IACA,0BAAA;IACA,sBAAA;CACA;AAEA;IACA,0BAAA;IACA,mBAAA;IACA,8BAAA;CACA;AAEA;IACA,eAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,eAAA;IACA,2BAAA;IACA,YAAA;CACA","file":"TipBox.vue","sourcesContent":["<template>\n    <div class=\"alert box-container\" :class=\"[boxStyle, addClass, lightStyle, seamlessStyle]\" :style=\"customStyle\">\n        <div v-if=\"headerBool\" :class=\"['box-header-wrapper', { 'alert-dismissible': dismissible }]\">\n            <div v-show=\"!isDefault\" class=\"icon-wrapper\" :class=\"[iconStyle]\">\n                <slot name=\"_icon\">\n                    <span v-html=\"iconType\"></span>\n                </slot>\n            </div>\n            <div class=\"box-header\">\n                <slot name=\"_header\"></slot>\n            </div>\n            <button v-show=\"dismissible\" type=\"button\" class=\"close close-with-heading\" data-dismiss=\"alert\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n        </div>\n        <div v-if=\"horizontalDividerBool\" class=\"horizontal-divider\" :class=\"boxStyle\" aria-hidden=\"true\"></div>\n        <div :class=\"['box-body-wrapper', { 'alert-dismissible': dismissible && !headerBool, 'box-body-wrapper-with-heading': headerBool }]\">\n            <div v-show=\"!isDefault && !headerBool\" class=\"icon-wrapper\" :class=\"[iconStyle]\">\n                <slot name=\"_icon\">\n                    <span v-html=\"iconType\"></span>\n                </slot>\n            </div>\n            <div v-if=\"verticalDividerBool\" class=\"vertical-divider\" :class=\"boxStyle\" aria-hidden=\"true\"></div>\n            <div class=\"contents\" :class=\"[fontBlack, seamlessStyle]\">\n                <slot></slot>\n            </div>\n            <button v-show=\"dismissible && !headerBool\" type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n        </div>\n    </div>\n</template>\n\n<script>\n\n  export default {\n    props: {\n      dismissible: {\n        type: Boolean,\n        default: false\n      },\n      backgroundColor: {\n        type: String,\n        default: null\n      },\n      borderColor: {\n        type: String,\n        default: null\n      },\n      borderLeftColor: {\n        type: String,\n        default: null\n      },\n      color: {\n        type: String,\n        default: null\n      },\n      icon: {\n        type: String,\n        default: null\n      },\n      iconSize: {\n        type: String,\n        default: null\n      },\n      type: {\n        type: String,\n        default: 'none'\n      },\n      addClass: {\n        type: String,\n        default: ''\n      },\n      light: {\n        type: Boolean,\n        default: false,\n      },\n      seamless: {\n        type: Boolean,\n        default: false,\n      },\n    },\n    computed: {\n      isDefault() {\n        return this.type === 'none'\n      },\n      isSeamless() {\n        return !this.light && this.seamless;\n      },\n      verticalDividerBool() {\n        return this.isSeamless && !this.headerBool;\n      },\n      horizontalDividerBool() {\n          return this.isSeamless && this.headerBool;\n      },\n      headerBool() {\n        return !!this.$slots._header;\n      },\n      boxStyle() {\n        switch (this.type) {\n          case 'warning':\n            return 'alert-warning'\n          case 'info':\n          case 'definition':\n            return 'alert-info'\n          case 'success':\n          case 'tip':\n            return 'alert-success'\n          case 'important':\n          case 'wrong':\n            return 'alert-danger'\n          default:\n            return 'alert-default'\n        }\n      },\n      lightStyle() {\n        if (this.light) {\n          switch (this.type) {\n            case 'warning':\n              return 'border-warning text-warning alert-border-left';\n            case 'info':\n            case 'definition':\n              return 'border-info text-info alert-border-left';\n            case 'success':\n            case 'tip':\n              return 'border-success text-success alert-border-left';\n            case 'important':\n            case 'wrong':\n              return 'border-danger text-danger alert-border-left';\n            default:\n              return 'alert-border-left';\n          }\n        }\n        return '';\n      },\n      customStyle() {\n        var style = {};\n        if (this.backgroundColor) {\n          style.backgroundColor = this.backgroundColor;\n          style.borderColor = this.backgroundColor;\n        }\n        if (this.borderColor) {\n          style.borderColor = this.borderColor;\n        }\n        if (this.borderLeftColor) {\n          style.borderLeft = `5px solid ${this.borderLeftColor}`;\n        }\n        if (this.color) {\n          style.color = this.color;\n        }\n        return style;\n      },\n      seamlessStyle() {\n        if (this.isSeamless) {\n          return 'seamless';\n        }\n        return '';\n      },\n      fontBlack() {\n        if (this.light) {\n          return 'font-black';\n        }\n        return '';\n      },\n      iconType() {\n        switch (this.type) {\n          case 'wrong':\n            return '<i class=\"fas fa-times\"></i>';\n          case 'warning':\n            return '<i class=\"fas fa-exclamation\"></i>';\n          case 'info':\n            return '<i class=\"fas fa-info\"></i>';\n          case 'success':\n            return '<i class=\"fas fa-check\"></i>';\n          case 'important':\n            return '<i class=\"fas fa-flag\"></i>';\n          case 'tip':\n            return '<i class=\"fas fa-lightbulb\"></i>';\n          case 'definition':\n            return '<i class=\"fas fa-atlas\"></i>';\n          default:\n            return '<i class=\"fas fa-exclamation\"></i>';\n        }\n      },\n      iconStyle() {\n        if (this.iconSize) {\n          return `fa-${this.iconSize}`;\n        }\n        return '';\n      }\n    }\n  }\n</script>\n\n<style scoped>\n    .box-container {\n        width: 100%;\n        padding: 0;\n        border-radius: 6px;\n    }\n\n    .box-header-wrapper {\n        display: flex;\n        flex-direction: row;\n        align-items: center;\n        width: 100%;\n        padding: 0.28em 1.25rem;\n        border-radius: 6px 6px 0 0;\n    }\n\n    .box-body-wrapper {\n        display: flex;\n        flex-direction: row;\n        width: 100%;\n        padding: 0.75rem 1.25rem;\n    }\n\n    .box-container.seamless > .box-body-wrapper {\n        padding: 0.75rem 0.5rem;\n    }\n\n    .box-container.seamless {\n        background-color: transparent;\n        border-color: transparent;\n    }\n\n    .heading {\n        display: inline;\n        float: right;\n        font-weight: normal;\n        color: inherit;\n        background-color: rgba(240, 240, 240, 0.6);\n        width: auto;\n        padding: 3px 5px 4px 5px;\n        border-width: 0;\n        border-radius: 0 6px 0 6px;\n        margin: -13px -27px 0 15px;\n    }\n\n    .box-body-wrapper-with-heading {\n        padding-top: 0.5rem;\n    }\n\n    .alert-dismissible {\n        padding-right: 4rem;\n    }\n\n    .box-header {\n        font-weight: 500;\n    }\n\n    .icon-wrapper {\n        display: flex;\n        margin-right: .5em;\n    }\n\n    .close-with-heading {\n        top: auto;\n        padding: 0 1.25rem;\n    }\n\n    .close-with-heading > span {\n        vertical-align: text-top;\n    }\n\n    .contents {\n        padding: 0 6px;\n        width: 100%;\n    }\n\n    .contents.seamless {\n        padding-left: 12px;\n    }\n\n    .alert-default {\n        color: #24292e;\n        background-color: #f6f8fa;\n        border-color: #e8ebef;\n    }\n\n    .alert-border-left {\n        background-color: #f9f8f8;\n        border-left: solid;\n        border-width: 0px 0px 0px 5px;\n    }\n\n    .font-black {\n        color: #24292e;\n    }\n\n    .vertical-divider {\n        width: 4px;\n    }\n\n    .horizontal-divider {\n        margin: 0 auto;\n        width: calc(100% - 2.5rem);\n        height: 3px;\n    }\n</style>\n\n<!-- TODO move this once we upgrade vue-loader version for scoped deep selectors -->\n<style>\n    div.box-header > * {\n        margin-bottom: 0;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -18495,13 +18500,85 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(210);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(78)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7e93235f!../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./TipBox.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js?sourceMap!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7e93235f!../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./TipBox.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 210 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(77)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "\ndiv.box-header > * {\n    margin-bottom: 0;\n}\n", "", {"version":3,"sources":["/./src/TipBox.vue?65399d64"],"names":[],"mappings":";AA+SA;IACA,iBAAA;CACA","file":"TipBox.vue","sourcesContent":["<template>\n    <div class=\"alert box-container\" :class=\"[boxStyle, addClass, lightStyle, seamlessStyle]\" :style=\"customStyle\">\n        <div v-if=\"headerBool\" :class=\"['box-header-wrapper', { 'alert-dismissible': dismissible }]\">\n            <div v-show=\"!isDefault\" class=\"icon-wrapper\" :class=\"[iconStyle]\">\n                <slot name=\"_icon\">\n                    <span v-html=\"iconType\"></span>\n                </slot>\n            </div>\n            <div class=\"box-header\">\n                <slot name=\"_header\"></slot>\n            </div>\n            <button v-show=\"dismissible\" type=\"button\" class=\"close close-with-heading\" data-dismiss=\"alert\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n        </div>\n        <div v-if=\"horizontalDividerBool\" class=\"horizontal-divider\" :class=\"boxStyle\" aria-hidden=\"true\"></div>\n        <div :class=\"['box-body-wrapper', { 'alert-dismissible': dismissible && !headerBool, 'box-body-wrapper-with-heading': headerBool }]\">\n            <div v-show=\"!isDefault && !headerBool\" class=\"icon-wrapper\" :class=\"[iconStyle]\">\n                <slot name=\"_icon\">\n                    <span v-html=\"iconType\"></span>\n                </slot>\n            </div>\n            <div v-if=\"verticalDividerBool\" class=\"vertical-divider\" :class=\"boxStyle\" aria-hidden=\"true\"></div>\n            <div class=\"contents\" :class=\"[fontBlack, seamlessStyle]\">\n                <slot></slot>\n            </div>\n            <button v-show=\"dismissible && !headerBool\" type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n        </div>\n    </div>\n</template>\n\n<script>\n\n  export default {\n    props: {\n      dismissible: {\n        type: Boolean,\n        default: false\n      },\n      backgroundColor: {\n        type: String,\n        default: null\n      },\n      borderColor: {\n        type: String,\n        default: null\n      },\n      borderLeftColor: {\n        type: String,\n        default: null\n      },\n      color: {\n        type: String,\n        default: null\n      },\n      icon: {\n        type: String,\n        default: null\n      },\n      iconSize: {\n        type: String,\n        default: null\n      },\n      type: {\n        type: String,\n        default: 'none'\n      },\n      addClass: {\n        type: String,\n        default: ''\n      },\n      light: {\n        type: Boolean,\n        default: false,\n      },\n      seamless: {\n        type: Boolean,\n        default: false,\n      },\n    },\n    computed: {\n      isDefault() {\n        return this.type === 'none'\n      },\n      isSeamless() {\n        return !this.light && this.seamless;\n      },\n      verticalDividerBool() {\n        return this.isSeamless && !this.headerBool;\n      },\n      horizontalDividerBool() {\n          return this.isSeamless && this.headerBool;\n      },\n      headerBool() {\n        return !!this.$slots._header;\n      },\n      boxStyle() {\n        switch (this.type) {\n          case 'warning':\n            return 'alert-warning'\n          case 'info':\n          case 'definition':\n            return 'alert-info'\n          case 'success':\n          case 'tip':\n            return 'alert-success'\n          case 'important':\n          case 'wrong':\n            return 'alert-danger'\n          default:\n            return 'alert-default'\n        }\n      },\n      lightStyle() {\n        if (this.light) {\n          switch (this.type) {\n            case 'warning':\n              return 'border-warning text-warning alert-border-left';\n            case 'info':\n            case 'definition':\n              return 'border-info text-info alert-border-left';\n            case 'success':\n            case 'tip':\n              return 'border-success text-success alert-border-left';\n            case 'important':\n            case 'wrong':\n              return 'border-danger text-danger alert-border-left';\n            default:\n              return 'alert-border-left';\n          }\n        }\n        return '';\n      },\n      customStyle() {\n        var style = {};\n        if (this.backgroundColor) {\n          style.backgroundColor = this.backgroundColor;\n          style.borderColor = this.backgroundColor;\n        }\n        if (this.borderColor) {\n          style.borderColor = this.borderColor;\n        }\n        if (this.borderLeftColor) {\n          style.borderLeft = `5px solid ${this.borderLeftColor}`;\n        }\n        if (this.color) {\n          style.color = this.color;\n        }\n        return style;\n      },\n      seamlessStyle() {\n        if (this.isSeamless) {\n          return 'seamless';\n        }\n        return '';\n      },\n      fontBlack() {\n        if (this.light) {\n          return 'font-black';\n        }\n        return '';\n      },\n      iconType() {\n        switch (this.type) {\n          case 'wrong':\n            return '<i class=\"fas fa-times\"></i>';\n          case 'warning':\n            return '<i class=\"fas fa-exclamation\"></i>';\n          case 'info':\n            return '<i class=\"fas fa-info\"></i>';\n          case 'success':\n            return '<i class=\"fas fa-check\"></i>';\n          case 'important':\n            return '<i class=\"fas fa-flag\"></i>';\n          case 'tip':\n            return '<i class=\"fas fa-lightbulb\"></i>';\n          case 'definition':\n            return '<i class=\"fas fa-atlas\"></i>';\n          default:\n            return '<i class=\"fas fa-exclamation\"></i>';\n        }\n      },\n      iconStyle() {\n        if (this.iconSize) {\n          return `fa-${this.iconSize}`;\n        }\n        return '';\n      }\n    }\n  }\n</script>\n\n<style scoped>\n    .box-container {\n        width: 100%;\n        padding: 0;\n        border-radius: 6px;\n    }\n\n    .box-header-wrapper {\n        display: flex;\n        flex-direction: row;\n        align-items: center;\n        width: 100%;\n        padding: 0.28em 1.25rem;\n        border-radius: 6px 6px 0 0;\n    }\n\n    .box-body-wrapper {\n        display: flex;\n        flex-direction: row;\n        width: 100%;\n        padding: 0.75rem 1.25rem;\n    }\n\n    .box-container.seamless > .box-body-wrapper {\n        padding: 0.75rem 0.5rem;\n    }\n\n    .box-container.seamless {\n        background-color: transparent;\n        border-color: transparent;\n    }\n\n    .heading {\n        display: inline;\n        float: right;\n        font-weight: normal;\n        color: inherit;\n        background-color: rgba(240, 240, 240, 0.6);\n        width: auto;\n        padding: 3px 5px 4px 5px;\n        border-width: 0;\n        border-radius: 0 6px 0 6px;\n        margin: -13px -27px 0 15px;\n    }\n\n    .box-body-wrapper-with-heading {\n        padding-top: 0.5rem;\n    }\n\n    .alert-dismissible {\n        padding-right: 4rem;\n    }\n\n    .box-header {\n        font-weight: 500;\n    }\n\n    .icon-wrapper {\n        display: flex;\n        margin-right: .5em;\n    }\n\n    .close-with-heading {\n        top: auto;\n        padding: 0 1.25rem;\n    }\n\n    .close-with-heading > span {\n        vertical-align: text-top;\n    }\n\n    .contents {\n        padding: 0 6px;\n        width: 100%;\n    }\n\n    .contents.seamless {\n        padding-left: 12px;\n    }\n\n    .alert-default {\n        color: #24292e;\n        background-color: #f6f8fa;\n        border-color: #e8ebef;\n    }\n\n    .alert-border-left {\n        background-color: #f9f8f8;\n        border-left: solid;\n        border-width: 0px 0px 0px 5px;\n    }\n\n    .font-black {\n        color: #24292e;\n    }\n\n    .vertical-divider {\n        width: 4px;\n    }\n\n    .horizontal-divider {\n        margin: 0 auto;\n        width: calc(100% - 2.5rem);\n        height: 3px;\n    }\n</style>\n\n<!-- TODO move this once we upgrade vue-loader version for scoped deep selectors -->\n<style>\n    div.box-header > * {\n        margin-bottom: 0;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	
+	// exports
+
+
+/***/ }),
+/* 211 */
+/***/ (function(module, exports) {
+
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 	
-	var _utils = __webpack_require__(38);
 	
 	exports.default = {
 	  props: {
@@ -18541,17 +18618,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	      type: String,
 	      default: ''
 	    },
-	    heading: {
-	      type: String,
-	      default: null
-	    },
 	    light: {
 	      type: Boolean,
 	      default: false
-	    },
-	    header: {
-	      type: String,
-	      default: null
 	    },
 	    seamless: {
 	      type: Boolean,
@@ -18563,10 +18632,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return this.type === 'none';
 	    },
 	    isSeamless: function isSeamless() {
-	      return (0, _utils.toBoolean)(this.seamless);
+	      return !this.light && this.seamless;
 	    },
-	    headerContent: function headerContent() {
-	      return this.header || this.heading;
+	    verticalDividerBool: function verticalDividerBool() {
+	      return this.isSeamless && !this.headerBool;
+	    },
+	    horizontalDividerBool: function horizontalDividerBool() {
+	      return this.isSeamless && this.headerBool;
+	    },
+	    headerBool: function headerBool() {
+	      return !!this.$slots._header;
 	    },
 	    boxStyle: function boxStyle() {
 	      switch (this.type) {
@@ -18595,12 +18670,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	            return 'border-info text-info alert-border-left';
 	          case 'success':
 	          case 'tip':
-	            return 'border-sucess text-success alert-border-left';
+	            return 'border-success text-success alert-border-left';
 	          case 'important':
 	          case 'wrong':
 	            return 'border-danger text-danger alert-border-left';
 	          default:
-	            return '';
+	            return 'alert-border-left';
 	        }
 	      }
 	      return '';
@@ -18623,7 +18698,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return style;
 	    },
 	    seamlessStyle: function seamlessStyle() {
-	      if (this.seamless) {
+	      if (this.isSeamless) {
 	        return 'seamless';
 	      }
 	      return '';
@@ -18661,51 +18736,44 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return '';
 	    }
 	  }
-	}; //
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
+	};
 
 /***/ }),
-/* 210 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
-	    staticClass: "alert container",
+	    staticClass: "alert box-container",
 	    class: [_vm.boxStyle, _vm.addClass, _vm.lightStyle, _vm.seamlessStyle],
 	    style: (_vm.customStyle)
-	  }, [(!_vm.isDefault) ? _c('div', {
+	  }, [(_vm.headerBool) ? _c('div', {
+	    class: ['box-header-wrapper', {
+	      'alert-dismissible': _vm.dismissible
+	    }]
+	  }, [_c('div', {
+	    directives: [{
+	      name: "show",
+	      rawName: "v-show",
+	      value: (!_vm.isDefault),
+	      expression: "!isDefault"
+	    }],
 	    staticClass: "icon-wrapper",
 	    class: [_vm.iconStyle]
 	  }, [_vm._t("_icon", [_c('span', {
 	    domProps: {
 	      "innerHTML": _vm._s(_vm.iconType)
 	    }
-	  })])], 2) : _vm._e(), _vm._v(" "), (_vm.isSeamless) ? _c('div', {
-	    staticClass: "vertical-divider",
-	    class: [_vm.boxStyle]
-	  }) : _vm._e(), _vm._v(" "), _c('div', {
-	    staticClass: "contents",
-	    class: [_vm.fontBlack, _vm.seamlessStyle]
-	  }, [(_vm.headerContent) ? _c('h6', {
-	    staticClass: "heading"
-	  }, [_vm._v(_vm._s(_vm.headerContent))]) : _vm._e(), _vm._v(" "), (_vm.dismissible) ? _c('button', {
-	    staticClass: "close dismiss-button",
+	  })])], 2), _vm._v(" "), _c('div', {
+	    staticClass: "box-header"
+	  }, [_vm._t("_header")], 2), _vm._v(" "), _c('button', {
+	    directives: [{
+	      name: "show",
+	      rawName: "v-show",
+	      value: (_vm.dismissible),
+	      expression: "dismissible"
+	    }],
+	    staticClass: "close close-with-heading",
 	    attrs: {
 	      "type": "button",
 	      "data-dismiss": "alert",
@@ -18715,7 +18783,57 @@ return /******/ (function(modules) { // webpackBootstrap
 	    attrs: {
 	      "aria-hidden": "true"
 	    }
-	  }, [_vm._v("×")])]) : _vm._e(), _vm._v(" "), _vm._t("default")], 2)])
+	  }, [_vm._v("×")])])]) : _vm._e(), _vm._v(" "), (_vm.horizontalDividerBool) ? _c('div', {
+	    staticClass: "horizontal-divider",
+	    class: _vm.boxStyle,
+	    attrs: {
+	      "aria-hidden": "true"
+	    }
+	  }) : _vm._e(), _vm._v(" "), _c('div', {
+	    class: ['box-body-wrapper', {
+	      'alert-dismissible': _vm.dismissible && !_vm.headerBool,
+	      'box-body-wrapper-with-heading': _vm.headerBool
+	    }]
+	  }, [_c('div', {
+	    directives: [{
+	      name: "show",
+	      rawName: "v-show",
+	      value: (!_vm.isDefault && !_vm.headerBool),
+	      expression: "!isDefault && !headerBool"
+	    }],
+	    staticClass: "icon-wrapper",
+	    class: [_vm.iconStyle]
+	  }, [_vm._t("_icon", [_c('span', {
+	    domProps: {
+	      "innerHTML": _vm._s(_vm.iconType)
+	    }
+	  })])], 2), _vm._v(" "), (_vm.verticalDividerBool) ? _c('div', {
+	    staticClass: "vertical-divider",
+	    class: _vm.boxStyle,
+	    attrs: {
+	      "aria-hidden": "true"
+	    }
+	  }) : _vm._e(), _vm._v(" "), _c('div', {
+	    staticClass: "contents",
+	    class: [_vm.fontBlack, _vm.seamlessStyle]
+	  }, [_vm._t("default")], 2), _vm._v(" "), _c('button', {
+	    directives: [{
+	      name: "show",
+	      rawName: "v-show",
+	      value: (_vm.dismissible && !_vm.headerBool),
+	      expression: "dismissible && !headerBool"
+	    }],
+	    staticClass: "close",
+	    attrs: {
+	      "type": "button",
+	      "data-dismiss": "alert",
+	      "aria-label": "Close"
+	    }
+	  }, [_c('span', {
+	    attrs: {
+	      "aria-hidden": "true"
+	    }
+	  }, [_vm._v("×")])])])])
 	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
@@ -18725,20 +18843,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 211 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(212)
+	__webpack_require__(214)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(214)
+	__vue_exports__ = __webpack_require__(216)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(215)
+	var __vue_template__ = __webpack_require__(217)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -18772,13 +18890,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 212 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(213);
+	var content = __webpack_require__(215);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -18798,7 +18916,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 213 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -18812,7 +18930,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 214 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -18875,7 +18993,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 
 /***/ }),
-/* 215 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -18908,20 +19026,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 216 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(217)
+	__webpack_require__(219)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(219)
+	__vue_exports__ = __webpack_require__(221)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(220)
+	var __vue_template__ = __webpack_require__(222)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -18955,13 +19073,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 217 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(218);
+	var content = __webpack_require__(220);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -18981,7 +19099,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 218 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -18995,7 +19113,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 219 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -19055,7 +19173,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(72)))
 
 /***/ }),
-/* 220 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
