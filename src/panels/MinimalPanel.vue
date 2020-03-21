@@ -10,17 +10,19 @@
       </button>
     </div>
     <div v-show="!localMinimized" class="card card-flex" @mouseover="onHeaderHover = true" @mouseleave="onHeaderHover = false">
-      <div :class="['header-wrapper', { 'header-wrapper-bottom': localExpanded, 'header-toggle': isExpandableCard }]"
+      <div :class="['header-wrapper', { 'header-wrapper-bottom': isHeaderAtBottom, 'header-toggle': isExpandableCard }]"
            @click.prevent.stop="isExpandableCard && toggle()">
-        <span v-show="!localExpanded" ref="headerWrapper"
-              :class="['card-title', 'card-title-transparent', { 'card-title-opaque': onHeaderHover, 'ellipses': !hasHeaderBool }]">
-          <slot name="header">
-            <span class="card-title-inline"><slot name="_header"></slot></span>
-            <span v-show="showDownSwitch" aria-hidden="true"
-                  class="minimal-button glyphicon glyphicon-menu-down minimal-menu-down"></span>
-          </slot>
-        </span>
-        <div :class="['button-wrapper', { 'button-wrapper-expanded': localExpanded, 'button-wrapper-visible': onHeaderHover }]">
+        <transition name="header-fade">
+          <span v-show="!isHeaderAtBottom" ref="headerWrapper"
+                :class="['card-title', 'card-title-transparent', { 'card-title-opaque': onHeaderHover, 'ellipses': !hasHeaderBool }]">
+            <slot name="header">
+              <span class="card-title-inline"><slot name="_header"></slot></span>
+              <span v-show="showDownSwitch" aria-hidden="true"
+                    class="minimal-button glyphicon glyphicon-menu-down minimal-menu-down"></span>
+            </slot>
+          </span>
+        </transition>
+        <div :class="['button-wrapper', { 'button-wrapper-expanded': isHeaderAtBottom, 'button-wrapper-visible': onHeaderHover }]">
           <slot name="button">
             <button v-show="!noCloseBool" class="minimal-button" type="button" @click.stop="close()">
               <span class="glyphicon glyphicon-remove minimal-close-button" aria-hidden="true"></span>
@@ -28,24 +30,31 @@
             <button v-show="popupUrl !== null" class="minimal-button" type="button" @click.stop="openPopup()">
               <span class="glyphicon glyphicon-new-window minimal-popup-button" aria-hidden="true"></span>
             </button>
-            <button v-show="localExpanded && isExpandableCard && bottomSwitchBool" class="minimal-button" type="button"
-                    @click.prevent.stop="collapseThenScrollIntoViewIfNeeded()">
+            <button v-show="isHeaderAtBottom && isExpandableCard && bottomSwitchBool" class="minimal-button" type="button">
               <span class="glyphicon glyphicon-menu-up minimal-menu-up" aria-hidden="true"></span>
             </button>
           </slot>
         </div>
       </div>
-      <template v-if="preloadBool || isCached">
-        <div class="card-collapse"
-             ref="panel"
-             v-show="localExpanded"
-        >
+      <transition @before-enter="beforeExpandMinimal"
+                  @enter="duringExpand"
+                  @leave="duringCollapse"
+                  @after-leave="afterCollapseMinimal"
+                  v-if="preloadBool || wasRetrieverLoaded"
+      >
+        <div v-show="localExpanded"
+             class="card-collapse"
+             ref="panel">
           <div class="card-body">
             <slot></slot>
-            <retriever v-if="hasSrc" ref="retriever" :src="src" :fragment="fragment"/>
+            <retriever v-if="hasSrc"
+                       ref="retriever"
+                       :src="src"
+                       :fragment="fragment"
+                       @src-loaded="setMaxHeight"/>
           </div>
         </div>
-      </template>
+      </transition>
     </div>
   </span>
 </template>
@@ -59,11 +68,33 @@ export default {
   components: {
     retriever,
   },
+  data() {
+    return {
+      /*
+      'Copy' of localExpanded that is updated on certain animation events.
+      It is minimal-panel specific due to its design (the header can shift to the bottom).
+      Its purpose is to show the header text only once the collapse animation has finished.
+       */
+      isHeaderAtBottom: false,
+    };
+  },
   computed: {
     showDownSwitch() {
       return this.hasHeaderBool && this.isExpandableCard && !this.noSwitchBool;
     },
-  }
+  },
+  methods: {
+    beforeExpandMinimal(el) {
+      this.isHeaderAtBottom = true;
+      this.beforeExpand(el);
+    },
+    afterCollapseMinimal(el) {
+      this.isHeaderAtBottom = false;
+    }
+  },
+  created() {
+    this.isHeaderAtBottom = this.localExpanded;
+  },
 };
 </script>
 
@@ -82,6 +113,11 @@ export default {
     background-color: rgba(244, 244, 244, 0.3);
   }
 
+  .card-collapse {
+    overflow: hidden;
+    transition: max-height 0.7s ease-in-out;
+  }
+
   .card-flex {
     display: flex;
     flex-direction: column;
@@ -96,6 +132,18 @@ export default {
 
   .card-title-opaque {
     opacity: 1;
+  }
+
+  .header-fade-enter {
+    opacity: 0;
+  }
+
+  .header-fade-leave-active {
+    position: absolute;
+  }
+
+  .header-fade-leave-to {
+    opacity: 0;
   }
 
   .card-title-inline {

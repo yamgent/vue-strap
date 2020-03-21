@@ -92,45 +92,51 @@ export default {
       onHeaderHover: false,
       localExpanded: false,
       localMinimized: false,
-      isCached: false,
+      wasRetrieverLoaded: false,
     };
   },
   methods: {
     toggle() {
-      this.localExpanded = !this.localExpanded;
-      if (this.localExpanded) {
-        this.isCached = true;
-      }
-    },
-    expand() {
-      this.localExpanded = !this.localExpanded;
-      if (this.localExpanded) {
-        this.isCached = true;
+      if (!this.wasRetrieverLoaded && !this.localExpanded) {
+        /*
+        Let the retriever load before toggling localExpanded which triggers the animation,
+        as we need to know the scrollHeight of the content for the animation to work.
+        */
+        this.wasRetrieverLoaded = true;
+        this.$nextTick(() => this.localExpanded = true);
+      } else {
+        this.localExpanded = !this.localExpanded;
       }
     },
     close() {
+      this.localExpanded = false;
       this.localMinimized = true;
     },
     open() {
-      this.localExpanded = true;
-      this.isCached = true;
+      this.wasRetrieverLoaded = true;
+      this.$nextTick(() => this.localExpanded = true);
       this.localMinimized = false;
-    },
-    scrollIntoViewIfNeeded() {
-      const top = this.$el.getBoundingClientRect().top;
-      const isTopInView = (top >= 0) && (top <= window.innerHeight);
-      if (!isTopInView) {
-        this.$el.scrollIntoView();
-      }
-    },
-    collapseThenScrollIntoViewIfNeeded() {
-      this.$once('is-open-event', (el, isOpen) => {
-        this.scrollIntoViewIfNeeded();
-      });
-      this.expand();
     },
     openPopup() {
       window.open(this.popupUrl);
+    },
+    setMaxHeight() {
+      this.$refs.panel.style.maxHeight = `${this.$refs.panel.scrollHeight}px`;
+    },
+    beforeExpand(el) {
+      el.style.maxHeight = '0';
+    },
+    duringExpand(el) {
+      jQuery("html").stop();
+      el.style.maxHeight = `${el.scrollHeight}px`;
+    },
+    duringCollapse(el) {
+      if (this.$el.getBoundingClientRect().top < 0) {
+        jQuery("html").animate({
+          scrollTop: window.scrollY + this.$el.getBoundingClientRect().top - 3
+        }, 700, 'swing')
+      }
+      el.style.maxHeight = '0';
     },
   },
   created() {
@@ -145,7 +151,12 @@ export default {
     const notExpandableNoExpand = !this.expandableBool && this.expanded !== 'false';
     // Set local data to computed prop value
     this.localExpanded = notExpandableNoExpand || this.expandedBool; // Ensure this expr ordering is maintained
-    this.isCached = this.localExpanded; // If it is expanded, it will be cached.
+    this.wasRetrieverLoaded = this.localExpanded; // If it is expanded, load the retriever immediately.
     this.localMinimized = this.minimizedBool;
   },
+  mounted() {
+    // For this case, we want to set and calculate the maximum height only after the
+    // panel has been mounted.
+    if (this.expandedBool && !this.hasSrc) this.setMaxHeight();
+  }
 };

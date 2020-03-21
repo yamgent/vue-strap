@@ -27,7 +27,6 @@
     methods: {
       toggle () {
         this.isOpen = !this.isOpenBool
-        this.$emit('is-open-event', this, this.isOpenBool)
       }
     },
     created () {

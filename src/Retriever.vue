@@ -59,10 +59,12 @@ export default {
             template: `<div>\n${result}\n</div>`,
           })
           new tempComponent().$mount(this.$el);
+          this.$emit('src-loaded');
         })
         .fail((error) => {
           console.error(error.responseText)
           this.$el.innerHTML = `<strong>Error</strong>: Failed to retrieve content from source: <em>${this.src}</em>`
+          this.$emit('src-loaded');
         });
     }
   },
