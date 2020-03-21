@@ -2,7 +2,7 @@
     <div class="alert box-container" :class="[boxStyle, addClass, lightStyle, seamlessStyle, noBackgroundStyle, noBorderStyle]" :style="customStyle">
         <div v-if="headerBool" :class="['box-header-wrapper', { 'alert-dismissible': dismissible }]">
             <div v-show="hasIcon" class="icon-wrapper" :class="[iconStyle]">
-                <slot name="_icon">
+                <slot name="icon">
                     <span v-html="iconType"></span>
                 </slot>
             </div>
@@ -16,7 +16,7 @@
         <div v-if="horizontalDividerBool" class="horizontal-divider" :class="boxStyle" aria-hidden="true"></div>
         <div :class="['box-body-wrapper', { 'alert-dismissible': dismissible && !headerBool, 'box-body-wrapper-with-heading': headerBool }]">
             <div v-show="hasIcon && !headerBool" class="icon-wrapper" :class="[iconStyle]">
-                <slot name="_icon">
+                <slot name="icon">
                     <span v-html="iconType"></span>
                 </slot>
             </div>
@@ -172,8 +172,8 @@
         return '';
       },
       hasIcon() {
-        // this.$slots._icon is either undefined or an object
-        const isIconSlotFilled = !!this.$slots._icon;
+        // this.$slots.icon is either undefined or an object
+        const isIconSlotFilled = !!this.$slots.icon;
         return !this.noIcon || isIconSlotFilled;
       },
       iconType() {
