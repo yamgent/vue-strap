@@ -300,6 +300,10 @@
         padding-left: 12px;
     }
 
+    .contents > :last-child {
+        margin-bottom: 0;
+    }
+
     .alert-default {
         color: #24292e;
         background-color: #f6f8fa;
