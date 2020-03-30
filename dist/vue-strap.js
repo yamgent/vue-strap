@@ -84,55 +84,55 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _Panel2 = _interopRequireDefault(_Panel);
 	
-	var _Pic = __webpack_require__(118);
+	var _Pic = __webpack_require__(120);
 	
 	var _Pic2 = _interopRequireDefault(_Pic);
 	
-	var _Popover = __webpack_require__(123);
+	var _Popover = __webpack_require__(125);
 	
 	var _Popover2 = _interopRequireDefault(_Popover);
 	
-	var _Question = __webpack_require__(143);
+	var _Question = __webpack_require__(145);
 	
 	var _Question2 = _interopRequireDefault(_Question);
 	
-	var _Retriever = __webpack_require__(108);
+	var _Retriever = __webpack_require__(110);
 	
 	var _Retriever2 = _interopRequireDefault(_Retriever);
 	
-	var _Searchbar = __webpack_require__(148);
+	var _Searchbar = __webpack_require__(150);
 	
 	var _Searchbar2 = _interopRequireDefault(_Searchbar);
 	
-	var _Tab = __webpack_require__(186);
+	var _Tab = __webpack_require__(188);
 	
 	var _Tab2 = _interopRequireDefault(_Tab);
 	
-	var _TabGroup = __webpack_require__(191);
+	var _TabGroup = __webpack_require__(193);
 	
 	var _TabGroup2 = _interopRequireDefault(_TabGroup);
 	
-	var _Tabset = __webpack_require__(196);
+	var _Tabset = __webpack_require__(198);
 	
 	var _Tabset2 = _interopRequireDefault(_Tabset);
 	
-	var _Thumbnail = __webpack_require__(201);
+	var _Thumbnail = __webpack_require__(203);
 	
 	var _Thumbnail2 = _interopRequireDefault(_Thumbnail);
 	
-	var _TipBox = __webpack_require__(206);
+	var _TipBox = __webpack_require__(208);
 	
 	var _TipBox2 = _interopRequireDefault(_TipBox);
 	
-	var _Tooltip = __webpack_require__(213);
+	var _Tooltip = __webpack_require__(215);
 	
 	var _Tooltip2 = _interopRequireDefault(_Tooltip);
 	
-	var _trigger = __webpack_require__(218);
+	var _trigger = __webpack_require__(220);
 	
 	var _trigger2 = _interopRequireDefault(_trigger);
 	
-	var _Typeahead = __webpack_require__(176);
+	var _Typeahead = __webpack_require__(178);
 	
 	var _Typeahead2 = _interopRequireDefault(_Typeahead);
 	
@@ -13871,7 +13871,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	__vue_exports__ = __webpack_require__(97)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(117)
+	var __vue_template__ = __webpack_require__(119)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -13918,7 +13918,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _NestedPanel2 = _interopRequireDefault(_NestedPanel);
 	
-	var _MinimalPanel = __webpack_require__(112);
+	var _MinimalPanel = __webpack_require__(114);
 	
 	var _MinimalPanel2 = _interopRequireDefault(_MinimalPanel);
 	
@@ -13965,12 +13965,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	/* styles */
 	__webpack_require__(99)
+	__webpack_require__(101)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(101)
+	__vue_exports__ = __webpack_require__(103)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(111)
+	var __vue_template__ = __webpack_require__(113)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -13985,6 +13986,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	__vue_options__.__file = "D:\\GitHub\\yamgent\\vue-strap\\src\\panels\\NestedPanel.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+	__vue_options__._scopeId = "data-v-cfcf3962"
 	
 	/* hot reload */
 	if (false) {(function () {
@@ -14019,8 +14021,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-cfcf3962!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./NestedPanel.vue", function() {
-				var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-cfcf3962!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./NestedPanel.vue");
+			module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-cfcf3962&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./NestedPanel.vue", function() {
+				var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-cfcf3962&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./NestedPanel.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -14038,7 +14040,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.card-heading {\n    width: 100%;\n}\n.card-title {\n    display: inline-block;\n    font-size: 1em;\n    margin: 0;\n    vertical-align: middle;\n}\n.card-title * {\n    margin: 0px !important;\n}\n.caret-wrapper {\n    float: left;\n    display: inline-block;\n    width: 32px;\n}\n.header-wrapper {\n    display: inline-block;\n    width: calc(100% - 32px - 96px);\n}\n.button-wrapper {\n    float: right;\n    display: inline-block;\n    width: 96px;\n}\n.header-toggle {\n    cursor: pointer;\n}\n.expandable-card {\n    margin-bottom: 0 !important;\n    margin-top: 5px;\n}\n.card-group > .card-container > .expandable-card {\n    margin-top: 0!important;\n}\n.card-seamless {\n    padding: 0;\n}\n.card.card-seamless {\n    box-shadow: none;\n    border: none;\n}\n.card-seamless > .card-heading {\n    padding: 0;\n}\n.card-seamless > .card-collapse > hr {\n    margin: 0;\n    width: calc(100% - 27px);\n}\n.card-seamless > .card-collapse > .card-body {\n    padding: 10px 0;\n}\n.card-seamless > .card-collapse > .card-body > .collapse-button {\n    position: relative;\n    top: 22px;\n}\n.card-body > .collapse-button {\n    margin-bottom: 13px;\n    margin-top: 5px;\n    opacity: 0.2;\n}\n.card-body > .collapse-button:hover {\n    opacity: 1;\n}\n.close-button {\n    font-size: 10px !important;\n    float: right;\n    padding: 3px 8px !important;\n    margin-left: 3px;\n    margin-top: 2px;\n}\n.popup-button {\n    font-size: 10px !important;\n    float: right;\n    margin-top: 2px;\n    padding: 3px 8px !important;\n}\n.morph {\n    display: inline-block;\n}\n.morph-display-wrapper {\n    white-space: normal;\n}\n\n/* Bootstrap extra small(xs) responsive breakpoint */\n@media (max-width: 575.98px) {\n.caret-wrapper {\n        float: left;\n        display: inline-block;\n        width: 32px;\n}\n.header-wrapper {\n        display: inline-block;\n        width: calc(100% - 32px - 32px);\n}\n.button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 32px;\n}\n.card-body {\n        padding: 0.5rem;\n}\n.card-collapse > hr {\n        margin-top: 1.5rem;\n}\n.card-header {\n        padding: 0.5rem;\n}\n}\n", "", {"version":3,"sources":["/./src/panels/NestedPanel.vue?0e3c4abb"],"names":[],"mappings":";AAqHA;IACA,YAAA;CACA;AAEA;IACA,sBAAA;IACA,eAAA;IACA,UAAA;IACA,uBAAA;CACA;AAEA;IACA,uBAAA;CACA;AAEA;IACA,YAAA;IACA,sBAAA;IACA,YAAA;CACA;AAEA;IACA,sBAAA;IACA,gCAAA;CACA;AAEA;IACA,aAAA;IACA,sBAAA;IACA,YAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,4BAAA;IACA,gBAAA;CACA;AAEA;IACA,wBAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,iBAAA;IACA,aAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,UAAA;IACA,yBAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,mBAAA;IACA,UAAA;CACA;AAEA;IACA,oBAAA;IACA,gBAAA;IACA,aAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,2BAAA;IACA,aAAA;IACA,4BAAA;IACA,iBAAA;IACA,gBAAA;CACA;AAEA;IACA,2BAAA;IACA,aAAA;IACA,gBAAA;IACA,4BAAA;CACA;AAEA;IACA,sBAAA;CACA;AAEA;IACA,oBAAA;CACA;;AAEA,qDAAA;AACA;AAEA;QACA,YAAA;QACA,sBAAA;QACA,YAAA;CACA;AAEA;QACA,sBAAA;QACA,gCAAA;CACA;AAEA;QACA,aAAA;QACA,sBAAA;QACA,YAAA;CACA;AAEA;QACA,gBAAA;CACA;AAEA;QACA,mBAAA;CACA;AAEA;QACA,gBAAA;CACA;CACA","file":"NestedPanel.vue","sourcesContent":["<template>\n  <span :class=\"['card-container', addClass]\" ref=\"cardContainer\">\n      <div class=\"morph\" v-show=\"localMinimized\">\n          <button :class=\"['morph-display-wrapper', 'btn', btnType, 'card-title']\" @click=\"open()\">\n              <slot name=\"_alt\">\n                  <slot name=\"_header\">\n                      <slot name=\"header\"></slot>\n                  </slot>\n              </slot>\n          </button>\n      </div>\n      <div :class=\"['card', { 'expandable-card': isExpandableCard }, borderType]\" v-show=\"!localMinimized\">\n          <div :class=\"['card-header',{'header-toggle':isExpandableCard}, cardType, borderType]\"\n               @click.prevent.stop=\"isExpandableCard && toggle()\"\n               @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\n              <div class=\"caret-wrapper\">\n                  <span :class=\"['glyphicon', localExpanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right']\" v-if=\"showCaret\"></span>\n              </div>\n              <div class=\"header-wrapper\" ref=\"headerWrapper\">\n                  <slot name=\"header\">\n                      <div :class=\"['card-title', cardType, {'text-white':!isLightBg}]\">\n                          <slot name=\"_header\"></slot>\n                      </div>\n                  </slot>\n              </div>\n              <div class=\"button-wrapper\">\n                  <slot name=\"button\">\n                      <panel-switch v-show=\"isExpandableCard && !noSwitchBool && !showCaret\" :is-open=\"localExpanded\"\n                                    @click.native.stop.prevent=\"expand()\"\n                                    :is-light-bg=\"isLightBg\"></panel-switch>\n                      <button type=\"button\" :class=\"['close-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\"\n                              v-show=\"isSeamless ? onHeaderHover : (!noCloseBool)\"\n                              @click.stop=\"close()\">\n                          <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                      </button>\n                      <button type=\"button\" :class=\"['popup-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\"\n                              v-show=\"((this.popupUrl !== null) && (!isSeamless || onHeaderHover))\"\n                              @click.stop=\"openPopup()\">\n                          <span class=\"glyphicon glyphicon-new-window\" aria-hidden=\"true\"></span>\n                      </button>\n                  </slot>\n              </div>\n          </div>\n          <template v-if=\"preloadBool || isCached\">\n              <div class=\"card-collapse\"\n                   ref=\"panel\"\n                   v-show=\"localExpanded\"\n              >\n                  <div class=\"card-body\">\n                      <slot></slot>\n                      <retriever v-if=\"hasSrc\" ref=\"retriever\" :src=\"src\" :fragment=\"fragment\"></retriever>\n                      <panel-switch v-show=\"isExpandableCard && bottomSwitchBool\" :is-open=\"localExpanded\"\n                                    @click.native.stop.prevent=\"collapseThenScrollIntoViewIfNeeded()\"\n                      ></panel-switch>\n                  </div>\n                  <hr v-show=\"isSeamless\" />\n              </div>\n          </template>\n      </div>\n  </span>\n</template>\n\n<script>\nimport panelBase from './PanelBase';\nimport panelSwitch from './PanelSwitch.vue';\nimport retriever from '../Retriever.vue';\n\nexport default {\n  mixins: [panelBase],\n  components: {\n    panelSwitch,\n    retriever,\n  },\n  computed: {\n    showCaret() {\n      return this.isSeamless && this.expandableBool;\n    },\n    isSeamless() {\n      return this.type === 'seamless';\n    },\n    btnType() {\n      if (this.isSeamless || this.type === 'light') {\n        return 'btn-outline-secondary';\n      }\n      return `btn-outline-${this.type || 'secondary'}`;\n    },\n    borderType() {\n      if (this.isSeamless) {\n        return 'border-0';\n      } else if (this.type) {\n        if (this.type === 'light') {\n          return ''; // Bootstrap 4.x light border is almost invisible on a white page\n        }\n        return `border-${this.type}`;\n      }\n      return '';\n    },\n    cardType() {\n      if (this.isSeamless) {\n        return 'bg-white';\n      }\n      return `bg-${this.type || 'light'}`;\n    },\n    isLightBg() {\n      return this.cardType === 'bg-light' || this.cardType === 'bg-white' || this.cardType === 'bg-warning';\n    },\n    showCloseButton() {\n      if (!this.isSeamless) {\n        return !this.noCloseBool;\n      }\n      return this.onHeaderHover;\n    },\n  },\n};\n</script>\n\n<style>\n    .card-heading {\n        width: 100%;\n    }\n\n    .card-title {\n        display: inline-block;\n        font-size: 1em;\n        margin: 0;\n        vertical-align: middle;\n    }\n\n    .card-title * {\n        margin: 0px !important;\n    }\n\n    .caret-wrapper {\n        float: left;\n        display: inline-block;\n        width: 32px;\n    }\n\n    .header-wrapper {\n        display: inline-block;\n        width: calc(100% - 32px - 96px);\n    }\n\n    .button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 96px;\n    }\n\n    .header-toggle {\n        cursor: pointer;\n    }\n\n    .expandable-card {\n        margin-bottom: 0 !important;\n        margin-top: 5px;\n    }\n\n    .card-group > .card-container > .expandable-card {\n        margin-top: 0!important;\n    }\n\n    .card-seamless {\n        padding: 0;\n    }\n\n    .card.card-seamless {\n        box-shadow: none;\n        border: none;\n    }\n\n    .card-seamless > .card-heading {\n        padding: 0;\n    }\n\n    .card-seamless > .card-collapse > hr {\n        margin: 0;\n        width: calc(100% - 27px);\n    }\n\n    .card-seamless > .card-collapse > .card-body {\n        padding: 10px 0;\n    }\n\n    .card-seamless > .card-collapse > .card-body > .collapse-button {\n        position: relative;\n        top: 22px;\n    }\n\n    .card-body > .collapse-button {\n        margin-bottom: 13px;\n        margin-top: 5px;\n        opacity: 0.2;\n    }\n\n    .card-body > .collapse-button:hover {\n        opacity: 1;\n    }\n\n    .close-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n        margin-left: 3px;\n        margin-top: 2px;\n    }\n\n    .popup-button {\n        font-size: 10px !important;\n        float: right;\n        margin-top: 2px;\n        padding: 3px 8px !important;\n    }\n\n    .morph {\n        display: inline-block;\n    }\n\n    .morph-display-wrapper {\n        white-space: normal;\n    }\n\n    /* Bootstrap extra small(xs) responsive breakpoint */\n    @media (max-width: 575.98px) {\n\n        .caret-wrapper {\n            float: left;\n            display: inline-block;\n            width: 32px;\n        }\n\n        .header-wrapper {\n            display: inline-block;\n            width: calc(100% - 32px - 32px);\n        }\n\n        .button-wrapper {\n            float: right;\n            display: inline-block;\n            width: 32px;\n        }\n\n        .card-body {\n            padding: 0.5rem;\n        }\n\n        .card-collapse > hr {\n            margin-top: 1.5rem;\n        }\n\n        .card-header {\n            padding: 0.5rem;\n        }\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.card-collapse[data-v-cfcf3962] {\n    overflow: hidden;\n    transition: max-height 0.7s ease-in-out;\n}\n", "", {"version":3,"sources":["/./src/panels/NestedPanel.vue?78fc9c28"],"names":[],"mappings":";AA4HA;IACA,iBAAA;IACA,wCAAA;CACA","file":"NestedPanel.vue","sourcesContent":["<template>\n  <span :class=\"['card-container', addClass]\" ref=\"cardContainer\">\n      <div class=\"morph\" v-show=\"localMinimized\">\n          <button :class=\"['morph-display-wrapper', 'btn', btnType, 'card-title']\" @click=\"open()\">\n              <slot name=\"_alt\">\n                  <slot name=\"_header\">\n                      <slot name=\"header\"></slot>\n                  </slot>\n              </slot>\n          </button>\n      </div>\n      <div :class=\"['card', { 'expandable-card': isExpandableCard }, borderType]\" v-show=\"!localMinimized\">\n          <div :class=\"['card-header',{'header-toggle':isExpandableCard}, cardType, borderType]\"\n               @click.prevent.stop=\"isExpandableCard && toggle()\"\n               @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\n              <div class=\"caret-wrapper\">\n                  <span :class=\"['glyphicon', localExpanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right']\" v-if=\"showCaret\"></span>\n              </div>\n              <div class=\"header-wrapper\" ref=\"headerWrapper\">\n                  <slot name=\"header\">\n                      <div :class=\"['card-title', cardType, {'text-white':!isLightBg}]\">\n                          <slot name=\"_header\"></slot>\n                      </div>\n                  </slot>\n              </div>\n              <div class=\"button-wrapper\">\n                  <slot name=\"button\">\n                      <panel-switch v-show=\"isExpandableCard && !noSwitchBool && !showCaret\"\n                                    :is-open=\"localExpanded\"\n                                    :is-light-bg=\"isLightBg\"></panel-switch>\n                      <button type=\"button\" :class=\"['close-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\"\n                              v-show=\"isSeamless ? onHeaderHover : (!noCloseBool)\"\n                              @click.stop=\"close()\">\n                          <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                      </button>\n                      <button type=\"button\" :class=\"['popup-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\"\n                              v-show=\"((this.popupUrl !== null) && (!isSeamless || onHeaderHover))\"\n                              @click.stop=\"openPopup()\">\n                          <span class=\"glyphicon glyphicon-new-window\" aria-hidden=\"true\"></span>\n                      </button>\n                  </slot>\n              </div>\n          </div>\n          <transition @before-enter=\"beforeExpand\"\n                      @enter=\"duringExpand\"\n                      @leave=\"duringCollapse\"\n                      v-if=\"preloadBool || wasRetrieverLoaded\"\n          >\n              <div class=\"card-collapse\"\n                   ref=\"panel\"\n                   v-show=\"localExpanded\"\n              >\n                  <div class=\"card-body\">\n                      <slot></slot>\n                      <retriever v-if=\"hasSrc\"\n                                 ref=\"retriever\"\n                                 :src=\"src\"\n                                 :fragment=\"fragment\"\n                                 @src-loaded=\"setMaxHeight\" />\n                      <panel-switch v-show=\"isExpandableCard && bottomSwitchBool\" :is-open=\"localExpanded\"\n                                    @click.native.stop.prevent=\"toggle()\" />\n                  </div>\n                  <hr v-show=\"isSeamless\" />\n              </div>\n          </transition>\n      </div>\n  </span>\n</template>\n\n<script>\nimport panelBase from './PanelBase';\nimport panelSwitch from './PanelSwitch.vue';\nimport retriever from '../Retriever.vue';\n\nexport default {\n  mixins: [panelBase],\n  components: {\n    panelSwitch,\n    retriever,\n  },\n  computed: {\n    showCaret() {\n      return this.isSeamless && this.expandableBool;\n    },\n    isSeamless() {\n      return this.type === 'seamless';\n    },\n    btnType() {\n      if (this.isSeamless || this.type === 'light') {\n        return 'btn-outline-secondary';\n      }\n      return `btn-outline-${this.type || 'secondary'}`;\n    },\n    borderType() {\n      if (this.isSeamless) {\n        return 'border-0';\n      } else if (this.type) {\n        if (this.type === 'light') {\n          return ''; // Bootstrap 4.x light border is almost invisible on a white page\n        }\n        return `border-${this.type}`;\n      }\n      return '';\n    },\n    cardType() {\n      if (this.isSeamless) {\n        return 'bg-white';\n      }\n      return `bg-${this.type || 'light'}`;\n    },\n    isLightBg() {\n      return this.cardType === 'bg-light' || this.cardType === 'bg-white' || this.cardType === 'bg-warning';\n    },\n    showCloseButton() {\n      if (!this.isSeamless) {\n        return !this.noCloseBool;\n      }\n      return this.onHeaderHover;\n    },\n  },\n};\n</script>\n\n<style scoped>\n    .card-collapse {\n        overflow: hidden;\n        transition: max-height 0.7s ease-in-out;\n    }\n</style>\n\n<style>\n    .card-heading {\n        width: 100%;\n    }\n\n    .card-title {\n        display: inline-block;\n        font-size: 1em;\n        margin: 0;\n        vertical-align: middle;\n    }\n\n    .card-title * {\n        margin: 0px !important;\n    }\n\n    .caret-wrapper {\n        float: left;\n        display: inline-block;\n        width: 32px;\n    }\n\n    .header-wrapper {\n        display: inline-block;\n        width: calc(100% - 32px - 96px);\n    }\n\n    .button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 96px;\n    }\n\n    .header-toggle {\n        cursor: pointer;\n    }\n\n    .expandable-card {\n        margin-bottom: 0 !important;\n        margin-top: 5px;\n    }\n\n    .card-group > .card-container > .expandable-card {\n        margin-top: 0!important;\n    }\n\n    .card-seamless {\n        padding: 0;\n    }\n\n    .card.card-seamless {\n        box-shadow: none;\n        border: none;\n    }\n\n    .card-seamless > .card-heading {\n        padding: 0;\n    }\n\n    .card-seamless > .card-collapse > hr {\n        margin: 0;\n        width: calc(100% - 27px);\n    }\n\n    .card-seamless > .card-collapse > .card-body {\n        padding: 10px 0;\n    }\n\n    .card-seamless > .card-collapse > .card-body > .collapse-button {\n        position: relative;\n        top: 22px;\n    }\n\n    .card-body > .collapse-button {\n        margin-bottom: 13px;\n        margin-top: 5px;\n        opacity: 0.2;\n    }\n\n    .card-body > .collapse-button:hover {\n        opacity: 1;\n    }\n\n    .close-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n        margin-left: 3px;\n        margin-top: 2px;\n    }\n\n    .popup-button {\n        font-size: 10px !important;\n        float: right;\n        margin-top: 2px;\n        padding: 3px 8px !important;\n    }\n\n    .morph {\n        display: inline-block;\n    }\n\n    .morph-display-wrapper {\n        white-space: normal;\n    }\n\n    /* Bootstrap extra small(xs) responsive breakpoint */\n    @media (max-width: 575.98px) {\n\n        .caret-wrapper {\n            float: left;\n            display: inline-block;\n            width: 32px;\n        }\n\n        .header-wrapper {\n            display: inline-block;\n            width: calc(100% - 32px - 32px);\n        }\n\n        .button-wrapper {\n            float: right;\n            display: inline-block;\n            width: 32px;\n        }\n\n        .card-body {\n            padding: 0.5rem;\n        }\n\n        .card-collapse > hr {\n            margin-top: 1.5rem;\n        }\n\n        .card-header {\n            padding: 0.5rem;\n        }\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -14047,21 +14049,61 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(102);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(78)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-cfcf3962!../../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./NestedPanel.vue", function() {
+				var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-cfcf3962!../../node_modules/vue-loader/lib/selector.js?type=styles&index=1!./NestedPanel.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 102 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(77)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "\n.card-heading {\n    width: 100%;\n}\n.card-title {\n    display: inline-block;\n    font-size: 1em;\n    margin: 0;\n    vertical-align: middle;\n}\n.card-title * {\n    margin: 0px !important;\n}\n.caret-wrapper {\n    float: left;\n    display: inline-block;\n    width: 32px;\n}\n.header-wrapper {\n    display: inline-block;\n    width: calc(100% - 32px - 96px);\n}\n.button-wrapper {\n    float: right;\n    display: inline-block;\n    width: 96px;\n}\n.header-toggle {\n    cursor: pointer;\n}\n.expandable-card {\n    margin-bottom: 0 !important;\n    margin-top: 5px;\n}\n.card-group > .card-container > .expandable-card {\n    margin-top: 0!important;\n}\n.card-seamless {\n    padding: 0;\n}\n.card.card-seamless {\n    box-shadow: none;\n    border: none;\n}\n.card-seamless > .card-heading {\n    padding: 0;\n}\n.card-seamless > .card-collapse > hr {\n    margin: 0;\n    width: calc(100% - 27px);\n}\n.card-seamless > .card-collapse > .card-body {\n    padding: 10px 0;\n}\n.card-seamless > .card-collapse > .card-body > .collapse-button {\n    position: relative;\n    top: 22px;\n}\n.card-body > .collapse-button {\n    margin-bottom: 13px;\n    margin-top: 5px;\n    opacity: 0.2;\n}\n.card-body > .collapse-button:hover {\n    opacity: 1;\n}\n.close-button {\n    font-size: 10px !important;\n    float: right;\n    padding: 3px 8px !important;\n    margin-left: 3px;\n    margin-top: 2px;\n}\n.popup-button {\n    font-size: 10px !important;\n    float: right;\n    margin-top: 2px;\n    padding: 3px 8px !important;\n}\n.morph {\n    display: inline-block;\n}\n.morph-display-wrapper {\n    white-space: normal;\n}\n\n/* Bootstrap extra small(xs) responsive breakpoint */\n@media (max-width: 575.98px) {\n.caret-wrapper {\n        float: left;\n        display: inline-block;\n        width: 32px;\n}\n.header-wrapper {\n        display: inline-block;\n        width: calc(100% - 32px - 32px);\n}\n.button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 32px;\n}\n.card-body {\n        padding: 0.5rem;\n}\n.card-collapse > hr {\n        margin-top: 1.5rem;\n}\n.card-header {\n        padding: 0.5rem;\n}\n}\n", "", {"version":3,"sources":["/./src/panels/NestedPanel.vue?78fc9c28"],"names":[],"mappings":";AAmIA;IACA,YAAA;CACA;AAEA;IACA,sBAAA;IACA,eAAA;IACA,UAAA;IACA,uBAAA;CACA;AAEA;IACA,uBAAA;CACA;AAEA;IACA,YAAA;IACA,sBAAA;IACA,YAAA;CACA;AAEA;IACA,sBAAA;IACA,gCAAA;CACA;AAEA;IACA,aAAA;IACA,sBAAA;IACA,YAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,4BAAA;IACA,gBAAA;CACA;AAEA;IACA,wBAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,iBAAA;IACA,aAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,UAAA;IACA,yBAAA;CACA;AAEA;IACA,gBAAA;CACA;AAEA;IACA,mBAAA;IACA,UAAA;CACA;AAEA;IACA,oBAAA;IACA,gBAAA;IACA,aAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,2BAAA;IACA,aAAA;IACA,4BAAA;IACA,iBAAA;IACA,gBAAA;CACA;AAEA;IACA,2BAAA;IACA,aAAA;IACA,gBAAA;IACA,4BAAA;CACA;AAEA;IACA,sBAAA;CACA;AAEA;IACA,oBAAA;CACA;;AAEA,qDAAA;AACA;AAEA;QACA,YAAA;QACA,sBAAA;QACA,YAAA;CACA;AAEA;QACA,sBAAA;QACA,gCAAA;CACA;AAEA;QACA,aAAA;QACA,sBAAA;QACA,YAAA;CACA;AAEA;QACA,gBAAA;CACA;AAEA;QACA,mBAAA;CACA;AAEA;QACA,gBAAA;CACA;CACA","file":"NestedPanel.vue","sourcesContent":["<template>\n  <span :class=\"['card-container', addClass]\" ref=\"cardContainer\">\n      <div class=\"morph\" v-show=\"localMinimized\">\n          <button :class=\"['morph-display-wrapper', 'btn', btnType, 'card-title']\" @click=\"open()\">\n              <slot name=\"_alt\">\n                  <slot name=\"_header\">\n                      <slot name=\"header\"></slot>\n                  </slot>\n              </slot>\n          </button>\n      </div>\n      <div :class=\"['card', { 'expandable-card': isExpandableCard }, borderType]\" v-show=\"!localMinimized\">\n          <div :class=\"['card-header',{'header-toggle':isExpandableCard}, cardType, borderType]\"\n               @click.prevent.stop=\"isExpandableCard && toggle()\"\n               @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\n              <div class=\"caret-wrapper\">\n                  <span :class=\"['glyphicon', localExpanded ? 'glyphicon-chevron-down' : 'glyphicon-chevron-right']\" v-if=\"showCaret\"></span>\n              </div>\n              <div class=\"header-wrapper\" ref=\"headerWrapper\">\n                  <slot name=\"header\">\n                      <div :class=\"['card-title', cardType, {'text-white':!isLightBg}]\">\n                          <slot name=\"_header\"></slot>\n                      </div>\n                  </slot>\n              </div>\n              <div class=\"button-wrapper\">\n                  <slot name=\"button\">\n                      <panel-switch v-show=\"isExpandableCard && !noSwitchBool && !showCaret\"\n                                    :is-open=\"localExpanded\"\n                                    :is-light-bg=\"isLightBg\"></panel-switch>\n                      <button type=\"button\" :class=\"['close-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\"\n                              v-show=\"isSeamless ? onHeaderHover : (!noCloseBool)\"\n                              @click.stop=\"close()\">\n                          <span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span>\n                      </button>\n                      <button type=\"button\" :class=\"['popup-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\"\n                              v-show=\"((this.popupUrl !== null) && (!isSeamless || onHeaderHover))\"\n                              @click.stop=\"openPopup()\">\n                          <span class=\"glyphicon glyphicon-new-window\" aria-hidden=\"true\"></span>\n                      </button>\n                  </slot>\n              </div>\n          </div>\n          <transition @before-enter=\"beforeExpand\"\n                      @enter=\"duringExpand\"\n                      @leave=\"duringCollapse\"\n                      v-if=\"preloadBool || wasRetrieverLoaded\"\n          >\n              <div class=\"card-collapse\"\n                   ref=\"panel\"\n                   v-show=\"localExpanded\"\n              >\n                  <div class=\"card-body\">\n                      <slot></slot>\n                      <retriever v-if=\"hasSrc\"\n                                 ref=\"retriever\"\n                                 :src=\"src\"\n                                 :fragment=\"fragment\"\n                                 @src-loaded=\"setMaxHeight\" />\n                      <panel-switch v-show=\"isExpandableCard && bottomSwitchBool\" :is-open=\"localExpanded\"\n                                    @click.native.stop.prevent=\"toggle()\" />\n                  </div>\n                  <hr v-show=\"isSeamless\" />\n              </div>\n          </transition>\n      </div>\n  </span>\n</template>\n\n<script>\nimport panelBase from './PanelBase';\nimport panelSwitch from './PanelSwitch.vue';\nimport retriever from '../Retriever.vue';\n\nexport default {\n  mixins: [panelBase],\n  components: {\n    panelSwitch,\n    retriever,\n  },\n  computed: {\n    showCaret() {\n      return this.isSeamless && this.expandableBool;\n    },\n    isSeamless() {\n      return this.type === 'seamless';\n    },\n    btnType() {\n      if (this.isSeamless || this.type === 'light') {\n        return 'btn-outline-secondary';\n      }\n      return `btn-outline-${this.type || 'secondary'}`;\n    },\n    borderType() {\n      if (this.isSeamless) {\n        return 'border-0';\n      } else if (this.type) {\n        if (this.type === 'light') {\n          return ''; // Bootstrap 4.x light border is almost invisible on a white page\n        }\n        return `border-${this.type}`;\n      }\n      return '';\n    },\n    cardType() {\n      if (this.isSeamless) {\n        return 'bg-white';\n      }\n      return `bg-${this.type || 'light'}`;\n    },\n    isLightBg() {\n      return this.cardType === 'bg-light' || this.cardType === 'bg-white' || this.cardType === 'bg-warning';\n    },\n    showCloseButton() {\n      if (!this.isSeamless) {\n        return !this.noCloseBool;\n      }\n      return this.onHeaderHover;\n    },\n  },\n};\n</script>\n\n<style scoped>\n    .card-collapse {\n        overflow: hidden;\n        transition: max-height 0.7s ease-in-out;\n    }\n</style>\n\n<style>\n    .card-heading {\n        width: 100%;\n    }\n\n    .card-title {\n        display: inline-block;\n        font-size: 1em;\n        margin: 0;\n        vertical-align: middle;\n    }\n\n    .card-title * {\n        margin: 0px !important;\n    }\n\n    .caret-wrapper {\n        float: left;\n        display: inline-block;\n        width: 32px;\n    }\n\n    .header-wrapper {\n        display: inline-block;\n        width: calc(100% - 32px - 96px);\n    }\n\n    .button-wrapper {\n        float: right;\n        display: inline-block;\n        width: 96px;\n    }\n\n    .header-toggle {\n        cursor: pointer;\n    }\n\n    .expandable-card {\n        margin-bottom: 0 !important;\n        margin-top: 5px;\n    }\n\n    .card-group > .card-container > .expandable-card {\n        margin-top: 0!important;\n    }\n\n    .card-seamless {\n        padding: 0;\n    }\n\n    .card.card-seamless {\n        box-shadow: none;\n        border: none;\n    }\n\n    .card-seamless > .card-heading {\n        padding: 0;\n    }\n\n    .card-seamless > .card-collapse > hr {\n        margin: 0;\n        width: calc(100% - 27px);\n    }\n\n    .card-seamless > .card-collapse > .card-body {\n        padding: 10px 0;\n    }\n\n    .card-seamless > .card-collapse > .card-body > .collapse-button {\n        position: relative;\n        top: 22px;\n    }\n\n    .card-body > .collapse-button {\n        margin-bottom: 13px;\n        margin-top: 5px;\n        opacity: 0.2;\n    }\n\n    .card-body > .collapse-button:hover {\n        opacity: 1;\n    }\n\n    .close-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n        margin-left: 3px;\n        margin-top: 2px;\n    }\n\n    .popup-button {\n        font-size: 10px !important;\n        float: right;\n        margin-top: 2px;\n        padding: 3px 8px !important;\n    }\n\n    .morph {\n        display: inline-block;\n    }\n\n    .morph-display-wrapper {\n        white-space: normal;\n    }\n\n    /* Bootstrap extra small(xs) responsive breakpoint */\n    @media (max-width: 575.98px) {\n\n        .caret-wrapper {\n            float: left;\n            display: inline-block;\n            width: 32px;\n        }\n\n        .header-wrapper {\n            display: inline-block;\n            width: calc(100% - 32px - 32px);\n        }\n\n        .button-wrapper {\n            float: right;\n            display: inline-block;\n            width: 32px;\n        }\n\n        .card-body {\n            padding: 0.5rem;\n        }\n\n        .card-collapse > hr {\n            margin-top: 1.5rem;\n        }\n\n        .card-header {\n            padding: 0.5rem;\n        }\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	
+	// exports
+
+
+/***/ }),
+/* 103 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	
-	var _PanelBase = __webpack_require__(102);
+	var _PanelBase = __webpack_require__(104);
 	
 	var _PanelBase2 = _interopRequireDefault(_PanelBase);
 	
-	var _PanelSwitch = __webpack_require__(103);
+	var _PanelSwitch = __webpack_require__(105);
 	
 	var _PanelSwitch2 = _interopRequireDefault(_PanelSwitch);
 	
-	var _Retriever = __webpack_require__(108);
+	var _Retriever = __webpack_require__(110);
 	
 	var _Retriever2 = _interopRequireDefault(_Retriever);
 	
@@ -14175,12 +14217,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 /***/ }),
-/* 102 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -14281,48 +14330,60 @@ return /******/ (function(modules) { // webpackBootstrap
 	      onHeaderHover: false,
 	      localExpanded: false,
 	      localMinimized: false,
-	      isCached: false
+	      wasRetrieverLoaded: false
 	    };
 	  },
 	
 	  methods: {
 	    toggle: function toggle() {
-	      this.localExpanded = !this.localExpanded;
-	      if (this.localExpanded) {
-	        this.isCached = true;
-	      }
-	    },
-	    expand: function expand() {
-	      this.localExpanded = !this.localExpanded;
-	      if (this.localExpanded) {
-	        this.isCached = true;
+	      var _this = this;
+	
+	      if (!this.wasRetrieverLoaded && !this.localExpanded) {
+	        /*
+	        Let the retriever load before toggling localExpanded which triggers the animation,
+	        as we need to know the scrollHeight of the content for the animation to work.
+	        */
+	        this.wasRetrieverLoaded = true;
+	        this.$nextTick(function () {
+	          return _this.localExpanded = true;
+	        });
+	      } else {
+	        this.localExpanded = !this.localExpanded;
 	      }
 	    },
 	    close: function close() {
+	      this.localExpanded = false;
 	      this.localMinimized = true;
 	    },
 	    open: function open() {
-	      this.localExpanded = true;
-	      this.isCached = true;
-	      this.localMinimized = false;
-	    },
-	    scrollIntoViewIfNeeded: function scrollIntoViewIfNeeded() {
-	      var top = this.$el.getBoundingClientRect().top;
-	      var isTopInView = top >= 0 && top <= window.innerHeight;
-	      if (!isTopInView) {
-	        this.$el.scrollIntoView();
-	      }
-	    },
-	    collapseThenScrollIntoViewIfNeeded: function collapseThenScrollIntoViewIfNeeded() {
-	      var _this = this;
+	      var _this2 = this;
 	
-	      this.$once('is-open-event', function (el, isOpen) {
-	        _this.scrollIntoViewIfNeeded();
+	      this.wasRetrieverLoaded = true;
+	      this.$nextTick(function () {
+	        return _this2.localExpanded = true;
 	      });
-	      this.expand();
+	      this.localMinimized = false;
 	    },
 	    openPopup: function openPopup() {
 	      window.open(this.popupUrl);
+	    },
+	    setMaxHeight: function setMaxHeight() {
+	      this.$refs.panel.style.maxHeight = this.$refs.panel.scrollHeight + 'px';
+	    },
+	    beforeExpand: function beforeExpand(el) {
+	      el.style.maxHeight = '0';
+	    },
+	    duringExpand: function duringExpand(el) {
+	      jQuery("html").stop();
+	      el.style.maxHeight = el.scrollHeight + 'px';
+	    },
+	    duringCollapse: function duringCollapse(el) {
+	      if (this.$el.getBoundingClientRect().top < 0) {
+	        jQuery("html").animate({
+	          scrollTop: window.scrollY + this.$el.getBoundingClientRect().top - 3
+	        }, 700, 'swing');
+	      }
+	      el.style.maxHeight = '0';
 	    }
 	  },
 	  created: function created() {
@@ -14337,26 +14398,32 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var notExpandableNoExpand = !this.expandableBool && this.expanded !== 'false';
 	    // Set local data to computed prop value
 	    this.localExpanded = notExpandableNoExpand || this.expandedBool; // Ensure this expr ordering is maintained
-	    this.isCached = this.localExpanded; // If it is expanded, it will be cached.
+	    this.wasRetrieverLoaded = this.localExpanded; // If it is expanded, load the retriever immediately.
 	    this.localMinimized = this.minimizedBool;
+	  },
+	  mounted: function mounted() {
+	    // For this case, we want to set and calculate the maximum height only after the
+	    // panel has been mounted.
+	    if (this.expandedBool && !this.hasSrc) this.setMaxHeight();
 	  }
 	};
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(72)))
 
 /***/ }),
-/* 103 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(104)
+	__webpack_require__(106)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(106)
+	__vue_exports__ = __webpack_require__(108)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(107)
+	var __vue_template__ = __webpack_require__(109)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -14390,13 +14457,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 104 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(105);
+	var content = __webpack_require__(107);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -14416,7 +14483,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 105 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -14424,13 +14491,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.collapse-button {\n    font-size: 10px !important;\n    float: right;\n    padding: 3px 8px !important;\n    margin-left: 3px;\n    margin-top: 2px;\n}\n", "", {"version":3,"sources":["/./src/panels/PanelSwitch.vue?33a8c513"],"names":[],"mappings":";AAyCA;IACA,2BAAA;IACA,aAAA;IACA,4BAAA;IACA,iBAAA;IACA,gBAAA;CACA","file":"PanelSwitch.vue","sourcesContent":["<template>\n    <button type=\"button\" :class=\"['collapse-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\">\n        <span :class=\"['glyphicon', {'glyphicon-menu-down': !isOpenBool, 'glyphicon-menu-up': isOpenBool}]\"\n              aria-hidden=\"true\"></span>\n    </button>\n</template>\n\n<script>\n  import {toBoolean} from '../utils/utils.js'\n\n  export default {\n    props: {\n      isOpen: {\n        type: Boolean,\n        default: null\n      },\n      isLightBg: {\n        type: Boolean,\n        default: true\n      }\n    },\n    computed: {\n      isOpenBool () {\n        return toBoolean(this.isOpen);\n      }\n    },\n    methods: {\n      toggle () {\n        this.isOpen = !this.isOpenBool\n        this.$emit('is-open-event', this, this.isOpenBool)\n      }\n    },\n    created () {\n      if (this.isOpen === null) {\n        this.isOpen = false\n      }\n    }\n  }\n</script>\n\n<style>\n    .collapse-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n        margin-left: 3px;\n        margin-top: 2px;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.collapse-button {\n    font-size: 10px !important;\n    float: right;\n    padding: 3px 8px !important;\n    margin-left: 3px;\n    margin-top: 2px;\n}\n", "", {"version":3,"sources":["/./src/panels/PanelSwitch.vue?690a3e11"],"names":[],"mappings":";AAwCA;IACA,2BAAA;IACA,aAAA;IACA,4BAAA;IACA,iBAAA;IACA,gBAAA;CACA","file":"PanelSwitch.vue","sourcesContent":["<template>\n    <button type=\"button\" :class=\"['collapse-button', 'btn', isLightBg ? 'btn-outline-secondary' : 'btn-outline-light']\">\n        <span :class=\"['glyphicon', {'glyphicon-menu-down': !isOpenBool, 'glyphicon-menu-up': isOpenBool}]\"\n              aria-hidden=\"true\"></span>\n    </button>\n</template>\n\n<script>\n  import {toBoolean} from '../utils/utils.js'\n\n  export default {\n    props: {\n      isOpen: {\n        type: Boolean,\n        default: null\n      },\n      isLightBg: {\n        type: Boolean,\n        default: true\n      }\n    },\n    computed: {\n      isOpenBool () {\n        return toBoolean(this.isOpen);\n      }\n    },\n    methods: {\n      toggle () {\n        this.isOpen = !this.isOpenBool\n      }\n    },\n    created () {\n      if (this.isOpen === null) {\n        this.isOpen = false\n      }\n    }\n  }\n</script>\n\n<style>\n    .collapse-button {\n        font-size: 10px !important;\n        float: right;\n        padding: 3px 8px !important;\n        margin-left: 3px;\n        margin-top: 2px;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
-/* 106 */
+/* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -14460,7 +14527,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  methods: {
 	    toggle: function toggle() {
 	      this.isOpen = !this.isOpenBool;
-	      this.$emit('is-open-event', this, this.isOpenBool);
 	    }
 	  },
 	  created: function created() {
@@ -14477,7 +14543,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 
 /***/ }),
-/* 107 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -14504,17 +14570,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 108 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(109)
+	__vue_exports__ = __webpack_require__(111)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(110)
+	var __vue_template__ = __webpack_require__(112)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -14548,7 +14614,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 109 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -14613,9 +14679,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	          template: '<div>\n' + result + '\n</div>'
 	        });
 	        new tempComponent().$mount(_this.$el);
+	        _this.$emit('src-loaded');
 	      }).fail(function (error) {
 	        console.error(error.responseText);
 	        _this.$el.innerHTML = '<strong>Error</strong>: Failed to retrieve content from source: <em>' + _this.src + '</em>';
+	        _this.$emit('src-loaded');
 	      });
 	    }
 	  },
@@ -14645,7 +14713,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(72)))
 
 /***/ }),
-/* 110 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -14659,7 +14727,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 111 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -14731,13 +14799,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    attrs: {
 	      "is-open": _vm.localExpanded,
 	      "is-light-bg": _vm.isLightBg
-	    },
-	    nativeOn: {
-	      "click": function($event) {
-	        $event.stopPropagation();
-	        $event.preventDefault();
-	        _vm.expand()
-	      }
 	    }
 	  }), _vm._v(" "), _c('button', {
 	    directives: [{
@@ -14783,7 +14844,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    attrs: {
 	      "aria-hidden": "true"
 	    }
-	  })])])], 2)]), _vm._v(" "), (_vm.preloadBool || _vm.isCached) ? [_c('div', {
+	  })])])], 2)]), _vm._v(" "), (_vm.preloadBool || _vm.wasRetrieverLoaded) ? _c('transition', {
+	    on: {
+	      "before-enter": _vm.beforeExpand,
+	      "enter": _vm.duringExpand,
+	      "leave": _vm.duringCollapse
+	    }
+	  }, [_c('div', {
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
@@ -14799,6 +14866,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    attrs: {
 	      "src": _vm.src,
 	      "fragment": _vm.fragment
+	    },
+	    on: {
+	      "src-loaded": _vm.setMaxHeight
 	    }
 	  }) : _vm._e(), _vm._v(" "), _c('panel-switch', {
 	    directives: [{
@@ -14814,7 +14884,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      "click": function($event) {
 	        $event.stopPropagation();
 	        $event.preventDefault();
-	        _vm.collapseThenScrollIntoViewIfNeeded()
+	        _vm.toggle()
 	      }
 	    }
 	  })], 2), _vm._v(" "), _c('hr', {
@@ -14824,7 +14894,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      value: (_vm.isSeamless),
 	      expression: "isSeamless"
 	    }]
-	  })])] : _vm._e()], 2)])
+	  })])]) : _vm._e()], 1)])
 	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
@@ -14834,20 +14904,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 112 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(113)
+	__webpack_require__(115)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(115)
+	__vue_exports__ = __webpack_require__(117)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(116)
+	var __vue_template__ = __webpack_require__(118)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -14882,13 +14952,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 113 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(114);
+	var content = __webpack_require__(116);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -14908,7 +14978,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 114 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -14916,13 +14986,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.morph-title[data-v-33358b51] {\n  padding: 0 0.3em;\n  color: rgba(0, 0, 0, 0.5);\n  border-color: rgba(0, 0, 0, 0.5);\n  background-color: transparent;\n  vertical-align: top;\n}\n.morph-title[data-v-33358b51]:hover, .morph-title[data-v-33358b51]:active, .morph-title[data-v-33358b51]:focus {\n  color: black;\n  border-color: black;\n  background-color: rgba(244, 244, 244, 0.3);\n}\n.card-flex[data-v-33358b51] {\n  display: flex;\n  flex-direction: column;\n  border: 0;\n  margin: 0;\n}\n.card-title-transparent[data-v-33358b51] {\n  opacity: 0.5;\n  transition: opacity 0.5s;\n}\n.card-title-opaque[data-v-33358b51] {\n  opacity: 1;\n}\n.card-title-inline[data-v-33358b51] {\n  display: inline-block;\n}\n.card-body[data-v-33358b51] {\n  padding: 0;\n}\n.header-wrapper[data-v-33358b51] {\n  width: 100%;\n  display: inline-block;\n  background-color: white;\n}\n.header-wrapper-bottom[data-v-33358b51] {\n  order: 1;\n}\n.ellipses[data-v-33358b51]::before {\n  position: relative;\n  bottom: 3px;\n  content: '...';\n  font-weight: 900;\n  margin-right: 4px;\n}\n.button-wrapper[data-v-33358b51] {\n  padding-left: 2px;\n  border-width: 0 0 0 1px;\n  border-color: rgba(150, 150, 150, 0.2);\n  border-style: solid;\n  margin-left: 2px;\n  width: auto;\n  float: none;\n  opacity: 0;\n  transition: opacity 0.5s;\n  vertical-align: text-top;\n}\n.button-wrapper-visible[data-v-33358b51] {\n  opacity: 1;\n}\n.button-wrapper-expanded[data-v-33358b51] {\n  padding-left: 0;\n  border: 0;\n  margin-left: 0;\n}\n.header-toggle[data-v-33358b51] {\n  cursor: pointer;\n}\n.minimal-button[data-v-33358b51] {\n  padding: 0 3px;\n  border: 0;\n  color: rgb(150, 150, 150);\n  background-color: transparent;\n  cursor: pointer;\n}\n.minimal-button[data-v-33358b51]:hover, .minimal-button[data-v-33358b51]:active, .minimal-button[data-v-33358b51]:focus {\n  color: rgb(30, 30, 30);\n}\n.minimal-popup-button[data-v-33358b51] {\n  top: 1px;\n  font-size: 9px;\n}\n.minimal-menu-up[data-v-33358b51] {\n  top: 3px;\n  font-size: 13px;\n}\n.minimal-menu-down[data-v-33358b51] {\n  top: 1px;\n  font-size: 13px;\n}\n.minimal-close-button[data-v-33358b51] {\n  top: 2px;\n  font-size: 11px;\n}\n\n/* Bootstrap extra small(xs) responsive breakpoint */\n@media (max-width: 575.98px) {\n.button-wrapper-expanded[data-v-33358b51] {\n    padding-left: 0;\n    border: 0;\n    margin-left: 0;\n    opacity: 0.15;\n}\n.button-wrapper-visible[data-v-33358b51] {\n    opacity: 1;\n}\n}\n", "", {"version":3,"sources":["/./src/panels/MinimalPanel.vue?2a72ffd4"],"names":[],"mappings":";AAsEA;EACA,iBAAA;EACA,0BAAA;EACA,iCAAA;EACA,8BAAA;EACA,oBAAA;CACA;AAEA;EACA,aAAA;EACA,oBAAA;EACA,2CAAA;CACA;AAEA;EACA,cAAA;EACA,uBAAA;EACA,UAAA;EACA,UAAA;CACA;AAEA;EACA,aAAA;EACA,yBAAA;CACA;AAEA;EACA,WAAA;CACA;AAEA;EACA,sBAAA;CACA;AAEA;EACA,WAAA;CACA;AAEA;EACA,YAAA;EACA,sBAAA;EACA,wBAAA;CACA;AAEA;EACA,SAAA;CACA;AAEA;EACA,mBAAA;EACA,YAAA;EACA,eAAA;EACA,iBAAA;EACA,kBAAA;CACA;AAEA;EACA,kBAAA;EACA,wBAAA;EACA,uCAAA;EACA,oBAAA;EACA,iBAAA;EACA,YAAA;EACA,YAAA;EACA,WAAA;EACA,yBAAA;EACA,yBAAA;CACA;AAEA;EACA,WAAA;CACA;AAEA;EACA,gBAAA;EACA,UAAA;EACA,eAAA;CACA;AAEA;EACA,gBAAA;CACA;AAEA;EACA,eAAA;EACA,UAAA;EACA,0BAAA;EACA,8BAAA;EACA,gBAAA;CACA;AAEA;EACA,uBAAA;CACA;AAEA;EACA,SAAA;EACA,eAAA;CACA;AAEA;EACA,SAAA;EACA,gBAAA;CACA;AAEA;EACA,SAAA;EACA,gBAAA;CACA;AAEA;EACA,SAAA;EACA,gBAAA;CACA;;AAEA,qDAAA;AACA;AACA;IACA,gBAAA;IACA,UAAA;IACA,eAAA;IACA,cAAA;CACA;AAEA;IACA,WAAA;CACA;CACA","file":"MinimalPanel.vue","sourcesContent":["<template>\n  <span ref=\"cardContainer\" :class=\"['card-container', addClass]\">\n    <div v-show=\"localMinimized\" class=\"morph\">\n      <button class=\"morph-display-wrapper btn card-title morph-title\" @click=\"open()\">\n        <slot name=\"_alt\">\n          <slot name=\"_header\">\n            <slot name=\"header\"></slot>\n          </slot>\n        </slot>\n      </button>\n    </div>\n    <div v-show=\"!localMinimized\" class=\"card card-flex\" @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\n      <div :class=\"['header-wrapper', { 'header-wrapper-bottom': localExpanded, 'header-toggle': isExpandableCard }]\"\n           @click.prevent.stop=\"isExpandableCard && toggle()\">\n        <span v-show=\"!localExpanded\" ref=\"headerWrapper\"\n              :class=\"['card-title', 'card-title-transparent', { 'card-title-opaque': onHeaderHover, 'ellipses': !hasHeaderBool }]\">\n          <slot name=\"header\">\n            <span class=\"card-title-inline\"><slot name=\"_header\"></slot></span>\n            <span v-show=\"showDownSwitch\" aria-hidden=\"true\"\n                  class=\"minimal-button glyphicon glyphicon-menu-down minimal-menu-down\"></span>\n          </slot>\n        </span>\n        <div :class=\"['button-wrapper', { 'button-wrapper-expanded': localExpanded, 'button-wrapper-visible': onHeaderHover }]\">\n          <slot name=\"button\">\n            <button v-show=\"!noCloseBool\" class=\"minimal-button\" type=\"button\" @click.stop=\"close()\">\n              <span class=\"glyphicon glyphicon-remove minimal-close-button\" aria-hidden=\"true\"></span>\n            </button>\n            <button v-show=\"popupUrl !== null\" class=\"minimal-button\" type=\"button\" @click.stop=\"openPopup()\">\n              <span class=\"glyphicon glyphicon-new-window minimal-popup-button\" aria-hidden=\"true\"></span>\n            </button>\n            <button v-show=\"localExpanded && isExpandableCard && bottomSwitchBool\" class=\"minimal-button\" type=\"button\"\n                    @click.prevent.stop=\"collapseThenScrollIntoViewIfNeeded()\">\n              <span class=\"glyphicon glyphicon-menu-up minimal-menu-up\" aria-hidden=\"true\"></span>\n            </button>\n          </slot>\n        </div>\n      </div>\n      <template v-if=\"preloadBool || isCached\">\n        <div class=\"card-collapse\"\n             ref=\"panel\"\n             v-show=\"localExpanded\"\n        >\n          <div class=\"card-body\">\n            <slot></slot>\n            <retriever v-if=\"hasSrc\" ref=\"retriever\" :src=\"src\" :fragment=\"fragment\"/>\n          </div>\n        </div>\n      </template>\n    </div>\n  </span>\n</template>\n\n<script>\nimport retriever from '../Retriever.vue';\nimport panelBase from './PanelBase';\n\nexport default {\n  mixins: [panelBase],\n  components: {\n    retriever,\n  },\n  computed: {\n    showDownSwitch() {\n      return this.hasHeaderBool && this.isExpandableCard && !this.noSwitchBool;\n    },\n  }\n};\n</script>\n\n<style scoped>\n  .morph-title {\n    padding: 0 0.3em;\n    color: rgba(0, 0, 0, 0.5);\n    border-color: rgba(0, 0, 0, 0.5);\n    background-color: transparent;\n    vertical-align: top;\n  }\n\n  .morph-title:hover, .morph-title:active, .morph-title:focus {\n    color: black;\n    border-color: black;\n    background-color: rgba(244, 244, 244, 0.3);\n  }\n\n  .card-flex {\n    display: flex;\n    flex-direction: column;\n    border: 0;\n    margin: 0;\n  }\n\n  .card-title-transparent {\n    opacity: 0.5;\n    transition: opacity 0.5s;\n  }\n\n  .card-title-opaque {\n    opacity: 1;\n  }\n\n  .card-title-inline {\n    display: inline-block;\n  }\n\n  .card-body {\n    padding: 0;\n  }\n\n  .header-wrapper {\n    width: 100%;\n    display: inline-block;\n    background-color: white;\n  }\n\n  .header-wrapper-bottom {\n    order: 1;\n  }\n\n  .ellipses::before {\n    position: relative;\n    bottom: 3px;\n    content: '...';\n    font-weight: 900;\n    margin-right: 4px;\n  }\n\n  .button-wrapper {\n    padding-left: 2px;\n    border-width: 0 0 0 1px;\n    border-color: rgba(150, 150, 150, 0.2);\n    border-style: solid;\n    margin-left: 2px;\n    width: auto;\n    float: none;\n    opacity: 0;\n    transition: opacity 0.5s;\n    vertical-align: text-top;\n  }\n\n  .button-wrapper-visible {\n    opacity: 1;\n  }\n\n  .button-wrapper-expanded {\n    padding-left: 0;\n    border: 0;\n    margin-left: 0;\n  }\n\n  .header-toggle {\n    cursor: pointer;\n  }\n\n  .minimal-button {\n    padding: 0 3px;\n    border: 0;\n    color: rgb(150, 150, 150);\n    background-color: transparent;\n    cursor: pointer;\n  }\n\n  .minimal-button:hover, .minimal-button:active, .minimal-button:focus {\n    color: rgb(30, 30, 30);\n  }\n\n  .minimal-popup-button {\n    top: 1px;\n    font-size: 9px;\n  }\n\n  .minimal-menu-up {\n    top: 3px;\n    font-size: 13px;\n  }\n\n  .minimal-menu-down {\n    top: 1px;\n    font-size: 13px;\n  }\n\n  .minimal-close-button {\n    top: 2px;\n    font-size: 11px;\n  }\n\n  /* Bootstrap extra small(xs) responsive breakpoint */\n  @media (max-width: 575.98px) {\n    .button-wrapper-expanded {\n      padding-left: 0;\n      border: 0;\n      margin-left: 0;\n      opacity: 0.15;\n    }\n\n    .button-wrapper-visible {\n      opacity: 1;\n    }\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.morph-title[data-v-33358b51] {\n  padding: 0 0.3em;\n  color: rgba(0, 0, 0, 0.5);\n  border-color: rgba(0, 0, 0, 0.5);\n  background-color: transparent;\n  vertical-align: top;\n}\n.morph-title[data-v-33358b51]:hover, .morph-title[data-v-33358b51]:active, .morph-title[data-v-33358b51]:focus {\n  color: black;\n  border-color: black;\n  background-color: rgba(244, 244, 244, 0.3);\n}\n.card-collapse[data-v-33358b51] {\n  overflow: hidden;\n  transition: max-height 0.7s ease-in-out;\n}\n.card-flex[data-v-33358b51] {\n  display: flex;\n  flex-direction: column;\n  border: 0;\n  margin: 0;\n}\n.card-title-transparent[data-v-33358b51] {\n  opacity: 0.5;\n  transition: opacity 0.5s;\n}\n.card-title-opaque[data-v-33358b51] {\n  opacity: 1;\n}\n.header-fade-enter[data-v-33358b51] {\n  opacity: 0;\n}\n.header-fade-leave-active[data-v-33358b51] {\n  position: absolute;\n}\n.header-fade-leave-to[data-v-33358b51] {\n  opacity: 0;\n}\n.card-title-inline[data-v-33358b51] {\n  display: inline-block;\n}\n.card-body[data-v-33358b51] {\n  padding: 0;\n}\n.header-wrapper[data-v-33358b51] {\n  width: 100%;\n  display: inline-block;\n  background-color: white;\n}\n.header-wrapper-bottom[data-v-33358b51] {\n  order: 1;\n}\n.ellipses[data-v-33358b51]::before {\n  position: relative;\n  bottom: 3px;\n  content: '...';\n  font-weight: 900;\n  margin-right: 4px;\n}\n.button-wrapper[data-v-33358b51] {\n  padding-left: 2px;\n  border-width: 0 0 0 1px;\n  border-color: rgba(150, 150, 150, 0.2);\n  border-style: solid;\n  margin-left: 2px;\n  width: auto;\n  float: none;\n  opacity: 0;\n  transition: opacity 0.5s;\n  vertical-align: text-top;\n}\n.button-wrapper-visible[data-v-33358b51] {\n  opacity: 1;\n}\n.button-wrapper-expanded[data-v-33358b51] {\n  padding-left: 0;\n  border: 0;\n  margin-left: 0;\n}\n.header-toggle[data-v-33358b51] {\n  cursor: pointer;\n}\n.minimal-button[data-v-33358b51] {\n  padding: 0 3px;\n  border: 0;\n  color: rgb(150, 150, 150);\n  background-color: transparent;\n  cursor: pointer;\n}\n.minimal-button[data-v-33358b51]:hover, .minimal-button[data-v-33358b51]:active, .minimal-button[data-v-33358b51]:focus {\n  color: rgb(30, 30, 30);\n}\n.minimal-popup-button[data-v-33358b51] {\n  top: 1px;\n  font-size: 9px;\n}\n.minimal-menu-up[data-v-33358b51] {\n  top: 3px;\n  font-size: 13px;\n}\n.minimal-menu-down[data-v-33358b51] {\n  top: 1px;\n  font-size: 13px;\n}\n.minimal-close-button[data-v-33358b51] {\n  top: 2px;\n  font-size: 11px;\n}\n\n/* Bootstrap extra small(xs) responsive breakpoint */\n@media (max-width: 575.98px) {\n.button-wrapper-expanded[data-v-33358b51] {\n    padding-left: 0;\n    border: 0;\n    margin-left: 0;\n    opacity: 0.15;\n}\n.button-wrapper-visible[data-v-33358b51] {\n    opacity: 1;\n}\n}\n", "", {"version":3,"sources":["/./src/panels/MinimalPanel.vue?6d282b16"],"names":[],"mappings":";AAqGA;EACA,iBAAA;EACA,0BAAA;EACA,iCAAA;EACA,8BAAA;EACA,oBAAA;CACA;AAEA;EACA,aAAA;EACA,oBAAA;EACA,2CAAA;CACA;AAEA;EACA,iBAAA;EACA,wCAAA;CACA;AAEA;EACA,cAAA;EACA,uBAAA;EACA,UAAA;EACA,UAAA;CACA;AAEA;EACA,aAAA;EACA,yBAAA;CACA;AAEA;EACA,WAAA;CACA;AAEA;EACA,WAAA;CACA;AAEA;EACA,mBAAA;CACA;AAEA;EACA,WAAA;CACA;AAEA;EACA,sBAAA;CACA;AAEA;EACA,WAAA;CACA;AAEA;EACA,YAAA;EACA,sBAAA;EACA,wBAAA;CACA;AAEA;EACA,SAAA;CACA;AAEA;EACA,mBAAA;EACA,YAAA;EACA,eAAA;EACA,iBAAA;EACA,kBAAA;CACA;AAEA;EACA,kBAAA;EACA,wBAAA;EACA,uCAAA;EACA,oBAAA;EACA,iBAAA;EACA,YAAA;EACA,YAAA;EACA,WAAA;EACA,yBAAA;EACA,yBAAA;CACA;AAEA;EACA,WAAA;CACA;AAEA;EACA,gBAAA;EACA,UAAA;EACA,eAAA;CACA;AAEA;EACA,gBAAA;CACA;AAEA;EACA,eAAA;EACA,UAAA;EACA,0BAAA;EACA,8BAAA;EACA,gBAAA;CACA;AAEA;EACA,uBAAA;CACA;AAEA;EACA,SAAA;EACA,eAAA;CACA;AAEA;EACA,SAAA;EACA,gBAAA;CACA;AAEA;EACA,SAAA;EACA,gBAAA;CACA;AAEA;EACA,SAAA;EACA,gBAAA;CACA;;AAEA,qDAAA;AACA;AACA;IACA,gBAAA;IACA,UAAA;IACA,eAAA;IACA,cAAA;CACA;AAEA;IACA,WAAA;CACA;CACA","file":"MinimalPanel.vue","sourcesContent":["<template>\n  <span ref=\"cardContainer\" :class=\"['card-container', addClass]\">\n    <div v-show=\"localMinimized\" class=\"morph\">\n      <button class=\"morph-display-wrapper btn card-title morph-title\" @click=\"open()\">\n        <slot name=\"_alt\">\n          <slot name=\"_header\">\n            <slot name=\"header\"></slot>\n          </slot>\n        </slot>\n      </button>\n    </div>\n    <div v-show=\"!localMinimized\" class=\"card card-flex\" @mouseover=\"onHeaderHover = true\" @mouseleave=\"onHeaderHover = false\">\n      <div :class=\"['header-wrapper', { 'header-wrapper-bottom': isHeaderAtBottom, 'header-toggle': isExpandableCard }]\"\n           @click.prevent.stop=\"isExpandableCard && toggle()\">\n        <transition name=\"header-fade\">\n          <span v-show=\"!isHeaderAtBottom\" ref=\"headerWrapper\"\n                :class=\"['card-title', 'card-title-transparent', { 'card-title-opaque': onHeaderHover, 'ellipses': !hasHeaderBool }]\">\n            <slot name=\"header\">\n              <span class=\"card-title-inline\"><slot name=\"_header\"></slot></span>\n              <span v-show=\"showDownSwitch\" aria-hidden=\"true\"\n                    class=\"minimal-button glyphicon glyphicon-menu-down minimal-menu-down\"></span>\n            </slot>\n          </span>\n        </transition>\n        <div :class=\"['button-wrapper', { 'button-wrapper-expanded': isHeaderAtBottom, 'button-wrapper-visible': onHeaderHover }]\">\n          <slot name=\"button\">\n            <button v-show=\"!noCloseBool\" class=\"minimal-button\" type=\"button\" @click.stop=\"close()\">\n              <span class=\"glyphicon glyphicon-remove minimal-close-button\" aria-hidden=\"true\"></span>\n            </button>\n            <button v-show=\"popupUrl !== null\" class=\"minimal-button\" type=\"button\" @click.stop=\"openPopup()\">\n              <span class=\"glyphicon glyphicon-new-window minimal-popup-button\" aria-hidden=\"true\"></span>\n            </button>\n            <button v-show=\"isHeaderAtBottom && isExpandableCard && bottomSwitchBool\" class=\"minimal-button\" type=\"button\">\n              <span class=\"glyphicon glyphicon-menu-up minimal-menu-up\" aria-hidden=\"true\"></span>\n            </button>\n          </slot>\n        </div>\n      </div>\n      <transition @before-enter=\"beforeExpandMinimal\"\n                  @enter=\"duringExpand\"\n                  @leave=\"duringCollapse\"\n                  @after-leave=\"afterCollapseMinimal\"\n                  v-if=\"preloadBool || wasRetrieverLoaded\"\n      >\n        <div v-show=\"localExpanded\"\n             class=\"card-collapse\"\n             ref=\"panel\">\n          <div class=\"card-body\">\n            <slot></slot>\n            <retriever v-if=\"hasSrc\"\n                       ref=\"retriever\"\n                       :src=\"src\"\n                       :fragment=\"fragment\"\n                       @src-loaded=\"setMaxHeight\"/>\n          </div>\n        </div>\n      </transition>\n    </div>\n  </span>\n</template>\n\n<script>\nimport retriever from '../Retriever.vue';\nimport panelBase from './PanelBase';\n\nexport default {\n  mixins: [panelBase],\n  components: {\n    retriever,\n  },\n  data() {\n    return {\n      /*\n      'Copy' of localExpanded that is updated on certain animation events.\n      It is minimal-panel specific due to its design (the header can shift to the bottom).\n      Its purpose is to show the header text only once the collapse animation has finished.\n       */\n      isHeaderAtBottom: false,\n    };\n  },\n  computed: {\n    showDownSwitch() {\n      return this.hasHeaderBool && this.isExpandableCard && !this.noSwitchBool;\n    },\n  },\n  methods: {\n    beforeExpandMinimal(el) {\n      this.isHeaderAtBottom = true;\n      this.beforeExpand(el);\n    },\n    afterCollapseMinimal(el) {\n      this.isHeaderAtBottom = false;\n    }\n  },\n  created() {\n    this.isHeaderAtBottom = this.localExpanded;\n  },\n};\n</script>\n\n<style scoped>\n  .morph-title {\n    padding: 0 0.3em;\n    color: rgba(0, 0, 0, 0.5);\n    border-color: rgba(0, 0, 0, 0.5);\n    background-color: transparent;\n    vertical-align: top;\n  }\n\n  .morph-title:hover, .morph-title:active, .morph-title:focus {\n    color: black;\n    border-color: black;\n    background-color: rgba(244, 244, 244, 0.3);\n  }\n\n  .card-collapse {\n    overflow: hidden;\n    transition: max-height 0.7s ease-in-out;\n  }\n\n  .card-flex {\n    display: flex;\n    flex-direction: column;\n    border: 0;\n    margin: 0;\n  }\n\n  .card-title-transparent {\n    opacity: 0.5;\n    transition: opacity 0.5s;\n  }\n\n  .card-title-opaque {\n    opacity: 1;\n  }\n\n  .header-fade-enter {\n    opacity: 0;\n  }\n\n  .header-fade-leave-active {\n    position: absolute;\n  }\n\n  .header-fade-leave-to {\n    opacity: 0;\n  }\n\n  .card-title-inline {\n    display: inline-block;\n  }\n\n  .card-body {\n    padding: 0;\n  }\n\n  .header-wrapper {\n    width: 100%;\n    display: inline-block;\n    background-color: white;\n  }\n\n  .header-wrapper-bottom {\n    order: 1;\n  }\n\n  .ellipses::before {\n    position: relative;\n    bottom: 3px;\n    content: '...';\n    font-weight: 900;\n    margin-right: 4px;\n  }\n\n  .button-wrapper {\n    padding-left: 2px;\n    border-width: 0 0 0 1px;\n    border-color: rgba(150, 150, 150, 0.2);\n    border-style: solid;\n    margin-left: 2px;\n    width: auto;\n    float: none;\n    opacity: 0;\n    transition: opacity 0.5s;\n    vertical-align: text-top;\n  }\n\n  .button-wrapper-visible {\n    opacity: 1;\n  }\n\n  .button-wrapper-expanded {\n    padding-left: 0;\n    border: 0;\n    margin-left: 0;\n  }\n\n  .header-toggle {\n    cursor: pointer;\n  }\n\n  .minimal-button {\n    padding: 0 3px;\n    border: 0;\n    color: rgb(150, 150, 150);\n    background-color: transparent;\n    cursor: pointer;\n  }\n\n  .minimal-button:hover, .minimal-button:active, .minimal-button:focus {\n    color: rgb(30, 30, 30);\n  }\n\n  .minimal-popup-button {\n    top: 1px;\n    font-size: 9px;\n  }\n\n  .minimal-menu-up {\n    top: 3px;\n    font-size: 13px;\n  }\n\n  .minimal-menu-down {\n    top: 1px;\n    font-size: 13px;\n  }\n\n  .minimal-close-button {\n    top: 2px;\n    font-size: 11px;\n  }\n\n  /* Bootstrap extra small(xs) responsive breakpoint */\n  @media (max-width: 575.98px) {\n    .button-wrapper-expanded {\n      padding-left: 0;\n      border: 0;\n      margin-left: 0;\n      opacity: 0.15;\n    }\n\n    .button-wrapper-visible {\n      opacity: 1;\n    }\n  }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
-/* 115 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -14931,16 +15001,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _Retriever = __webpack_require__(108);
+	var _Retriever = __webpack_require__(110);
 	
 	var _Retriever2 = _interopRequireDefault(_Retriever);
 	
-	var _PanelBase = __webpack_require__(102);
+	var _PanelBase = __webpack_require__(104);
 	
 	var _PanelBase2 = _interopRequireDefault(_PanelBase);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 	//
 	//
 	//
@@ -14999,15 +15078,38 @@ return /******/ (function(modules) { // webpackBootstrap
 	  components: {
 	    retriever: _Retriever2.default
 	  },
+	  data: function data() {
+	    return {
+	      /*
+	      'Copy' of localExpanded that is updated on certain animation events.
+	      It is minimal-panel specific due to its design (the header can shift to the bottom).
+	      Its purpose is to show the header text only once the collapse animation has finished.
+	       */
+	      isHeaderAtBottom: false
+	    };
+	  },
+	
 	  computed: {
 	    showDownSwitch: function showDownSwitch() {
 	      return this.hasHeaderBool && this.isExpandableCard && !this.noSwitchBool;
 	    }
+	  },
+	  methods: {
+	    beforeExpandMinimal: function beforeExpandMinimal(el) {
+	      this.isHeaderAtBottom = true;
+	      this.beforeExpand(el);
+	    },
+	    afterCollapseMinimal: function afterCollapseMinimal(el) {
+	      this.isHeaderAtBottom = false;
+	    }
+	  },
+	  created: function created() {
+	    this.isHeaderAtBottom = this.localExpanded;
 	  }
 	};
 
 /***/ }),
-/* 116 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -15047,7 +15149,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  }, [_c('div', {
 	    class: ['header-wrapper', {
-	      'header-wrapper-bottom': _vm.localExpanded,
+	      'header-wrapper-bottom': _vm.isHeaderAtBottom,
 	      'header-toggle': _vm.isExpandableCard
 	    }],
 	    on: {
@@ -15057,12 +15159,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	        _vm.isExpandableCard && _vm.toggle()
 	      }
 	    }
+	  }, [_c('transition', {
+	    attrs: {
+	      "name": "header-fade"
+	    }
 	  }, [_c('span', {
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
-	      value: (!_vm.localExpanded),
-	      expression: "!localExpanded"
+	      value: (!_vm.isHeaderAtBottom),
+	      expression: "!isHeaderAtBottom"
 	    }],
 	    ref: "headerWrapper",
 	    class: ['card-title', 'card-title-transparent', {
@@ -15082,9 +15188,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    attrs: {
 	      "aria-hidden": "true"
 	    }
-	  })])], 2), _vm._v(" "), _c('div', {
+	  })])], 2)]), _vm._v(" "), _c('div', {
 	    class: ['button-wrapper', {
-	      'button-wrapper-expanded': _vm.localExpanded,
+	      'button-wrapper-expanded': _vm.isHeaderAtBottom,
 	      'button-wrapper-visible': _vm.onHeaderHover
 	    }]
 	  }, [_vm._t("button", [_c('button', {
@@ -15135,26 +15241,26 @@ return /******/ (function(modules) { // webpackBootstrap
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
-	      value: (_vm.localExpanded && _vm.isExpandableCard && _vm.bottomSwitchBool),
-	      expression: "localExpanded && isExpandableCard && bottomSwitchBool"
+	      value: (_vm.isHeaderAtBottom && _vm.isExpandableCard && _vm.bottomSwitchBool),
+	      expression: "isHeaderAtBottom && isExpandableCard && bottomSwitchBool"
 	    }],
 	    staticClass: "minimal-button",
 	    attrs: {
 	      "type": "button"
-	    },
-	    on: {
-	      "click": function($event) {
-	        $event.preventDefault();
-	        $event.stopPropagation();
-	        _vm.collapseThenScrollIntoViewIfNeeded()
-	      }
 	    }
 	  }, [_c('span', {
 	    staticClass: "glyphicon glyphicon-menu-up minimal-menu-up",
 	    attrs: {
 	      "aria-hidden": "true"
 	    }
-	  })])])], 2)]), _vm._v(" "), (_vm.preloadBool || _vm.isCached) ? [_c('div', {
+	  })])])], 2)], 1), _vm._v(" "), (_vm.preloadBool || _vm.wasRetrieverLoaded) ? _c('transition', {
+	    on: {
+	      "before-enter": _vm.beforeExpandMinimal,
+	      "enter": _vm.duringExpand,
+	      "leave": _vm.duringCollapse,
+	      "after-leave": _vm.afterCollapseMinimal
+	    }
+	  }, [_c('div', {
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
@@ -15170,8 +15276,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    attrs: {
 	      "src": _vm.src,
 	      "fragment": _vm.fragment
+	    },
+	    on: {
+	      "src-loaded": _vm.setMaxHeight
 	    }
-	  }) : _vm._e()], 2)])] : _vm._e()], 2)])
+	  }) : _vm._e()], 2)])]) : _vm._e()], 1)])
 	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
@@ -15181,7 +15290,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 117 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -15207,20 +15316,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 118 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(119)
+	__webpack_require__(121)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(121)
+	__vue_exports__ = __webpack_require__(123)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(122)
+	var __vue_template__ = __webpack_require__(124)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -15254,13 +15363,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 119 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(120);
+	var content = __webpack_require__(122);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -15280,7 +15389,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 120 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -15294,7 +15403,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 121 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -15368,7 +15477,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 
 /***/ }),
-/* 122 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -15399,20 +15508,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 123 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(124)
+	__webpack_require__(126)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(126)
+	__vue_exports__ = __webpack_require__(128)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(142)
+	var __vue_template__ = __webpack_require__(144)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -15446,13 +15555,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 124 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(125);
+	var content = __webpack_require__(127);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -15472,7 +15581,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 125 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -15486,7 +15595,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 126 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -15495,7 +15604,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _popoverMixins = __webpack_require__(127);
+	var _popoverMixins = __webpack_require__(129);
 	
 	var _popoverMixins2 = _interopRequireDefault(_popoverMixins);
 	
@@ -15550,7 +15659,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 
 /***/ }),
-/* 127 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -15559,11 +15668,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _assign = __webpack_require__(128);
+	var _assign = __webpack_require__(130);
 	
 	var _assign2 = _interopRequireDefault(_assign);
 	
-	var _some = __webpack_require__(134);
+	var _some = __webpack_require__(136);
 	
 	var _some2 = _interopRequireDefault(_some);
 	
@@ -15819,38 +15928,38 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(72)))
 
 /***/ }),
-/* 128 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(129), __esModule: true };
-
-/***/ }),
-/* 129 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	__webpack_require__(130);
-	module.exports = __webpack_require__(23).Object.assign;
-
-
-/***/ }),
 /* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	// 19.1.3.1 Object.assign(target, source)
-	var $export = __webpack_require__(22);
-	
-	$export($export.S + $export.F, 'Object', { assign: __webpack_require__(131) });
-
+	module.exports = { "default": __webpack_require__(131), __esModule: true };
 
 /***/ }),
 /* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	__webpack_require__(132);
+	module.exports = __webpack_require__(23).Object.assign;
+
+
+/***/ }),
+/* 132 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// 19.1.3.1 Object.assign(target, source)
+	var $export = __webpack_require__(22);
+	
+	$export($export.S + $export.F, 'Object', { assign: __webpack_require__(133) });
+
+
+/***/ }),
+/* 133 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	'use strict';
 	// 19.1.2.1 Object.assign(target, source, ...)
 	var getKeys = __webpack_require__(6);
-	var gOPS = __webpack_require__(132);
-	var pIE = __webpack_require__(133);
+	var gOPS = __webpack_require__(134);
+	var pIE = __webpack_require__(135);
 	var toObject = __webpack_require__(4);
 	var IObject = __webpack_require__(10);
 	var $assign = Object.assign;
@@ -15883,42 +15992,42 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 132 */
+/* 134 */
 /***/ (function(module, exports) {
 
 	exports.f = Object.getOwnPropertySymbols;
 
 
 /***/ }),
-/* 133 */
+/* 135 */
 /***/ (function(module, exports) {
 
 	exports.f = {}.propertyIsEnumerable;
 
 
 /***/ }),
-/* 134 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(135), __esModule: true };
+	module.exports = { "default": __webpack_require__(137), __esModule: true };
 
 /***/ }),
-/* 135 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(136);
+	__webpack_require__(138);
 	module.exports = __webpack_require__(23).Array.some;
 
 
 /***/ }),
-/* 136 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	var $export = __webpack_require__(22);
-	var $some = __webpack_require__(137)(3);
+	var $some = __webpack_require__(139)(3);
 	
-	$export($export.P + $export.F * !__webpack_require__(141)([].some, true), 'Array', {
+	$export($export.P + $export.F * !__webpack_require__(143)([].some, true), 'Array', {
 	  // 22.1.3.23 / 15.4.4.17 Array.prototype.some(callbackfn [, thisArg])
 	  some: function some(callbackfn /* , thisArg */) {
 	    return $some(this, callbackfn, arguments[1]);
@@ -15927,7 +16036,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 137 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 0 -> Array#forEach
@@ -15941,7 +16050,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var IObject = __webpack_require__(10);
 	var toObject = __webpack_require__(4);
 	var toLength = __webpack_require__(13);
-	var asc = __webpack_require__(138);
+	var asc = __webpack_require__(140);
 	module.exports = function (TYPE, $create) {
 	  var IS_MAP = TYPE == 1;
 	  var IS_FILTER = TYPE == 2;
@@ -15977,11 +16086,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 138 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 9.4.2.3 ArraySpeciesCreate(originalArray, length)
-	var speciesConstructor = __webpack_require__(139);
+	var speciesConstructor = __webpack_require__(141);
 	
 	module.exports = function (original, length) {
 	  return new (speciesConstructor(original))(length);
@@ -15989,11 +16098,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 139 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var isObject = __webpack_require__(29);
-	var isArray = __webpack_require__(140);
+	var isArray = __webpack_require__(142);
 	var SPECIES = __webpack_require__(56)('species');
 	
 	module.exports = function (original) {
@@ -16011,7 +16120,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 140 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// 7.2.2 IsArray(argument)
@@ -16022,7 +16131,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 141 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -16037,7 +16146,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 142 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -16069,20 +16178,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 143 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(144)
+	__webpack_require__(146)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(146)
+	__vue_exports__ = __webpack_require__(148)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(147)
+	var __vue_template__ = __webpack_require__(149)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -16116,13 +16225,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 144 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(145);
+	var content = __webpack_require__(147);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -16142,7 +16251,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 145 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -16156,7 +16265,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 146 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -16258,7 +16367,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 147 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -16316,17 +16425,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 148 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(149)
+	__webpack_require__(151)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(151)
+	__vue_exports__ = __webpack_require__(153)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -16358,13 +16467,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 149 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(150);
+	var content = __webpack_require__(152);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -16384,7 +16493,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 150 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -16398,7 +16507,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 151 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -16407,27 +16516,27 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _slicedToArray2 = __webpack_require__(152);
+	var _slicedToArray2 = __webpack_require__(154);
 	
 	var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
 	
-	var _entries = __webpack_require__(161);
+	var _entries = __webpack_require__(163);
 	
 	var _entries2 = _interopRequireDefault(_entries);
 	
-	var _values = __webpack_require__(165);
+	var _values = __webpack_require__(167);
 	
 	var _values2 = _interopRequireDefault(_values);
 	
-	var _toConsumableArray2 = __webpack_require__(168);
+	var _toConsumableArray2 = __webpack_require__(170);
 	
 	var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
 	
-	var _Typeahead = __webpack_require__(176);
+	var _Typeahead = __webpack_require__(178);
 	
 	var _Typeahead2 = _interopRequireDefault(_Typeahead);
 	
-	var _SearchbarPageItem = __webpack_require__(181);
+	var _SearchbarPageItem = __webpack_require__(183);
 	
 	var _SearchbarPageItem2 = _interopRequireDefault(_SearchbarPageItem);
 	
@@ -16558,18 +16667,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 152 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	exports.__esModule = true;
 	
-	var _isIterable2 = __webpack_require__(153);
+	var _isIterable2 = __webpack_require__(155);
 	
 	var _isIterable3 = _interopRequireDefault(_isIterable2);
 	
-	var _getIterator2 = __webpack_require__(157);
+	var _getIterator2 = __webpack_require__(159);
 	
 	var _getIterator3 = _interopRequireDefault(_getIterator2);
 	
@@ -16614,25 +16723,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	}();
 
 /***/ }),
-/* 153 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(154), __esModule: true };
+	module.exports = { "default": __webpack_require__(156), __esModule: true };
 
 /***/ }),
-/* 154 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	__webpack_require__(58);
 	__webpack_require__(45);
-	module.exports = __webpack_require__(155);
+	module.exports = __webpack_require__(157);
 
 
 /***/ }),
-/* 155 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var classof = __webpack_require__(156);
+	var classof = __webpack_require__(158);
 	var ITERATOR = __webpack_require__(56)('iterator');
 	var Iterators = __webpack_require__(50);
 	module.exports = __webpack_require__(23).isIterable = function (it) {
@@ -16645,7 +16754,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 156 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// getting tag from 19.1.3.6 Object.prototype.toString()
@@ -16674,26 +16783,26 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 157 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(158), __esModule: true };
+	module.exports = { "default": __webpack_require__(160), __esModule: true };
 
 /***/ }),
-/* 158 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	__webpack_require__(58);
 	__webpack_require__(45);
-	module.exports = __webpack_require__(159);
+	module.exports = __webpack_require__(161);
 
 
 /***/ }),
-/* 159 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var anObject = __webpack_require__(28);
-	var get = __webpack_require__(160);
+	var get = __webpack_require__(162);
 	module.exports = __webpack_require__(23).getIterator = function (it) {
 	  var iterFn = get(it);
 	  if (typeof iterFn != 'function') throw TypeError(it + ' is not iterable!');
@@ -16702,10 +16811,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 160 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var classof = __webpack_require__(156);
+	var classof = __webpack_require__(158);
 	var ITERATOR = __webpack_require__(56)('iterator');
 	var Iterators = __webpack_require__(50);
 	module.exports = __webpack_require__(23).getIteratorMethod = function (it) {
@@ -16716,26 +16825,26 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 161 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(162), __esModule: true };
+	module.exports = { "default": __webpack_require__(164), __esModule: true };
 
 /***/ }),
-/* 162 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(163);
+	__webpack_require__(165);
 	module.exports = __webpack_require__(23).Object.entries;
 
 
 /***/ }),
-/* 163 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// https://github.com/tc39/proposal-object-values-entries
 	var $export = __webpack_require__(22);
-	var $entries = __webpack_require__(164)(true);
+	var $entries = __webpack_require__(166)(true);
 	
 	$export($export.S, 'Object', {
 	  entries: function entries(it) {
@@ -16745,12 +16854,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 164 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var getKeys = __webpack_require__(6);
 	var toIObject = __webpack_require__(9);
-	var isEnum = __webpack_require__(133).f;
+	var isEnum = __webpack_require__(135).f;
 	module.exports = function (isEntries) {
 	  return function (it) {
 	    var O = toIObject(it);
@@ -16767,26 +16876,26 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 165 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(166), __esModule: true };
+	module.exports = { "default": __webpack_require__(168), __esModule: true };
 
 /***/ }),
-/* 166 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(167);
+	__webpack_require__(169);
 	module.exports = __webpack_require__(23).Object.values;
 
 
 /***/ }),
-/* 167 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// https://github.com/tc39/proposal-object-values-entries
 	var $export = __webpack_require__(22);
-	var $values = __webpack_require__(164)(false);
+	var $values = __webpack_require__(166)(false);
 	
 	$export($export.S, 'Object', {
 	  values: function values(it) {
@@ -16796,14 +16905,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 168 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
 	
 	exports.__esModule = true;
 	
-	var _from = __webpack_require__(169);
+	var _from = __webpack_require__(171);
 	
 	var _from2 = _interopRequireDefault(_from);
 	
@@ -16822,35 +16931,35 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 169 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(170), __esModule: true };
+	module.exports = { "default": __webpack_require__(172), __esModule: true };
 
 /***/ }),
-/* 170 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	__webpack_require__(45);
-	__webpack_require__(171);
+	__webpack_require__(173);
 	module.exports = __webpack_require__(23).Array.from;
 
 
 /***/ }),
-/* 171 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	var ctx = __webpack_require__(24);
 	var $export = __webpack_require__(22);
 	var toObject = __webpack_require__(4);
-	var call = __webpack_require__(172);
-	var isArrayIter = __webpack_require__(173);
+	var call = __webpack_require__(174);
+	var isArrayIter = __webpack_require__(175);
 	var toLength = __webpack_require__(13);
-	var createProperty = __webpack_require__(174);
-	var getIterFn = __webpack_require__(160);
+	var createProperty = __webpack_require__(176);
+	var getIterFn = __webpack_require__(162);
 	
-	$export($export.S + $export.F * !__webpack_require__(175)(function (iter) { Array.from(iter); }), 'Array', {
+	$export($export.S + $export.F * !__webpack_require__(177)(function (iter) { Array.from(iter); }), 'Array', {
 	  // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
 	  from: function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
 	    var O = toObject(arrayLike);
@@ -16880,7 +16989,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 172 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// call something on iterator step with safe closing on error
@@ -16898,7 +17007,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 173 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// check on default Array iterator
@@ -16912,7 +17021,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 174 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -16926,7 +17035,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 175 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var ITERATOR = __webpack_require__(56)('iterator');
@@ -16954,20 +17063,20 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 176 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(177)
+	__webpack_require__(179)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(179)
+	__vue_exports__ = __webpack_require__(181)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(180)
+	var __vue_template__ = __webpack_require__(182)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -17001,13 +17110,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 177 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(178);
+	var content = __webpack_require__(180);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -17027,7 +17136,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 178 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -17041,7 +17150,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 179 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17217,7 +17326,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 180 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -17300,20 +17409,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 181 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(182)
+	__webpack_require__(184)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(184)
+	__vue_exports__ = __webpack_require__(186)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(185)
+	var __vue_template__ = __webpack_require__(187)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -17348,13 +17457,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 182 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(183);
+	var content = __webpack_require__(185);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -17374,7 +17483,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 183 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -17388,7 +17497,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 184 */
+/* 186 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -17480,7 +17589,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 185 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -17523,20 +17632,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 186 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(187)
+	__webpack_require__(189)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(189)
+	__vue_exports__ = __webpack_require__(191)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(190)
+	var __vue_template__ = __webpack_require__(192)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -17570,13 +17679,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 187 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(188);
+	var content = __webpack_require__(190);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -17596,7 +17705,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 188 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -17610,7 +17719,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 189 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17702,7 +17811,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 
 /***/ }),
-/* 190 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -17737,20 +17846,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 191 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(192)
+	__webpack_require__(194)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(194)
+	__vue_exports__ = __webpack_require__(196)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(195)
+	var __vue_template__ = __webpack_require__(197)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -17785,13 +17894,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 192 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(193);
+	var content = __webpack_require__(195);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -17811,7 +17920,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 193 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -17825,7 +17934,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 194 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -17901,7 +18010,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 
 /***/ }),
-/* 195 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -17918,20 +18027,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 196 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(197)
+	__webpack_require__(199)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(199)
+	__vue_exports__ = __webpack_require__(201)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(200)
+	var __vue_template__ = __webpack_require__(202)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -17966,13 +18075,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 197 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(198);
+	var content = __webpack_require__(200);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -17992,7 +18101,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 198 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -18006,7 +18115,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 199 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -18099,7 +18208,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 200 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -18174,20 +18283,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 201 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(202)
+	__webpack_require__(204)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(204)
+	__vue_exports__ = __webpack_require__(206)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(205)
+	var __vue_template__ = __webpack_require__(207)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -18221,13 +18330,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 202 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(203);
+	var content = __webpack_require__(205);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -18247,7 +18356,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 203 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -18261,7 +18370,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 204 */
+/* 206 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -18375,7 +18484,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 205 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -18408,21 +18517,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 206 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(207)
 	__webpack_require__(209)
+	__webpack_require__(211)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(211)
+	__vue_exports__ = __webpack_require__(213)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(212)
+	var __vue_template__ = __webpack_require__(214)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -18457,13 +18566,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 207 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(208);
+	var content = __webpack_require__(210);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -18483,7 +18592,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 208 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -18491,19 +18600,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\n.box-container[data-v-7e93235f] {\n    width: 100%;\n    padding: 0;\n    border-radius: 6px;\n}\n.box-header-wrapper[data-v-7e93235f] {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    width: 100%;\n    padding: 0.28em 1.25rem;\n    border-radius: 6px 6px 0 0;\n}\n.box-body-wrapper[data-v-7e93235f] {\n    display: flex;\n    flex-direction: row;\n    width: 100%;\n    padding: 0.75rem 1.25rem;\n}\n.box-container.seamless > .box-body-wrapper[data-v-7e93235f] {\n    padding: 0.75rem 0.5rem;\n}\n.box-container.seamless[data-v-7e93235f] {\n    background-color: transparent;\n    border-color: transparent;\n}\n.heading[data-v-7e93235f] {\n    display: inline;\n    float: right;\n    font-weight: normal;\n    color: inherit;\n    background-color: rgba(240, 240, 240, 0.6);\n    width: auto;\n    padding: 3px 5px 4px 5px;\n    border-width: 0;\n    border-radius: 0 6px 0 6px;\n    margin: -13px -27px 0 15px;\n}\n.box-body-wrapper-with-heading[data-v-7e93235f] {\n    padding-top: 0.5rem;\n}\n.alert-dismissible[data-v-7e93235f] {\n    padding-right: 4rem;\n}\n.box-header[data-v-7e93235f] {\n    font-weight: 500;\n}\n.icon-wrapper[data-v-7e93235f] {\n    display: flex;\n    margin-right: .5em;\n}\n.close-with-heading[data-v-7e93235f] {\n    top: auto;\n    padding: 0 1.25rem;\n}\n.close-with-heading > span[data-v-7e93235f] {\n    vertical-align: text-top;\n}\n.contents[data-v-7e93235f] {\n    padding: 0 6px;\n    width: 100%;\n}\n.contents.seamless[data-v-7e93235f] {\n    padding-left: 12px;\n}\n.alert-default[data-v-7e93235f] {\n    color: #24292e;\n    background-color: #f6f8fa;\n    border-color: #e8ebef;\n}\n.alert-border-left[data-v-7e93235f] {\n    background-color: #f9f8f8;\n    border-left: solid;\n    border-width: 0px 0px 0px 5px;\n}\n.font-black[data-v-7e93235f] {\n    color: #24292e;\n}\n.vertical-divider[data-v-7e93235f] {\n    width: 4px;\n}\n.horizontal-divider[data-v-7e93235f] {\n    margin: 0 auto;\n    width: calc(100% - 2.5rem);\n    height: 3px;\n}\n.no-background[data-v-7e93235f] {\n  background: none;\n}\n.no-border[data-v-7e93235f] {\n  border: none;\n}\n", "", {"version":3,"sources":["/./src/TipBox.vue?68427bea"],"names":[],"mappings":";AA6NA;IACA,YAAA;IACA,WAAA;IACA,mBAAA;CACA;AAEA;IACA,cAAA;IACA,oBAAA;IACA,oBAAA;IACA,YAAA;IACA,wBAAA;IACA,2BAAA;CACA;AAEA;IACA,cAAA;IACA,oBAAA;IACA,YAAA;IACA,yBAAA;CACA;AAEA;IACA,wBAAA;CACA;AAEA;IACA,8BAAA;IACA,0BAAA;CACA;AAEA;IACA,gBAAA;IACA,aAAA;IACA,oBAAA;IACA,eAAA;IACA,2CAAA;IACA,YAAA;IACA,yBAAA;IACA,gBAAA;IACA,2BAAA;IACA,2BAAA;CACA;AAEA;IACA,oBAAA;CACA;AAEA;IACA,oBAAA;CACA;AAEA;IACA,iBAAA;CACA;AAEA;IACA,cAAA;IACA,mBAAA;CACA;AAEA;IACA,UAAA;IACA,mBAAA;CACA;AAEA;IACA,yBAAA;CACA;AAEA;IACA,eAAA;IACA,YAAA;CACA;AAEA;IACA,mBAAA;CACA;AAEA;IACA,eAAA;IACA,0BAAA;IACA,sBAAA;CACA;AAEA;IACA,0BAAA;IACA,mBAAA;IACA,8BAAA;CACA;AAEA;IACA,eAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,eAAA;IACA,2BAAA;IACA,YAAA;CACA;AAEA;EACA,iBAAA;CACA;AAEA;EACA,aAAA;CACA","file":"TipBox.vue","sourcesContent":["<template>\n    <div class=\"alert box-container\" :class=\"[boxStyle, addClass, lightStyle, seamlessStyle, noBackgroundStyle, noBorderStyle]\" :style=\"customStyle\">\n        <div v-if=\"headerBool\" :class=\"['box-header-wrapper', { 'alert-dismissible': dismissible }]\">\n            <div v-show=\"hasIcon\" class=\"icon-wrapper\" :class=\"[iconStyle]\">\n                <slot name=\"_icon\">\n                    <span v-html=\"iconType\"></span>\n                </slot>\n            </div>\n            <div class=\"box-header\">\n                <slot name=\"_header\"></slot>\n            </div>\n            <button v-show=\"dismissible\" type=\"button\" class=\"close close-with-heading\" data-dismiss=\"alert\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n        </div>\n        <div v-if=\"horizontalDividerBool\" class=\"horizontal-divider\" :class=\"boxStyle\" aria-hidden=\"true\"></div>\n        <div :class=\"['box-body-wrapper', { 'alert-dismissible': dismissible && !headerBool, 'box-body-wrapper-with-heading': headerBool }]\">\n            <div v-show=\"hasIcon && !headerBool\" class=\"icon-wrapper\" :class=\"[iconStyle]\">\n                <slot name=\"_icon\">\n                    <span v-html=\"iconType\"></span>\n                </slot>\n            </div>\n            <div v-if=\"verticalDividerBool\" class=\"vertical-divider\" :class=\"boxStyle\" aria-hidden=\"true\"></div>\n            <div class=\"contents\" :class=\"[fontBlack, seamlessStyle]\">\n                <slot></slot>\n            </div>\n            <button v-show=\"dismissible && !headerBool\" type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n        </div>\n    </div>\n</template>\n\n<script>\n\n  export default {\n    props: {\n      dismissible: {\n        type: Boolean,\n        default: false\n      },\n      backgroundColor: {\n        type: String,\n        default: null\n      },\n      borderColor: {\n        type: String,\n        default: null\n      },\n      borderLeftColor: {\n        type: String,\n        default: null\n      },\n      color: {\n        type: String,\n        default: null\n      },\n      icon: {\n        type: String,\n        default: null\n      },\n      iconSize: {\n        type: String,\n        default: null\n      },\n      type: {\n        type: String,\n        default: 'none'\n      },\n      addClass: {\n        type: String,\n        default: ''\n      },\n      light: {\n        type: Boolean,\n        default: false,\n      },\n      seamless: {\n        type: Boolean,\n        default: false,\n      },\n      noIcon: {\n        type: Boolean,\n        default: false,\n      },\n      noBackground: {\n        type: Boolean,\n        default: false,\n      },\n      noBorder: {\n        type: Boolean,\n        default: false,\n      }\n    },\n    computed: {\n      isSeamless() {\n        return !this.light && this.seamless;\n      },\n      verticalDividerBool() {\n        return this.isSeamless && !this.headerBool;\n      },\n      horizontalDividerBool() {\n          return this.isSeamless && this.headerBool;\n      },\n      headerBool() {\n        return !!this.$slots._header;\n      },\n      boxStyle() {\n        switch (this.type) {\n          case 'warning':\n            return 'alert-warning'\n          case 'info':\n          case 'definition':\n            return 'alert-info'\n          case 'success':\n          case 'tip':\n            return 'alert-success'\n          case 'important':\n          case 'wrong':\n            return 'alert-danger'\n          default:\n            return 'alert-default'\n        }\n      },\n      lightStyle() {\n        if (this.light) {\n          switch (this.type) {\n            case 'warning':\n              return 'border-warning text-warning alert-border-left';\n            case 'info':\n            case 'definition':\n              return 'border-info text-info alert-border-left';\n            case 'success':\n            case 'tip':\n              return 'border-success text-success alert-border-left';\n            case 'important':\n            case 'wrong':\n              return 'border-danger text-danger alert-border-left';\n            default:\n              return 'alert-border-left';\n          }\n        }\n        return '';\n      },\n      customStyle() {\n        var style = {};\n        if (this.backgroundColor) {\n          style.backgroundColor = this.backgroundColor;\n          style.borderColor = this.backgroundColor;\n        }\n        if (this.borderColor) {\n          style.border = `1px solid ${this.borderColor}`;\n        }\n        if (this.borderLeftColor) {\n          style.borderLeft = `5px solid ${this.borderLeftColor}`;\n        }\n        if (this.color) {\n          style.color = this.color;\n        }\n        return style;\n      },\n      seamlessStyle() {\n        if (this.isSeamless) {\n          return 'seamless';\n        }\n        return '';\n      },\n      fontBlack() {\n        if (this.light) {\n          return 'font-black';\n        }\n        return '';\n      },\n      hasIcon() {\n        // this.$slots._icon is either undefined or an object\n        const isIconSlotFilled = !!this.$slots._icon;\n        return !this.noIcon || isIconSlotFilled;\n      },\n      iconType() {\n        switch (this.type) {\n          case 'wrong':\n            return '<i class=\"fas fa-times\"></i>';\n          case 'warning':\n            return '<i class=\"fas fa-exclamation\"></i>';\n          case 'info':\n            return '<i class=\"fas fa-info\"></i>';\n          case 'success':\n            return '<i class=\"fas fa-check\"></i>';\n          case 'important':\n            return '<i class=\"fas fa-flag\"></i>';\n          case 'tip':\n            return '<i class=\"fas fa-lightbulb\"></i>';\n          case 'definition':\n            return '<i class=\"fas fa-atlas\"></i>';\n          default:\n            return '';\n        }\n      },\n      iconStyle() {\n        if (this.iconSize) {\n          return `fa-${this.iconSize}`;\n        }\n        return '';\n      },\n      noBackgroundStyle() {\n        if (this.noBackground) {\n          return 'no-background';\n        }\n        return '';\n      },\n      noBorderStyle() {\n        if (this.noBorder) {\n          return 'no-border';\n        }\n        return '';\n      }\n    }\n  }\n</script>\n\n<style scoped>\n    .box-container {\n        width: 100%;\n        padding: 0;\n        border-radius: 6px;\n    }\n\n    .box-header-wrapper {\n        display: flex;\n        flex-direction: row;\n        align-items: center;\n        width: 100%;\n        padding: 0.28em 1.25rem;\n        border-radius: 6px 6px 0 0;\n    }\n\n    .box-body-wrapper {\n        display: flex;\n        flex-direction: row;\n        width: 100%;\n        padding: 0.75rem 1.25rem;\n    }\n\n    .box-container.seamless > .box-body-wrapper {\n        padding: 0.75rem 0.5rem;\n    }\n\n    .box-container.seamless {\n        background-color: transparent;\n        border-color: transparent;\n    }\n\n    .heading {\n        display: inline;\n        float: right;\n        font-weight: normal;\n        color: inherit;\n        background-color: rgba(240, 240, 240, 0.6);\n        width: auto;\n        padding: 3px 5px 4px 5px;\n        border-width: 0;\n        border-radius: 0 6px 0 6px;\n        margin: -13px -27px 0 15px;\n    }\n\n    .box-body-wrapper-with-heading {\n        padding-top: 0.5rem;\n    }\n\n    .alert-dismissible {\n        padding-right: 4rem;\n    }\n\n    .box-header {\n        font-weight: 500;\n    }\n\n    .icon-wrapper {\n        display: flex;\n        margin-right: .5em;\n    }\n\n    .close-with-heading {\n        top: auto;\n        padding: 0 1.25rem;\n    }\n\n    .close-with-heading > span {\n        vertical-align: text-top;\n    }\n\n    .contents {\n        padding: 0 6px;\n        width: 100%;\n    }\n\n    .contents.seamless {\n        padding-left: 12px;\n    }\n\n    .alert-default {\n        color: #24292e;\n        background-color: #f6f8fa;\n        border-color: #e8ebef;\n    }\n\n    .alert-border-left {\n        background-color: #f9f8f8;\n        border-left: solid;\n        border-width: 0px 0px 0px 5px;\n    }\n\n    .font-black {\n        color: #24292e;\n    }\n\n    .vertical-divider {\n        width: 4px;\n    }\n\n    .horizontal-divider {\n        margin: 0 auto;\n        width: calc(100% - 2.5rem);\n        height: 3px;\n    }\n\n    .no-background {\n      background: none;\n    }\n\n    .no-border {\n      border: none;\n    }\n</style>\n\n<!-- TODO move this once we upgrade vue-loader version for scoped deep selectors -->\n<style>\n    div.box-header > * {\n        margin-bottom: 0;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.box-container[data-v-7e93235f] {\n    width: 100%;\n    padding: 0;\n    border-radius: 6px;\n}\n.box-header-wrapper[data-v-7e93235f] {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    width: 100%;\n    padding: 0.28em 1.25rem;\n    border-radius: 6px 6px 0 0;\n}\n.box-body-wrapper[data-v-7e93235f] {\n    display: flex;\n    flex-direction: row;\n    width: 100%;\n    padding: 0.75rem 1.25rem;\n}\n.box-container.seamless > .box-body-wrapper[data-v-7e93235f] {\n    padding: 0.75rem 0.5rem;\n}\n.box-container.seamless[data-v-7e93235f] {\n    background-color: transparent;\n    border-color: transparent;\n}\n.heading[data-v-7e93235f] {\n    display: inline;\n    float: right;\n    font-weight: normal;\n    color: inherit;\n    background-color: rgba(240, 240, 240, 0.6);\n    width: auto;\n    padding: 3px 5px 4px 5px;\n    border-width: 0;\n    border-radius: 0 6px 0 6px;\n    margin: -13px -27px 0 15px;\n}\n.box-body-wrapper-with-heading[data-v-7e93235f] {\n    padding-top: 0.5rem;\n}\n.alert-dismissible[data-v-7e93235f] {\n    padding-right: 4rem;\n}\n.box-header[data-v-7e93235f] {\n    font-weight: 500;\n}\n.icon-wrapper[data-v-7e93235f] {\n    display: flex;\n    justify-content: center;\n    margin-right: .5em;\n    width: 1em;\n}\n.close-with-heading[data-v-7e93235f] {\n    top: auto;\n    padding: 0 1.25rem;\n}\n.close-with-heading > span[data-v-7e93235f] {\n    vertical-align: text-top;\n}\n.contents[data-v-7e93235f] {\n    padding: 0 6px;\n    width: 100%;\n}\n.contents.seamless[data-v-7e93235f] {\n    padding-left: 12px;\n}\n.contents > [data-v-7e93235f]:last-child {\n    margin-bottom: 0;\n}\n.alert-default[data-v-7e93235f] {\n    color: #24292e;\n    background-color: #f6f8fa;\n    border-color: #e8ebef;\n}\n.alert-border-left[data-v-7e93235f] {\n    background-color: #f9f8f8;\n    border-left: solid;\n    border-width: 0px 0px 0px 5px;\n}\n.font-black[data-v-7e93235f] {\n    color: #24292e;\n}\n.vertical-divider[data-v-7e93235f] {\n    width: 4px;\n}\n.horizontal-divider[data-v-7e93235f] {\n    margin: 0 auto;\n    width: calc(100% - 2.5rem);\n    height: 3px;\n}\n.no-background[data-v-7e93235f] {\n  background: none;\n}\n.no-border[data-v-7e93235f] {\n  border: none;\n}\n", "", {"version":3,"sources":["/./src/TipBox.vue?cb013024"],"names":[],"mappings":";AA6NA;IACA,YAAA;IACA,WAAA;IACA,mBAAA;CACA;AAEA;IACA,cAAA;IACA,oBAAA;IACA,oBAAA;IACA,YAAA;IACA,wBAAA;IACA,2BAAA;CACA;AAEA;IACA,cAAA;IACA,oBAAA;IACA,YAAA;IACA,yBAAA;CACA;AAEA;IACA,wBAAA;CACA;AAEA;IACA,8BAAA;IACA,0BAAA;CACA;AAEA;IACA,gBAAA;IACA,aAAA;IACA,oBAAA;IACA,eAAA;IACA,2CAAA;IACA,YAAA;IACA,yBAAA;IACA,gBAAA;IACA,2BAAA;IACA,2BAAA;CACA;AAEA;IACA,oBAAA;CACA;AAEA;IACA,oBAAA;CACA;AAEA;IACA,iBAAA;CACA;AAEA;IACA,cAAA;IACA,wBAAA;IACA,mBAAA;IACA,WAAA;CACA;AAEA;IACA,UAAA;IACA,mBAAA;CACA;AAEA;IACA,yBAAA;CACA;AAEA;IACA,eAAA;IACA,YAAA;CACA;AAEA;IACA,mBAAA;CACA;AAEA;IACA,iBAAA;CACA;AAEA;IACA,eAAA;IACA,0BAAA;IACA,sBAAA;CACA;AAEA;IACA,0BAAA;IACA,mBAAA;IACA,8BAAA;CACA;AAEA;IACA,eAAA;CACA;AAEA;IACA,WAAA;CACA;AAEA;IACA,eAAA;IACA,2BAAA;IACA,YAAA;CACA;AAEA;EACA,iBAAA;CACA;AAEA;EACA,aAAA;CACA","file":"TipBox.vue","sourcesContent":["<template>\n    <div class=\"alert box-container\" :class=\"[boxStyle, addClass, lightStyle, seamlessStyle, noBackgroundStyle, noBorderStyle]\" :style=\"customStyle\">\n        <div v-if=\"headerBool\" :class=\"['box-header-wrapper', { 'alert-dismissible': dismissible }]\">\n            <div v-show=\"hasIcon\" class=\"icon-wrapper\" :class=\"[iconStyle]\">\n                <slot name=\"icon\">\n                    <span v-html=\"iconType\"></span>\n                </slot>\n            </div>\n            <div class=\"box-header\">\n                <slot name=\"_header\"></slot>\n            </div>\n            <button v-show=\"dismissible\" type=\"button\" class=\"close close-with-heading\" data-dismiss=\"alert\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n        </div>\n        <div v-if=\"horizontalDividerBool\" class=\"horizontal-divider\" :class=\"boxStyle\" aria-hidden=\"true\"></div>\n        <div :class=\"['box-body-wrapper', { 'alert-dismissible': dismissible && !headerBool, 'box-body-wrapper-with-heading': headerBool }]\">\n            <div v-show=\"hasIcon && !headerBool\" class=\"icon-wrapper\" :class=\"[iconStyle]\">\n                <slot name=\"icon\">\n                    <span v-html=\"iconType\"></span>\n                </slot>\n            </div>\n            <div v-if=\"verticalDividerBool\" class=\"vertical-divider\" :class=\"boxStyle\" aria-hidden=\"true\"></div>\n            <div class=\"contents\" :class=\"[fontBlack, seamlessStyle]\">\n                <slot></slot>\n            </div>\n            <button v-show=\"dismissible && !headerBool\" type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n        </div>\n    </div>\n</template>\n\n<script>\n\n  export default {\n    props: {\n      dismissible: {\n        type: Boolean,\n        default: false\n      },\n      backgroundColor: {\n        type: String,\n        default: null\n      },\n      borderColor: {\n        type: String,\n        default: null\n      },\n      borderLeftColor: {\n        type: String,\n        default: null\n      },\n      color: {\n        type: String,\n        default: null\n      },\n      icon: {\n        type: String,\n        default: null\n      },\n      iconSize: {\n        type: String,\n        default: null\n      },\n      type: {\n        type: String,\n        default: 'none'\n      },\n      addClass: {\n        type: String,\n        default: ''\n      },\n      light: {\n        type: Boolean,\n        default: false,\n      },\n      seamless: {\n        type: Boolean,\n        default: false,\n      },\n      noIcon: {\n        type: Boolean,\n        default: false,\n      },\n      noBackground: {\n        type: Boolean,\n        default: false,\n      },\n      noBorder: {\n        type: Boolean,\n        default: false,\n      }\n    },\n    computed: {\n      isSeamless() {\n        return !this.light && this.seamless;\n      },\n      verticalDividerBool() {\n        return this.isSeamless && !this.headerBool;\n      },\n      horizontalDividerBool() {\n          return this.isSeamless && this.headerBool;\n      },\n      headerBool() {\n        return !!this.$slots._header;\n      },\n      boxStyle() {\n        switch (this.type) {\n          case 'warning':\n            return 'alert-warning'\n          case 'info':\n          case 'definition':\n            return 'alert-info'\n          case 'success':\n          case 'tip':\n            return 'alert-success'\n          case 'important':\n          case 'wrong':\n            return 'alert-danger'\n          default:\n            return 'alert-default'\n        }\n      },\n      lightStyle() {\n        if (this.light) {\n          switch (this.type) {\n            case 'warning':\n              return 'border-warning text-warning alert-border-left';\n            case 'info':\n            case 'definition':\n              return 'border-info text-info alert-border-left';\n            case 'success':\n            case 'tip':\n              return 'border-success text-success alert-border-left';\n            case 'important':\n            case 'wrong':\n              return 'border-danger text-danger alert-border-left';\n            default:\n              return 'alert-border-left';\n          }\n        }\n        return '';\n      },\n      customStyle() {\n        var style = {};\n        if (this.backgroundColor) {\n          style.backgroundColor = this.backgroundColor;\n          style.borderColor = this.backgroundColor;\n        }\n        if (this.borderColor) {\n          style.border = `1px solid ${this.borderColor}`;\n        }\n        if (this.borderLeftColor) {\n          style.borderLeft = `5px solid ${this.borderLeftColor}`;\n        }\n        if (this.color) {\n          style.color = this.color;\n        }\n        return style;\n      },\n      seamlessStyle() {\n        if (this.isSeamless) {\n          return 'seamless';\n        }\n        return '';\n      },\n      fontBlack() {\n        if (this.light) {\n          return 'font-black';\n        }\n        return '';\n      },\n      hasIcon() {\n        // this.$slots.icon is either undefined or an object\n        const isIconSlotFilled = !!this.$slots.icon;\n        return !this.noIcon || isIconSlotFilled;\n      },\n      iconType() {\n        switch (this.type) {\n          case 'wrong':\n            return '<i class=\"fas fa-times\"></i>';\n          case 'warning':\n            return '<i class=\"fas fa-exclamation\"></i>';\n          case 'info':\n            return '<i class=\"fas fa-info\"></i>';\n          case 'success':\n            return '<i class=\"fas fa-check\"></i>';\n          case 'important':\n            return '<i class=\"fas fa-flag\"></i>';\n          case 'tip':\n            return '<i class=\"fas fa-lightbulb\"></i>';\n          case 'definition':\n            return '<i class=\"fas fa-atlas\"></i>';\n          default:\n            return '';\n        }\n      },\n      iconStyle() {\n        if (this.iconSize) {\n          return `fa-${this.iconSize}`;\n        }\n        return '';\n      },\n      noBackgroundStyle() {\n        if (this.noBackground) {\n          return 'no-background';\n        }\n        return '';\n      },\n      noBorderStyle() {\n        if (this.noBorder) {\n          return 'no-border';\n        }\n        return '';\n      }\n    }\n  }\n</script>\n\n<style scoped>\n    .box-container {\n        width: 100%;\n        padding: 0;\n        border-radius: 6px;\n    }\n\n    .box-header-wrapper {\n        display: flex;\n        flex-direction: row;\n        align-items: center;\n        width: 100%;\n        padding: 0.28em 1.25rem;\n        border-radius: 6px 6px 0 0;\n    }\n\n    .box-body-wrapper {\n        display: flex;\n        flex-direction: row;\n        width: 100%;\n        padding: 0.75rem 1.25rem;\n    }\n\n    .box-container.seamless > .box-body-wrapper {\n        padding: 0.75rem 0.5rem;\n    }\n\n    .box-container.seamless {\n        background-color: transparent;\n        border-color: transparent;\n    }\n\n    .heading {\n        display: inline;\n        float: right;\n        font-weight: normal;\n        color: inherit;\n        background-color: rgba(240, 240, 240, 0.6);\n        width: auto;\n        padding: 3px 5px 4px 5px;\n        border-width: 0;\n        border-radius: 0 6px 0 6px;\n        margin: -13px -27px 0 15px;\n    }\n\n    .box-body-wrapper-with-heading {\n        padding-top: 0.5rem;\n    }\n\n    .alert-dismissible {\n        padding-right: 4rem;\n    }\n\n    .box-header {\n        font-weight: 500;\n    }\n\n    .icon-wrapper {\n        display: flex;\n        justify-content: center;\n        margin-right: .5em;\n        width: 1em;\n    }\n\n    .close-with-heading {\n        top: auto;\n        padding: 0 1.25rem;\n    }\n\n    .close-with-heading > span {\n        vertical-align: text-top;\n    }\n\n    .contents {\n        padding: 0 6px;\n        width: 100%;\n    }\n\n    .contents.seamless {\n        padding-left: 12px;\n    }\n\n    .contents > :last-child {\n        margin-bottom: 0;\n    }\n\n    .alert-default {\n        color: #24292e;\n        background-color: #f6f8fa;\n        border-color: #e8ebef;\n    }\n\n    .alert-border-left {\n        background-color: #f9f8f8;\n        border-left: solid;\n        border-width: 0px 0px 0px 5px;\n    }\n\n    .font-black {\n        color: #24292e;\n    }\n\n    .vertical-divider {\n        width: 4px;\n    }\n\n    .horizontal-divider {\n        margin: 0 auto;\n        width: calc(100% - 2.5rem);\n        height: 3px;\n    }\n\n    .no-background {\n      background: none;\n    }\n\n    .no-border {\n      border: none;\n    }\n</style>\n\n<!-- TODO move this once we upgrade vue-loader version for scoped deep selectors -->\n<style>\n    div.box-header > * {\n        margin-bottom: 0;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
-/* 209 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(210);
+	var content = __webpack_require__(212);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -18523,7 +18632,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 210 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -18531,13 +18640,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	
 	// module
-	exports.push([module.id, "\ndiv.box-header > * {\n    margin-bottom: 0;\n}\n", "", {"version":3,"sources":["/./src/TipBox.vue?68427bea"],"names":[],"mappings":";AAiVA;IACA,iBAAA;CACA","file":"TipBox.vue","sourcesContent":["<template>\n    <div class=\"alert box-container\" :class=\"[boxStyle, addClass, lightStyle, seamlessStyle, noBackgroundStyle, noBorderStyle]\" :style=\"customStyle\">\n        <div v-if=\"headerBool\" :class=\"['box-header-wrapper', { 'alert-dismissible': dismissible }]\">\n            <div v-show=\"hasIcon\" class=\"icon-wrapper\" :class=\"[iconStyle]\">\n                <slot name=\"_icon\">\n                    <span v-html=\"iconType\"></span>\n                </slot>\n            </div>\n            <div class=\"box-header\">\n                <slot name=\"_header\"></slot>\n            </div>\n            <button v-show=\"dismissible\" type=\"button\" class=\"close close-with-heading\" data-dismiss=\"alert\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n        </div>\n        <div v-if=\"horizontalDividerBool\" class=\"horizontal-divider\" :class=\"boxStyle\" aria-hidden=\"true\"></div>\n        <div :class=\"['box-body-wrapper', { 'alert-dismissible': dismissible && !headerBool, 'box-body-wrapper-with-heading': headerBool }]\">\n            <div v-show=\"hasIcon && !headerBool\" class=\"icon-wrapper\" :class=\"[iconStyle]\">\n                <slot name=\"_icon\">\n                    <span v-html=\"iconType\"></span>\n                </slot>\n            </div>\n            <div v-if=\"verticalDividerBool\" class=\"vertical-divider\" :class=\"boxStyle\" aria-hidden=\"true\"></div>\n            <div class=\"contents\" :class=\"[fontBlack, seamlessStyle]\">\n                <slot></slot>\n            </div>\n            <button v-show=\"dismissible && !headerBool\" type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n        </div>\n    </div>\n</template>\n\n<script>\n\n  export default {\n    props: {\n      dismissible: {\n        type: Boolean,\n        default: false\n      },\n      backgroundColor: {\n        type: String,\n        default: null\n      },\n      borderColor: {\n        type: String,\n        default: null\n      },\n      borderLeftColor: {\n        type: String,\n        default: null\n      },\n      color: {\n        type: String,\n        default: null\n      },\n      icon: {\n        type: String,\n        default: null\n      },\n      iconSize: {\n        type: String,\n        default: null\n      },\n      type: {\n        type: String,\n        default: 'none'\n      },\n      addClass: {\n        type: String,\n        default: ''\n      },\n      light: {\n        type: Boolean,\n        default: false,\n      },\n      seamless: {\n        type: Boolean,\n        default: false,\n      },\n      noIcon: {\n        type: Boolean,\n        default: false,\n      },\n      noBackground: {\n        type: Boolean,\n        default: false,\n      },\n      noBorder: {\n        type: Boolean,\n        default: false,\n      }\n    },\n    computed: {\n      isSeamless() {\n        return !this.light && this.seamless;\n      },\n      verticalDividerBool() {\n        return this.isSeamless && !this.headerBool;\n      },\n      horizontalDividerBool() {\n          return this.isSeamless && this.headerBool;\n      },\n      headerBool() {\n        return !!this.$slots._header;\n      },\n      boxStyle() {\n        switch (this.type) {\n          case 'warning':\n            return 'alert-warning'\n          case 'info':\n          case 'definition':\n            return 'alert-info'\n          case 'success':\n          case 'tip':\n            return 'alert-success'\n          case 'important':\n          case 'wrong':\n            return 'alert-danger'\n          default:\n            return 'alert-default'\n        }\n      },\n      lightStyle() {\n        if (this.light) {\n          switch (this.type) {\n            case 'warning':\n              return 'border-warning text-warning alert-border-left';\n            case 'info':\n            case 'definition':\n              return 'border-info text-info alert-border-left';\n            case 'success':\n            case 'tip':\n              return 'border-success text-success alert-border-left';\n            case 'important':\n            case 'wrong':\n              return 'border-danger text-danger alert-border-left';\n            default:\n              return 'alert-border-left';\n          }\n        }\n        return '';\n      },\n      customStyle() {\n        var style = {};\n        if (this.backgroundColor) {\n          style.backgroundColor = this.backgroundColor;\n          style.borderColor = this.backgroundColor;\n        }\n        if (this.borderColor) {\n          style.border = `1px solid ${this.borderColor}`;\n        }\n        if (this.borderLeftColor) {\n          style.borderLeft = `5px solid ${this.borderLeftColor}`;\n        }\n        if (this.color) {\n          style.color = this.color;\n        }\n        return style;\n      },\n      seamlessStyle() {\n        if (this.isSeamless) {\n          return 'seamless';\n        }\n        return '';\n      },\n      fontBlack() {\n        if (this.light) {\n          return 'font-black';\n        }\n        return '';\n      },\n      hasIcon() {\n        // this.$slots._icon is either undefined or an object\n        const isIconSlotFilled = !!this.$slots._icon;\n        return !this.noIcon || isIconSlotFilled;\n      },\n      iconType() {\n        switch (this.type) {\n          case 'wrong':\n            return '<i class=\"fas fa-times\"></i>';\n          case 'warning':\n            return '<i class=\"fas fa-exclamation\"></i>';\n          case 'info':\n            return '<i class=\"fas fa-info\"></i>';\n          case 'success':\n            return '<i class=\"fas fa-check\"></i>';\n          case 'important':\n            return '<i class=\"fas fa-flag\"></i>';\n          case 'tip':\n            return '<i class=\"fas fa-lightbulb\"></i>';\n          case 'definition':\n            return '<i class=\"fas fa-atlas\"></i>';\n          default:\n            return '';\n        }\n      },\n      iconStyle() {\n        if (this.iconSize) {\n          return `fa-${this.iconSize}`;\n        }\n        return '';\n      },\n      noBackgroundStyle() {\n        if (this.noBackground) {\n          return 'no-background';\n        }\n        return '';\n      },\n      noBorderStyle() {\n        if (this.noBorder) {\n          return 'no-border';\n        }\n        return '';\n      }\n    }\n  }\n</script>\n\n<style scoped>\n    .box-container {\n        width: 100%;\n        padding: 0;\n        border-radius: 6px;\n    }\n\n    .box-header-wrapper {\n        display: flex;\n        flex-direction: row;\n        align-items: center;\n        width: 100%;\n        padding: 0.28em 1.25rem;\n        border-radius: 6px 6px 0 0;\n    }\n\n    .box-body-wrapper {\n        display: flex;\n        flex-direction: row;\n        width: 100%;\n        padding: 0.75rem 1.25rem;\n    }\n\n    .box-container.seamless > .box-body-wrapper {\n        padding: 0.75rem 0.5rem;\n    }\n\n    .box-container.seamless {\n        background-color: transparent;\n        border-color: transparent;\n    }\n\n    .heading {\n        display: inline;\n        float: right;\n        font-weight: normal;\n        color: inherit;\n        background-color: rgba(240, 240, 240, 0.6);\n        width: auto;\n        padding: 3px 5px 4px 5px;\n        border-width: 0;\n        border-radius: 0 6px 0 6px;\n        margin: -13px -27px 0 15px;\n    }\n\n    .box-body-wrapper-with-heading {\n        padding-top: 0.5rem;\n    }\n\n    .alert-dismissible {\n        padding-right: 4rem;\n    }\n\n    .box-header {\n        font-weight: 500;\n    }\n\n    .icon-wrapper {\n        display: flex;\n        margin-right: .5em;\n    }\n\n    .close-with-heading {\n        top: auto;\n        padding: 0 1.25rem;\n    }\n\n    .close-with-heading > span {\n        vertical-align: text-top;\n    }\n\n    .contents {\n        padding: 0 6px;\n        width: 100%;\n    }\n\n    .contents.seamless {\n        padding-left: 12px;\n    }\n\n    .alert-default {\n        color: #24292e;\n        background-color: #f6f8fa;\n        border-color: #e8ebef;\n    }\n\n    .alert-border-left {\n        background-color: #f9f8f8;\n        border-left: solid;\n        border-width: 0px 0px 0px 5px;\n    }\n\n    .font-black {\n        color: #24292e;\n    }\n\n    .vertical-divider {\n        width: 4px;\n    }\n\n    .horizontal-divider {\n        margin: 0 auto;\n        width: calc(100% - 2.5rem);\n        height: 3px;\n    }\n\n    .no-background {\n      background: none;\n    }\n\n    .no-border {\n      border: none;\n    }\n</style>\n\n<!-- TODO move this once we upgrade vue-loader version for scoped deep selectors -->\n<style>\n    div.box-header > * {\n        margin-bottom: 0;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\ndiv.box-header > * {\n    margin-bottom: 0;\n}\n", "", {"version":3,"sources":["/./src/TipBox.vue?cb013024"],"names":[],"mappings":";AAuVA;IACA,iBAAA;CACA","file":"TipBox.vue","sourcesContent":["<template>\n    <div class=\"alert box-container\" :class=\"[boxStyle, addClass, lightStyle, seamlessStyle, noBackgroundStyle, noBorderStyle]\" :style=\"customStyle\">\n        <div v-if=\"headerBool\" :class=\"['box-header-wrapper', { 'alert-dismissible': dismissible }]\">\n            <div v-show=\"hasIcon\" class=\"icon-wrapper\" :class=\"[iconStyle]\">\n                <slot name=\"icon\">\n                    <span v-html=\"iconType\"></span>\n                </slot>\n            </div>\n            <div class=\"box-header\">\n                <slot name=\"_header\"></slot>\n            </div>\n            <button v-show=\"dismissible\" type=\"button\" class=\"close close-with-heading\" data-dismiss=\"alert\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n        </div>\n        <div v-if=\"horizontalDividerBool\" class=\"horizontal-divider\" :class=\"boxStyle\" aria-hidden=\"true\"></div>\n        <div :class=\"['box-body-wrapper', { 'alert-dismissible': dismissible && !headerBool, 'box-body-wrapper-with-heading': headerBool }]\">\n            <div v-show=\"hasIcon && !headerBool\" class=\"icon-wrapper\" :class=\"[iconStyle]\">\n                <slot name=\"icon\">\n                    <span v-html=\"iconType\"></span>\n                </slot>\n            </div>\n            <div v-if=\"verticalDividerBool\" class=\"vertical-divider\" :class=\"boxStyle\" aria-hidden=\"true\"></div>\n            <div class=\"contents\" :class=\"[fontBlack, seamlessStyle]\">\n                <slot></slot>\n            </div>\n            <button v-show=\"dismissible && !headerBool\" type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n                <span aria-hidden=\"true\">&times;</span>\n            </button>\n        </div>\n    </div>\n</template>\n\n<script>\n\n  export default {\n    props: {\n      dismissible: {\n        type: Boolean,\n        default: false\n      },\n      backgroundColor: {\n        type: String,\n        default: null\n      },\n      borderColor: {\n        type: String,\n        default: null\n      },\n      borderLeftColor: {\n        type: String,\n        default: null\n      },\n      color: {\n        type: String,\n        default: null\n      },\n      icon: {\n        type: String,\n        default: null\n      },\n      iconSize: {\n        type: String,\n        default: null\n      },\n      type: {\n        type: String,\n        default: 'none'\n      },\n      addClass: {\n        type: String,\n        default: ''\n      },\n      light: {\n        type: Boolean,\n        default: false,\n      },\n      seamless: {\n        type: Boolean,\n        default: false,\n      },\n      noIcon: {\n        type: Boolean,\n        default: false,\n      },\n      noBackground: {\n        type: Boolean,\n        default: false,\n      },\n      noBorder: {\n        type: Boolean,\n        default: false,\n      }\n    },\n    computed: {\n      isSeamless() {\n        return !this.light && this.seamless;\n      },\n      verticalDividerBool() {\n        return this.isSeamless && !this.headerBool;\n      },\n      horizontalDividerBool() {\n          return this.isSeamless && this.headerBool;\n      },\n      headerBool() {\n        return !!this.$slots._header;\n      },\n      boxStyle() {\n        switch (this.type) {\n          case 'warning':\n            return 'alert-warning'\n          case 'info':\n          case 'definition':\n            return 'alert-info'\n          case 'success':\n          case 'tip':\n            return 'alert-success'\n          case 'important':\n          case 'wrong':\n            return 'alert-danger'\n          default:\n            return 'alert-default'\n        }\n      },\n      lightStyle() {\n        if (this.light) {\n          switch (this.type) {\n            case 'warning':\n              return 'border-warning text-warning alert-border-left';\n            case 'info':\n            case 'definition':\n              return 'border-info text-info alert-border-left';\n            case 'success':\n            case 'tip':\n              return 'border-success text-success alert-border-left';\n            case 'important':\n            case 'wrong':\n              return 'border-danger text-danger alert-border-left';\n            default:\n              return 'alert-border-left';\n          }\n        }\n        return '';\n      },\n      customStyle() {\n        var style = {};\n        if (this.backgroundColor) {\n          style.backgroundColor = this.backgroundColor;\n          style.borderColor = this.backgroundColor;\n        }\n        if (this.borderColor) {\n          style.border = `1px solid ${this.borderColor}`;\n        }\n        if (this.borderLeftColor) {\n          style.borderLeft = `5px solid ${this.borderLeftColor}`;\n        }\n        if (this.color) {\n          style.color = this.color;\n        }\n        return style;\n      },\n      seamlessStyle() {\n        if (this.isSeamless) {\n          return 'seamless';\n        }\n        return '';\n      },\n      fontBlack() {\n        if (this.light) {\n          return 'font-black';\n        }\n        return '';\n      },\n      hasIcon() {\n        // this.$slots.icon is either undefined or an object\n        const isIconSlotFilled = !!this.$slots.icon;\n        return !this.noIcon || isIconSlotFilled;\n      },\n      iconType() {\n        switch (this.type) {\n          case 'wrong':\n            return '<i class=\"fas fa-times\"></i>';\n          case 'warning':\n            return '<i class=\"fas fa-exclamation\"></i>';\n          case 'info':\n            return '<i class=\"fas fa-info\"></i>';\n          case 'success':\n            return '<i class=\"fas fa-check\"></i>';\n          case 'important':\n            return '<i class=\"fas fa-flag\"></i>';\n          case 'tip':\n            return '<i class=\"fas fa-lightbulb\"></i>';\n          case 'definition':\n            return '<i class=\"fas fa-atlas\"></i>';\n          default:\n            return '';\n        }\n      },\n      iconStyle() {\n        if (this.iconSize) {\n          return `fa-${this.iconSize}`;\n        }\n        return '';\n      },\n      noBackgroundStyle() {\n        if (this.noBackground) {\n          return 'no-background';\n        }\n        return '';\n      },\n      noBorderStyle() {\n        if (this.noBorder) {\n          return 'no-border';\n        }\n        return '';\n      }\n    }\n  }\n</script>\n\n<style scoped>\n    .box-container {\n        width: 100%;\n        padding: 0;\n        border-radius: 6px;\n    }\n\n    .box-header-wrapper {\n        display: flex;\n        flex-direction: row;\n        align-items: center;\n        width: 100%;\n        padding: 0.28em 1.25rem;\n        border-radius: 6px 6px 0 0;\n    }\n\n    .box-body-wrapper {\n        display: flex;\n        flex-direction: row;\n        width: 100%;\n        padding: 0.75rem 1.25rem;\n    }\n\n    .box-container.seamless > .box-body-wrapper {\n        padding: 0.75rem 0.5rem;\n    }\n\n    .box-container.seamless {\n        background-color: transparent;\n        border-color: transparent;\n    }\n\n    .heading {\n        display: inline;\n        float: right;\n        font-weight: normal;\n        color: inherit;\n        background-color: rgba(240, 240, 240, 0.6);\n        width: auto;\n        padding: 3px 5px 4px 5px;\n        border-width: 0;\n        border-radius: 0 6px 0 6px;\n        margin: -13px -27px 0 15px;\n    }\n\n    .box-body-wrapper-with-heading {\n        padding-top: 0.5rem;\n    }\n\n    .alert-dismissible {\n        padding-right: 4rem;\n    }\n\n    .box-header {\n        font-weight: 500;\n    }\n\n    .icon-wrapper {\n        display: flex;\n        justify-content: center;\n        margin-right: .5em;\n        width: 1em;\n    }\n\n    .close-with-heading {\n        top: auto;\n        padding: 0 1.25rem;\n    }\n\n    .close-with-heading > span {\n        vertical-align: text-top;\n    }\n\n    .contents {\n        padding: 0 6px;\n        width: 100%;\n    }\n\n    .contents.seamless {\n        padding-left: 12px;\n    }\n\n    .contents > :last-child {\n        margin-bottom: 0;\n    }\n\n    .alert-default {\n        color: #24292e;\n        background-color: #f6f8fa;\n        border-color: #e8ebef;\n    }\n\n    .alert-border-left {\n        background-color: #f9f8f8;\n        border-left: solid;\n        border-width: 0px 0px 0px 5px;\n    }\n\n    .font-black {\n        color: #24292e;\n    }\n\n    .vertical-divider {\n        width: 4px;\n    }\n\n    .horizontal-divider {\n        margin: 0 auto;\n        width: calc(100% - 2.5rem);\n        height: 3px;\n    }\n\n    .no-background {\n      background: none;\n    }\n\n    .no-border {\n      border: none;\n    }\n</style>\n\n<!-- TODO move this once we upgrade vue-loader version for scoped deep selectors -->\n<style>\n    div.box-header > * {\n        margin-bottom: 0;\n    }\n</style>\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
-/* 211 */
+/* 213 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -18719,8 +18828,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      return '';
 	    },
 	    hasIcon: function hasIcon() {
-	      // this.$slots._icon is either undefined or an object
-	      var isIconSlotFilled = !!this.$slots._icon;
+	      // this.$slots.icon is either undefined or an object
+	      var isIconSlotFilled = !!this.$slots.icon;
 	      return !this.noIcon || isIconSlotFilled;
 	    },
 	    iconType: function iconType() {
@@ -18765,7 +18874,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ }),
-/* 212 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -18786,7 +18895,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }],
 	    staticClass: "icon-wrapper",
 	    class: [_vm.iconStyle]
-	  }, [_vm._t("_icon", [_c('span', {
+	  }, [_vm._t("icon", [_c('span', {
 	    domProps: {
 	      "innerHTML": _vm._s(_vm.iconType)
 	    }
@@ -18829,7 +18938,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }],
 	    staticClass: "icon-wrapper",
 	    class: [_vm.iconStyle]
-	  }, [_vm._t("_icon", [_c('span', {
+	  }, [_vm._t("icon", [_c('span', {
 	    domProps: {
 	      "innerHTML": _vm._s(_vm.iconType)
 	    }
@@ -18869,20 +18978,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 213 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(214)
+	__webpack_require__(216)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(216)
+	__vue_exports__ = __webpack_require__(218)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(217)
+	var __vue_template__ = __webpack_require__(219)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -18916,13 +19025,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 214 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(215);
+	var content = __webpack_require__(217);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -18942,7 +19051,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 215 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -18956,7 +19065,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 216 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -18965,7 +19074,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 	
-	var _popoverMixins = __webpack_require__(127);
+	var _popoverMixins = __webpack_require__(129);
 	
 	var _popoverMixins2 = _interopRequireDefault(_popoverMixins);
 	
@@ -19019,7 +19128,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 
 /***/ }),
-/* 217 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -19052,20 +19161,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 218 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 	
 	/* styles */
-	__webpack_require__(219)
+	__webpack_require__(221)
 	
 	/* script */
-	__vue_exports__ = __webpack_require__(221)
+	__vue_exports__ = __webpack_require__(223)
 	
 	/* template */
-	var __vue_template__ = __webpack_require__(222)
+	var __vue_template__ = __webpack_require__(224)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -19099,13 +19208,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 219 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(220);
+	var content = __webpack_require__(222);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(78)(content, {});
@@ -19125,7 +19234,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ }),
-/* 220 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(77)();
@@ -19139,7 +19248,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ }),
-/* 221 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {'use strict';
@@ -19199,7 +19308,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(72)))
 
 /***/ }),
-/* 222 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
